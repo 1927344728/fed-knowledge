@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>handlebars模板</title>
+  <style>
+    section {
+      margin: 0;
+      padding: 20px;
+    }
+    .element_box  {
+      padding: 10px 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<section>
+  <style>
+    .element_box1 span {
+      color: #0aa;
+    }
+  </style>
+  <div class="element_box element_box1"></div>
+</section>
+
+<script src="./utils.js"></script>
+<script src="js/handlebars-v4.7.6.js"></script>
+<script id="html-template" type="text/x-handlebars-template">
+  <div>
+      <h1>{{title}}</h1>
+      <div>
+          Hellow, I am <span>{{body}}</span>.
+      </div>
+  </div>
+</script>
+<!-- <script src="js/handlebars.runtime-v4.7.6.js"></script> -->
+<script>
+  var funcs = {
+    handlebarsTest1: function () {
+      let template = Handlebars.compile(`Hellow, <span>{{text}}</span>`);
+      let templateStr = template({
+        text: "Handlebars!",
+      })
+      console.log(templateStr)
+      return templateStr
+    },
+    handlebarsTest2: function () {
+      var htmlTemplate = document.querySelector('#html-template').innerHTML
+      var template = Handlebars.compile(htmlTemplate);
+      let templateStr = template({
+        title: "Handlebars!",
+        body: "html template body!"
+      })
+      console.log(templateStr)
+      return templateStr
+    },
+    handlebarsTest3: function () {
+      let template = Handlebars.compile(`<p>{{firstname}} {{lastname}}</p>`);
+      let templateStr = template({
+        firstname: "Yehuda",
+        lastname: "Katz"
+      })
+      console.log(templateStr)
+      return templateStr
+    },
+    handlebarsTest4: function () {
+      let template = Handlebars.compile(`{{person.firstname}} {{person.lastname}}`);
+      let templateStr = template({
+        person: {
+          firstname: "Yehuda",
+          lastname: "Katz"
+        }
+      })
+      console.log(templateStr)
+      return templateStr
+    },
+    handlebarsTest5: function () {
+      let template = Handlebars.compile(`
+        {{#with author}}
+            <p>Author: <span>{{firstname}} {{lastname}}!</span></p>
+        {{/with}}
+        {{#each people}}
+            <p>{{../prefix}} <span>{{firstname}}</span> </p>
+        {{/each}}
+      `);
+      let templateStr = template({
+        people: [
+          { firstname: "Nils" },
+          { firstname: "Yehuda" },
+        ],
+        prefix: "Hello, ",
+        author: { firstname: "li", lastname: "zhao" }
+      })
+      console.log(templateStr)
+      return templateStr
+    },
+    handlebarsTest6: function () {
+      let template = Handlebars.compile(`<span>{{firstname}} {{uCase lastname}}</span>`);
+      Handlebars.registerHelper('uCase', s => s.toUpperCase())
+      let templateStr = template({
+          firstname: "Yehuda",
+          lastname: "Katz"
+      })
+      console.log(templateStr)
+      return templateStr
+    },
+    handlebarsTest7: function () {
+      let template = Handlebars.compile(`{{link (uCase people.name) "Welcome to visit!" href=people.url cssStyle="color: #0aa;"}}`);
+      Handlebars.registerHelper('uCase', s => s.toUpperCase())
+      Handlebars.registerHelper("link", function(name, text, options) {
+        var name = Handlebars.escapeExpression(name)
+        var text = Handlebars.escapeExpression(text)
+        var href = Handlebars.escapeExpression(options.hash.href)
+        var cssStyle = Handlebars.escapeExpression(options.hash.cssStyle)
+        return new Handlebars.SafeString(`<a style="${cssStyle}" href="${href}">Hellow, ${name}! ${text}</a>`);
+      });
+      let templateStr = template({
+        people: {
+          name: 'lizh',
+          url: "https://www.baidu.com/"
+        }
+      })
+      console.log(templateStr)
+      return templateStr
+    },
+    handlebarsTest8: function () {
+      let template = Handlebars.compile(`
+        {{> firstPartial}}
+        {{> (lookup . 'partName')}}
+      `);
+      Handlebars.registerPartial('firstPartial', '<p>Hellow, <span>{{first}}</span></p>');
+      Handlebars.registerPartial('secondPartial', '<p>Hellow, <span>{{second}}</span></p>');
+      let templateStr = template({
+        partName: 'secondPartial',
+        first: '我是第一块代码片段。',
+        second: '我是第二块代码片段。',
+      })
+      console.log(templateStr)
+      return templateStr
+    },
+    handlebarsTest9: function () {
+      let template = Handlebars.compile(`
+        {{> firstPartial myOtherContext }}
+        {{#each people}}
+          {{> secondPartial prefix=../prefix firstname=firstname lastname=lastname}}
+        {{/each}}
+      `);
+      Handlebars.registerPartial('firstPartial', '<p><span>{{information}}</span></p>');
+      Handlebars.registerPartial('secondPartial', '<p><span>{{prefix}}, {{firstname}} {{lastname}}</span></p>');
+      let templateStr = template({
+        myOtherContext: { information: "Interesting!" },
+        people: [
+          { firstname: "Nils", lastname: "Knappmeier"},
+          { firstname: "Yehuda", lastname: "Katz" }
+        ],
+        prefix: "Hello"
+      })
+      console.log(templateStr)
+      return templateStr
+    },
+    handlebarsTest10: function () {
+      let template = Handlebars.compile(`
+        {{#> firstPartial }}
+          <span>sorry, 此代码片段未注册！</span>
+        {{/firstPartial}}
+        {{#*inline "secondPartial"}}
+          <span>{{firstname}}。 这是局部注册的 secondPartial 代码片段！</span>
+        {{/inline}}
+        {{#each people}}
+          <p>Hellow, {{> secondPartial}}</p>
+        {{/each}}
+      `);
+      Handlebars.registerPartial('firstPartial', 'firstPartial： {{> @partial-block }}');
+      let templateStr = template({
+        people: [
+          { firstname: "Nils" },
+          { firstname: "Yehuda" },
+        ]
+      })
+      console.log(templateStr)
+      return templateStr
+    }
+  }
+</script>
+<script type="text/javascript">
+    let type = null
+    let callback = function () {
+        type = Utils.getUrlParam('type') * 1 || 1
+        let elementBox1 =  document.querySelector('.element_box1')
+        elementBox1.innerHTML = funcs[`handlebarsTest${type}`]()
+    }
+    if (
+        document.readyState === "complete" ||
+        (document.readyState !== "loading" && !document.documentElement.doScroll)
+    ) {
+        callback()
+    } else {
+        document.addEventListener("DOMContentLoaded", callback)
+    } 
+</script>
+</body>
+</html>

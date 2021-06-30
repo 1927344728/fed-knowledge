@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>css 动画</title>
+  <style>
+    section {
+      margin: 0;
+      padding: 20px;
+      display: none;
+    }
+    .element_box  {
+      width: 600px;
+      height: 300px;
+      padding: 10px 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<section>
+  <style>
+    .element_item1,
+    .element_item1_2 {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: #0aa;
+      border-radius: 20px;
+    }
+    .element_item1:hover,
+    .element_item1_2:hover,
+    .element_item1_2_transition {
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        transform: rotate(180deg);
+        border-radius: 100px;
+    }
+    .element_item1_2 {
+      transition: width 2s, height 2s, background-color 2s, transform 2s, border-radius 2s;
+    }
+  </style>
+  <div class="element_box element_box1">
+    <div class="element_item1"></div>
+    <div class="element_item1_2"></div>
+  </div>
+</section>
+
+<section>
+  <style>
+    .element_box2 {}
+    .element_item2_1 {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+      background-color: #0aa;
+      border-radius: 25px;
+      animation: move2 2s ease 1s infinite;
+    }
+    @keyframes move2 {
+      0% {
+        transform: translate(0, 0);
+        background-color: red;
+      }
+      100% {
+        transform: translate(552px, 0);
+        background-color: orange;
+      }
+    }
+  </style>
+  <div class="element_box element_box2">
+    <div class="element_item2_1"></div>
+  </div>
+</section>
+
+<section>
+  <style>
+    .element_box3 {
+      border: 1px solid #eee;
+    }
+    .element_item3_1,
+    .element_item3_2,
+    .element_item3_3,
+    .element_item3_4 {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+      background-color: #0aa;
+      border-radius: 25px;
+    }
+    .element_item3_1 { animation: move3 2s step-start 1s infinite; }
+    .element_item3_2 { animation: move3 2s steps(3, start) 1s infinite; }
+    .element_item3_3 { animation: move3 2s steps(3, end) 1s infinite; }
+    .element_item3_4 { animation: move3 2s steps(30, start) 1s infinite; }
+    @keyframes move3 {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(200px, 0);
+        background-color: red;
+      }
+      100% {
+        transform: translate(552px, 0);
+        background-color: orange;
+      }
+    }
+  </style>
+  <div class="element_box element_box3">
+    <div class="element_item3_1"></div>
+    <div class="element_item3_2"></div>
+    <div class="element_item3_3"></div>
+    <div class="element_item3_4"></div>
+  </div>
+</section>
+
+<section>
+  <style>
+    .element_box4 p { text-align: left; border-bottom: 1px solid #eee; }
+    .element_item4 {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      margin-bottom: 30px;
+      background-color: #0aa;
+      border-radius: 25px;
+    }
+    .element_item4_1 { animation: move4 2s ease 1s infinite normal; }
+    .element_item4_2 { animation: move4 2s ease 1s infinite alternate; }
+    .element_item4_3 { animation: move4 2s ease 1s infinite reverse; }
+    .element_item4_4 { animation: move4 2s ease 1s infinite alternate-reverse; }
+    @keyframes move4 {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(552px, 0);
+        background-color: orange;
+      }
+    }
+  </style>
+  <div class="element_box element_box4">
+    <p>normal:</p>
+    <div class="element_item4 element_item4_1"></div>
+    <p>alternate:</p>
+    <div class="element_item4 element_item4_2"></div>
+    <p>reverse:</p>
+    <div class="element_item4 element_item4_3"></div>
+    <p>alternate-reverse:</p>
+    <div class="element_item4 element_item4_4"></div>
+  </div>
+</section>
+
+<section>
+  <style>
+    .element_box5 p { text-align: left; border-bottom: 1px solid #eee; }
+    .element_item5 {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      margin-bottom: 30px;
+      background-color: #0aa;
+      border-radius: 25px;
+    }
+    .element_item5_1 { animation: move5 2s ease 1s 2; }
+    .element_item5_2 { animation: move5 2s ease 1s 2 forwards; }
+    .element_item5_3 { animation: move5 2s ease 1s 2 reverse forwards; }
+    .element_item5_4 { animation: move5 2s ease 1s 2 backwards; }
+    .element_item5_5 { animation: move5 2s ease 1s 2 reverse backwards; }
+    .element_item5_6 { animation: move5 2s ease 1s 2 both; }
+    @keyframes move5 {
+      0% {
+        transform: translate(0, 0);
+        background-color: red;
+      }
+      100% {
+        transform: translate(552px, 0);
+        background-color: orange;
+      }
+    }
+  </style>
+  <div class="element_box element_box5">
+    <p>none:</p>
+    <div class="element_item5 element_item5_1"></div>
+    <p>forwards:</p>
+    <div class="element_item5 element_item5_2"></div>
+    <p>forwards + reverse:</p>
+    <div class="element_item5 element_item5_3"></div>
+    <p>backwards:</p>
+    <div class="element_item5 element_item5_4"></div>
+    <p>backwards + reverse:</p>
+    <div class="element_item5 element_item5_5"></div>
+    <p>both:</p>
+    <div class="element_item5 element_item5_6"></div>
+  </div>
+</section>
+
+<section>
+  <style>
+    .element_box6 {
+      perspective: 640px;
+      perspective-origin: 50% 50%;
+    }
+    .element_item6 {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 20px auto;
+      transform-style: preserve-3d;
+      transition: all 1s ease;
+      animation: random-rotate 5s linear 0s infinite;
+    }
+    .element_face {
+      width: 200px;
+      height: 200px;
+      background: rgba(0,160,160,0.3);
+      position: absolute;
+      font-size: 180px;
+      color: #fff;
+      line-height: 200px;
+      text-align: center;
+      border: 1px solid white;
+    }
+    .element_face_2 {
+      transform: rotateY(-90deg);
+      transform-origin: right;
+    }
+    .element_face_3 {
+      transform: translateZ(-200px);
+      transform-origin: right;
+    }
+    .element_face_4{
+      transform: rotateY(90deg);
+      transform-origin: left;
+    }
+    .element_face_5{
+      transform: rotateX(-90deg);
+      transform-origin: top;
+    }
+    .element_face_6{
+      transform: rotateX(90deg);
+      transform-origin: bottom;
+    }
+    @keyframes random-rotate{
+      0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      }
+      100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+      }
+    }
+  </style>
+  <div class="element_box element_box6">
+    <div class="element_item6">
+      <div class="element_face element_face_1">天</div>
+      <div class="element_face element_face_2">地</div>
+      <div class="element_face element_face_3">玄</div>
+      <div class="element_face element_face_4">黄</div>
+      <div class="element_face element_face_5">宇</div>
+      <div class="element_face element_face_6">宙</div>
+    </div>
+  </div>
+</section>
+
+<script src="./utils.js"></script>
+<script type="text/javascript">
+    let type = null
+    let callback = function () {
+        type = Utils.getUrlParam('type') * 1 || 1
+        Array.prototype.slice.apply(document.querySelectorAll('section')).map(function (ele, i) {
+            ele.style.display = i === type - 1 ? 'block' : 'none'
+        })
+
+        document.querySelector('.element_item1_2').addEventListener("transitionend", event => {
+          console.log(event.propertyName)
+        }, true)
+    }
+    if (
+        document.readyState === "complete" ||
+        (document.readyState !== "loading" && !document.documentElement.doScroll)
+    ) {
+        callback()
+    } else {
+        document.addEventListener("DOMContentLoaded", callback)
+    } 
+</script>
+</body>
+</html>

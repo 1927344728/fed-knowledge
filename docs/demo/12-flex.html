@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<title>flex布局</title>
+  <style>
+    section {
+        display: none;
+    }
+    .flex_box {
+        display: flex;
+        padding: 10px;
+        border: 1px solid #0aa;
+    }
+    .flex_item {
+        margin-right: 15px;
+        padding: 10px;
+        color: #fff;
+        text-align: center;
+        background-color: #0aa;
+        white-space: nowrap;
+        /*background-color: #0aa;*/
+        /*background-color: #e08;*/
+        /*background-color: #f95;*/
+        /*background-color: #3b7;*/
+    }
+    .flex_item.text_parent {
+        min-width: 0;
+    }
+    .flex_item .text {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .flex_item:last-child {
+        margin-right: 0;
+    }
+  </style>
+
+</head>
+<body>
+<section>
+    <div class="flex_box">
+        <div class="flex_item">低眉含笑间</div>
+        <div class="flex_item text_parent" style="flex: 1; ">
+            <div class="text">寒灯纸上梨花雨凉 谁的深情绚烂了三生石上的一见倾心 灯烛依旧 无人执手。低眉含笑间 寒灯纸上梨花雨凉 谁的深情绚烂了三生石上的一见倾心 灯烛依旧 无人执手
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style type="text/css">
+    .text_parent2 {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+</style>
+<section>
+    <div class="flex_box">
+        <div class="flex_item">低眉含笑间</div>
+        <div class="flex_item text_parent2" style="flex: 1; ">
+            <div class="text">寒灯纸上梨花雨凉 谁的深情绚烂了三生石上的一见倾心 灯烛依旧 无人执手。低眉含笑间 寒灯纸上梨花雨凉 谁的深情绚烂了三生石上的一见倾心 灯烛依旧 无人执手
+            </div>
+        </div>
+    </div>
+    <div class="text">寒灯纸上梨花雨凉 谁的深情绚烂了三生石上的一见倾心 灯烛依旧 无人执手。低眉含笑间 寒灯纸上梨花雨凉 谁的深情绚烂了三生石上的一见倾心 灯烛依旧 无人执手
+            </div>
+</section>
+
+<script src="./utils.js"></script>
+<script type="text/javascript">
+    let type = null
+    let callback = function () {
+        type = Utils.getUrlParam('type') * 1 || 1
+        Array.prototype.slice.apply(document.querySelectorAll('section')).map((ele, i) => {
+            ele.style.display = i === type - 1 ? 'block' : 'none'
+        })
+    }
+    if (
+        document.readyState === "complete" ||
+        (document.readyState !== "loading" && !document.documentElement.doScroll)
+    ) {
+        callback()
+    } else {
+        document.addEventListener("DOMContentLoaded", callback)
+    } 
+</script>
+</body>
+</html>

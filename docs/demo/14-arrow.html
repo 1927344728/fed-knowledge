@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<title>纯CSS绘制箭头</title>
+</head>
+<body>
+<style>
+    section {
+        display: none;
+    }
+    .flex_box {
+        padding: 10px 0;
+        text-align: center;
+    }
+</style>
+<style>
+    .flex_item {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        margin: 20px 0;
+        background: rgba(255, 0,0,0.1);
+        border-color:red;
+        border-width: 0 0 1px 1px;
+        border-style: solid;
+        transform:rotateZ(-45deg);
+    }
+</style>
+<section>
+    <div class="flex_box">
+        <em class="flex_item"></em>
+    </div>
+</section>
+
+
+<style>
+    .flex_item2 {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border: 50px solid transparent;
+        border-top-color: #0dd;
+    }
+</style>
+<section>
+    <div class="flex_box">
+        <em class="flex_item2"></em>
+    </div>
+</section>
+
+
+<style>
+    .flex_item3 {
+        display: inline-block;
+        width: 100px;
+        height: 86px;
+        transform: rotate(-30deg) skewX(30deg);
+        background: #e4ffe7;
+        border-bottom: 1px solid #00ff22;
+        border-left: 1px solid #00ff22;
+    }
+</style>
+<section>
+    <div class="flex_box">
+        <em class="flex_item3"></em>
+    </div>
+</section>
+
+
+<style>
+    .flex_box {
+        padding: 0;
+        position: relative;
+        height: 80px;
+    }
+    .flex_item4 {
+        position: absolute;
+        left: 40%;
+        width: 10px;
+        height: 40px;
+        background: #f50;
+    }
+    .flex_item4:nth-child(1) {
+        top: 0;
+        transform: skewX(30deg);
+    }
+    .flex_item4:nth-child(2) {
+        bottom: 0;
+        transform: skewX(-30deg);
+    }
+</style>
+<section>
+    <div class="flex_box">
+        <div class="flex_item4"></div>
+        <div class="flex_item4"></div>
+    </div>
+</section>
+
+
+<style>
+    .flex_item5 {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin-top: 20px;
+        border-top: 2px solid #f50;
+        border-right: 2px solid #f50;
+        transform: matrix(0.7071067811865475,0.7071067811865476,-0.7071067811865476,0.7071067811865475,0,0);
+    }
+</style>
+<section>
+    <div class="flex_box">
+        <em class="flex_item5"></em>
+    </div>
+</section>
+
+<script src="./utils.js"></script>
+<script type="text/javascript">
+    let type = null
+    let callback = function () {
+        type = Utils.getUrlParam('type') * 1 || 1
+        Array.prototype.slice.apply(document.querySelectorAll('section')).map((ele, i) => {
+            ele.style.display = i === type - 1 ? 'block' : 'none'
+        })
+    }
+    if (
+        document.readyState === "complete" ||
+        (document.readyState !== "loading" && !document.documentElement.doScroll)
+    ) {
+        callback()
+    } else {
+        document.addEventListener("DOMContentLoaded", callback)
+    } 
+</script>
+</body>
+</html>

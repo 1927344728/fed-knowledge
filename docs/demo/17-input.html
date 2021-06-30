@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>input输入限制</title>
+  <style>
+    section {
+        display: none;
+    }
+  </style>
+</head>
+<body>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+.flex_box {
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+.flex_item > input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  outline: 0;
+  border: 1px solid #0aa;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+}
+
+</style>
+<section>
+    <div class="flex_box">
+        <div class="flex_item">
+          <input
+            type="text"
+            onkeydown="funcKeydown()"
+            onkeypress="funcKeypress()"
+            onkeyup="funcKeyup()"
+          />
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+
+</script>
+<script src="./utils.js"></script>
+<script>
+    function funcKeydown () {
+      if(event.keyCode === 13) {
+        event.keyCode = 9
+      }
+      console.log('down: ', `keyCode=${event.keyCode}, which=${event.which}, charCode=${event.charCode} `)
+    }
+    function funcKeypress () {
+      console.log('press: ', `keyCode=${event.keyCode}, which=${event.which}, charCode=${event.charCode} `)
+    }
+    function funcKeyup () {
+      console.log('up: ', `keyCode=${event.keyCode}, which=${event.which}, charCode=${event.charCode} `)
+    }
+</script>
+<script type="text/javascript">
+    let type = null
+    let callback = function () {
+        type = Utils.getUrlParam('type') * 1 || 1
+        Array.prototype.slice.apply(document.querySelectorAll('section')).map((ele, i) => {
+            ele.style.display = i === type - 1 ? 'block' : 'none'
+        })
+
+        window.addEventListener('message', receiveMessage);
+        function receiveMessage(event) {
+            document.querySelector('input').style.borderColor = event.data
+        }
+
+        console.log(window.parent.document.body)
+    }
+    if (
+        document.readyState === "complete" ||
+        (document.readyState !== "loading" && !document.documentElement.doScroll)
+    ) {
+        callback()
+    } else {
+        document.addEventListener("DOMContentLoaded", callback)
+    } 
+</script>
+</body>
+</html>

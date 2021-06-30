@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>css3高级属性</title>
+  <style>
+    section {
+      margin: 0;
+      padding: 20px;
+      display: none;
+    }
+    .element_box  {
+      width: 600px;
+      height: 300px;
+      padding: 10px 20px;
+      border: 1px solid #0aa;
+    }
+  </style>
+</head>
+<body>
+<section>
+  <style>
+    .element_box1 {
+      width: 700px;
+      height: auto;
+    }
+    .element_item1 img {
+      width: 330px;
+    }
+    .element_item1 img.mask {
+      -webkit-mask-image: conic-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2), rgba(0,0,0,1), rgba(0,0,0,1));
+      animation: aniMask 2s infinite;
+    }
+    @keyframes aniMask {
+      0 {
+        -webkit-mask-image: conic-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2), rgba(0,0,0,1), rgba(0,0,0,1));
+      }
+      100% {
+        -webkit-mask-image: conic-gradient(rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,0), rgba(0,0,0,0.2));
+      }
+    }
+  </style>
+  <div class="element_box element_box1">
+    <div class="element_item1">
+      <img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/nice/20190419141711_6640njffmwvi_small.jpg">
+      <img class="mask" src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/nice/20190419141711_6640njffmwvi_small.jpg">
+    </div>
+  </div>
+</section>
+
+<section>
+  <style>
+    .element_box2 {
+      font-size: 42px;
+      font-family: 'Times New Roman';
+      text-align: center;
+    }
+    .element_box2 .hollow {
+      color: transparent;
+      -webkit-text-stroke: 1px red;
+    }
+  </style>
+  <div class="element_box2">
+    <span class="hollow">Today is good and tomorrow will be the same</span>
+  </div>
+</section>
+
+<section>
+  <style>
+    .element_box3 {
+      font-size: 24px;
+      text-align: center;
+    }
+    .element_box3 img {
+      width: 200px;
+      -webkit-box-reflect: below 5px linear-gradient(to right, transparent, white);
+    }
+    .element_box3 span {
+      display: inline-block;
+      color: #0aa;
+      -webkit-box-reflect: below 5px;
+    }
+  </style>
+  <div class="element_box3">
+    <img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/nice/20190419141711_6640njffmwvi_small.jpg">
+    <span>Today is good and tomorrow will be the same</span>
+  </div>
+</section>
+
+<section>
+  <style>
+    .element_box4 {
+      font-size: 24px;
+      text-align: center;
+      color: #0aa;
+    }
+  </style>
+  <div class="element_box4">
+    <p>“砌下梨花一堆雪，明年谁此凭栏杆？”一树梨花一承乾，此番美景属何人，只愿你在树下，梨花落如雪...</p>
+    <p style="font-size-adjust: 0.4;">“砌下梨花一堆雪，明年谁此凭栏杆？”一树梨花一承乾，此番美景属何人，只愿你在树下，梨花落如雪...</p>
+  </div>
+</section>
+
+<section>
+  <style>
+    .element_box5 {
+      font-size: 100px;
+      text-align: center;
+    }
+    .element_box5 .two {
+      background: linear-gradient(to right, #0aa 0%, #0aa 50%, red 50%, red 100%); 
+      color: transparent;
+      -webkit-background-clip: text;
+    }
+    .element_box5 .gradient {
+      background: linear-gradient(to right, #0aa 0%, red 100%); 
+      color: transparent;
+      -webkit-background-clip: text;
+    }
+  </style>
+  <div class="element_box5">
+    <span class="two">A</span>
+    <span class="gradient">A</span>
+  </div>
+</section>
+
+<section>
+  <style>
+    .element_item6 {
+      width: 600px;
+      margin-bottom: 10px;
+      padding: 20px;
+      border: 1px solid #0aa;
+    }
+    .element_item6.columns {
+      columns: 3;
+      column-rule: 1px solid #0aa;
+      column-gap: 30px;
+      column-fill: auto;
+      height: 210px;
+    }
+    .element_item6.columns h3 {
+      column-span: all;
+    }
+  </style>
+  <div class="element_box6">
+    <div class="element_item6">
+      一轮皓月，柔情似水，洒满心湖，照亮远方；一株幽兰，清香淡雅，彼此凝望，寂静欢喜；一叶兰舟，盛满思念，载滿祝福，划过秦时明月，穿过唐风宋韵，驶向心灵的渡口。一轮皓月，柔情似水，洒满心湖，照亮远方；一株幽兰，清香淡雅，彼此凝望，寂静欢喜；一叶兰舟，盛满思念，载滿祝福，划过秦时明月，穿过唐风宋韵，驶向心灵的渡口。
+    </div>
+    <div class="element_item6 columns">
+      <h3>一轮皓月，柔情似水，洒满心湖，照亮远方</h3>
+      一轮皓月，柔情似水，洒满心湖，照亮远方；一株幽兰，清香淡雅，彼此凝望，寂静欢喜；一叶兰舟，盛满思念，载滿祝福，划过秦时明月，穿过唐风宋韵，驶向心灵的渡口。一轮皓月，柔情似水，洒满心湖，照亮远方；一株幽兰，清香淡雅，彼此凝望，寂静欢喜；一叶兰舟，盛满思念，载滿祝福，划过秦时明月，穿过唐风宋韵，驶向心灵的渡口。
+    </div>
+  </div>
+</section>
+
+<script src="./utils.js"></script>
+<script type="text/javascript">
+    let type = null
+    let callback = function () {
+        type = Utils.getUrlParam('type') * 1 || 1
+        Array.prototype.slice.apply(document.querySelectorAll('section')).map(function (ele, i) {
+            ele.style.display = i === type - 1 ? 'block' : 'none'
+        })
+    }
+    if (
+        document.readyState === "complete" ||
+        (document.readyState !== "loading" && !document.documentElement.doScroll)
+    ) {
+        callback()
+    } else {
+        document.addEventListener("DOMContentLoaded", callback)
+    } 
+</script>
+</body>
+</html>

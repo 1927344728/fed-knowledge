@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>others</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    section {
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<section>
+  <style type="text/css">
+    .box1 ul li {
+      list-style: none;
+    }
+    .box1 ul li {
+      height: 1.03rem;
+    }
+    .box1 ul li:nth-child(2n + 1) {
+      background: #ffc107;
+    }
+    .box1 ul li:nth-child(2n) {
+      background: #ff5722;
+    }
+  </style>
+  <div class="box1">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</section>
+
+<script src="./utils.js"></script>
+<script type="text/javascript">
+    let type = null
+    let callback = function () {
+        type = Utils.getUrlParam('type') * 1 || 1
+        Array.prototype.slice.apply(document.querySelectorAll('section')).map(function (ele, i) {
+            ele.style.display = i === type - 1 ? 'block' : 'none'
+        })
+
+        Array.prototype.slice.call(document.querySelector('.box1').getElementsByTagName('li')).map(e => {
+          console.log(getComputedStyle(e).height)
+          console.log(e.clientHeight)
+        })
+    }
+    if (
+        document.readyState === "complete" ||
+        (document.readyState !== "loading" && !document.documentElement.doScroll)
+    ) {
+        callback()
+    } else {
+        document.addEventListener("DOMContentLoaded", callback)
+    } 
+</script>
+</body>
+</html>

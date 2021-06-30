@@ -1,0 +1,1830 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>限制input输入的方法（监听键盘事件） · LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="05-谈谈前端跨域访问及其解决方法.html" />
+    
+    
+    <link rel="prev" href="03-极细边框（1px边框）实现方式.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/brower-iphone X 适配问题.html">
+            
+                <a href="../bugs/brower-iphone X 适配问题.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    iphone X 适配问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/brower-web常见问题概览.html">
+            
+                <a href="../bugs/brower-web常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    web常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/css-常见问题概览.html">
+            
+                <a href="../bugs/css-常见问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/html-常见问题概览.html">
+            
+                <a href="../bugs/html-常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/js-常见问题概览.html">
+            
+                <a href="../bugs/js-常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    JS常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/js-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/js-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/js-蒙层底部页面跟随滚动.html">
+            
+                <a href="../bugs/js-蒙层底部页面跟随滚动.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    蒙层底部页面跟随滚动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/小程序开发中遇到的问题.html">
+            
+                <a href="../bugs/小程序开发中遇到的问题.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    小程序开发中遇到的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">css探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../css探索系列/00-关于css.html">
+            
+                <a href="../css探索系列/00-关于css.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../css探索系列/01-CSS探索系列-margin.html">
+            
+                <a href="../css探索系列/01-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS探索系列之Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../css探索系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../css探索系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    由z-index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../css探索系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../css探索系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../css探索系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../css探索系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS探索系列之flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../css探索系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../css探索系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    CSS3探索系列之gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../css探索系列/06-为什么使用 PostCSS 处理 CSS ？.html">
+            
+                <a href="../css探索系列/06-为什么使用 PostCSS 处理 CSS ？.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    为什么使用 PostCSS 处理 CSS ？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../css探索系列/14-CSS探索系列-line-height.html">
+            
+                <a href="../css探索系列/14-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    css line-height详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="01-聊一聊Cookie的一些问题.html">
+            
+                <a href="01-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="02-如何理解HTTP响应的状态码.html">
+            
+                <a href="02-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="03-极细边框（1px边框）实现方式.html">
+            
+                <a href="03-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.4" data-path="04-限制input输入的方法（监听键盘事件）.html">
+            
+                <a href="04-限制input输入的方法（监听键盘事件）.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    限制input输入的方法（监听键盘事件）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="05-谈谈前端跨域访问及其解决方法.html">
+            
+                <a href="05-谈谈前端跨域访问及其解决方法.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    谈谈前端跨域访问及其解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="06-sublime3 插件管理工具的正确安装及常用插件.html">
+            
+                <a href="06-sublime3 插件管理工具的正确安装及常用插件.html">
+            
+                    
+                        <b>3.6.</b>
+                    
+                    sublime3 插件管理工具的正确安装及常用插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="07-如何保证高质量代码（eslint+stylelint+husky+lint-staged+prettier）  .html">
+            
+                <a href="07-如何保证高质量代码（eslint+stylelint+husky+lint-staged+prettier）  .html">
+            
+                    
+                        <b>3.7.</b>
+                    
+                    如何保证高质量代码（eslint+stylelint+husky+lint-staged+prettier）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="08-Charles安装及使用.html">
+            
+                <a href="08-Charles安装及使用.html">
+            
+                    
+                        <b>3.8.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="09-如何监控前端异常？.html">
+            
+                <a href="09-如何监控前端异常？.html">
+            
+                    
+                        <b>3.9.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="10-JavaScript控制页面滚动.html">
+            
+                <a href="10-JavaScript控制页面滚动.html">
+            
+                    
+                        <b>3.10.</b>
+                    
+                    JavaScript控制页面滚动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="11-H5页面的跳转、刷新、回退+刷新.html">
+            
+                <a href="11-H5页面的跳转、刷新、回退+刷新.html">
+            
+                    
+                        <b>3.11.</b>
+                    
+                    H5页面的跳转、刷新、回退+刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="12-浏览器内核、JS 引擎及其工作原理.html">
+            
+                <a href="12-浏览器内核、JS 引擎及其工作原理.html">
+            
+                    
+                        <b>3.12.</b>
+                    
+                    浏览器内核、JS 引擎及其工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="14-前端模块化：CommonJS,AMD,CMD,ES6.html">
+            
+                <a href="14-前端模块化：CommonJS,AMD,CMD,ES6.html">
+            
+                    
+                        <b>3.13.</b>
+                    
+                    前端模块化编程：CommonJS、AMD、CMD、UMD、ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="CSS换主题换肤方法总结.html">
+            
+                <a href="CSS换主题换肤方法总结.html">
+            
+                    
+                        <b>3.14.</b>
+                    
+                    CSS换主题换肤方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" >
+            
+                <span>
+            
+                    
+                        <b>3.15.</b>
+                    
+                    Git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.15.1" data-path="Git/01-Git安装、使用及常用命令.html">
+            
+                <a href="Git/01-Git安装、使用及常用命令.html">
+            
+                    
+                        <b>3.15.1.</b>
+                    
+                    Git安装、使用及常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15.2" data-path="Git/02-git clone速度太慢的解决办法.html">
+            
+                <a href="Git/02-git clone速度太慢的解决办法.html">
+            
+                    
+                        <b>3.15.2.</b>
+                    
+                    git clone速度太慢的解决办法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15.3" data-path="Git/03-Git Bash中文乱码.html">
+            
+                <a href="Git/03-Git Bash中文乱码.html">
+            
+                    
+                        <b>3.15.3.</b>
+                    
+                    Git Bash中文乱码.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15.4" data-path="Git/04-github SSH.html">
+            
+                <a href="Git/04-github SSH.html">
+            
+                    
+                        <b>3.15.4.</b>
+                    
+                    github SSH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15.5" data-path="Git/05-git报错.html">
+            
+                <a href="Git/05-git报错.html">
+            
+                    
+                        <b>3.15.5.</b>
+                    
+                    git报错
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="GitBook/">
+            
+                <a href="GitBook/">
+            
+                    
+                        <b>3.16.</b>
+                    
+                    GitBook
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.16.1" data-path="GitBook/00-gitbook入门篇.html">
+            
+                <a href="GitBook/00-gitbook入门篇.html">
+            
+                    
+                        <b>3.16.1.</b>
+                    
+                    Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16.2" data-path="GitBook/00-gitbook插件篇.html">
+            
+                <a href="GitBook/00-gitbook插件篇.html">
+            
+                    
+                        <b>3.16.2.</b>
+                    
+                    Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16.3" data-path="GitBook/00-gitbook进阶篇.html">
+            
+                <a href="GitBook/00-gitbook进阶篇.html">
+            
+                    
+                        <b>3.16.3.</b>
+                    
+                    Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="Javascript加密混淆.html">
+            
+                <a href="Javascript加密混淆.html">
+            
+                    
+                        <b>3.17.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="Vue如何导入TypeScript.html">
+            
+                <a href="Vue如何导入TypeScript.html">
+            
+                    
+                        <b>3.18.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.19" data-path="webpack构建优化篇.html">
+            
+                <a href="webpack构建优化篇.html">
+            
+                    
+                        <b>3.19.</b>
+                    
+                    webpack构建优化篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.20" data-path="移动端PDF预览.html">
+            
+                <a href="移动端PDF预览.html">
+            
+                    
+                        <b>3.20.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.21" data-path="纯CSS绘制箭头.html">
+            
+                <a href="纯CSS绘制箭头.html">
+            
+                    
+                        <b>3.21.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.22" data-path="网站性能测量和优化方法.html">
+            
+                <a href="网站性能测量和优化方法.html">
+            
+                    
+                        <b>3.22.</b>
+                    
+                    网站性能测量和数据统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">html探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../html探索系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../html探索系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    HTML元素的宽高度及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../html探索系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../html探索系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">js探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../js探索系列/00-关于Javascript.html">
+            
+                <a href="../js探索系列/00-关于Javascript.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    00-关于Javascript.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../js探索系列/01-谈谈 JavaScript 的作用域和上下文.html">
+            
+                <a href="../js探索系列/01-谈谈 JavaScript 的作用域和上下文.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    谈谈 JavaScript 的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../js探索系列/02-JavaScript Date的使用和日期时间字符串格式.html">
+            
+                <a href="../js探索系列/02-JavaScript Date的使用和日期时间字符串格式.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    JavaScript Date的使用和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../js探索系列/03-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../js探索系列/03-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../js探索系列/04-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../js探索系列/04-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../js探索系列/05-Canvas基础入门篇.html">
+            
+                <a href="../js探索系列/05-Canvas基础入门篇.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../js探索系列/06-SVG基础入门篇.html">
+            
+                <a href="../js探索系列/06-SVG基础入门篇.html">
+            
+                    
+                        <b>5.7.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../js探索系列/javaScript笔记/">
+            
+                <a href="../js探索系列/javaScript笔记/">
+            
+                    
+                        <b>5.8.</b>
+                    
+                    javaScript笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.8.1" data-path="../js探索系列/javaScript笔记/JavaScript笔记之Promise.html">
+            
+                <a href="../js探索系列/javaScript笔记/JavaScript笔记之Promise.html">
+            
+                    
+                        <b>5.8.1.</b>
+                    
+                    JavaScript笔记之Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8.2" data-path="../js探索系列/javaScript笔记/JavaScript笔记之Touch事件.html">
+            
+                <a href="../js探索系列/javaScript笔记/JavaScript笔记之Touch事件.html">
+            
+                    
+                        <b>5.8.2.</b>
+                    
+                    JavaScript笔记之Touch事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="../js探索系列/nodeJs/">
+            
+                <a href="../js探索系列/nodeJs/">
+            
+                    
+                        <b>5.9.</b>
+                    
+                    nodeJs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.9.1" data-path="../js探索系列/nodeJs/00-Node.js的三种调试方法.html">
+            
+                <a href="../js探索系列/nodeJs/00-Node.js的三种调试方法.html">
+            
+                    
+                        <b>5.9.1.</b>
+                    
+                    Node.js的三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9.2" data-path="../js探索系列/nodeJs/02-npm常用命令.html">
+            
+                <a href="../js探索系列/nodeJs/02-npm常用命令.html">
+            
+                    
+                        <b>5.9.2.</b>
+                    
+                    npm常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">tech</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    内网穿透（web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">代码规范</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../代码规范/00-W3C代码标准规范.html">
+            
+                <a href="../代码规范/00-W3C代码标准规范.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    W3C代码标准规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../代码规范/CSS代码规范.html">
+            
+                <a href="../代码规范/CSS代码规范.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    CSS代码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../代码规范/HTML代码规范.html">
+            
+                <a href="../代码规范/HTML代码规范.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    HTML代码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../代码规范/JS代码规范.html">
+            
+                <a href="../代码规范/JS代码规范.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    JS代码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../代码规范/其他前端规范.html">
+            
+                <a href="../代码规范/其他前端规范.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    其他前端规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >限制input输入的方法（监听键盘事件）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x9650;&#x5236;input&#x8F93;&#x5165;&#x7684;&#x65B9;&#x6CD5;&#xFF08;&#x76D1;&#x542C;&#x952E;&#x76D8;&#x4E8B;&#x4EF6;&#xFF09;">&#x9650;&#x5236;input&#x8F93;&#x5165;&#x7684;&#x65B9;&#x6CD5;&#xFF08;&#x76D1;&#x542C;&#x952E;&#x76D8;&#x4E8B;&#x4EF6;&#xFF09;</h2>
+<p><strong>&#x95EE;&#x9898;&#xFF1A;</strong><code>input</code>&#x5143;&#x7D20;&#x53EA;&#x5141;&#x8BB8;&#x8F93;&#x5165;&#x6570;&#x5B57;&#x3001;&#x4E2D;&#x6587;&#x3001;&#x5B57;&#x6BCD;&#x7B49;&#x3002;</p>
+<p><strong>&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#xFF1A;</strong><code>Js</code>&#x76D1;&#x542C;&#x952E;&#x76D8;&#x4E8B;&#x4EF6;&#xFF0C;&#x901A;&#x8FC7;&#x6B63;&#x5219;&#x5339;&#x914D;&#x6216;&#x952E;&#x7801;&#x503C;&#x5BF9;&#x6BD4;&#xFF0C;&#x5C06;&#x4E0D;&#x7B26;&#x5408;&#x6821;&#x9A8C;&#x7684;&#x503C;&#x66FF;&#x6362;&#x6216;&#x8005;&#x5C06;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;&#x7684;<code>returnValue</code>&#x7F6E;&#x4E3A;<code>false</code>&#x3002;</p>
+<h3 id="&#x952E;&#x76D8;&#x4E8B;&#x4EF6;">&#x952E;&#x76D8;&#x4E8B;&#x4EF6;</h3>
+<p>&#x4E09;&#x4E2A;&#x952E;&#x76D8;&#x4E8B;&#x4EF6;&#xFF1A;<code>keydown&#x3001;keypress&#x3001;keyup</code></p>
+<p>&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x987A;&#x5E8F;&#xFF1A;<code>keydown -&gt; keypress -&gt; keyup</code></p>
+<ul>
+<li><p>keydown&#xFF1A;&#x5F53;&#x7528;&#x6237;&#x6309;&#x4E0B;<strong>&#x4EFB;&#x610F;&#x952E;</strong>&#x65F6;&#x89E6;&#x53D1;&#xFF0C;&#x800C;&#x4E14;&#x6309;&#x4F4F;&#x4E0D;&#x653E;&#x7684;&#x8BDD;&#xFF0C;&#x4F1A;&#x91CD;&#x590D;&#x89E6;&#x53D1;&#x6B64;&#x4E8B;&#x4EF6;&#x3002;</p>
+</li>
+<li><p>keypress&#xFF1A;&#x5F53;&#x7528;&#x6237;&#x6309;&#x4E0B;<strong>&#x5B57;&#x7B26;&#x952E;</strong>&#x65F6;&#x89E6;&#x53D1;&#xFF0C;&#x800C;&#x4E14;&#x6309;&#x4F4F;&#x4E0D;&#x653E;&#x7684;&#x8BDD;&#xFF0C;&#x4F1A;&#x91CD;&#x590D;&#x89E6;&#x53D1;&#x6B64;&#x4E8B;&#x4EF6;&#x3002;&#x4F46;&#x529F;&#x80FD;&#x952E;&#x4E0D;&#x4E00;&#x5B9A;&#x80FD;&#x89E6;&#x53D1;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x3002;</p>
+</li>
+<li><p>keyup&#xFF1A;&#x5F53;&#x7528;&#x6237;&#x91CA;&#x653E;&#x952E;&#x65F6;&#x89E6;&#x53D1;&#x3002;</p>
+</li>
+</ul>
+<p>&#x952E;&#x76D8;&#x4E8B;&#x4EF6;&#x7684;&#x89E6;&#x53D1;&#x8FC7;&#x7A0B;&#x5177;&#x4F53;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;&#x5728;&#x7528;&#x6237;&#x6309;&#x4E0B;&#x952E;&#x76D8;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;<strong>&#x5B57;&#x7B26;&#x952E;</strong>&#x65F6;&#xFF0C; &#x9996;&#x5148;&#x4F1A;&#x89E6;&#x53D1;<code>keydown</code>&#x4E8B;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x662F;<code>keypress</code>&#x4E8B;&#x4EF6;&#xFF0C;&#x6700;&#x540E;&#x662F;<code>keyup</code>&#x4E8B;&#x4EF6;&#x3002;&#x5176;&#x4E2D;&#xFF0C;<code>keydown&#x3001;keypress</code>&#x4E8B;&#x4EF6;&#x662F;&#x5728;&#x6587;&#x672C;&#x6846;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x4E4B;&#x524D; &#x88AB;&#x89E6;&#x53D1;&#xFF1B;&#x800C;<code>keyup</code>&#x5728;&#x6587;&#x672C;&#x6846;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x4E4B;&#x540E;&#x88AB;&#x89E6;&#x53D1;&#x3002;&#x5982;&#x679C;&#x7528;&#x6237;&#x6309;&#x4E0B;&#x4E00;&#x4E2A;&#x952E;&#x4E0D;&#x653E;&#xFF0C;&#x5C31;&#x4F1A;&#x91CD;&#x590D;&#x89E6;&#x53D1;<code>keydown&#x3001;keypress</code>&#x4E8B;&#x4EF6;&#x3002;&#x5728;&#x7528;&#x6237;&#x6309;&#x4E0B;&#x4E00;&#x4E2A;<strong>&#x529F;&#x80FD;&#x952E;</strong>&#x65F6;&#xFF0C;&#x9996;&#x5148;&#x89E6;&#x53D1;<code>keydown</code>&#x4E8B;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x662F;<code>keyup</code>&#x4E8B;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x7528;&#x6237;&#x6309;&#x4E0B;&#x4E00;&#x4E2A;&#x952E;&#x4E0D;&#x653E;&#xFF0C;&#x5C31;&#x4F1A;&#x91CD;&#x590D;&#x89E6;&#x53D1;<code>keydown</code>&#x3002;</p>
+<p>&#x5728;<code>keyup</code> &#x4E8B;&#x4EF6;&#x4E2D;&#x65E0;&#x6CD5;&#x963B;&#x6B62;&#x6D4F;&#x89C8;&#x5668;&#x9ED8;&#x8BA4;&#x4E8B;&#x4EF6;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;<code>keypress</code>&#x65F6;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#xFF0C;&#x5373;&#xFF0C;&#x5C06;&#x6587;&#x5B57;&#x8F93;&#x5165;&#x6587;&#x672C;&#x6846;&#xFF08;&#x5C3D;&#x7BA1;&#x8FD9;&#x65F6;&#x8FD8;&#x6CA1;&#x663E;&#x793A;&#xFF09;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x4E0D;&#x7BA1;&#x662F;<code>preventDefault</code>&#x8FD8;&#x662F;<code>return Value = false</code>&#xFF0C;&#x90FD;&#x4E0D;&#x80FD;&#x963B;&#x6B62;&#x5728;&#x6587;&#x672C;&#x6846;&#x4E2D;&#x8F93;&#x5165;&#x6587;&#x5B57;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x5982;&#x8981;&#x963B;&#x6B62;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;&#xFF0C;&#x5FC5;&#x987B;&#x5728;<code>keydown</code>&#x6216;<code>keypress</code>&#x65F6;&#x963B;&#x6B62;&#x3002;</p>
+<h4 id="&#x952E;&#x76D8;&#x952E;&#x5206;&#x7C7B;">&#x952E;&#x76D8;&#x952E;&#x5206;&#x7C7B;</h4>
+<p>&#x952E;&#x76D8;&#x4E2D;&#x7684;&#x952E;&#x5206;&#x4E3A;<strong>&#x5B57;&#x7B26;&#x952E;</strong>&#xFF08;&#x53EF;&#x6253;&#x5370;&#xFF09;&#x548C;<strong>&#x529F;&#x80FD;&#x952E;</strong>&#xFF08;&#x4E0D;&#x53EF;&#x6253;&#x5370;&#xFF09;&#xFF0C;&#x7CFB;&#x7EDF;&#x529F;&#x80FD;&#x952E;&#x5305;&#x62EC;&#x5982;&#x4E0B;&#xFF1A;<code>Esc&#x3001;Tab&#x3001;Caps Lock&#x3001;Shift&#x3001;Ctrl&#x3001;Alt&#x3001;Enter&#x3001;Backspace&#x3001;Print Screen&#x3001;Scroll Lock&#x3001;Pause Break&#x3001;Insert&#x3001;Delete&#x3001;Home&#x3001;End&#x3001;Page Up&#x3001;Page Down&#xFF0C; F1 ~ 12&#xFF0C;Num Lock&#x3001;The Arrow Keys</code>&#x3002;</p>
+<p><code>keydown</code>&#x548C;<code>keyup</code>&#x5747;&#x53EF;&#x4EE5;&#x5BF9;&#x7CFB;&#x7EDF;&#x529F;&#x80FD;&#x952E;&#x8FDB;&#x884C;&#x6709;&#x6548;&#x7684;&#x62E6;&#x622A;&#xFF0C;&#x4F46;&#x4E8B;&#x4EF6;&#x622A;&#x83B7;&#x7684;&#x4F4D;&#x7F6E;&#x4E0D;&#x540C;&#xFF1B;<code>keypress</code>&#x4E8B;&#x4EF6;<strong>&#x4E0D;&#x80FD;&#x5BF9;&#x7CFB;&#x7EDF;&#x529F;&#x80FD;&#x952E;</strong>&#xFF08;&#x4F8B;&#x5982;&#xFF1A;&#x540E;&#x9000;&#x3001;&#x5220;&#x9664;&#x7B49;&#xFF09;&#x3001;<strong>&#x4E2D;&#x6587;&#x8F93;&#x5165;&#x6CD5;</strong>&#x8FDB;&#x884C;&#x6B63;&#x5E38;&#x7684;&#x54CD;&#x5E94;&#xFF0C;</p>
+<p><strong><code>keypress</code>&#x54CD;&#x5E94;&#x7CFB;&#x7EDF;&#x529F;&#x80FD;&#x952E;&#x603B;&#x7ED3;&#xFF1A;</strong></p>
+<p>Firefox&#xFF1A;&#x652F;&#x6301; <code>Esc&#x3001;Enter&#x3001;Backspace&#x3001;Pause Break&#x3001;Insert&#x3001;Delete&#x3001;Home&#x3001;End&#x3001;Page Up&#x3001;Page Down&#x3001;F1 ~ F12&#x3001;The Arrow Keys</code>&#x3001;&#x652F;&#x6301; <code>The Arrow Keys</code></p>
+<p>Chrome&#x3001;Oprea&#x3001;Safari&#xFF1A;&#x652F;&#x6301;<code>Enter</code>&#x3001;&#x4E0D;&#x652F;&#x6301; <code>The Arrow Keys</code></p>
+<p>IE&#xFF1A;&#x652F;&#x6301;<code>Esc&#x3001;Enter</code>&#x3001;&#x4E0D;&#x652F;&#x6301; <code>The Arrow Keys</code></p>
+<p><strong>&#x4E2D;&#x6587;&#x8F93;&#x5165;&#x6CD5;&#xFF08;&#x6D4F;&#x89C8;&#x5668;&#x4E4B;&#x95F4;&#x8868;&#x73B0;&#x5F97;&#x4E0D;&#x592A;&#x4E00;&#x81F4;&#xFF09;&#xFF1A;</strong></p>
+<p>firfox&#xFF1A;&#x8F93;&#x5165;&#x89E6;&#x53D1;<code>keydown</code>&#xFF0C;&#x56DE;&#x8F66;&#x786E;&#x8BA4;&#x8F93;&#x5165;&#x89E6;&#x53D1;<code>keyup</code></p>
+<p>chrome&#xFF1A;&#x8F93;&#x5165;&#x89E6;&#x53D1;<code>keydown&#x3001;keyup</code>&#xFF0C;&#x56DE;&#x8F66;&#x786E;&#x8BA4;&#x8F93;&#x5165;&#x53EA;&#x89E6;&#x53D1;<code>keydown</code></p>
+<p>IE&#xFF1A;&#x8F93;&#x5165;&#x89E6;&#x53D1;<code>keydown&#x3001;keyup</code>&#xFF0C;&#x56DE;&#x8F66;&#x786E;&#x8BA4;&#x8F93;&#x5165;&#x89E6;&#x53D1;<code>keydown&#xFF0C;keyup</code></p>
+<p>Safari&#xFF1A;&#x8F93;&#x5165;&#x89E6;&#x53D1;<code>keydown&#x3001;keyup</code>&#xFF0C;&#x56DE;&#x8F66;&#x786E;&#x8BA4;&#x8F93;&#x5165;&#x89E6;&#x53D1;<code>keydown&#xFF0C;keyup</code></p>
+<p>opera&#xFF1A;&#x8F93;&#x5165;&#x89E6;&#x53D1;<code>keydown&#x3001;keyup</code>&#xFF0C;&#x56DE;&#x8F66;&#x786E;&#x8BA4;&#x8F93;&#x5165;&#x89E6;&#x53D1;<code>keydown&#xFF0C;keyup</code></p>
+<h4 id="&#x952E;&#x76D8;&#x4E8B;&#x4EF6;&#x7684;&#x53D6;&#x503C;">&#x952E;&#x76D8;&#x4E8B;&#x4EF6;&#x7684;&#x53D6;&#x503C;</h4>
+<ul>
+<li><p><code>keyCode</code>(&#x952E;&#x7801;)&#xFF1A;&#x5C31;&#x662F;<strong>&#x5B57;&#x6BCD;&#x6216;&#x6570;&#x5B57;</strong>&#x5BF9;&#x5E94;&#x7684;<code>ASCII</code>&#x7801;&#x3002;&#x5728;&#x53D1;&#x751F;<code>keydown&#x3001;keypress&#x3001;keyup</code>&#x4E8B;&#x4EF6;&#x65F6;&#xFF0C;&#x53EF;&#x5728;<code>event</code>&#x5BF9;&#x8C61;&#x4E2D;&#x83B7;&#x53D6;&#x3002;</p>
+<blockquote>
+<ul>
+<li>&#x5728;<code>FF&#x3001;Opera</code>&#x4E2D;&#xFF0C;&#x6309;&#x5206;&#x53F7;&#x952E;&#x65F6;<code>keyCode</code>&#x503C;&#x4E3A;59&#xFF0C;&#x4F46;<code>IE&#x3001;Chrome&#x3001;Safari</code>&#x5219;&#x8FD4;&#x56DE;186</li>
+<li>&#x5728;<code>Safari3</code>&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x4E0A;&#x3001;&#x4E0B;&#x3001;&#x5DE6;&#x3001;&#x53F3;&#x7BAD;&#x5934;&#x548C;&#x4E0A;&#x7FFB;(<code>PageUp</code>)&#x3001;&#x4E0B;&#x7FFB;(<code>PageDown</code>)&#x952E;&#x8FD4;&#x56DE;&#x5927;&#x4E8E;63000&#x7684;&#x503C;</li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>which</code>&#xFF1A;</p>
+</li>
+<li><p><code>charCode</code>(&#x5B57;&#x7B26;&#x7F16;&#x7801;)&#xFF1A;&#x5C31;&#x662F;<strong>&#x6309;&#x4E0B;&#x7684;&#x5B57;&#x7B26;&#x952E;</strong>&#x5BF9;&#x5E94;&#x7684;ASCII&#x7F16;&#x7801;&#x3002;</p>
+<p><code>keypress</code>&#x4E8B;&#x4EF6;&#x4E2D;&#xFF0C;<code>FF&#x3001;Chrome&#x3001;Safari</code>&#x7684;<code>event</code>&#x5BF9;&#x8C61;&#x90FD;&#x652F;&#x6301;&#x4E00;&#x4E2A;<code>charCode</code>&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x5728;&#x6309;&#x4E0B;&#x975E;&#x5B57;&#x7B26;&#x952E;&#x6216;&#x53D1;&#x751F;<code>keydown&#x548C;keyup</code>&#x4E8B;&#x4EF6;&#x65F6;&#x503C;&#x4E3A;0&#xFF1B;</p>
+<p><code>IE&#x3001;Opera</code>&#x5219;&#x662F;&#x5728;<code>keyCode</code>&#x4E2D; &#x4FDD;&#x5B58;&#x5B57;&#x7B26;&#x952E;&#x7684;ASCII&#x7F16;&#x7801;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x8981;&#x60F3;&#x8DE8;&#x6D4F;&#x89C8;&#x5668;&#x83B7;&#x5F97;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">//&#x83B7;&#x53D6;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;String.fromCharCode()&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x4E3A;&#x5B9E;&#x9645;&#x7684;&#x5B57;&#x7B26;&#x3002;</span>
+<span class="hljs-keyword">var</span> getCharCode = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>)</span>{
+    <span class="hljs-keyword">var</span> charcode = event.charCode;
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> charcode === <span class="hljs-string">&quot;number&quot;</span> &amp;&amp; charcode != <span class="hljs-number">0</span>){
+        <span class="hljs-keyword">return</span> charcode;
+    }<span class="hljs-keyword">else</span>{
+        <span class="hljs-comment">//&#x5728;&#x4E2D;&#x6587;&#x8F93;&#x5165;&#x6CD5;&#x4E0B; keyCode === 229 || keyCode === 197(Opera)</span>
+        <span class="hljs-keyword">return</span> event.keyCode;
+    }
+};
+</code></pre>
+</li>
+</ul>
+<h4 id="&#x4E8B;&#x4EF6;&#x53D6;&#x503C;&#x517C;&#x5BB9;&#x60C5;&#x51B5;">&#x4E8B;&#x4EF6;&#x53D6;&#x503C;&#x517C;&#x5BB9;&#x60C5;&#x51B5;</h4>
+<ul>
+<li><code>keydown&#x3001;keyup</code>&#x8868;&#x73B0;&#x4E00;&#x81F4;&#xFF0C;<code>keypress</code>&#x4E0E;&#x4E24;&#x8005;&#x6709;&#x5DEE;&#x5F02;</li>
+<li><p><code>keydown&#x3001;keyup</code>&#x4E8B;&#x4EF6;&#x4E2D;&#xFF0C;&#x5B57;&#x7B26;&#x952E;&#x3001;&#x529F;&#x80FD;&#x952E;&#x53EF;&#x83B7;&#x53D6;<code>keyCode&#x3001;witch</code>&#x503C;&#xFF0C;&#x4F46;<code>charCode=0</code></p>
+</li>
+<li><p><code>keypress</code>&#x4E8B;&#x4EF6;&#x4E2D;&#xFF0C;&#x5B57;&#x7B26;&#x952E;&#x53EF;&#x83B7;&#x53D6;<code>keyCode&#x3001;witch&#x3001;charCode</code>&#x503C;&#x3002;&#x6709;&#x6B64;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#xFF0C;&#x529F;&#x80FD;&#x952E;&#x4E0D;&#x4E00;&#x5B9A;&#x80FD;&#x89E6;&#x53D1;&#x6B64;&#x4E8B;&#x4EF6;</p>
+</li>
+<li><p><code>keypress</code>&#x4E8B;&#x4EF6;&#x7684;<code>keyCode</code>&#x5BF9;&#x5B57;&#x6BCD;&#x7684;&#x5927;&#x5C0F;&#x5199;&#x654F;&#x611F;&#xFF0C;&#x800C;<code>keydown&#x3001;keyup</code>&#x4E8B;&#x4EF6;&#x4E0D;&#x654F;&#x611F;</p>
+</li>
+<li><p><code>keypress</code>&#x4E8B;&#x4EF6;&#x7684;<code>which</code>&#x503C;&#x65E0;&#x6CD5;&#x533A;&#x5206;&#x4E3B;&#x952E;&#x76D8;&#x4E0A;&#x7684;&#x6570;&#x5B57;&#x952E;&#x548C;&#x9644;&#x952E;&#x76D8;&#x6570;&#x5B57;&#x952E;&#x7684;&#xFF0C;&#x800C;<code>keydown&#x3001;keyup</code>&#x7684;<code>which</code>&#x503C;&#x5BF9;&#x4E3B;&#x9644;&#x952E;&#x76D8;&#x7684;&#x6570;&#x5B57;&#x952E;&#x654F;&#x611F;&#x3002;</p>
+</li>
+<li>IE(ie9&#x4EE5;&#x4E0B;&#xFF0C;ie 11&#x6B63;&#x5E38;)&#xFF0C;<code>keydown&#x3001;keyup</code> &#x4E8B;&#x4EF6;&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;<code>keyCode</code>&#x5C5E;&#x6027;&#xFF0C;<code>keycode</code>&#x5C5E;&#x6027;&#x8868;&#x793A;&#x4F60;&#x5177;&#x4F53;&#x6309;&#x4E0B;&#x7684;&#x952E;(&#x4E5F;&#x79F0;&#x4E3A;<code>virtual keycode</code>)&#xFF1B;<code>keypress</code>&#x4E8B;&#x4EF6;&#x4E2D;&#xFF0C;<code>keyCode</code>&#x5C5E;&#x6027;&#x6307;&#x7684;&#x662F;&#x4F60;&#x952E;&#x5165;&#x7684;&#x5B57;&#x7B26;(<code>character code</code>)  </li>
+</ul>
+<h3 id="&#x5E38;&#x89C1;&#x7684;&#x9650;&#x5236;&#x7C7B;&#x578B;">&#x5E38;&#x89C1;&#x7684;&#x9650;&#x5236;&#x7C7B;&#x578B;</h3>
+<ul>
+<li><p>&#x53EA;&#x80FD;&#x8F93;&#x5165;&#x6216;&#x7C98;&#x8D34;&#x6570;&#x5B57;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!--this.&#x53EF;&#x4EE5;&#x4E0D;&#x52A0;--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">onkeyup</span>=<span class="hljs-string">&quot;this.value = this.value.replace(/\D/g,&apos;&apos;)&quot;</span> <span class="hljs-attr">onafterpaste</span>=<span class="hljs-string">&quot;this.value = this.value.replace(/\D/g,&apos;&apos;)&quot;</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>&#x53EA;&#x80FD;&#x8F93;&#x5165;&#x6570;&#x5B57;<strong>(&#x65E0;&#x95EA;&#x52A8;)</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">onkeypress</span>=<span class="hljs-string">&quot;if ((event.keyCode&lt;48 || event.keyCode&gt;57)) event.returnValue=false&quot;</span> /&gt;</span>
+</code></pre>
+</li>
+<li><p>&#x53EA;&#x80FD;&#x8F93;&#x5165;&#x6216;&#x7C98;&#x8D34;&#x6570;&#x5B57;&#x548C;&#x5C0F;&#x6570;&#x70B9;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">onkeyup</span>=<span class="hljs-string">&quot;if(isNaN(value)) execCommand(&apos;undo&apos;)&quot;</span> <span class="hljs-attr">onafterpaste</span>=<span class="hljs-string">&quot;if(isNaN(value)) execCommand(&apos;undo&apos;)&quot;</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>&#x53EA;&#x80FD;&#x8F93;&#x5165;&#x6216;&#x7C98;&#x8D34;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#x548C;&#x6570;&#x5B57;&#xFF0C;&#x4E0D;&#x80FD;&#x8F93;&#x5165;&#x4E2D;&#x6587;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">onkeyup</span>=<span class="hljs-string">&quot;this.value = this.value.replace(/[^\w\.\/]/g,&apos;&apos;)&quot;</span> <span class="hljs-attr">onafterpaste</span>=<span class="hljs-string">&quot;this.value = this.value.replace(/[^\w\.\/]/g,&apos;&apos;)&quot;</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>&#x53EA;&#x80FD;&#x8F93;&#x5165;&#x6216;&#x7C98;&#x8D34;&#x4E2D;&#x6587;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">onkeyup</span>=<span class="hljs-string">&quot;this.value = this.value.replace(/[^\u4e00-\u9fa5]/g,&apos;&apos;)&quot;</span> <span class="hljs-attr">onafterpaste</span>=<span class="hljs-string">&quot;this.value = this.value.replace(/[^\u4e00-\u9fa5]/g,&apos;&apos;)&quot;</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>&#x53EA;&#x80FD;&#x8F93;&#x5165;&#x6216;&#x7C98;&#x8D34;&#x82F1;&#x6587;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">onkeyup</span>=<span class="hljs-string">&quot;this.value = this.value.replace(/[^a-zA-Z]/g,&apos;&apos;)&quot;</span> <span class="hljs-attr">onafterpaste</span>=<span class="hljs-string">&quot;this.value = this.value.replace(/[^a-zA-Z]/g,&apos;&apos;)&quot;</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>&#x7B80;&#x6613;&#x7981;&#x6B62;&#x8F93;&#x5165;&#x6C49;&#x5B57;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!--&#x65E0;&#x6548;&#xFF1F;&#xFF1F;--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;ime-mode:disabled&quot;</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>&#x53EA;&#x8BFB;&#x6587;&#x672C;&#x6846;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">readonly</span> /&gt;</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="keycode&#x5BF9;&#x5E94;&#x8868;">keyCode&#x5BF9;&#x5E94;&#x8868;</h3>
+<p>&#x5B57;&#x6BCD;&#xFF08;&#x5927;&#x3001;&#x5C0F;&#x5199;&#xFF09;&#xFF1A;<code>[A-Z] -&gt; [65-90]</code></p>
+<p>&#x6570;&#x5B57;&#xFF1A;<code>[0-9] -&gt; [48-57]</code></p>
+<p>&#x5C0F;&#x952E;&#x76D8;&#x6309;&#x952E;&#xFF1A;<code>[0-9] -&gt; [96-105]</code></p>
+<p>F&#x529F;&#x80FD;&#x952E;&#xFF1A;<code>[F1-F12] -&gt; [112-123]</code></p>
+<blockquote>
+<p><strong><code>keyCod</code></strong>&#x5DF2;&#x7ECF;&#x4ECE; Web &#x6807;&#x51C6;&#x4E2D;&#x5220;&#x9664;&#xFF0C;&#x867D;&#x7136;&#x4E00;&#x4E9B;&#x6D4F;&#x89C8;&#x5668;&#x76EE;&#x524D;&#x4ECD;&#x7136;&#x652F;&#x6301;&#x5B83;&#xFF0C;&#x4F46;&#x4E5F;&#x8BB8;&#x4F1A;&#x5728;&#x672A;&#x6765;&#x7684;&#x67D0;&#x4E2A;&#x65F6;&#x95F4;&#x505C;&#x6B62;&#x652F;&#x6301;&#xFF0C;&#x8BF7;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x8BE5;&#x7279;&#x6027;&#x3002;</p>
+<p>&#x4F60;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/KeyboardEvent/code" target="_blank"><code>KeyboardEvent.code</code></a>&#x3002; &#x4E0D;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x6709;&#x4E00;&#x4E9B;&#x6D4F;&#x89C8;&#x5668;&#x8FD8;&#x662F;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;&#x5B83;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x5728;&#x4F7F;&#x7528;&#x4E4B;&#x524D;&#x5FC5;&#x987B;&#x8981;&#x5C0F;&#x5FC3;&#xFF0C;&#x786E;&#x8BA4;&#x4F60;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x90A3;&#x4E2A;&#x88AB;&#x6240;&#x6709;&#x76EE;&#x6807;&#x6D4F;&#x89C8;&#x5668;&#x6240;&#x652F;&#x6301;&#x3002;</p>
+</blockquote>
+<h3 id="ascii&#x7801;&#x8868;">ASCII&#x7801;&#x8868;</h3>
+<p>&#x4FE1;&#x606F;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#x662F;&#x7528;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x7684;&#xFF0C;&#x8FD9;&#x79CD;&#x8868;&#x793A;&#x6CD5;&#x8BA9;&#x4EBA;&#x7406;&#x89E3;&#x5C31;&#x5F88;&#x56F0;&#x96BE;&#x3002;&#x56E0;&#x6B64;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#x90FD;&#x914D;&#x6709;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x8BBE;&#x5907;&#xFF0C;&#x8FD9;&#x4E9B;&#x8BBE;&#x5907;&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x5C31;&#x662F;&#xFF0C;&#x4EE5;&#x4E00;&#x79CD;&#x4EBA;&#x7C7B;&#x53EF;&#x9605;&#x8BFB;&#x7684;&#x5F62;&#x5F0F;&#x5C06;&#x4FE1;&#x606F;&#x5728;&#x8FD9;&#x4E9B;&#x8BBE;&#x5907;&#x4E0A;&#x663E;&#x793A;&#x51FA;&#x6765;&#x4F9B;&#x4EBA;&#x9605;&#x8BFB;&#x7406;&#x89E3;&#x3002;&#x4E3A;&#x4FDD;&#x8BC1;&#x4EBA;&#x7C7B;&#x548C;&#x8BBE;&#x5907;&#xFF0C;&#x8BBE;&#x5907;&#x548C;&#x8BA1;&#x7B97;&#x673A;&#x4E4B;&#x95F4;&#x80FD;&#x8FDB;&#x884C;&#x6B63;&#x786E;&#x7684;&#x4FE1;&#x606F;&#x4EA4;&#x6362;&#xFF0C;&#x4EBA;&#x4EEC;&#x7F16;&#x5236;&#x7684;&#x7EDF;&#x4E00;&#x7684;&#x4FE1;&#x606F;&#x4EA4;&#x6362;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;<strong>ASCII&#x7801;</strong>&#xFF08;<code>American Standard Code for Information Interchange</code>&#xFF09;&#x8868;&#xFF0C;&#x5B83;&#x7684;&#x5168;&#x79F0;&#x662F;&#x201C;&#x7F8E;&#x56FD;&#x4FE1;&#x606F;&#x4EA4;&#x6362;&#x6807;&#x51C6;&#x4EE3;&#x7801;&#x201D;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x5B57;&#x7B26;</th>
+<th style="text-align:center">&#x7F16;&#x7801;</th>
+<th style="text-align:center">&#x5B57;&#x7B26;</th>
+<th style="text-align:center">&#x7F16;&#x7801;</th>
+<th style="text-align:center">&#x5B57;&#x7B26;</th>
+<th style="text-align:center">&#x7F16;&#x7801;</th>
+<th style="text-align:center">&#x5B57;&#x7B26;</th>
+<th style="text-align:center">&#x7F16;&#x7801;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">nul</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">sp</td>
+<td style="text-align:center">32</td>
+<td style="text-align:center">@</td>
+<td style="text-align:center">64</td>
+<td style="text-align:center">&apos;</td>
+<td style="text-align:center">96</td>
+</tr>
+<tr>
+<td style="text-align:center">soh</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">!</td>
+<td style="text-align:center">33</td>
+<td style="text-align:center">A</td>
+<td style="text-align:center">65</td>
+<td style="text-align:center">a</td>
+<td style="text-align:center">97</td>
+</tr>
+<tr>
+<td style="text-align:center">stx</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">&quot;</td>
+<td style="text-align:center">34</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">66</td>
+<td style="text-align:center">b</td>
+<td style="text-align:center">98</td>
+</tr>
+<tr>
+<td style="text-align:center">etx</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">#</td>
+<td style="text-align:center">35</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">67</td>
+<td style="text-align:center">c</td>
+<td style="text-align:center">99</td>
+</tr>
+<tr>
+<td style="text-align:center">eot</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">$</td>
+<td style="text-align:center">36</td>
+<td style="text-align:center">D</td>
+<td style="text-align:center">68</td>
+<td style="text-align:center">d</td>
+<td style="text-align:center">100</td>
+</tr>
+<tr>
+<td style="text-align:center">enq</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">%</td>
+<td style="text-align:center">37</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">69</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">101</td>
+</tr>
+<tr>
+<td style="text-align:center">ack</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">&amp;</td>
+<td style="text-align:center">38</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">70</td>
+<td style="text-align:center">f</td>
+<td style="text-align:center">102</td>
+</tr>
+<tr>
+<td style="text-align:center">bel</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">`</td>
+<td style="text-align:center">39</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">71</td>
+<td style="text-align:center">g</td>
+<td style="text-align:center">103</td>
+</tr>
+<tr>
+<td style="text-align:center">bs</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">(</td>
+<td style="text-align:center">40</td>
+<td style="text-align:center">H</td>
+<td style="text-align:center">72</td>
+<td style="text-align:center">h</td>
+<td style="text-align:center">104</td>
+</tr>
+<tr>
+<td style="text-align:center">ht</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">)</td>
+<td style="text-align:center">41</td>
+<td style="text-align:center">I</td>
+<td style="text-align:center">73</td>
+<td style="text-align:center">i</td>
+<td style="text-align:center">105</td>
+</tr>
+<tr>
+<td style="text-align:center">nl</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">*</td>
+<td style="text-align:center">42</td>
+<td style="text-align:center">J</td>
+<td style="text-align:center">74</td>
+<td style="text-align:center">j</td>
+<td style="text-align:center">106</td>
+</tr>
+<tr>
+<td style="text-align:center">vt</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">43</td>
+<td style="text-align:center">K</td>
+<td style="text-align:center">75</td>
+<td style="text-align:center">k</td>
+<td style="text-align:center">107</td>
+</tr>
+<tr>
+<td style="text-align:center">ff</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">,</td>
+<td style="text-align:center">44</td>
+<td style="text-align:center">L</td>
+<td style="text-align:center">76</td>
+<td style="text-align:center">l</td>
+<td style="text-align:center">108</td>
+</tr>
+<tr>
+<td style="text-align:center">er</td>
+<td style="text-align:center">13</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">45</td>
+<td style="text-align:center">M</td>
+<td style="text-align:center">77</td>
+<td style="text-align:center">m</td>
+<td style="text-align:center">109</td>
+</tr>
+<tr>
+<td style="text-align:center">so</td>
+<td style="text-align:center">14</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">46</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">78</td>
+<td style="text-align:center">n</td>
+<td style="text-align:center">110</td>
+</tr>
+<tr>
+<td style="text-align:center">si</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">47</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">79</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">111</td>
+</tr>
+<tr>
+<td style="text-align:center">dle</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">48</td>
+<td style="text-align:center">P</td>
+<td style="text-align:center">80</td>
+<td style="text-align:center">p</td>
+<td style="text-align:center">112</td>
+</tr>
+<tr>
+<td style="text-align:center">dc1</td>
+<td style="text-align:center">17</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">49</td>
+<td style="text-align:center">Q</td>
+<td style="text-align:center">81</td>
+<td style="text-align:center">q</td>
+<td style="text-align:center">113</td>
+</tr>
+<tr>
+<td style="text-align:center">dc2</td>
+<td style="text-align:center">18</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">82</td>
+<td style="text-align:center">r</td>
+<td style="text-align:center">114</td>
+</tr>
+<tr>
+<td style="text-align:center">dc3</td>
+<td style="text-align:center">19</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">51</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">83</td>
+<td style="text-align:center">s</td>
+<td style="text-align:center">115</td>
+</tr>
+<tr>
+<td style="text-align:center">dc4</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">52</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">84</td>
+<td style="text-align:center">t</td>
+<td style="text-align:center">116</td>
+</tr>
+<tr>
+<td style="text-align:center">nak</td>
+<td style="text-align:center">21</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">53</td>
+<td style="text-align:center">U</td>
+<td style="text-align:center">85</td>
+<td style="text-align:center">u</td>
+<td style="text-align:center">117</td>
+</tr>
+<tr>
+<td style="text-align:center">syn</td>
+<td style="text-align:center">22</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">54</td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">86</td>
+<td style="text-align:center">v</td>
+<td style="text-align:center">118</td>
+</tr>
+<tr>
+<td style="text-align:center">etb</td>
+<td style="text-align:center">23</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">55</td>
+<td style="text-align:center">W</td>
+<td style="text-align:center">87</td>
+<td style="text-align:center">w</td>
+<td style="text-align:center">119</td>
+</tr>
+<tr>
+<td style="text-align:center">can</td>
+<td style="text-align:center">24</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">56</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">88</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">120</td>
+</tr>
+<tr>
+<td style="text-align:center">em</td>
+<td style="text-align:center">25</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">57</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">89</td>
+<td style="text-align:center">y</td>
+<td style="text-align:center">121</td>
+</tr>
+<tr>
+<td style="text-align:center">sub</td>
+<td style="text-align:center">26</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">58</td>
+<td style="text-align:center">Z</td>
+<td style="text-align:center">90</td>
+<td style="text-align:center">z</td>
+<td style="text-align:center">122</td>
+</tr>
+<tr>
+<td style="text-align:center">esc</td>
+<td style="text-align:center">27</td>
+<td style="text-align:center">;</td>
+<td style="text-align:center">59</td>
+<td style="text-align:center">[</td>
+<td style="text-align:center">91</td>
+<td style="text-align:center">{</td>
+<td style="text-align:center">123</td>
+</tr>
+<tr>
+<td style="text-align:center">fs</td>
+<td style="text-align:center">28</td>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">60</td>
+<td style="text-align:center">\</td>
+<td style="text-align:center">92</td>
+<td style="text-align:center">`</td>
+<td style="text-align:center">`</td>
+<td>124</td>
+</tr>
+<tr>
+<td style="text-align:center">gs</td>
+<td style="text-align:center">29</td>
+<td style="text-align:center">=</td>
+<td style="text-align:center">61</td>
+<td style="text-align:center">]</td>
+<td style="text-align:center">93</td>
+<td style="text-align:center">}</td>
+<td style="text-align:center">125</td>
+</tr>
+<tr>
+<td style="text-align:center">re</td>
+<td style="text-align:center">30</td>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">62</td>
+<td style="text-align:center">^</td>
+<td style="text-align:center">94</td>
+<td style="text-align:center">~</td>
+<td style="text-align:center">126</td>
+</tr>
+<tr>
+<td style="text-align:center">us</td>
+<td style="text-align:center">31</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">63</td>
+<td style="text-align:center">_</td>
+<td style="text-align:center">95</td>
+<td style="text-align:center">del</td>
+<td style="text-align:center">127</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;">&#x53C2;&#x8003;&#x94FE;&#x63A5;</h3>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/KeyboardEvent/keyCode" target="_blank">MDN KeyboardEvent.keyCode</a></p>
+<p><a href="https://www.cnblogs.com/xcsn/p/3413074.html" target="_blank">&#x952E;&#x76D8;&#x4E8B;&#x4EF6;keydown&#x3001;keypress&#x3001;keyup&#x968F;&#x7B14;&#x6574;&#x7406;&#x603B;&#x7ED3;&#xFF08;&#x6458;&#x6284;&#xFF09;</a> </p>
+<p><footer class="page-footer"><span class="copyright">&#xA9; lizhao all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-08-07 21:12:37
+</span></footer></p>
+<div id="gitalk-container"></div> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="03-极细边框（1px边框）实现方式.html" class="navigation navigation-prev " aria-label="Previous page: 极细边框（1px边框）实现方式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="05-谈谈前端跨域访问及其解决方法.html" class="navigation navigation-next " aria-label="Next page: 谈谈前端跨域访问及其解决方法">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"限制input输入的方法（监听键盘事件）","level":"3.4","depth":1,"next":{"title":"谈谈前端跨域访问及其解决方法","level":"3.5","depth":1,"path":"frontend/05-谈谈前端跨域访问及其解决方法.md","ref":"frontend/05-谈谈前端跨域访问及其解决方法.md","articles":[]},"previous":{"title":"极细边框（1px边框）实现方式","level":"3.3","depth":1,"path":"frontend/03-极细边框（1px边框）实现方式.md","ref":"frontend/03-极细边框（1px边框）实现方式.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","summary","theme-comscore","splitter","fontsettings","tbfed-pagefooter","mygitalk","theme-default","pageview-count","accordion","sharing-plus","klipse","back-to-top-button","chapter-fold"],"root":"/","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"summary":{},"splitter":{},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"mygitalk":{"flipMoveOptions":{},"clientID":"35175582adb321d85634","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["lizh"],"createIssueManually":false,"distractionFreeMode":false,"repo":"https://github.com/1927344728/frontend-knowledge","owner":"lizh","enableHotKey":true,"clientSecret":"2e60c4d61474ec23e752f127e838aa2039e0433e","pagerDirection":"last","labels":["Gitalk"]},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"twitter":false,"vk":false,"pocket":false,"google":true,"qzone":true},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"search-plus":{}},"theme":"default","page":{"title":"前端知识库(lizh)"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"authorName":"lizhao"},"title":"LIZHAO","gitbook":"3.2.3"},"file":{"path":"frontend/04-限制input输入的方法（监听键盘事件）.md","mtime":"2020-08-07T13:12:37.222Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-12T14:38:00.393Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

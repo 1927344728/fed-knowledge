@@ -1,0 +1,1549 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Node.js的三种调试方法 · LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02-npm常用命令.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../bugs/brower-iphone X 适配问题.html">
+            
+                <a href="../../bugs/brower-iphone X 适配问题.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    iphone X 适配问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../bugs/brower-web常见问题概览.html">
+            
+                <a href="../../bugs/brower-web常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    web常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../bugs/css-常见问题概览.html">
+            
+                <a href="../../bugs/css-常见问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../bugs/html-常见问题概览.html">
+            
+                <a href="../../bugs/html-常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../bugs/js-常见问题概览.html">
+            
+                <a href="../../bugs/js-常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    JS常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../bugs/js-移动端兼容性问题概览.html">
+            
+                <a href="../../bugs/js-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../bugs/js-蒙层底部页面跟随滚动.html">
+            
+                <a href="../../bugs/js-蒙层底部页面跟随滚动.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    蒙层底部页面跟随滚动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../bugs/小程序开发中遇到的问题.html">
+            
+                <a href="../../bugs/小程序开发中遇到的问题.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    小程序开发中遇到的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">css探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../css探索系列/00-关于css.html">
+            
+                <a href="../../css探索系列/00-关于css.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../css探索系列/01-CSS探索系列-margin.html">
+            
+                <a href="../../css探索系列/01-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS探索系列之Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../css探索系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../../css探索系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    由z-index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../css探索系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../../css探索系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../css探索系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../../css探索系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS探索系列之flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../../css探索系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../../css探索系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    CSS3探索系列之gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../../css探索系列/06-为什么使用 PostCSS 处理 CSS ？.html">
+            
+                <a href="../../css探索系列/06-为什么使用 PostCSS 处理 CSS ？.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    为什么使用 PostCSS 处理 CSS ？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../../css探索系列/14-CSS探索系列-line-height.html">
+            
+                <a href="../../css探索系列/14-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    css line-height详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../frontend/01-聊一聊Cookie的一些问题.html">
+            
+                <a href="../../frontend/01-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../frontend/02-如何理解HTTP响应的状态码.html">
+            
+                <a href="../../frontend/02-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../frontend/03-极细边框（1px边框）实现方式.html">
+            
+                <a href="../../frontend/03-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../frontend/04-限制input输入的方法（监听键盘事件）.html">
+            
+                <a href="../../frontend/04-限制input输入的方法（监听键盘事件）.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    限制input输入的方法（监听键盘事件）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../frontend/05-谈谈前端跨域访问及其解决方法.html">
+            
+                <a href="../../frontend/05-谈谈前端跨域访问及其解决方法.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    谈谈前端跨域访问及其解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../frontend/06-sublime3 插件管理工具的正确安装及常用插件.html">
+            
+                <a href="../../frontend/06-sublime3 插件管理工具的正确安装及常用插件.html">
+            
+                    
+                        <b>3.6.</b>
+                    
+                    sublime3 插件管理工具的正确安装及常用插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../frontend/07-如何保证高质量代码（eslint+stylelint+husky+lint-staged+prettier）  .html">
+            
+                <a href="../../frontend/07-如何保证高质量代码（eslint+stylelint+husky+lint-staged+prettier）  .html">
+            
+                    
+                        <b>3.7.</b>
+                    
+                    如何保证高质量代码（eslint+stylelint+husky+lint-staged+prettier）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../../frontend/08-Charles安装及使用.html">
+            
+                <a href="../../frontend/08-Charles安装及使用.html">
+            
+                    
+                        <b>3.8.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../../frontend/09-如何监控前端异常？.html">
+            
+                <a href="../../frontend/09-如何监控前端异常？.html">
+            
+                    
+                        <b>3.9.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../../frontend/10-JavaScript控制页面滚动.html">
+            
+                <a href="../../frontend/10-JavaScript控制页面滚动.html">
+            
+                    
+                        <b>3.10.</b>
+                    
+                    JavaScript控制页面滚动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../../frontend/11-H5页面的跳转、刷新、回退+刷新.html">
+            
+                <a href="../../frontend/11-H5页面的跳转、刷新、回退+刷新.html">
+            
+                    
+                        <b>3.11.</b>
+                    
+                    H5页面的跳转、刷新、回退+刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../../frontend/12-浏览器内核、JS 引擎及其工作原理.html">
+            
+                <a href="../../frontend/12-浏览器内核、JS 引擎及其工作原理.html">
+            
+                    
+                        <b>3.12.</b>
+                    
+                    浏览器内核、JS 引擎及其工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../../frontend/14-前端模块化：CommonJS,AMD,CMD,ES6.html">
+            
+                <a href="../../frontend/14-前端模块化：CommonJS,AMD,CMD,ES6.html">
+            
+                    
+                        <b>3.13.</b>
+                    
+                    前端模块化编程：CommonJS、AMD、CMD、UMD、ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="../../frontend/CSS换主题换肤方法总结.html">
+            
+                <a href="../../frontend/CSS换主题换肤方法总结.html">
+            
+                    
+                        <b>3.14.</b>
+                    
+                    CSS换主题换肤方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" >
+            
+                <span>
+            
+                    
+                        <b>3.15.</b>
+                    
+                    Git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.15.1" data-path="../../frontend/Git/01-Git安装、使用及常用命令.html">
+            
+                <a href="../../frontend/Git/01-Git安装、使用及常用命令.html">
+            
+                    
+                        <b>3.15.1.</b>
+                    
+                    Git安装、使用及常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15.2" data-path="../../frontend/Git/02-git clone速度太慢的解决办法.html">
+            
+                <a href="../../frontend/Git/02-git clone速度太慢的解决办法.html">
+            
+                    
+                        <b>3.15.2.</b>
+                    
+                    git clone速度太慢的解决办法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15.3" data-path="../../frontend/Git/03-Git Bash中文乱码.html">
+            
+                <a href="../../frontend/Git/03-Git Bash中文乱码.html">
+            
+                    
+                        <b>3.15.3.</b>
+                    
+                    Git Bash中文乱码.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15.4" data-path="../../frontend/Git/04-github SSH.html">
+            
+                <a href="../../frontend/Git/04-github SSH.html">
+            
+                    
+                        <b>3.15.4.</b>
+                    
+                    github SSH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15.5" data-path="../../frontend/Git/05-git报错.html">
+            
+                <a href="../../frontend/Git/05-git报错.html">
+            
+                    
+                        <b>3.15.5.</b>
+                    
+                    git报错
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="../../frontend/GitBook/">
+            
+                <a href="../../frontend/GitBook/">
+            
+                    
+                        <b>3.16.</b>
+                    
+                    GitBook
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.16.1" data-path="../../frontend/GitBook/00-gitbook入门篇.html">
+            
+                <a href="../../frontend/GitBook/00-gitbook入门篇.html">
+            
+                    
+                        <b>3.16.1.</b>
+                    
+                    Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16.2" data-path="../../frontend/GitBook/00-gitbook插件篇.html">
+            
+                <a href="../../frontend/GitBook/00-gitbook插件篇.html">
+            
+                    
+                        <b>3.16.2.</b>
+                    
+                    Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16.3" data-path="../../frontend/GitBook/00-gitbook进阶篇.html">
+            
+                <a href="../../frontend/GitBook/00-gitbook进阶篇.html">
+            
+                    
+                        <b>3.16.3.</b>
+                    
+                    Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="../../frontend/Javascript加密混淆.html">
+            
+                <a href="../../frontend/Javascript加密混淆.html">
+            
+                    
+                        <b>3.17.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="../../frontend/Vue如何导入TypeScript.html">
+            
+                <a href="../../frontend/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>3.18.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.19" data-path="../../frontend/webpack构建优化篇.html">
+            
+                <a href="../../frontend/webpack构建优化篇.html">
+            
+                    
+                        <b>3.19.</b>
+                    
+                    webpack构建优化篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.20" data-path="../../frontend/移动端PDF预览.html">
+            
+                <a href="../../frontend/移动端PDF预览.html">
+            
+                    
+                        <b>3.20.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.21" data-path="../../frontend/纯CSS绘制箭头.html">
+            
+                <a href="../../frontend/纯CSS绘制箭头.html">
+            
+                    
+                        <b>3.21.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.22" data-path="../../frontend/网站性能测量和优化方法.html">
+            
+                <a href="../../frontend/网站性能测量和优化方法.html">
+            
+                    
+                        <b>3.22.</b>
+                    
+                    网站性能测量和数据统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">html探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../html探索系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../../html探索系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    HTML元素的宽高度及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../html探索系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../../html探索系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">js探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../00-关于Javascript.html">
+            
+                <a href="../00-关于Javascript.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    00-关于Javascript.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../01-谈谈 JavaScript 的作用域和上下文.html">
+            
+                <a href="../01-谈谈 JavaScript 的作用域和上下文.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    谈谈 JavaScript 的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../02-JavaScript Date的使用和日期时间字符串格式.html">
+            
+                <a href="../02-JavaScript Date的使用和日期时间字符串格式.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    JavaScript Date的使用和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../03-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../03-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../04-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../04-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../05-Canvas基础入门篇.html">
+            
+                <a href="../05-Canvas基础入门篇.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../06-SVG基础入门篇.html">
+            
+                <a href="../06-SVG基础入门篇.html">
+            
+                    
+                        <b>5.7.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../javaScript笔记/">
+            
+                <a href="../javaScript笔记/">
+            
+                    
+                        <b>5.8.</b>
+                    
+                    javaScript笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.8.1" data-path="../javaScript笔记/JavaScript笔记之Promise.html">
+            
+                <a href="../javaScript笔记/JavaScript笔记之Promise.html">
+            
+                    
+                        <b>5.8.1.</b>
+                    
+                    JavaScript笔记之Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8.2" data-path="../javaScript笔记/JavaScript笔记之Touch事件.html">
+            
+                <a href="../javaScript笔记/JavaScript笔记之Touch事件.html">
+            
+                    
+                        <b>5.8.2.</b>
+                    
+                    JavaScript笔记之Touch事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>5.9.</b>
+                    
+                    nodeJs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="5.9.1" data-path="00-Node.js的三种调试方法.html">
+            
+                <a href="00-Node.js的三种调试方法.html">
+            
+                    
+                        <b>5.9.1.</b>
+                    
+                    Node.js的三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9.2" data-path="02-npm常用命令.html">
+            
+                <a href="02-npm常用命令.html">
+            
+                    
+                        <b>5.9.2.</b>
+                    
+                    npm常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">tech</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    内网穿透（web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">代码规范</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../代码规范/00-W3C代码标准规范.html">
+            
+                <a href="../../代码规范/00-W3C代码标准规范.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    W3C代码标准规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../../代码规范/CSS代码规范.html">
+            
+                <a href="../../代码规范/CSS代码规范.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    CSS代码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../../代码规范/HTML代码规范.html">
+            
+                <a href="../../代码规范/HTML代码规范.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    HTML代码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../../代码规范/JS代码规范.html">
+            
+                <a href="../../代码规范/JS代码规范.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    JS代码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../../代码规范/其他前端规范.html">
+            
+                <a href="../../代码规范/其他前端规范.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    其他前端规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Node.js的三种调试方法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="nodejs&#x7684;&#x4E09;&#x79CD;&#x8C03;&#x8BD5;&#x65B9;&#x6CD5;">Node.js&#x7684;&#x4E09;&#x79CD;&#x8C03;&#x8BD5;&#x65B9;&#x6CD5;</h2>
+<h3 id="&#x5185;&#x7F6E;&#x8C03;&#x8BD5;&#xFF08;node-inspector&#xFF09;">&#x5185;&#x7F6E;&#x8C03;&#x8BD5;&#xFF08;Node inspector&#xFF09;</h3>
+<p><code>Node.js</code> &#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x5916;&#x7684;&#x8C03;&#x8BD5;&#x5B9E;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x53EF;&#x901A;&#x8FC7; V8 &#x68C0;&#x67E5;&#x5668;&#x6216;&#x5185;&#x7F6E;&#x7684;&#x8C03;&#x8BD5;&#x5BA2;&#x6237;&#x7AEF;&#x8BBF;&#x95EE;&#x3002; </p>
+<p><strong>&#x542F;&#x52A8;&#xFF1A;</strong><code>node inspect --port=[9229] [nodeFile]</code></p>
+<h4 id="&#x5355;&#x6B65;&#x6267;&#x884C;">&#x5355;&#x6B65;&#x6267;&#x884C;</h4>
+<ul>
+<li><code>cont</code>, <code>c</code>: &#x7EE7;&#x7EED;&#x6267;&#x884C;&#x3002;</li>
+<li><code>next</code>, <code>n</code>: &#x5355;&#x6B65;&#x6267;&#x884C;&#x4E0B;&#x4E00;&#x884C;&#x3002;</li>
+<li><code>step</code>, <code>s</code>: &#x5355;&#x6B65;&#x8FDB;&#x5165;&#x3002;</li>
+<li><code>out</code>, <code>o</code>: &#x5355;&#x6B65;&#x9000;&#x51FA;&#x3002;</li>
+<li><code>pause</code>: &#x6682;&#x505C;&#x8FD0;&#x884C;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#xFF08;&#x7C7B;&#x4F3C;&#x4E8E;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x4E2D;&#x7684;&#x6682;&#x505C;&#x6309;&#x94AE;&#xFF09;&#x3002;</li>
+</ul>
+<h4 id="&#x65AD;&#x70B9;">&#x65AD;&#x70B9;</h4>
+<ul>
+<li><code>setBreakpoint()</code>, <code>sb()</code>: &#x5728;&#x5F53;&#x524D;&#x884C;&#x4E0A;&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;&#x3002;</li>
+<li><code>setBreakpoint(line)</code>, <code>sb(line)</code>: &#x5728;&#x6307;&#x5B9A;&#x884C;&#x4E0A;&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;&#x3002;</li>
+<li><code>setBreakpoint(&apos;fn()&apos;)</code>, <code>sb(...)</code>: &#x5728;&#x51FD;&#x6570;&#x4F53;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x8BED;&#x53E5;&#x4E0A;&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;&#x3002;</li>
+<li><code>setBreakpoint(&apos;script.js&apos;, 1)</code>, <code>sb(...)</code>: &#x5728; <code>script.js</code> &#x7684;&#x7B2C;&#x4E00;&#x884C;&#x4E0A;&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;&#x3002;</li>
+<li><code>clearBreakpoint(&apos;script.js&apos;, 1)</code>, <code>cb(...)</code>: &#x6E05;&#x9664; <code>script.js</code> &#x4E2D;&#x7B2C;&#x4E00;&#x884C;&#x4E0A;&#x7684;&#x65AD;&#x70B9;&#x3002;</li>
+</ul>
+<h4 id="&#x4FE1;&#x606F;">&#x4FE1;&#x606F;</h4>
+<ul>
+<li><code>backtrace</code>, <code>bt</code>: &#x6253;&#x5370;&#x5F53;&#x524D;&#x6267;&#x884C;&#x5E27;&#x7684;&#x56DE;&#x6EAF;&#x3002;</li>
+<li><code>list(5)</code>: &#x5217;&#x51FA;&#x811A;&#x672C;&#x6E90;&#x7801;&#x7684; 5 &#x884C;&#x4E0A;&#x4E0B;&#x6587;&#xFF08;&#x524D;&#x540E;&#x5404; 5 &#x884C;&#xFF09;&#x3002;</li>
+<li><code>watch(expr)</code>: &#x5C06;&#x8868;&#x8FBE;&#x5F0F;&#x6DFB;&#x52A0;&#x5230;&#x76D1;&#x89C6;&#x5217;&#x8868;&#x3002;</li>
+<li><code>unwatch(expr)</code>: &#x4ECE;&#x76D1;&#x89C6;&#x5217;&#x8868;&#x4E2D;&#x79FB;&#x9664;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</li>
+<li><code>watchers</code>: &#x5217;&#x51FA;&#x6240;&#x6709;&#x7684;&#x76D1;&#x89C6;&#x5668;&#x548C;&#x5B83;&#x4EEC;&#x7684;&#x503C;&#xFF08;&#x5728;&#x6BCF;&#x4E2A;&#x65AD;&#x70B9;&#x4E0A;&#x81EA;&#x52A8;&#x5730;&#x5217;&#x51FA;&#xFF09;&#x3002;</li>
+<li><code>repl</code>: &#x6253;&#x5F00;&#x8C03;&#x8BD5;&#x5668;&#x7684; repl&#xFF0C;&#x7528;&#x4E8E;&#x8C03;&#x8BD5;&#x811A;&#x672C;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x7684;&#x6267;&#x884C;&#x3002;</li>
+<li><code>exec expr</code>: &#x5728;&#x8C03;&#x8BD5;&#x811A;&#x672C;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</li>
+</ul>
+<h4 id="&#x6267;&#x884C;&#x7684;&#x63A7;&#x5236;">&#x6267;&#x884C;&#x7684;&#x63A7;&#x5236;</h4>
+<ul>
+<li><code>run</code>: &#x8FD0;&#x884C;&#x811A;&#x672C;&#xFF08;&#x5728;&#x8C03;&#x8BD5;&#x5668;&#x542F;&#x52A8;&#x65F6;&#x81EA;&#x52A8;&#x5730;&#x8FD0;&#x884C;&#xFF09;&#x3002;</li>
+<li><code>restart</code>: &#x91CD;&#x542F;&#x811A;&#x672C;&#x3002;</li>
+<li><code>kill</code>: &#x6740;&#x6B7B;&#x811A;&#x672C;&#x3002;</li>
+</ul>
+<h4 id="&#x6742;&#x9879;">&#x6742;&#x9879;</h4>
+<ul>
+<li><code>scripts</code>: &#x5217;&#x51FA;&#x6240;&#x6709;&#x5DF2;&#x52A0;&#x8F7D;&#x7684;&#x811A;&#x672C;&#x3002;</li>
+<li><code>version</code>: &#x663E;&#x793A; V8 &#x7684;&#x7248;&#x672C;&#x3002;</li>
+</ul>
+<p>&#x8FD0;&#x884C;&#x547D;&#x4EE4;&#x884C;&#xFF0C;&#x7EC8;&#x7AEF;&#x63D0;&#x793A;&#x9519;&#x8BEF;&#xFF1A;<code>Timeout (2000) waiting for 127.0.0.1:9229 to be free</code>&#x3002;&#x8FD9;&#x5E76;&#x4E0D;&#x662F;&#x7AEF;&#x53E3;&#x88AB;&#x5360;&#x7528;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x662F;<code>node inspect</code>&#x5728;&#x6253;&#x5F00;&#x7AEF;&#x53E3;&#x8D85;&#x65F6;&#x7684;&#x4E00;&#x4E2A;bug&#x3002;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x5347;&#x7EA7;<code>node-inspect</code>&#x7248;&#x672C;&#xFF0C;&#x6216;&#x8005;&#x4FEE;&#x6539;<code>node.exe</code>&#x7684;&#x8D85;&#x65F6;&#x914D;&#x7F6E;&#x3002;<a href="https://github.com/nodejs/node-inspect/issues/48" target="_blank">https://github.com/nodejs/node-inspect/issues/48</a></p>
+<h3 id="v8-&#x68C0;&#x67E5;&#x5668;">V8 &#x68C0;&#x67E5;&#x5668;</h3>
+<p><code>V8</code> &#x68C0;&#x67E5;&#x5668;&#x7684;&#x96C6;&#x6210;&#x5141;&#x8BB8;&#x5C06; <code>Chrome</code>&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x9644;&#x52A0;&#x5230; <code>Node.js</code> &#x5B9E;&#x4F8B;&#xFF0C;&#x4EE5;&#x4FBF;&#x8FDB;&#x884C;&#x8C03;&#x8BD5;&#x548C;&#x6027;&#x80FD;&#x5206;&#x6790;&#x3002; &#x5B83;&#x4F7F;&#x7528;&#x4E86; <a href="http://nodejs.cn/s/YpFEVu" target="_blank">Chrome &#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x534F;&#x8BAE;</a>&#x3002;</p>
+<p><strong>&#x542F;&#x52A8;&#xFF1A;</strong></p>
+<pre><code class="lang-shell">node --inspect [nodeFile]
+# &#x6307;&#x5B9A;&#x7AEF;&#x53E3;
+node --inspect=[port] [nodeFile]
+# &#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;&#x7684;&#x7B2C;&#x4E00;&#x884C;&#x8FDB;&#x884C;&#x65AD;&#x70B9;
+node --inspect-brk [nodeFile]
+</code></pre>
+<pre><code class="lang-console">$ node --inspect-brk debug/index.js
+Debugger listening on ws://127.0.0.1:9229/1dc7da88-983c-4fbe-a8e3-2d5f256e98af
+For help, see: https://nodejs.org/en/docs/inspector
+Debugger attached.
+</code></pre>
+<p><strong>&#x5F00;&#x59CB;&#x8C03;&#x8BD5;</strong>&#xFF1A;&#x5728; Chrome &#x6D4F;&#x89C8;&#x5668;&#x7684;&#x5730;&#x5740;&#x680F;&#xFF0C;&#x952E;&#x5165; <code>chrome://inspect</code>&#x6216;&#x8005;<code>about:inspect</code>&#xFF0C;&#x56DE;&#x8F66;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E0B;&#x9762;&#x7684;&#x754C;&#x9762;&#x3002;</p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200802195554438.png" alt="image-20200802195554438"></p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200802195718540.png" alt="image-20200802195718540"></p>
+<h4 id="nim">NIM</h4>
+<p>&#x6BCF;&#x6B21;&#x8C03;&#x8BD5; <code>Node.js</code>&#x90FD;&#x8981;&#x6253;&#x5F00;&#x9690;&#x85CF;&#x90A3;&#x4E48;&#x6DF1;&#x7684;&#x5165;&#x53E3;&#x662F;&#x4E0D;&#x662F;&#x5F88;&#x70E6;&#xFF1F;&#x8FD8;&#x597D;&#x6211;&#x4EEC;&#x6709; <code>NIM</code>&#x3002;<code>NIM&#xFF08;Node Inspector Manager&#xFF09;</code>&#x662F;&#x4E00;&#x4E2A; <code>Chrome</code>&#x63D2;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x5FEB;&#x6377;&#x5730;&#x6253;&#x5F00; <code>DevTools</code>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x81EA;&#x52A8;&#x53D1;&#x73B0;&#x5E76;&#x6253;&#x5F00; <code>DevTools</code>&#x3002;</p>
+<h4 id="inspect-process">inspect-process</h4>
+<p>&#x5982;&#x679C;&#x4F60;&#x89C9;&#x5F97; <code>NIM</code>&#x7528;&#x8D77;&#x6765;&#x4E5F;&#x9EBB;&#x70E6;&#xFF0C;&#x90A3;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981;<code>inspect-process</code>&#x3002;</p>
+<p>&#x5168;&#x5C40;&#x5B89;&#x88C5;&#xFF1A;<code>npm i inspect-process -g</code>
+&#x547D;&#x4EE4;&#xFF1A;<code>inspect app.js</code>
+<code>inspect-process</code> &#x4F1A;&#x81EA;&#x52A8;&#x8C03;&#x8D77; <code>Chrome DevTools</code>&#xFF0C;&#x7136;&#x540E;&#x5B9A;&#x4F4D;&#x5230;<code>app.js</code>&#xFF0C;&#x5176;&#x4F59;&#x7528;&#x6CD5;&#x4E0E; <code>Chrome DevTools</code> &#x4E00;&#x81F4;&#x3002;</p>
+<h4 id="processdebugprocess">process._debugProcess</h4>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A; <code>Node.js</code> &#x8FDB;&#x7A0B;&#x5DF2;&#x7ECF;&#x542F;&#x52A8;&#xFF0C;&#x6CA1;&#x6709;&#x6DFB;&#x52A0; <code>&#x2014;inspect</code> &#x53C2;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x60F3;&#x91CD;&#x542F;&#xFF08;&#x4F1A;&#x4E22;&#x5931;&#x73B0;&#x573A;&#xFF09;&#x53C8;&#x60F3;&#x8C03;&#x8BD5;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x8FD9;&#x65F6;&#x53EF;&#x4EE5;&#x7528; <code>process._debugProcess</code>&#x3002;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li><p>&#x901A;&#x8FC7; <code>ps</code>&#x547D;&#x4EE4;&#x6216;&#x8005; <code>pgrep -n node</code> &#x67E5;&#x770B;&#x5F53;&#x524D;&#x542F;&#x52A8;&#x7684; <code>Node.js</code> &#x8FDB;&#x7A0B;&#x7684; <code>pid</code>&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;53911&#x3002;</p>
+<pre><code class="lang-shell"> ps ax | grep app.js
+</code></pre>
+</li>
+<li><p>&#x6253;&#x5F00;&#x65B0;&#x7684;&#x7EC8;&#x7AEF;&#xFF0C;&#x8FD0;&#x884C;&#xFF1A;<code>node -e &quot;process._debugProcess(53911)&quot;</code>&#xFF0C;&#x539F;&#x6765;&#x7684; <code>Node.js</code> &#x8FDB;&#x7A0B;&#x4F1A;&#x6253;&#x5370;&#x51FA;&#xFF1A;<code>Debugger listening on ws://127.0.0.1:9229/2331fa07-32af-45eb-a1a8-bead7a0ab905</code>&#x3002;</p>
+</li>
+<li><p>&#x8C03;&#x51FA; <code>Chrome DevTools</code> &#x8FDB;&#x884C;&#x8C03;&#x8BD5;&#x3002;</p>
+</li>
+</ol>
+<h4 id="node-inspect-&#x548C;-node---inspect&#x533A;&#x522B;"><a href="https://github.com/nodejs/node-inspect/issues/48" target="_blank">node inspect &#x548C; node --inspect&#x533A;&#x522B;</a></h4>
+<ul>
+<li><code>node --inspect</code>:  &#x8C03;&#x8BD5;app.js&#xFF0C;&#x4F46;&#x66B4;&#x9732;&#x4E86;&#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;&#x63A5;&#x53E3;&#xFF0C;&#x50CF;<code>vscode, Chrome devtools, Intellij</code>&#x7B49;&#x53EF;&#x4EE5;&#x9644;&#x52A0;&#x3002;&#x53E6;&#x5916;&#xFF0C;<code>app.js</code>&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#xFF0C;&#x5E76;&#x53EF;&#x5728;&#x7EC8;&#x7AEF;&#x5B8C;&#x5168;&#x63A7;&#x5236;&#x3002;</li>
+<li><code>node inspect</code>:  &#x5728;<code>node</code>&#x7ED1;&#x5B9A;&#x7684;&#x4EA4;&#x4E92;&#x5F0F;<code>CLI</code>&#x8C03;&#x8BD5;&#x5668;&#x3002;&#x5B83;&#x662F;&#x53EF;&#x4EE5;&#x4EE3;&#x66FF;<code>vscode</code>&#x6216;<code>Chrome devtools</code>&#x7B49;&#x53EF;&#x89C6;&#x5316;&#x8C03;&#x8BD5;&#x5668;&#x3002;&#x53E6;&#x5916;&#xFF0C;<code>CLI</code>&#x8C03;&#x8BD5;&#x5668;&#x53EF;&#x4F7F;&#x7528;<code>node --inspect</code>&#x5728;&#x5355;&#x72EC;&#x7684;&#x8FDB;&#x7A0B;&#x4E2D;&#x542F;&#x52A8;&#x811A;&#x672C;&#x5E76;&#x9644;&#x52A0;&#x5230;&#x5B83;&#x3002;</li>
+</ul>
+<p>&#x4E24;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x66F4;&#x52A0;&#x660E;&#x663E;&#x4F53;&#x73B0;&#x5728;&#x66F4;&#x591A;&#x7684;&#x6D41;&#x548C;&#x652F;&#x6301;&#x8DE8;&#x673A;&#x5668;&#x7684;&#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;:</p>
+<pre><code># Start app.js with the inspect interface exposed, by default on port 9229:
+node --inspect app.js
+# In a separate terminal, start the inspect client against port 9229:
+node inspect -p 9229
+</code></pre><p><code>node --inspect app.js</code>&#x8FD0;&#x884C;&#x540E;&#xFF0C;<code>CLI</code>&#x8C03;&#x8BD5;&#x5668;(<code>node inspect</code>&#x8FDE;&#x63A5;&#x5230;&#x53EF;&#x7528;&#x7684;&#x8C03;&#x8BD5;&#x754C;&#x9762;&#x8FDB;&#x7A0B;&#x4E86;&#xFF08;<code>node --inspect</code>&#xFF09;&#x3002;</p>
+<h3 id="visual-studio-code"><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></h3>
+<ul>
+<li><p><code>Vscode</code>&#x7F16;&#x8F91;&#x5668;&#x7684;&#x8C03;&#x8BD5;&#x662F;&#x901A;&#x8FC7;&#x63D2;&#x4EF6;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;<code>Node.js</code> &#x7684;&#x8C03;&#x8BD5;&#x5668;&#x662F;<code>VS Code</code> &#x9ED8;&#x8BA4;&#x5C31;&#x652F;&#x6301;&#x7684;&#xFF0C;&#x800C;<code>JavaScript</code>&#x7684;&#x8C03;&#x8BD5;&#xFF0C;&#x9700;&#x8981;&#x5B89;&#x88C5;<code>Debugger for Chrome</code>&#x63D2;&#x4EF6;&#x3002;&#x5728;&#x5DE6;&#x4FA7;&#x680F;&#x5355;&#x51FB;<code>Extensions</code>&#x6309;&#x94AE;&#xFF0C;&#x641C;&#x7D22;<code>Debugger for Chrome</code>&#x5E76;&#x70B9;&#x51FB;&#x5B89;&#x88C5;&#x3002;</p>
+</li>
+<li><p>&#x5DE6;&#x4FA7;&#x680F;&#x5355;&#x51FB;<code>run</code>&#x6309;&#x94AE;&#xFF0C;&#x6253;&#x5F00;&#x8C03;&#x8BD5;&#x680F;&#x3002;</p>
+</li>
+<li><p>&#x5355;&#x51FB;&#x5DE6;&#x4FA7;&#x680F;&#x4E0A;&#x65B9;&#x7684;&#x914D;&#x7F6E;&#x6309;&#x94AE;&#xFF0C;&#x6253;&#x5F00;<code>laungh.json</code>&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x3002;</p>
+<pre><code class="lang-json">{
+    <span class="hljs-comment">// Use IntelliSense to learn about possible attributes.</span>
+    <span class="hljs-comment">// Hover to view descriptions of existing attributes.</span>
+    <span class="hljs-comment">// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387</span>
+    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;0.2.0&quot;</span>,
+    <span class="hljs-string">&quot;configurations&quot;</span>: [
+        {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;node-launch&quot;</span>,
+            <span class="hljs-string">&quot;request&quot;</span>: <span class="hljs-string">&quot;launch&quot;</span>,
+            <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Launch NodeJs&quot;</span>,
+            <span class="hljs-string">&quot;skipFiles&quot;</span>: [
+                <span class="hljs-string">&quot;&lt;node_internals&gt;/**&quot;</span>
+            ],
+            <span class="hljs-string">&quot;program&quot;</span>: <span class="hljs-string">&quot;${workspaceFolder}\\nodeDemo\\debug\\index.js&quot;</span>
+        },
+        {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;node-attach&quot;</span>,
+            <span class="hljs-string">&quot;request&quot;</span>: <span class="hljs-string">&quot;attach&quot;</span>,
+            <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Attach by Process ID&quot;</span>,
+            <span class="hljs-string">&quot;processId&quot;</span>: <span class="hljs-string">&quot;${command:PickProcess}&quot;</span>,
+            <span class="hljs-string">&quot;skipFiles&quot;</span>: [
+                <span class="hljs-string">&quot;&lt;node_internals&gt;/**&quot;</span>
+            ]
+        },
+        {
+            <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Launch 15-canvas&#x5165;&#x95E8;&#x7BC7;.html&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;chrome&quot;</span>,
+            <span class="hljs-string">&quot;request&quot;</span>: <span class="hljs-string">&quot;launch&quot;</span>,
+            <span class="hljs-string">&quot;sourceMaps&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;file&quot;</span>: <span class="hljs-string">&quot;${workspaceRoot}\\htmlDemo\\15-canvas&#x5165;&#x95E8;&#x7BC7;.html&quot;</span>
+        }
+    ]
+}
+</code></pre>
+</li>
+<li><p>&#x5728;&#x5DE6;&#x4FA7;&#x680F;&#x4E0A;&#x65B9;&#x9009;&#x62E9;&#x76F8;&#x5E94;&#x7684;&#x542F;&#x52A8;&#x9009;&#x9879;&#x3002;&#x6CE8;&#xFF1A;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x5E76;&#x4E14;&#x672C;&#x5730;&#x6709;<code>index.js</code> &#x6587;&#x4EF6;&#xFF0C;&#x662F;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x4E86;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</p>
+</li>
+<li><p>&#x5728;&#x5DE6;&#x4FA7;&#x680F;&#x4E0A;&#x65B9;&#x5355;&#x51FB;<code>start Debugging</code>&#x3002;</p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200803225503444.png" alt="image-20200803225503444.png"></p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200803225915556.png" alt="image-20200803225915556.png"></p>
+</li>
+</ul>
+<h4 id="&#x914D;&#x7F6E;launchjson">&#x914D;&#x7F6E;launch.json</h4>
+<p><code>VS Code</code> &#x63D0;&#x4F9B;&#x4E86;&#x8C03;&#x8BD5;&#x754C;&#x9762;&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x6CA1;&#x6709;&#x5C06;&#x8C03;&#x8BD5;&#x914D;&#x7F6E;&#x7EDF;&#x4E00;&#x8D77;&#x6765;&#xFF0C;&#x800C;&#x662F;&#x5C06;&#x5B83;&#x7684;&#x81EA;&#x7531;&#x5EA6;&#x5B8C;&#x5168;&#x4EA4;&#x7ED9;&#x8C03;&#x8BD5;&#x5668;&#x672C;&#x8EAB;&#xFF0C;&#x6211;&#x4EEC;&#x5728;<code>launch.json</code> &#x91CC;&#x4E66;&#x5199;&#x7684;&#x8C03;&#x8BD5;&#x914D;&#x7F6E;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x8C03;&#x8BD5;&#x5668;&#x7684;&#x914D;&#x7F6E;&#x6216;&#x8005;&#x53C2;&#x6570;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x5B83;&#x7684;&#x683C;&#x5F0F;&#x662F; <code>JSON</code>&#x3002;</p>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;node&quot;</span>,
+    <span class="hljs-string">&quot;request&quot;</span>: <span class="hljs-string">&quot;launch&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Launch NodeJs&quot;</span>,
+    <span class="hljs-string">&quot;skipFiles&quot;</span>: [
+        <span class="hljs-string">&quot;&lt;node_internals&gt;/**&quot;</span>
+    ],
+    <span class="hljs-string">&quot;program&quot;</span>: <span class="hljs-string">&quot;${workspaceFolder}\\nodeDemo\\debug\\index.js&quot;</span>
+}
+</code></pre>
+<ul>
+<li><p><strong>type&#xFF1A;</strong>&#x5FC5;&#x586B;&#x9879;&#xFF0C;&#x4EE3;&#x8868;&#x7740;&#x8C03;&#x8BD5;&#x5668;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x5B83;&#x51B3;&#x5B9A;&#x4E86;<code>VS Code</code> &#x4F1A;&#x4F7F;&#x7528;&#x54EA;&#x4E2A;&#x8C03;&#x8BD5;&#x63D2;&#x4EF6;&#x6765;&#x8C03;&#x8BD5;&#x4EE3;&#x7801;&#x3002;&#x5177;&#x4F53;&#x503C;&#x5982;&#xFF1A;<code>node</code>&#x3001;<code>chrome</code>&#x3002;</p>
+</li>
+<li><p><strong>request&#xFF1A;</strong>&#x5FC5;&#x586B;&#x9879;&#xFF0C;&#x4EE3;&#x8868;&#x7740;&#x8BE5;&#x5982;&#x4F55;&#x542F;&#x52A8;&#x8C03;&#x8BD5;&#x5668;&#xFF0C;&#x6709;&#x4E24;&#x4E2A;&#x503C;&#xFF1A; <code>launch</code> &#x548C; <code>attach</code>&#x3002;&#x524D;&#x8005;&#x7684;&#x610F;&#x601D;&#x5C31;&#x662F; <code>VSCode</code>&#x4F1A;&#x4F7F;&#x7528;&#x8C03;&#x8BD5;&#x5668;&#x76F4;&#x63A5;&#x542F;&#x52A8;&#x4EE3;&#x7801;&#x5E76;&#x4E14;&#x8C03;&#x8BD5;&#xFF0C;&#x540E;&#x8005;&#x7684;&#x610F;&#x601D;&#x662F;&#x4F60;&#x5DF2;&#x7ECF;&#x6253;&#x5F00;&#x4E86;&#x7A0B;&#x5E8F;&#xFF0C;&#x7136;&#x540E;&#x63A5;&#x901A; <code>Node.js</code> &#x7684;&#x5185;&#x90E8;&#x8C03;&#x8BD5;&#x534F;&#x8BAE;&#x8FDB;&#x884C;&#x8C03;&#x8BD5;&#x3002;</p>
+</li>
+<li><p><strong>name&#xFF1A;</strong>&#x8BE5;&#x914D;&#x7F6E;&#x7684;&#x540D;&#x5B57;&#x3002;&#x8C03;&#x8BD5;&#x65F6;&#xFF0C;&#x53EF;&#x5728;&#x8C03;&#x8BD5;&#x680F;&#x4E0A;&#x65B9;&#x9009;&#x62E9;&#x8FD0;&#x884C;&#x54EA;&#x4E2A;&#x914D;&#x7F6E;&#x3002;</p>
+</li>
+<li><p><strong>program&#xFF1A;</strong>&#x5C31;&#x662F;&#x544A;&#x8BC9; <code>Node.js</code> &#x8C03;&#x8BD5;&#x5668;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x8C03;&#x8BD5;&#x54EA;&#x4E2A;&#x6587;&#x4EF6;&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x652F;&#x6301;&#x9884;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;<code>${file}</code>&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5F53;&#x524D;&#x7F16;&#x8F91;&#x5668;&#x91CC;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#xFF1B;<code>${workspaceFolder}</code> &#x662F;&#x4EE3;&#x8868;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x533A;&#x6587;&#x4EF6;&#x5939;&#x5730;&#x5740;&#x3002;</p>
+<blockquote>
+<p>MacOS &#x6216;&#x8005; Linux &#x7684;&#x4E66;&#x5199;&#x65B9;&#x5F0F; &#xFF1A;<code>&quot;program&quot;: &quot;path/app.js&quot;</code></p>
+<p>Windows &#x5E73;&#x53F0;&#x6307;&#x5B9A;&#x7279;&#x5B9A;&#x7684;&#x4E66;&#x5199;&#x65B9;&#x5F0F;&#xFF1A;<code>program&quot;: path\\app.js</code></p>
+</blockquote>
+</li>
+</ul>
+<p>&#x8FD9;&#x56DB;&#x4E2A;&#x5C5E;&#x6027;&#x4E2D;&#xFF0C;<code>type</code>&#x3001;<code>request</code>&#x662F; <code>VS Code</code> &#x9884;&#x5148;&#x5B9A;&#x4E49;&#x597D;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x6BCF;&#x4E2A;&#x8C03;&#x8BD5;&#x5668;&#x63D2;&#x4EF6;&#x90FD;&#x4F1A;&#x6309;&#x7167;&#x4E00;&#x6837;&#x7684;&#x65B9;&#x5F0F;&#x53BB;&#x9605;&#x8BFB;&#x548C;&#x7406;&#x89E3;&#x5B83;&#x7684;&#x503C;&#xFF1B;&#x800C;<code>name</code>&#x3001;<code>program</code>&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x6700;&#x7EC8;&#x89E3;&#x91CA;&#xFF0C;&#x90FD;&#x662F;&#x7531;&#x8C03;&#x8BD5;&#x63D2;&#x4EF6;&#x63A7;&#x5236;&#x7684;&#xFF0C;<code>VS Code</code> &#x5E76;&#x4E0D;&#x4F1A;&#x5BF9;&#x5B83;&#x4EEC;&#x505A;&#x4EFB;&#x4F55;&#x7684;&#x7EA6;&#x675F;&#x548C;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x867D;&#x7136;&#x6BCF;&#x4E2A;&#x8C03;&#x8BD5;&#x5668;&#x5404;&#x81EA;&#x63A7;&#x5236;&#x7740;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x54EA;&#x4E9B;&#x5C5E;&#x6027;&#xFF0C;&#x4F46;&#x662F;&#x8C03;&#x8BD5;&#x5668;&#x4E4B;&#x95F4;&#x8FD8;&#x662F;&#x6709;&#x5F88;&#x591A;&#x76F8;&#x540C;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x8C03;&#x8BD5;&#x63D2;&#x4EF6;&#x5728;&#x5F88;&#x591A;&#x65F6;&#x5019;&#x90FD;&#x4F1A;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x6765;&#x4EE3;&#x8868;&#x540C;&#x6837;&#x7684;&#x529F;&#x80FD;&#x3002;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x6709;&#x4E0B;&#x9762;&#x8FD9;&#x4E9B;&#xFF1A;</p>
+<ul>
+<li><code>program</code> &#x4E00;&#x822C;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x5C06;&#x8981;&#x8C03;&#x8BD5;&#x7684;&#x6587;&#x4EF6;&#x3002;</li>
+<li><code>stopOnEntry</code>&#xFF0C;&#x5F53;&#x8C03;&#x8BD5;&#x5668;&#x542F;&#x52A8;&#x540E;&#xFF0C;&#x662F;&#x5426;&#x5728;&#x7B2C;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#x5904;&#x6682;&#x505C;&#x4EE3;&#x7801;&#x7684;&#x6267;&#x884C;&#x3002;</li>
+<li><code>args</code> &#x628A;&#x53C2;&#x6570;&#x4F20;&#x7ED9;&#x5C06;&#x8981;&#x88AB;&#x8C03;&#x8BD5;&#x7684;&#x4EE3;&#x7801;&#x3002;</li>
+<li><code>env</code> &#x73AF;&#x5883;&#x53D8;&#x91CF;&#x3002;&#x5927;&#x90E8;&#x5206;&#x8C03;&#x8BD5;&#x5668;&#x90FD;&#x4F7F;&#x7528;&#x5B83;&#x6765;&#x63A7;&#x5236;&#x8C03;&#x8BD5;&#x8FDB;&#x7A0B;&#x7684;&#x7279;&#x6B8A;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x3002;</li>
+<li><code>cwd</code> &#x63A7;&#x5236;&#x8C03;&#x8BD5;&#x7A0B;&#x5E8F;&#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x3002;</li>
+<li><code>port</code> &#x662F;&#x8C03;&#x8BD5;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x7AEF;&#x53E3;&#x3002;</li>
+</ul>
+<h3 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;">&#x53C2;&#x8003;&#x94FE;&#x63A5;</h3>
+<p><a href="https://nodejs.org/en/docs/guides/debugging-getting-started/" target="_blank">node &#x8C03;&#x8BD5;&#x6307;&#x5357;</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2018/03/node-debugger.html" target="_blank">Node &#x8C03;&#x8BD5;&#x5DE5;&#x5177;&#x5165;&#x95E8;&#x6559;&#x7A0B;</a></p>
+<p><a href="https://geek-docs.com/vscode/vscode-tutorials/vscode-code-debugger.html" target="_blank">VSCode &#x4EE3;&#x7801;&#x8C03;&#x8BD5;&#x5668;</a> </p>
+<p><footer class="page-footer"><span class="copyright">&#xA9; lizhao all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-08-03 23:53:12
+</span></footer></p>
+<div id="gitalk-container"></div> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: nodeJs">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02-npm常用命令.html" class="navigation navigation-next " aria-label="Next page: npm常用命令">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Node.js的三种调试方法","level":"5.9.1","depth":2,"next":{"title":"npm常用命令","level":"5.9.2","depth":2,"path":"js探索系列/nodeJs/02-npm常用命令.md","ref":"js探索系列/nodeJs/02-npm常用命令.md","articles":[]},"previous":{"title":"nodeJs","level":"5.9","depth":1,"path":"js探索系列/nodeJs/README.md","ref":"js探索系列/nodeJs/README.md","articles":[{"title":"Node.js的三种调试方法","level":"5.9.1","depth":2,"path":"js探索系列/nodeJs/00-Node.js的三种调试方法.md","ref":"js探索系列/nodeJs/00-Node.js的三种调试方法.md","articles":[]},{"title":"npm常用命令","level":"5.9.2","depth":2,"path":"js探索系列/nodeJs/02-npm常用命令.md","ref":"js探索系列/nodeJs/02-npm常用命令.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","summary","theme-comscore","splitter","fontsettings","tbfed-pagefooter","mygitalk","theme-default","pageview-count","accordion","sharing-plus","klipse","back-to-top-button","chapter-fold"],"root":"/","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"summary":{},"splitter":{},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"mygitalk":{"flipMoveOptions":{},"clientID":"35175582adb321d85634","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["lizh"],"createIssueManually":false,"distractionFreeMode":false,"repo":"https://github.com/1927344728/frontend-knowledge","owner":"lizh","enableHotKey":true,"clientSecret":"2e60c4d61474ec23e752f127e838aa2039e0433e","pagerDirection":"last","labels":["Gitalk"]},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"twitter":false,"vk":false,"pocket":false,"google":true,"qzone":true},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"search-plus":{}},"theme":"default","page":{"title":"前端知识库(lizh)"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"authorName":"lizhao"},"title":"LIZHAO","gitbook":"3.2.3"},"file":{"path":"js探索系列/nodeJs/00-Node.js的三种调试方法.md","mtime":"2020-08-03T15:53:12.470Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-12T14:38:00.393Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

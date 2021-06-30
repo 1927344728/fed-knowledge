@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>css3单位</title>
+  <style>
+    section {
+      margin: 0;
+      padding: 20px;
+      display: none;
+    }
+    .element_box  {
+      width: 600px;
+      height: 300px;
+      padding: 10px 20px;
+      border: 1px solid #0aa;
+    }
+  </style>
+</head>
+<body>
+<section>
+  <style>
+    .element_box1 {
+      width: 800px;
+      height: auto;
+      padding: 0;
+      border: 0;
+    }
+    .element_item1 {
+      display: inline-block;
+      width: 200px;
+      height: 150px;
+      margin-right: 20px;
+      border: 20pt solid #0aa;
+      background: url(https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/nice/20190419141711_9501mvvwvonf_small.jpg) no-repeat #eaf5ff;
+      background-size: 150px;
+    }
+    }
+  </style>
+  <div class="element_box element_box1">
+    <div class="element_item1" style="background-position: 0 0;"></div>
+    <div class="element_item1" style="background-position: 30% 30%;"></div>
+    <div class="element_item1" style="background-position: right 20% bottom 20%;"></div>
+  </div>
+</section>
+
+<script src="./utils.js"></script>
+<script type="text/javascript">
+    let type = null
+    let callback = function () {
+        type = Utils.getUrlParam('type') * 1 || 1
+        Array.prototype.slice.apply(document.querySelectorAll('section')).map(function (ele, i) {
+            ele.style.display = i === type - 1 ? 'block' : 'none'
+        })
+    }
+    if (
+        document.readyState === "complete" ||
+        (document.readyState !== "loading" && !document.documentElement.doScroll)
+    ) {
+        callback()
+    } else {
+        document.addEventListener("DOMContentLoaded", callback)
+    } 
+</script>
+</body>
+</html>

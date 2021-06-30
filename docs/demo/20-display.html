@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>display属性</title>
+  <style>
+    section {
+      margin: 0;
+      padding: 20px;
+      display: none;
+    }
+    .element_box {
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+<section>
+  <style>
+    .element_box1 {
+    }
+    .element_item1 {
+
+    }
+  </style>
+  <div class="element_box1">
+    <div class="element_item1">
+      <label>aa</label>
+    </div>
+  </div>
+</section>
+
+<section>
+  <style>
+    .element_item2 img {
+      height: 200px;
+    }
+  </style>
+  <div class="element_box2">
+    <div class="element_item2">
+      <img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/pic/1bf18986c7786cadc5257b92c474c4fe.jpg"><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/nice/20190419141710_4735vxaqwhri_small.jpg">
+    </div>
+  </div>
+</section>
+
+<section>
+  <style>
+    .element_box3 span {
+      display: list-item;
+      list-style-position: inside;
+      list-style-type: cambodian;
+    }
+  </style>
+  <div class="element_box3">
+    <span>世上最凄绝的距离是两个人本来距离很远，互不相识，</span>
+    <span>忽然有一天，他们相识，相爱，距离变得很近。</span>
+    <span>然后有一天，不再相爱了，本来很近的两个人，变得很远，甚至比以前更远。</span>
+  </div>
+</section>
+
+<section>
+  <style>
+    .element_box4 {
+      display: table-cell;
+      width: 600px;
+      height: 300px;
+      border: 1px solid #0aa;
+      vertical-align: middle;
+      text-align: center;
+    }
+    .element_box4 img {
+      height: 200px;
+    }
+  </style>
+  <div class="element_box4">
+    <img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/nice/20190419141710_4735vxaqwhri_small.jpg">
+  </div>
+</section>
+
+<section>
+  <style>
+    .element_box5 img {
+      float: left;
+      height: 120px;
+      margin-right: 20px;
+    }
+    .element_item5 {
+      display: table-cell;
+      width: 600px;
+      padding: 20px;
+      border: 1px solid #0aa;
+    }
+  </style>
+  <div class="element_box5">
+    <img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/nice/20190419141710_4735vxaqwhri_small.jpg">
+    <div class="element_item5">曾经在某一个瞬间，我们以为自己长大了，有一天，我们终于发现，长大的含义除了欲望还有勇气和坚强，以及某种必须的牺牲。曾经在某一个瞬间，我们以为自己长大了，有一天，我们终于发现，长大的含义除了欲望还有勇气和坚强，以及某种必须的牺牲。曾经在某一个瞬间，我们以为自己长大了，有一天，我们终于发现，长大的含义除了欲望还有勇气和坚强，以及某种必须的牺牲。曾经在某一个瞬间，我们以为自己长大了，有一天，我们终于发现，长大的含义除了欲望还有勇气和坚强，以及某种必须的牺牲。曾经在某一个瞬间，我们以为自己长大了，有一天，我们终于发现，长大的含义除了欲望还有勇气和坚强，以及某种必须的牺牲。</div>
+  </div>
+</section>
+
+<section>
+  <style>
+    .element_box6 {
+      display: table-row;
+    }
+    .element_item6 {
+      display: table-cell;
+      width: 33.3333%;
+      padding: 20px;
+    }
+  </style>
+  <div class="element_box6">
+    <div class="element_item6" style="background: #e2efed;">曾经在某一个瞬间，我们以为自己长大了，有一天，我们终于发现，长大的含义除了欲望还有勇气和坚强，以及某种必须的牺牲。</div>
+    <div class="element_item6" style="background: #f2f2f2;">曾经在某一个瞬间，我们以为自己长大了，有一天，我们终于发现，长大的含义除了欲望还有勇气和坚强，以及某种必须的牺牲。曾经在某一个瞬间，我们以为自己长大了，有一天，我们终于发现，长大的含义除了欲望还有勇气和坚强，以及某种必须的牺牲。曾经在某一个瞬间，我们以为自己长大了，有一天，我们终于发现，长大的含义除了欲望还有勇气和坚强，以及某种必须的牺牲。</div>
+    <div class="element_item6" style="background: #ffdaed;">曾经在某一个瞬间，我们以为自己长大了，有一天，我们终于发现，长大的含义除了欲望还有勇气和坚强，以及某种必须的牺牲。曾经在某一个瞬间，我们以为自己长大了，有一天，我们终于发现，</div>
+  </div>
+</section>
+
+<script src="./utils.js"></script>
+<script type="text/javascript">
+    let type = null
+    let callback = function () {
+        type = Utils.getUrlParam('type') * 1 || 1
+        Array.prototype.slice.apply(document.querySelectorAll('section')).map(function (ele, i) {
+            ele.style.display = i === type - 1 ? 'block' : 'none'
+        })
+    }
+    if (
+        document.readyState === "complete" ||
+        (document.readyState !== "loading" && !document.documentElement.doScroll)
+    ) {
+        callback()
+    } else {
+        document.addEventListener("DOMContentLoaded", callback)
+    } 
+</script>
+</body>
+</html>

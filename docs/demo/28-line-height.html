@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>line-height</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    section {
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<section>
+  <style type="text/css">
+    .box1 {
+      border: 1px solid #eee;
+      margin-bottom: 15px;
+    }
+    .box1 span:nth-child(1) {
+      font-size: 20px;
+      color: rgb(87, 80, 211);
+      border: 1px solid rgb(87, 80, 211);
+    }
+    .box1 span:nth-child(2) {
+      font-size: 40px;
+      color: rgb(218, 37, 29);
+      border: 1px solid rgb(218, 37, 29);
+    }
+    .box1 span:nth-child(3) {
+      font-size: 10px;
+      color: rgb(59, 179, 195);
+      border: 1px solid rgb(59, 179, 195);
+    }
+  </style>
+  <div class="box1">
+    <span>中文</span>
+    <span>English</span>
+    <span>English</span>
+  </div>
+  <div class="box1">
+    <span>中文</span>
+    <span>English</span>
+    <span style="vertical-align: -40px;">English</span>
+  </div>
+</section>
+<section>
+  <style type="text/css">
+    .box2 {
+      /*height: 50px;*/
+      line-height: 50px;
+      border: 1px solid #eee;
+      color: #5dc2d0;
+    }
+  </style>
+  <div class="box2">
+    不要问，不要等，不要犹豫，不要回头。
+  </div>
+</section>
+<section>
+  <style type="text/css">
+    .box3 {
+      height: 100px;
+      line-height: 100px;
+      border: 1px solid #eee;
+      color: #e60012;
+    }
+    .box3 span {
+      display: inline-block;
+      line-height: 18px;
+      vertical-align: middle;
+    }
+  </style>
+  <div class="box3">
+    <span>
+      盈盈一点芳心，占多少春光，问卿知否？红妆莫斗。谁得似、净骨天然清瘦。神娟韵秀。
+      盈盈一点芳心，占多少春光，问卿知否？红妆莫斗。谁得似、净骨天然清瘦。神娟韵秀。
+    </span>
+  </div>
+</section>
+<section>
+  <style type="text/css">
+    .box4 li {
+      display: inline-block;
+      width: 150px;
+      line-height: 150px;
+      border: 1px solid #eee;
+    }
+    .box4 li img {
+      width: 100px;
+      vertical-align: middle;
+    }
+  </style>
+  <ul class="box4">
+    <li><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/nice/20190419141710_4735vxaqwhri_small.jpg"></li>
+    <li><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/nice/20190419141711_9501mvvwvonf_small.jpg"></li>
+    <li><img style="width: 80px;" src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/pic/c1647f58eed70de7fd7a19a63347d137.jpg"></li>
+    <li><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/nice/20190419141711_5185ntcvfdux_small.jpg"></li>
+  </ul>
+</section>
+<section>
+  <style type="text/css">
+    .box5 {
+      border: 1px solid #5aa572;
+    }
+    .box5 img {
+      height: 250px;
+    }
+  </style>
+  <div class="box5">
+    <img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/nice/20190419141710_4735vxaqwhri_small.jpg">wenqingzhifou？
+  </div>
+</section>
+<section>
+  <style type="text/css">
+    .box6 li {
+      display: inline-block;
+      width: 30%;
+      border: 1px solid #5aa572;
+      vertical-align: top;
+      font-size: 30px;
+    }
+    .box6 li:nth-child(1) { line-height: 1.5; }
+    .box6 li:nth-child(2) { line-height: 150%; }
+    .box6 li:nth-child(3) { line-height: 1.5em; }
+    .box6 li span {
+      color: #e60012;
+      font-size: 15px;
+    }
+  </style>
+  <ul class="box6">
+    <li class="box6 item1">
+      <span>盈盈一点芳心，占多少春光，问卿知否？红妆莫斗。谁得似、净骨天然清瘦。神娟韵秀。
+    </li>
+    <li class="box6 item3">
+      <span>盈盈一点芳心，占多少春光，问卿知否？红妆莫斗。谁得似、净骨天然清瘦。神娟韵秀。</span>
+    </li>
+    <li class="box6 item2">
+      <span>盈盈一点芳心，占多少春光，问卿知否？红妆莫斗。谁得似、净骨天然清瘦。神娟韵秀。</span>
+    </li>
+  </ul>
+</section>
+
+<script src="./utils.js"></script>
+<script type="text/javascript">
+    let type = null
+    let callback = function () {
+        type = Utils.getUrlParam('type') * 1 || 1
+        Array.prototype.slice.apply(document.querySelectorAll('section')).map(function (ele, i) {
+            ele.style.display = i === type - 1 ? 'block' : 'none'
+        })
+
+        Array.prototype.slice.call(document.querySelector('.box1').getElementsByTagName('li')).map(e => {
+          console.log(getComputedStyle(e).height)
+          console.log(e.clientHeight)
+        })
+    }
+    if (
+        document.readyState === "complete" ||
+        (document.readyState !== "loading" && !document.documentElement.doScroll)
+    ) {
+        callback()
+    } else {
+        document.addEventListener("DOMContentLoaded", callback)
+    } 
+</script>
+</body>
+</html>

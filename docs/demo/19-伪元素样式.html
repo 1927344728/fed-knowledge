@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>伪元素样式</title>
+  <style>
+    section {
+        display: none;
+    }
+  </style>
+</head>
+<body>
+<style>
+section {
+  margin: 0;
+  padding: 20px;
+  display: none;
+}
+.element_box {
+  padding: 10px 20px;
+}
+.element_item* {
+  margin-top: 10px;
+}
+</style>
+<section>
+  <style>
+    .element_item1 ::-ms-check {
+      color: #0aa;
+      background: #f2f2f2;
+      padding: 10px;
+      border: 1px solid #0aa;
+    }
+  </style>
+  <div class="element_box1">
+    <div>
+      <input type="checkbox">
+      <input type="radio">
+    </div>
+    <div class="element_item1">
+      <input type="checkbox">
+      <input type="radio">
+    </div>
+  </div>
+</section>
+
+<section>
+    <style>
+      .element_box2 input {
+        width: 120px;
+      }
+      .element_item2 {
+        margin-top: 10px;
+      }
+      .element_item2 ::-webkit-color-swatch-wrapper { 
+        border: 1px solid #777;
+        background-image: linear-gradient(to right, red, orange 15%, yellow 30%, green 50%, darkcyan 65%, blue 80%, purple);
+      }
+      .element_item2 ::-webkit-color-swatch {
+        height: 21px;
+        position: relative;
+        left: 135px;
+        top: -5px; 
+      }  
+    </style>
+    <div class="element_box2">
+      <div> <input type="color"> </div>
+      <div class="element_item2"> <input type="color"> </div>
+    </div>
+</section>
+
+<section>
+    <style>
+      .element_item3 {
+        margin-top: 10px;
+      }
+      .element_item3 ::-webkit-datetime-edit { padding: 1em; background: #f2f2f2; }
+      .element_item3 ::-webkit-datetime-edit-fields-wrapper { background: silver; }
+      .element_item3 ::-webkit-datetime-edit-text { color: red; padding: 0 0.3em; }
+      .element_item3 ::-webkit-datetime-edit-month-field { color: blue; }
+      .element_item3 ::-webkit-datetime-edit-day-field { color: green; }
+      .element_item3 ::-webkit-datetime-edit-year-field { color: purple; }
+      .element_item3 ::-webkit-inner-spin-button { display: none; }
+      .element_item3 ::-webkit-calendar-picker-indicator { background: #f2f2f2; color: orange }   
+    </style>
+    <div class="element_box3">
+      <div> <input type="date"> </div>
+      <div class="element_item3"> <input type="date"> </div>
+    </div>
+</section>
+
+<section>
+    <style>
+      .element_item4 {
+        margin-top: 10px;
+      }
+      .element_item4 ::-ms-browse {
+        background: #0aa;
+        color: white;
+        padding: 1em;
+        border: 1px solid blue;
+        line-height: 20px;
+      }
+      .element_item4 ::-webkit-file-upload-button {
+        background: #0aa;
+        color: white;
+        padding: 1em;
+        border: 1px solid blue;
+        line-height: 20px;
+      }
+    </style>
+    <div class="element_box4">
+      <div> <input type="file"> </div>
+      <div class="element_item4"> <input type="file"> </div>
+    </div>
+</section>
+
+<section>
+    <style>
+      .element_item5 {
+        margin-top: 10px;
+      }
+      .element_item5 ::-webkit-textfield-decoration-container { border: 2px solid red; }
+      .element_item5 ::-webkit-inner-spin-button {
+        /*color: red; // 无效
+        background: blue; // 无效*/
+        -webkit-appearance: none;
+      }
+      .element_item5 ::-webkit-outer-spin-button {} 
+    </style>
+    <div class="element_box5">
+      <div> <input type="number"> </div>
+      <div class="element_item5"> <input type="number"> </div>
+    </div>
+</section>
+
+<section>
+    <style>
+      .element_item6 {
+        margin-top: 10px;
+      }
+      .element_item6 ::-ms-reveal {
+        /*display: none;*/
+        color: white;
+        background: #0aa;
+      } 
+    </style>
+    <div class="element_box6">
+      <div><input type="password"> </div>
+      <div class="element_item6"><input type="password"> </div>
+    </div>
+</section>
+
+<section>
+    <style>
+      .element_item7 {
+        margin-top: 10px;
+      }
+      .element_item7 ::-moz-placeholder {
+        color: red;
+      } 
+      .element_item7 :-ms-input-placeholder {
+        color: red;
+      } 
+      .element_item7 ::-webkit-input-placeholder {
+        color: red;
+      } 
+    </style>
+    <div class="element_box7">
+      <div><input type="text" placeholder="placeholder"> </div>
+      <div class="element_item7"><input type="text" placeholder="placeholder"> </div>
+    </div>
+</section>
+
+<section>
+    <style>
+      .element_item8 {
+        margin-top: 10px;
+      }
+      .element_item8 ::-moz-range-track {
+        border: 2px solid red;
+        height: 20px;
+        background: orange;
+      }
+      .element_item8 ::-moz-range-thumb {
+        background: blue;
+        height: 30px;
+      }
+
+      .element_item8 ::-ms-fill-lower { background: orange; }
+      .element_item8 ::-ms-fill-upper { background: green; }
+      .element_item8 ::-ms-ticks-after { display: block; color: blue; }
+      .element_item8 ::-ms-ticks-before { display: block; color: red; }
+      .element_item8 ::-ms-thumb { background: red; }
+      .element_item8 ::-ms-track { padding: 20px 0; }
+      .element_item8 ::-ms-tooltip { display: none; /* display and visibility only */ }  
+
+      .element_item8 ::-webkit-slider-runnable-track {
+        border: 2px solid #0aa;
+        background: #f2f2f2;
+        padding: 5px 0;
+      }
+      .element_item8 ::-webkit-slider-thumb {
+        outline: 2px solid #0aa;
+      }
+    </style>
+    <div class="element_box8">
+      <div><input type="range"></div>
+      <div class="element_item8"><input type="range"></div>
+    </div>
+</section>
+
+<section>
+    <style>
+      .element_item9 { margin-top: 10px; }
+      .element_item9 input { -webkit-appearance: none; }
+      .element_item9 ::-webkit-search-cancel-button { -webkit-appearance: none; }
+      .element_item9 ::-webkit-search-results-button { -webkit-appearance: none; }  
+    </style>
+    <div class="element_box9">
+      <div><input type="search"> </div>
+      <div class="element_item9"><input type="search"> </div>
+    </div>
+</section>
+
+<section>
+    <style>
+      .element_item10 { margin-top: 10px; }
+      .element_item10 input {
+        appearance: none;
+        border: 1px solid #0aa;
+      }
+      .element_item10 ::-ms-value {
+        color: white;
+        background: #0aa;
+        padding: 10px;
+      }
+      .element_item10 ::-ms-clear {
+        color: #0aa;
+        background: #f2f2f2;
+        padding: 10px;
+      }
+    </style>
+    <div class="element_box10">
+      <div>
+        <input type="text" value="value">
+        <input type="password" value="value">
+        <select>
+          <option selected>option</option>
+        </select>
+      </div>
+      <div class="element_item10">
+        <input type="text" value="value">
+        <input type="password" value="value">
+        <select>
+          <option selected>option</option>
+        </select>
+      </div>
+    </div>
+</section>
+
+<section>
+    <style>
+      .element_item11 { margin-top: 10px; }
+      button::-moz-focus-inner,
+      input::-moz-focus-inner {
+        border: 1px dotted transparent;
+        padding: 0 2px;
+      }
+    </style>
+    <div class="element_box11">
+      <div>
+        <button>button</button>
+        <input type="reset" value="reset">
+        <input type="submit">
+        <input type="file">
+        <input type="button" value="button">
+      </div>
+      <div class="element_item11">
+        <button>button</button>
+        <input type="reset" value="reset">
+        <input type="submit">
+        <input type="file">
+        <input type="button" value="button">
+      </div>
+    </div>
+</section>
+
+<section>
+    <style>
+      .element_item12 { margin-top: 10px; }
+      .element_item12 ::-webkit-meter-bar {
+        height: 30px;
+        background: #f2f2f2;
+        border: 1px solid #0aa;
+      }
+      .element_item12 ::-webkit-meter-optimum-value { background: green; }
+      .element_item12 ::-webkit-meter-suboptimum-value { background: orange; }
+      .element_item12 ::-webkit-meter-even-less-good-value { background: blue; }   
+    </style>
+    <div class="element_box12">
+      <div>
+        <meter low="69" high="80" max="100" optimum="100" value="92">A</meter>
+        <meter low="69" high="80" max="100" optimum="100" value="72">C</meter>
+        <meter low="69" high="80" max="100" optimum="100" value="52">E</meter> 
+      </div>
+      <div class="element_item12">
+        <meter low="69" high="80" max="100" optimum="100" value="92">A</meter>
+        <meter low="69" high="80" max="100" optimum="100" value="72">C</meter>
+        <meter low="69" high="80" max="100" optimum="100" value="52">E</meter> 
+      </div>
+    </div>
+</section>
+
+<section>
+    <style>
+      .element_item13 { margin-top: 10px; }
+      .element_item13 progress { -webkit-appearance: none; }
+      .element_item13 ::-webkit-progress-inner-element { background: black; }
+      .element_item13 ::-webkit-progress-bar { border: 2px solid #0aa; }
+      .element_item13 ::-webkit-progress-value { background: orange; }
+
+      .element_item13 ::-moz-progress-bar { background: red; }
+      .element_item13 ::-ms-fill { background: red; }
+    </style>
+    <div class="element_box13">
+      <div>
+        <progress max="100" value="50"></progress> 
+        <progress max="100" value="75"></progress> 
+        <progress max="100" value="90"></progress> 
+      </div>
+      <div class="element_item13">
+        <progress max="100" value="50"></progress> 
+        <progress max="100" value="75"></progress> 
+        <progress max="100" value="90"></progress> 
+      </div>
+    </div>
+</section>
+
+<section>
+    <style>
+      .element_item14 { margin-top: 10px; }
+      .element_item14 select { border: 1px solid #0aa; }
+      .element_item14 ::-ms-expand {
+        padding: 10px;
+        color: red;
+        background: #0aa;
+        border: 1px solid #0aa;
+      }
+    </style>
+    <div class="element_box14">
+      <div>
+        <select>
+          <option selected>One</option>
+        </select>   
+      </div>
+      <div class="element_item14">
+        <select>
+          <option selected>One</option>
+        </select>  
+      </div>
+    </div>
+</section>
+
+<section>
+    <style>
+      .element_item15 { margin-top: 10px; }
+      .element_item15 textarea { resize: none; }
+      .element_item15 ::-webkit-resizer {
+        display：none;
+        -webkit-appearance: none;
+
+        /*border: 1px solid #0aa;*/
+        /*background: #0aa;*/
+        /*outline: 1px solid yellow;*/
+      }   
+    </style>
+    <div class="element_box15">
+      <div><textarea></textarea></div>
+      <div class="element_item15"><textarea></textarea></div>
+    </div>
+</section>
+
+<section>
+    <style type="text/css">
+      .element_item16 input {
+        border: 1px solid #0aa;
+      }
+      .element_item16 ::-webkit-validation-bubble { 
+        padding: 1em; 
+        background: red; 
+      }
+      .element_item16 ::-webkit-validation-bubble-arrow { 
+        background: blue; 
+      }
+      .element_item16 ::-webkit-validation-bubble-arrow-clipper { 
+        border: 2px solid black; 
+      }
+      .element_item16 ::-webkit-validation-bubble-heading { 
+        background: green; 
+      }
+      .element_item16 ::-webkit-validation-bubble-message { 
+        color: white; 
+        background: purple; 
+      }
+      .element_item16 ::-webkit-validation-bubble-text-block { 
+        border: 1px solid red; 
+        padding: 1em; 
+      }
+    </style>
+    <div class="element_box16">
+      <form class="element_item16">
+        <input type="email" required><input type="submit">
+      </form>
+    </div>
+</section>
+
+<script src="./utils.js"></script>
+<script type="text/javascript">
+    let type = null
+    let callback = function () {
+        type = Utils.getUrlParam('type') * 1 || 1
+        Array.prototype.slice.apply(document.querySelectorAll('section')).map(function (ele, i) {
+            ele.style.display = i === type - 1 ? 'block' : 'none'
+        })
+    }
+    if (
+        document.readyState === "complete" ||
+        (document.readyState !== "loading" && !document.documentElement.doScroll)
+    ) {
+        callback()
+    } else {
+        document.addEventListener("DOMContentLoaded", callback)
+    } 
+</script>
+</body>
+</html>
