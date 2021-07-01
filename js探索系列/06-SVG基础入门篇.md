@@ -106,7 +106,7 @@ SVG 也有一些缺点：
   </div>
   ```
   
-  [直接嵌套DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=2)
+  [直接嵌套DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=2)
   
   * 使用 embed、object 元素来嵌入SVG图像。(不推荐使用)
   
@@ -179,7 +179,7 @@ viewBox 大小，默认是与 viewport 相同。不允许宽度和高度为负�
 </svg>
 ```
 
-[viewBox属性DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=16)
+[viewBox属性DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=16)
 
 如上所示，viewBox 的大小是 `40 * 30`，viewport 的大小是 `400 * 300`。实现渲染时，会将 viewBox 放大 10 倍。
 
@@ -281,7 +281,7 @@ line 元素是一个 SVG 基本形状，用来创建一条连接两个点的线�
 </svg>
 ```
 
-[line元素DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=3)
+[line元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=3)
 
 #### 2.rect元素（矩形）
 
@@ -302,7 +302,7 @@ rect 元素是 SVG 的一个基本形状，用来创建矩形，基于一个角�
 </svg>
 ```
 
-[rect元素DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=4)
+[rect元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=4)
 
 #### 3.circle元素 (圆)
 
@@ -320,7 +320,7 @@ circle 元素是一个 SVG 的基本形状，用来创建圆,基于一个圆心�
 </svg>
 ```
 
-[circle元素DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=5)
+[circle元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=5)
 
 #### 4.ellipse元素（椭圆）
 
@@ -339,7 +339,7 @@ ellipse 元素是一个 SVG 基本形状，用来创建一个椭圆，基于一�
 </svg>
 ```
 
-[ellipse元素DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=6)
+[ellipse元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=6)
 
 #### 5.polygon元素 (闭合多边形)
 
@@ -355,7 +355,7 @@ polygon 元素是由连接一组点集的直线构成。`polygon` 的路径在�
 </svg>
 ```
 
-[polygon元素DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=7)
+[polygon元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=7)
 
 #### 6.polyline元素 (折线)
 
@@ -372,7 +372,7 @@ polyline 元素是 SVG 的一个基本形状，用来创建一系列直线连接
 </svg>
 ```
 
-[polyline元素DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=8)
+[polyline元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=8)
 
 #### 7.image元素（图片）
 
@@ -391,7 +391,7 @@ polyline 元素是 SVG 的一个基本形状，用来创建一系列直线连接
 </svg>
 ```
 
-[image元素DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=26)
+[image元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=26)
 
 - 如果你没有设置 x 属性或 y 属性，它们自动被设置为 0
 - 如果你没有设置 height 属性或 width 属性，它们自动被设置为 0
@@ -436,7 +436,7 @@ text 元素定义了一个由文字组成的图形。
 </svg>
 ```
 
-[textPath元素DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=27)
+[textPath元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=27)
 
 #### 10.pattern元素（图案）
 
@@ -473,7 +473,7 @@ text 元素定义了一个由文字组成的图形。
 </svg>
 ```
 
-[pattern元素DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=27)
+[pattern元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=27)
 
 
 
@@ -539,7 +539,7 @@ d="M10,10 L50,50 L75,175 L175,150 L175,50 L225,75 L225,150 L300,150"
 </svg>
 ```
 
-[直线指令DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=10)
+[直线指令DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=10)
 
 #### 2.曲线指令
 
@@ -573,7 +573,7 @@ d="M10,10 L50,50 L75,175 L175,150 L175,50 L225,75 L225,150 L300,150"
   </svg>
   ```
 
-  [曲线指令DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=11)
+  [曲线指令DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=11)
 
 > 为了连缀平滑的贝塞尔曲线，还可以使用 T 和 S 命令。它们的语法比别的 Curveto 命令简单。因为它假定第一个控制点是前一个控制点关于前一个点的反射（即，关于前一个点对称），或者说如果没有前一个控制点的话它实际上就是前一个点。
 
@@ -600,7 +600,7 @@ d="M10,10 L50,50 L75,175 L175,150 L175,50 L225,75 L225,150 L300,150"
   </svg>
   ```
 
-  [椭圆弧线指令DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=12)
+  [椭圆弧线指令DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=12)
 
 
 
@@ -639,7 +639,7 @@ marker 元素定义了在特定的 path、line、polyline、polygon 元素上绘
 </svg>
 ```
 
-[标记DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=13)
+[标记DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=13)
 
 #### SVG 中的clipPath
 
@@ -663,7 +663,7 @@ SVG 剪裁路径是指根据指定的路径或形状来剪裁 SVG 图形。应�
 
 ```
 
-[clipPath DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=14)
+[clipPath DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=14)
 
 #### SVG DEFS元素、SYMBOL元素和USE元素
 
@@ -695,7 +695,7 @@ SVG 剪裁路径是指根据指定的路径或形状来剪裁 SVG 图形。应�
   </svg>
 ```
 
-[defs-symbol-use DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=15)
+[defs-symbol-use DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=15)
 
 
 
@@ -818,7 +818,7 @@ linearGradient 元素还需要一些其他的属性值，它们指定了渐变�
                         xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Gradient1"/>
 ```
 
-[线性渐变DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=24)
+[线性渐变DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=24)
 
 #### 径向渐变
 
@@ -848,7 +848,7 @@ linearGradient 元素还需要一些其他的属性值，它们指定了渐变�
 </svg>
 ```
 
-[径向渐变DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=25)
+[径向渐变DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=25)
 
 
 
@@ -887,7 +887,7 @@ SMIL允许你做下面这些事情：
 </svg>
 ```
 
-[set元素DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=18)
+[set元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=18)
 
 ##### animate元素
 
@@ -904,7 +904,7 @@ SMIL允许你做下面这些事情：
 </svg>
 ```
 
-[animate元素DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=19)
+[animate元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=19)
 
 ##### animateTransform
 
@@ -921,7 +921,7 @@ SMIL允许你做下面这些事情：
 </svg>
 ```
 
-[animateTransform元素DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=20)
+[animateTransform元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=20)
 
 ##### animateMotion元素
 
@@ -936,7 +936,7 @@ SMIL允许你做下面这些事情：
 </svg>
 ```
 
-[animateMotion元素DEMO](https://1927344728.github.io/frontend-knowledge/demo/26-svg.html?type=21)
+[animateMotion元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=21)
 
 #### 与使用 CSS 动画的区别
 

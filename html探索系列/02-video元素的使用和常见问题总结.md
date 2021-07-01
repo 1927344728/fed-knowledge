@@ -2,7 +2,7 @@
 
 **HTML`<video>`元素** 用于在`HTML`或者`XHTML`文档中嵌入媒体播放器，用于支持文档内的视频播放。你也可以将 `<video>` 标签用于音频内容，但是`audio`元素可能在用户体验上更合适。
 
-以下是一个局域播放的示例，允许`html`元素在视频上方，[Demo查看](https://1927344728.github.io/frontend-knowledge/demo/11-video.html)：
+以下是一个局域播放的示例，允许`html`元素在视频上方，[Demo查看](https://1927344728.github.io/fed-knowledge/demo/11-video.html)：
 
 ```html
 <div class="player_box">

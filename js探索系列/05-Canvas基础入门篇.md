@@ -122,7 +122,7 @@ getContext2D().then(context => {
 })
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/15-canvas入门篇.html?type=1)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=1)
 
 我们期待的结果页是：第一条线是青色，第二条线是粉红色，第一条线是深蓝。 然，最终渲染出的结果：三条线都是深蓝色。第一条线的青色，第二条线的粉红色了呢？其实，这里的原因是我之前一直强调的一点——**Canvas是基于状态的绘制**。
 
@@ -158,7 +158,7 @@ function drawMultBrokenLine (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/15-canvas入门篇.html?type=2)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=2)
 
 `beginPath()`是绘制设置状态的起始点，它之后代码设置的绘制状态的作用域结束于绘制方法`stroke()`、`fill()`或者`closePath()`。
 
@@ -228,7 +228,7 @@ function createLinearGradient (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/15-canvas入门篇.html?type=3)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=3)
 
 
 
@@ -256,7 +256,7 @@ function createRadialGradient (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/15-canvas入门篇.html?type=4)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=4)
 
 gradient 对象中的颜色和位置：addColorStop
 
@@ -303,7 +303,7 @@ function createPattern (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/15-canvas入门篇.html?type=5)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=5)
 
 
 
@@ -346,7 +346,7 @@ function drawArc (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/15-canvas入门篇.html?type=6)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=6)
 
 
 
@@ -375,7 +375,7 @@ function drawArcTo (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/15-canvas入门篇.html?type=7)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=7)
 
 
 
@@ -407,7 +407,7 @@ function drawQuadraticCurveTo (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/15-canvas入门篇.html?type=8)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=8)
 
 
 
@@ -487,7 +487,7 @@ function drawText (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/15-canvas入门篇.html?type=9)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=9)
 
 
 
@@ -584,7 +584,7 @@ function transform (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/15-canvas入门篇.html?type=10)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=10)
 
 > 注意保存和恢复Canvas状态
 >
@@ -624,7 +624,7 @@ function setClip (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/15-canvas入门篇.html?type=11)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=11)
 
 
 
@@ -674,7 +674,7 @@ function drawImage (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/15-canvas入门篇.html?type=12)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=12)
 
 
 
@@ -719,7 +719,7 @@ drawCircular (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/15-canvas入门篇.html?type=13)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=13)
 
 
 
@@ -807,7 +807,7 @@ function roundRect (ctx, x, y, w, h, r) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/15-canvas入门篇.html?type=14)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=14)
 
 
 
@@ -845,7 +845,7 @@ function drawRoundImg2 (ctx, x, y, w, h, r) {
 }
 ```
 
-[查看DEMO 圆角图片1](https://1927344728.github.io/frontend-knowledge/demo/15-canvas入门篇.html?type=15) [查看DEMO 圆角图片2](https://1927344728.github.io/frontend-knowledge/demo/15-canvas入门篇.html?type=16)
+[查看DEMO 圆角图片1](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=15) [查看DEMO 圆角图片2](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=16)
 
 
 

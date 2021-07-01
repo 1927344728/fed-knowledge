@@ -290,7 +290,7 @@
 
 来做一个小的测试：如果你无法实现，或者对以下的实现方法不理解，那么恭喜你，即将学习新的技能。
 
-**问题：**尝试把红色的元素放到其他两个元素后面，但是必须遵守下面的规则 [点击试试？](https://1927344728.github.io/frontend-knowledge/demo/10-z-index.html?type=3)：
+**问题：**尝试把红色的元素放到其他两个元素后面，但是必须遵守下面的规则 [点击试试？](https://1927344728.github.io/fed-knowledge/demo/10-z-index.html?type=3)：
 
 - 不能修改HTML中元素的顺序
 - 不能增加或修改任何元素的`z-index`属性
@@ -441,7 +441,7 @@
 
 #### 为什么建议给absolute元素加z-index
 
-比如下面代码 [点击查看](https://1927344728.github.io/frontend-knowledge/demo/10-z-index.html?type=5)：
+比如下面代码 [点击查看](https://1927344728.github.io/fed-knowledge/demo/10-z-index.html?type=5)：
 
 ```html
 <section class="wrap_5">

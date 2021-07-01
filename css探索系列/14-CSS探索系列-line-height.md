@@ -103,7 +103,7 @@ line-height 属性被指定为以下任何一个：
 </section>
 ```
 
-[查看内联元素的高度DEMO](https://1927344728.github.io/frontend-knowledge/demo/28-line-height.html)
+[查看内联元素的高度DEMO](https://1927344728.github.io/fed-knowledge/demo/28-line-height.html)
 
 另外，行间距为负值时，如果 `line-height` 小于 `font-size`，`inline box` 会优先于行高，以保证 `inline box` 的高度正好等于行高。
 
@@ -133,7 +133,7 @@ line-height 属性被指定为以下任何一个：
 </section>
 ```
 
-[查看单行文字的垂直居中DEMO](https://1927344728.github.io/frontend-knowledge/demo/28-line-height.html?type=2)
+[查看单行文字的垂直居中DEMO](https://1927344728.github.io/fed-knowledge/demo/28-line-height.html?type=2)
 
 #### 多行文字的垂直居中
 
@@ -169,7 +169,7 @@ line-height 属性被指定为以下任何一个：
 
 > 注：span 标签要加 `display: inline-block`属性，或者改用块级标签。
 >
-> [查看多行文字的垂直居中DEMO](https://1927344728.github.io/frontend-knowledge/demo/28-line-height.html?type=3)
+> [查看多行文字的垂直居中DEMO](https://1927344728.github.io/fed-knowledge/demo/28-line-height.html?type=3)
 
 #### 图片的垂直居中
 
@@ -200,7 +200,7 @@ line-height 属性被指定为以下任何一个：
 </section>
 ```
 
-[查看图片的垂直居中DEMO](https://1927344728.github.io/frontend-knowledge/demo/28-line-height.html?type=4)
+[查看图片的垂直居中DEMO](https://1927344728.github.io/fed-knowledge/demo/28-line-height.html?type=4)
 
 
 
@@ -264,7 +264,7 @@ line-height 属性被指定为以下任何一个：
 </section>
 ```
 
-[查看img元素底部空白DEMO](https://1927344728.github.io/frontend-knowledge/demo/28-line-height.html?type=5)
+[查看img元素底部空白DEMO](https://1927344728.github.io/fed-knowledge/demo/28-line-height.html?type=5)
 
 **在HTML5文档声明下，块状元素内部的内联元素的行为表现，就好像块状元素内部还有一个（更有可能两个-前后）看不见摸不着没有宽度没有实体的空白文本节点。**
 
@@ -335,7 +335,7 @@ CSS2的可视化格式模型文档中有一么一段话：
 </section>
 ```
 
-[查看line-height单位DEMO](https://1927344728.github.io/frontend-knowledge/demo/28-line-height.html?type=5)
+[查看line-height单位DEMO](https://1927344728.github.io/fed-knowledge/demo/28-line-height.html?type=5)
 
 上面的三个 `li` 元素的 `line-height` 计算值都是 `30px * 1.5 = 45px`。而第一个 `li` 下的 `span` 的 `line-height` 计算值是 `1.5 * 15px = 22.5px`，其余两个 `li` 下的 `span` 的计算值是父元素的 `line-height` 计算值，即 `45px`。
 

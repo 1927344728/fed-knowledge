@@ -71,7 +71,7 @@ background-image: linear-gradient(#fb3 40%, #e66465 30%, #9198e5); /*下图右*/
 
 
 
-#### 示例 [查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/13-gradient.html)
+#### 示例 [查看DEMO](https://1927344728.github.io/fed-knowledge/demo/13-gradient.html)
 
 ```html
 <section>
@@ -163,7 +163,7 @@ radial-gradient([ <shape> [<extent-keyword> | <size>] at <position> ]? <linear-c
 
   定义了在相邻`<linear-color-stop>`之间过渡的中点，默认值50%。
 
-#### 示例 [查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/13-gradient.html?type=2)
+#### 示例 [查看DEMO](https://1927344728.github.io/fed-knowledge/demo/13-gradient.html?type=2)
 
 ```html
 <section>
@@ -240,7 +240,7 @@ conic-gradient([ from <angle> ]? [ at <position> ]?, <angular-color-stop> [<colo
 
   定义了在相邻`<angular-color-stop>`之间过渡的中点，默认值`50%`。
 
-#### 示例 [查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/13-gradient.html?type=3)
+#### 示例 [查看DEMO](https://1927344728.github.io/fed-knowledge/demo/13-gradient.html?type=3)
 
 ```html
 <section>
@@ -323,7 +323,7 @@ conic-gradient([ from <angle> ]? [ at <position> ]?, <angular-color-stop> [<colo
 
 `repaeting-conic-gradient` 创建一个颜色过渡旋转围绕中心点的重复渐变组成的`<image>` 。重复圆锥渐变语法与`conic-gradient()`相似。
 
-#### 示例 [查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/13-gradient.html?type=4)
+#### 示例 [查看DEMO](https://1927344728.github.io/fed-knowledge/demo/13-gradient.html?type=4)
 
 ```html
 <section>
@@ -372,7 +372,7 @@ conic-gradient([ from <angle> ]? [ at <position> ]?, <angular-color-stop> [<colo
 
 ![image-20200725001722017](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200725001722017.png)
 
-### 其他渐变 [查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/13-gradient.html?type=5)
+### 其他渐变 [查看DEMO](https://1927344728.github.io/fed-knowledge/demo/13-gradient.html?type=5)
 
 ```html
 <section>

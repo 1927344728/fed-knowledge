@@ -43,7 +43,7 @@
 
 [Gitbook.io](https://lizh.gitbook.io/knowledge)
 
-[Github Page](https://1927344728.github.io/frontend-knowledge/)
+[Github Page](https://1927344728.github.io/fed-knowledge/)
 
 
 

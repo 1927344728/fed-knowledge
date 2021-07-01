@@ -35,7 +35,7 @@
 </section>
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/14-arrow.html)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/14-arrow.html)
 
 
 
@@ -68,7 +68,7 @@
 </section>
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/14-arrow.html?type=2)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/14-arrow.html?type=2)
 
 
 
@@ -105,7 +105,7 @@
 </section>
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/14-arrow.html?type=3)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/14-arrow.html?type=3)
 
 
 
@@ -143,7 +143,7 @@
 </section>
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/14-arrow.html?type=4)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/14-arrow.html?type=4)
 
 
 
@@ -174,7 +174,7 @@
 </section>
 ```
 
-[查看DEMO](https://1927344728.github.io/frontend-knowledge/demo/14-arrow.html?type=5)
+[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/14-arrow.html?type=5)
 
 <p style="color: #f50">(没看懂。感兴趣的可以点击下方链接查看。lizh)</p>
 

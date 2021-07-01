@@ -362,7 +362,7 @@ place-content: center start;
 
 
 
-以下在实际开发的项目中遇到的问题：使用了`flex`布局后，弹性项目中文本溢出自动省略号（...）的属性（即， `text-overflow:ellipsis` ）失效。示例代码如下([查看Demo](https://1927344728.github.io/frontend-knowledge/demo/12-flex.html))：
+以下在实际开发的项目中遇到的问题：使用了`flex`布局后，弹性项目中文本溢出自动省略号（...）的属性（即， `text-overflow:ellipsis` ）失效。示例代码如下([查看Demo](https://1927344728.github.io/fed-knowledge/demo/12-flex.html))：
 
 ```html
 <div class="flex_box">
