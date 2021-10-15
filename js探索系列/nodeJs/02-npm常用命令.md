@@ -28,10 +28,15 @@ npm root # 查看当前包的安装路径
 npm root -g #查看全局npm安装的路径
 
 npm search pkg # 查看指定包是否存在
+tree -d # 以树状图的方式列出一个项目下所有依赖的物理结构
 npm ls # 查看当前目录下安装了那些包
 npm ls <pkg> # 查看特定package的信息
 npm ls -g # 查看全局安装的包
-npm info # 查看包的信息
+npm info <pkg> # 查看包的信息
+npm view <pkg> # 查看包的信息
+npm info <pkg> # 查看包的信息
+npm show <pkg> # 查看包的信息
+npm v <pkg> # 查看包的信息
 
 npm login #登录
 npm whoami #查看当前用户
@@ -42,6 +47,8 @@ npm unpublish <name>[@<version>]#取消发布项目
 npm config set registry <镜像源地址> # 设置源
 npm install -g cnpm --registry=<镜像源地址> #安装cnpm工具
 cnpm install <pkg>[@<version>] # 使用cnpm代替npm
+
+npm cache clean --force # 清除缓存
 
 npm install -g nrm # 安装nrm工具
 nrm ls # 查看当前可用的镜像源

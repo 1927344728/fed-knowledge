@@ -80,6 +80,12 @@ documentElement 对应的是 html 标签，而 body 对应的是 body 标签。
 
 浏览器窗口的大小，则是指在浏览器窗口中看到的那部分网页面积，又叫做viewport（视口）。  
 
+* IE8及IE8以下不兼容： window.innerWidth/window.innerHeight
+
+* 标准模式下：document.documentElement.clientWidth/document.documentElement.clientHeight
+
+* 怪异模式下：document.body.clientWidth/document.body.clientHeight
+
 ```js
 function getViewport(){
     if (document.compatMode == "BackCompat"){

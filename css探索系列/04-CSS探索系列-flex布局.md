@@ -14,7 +14,7 @@
 
 **弹性盒子布局**是一种一维的布局模型，一次只能处理一个维度上的元素布局，一行或者一列。作为对比的是另外一个二维布局 [网格布局](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)，可以同时处理行和列上的布局。
 
-![image-20200612003555661](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200612003555661.png)
+![image-20200612003555661](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200612003555661.png)
 
 
 
@@ -68,7 +68,7 @@
 - `column`：主轴为垂直方向，从上往下。
 - `column-reverse`：主轴为垂直方向，从下往上。
 
-![image-20200612004410287](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200612004410287.png)
+![image-20200612004410287](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200612004410287.png)
 
 > 请注意：
 >
@@ -102,7 +102,7 @@
 * `wrap`：弹性项目被打断到多个行中，行由上往下排列。
 * `wrap-reverse`：和 `wrap `的行为一样，但是行由下往上排列。
 
-![image-20200612011228246](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200612011228246.png)
+![image-20200612011228246](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200612011228246.png)
 
 
 
@@ -133,7 +133,7 @@ flex-flow: column-reverse wrap;
 - `space-around`：每个弹性项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
 - `space-evenly`：弹性项目之间、弹性项目与边框之间的间隔都相等。
 
-![image-20200612225416483](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200612225416483.png)
+![image-20200612225416483](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200612225416483.png)
 
 以上六个是常见取值，还有值`start、left、right、baseline、first baseline、last baseline、stretch、safe、unsafe`。？？
 
@@ -153,7 +153,7 @@ flex-flow: column-reverse wrap;
 - `baseline`: 弹性项目的第一行文字的基线对齐
 - `stretch`：弹性项目将占满整个容器的高度（弹性项目未设置高度或设为`auto`）。
 
-![image-20200612232910010](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200612232910010.png)
+![image-20200612232910010](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200612232910010.png)
 
 
 
@@ -170,7 +170,7 @@ flex-flow: column-reverse wrap;
 - `space-around`：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
 - `stretch`（默认值）：轴线占满整个侧轴（弹性项目未设置高度或设为`auto`）。
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200613000900833.png" alt="image-20200613000900833" style="zoom: 67%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200613000900833.png" alt="image-20200613000900833" style="zoom: 67%;" />
 
 
 
@@ -224,7 +224,7 @@ place-content: center start;
   
     如：三个弹性项目，有一个的`flex-grow`属性为2，其他项目都为1，即：`1：2：1`，则值为`2`的占据剩余空间的`2/4`，其他两个分别占`1/4`。
 
-![image-20200613141809054](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200613141809054.png)
+![image-20200613141809054](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200613141809054.png)
 
 #### flex-shrink属性
 
@@ -248,7 +248,7 @@ place-content: center start;
   
     如：一个弹性项目的`flex-shrink`属性为0，其他项目都为1，则空间不足时，前者不缩小。
 
-![image-20200613143309096](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200613143309096.png)
+![image-20200613143309096](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200613143309096.png)
 
 #### flex-basis属性
 
@@ -336,7 +336,7 @@ place-content: center start;
 
 取值：可能取6个值，除了`auto`，其他都与`align-items`属性完全一致。
 
-![image-20200613154244372](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200613154244372.png)
+![image-20200613154244372](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200613154244372.png)
 
 
 
@@ -362,24 +362,25 @@ place-content: center start;
 
 
 
-以下在实际开发的项目中遇到的问题：使用了`flex`布局后，弹性项目中文本溢出自动省略号（...）的属性（即， `text-overflow:ellipsis` ）失效。示例代码如下([查看Demo](https://1927344728.github.io/fed-knowledge/demo/12-flex.html))：
+以下在实际开发的项目中遇到的问题：使用了`flex`布局后，弹性项目中文本溢出自动省略号（...）的属性（即， `text-overflow:ellipsis` ）失效。
 
 ```html
-<div class="flex_box">
-    <div class="flex_item">低眉含笑间</div>
-    <div class="flex_item text_parent" style="flex: 1;">
-        <div class="text">
-        寒灯纸上梨花雨凉 谁的深情绚烂了三生石上的一见倾心 灯烛依旧 无人执手。低眉含笑间 寒灯纸上梨花雨凉 谁的深情绚烂了三生石上的一见倾心 灯烛依旧 无人执手
-		</div>
+<section>
+    <div class="box_01">
+        <div class="item_01">低眉含笑间</div>
+        <div class="item_01 item_01_text01" style="flex: 1; ">
+            <div class="text">寒灯纸上梨花雨凉 谁的深情绚烂了三生石上的一见倾心 灯烛依旧 无人执手。低眉含笑间 寒灯纸上梨花雨凉 谁的深情绚烂了三生石上的一见倾心 灯烛依旧 无人执手
+            </div>
+        </div>
     </div>
-</div>
+</section>
 <style>
-    .flex_box {
+    .box_01 {
         display: flex;
         padding: 10px;
         border: 1px solid #0aa;
     }
-    .flex_item {
+    .box_01 .item_01 {
         margin-right: 15px;
         padding: 10px;
         color: #fff;
@@ -387,18 +388,27 @@ place-content: center start;
         background-color: #0aa;
         white-space: nowrap;
     }
-    .flex_item .text {
+    .box_01 .item_01 .text {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
     }
-    .flex_item:last-child {
-        margin-right: 0;
+    .box_01 .item_01_text01 {
+        min-width: 0;
     }
+    /*
+    .box_01 .item_01_text02 {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    */
 </style>
 ```
 
-![image-20200613203317491](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200613203317491.png)
+![image-20200613203317491](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200613203317491.png)
+
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/07-flex.html)
 
 从本质上来说，`ellipsis`失效的是因为`.text`元素中的文本没有溢出。
 

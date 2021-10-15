@@ -23,7 +23,7 @@ line-height 属性被指定为以下任何一个：
 
 基线（baseline），指的是一行字横排时下沿的基础线，基线并不是汉字的下端沿，通常可以理解为英文字母 x 的下端沿。
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20210308220145351.png" alt="image-20210308220145351" style="zoom:50%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20210308220145351.png" alt="image-20210308220145351" style="zoom:50%;" />
 
 #### 字体高度、行高、行距和半行距
 
@@ -35,7 +35,7 @@ line-height 属性被指定为以下任何一个：
 
 **半行距：**行距的一半。
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20210308220229509.png" alt="image-20210308220229509" style="zoom: 50%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20210308220229509.png" alt="image-20210308220229509" style="zoom: 50%;" />
 
 #### 内容区域、内联盒子、行框盒子、包含盒子
 
@@ -49,7 +49,7 @@ line-height 属性被指定为以下任何一个：
 
 * **包含盒子(containing box)**：由一行一行的行框盒子组成，**高度就是单行文本高度的累加**。
 
-![image-20210308220316135](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20210308220316135.png)
+![image-20210308220316135](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20210308220316135.png)
 
 #### 内联元素的高度表现
 
@@ -65,45 +65,24 @@ line-height 属性被指定为以下任何一个：
 
 下部分内联元素的高度，与上部分完全一样。同时，给第三个 span 加一个 css 属性 `"vertical-align: -40px;`。span 外层的包含盒子高度为 **87.6px**（具体计算逻辑未知？？）。
 
-![image-20210308223727021](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20210308223727021.png)
+![image-20210308223727021](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20210308223727021.png)
 
 ```html
 <section>
-  <style type="text/css">
-    .box1 {
-      border: 1px solid #eee;
-      margin-bottom: 15px;
-    }
-    .box1 span:nth-child(1) {
-      font-size: 20px;
-      color: rgb(87, 80, 211);
-      border: 1px solid rgb(87, 80, 211);
-    }
-    .box1 span:nth-child(2) {
-      font-size: 40px;
-      color: rgb(218, 37, 29);
-      border: 1px solid rgb(218, 37, 29);
-    }
-    .box1 span:nth-child(3) {
-      font-size: 10px;
-      color: rgb(59, 179, 195);
-      border: 1px solid rgb(59, 179, 195);
-    }
-  </style>
-  <div class="box1">
-    <span>中文</span>
-    <span>English</span>
-    <span>English</span>
-  </div>
-  <div class="box1">
-    <span>中文</span>
-    <span>English</span>
-    <span style="vertical-align: -40px;">English</span>
-  </div>
+    <div class="box_01">
+        <span>中文</span>
+        <span>English</span>
+        <span>English</span>
+    </div>
+    <div class="box_01">
+        <span>中文</span>
+        <span>English</span>
+        <span style="vertical-align: -40px;">English</span>
+    </div>
 </section>
 ```
 
-[查看内联元素的高度DEMO](https://1927344728.github.io/fed-knowledge/demo/28-line-height.html)
+[查看内联元素的高度DEMO](https://1927344728.github.io/demo-lizh/html/22-line-height.html)
 
 另外，行间距为负值时，如果 `line-height` 小于 `font-size`，`inline box` 会优先于行高，以保证 `inline box` 的高度正好等于行高。
 
@@ -115,25 +94,23 @@ line-height 属性被指定为以下任何一个：
 
 一般来说，`line-height` 值设置为 `height` 一样大小的值，可以实现单行文字的垂直居中。实际上，`height` 是非必要的，删除`height` 单行文字也能居中的。
 
-![image-20210309204247836](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20210309204247836.png)
+![image-20210309204247836](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20210309204247836.png)
 
 ```html
-<section>
-  <style type="text/css">
-    .box2 {
-      /*height: 50px;*/
-      line-height: 50px;
-      border: 1px solid #eee;
-      color: #f121b1;
+<style>
+    .box_02 {
+        /*height: 50px;*/
+        line-height: 50px;
+        border: 1px solid #eee;
+        color: #5dc2d0;
     }
-  </style>
-  <div class="box2">
+</style>
+<section class="box_02">
     不要问，不要等，不要犹豫，不要回头。
-  </div>
 </section>
 ```
 
-[查看单行文字的垂直居中DEMO](https://1927344728.github.io/fed-knowledge/demo/28-line-height.html?type=2)
+[查看单行文字的垂直居中DEMO](https://1927344728.github.io/demo-lizh/html/22-line-height.html?type=2)
 
 #### 多行文字的垂直居中
 
@@ -141,66 +118,66 @@ line-height 属性被指定为以下任何一个：
 
 高度固定的 `div`，多行文字垂直居中可以借助于 `line-height` 来实现。
 
-![image-20210309204211516](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20210309204211516.png)
+![image-20210309204211516](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20210309204211516.png)
 
 ```html
-<section>
-  <style type="text/css">
-    .box3 {
-      height: 100px;
-      line-height: 100px;
-      border: 1px solid #eee;
-      color: #e60012;
+<style type="text/css">
+    .box_03 {
+        height: 100px;
+        line-height: 100px;
+        border: 1px solid #eee;
+        color: #e60012;
     }
-    .box3 span {
-      display: inline-block;
-      line-height: 18px;
-      vertical-align: middle;
+    .box_03 span {
+        display: inline-block;
+        line-height: 18px;
+        vertical-align: middle;
     }
-  </style>
-  <div class="box3">
+</style>
+
+<section class="box_03">
     <span>
-      盈盈一点芳心，占多少春光，问卿知否？红妆莫斗。谁得似、净骨天然清瘦。神娟韵秀。
-      盈盈一点芳心，占多少春光，问卿知否？红妆莫斗。谁得似、净骨天然清瘦。神娟韵秀。
+        盈盈一点芳心，占多少春光，问卿知否？红妆莫斗。谁得似、净骨天然清瘦。神娟韵秀。
+        盈盈一点芳心，占多少春光，问卿知否？红妆莫斗。谁得似、净骨天然清瘦。神娟韵秀。
     </span>
-  </div>
 </section>
 ```
 
 > 注：span 标签要加 `display: inline-block`属性，或者改用块级标签。
 >
-> [查看多行文字的垂直居中DEMO](https://1927344728.github.io/fed-knowledge/demo/28-line-height.html?type=3)
+> [查看多行文字的垂直居中DEMO](https://1927344728.github.io/demo-lizh/html/22-line-height.html?type=3)
 
 #### 图片的垂直居中
 
 高度固定的 `div`，可以用 `line-height` 来实现不同高度图片的垂直居中。
 
-![image-20210309210458080](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20210309210458080.png)
+![image-20210309210458080](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20210309210458080.png)
 
 ```html
-<section>
-  <style type="text/css">
-    .box4 li {
-      display: inline-block;
-      width: 150px;
-      line-height: 150px;
-      border: 1px solid #eee;
+<style type="text/css">
+    .box_04 ul li {
+        display: inline-block;
+        width: 150px;
+        line-height: 150px;
+        border: 1px solid #eee;
     }
-    .box4 li img {
-      width: 100px;
-      vertical-align: middle;
+    .box_04 ul li img {
+        width: 100px;
+        vertical-align: middle;
     }
-  </style>
-  <ul class="box4">
-    <li><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/nice/20190419141710_4735vxaqwhri_small.jpg"></li>
-    <li><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/nice/20190419141711_9501mvvwvonf_small.jpg"></li>
-    <li><img style="width: 80px;" src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/nice/c1647f58eed70de7fd7a19a63347d137.jpg"></li>
-    <li><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/nice/20190419141711_5185ntcvfdux_small.jpg"></li>
-  </ul>
+</style>
+
+<section class="box_04">
+    <ul>
+        <li><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/nice/20190419141710_4735vxaqwhri_small.jpg"></li>
+        <li><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/nice/20190419141711_9501mvvwvonf_small.jpg"></li>
+        <li><img style="width: 80px;" src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/c1647f58eed70de7fd7a19a63347d137.jpg"></li>
+        <li><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/nice/20190419141711_5185ntcvfdux_small.jpg"></li>
+    </ul>
 </section>
 ```
 
-[查看图片的垂直居中DEMO](https://1927344728.github.io/fed-knowledge/demo/28-line-height.html?type=4)
+[查看图片的垂直居中DEMO](https://1927344728.github.io/demo-lizh/html/22-line-height.html?type=4)
 
 
 
@@ -246,31 +223,31 @@ line-height 属性被指定为以下任何一个：
 
 在 `div` 中加入 `img` 标签，如果 `div` 有背景色或者边框属性，会发现图片底部会有一些空白。如下图：
 
-![image-20210309211610176](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20210309211610176.png)
+![image-20210309211610176](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20210309211610176.png)
 
 ```html
-<section>
-  <style type="text/css">
-    .box5 {
-      border: 1px solid #5aa572;
+<style type="text/css">
+    .box_05 {
+        border: 1px solid #5aa572;
     }
-    .box5 img {
-      height: 250px;
+    .box_05 img {
+        height: 250px;
     }
-  </style>
-  <div class="box5">
-    <img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/images/nice/20190419141710_4735vxaqwhri_small.jpg">
-  </div>
+</style>
+
+<section class="box_05">
+    <img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/nice/20190419141710_4735vxaqwhri_small.jpg">
+    wenqingzhifou？
 </section>
 ```
 
-[查看img元素底部空白DEMO](https://1927344728.github.io/fed-knowledge/demo/28-line-height.html?type=5)
+[查看img元素底部空白DEMO](https://1927344728.github.io/demo-lizh/html/22-line-height.html?type=5)
 
 **在HTML5文档声明下，块状元素内部的内联元素的行为表现，就好像块状元素内部还有一个（更有可能两个-前后）看不见摸不着没有宽度没有实体的空白文本节点。**
 
 其具体表现，和图片后面有文字是一样的，如下图：
 
-![image-20210309215407892](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20210309215407892.png)
+![image-20210309215407892](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20210309215407892.png)
 
 具体跟 `vertical-align` 和 `line-height` 有关：
 
@@ -301,41 +278,37 @@ CSS2的可视化格式模型文档中有一么一段话：
 
 由此可见：无单位时，子元素的行高随子元素 `font-size` 值变化（推荐使用）；有单位时，子元素继承了父元素计算得出的行距，与子元素 `font-size` 无关。
 
-![image-20210309233603556](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20210309233603556.png)
+![image-20210309233603556](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20210309233603556.png)
 
 ```html
-<section>
-  <style type="text/css">
-    .box6 li {
-      display: inline-block;
-      width: 30%;
-      border: 1px solid #5aa572;
-      vertical-align: top;
-      font-size: 30px;
+<style>
+    .box_06 > div {
+        display: inline-block;
+        width: 30%;
+        border: 1px solid #5aa572;
+        vertical-align: top;
+        font-size: 30px;
     }
-    .box6 li:nth-child(1) { line-height: 1.5; }
-    .box6 li:nth-child(2) { line-height: 150%; }
-    .box6 li:nth-child(3) { line-height: 1.5em; }
-    .box6 li span {
-      color: #e60012;
-      font-size: 15px;
+    .box_06 > div span {
+        color: #e60012;
+        font-size: 15px;
     }
-  </style>
-  <ul class="box6">
-    <li class="box6 item1">
-      <span>盈盈一点芳心，占多少春光，问卿知否？红妆莫斗。谁得似、净骨天然清瘦。神娟韵秀。
-    </li>
-    <li class="box6 item3">
-      <span>盈盈一点芳心，占多少春光，问卿知否？红妆莫斗。谁得似、净骨天然清瘦。神娟韵秀。</span>
-    </li>
-    <li class="box6 item2">
-      <span>盈盈一点芳心，占多少春光，问卿知否？红妆莫斗。谁得似、净骨天然清瘦。神娟韵秀。</span>
-    </li>
-  </ul>
+</style>
+
+<section class="box_06">
+    <div style="line-height: 1.5;">
+        <span>盈盈一点芳心，占多少春光，问卿知否？红妆莫斗。谁得似、净骨天然清瘦。神娟韵秀。</span>
+    </div>
+    <div style="line-height: 150%;">
+        <span>盈盈一点芳心，占多少春光，问卿知否？红妆莫斗。谁得似、净骨天然清瘦。神娟韵秀。</span>
+    </div>
+    <div style="line-height: 1.5em;">
+        <span>盈盈一点芳心，占多少春光，问卿知否？红妆莫斗。谁得似、净骨天然清瘦。神娟韵秀。</span>
+    </div>
 </section>
 ```
 
-[查看line-height单位DEMO](https://1927344728.github.io/fed-knowledge/demo/28-line-height.html?type=5)
+[查看line-height单位DEMO](https://1927344728.github.io/demo-lizh/html/22-line-height.html?type=6)
 
 上面的三个 `li` 元素的 `line-height` 计算值都是 `30px * 1.5 = 45px`。而第一个 `li` 下的 `span` 的 `line-height` 计算值是 `1.5 * 15px = 22.5px`，其余两个 `li` 下的 `span` 的计算值是父元素的 `line-height` 计算值，即 `45px`。
 
@@ -357,7 +330,7 @@ CSS2的可视化格式模型文档中有一么一段话：
 
 默认情况下一行文本的行高分为：上半行距，内容区域的高度，下半行距，并且上半行距是等于下半行距的。当`line-height`增大，内容区域的高度不变，上下行距增大（且保持相等），文本区域的位置往下移；当 `line-height` 值与 `height` 相等时，可以近似的看成内容区域垂直居中于父容器。
 
-![image-20210412211528971](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20210412211528971.png)
+![image-20210412211528971](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20210412211528971.png)
 
 
 

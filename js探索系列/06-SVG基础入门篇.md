@@ -53,12 +53,14 @@ SVG 也有一些缺点：
 
   
 
-![image-20200905141904001](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200905141904001.png)
+![image-20200905141904001](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905141904001.png)
 
 ```html
-  <iframe src="img/snowman.svg" width="300" height="200" ></iframe>
-  <img src="img/snowman.svg"  width="300" />
+<iframe src="./assets/img/snowman.svg" width="200" height="200" ></iframe>
+<img src="./assets/img/snowman.svg"  width="300" />
 ```
+
+[引入DEMO](https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=1)
 
 - 在 CSS 样式中使用 SVG 来对HTML内容应用图像效果
 
@@ -89,9 +91,9 @@ SVG 也有一些缺点：
         clip-path: url(#clipping-path-1);
         filter:url(#f1);
     }
-  .target2 { /*使用外部引用*/
+    .target2 { /*使用外部引用*/
         clip-path: url(resources.svg#c1);
-  }
+    }
     ```
   
 - 将 SVG 直接嵌套在 HTML 中
@@ -99,14 +101,14 @@ SVG 也有一些缺点：
   * 直接使用 svg 元素，通过代码将SVG图像嵌入到HTML代码中。
 
   ```html
-  <div class="element_box">
-      <svg width="445" height="630">
-          ...
-      </svg>
-  </div>
+  <section class="box_02">
+    <svg width="447.64197" height="631.57538">
+      ...
+    </svg>
+  </section>
   ```
   
-  [直接嵌套DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=2)
+  [直接嵌套DEMO](https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=2)
   
   * 使用 embed、object 元素来嵌入SVG图像。(不推荐使用)
   
@@ -170,16 +172,18 @@ viewBox="min-x, min-y, width and height"
 
 viewBox 大小，默认是与 viewport 相同。不允许宽度和高度为负值，0则禁用元素的呈现。
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200905212643005.png" alt="image-20200905212643005" style="zoom:67%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905212643005.png" alt="image-20200905212643005" style="zoom:67%;" />
 
 ```html
-<svg width="400" height="300" viewBox="0,0,40,30" style="border: 1px solid #0aa;">
-    <rect x="10" y="5" width="20" height="15" fill="#0aa"/>
-    <line x1="20" y1="15" x2="20" y2="30" stroke="orange" stroke-width="2" />
-</svg>
+<section class="box_16">
+    <svg width="400" height="300" viewBox="0,0,40,30" style="border: 1px solid #eee;">
+        <rect x="10" y="5" width="20" height="15" fill="#0aa" />
+        <line x1="20" y1="15" x2="20" y2="30" stroke="orange" stroke-width="2" />
+    </svg>
+</section>
 ```
 
-[viewBox属性DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=16)
+[viewBox属性DEMO](https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=16)
 
 如上所示，viewBox 的大小是 `40 * 30`，viewport 的大小是 `400 * 300`。实现渲染时，会将 viewBox 放大 10 倍。
 
@@ -244,7 +248,7 @@ SVG 的坐标系统分为三种类型：
 
 它和 CSS 中 transform 属性的变换函数，都是基于坐标系变换的。它们的区别在于：HTML 元素的坐标系建立在元素自身上，而 SVG中，元素坐标系是基于是 **初始坐标系** 或 **当前用户空间坐标系** 创建的 。
 
-![image-20200907235008085](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200907235008085.png)
+![image-20200907235008085](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200907235008085.png)
 
 > svg 元素有多个变换时，下一个变换的坐标系是基于上一个变换完成后的坐标系创建的，并且其子元素变换的坐标系，也是基于父元素变换后的坐标系创建的。
 
@@ -273,15 +277,17 @@ line 元素是一个 SVG 基本形状，用来创建一条连接两个点的线�
 * x2：终点x坐标
 * y2：终点y坐标
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200905150943301.png" alt="image-20200905150943301" style="zoom: 67%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905150943301.png" alt="image-20200905150943301" style="zoom: 67%;" />
 
 ```html
-<svg width="300px" height="300px" style="border: 1px solid #ccc;">
-    <line x1="0" y1="200" x2="250" y2="0" stroke="#0aa" stroke-width="5" />
-</svg>
+<section class="box_03">
+    <svg width="300px" height="300px" style="border: 1px solid #ccc;">
+        <line x1="0" y1="200" x2="250" y2="0" stroke="#0aa" stroke-width="5" />
+    </svg>
+</section>
 ```
 
-[line元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=3)
+[line元素DEMO](https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=3)
 
 #### 2.rect元素（矩形）
 
@@ -294,15 +300,17 @@ rect 元素是 SVG 的一个基本形状，用来创建矩形，基于一个角�
 - rx：x方向的圆角半径
 - ry：y方向的圆角半径
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200905151025386.png" alt="image-20200905151025386" style="zoom: 67%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905151025386.png" alt="image-20200905151025386" style="zoom: 67%;" />
 
 ```html
-<svg width="300px" height="150px" style="border: 1px solid #ccc;">
-    <rect x="20" y="20" width="250px" height="125px" rx="5" ry="5" fill="teal" />
-</svg>
+<section class="box_04">
+    <svg width="300px" height="150px" style="border: 1px solid #ccc;">
+        <rect x="20" y="20" width="250px" height="125px" rx="5" ry="5" fill="teal" />
+    </svg>
+</section>
 ```
 
-[rect元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=4)
+[rect元素DEMO](https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=4)
 
 #### 3.circle元素 (圆)
 
@@ -312,15 +320,17 @@ circle 元素是一个 SVG 的基本形状，用来创建圆,基于一个圆心�
 - xy：圆心y坐标
 - r：半径
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200905151513091.png" alt="image-20200905151513091" style="zoom: 67%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905151513091.png" alt="image-20200905151513091" style="zoom: 67%;" />
 
 ```html
-<svg width="300px" height="300px" style="border: 1px solid #ccc;">
-    <circle cx="100" cy="100" r="50" fill="#0aa"></circle>
-</svg>
+<section class="box_05">
+    <svg width="300px" height="300px" style="border: 1px solid #ccc;">
+        <circle cx="100" cy="100" r="50" fill="#0aa"></circle>
+    </svg>
+</section>
 ```
 
-[circle元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=5)
+[circle元素DEMO](https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=5)
 
 #### 4.ellipse元素（椭圆）
 
@@ -331,15 +341,17 @@ ellipse 元素是一个 SVG 基本形状，用来创建一个椭圆，基于一�
 - rx：x方向半径
 - ry：y方向半径
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200905151925222.png" alt="image-20200905151925222" style="zoom: 67%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905151925222.png" alt="image-20200905151925222" style="zoom: 67%;" />
 
 ```html
-<svg width="300px" height="300px" style="border: 1px solid #ccc;">
-    <ellipse cx="150" cy="150" rx="100" ry="75" fill="#0aa" />
-</svg>
+<section class="box_06">
+    <svg width="300px" height="300px" style="border: 1px solid #ccc;">
+        <ellipse cx="150" cy="150" rx="100" ry="75" fill="#0aa" />
+    </svg>
+</section>
 ```
 
-[ellipse元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=6)
+[ellipse元素DEMO](https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=6)
 
 #### 5.polygon元素 (闭合多边形)
 
@@ -347,32 +359,36 @@ polygon 元素是由连接一组点集的直线构成。`polygon` 的路径在�
 
 * potins：定义了用来画一个 polygon 元素或 polyline 元素的点的数列。每个点用用户坐标系统中的一个 X 坐标和 Y 坐标定义。用逗号分开每个点。
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200905152811262.png" alt="image-20200905152811262" style="zoom: 67%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905152811262.png" alt="image-20200905152811262" style="zoom: 67%;" />
 
 ```html
-<svg width="300px" height="300px" style="border: 1px solid #ccc;">
-    <polygon points="0, 50 50, 0 150, 0 200, 50 150, 100 50, 100" fill="#0aa"></polygon>
-</svg>
+<section class="box_07">
+    <svg width="300px" height="300px" style="border: 1px solid #ccc;">
+        <polygon points="0,50 50,0 150,0 200,50 150,100 50,100" fill="#0aa"></polygon>
+    </svg>
+</section>
 ```
 
-[polygon元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=7)
+[polygon元素DEMO](https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=7)
 
 #### 6.polyline元素 (折线)
 
 polyline 元素是 SVG 的一个基本形状，用来创建一系列直线连接多个点。典型的一个 polyline 是用来创建一个开放的形状，最后一点不与第一点相连。
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200905153443196.png" alt="image-20200905153443196" style="zoom: 67%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905153443196.png" alt="image-20200905153443196" style="zoom: 67%;" />
 
 ```html
-<svg width="300px" height="180px" style="border: 1px solid #ccc;">
-    <polyline points="10 10, 50 50, 75 175, 175 150, 175 50, 225 75, 225 150, 300 150" fill="none" stroke="#0aa"/>
-</svg>
-<svg width="300px" height="180px" style="border: 1px solid #ccc;">
-    <polyline points="10 10, 50 50, 75 175, 175 150, 175 50, 225 75, 225 150, 300 150" fill="#0aa" stroke="none"/>
-</svg>
+<section class="box_08">
+    <svg width="300px" height="180px" style="border: 1px solid #ccc;">
+        <polyline points="10 10,50 50,75 175,175 150,175 50,225 75,225 150,300 150" fill="none" stroke="#0aa" />
+    </svg>
+    <svg width="300px" height="180px" style="border: 1px solid #ccc;">
+        <polyline points="10 10,50 50,75 175,175 150,175 50,225 75,225 150,300 150" fill="#0aa" stroke="none" />
+    </svg>
+</section>
 ```
 
-[polyline元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=8)
+[polyline元素DEMO](https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=8)
 
 #### 7.image元素（图片）
 
@@ -386,12 +402,14 @@ polyline 元素是 SVG 的一个基本形状，用来创建一系列直线连接
 - preserveAspectRatio：控制图像比例
 
 ```html
-<svg width="500" height="300">
-    <image xlink:href="img/20190419141710_4735vxaqwhri_small.jpg" x="0" y="0" height="300" width="300"/> 
-</svg>
+<section class="box_26">
+    <svg width="500" height="300">
+        <image xlink:href="img/20190419141710_4735vxaqwhri_small.jpg" x="0" y="0" height="300" width="300" />
+    </svg>
+</section>
 ```
 
-[image元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=26)
+[image元素DEMO](https://1927344728.github.io/demo-lizh/html/21-svg03.html?type=26)
 
 - 如果你没有设置 x 属性或 y 属性，它们自动被设置为 0
 - 如果你没有设置 height 属性或 width 属性，它们自动被设置为 0
@@ -419,24 +437,29 @@ text 元素定义了一个由文字组成的图形。
 - spacing：指示用户代理应如何确定要沿路径呈现的印刷字符之间的间距。
 - xlink:href：将对资源的引用定义为引用IRI。该链接的确切含义取决于使用它的每个元素的上下文。
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200912022433702.png" alt="image-20200912022433702" style="zoom:67%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200912022433702.png" alt="image-20200912022433702" style="zoom:67%;" />
 
 ```html
-<svg width="500" height="300" style="border: 1px solid #eee;">
-    <defs>
-        <path id="MyPath" d="M 50 200 C 200 400 900 -200 900 100" />
-    </defs>
-    <use xlink:href="#MyPath" fill="none" stroke="orange" stroke-width="3" />
-    <text font-family="Verdana" font-size="30" fill="#0aa">
-        <textPath startOffset="-50" xlink:href="#MyPath" spacing="exact" > 君子之交淡如水，茶人之交醇如茶。 </textPath>
-    </text>
-    <text x="120" y="30" dx="0" dy="30" font-weight="bold" font-size="30" fill="#0aa" text-anchor="middle"> 君子之交淡如水，茶人之交醇如茶。 </text> 
-    <text x="20" y="100" font-weight="bold" font-size="30" fill="#0aa" textLength="300"> 君子之交淡如水，茶人之交醇如茶。 </text> 
-    <text x="20" y="140" font-weight="bold" font-size="30" fill="#0aa" textLength="300" lengthAdjust="spacingAndGlyphs" rotate="30"> 君子之交淡如水，茶人之交醇如茶。 </text> 
-</svg>
+<section class="box_27">
+    <svg width="500" height="300" style="border: 1px solid #eee;">
+        <defs>
+            <path id="MyPath" d="M 50 200 C 200 400 900 -200 900 100" />
+        </defs>
+        <use xlink:href="#MyPath" fill="none" stroke="orange" stroke-width="3" />
+
+        <text font-family="Verdana" font-size="30" fill="#0aa">
+            <textPath startOffset="-50" xlink:href="#MyPath" spacing="exact"> 君子之交淡如水，茶人之交醇如茶。 </textPath>
+        </text>
+        <text x="120" y="30" dx="0" dy="30" font-weight="bold" font-size="30" fill="#0aa" text-anchor="middle">
+            君子之交淡如水，茶人之交醇如茶。 </text>
+        <text x="20" y="100" font-weight="bold" font-size="30" fill="#0aa" textLength="300"> 君子之交淡如水，茶人之交醇如茶。 </text>
+        <text x="20" y="140" font-weight="bold" font-size="30" fill="#0aa" textLength="300"
+              lengthAdjust="spacingAndGlyphs" rotate="30"> 君子之交淡如水，茶人之交醇如茶。 </text>
+    </svg>
+</section>
 ```
 
-[textPath元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=27)
+[textPath元素DEMO](https://1927344728.github.io/demo-lizh/html/21-svg03.html?type=27)
 
 #### 10.pattern元素（图案）
 
@@ -450,30 +473,32 @@ text 元素定义了一个由文字组成的图形。
 * xlink:href：将对资源的引用定义为引用IRI。该链接的确切含义取决于使用它的每个元素的上下文。
 * preserveAspectRatio：表示是否强制进行统一缩放。
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200912172113635.png" alt="image-20200912172113635" style="zoom:67%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200912172113635.png" alt="image-20200912172113635" style="zoom:67%;" />
 
 ```html
-<svg width="400" height="400">
-    <defs>
-        <linearGradient id="Gradient7">
-            <stop offset="5%" stop-color="white"/>
-            <stop offset="95%" stop-color="#0aa"/>
-        </linearGradient>
-        <linearGradient id="Gradient8" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="5%" stop-color="white"/>
-            <stop offset="95%" stop-color="orange"/>
-        </linearGradient>
-        <pattern id="Pattern" x="0" y="0" width=".25" height=".25">
-            <rect x="0" y="0" width="50" height="50" fill="#0aa"/>
-            <line x1="25" y1="25" x2="50" y2="50"  stroke-width="5" stroke="url(#Gradient8)"/>
-            <circle cx="25" cy="25" r="20" fill="url(#Gradient7)" fill-opacity="0.8"/>
-        </pattern>
-    </defs>
-    <rect fill="url(#Pattern)" x="0" y="0" width="200" height="200"/>
-</svg>
+<section class="box_28">
+    <svg width="400" height="400">
+        <defs>
+            <linearGradient id="Gradient7">
+                <stop offset="5%" stop-color="white" />
+                <stop offset="95%" stop-color="#0aa" />
+            </linearGradient>
+            <linearGradient id="Gradient8" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="5%" stop-color="white" />
+                <stop offset="95%" stop-color="orange" />
+            </linearGradient>
+            <pattern id="Pattern" x="0" y="0" width=".25" height=".25">
+                <rect x="0" y="0" width="50" height="50" fill="#0aa" />
+                <line x1="25" y1="25" x2="50" y2="50" stroke-width="5" stroke="url(#Gradient8)" />
+                <circle cx="25" cy="25" r="20" fill="url(#Gradient7)" fill-opacity="0.8" />
+            </pattern>
+        </defs>
+        <rect fill="url(#Pattern)" x="0" y="0" width="200" height="200" />
+    </svg>
+</section>
 ```
 
-[pattern元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=27)
+[pattern元素DEMO](https://1927344728.github.io/demo-lizh/html/21-svg03.html?type=27)
 
 
 
@@ -485,27 +510,34 @@ text 元素定义了一个由文字组成的图形。
 
 * d：一个字符串，包含了一系列路径描述。可以使用不同的指令，移动到一个新的点，然后绘制不同的直线和曲线。
 
-注意：**指令字母大写表示坐标位置是绝对坐标，指令字母小写表示坐标位置是相对坐标。**
+注意：**指令字母大写表示坐标位置是绝对坐标，指令字母小写表示坐标位置是相对坐标。x、y坐标之间可以用空格或逗号隔开。**
 
 以下用 path 元素，绘制上个 polyline 元素 示例：
 
 ```html
-<svg width="300px" height="180px" style="border: 1px solid #ccc;">
-    <path d="
-             M10,10
-             L50,50
-             L75,175
-             L175,150
-             L175,50
-             L225,75
-             L225,150
-             L300,150"
-		fill="none"
-		stroke="#0aa"
-		stroke-width="2px"
-	/>
-</svg>
+<section class="box_09">
+  <svg width="300px" height="180px" style="border: 1px solid #ccc;">
+      <path d="
+        M10 10
+        L50 50
+        L75 175
+        L175 150
+        L175 50
+        L225 75
+        L225 150
+        L300 150
+      "
+      fill="none"
+      stroke="#0aa"
+      stroke-width="2px"
+    />
+  </svg>
+</section>  
 ```
+
+[path元素DEMO](https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=9)
+
+
 
 #### 1.直线指令
 
@@ -526,20 +558,22 @@ d="M10,10 L50,50 L75,175 L175,150 L175,50 L225,75 L225,150 L300,150"
 
 **注意：**实际应用中使用指令字母即可。**指令字母大写表示坐标位置是绝对位置，指令字母小写表示坐标位置时相对位置。**
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200905161857928.png" alt="image-20200905161857928" style="zoom:67%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905161857928.png" alt="image-20200905161857928" style="zoom:67%;" />
 
 ```html
-<svg width="300px" height="300px" style="border: 1px solid #ccc;">
-    <g fill="none">
-        <path d="M 0 300 l 150 -300" stroke="red" />
-        <path d="M 150 0 l 150 300" stroke="red" />
-        <path d="M 50 200 h 200" stroke="#0aa" />
-        <path d="M 0 300 q 150 -300 300 0 z" stroke="orange" stroke-width="3px" />
-    </g>
-</svg>
+<section class="box_10">
+    <svg width="300px" height="300px" style="border: 1px solid #ccc;">
+        <g fill="none">
+            <path d="M 0 300 l 150 -300" stroke="red" />
+            <path d="M 150 0 l 150 300" stroke="red" />
+            <path d="M 50 200 h 200" stroke="#0aa" />
+            <path d="M 0 300 q 150 -300 300 0 z" stroke="orange" stroke-width="3px" />
+        </g>
+    </svg>
+</section>
 ```
 
-[直线指令DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=10)
+[直线指令DEMO](https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=10)
 
 #### 2.曲线指令
 
@@ -567,13 +601,15 @@ d="M10,10 L50,50 L75,175 L175,150 L175,50 L225,75 L225,150 L300,150"
   * x、y 是曲线的终点坐标
 
   ```html
-  <svg width="300px" height="150px" style="border: 1px solid #ccc;">
-      <path d="M0 30 C 100 30 150 150 300 30" fill="none" stroke="#0aa" stroke-width="3px"/>
-      <path d="M0 100 Q 150 180 300 100" fill="none" stroke="orange"/>
-  </svg>
+  <section class="box_11">
+      <svg width="300px" height="150px" style="border: 1px solid #ccc;">
+          <path d="M0 30 C 100 30 150 150 300 30" fill="none" stroke="#0aa" stroke-width="3px" />
+          <path d="M0 100 Q 150 180 300 100" fill="none" stroke="orange" />
+      </svg>
+  </section>
   ```
-
-  [曲线指令DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=11)
+  
+  [曲线指令DEMO](https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=11)
 
 > 为了连缀平滑的贝塞尔曲线，还可以使用 T 和 S 命令。它们的语法比别的 Curveto 命令简单。因为它假定第一个控制点是前一个控制点关于前一个点的反射（即，关于前一个点对称），或者说如果没有前一个控制点的话它实际上就是前一个点。
 
@@ -589,18 +625,20 @@ d="M10,10 L50,50 L75,175 L175,150 L175,50 L225,75 L225,150 L300,150"
   * sweep-flag：0 或 1，用来确定弧是顺时针方向（1）还是逆时针方向（0）
   * x、y：弧线的终点
 
-  <img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200905170936292.png" alt="image-20200905170936292" style="zoom:67%;" />
+  <img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905170936292.png" alt="image-20200905170936292" style="zoom:67%;" />
 
   ```html
-  <svg width="600" height="300" style="border: 1px solid #eee;">
-      <path d="M250,100 A120,80 0 0 0 250,200" fill="none" stroke="red" stroke-width="5" />
-      <path d="M250,100 A120,80 0 1 1 250,200" fill="none" stroke="#0aa" stroke-width="3"/>
-      <path d="M250,100 A120,80 0 1 0 250,200" fill="none" stroke="orange" stroke-width="1"/>
-      <path d="M250,100 A120,80 0 0 1 250,200" fill="none" stroke="#a0a" stroke-width="3"/>
-  </svg>
+  <section class="box_12">
+      <svg width="600" height="300" style="border: 1px solid #eee;">
+          <path d="M250,100 A120,80 0 0 0 250,200" fill="none" stroke="red" stroke-width="5" />
+          <path d="M250,100 A120,80 0 1 1 250,200" fill="none" stroke="#0aa" stroke-width="3" />
+          <path d="M250,100 A120,80 0 1 0 250,200" fill="none" stroke="orange" stroke-width="1" />
+          <path d="M250,100 A120,80 0 0 1 250,200" fill="none" stroke="#a0a" stroke-width="3" />
+      </svg>
+  </section>
   ```
-
-  [椭圆弧线指令DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=12)
+  
+  [椭圆弧线指令DEMO](https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=12)
 
 
 
@@ -619,27 +657,30 @@ marker 元素定义了在特定的 path、line、polyline、polygon 元素上绘
 >
 > 可以设置markerUnits=”strokeWidth” 使得标记进行缩放来适应路径描边的大小
 
-![image-20200905174739391](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200905174739391.png)
+![image-20200905174739391](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905174739391.png)
 
 ```html
-<svg width="300" height="150" style="border: 1px solid #eee;">
-    <defs>
-        <marker id="markerCircle" markerWidth="20" markerHeight="20" refX="5" refY="5">
-            <circle cx="5" cy="5" r="3" style="stroke: none; fill: orange;"/>
-        </marker>
-        <marker id="markerCircle2" markerWidth="8" markerHeight="8" refX="5" refY="5">
-            <circle cx="5" cy="5" r="5" style="stroke: none; fill: red;"/>
-        </marker>
-        <marker id="markerArrow" markerWidth="13" markerHeight="13" refX="2" refY="6" orient="auto" markerUnits="strokeWidth">
-            <path d="M2,2 L2,11 L10,6 L2,2" style="fill: orange;" />
-        </marker>
-    </defs>
-    <path d="M75 25 h150 v100 l -100 -50"
-          style="stroke: #0aa; fill: none; marker-start: url(#markerCircle); marker-mid: url(#markerCircle2);  marker-end: url(#markerArrow); "/>
-</svg>
+<section class="box_13">
+    <svg width="300" height="150" style="border: 1px solid #eee;">
+        <defs>
+            <marker id="markerCircle" markerWidth="20" markerHeight="20" refX="5" refY="5">
+                <circle cx="5" cy="5" r="3" style="stroke: none; fill: orange;" />
+            </marker>
+            <marker id="markerCircle2" markerWidth="8" markerHeight="8" refX="5" refY="5">
+                <circle cx="5" cy="5" r="5" style="stroke: none; fill: red;" />
+            </marker>
+            <marker id="markerArrow" markerWidth="13" markerHeight="13" refX="2" refY="6" orient="auto"
+                    markerUnits="strokeWidth">
+                <path d="M2,2 L2,11 L10,6 L2,2" style="fill: orange;" />
+            </marker>
+        </defs>
+        <path d="M75 25 h150 v100 l -100 -50"
+              style="stroke: #0aa; fill: none; marker-start: url(#markerCircle); marker-mid: url(#markerCircle2);  marker-end: url(#markerArrow); " />
+    </svg>
+</section>
 ```
 
-[标记DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=13)
+[标记DEMO](https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=13)
 
 #### SVG 中的clipPath
 
@@ -647,23 +688,21 @@ SVG 剪裁路径是指根据指定的路径或形状来剪裁 SVG 图形。应�
 
 你可以使用任何图形来作为剪裁路径或者被剪裁的对象。可以是文字、圆形、椭圆、多边形或自定义路径。
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200905180428246.png" alt="image-20200905180428246" style="zoom:67%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905180428246.png" alt="image-20200905180428246" style="zoom:67%;" />
 
 ```html
-<style>
-    @keyframes openYourHeart { from { r: 10px; } to { r: 60px; } }
-    #myClip circle { animation: openYourHeart 5s infinite; }
-</style>
-<svg viewBox="0 0 100 100" style="width: 300px; border: 1px solid #eee;">
-    <clipPath id="myClip">
-        <circle cx="40" cy="35" r="35" />
-    </clipPath>
-    <path id="heart" d="M10 30 A20 20 0 0 1 50 30 A20 20 0 0 1 90 30 Q90 60 50 90 Q10 60 10 30 Z" style="clip-path: url(#myClip);" fill="#0aa" />
-</svg>
-
+<section class="box_14">
+    <svg viewBox="0 0 100 100" style="width: 300px; border: 1px solid #eee;">
+        <clipPath id="myClip">
+            <circle cx="40" cy="35" r="35" />
+        </clipPath>
+        <path id="heart" d="M10 30 A20 20 0 0 1 50 30 A20 20 0 0 1 90 30 Q90 60 50 90 Q10 60 10 30 Z"
+              style="clip-path: url(#myClip);" fill="#0aa" />
+    </svg>
+</section>
 ```
 
-[clipPath DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=14)
+[clipPath DEMO](https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=14)
 
 #### SVG DEFS元素、SYMBOL元素和USE元素
 
@@ -677,25 +716,27 @@ SVG 剪裁路径是指根据指定的路径或形状来剪裁 SVG 图形。应�
 
   出于安全原因，一些浏览器可能在use元素上应用同源策略，还有可能拒绝载入xlink:href属性内的跨源URI。
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200905201129540.png" alt="image-20200905201129540" style="zoom:67%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905201129540.png" alt="image-20200905201129540" style="zoom:67%;" />
 
 ```html
-  <svg viewBox="0 0 300 300" style="width: 300px; border: 1px solid #eee;">
-    <defs>
-      <g id="shape" stroke-width="1">
-          <line x1="150" y1="150" x2="150" y2="300" />
-          <circle cx="150" cy="150" r="120" />
-      </g>
-    </defs>
-    <symbol id="shape2">
-        <circle cx="75" cy="75" r="75" style="fill: orange;"/>
-    </symbol>
-    <use xlink:href="#shape" style="stroke: #0aa; fill: none;"/>
-    <use xlink:href="#shape2" x="150" y="75" />
-  </svg>
+<section class="box_15">
+    <svg viewBox="0 0 300 300" style="width: 300px; border: 1px solid #eee;">
+        <defs>
+            <g id="shape" stroke-width="1">
+                <line x1="150" y1="150" x2="150" y2="300" />
+                <circle cx="150" cy="150" r="120" />
+            </g>
+        </defs>
+        <symbol id="shape2">
+            <circle cx="75" cy="75" r="75" style="fill: orange;" />
+        </symbol>
+        <use xlink:href="#shape" style="stroke: #0aa; fill: none;" />
+        <use xlink:href="#shape2" x="150" y="75" />
+    </svg>
+</section>
 ```
 
-[defs-symbol-use DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=15)
+[defs-symbol-use DEMO](https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=15)
 
 
 
@@ -781,24 +822,30 @@ SVG 可以创建和并在填充和描边上应用渐变色。
   * repeat：此值指定渐变以原始顺序重复其边缘。
 * xlink:href：引入其他 linearGradient  元素
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200910001740691.png" alt="image-20200910001740691" style="zoom:80%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200910001740691.png" alt="image-20200910001740691" style="zoom:80%;" />
 
 ```html
-<svg width="500" height="300">
-    <defs>
-        <linearGradient id="Gradient1">
-            <stop stop-color="orange" offset="0%"/>
-            <stop stop-color="white" stop-opacity="0.5"offset="50%"/>
-            <stop stop-color="#0aa" offset="100%"/>
-        </linearGradient>
-        <linearGradient id="Gradient2" x1="0" y1="0" x2="1" y2="1" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Gradient1"/>
-        <linearGradient id="Gradient3" x1="33%" x2="67%" y1="33%" y2="67%" spreadMethod="reflect" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Gradient1"/>
-    </defs>
-    <rect x="0" y="50" rx="30" ry="30" width="150" height="150" fill="url(#Gradient1)"/>      
-    <rect x="175" y="50" rx="30" ry="30" width="150" height="150" fill="url(#Gradient2)"/>      
-    <rect x="350" y="50" rx="30" ry="30" width="150" height="150" fill="url(#Gradient3)"/>      
-</svg>
+<section class="box_24">
+    <svg width="500" height="300">
+        <defs>
+            <linearGradient id="Gradient1">
+                <stop stop-color="orange" offset="0%" />
+                <stop stop-color="white" stop-opacity="0.5" offset="50%" />
+                <stop stop-color="#0aa" offset="100%" />
+            </linearGradient>
+            <linearGradient id="Gradient2" x1="0" y1="0" x2="1" y2="1" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Gradient1" />
+            <linearGradient id="Gradient3" x1="33%" x2="67%" y1="33%" y2="67%" spreadMethod="reflect" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Gradient1" />
+        </defs>
+        <rect x="0" y="50" rx="30" ry="30" width="150" height="150" fill="url(#Gradient1)" />
+        <rect x="175" y="50" rx="30" ry="30" width="150" height="150" fill="url(#Gradient2)" />
+        <rect x="350" y="50" rx="30" ry="30" width="150" height="150" fill="url(#Gradient3)" />
+    </svg>
+</section>
 ```
+
+[线性渐变DEMO](https://1927344728.github.io/demo-lizh/html/21-svg03.html?type=24)
+
+
 
 可以在 stop 元素中定义，`stop-color` 、`stop-opacity` 、`fill` 属性，也可以定义在 css 中：
 
@@ -814,11 +861,8 @@ linearGradient 元素还需要一些其他的属性值，它们指定了渐变�
 >  可以在渐变上使用 xlink:href 属性，使一个渐变的属性和颜色中值（stop）可以被另一个渐变包含引用。
 
 ```html
-<linearGradient id="Gradient2" x1="0" y1="0" x2="1" y2="1"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Gradient1"/>
+<linearGradient id="Gradient2" x1="0" y1="0" x2="1" y2="1" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Gradient1"/>
 ```
-
-[线性渐变DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=24)
 
 #### 径向渐变
 
@@ -829,26 +873,28 @@ linearGradient 元素还需要一些其他的属性值，它们指定了渐变�
 * fx、fy：定义径向渐变的焦点的 x、y 轴坐标。如果该属性没有被定义，就假定它与中心点是同一位置。
 * fr：定义径向渐变的焦点的半径。若该属性没有被定义，默认值为 0%。
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200910003119521.png" alt="image-20200910003119521" style="zoom:80%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200910003119521.png" alt="image-20200910003119521" style="zoom:80%;" />
 
 ```html
-<svg width="500" height="300">
-    <defs>
-        <radialGradient id="Gradient4">
-            <stop stop-color="orange" offset="0%"/>
-            <stop stop-color="white" stop-opacity="0.5"offset="50%"/>
-            <stop stop-color="#0aa" offset="100%"/>
-        </radialGradient>
-        <radialGradient id="Gradient5" cx="0.5" cy="0" r="1" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Gradient4"/>
-        <radialGradient id="Gradient6" fx="0.5" fy="0.35" fr="0.25" spreadMethod="reflect" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Gradient4"/>
-    </defs>
-    <rect x="0" y="50" rx="30" ry="30" width="150" height="150" fill="url(#Gradient4)"/>      
-    <rect x="175" y="50" rx="30" ry="30" width="150" height="150" fill="url(#Gradient5)"/>      
-    <rect x="350" y="50" rx="30" ry="30" width="150" height="150" fill="url(#Gradient6)"/>      
-</svg>
+<section class="box_25">
+    <svg width="500" height="300">
+        <defs>
+            <radialGradient id="Gradient4">
+                <stop stop-color="orange" offset="0%" />
+                <stop stop-color="white" stop-opacity="0.5" offset="50%" />
+                <stop stop-color="#0aa" offset="100%" />
+            </radialGradient>
+            <radialGradient id="Gradient5" cx="0.5" cy="0" r="1" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Gradient4" />
+            <radialGradient id="Gradient6" fx="0.5" fy="0.35" fr="0.25" spreadMethod="reflect" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Gradient4" />
+        </defs>
+        <rect x="0" y="50" rx="30" ry="30" width="150" height="150" fill="url(#Gradient4)" />
+        <rect x="175" y="50" rx="30" ry="30" width="150" height="150" fill="url(#Gradient5)" />
+        <rect x="350" y="50" rx="30" ry="30" width="150" height="150" fill="url(#Gradient6)" />
+    </svg>
+</section>
 ```
 
-[径向渐变DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=25)
+[径向渐变DEMO](https://1927344728.github.io/demo-lizh/html/21-svg03.html?type=25)
 
 
 
@@ -877,66 +923,75 @@ SMIL允许你做下面这些事情：
 此元素没有动画效果。可以实现基本的延迟功能。即，可以在特定时间之后修改某个属性值（也可以是 CSS 属性值）
 
 ```html
-<svg width="320" height="320">
-    <g> 
-        <text font-family="microsoft yahei" font-size="80" y="160" x="160" fill="#0aa">
-            SVG
-            <set attributeName="x" attributeType="XML" to="60" begin="2s" />
-        </text>
-    </g>
-</svg>
+<section class="box_18">
+    <svg width="320" height="320">
+        <g>
+            <text font-family="microsoft yahei" font-size="80" y="160" x="160" fill="#0aa">
+                SVG
+                <set attributeName="x" attributeType="XML" to="60" begin="2s" />
+            </text>
+        </g>
+    </svg>
+</section>
 ```
 
-[set元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=18)
+[set元素DEMO](https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=18)
 
 ##### animate元素
 
 基础动画元素。实现单属性的动画过渡效果。类似于 CSS3 中的 transition 属性
 
 ```html
-<svg width="320" height="320">
-    <g> 
-        <text font-family="microsoft yahei" font-size="80" y="160" x="160" fill="#0aa">
-            SVG
-            <animate attributeName="x" from="160" to="60" begin="0s" dur="3s" repeatCount="indefinite" />
-        </text>
-    </g>
-</svg>
+<section class="box_19">
+    <svg width="320" height="320">
+        <g>
+            <text font-family="microsoft yahei" font-size="80" y="160" x="160" fill="#0aa">
+                SVG
+                <animate attributeName="x" from="160" to="60" begin="0s" dur="3s" repeatCount="indefinite" />
+            </text>
+        </g>
+    </svg>
+</section>
 ```
 
-[animate元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=19)
+[animate元素DEMO](https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=19)
 
 ##### animateTransform
 
 实现 transform 变换动画效果的。
 
 ```html
-<svg width="640" height="640">
-    <g> 
-        <text font-family="microsoft yahei" font-size="80" y="160" x="160" fill="#0aa">
-            SVG
-            <animateTransform attributeName="transform" begin="0s" dur="3s"  type="scale" from="1" to="1.5" repeatCount="indefinite"/>
-        </text>
-    </g>
-</svg>
+<section class="box_20">
+    <svg width="640" height="640">
+        <g>
+            <text font-family="microsoft yahei" font-size="80" y="160" x="160" fill="#0aa">
+                SVG
+                <animateTransform attributeName="transform" begin="0s" dur="3s" type="scale" from="1" to="1.5" repeatCount="indefinite" />
+            </text>
+        </g>
+    </svg>
+</section>
 ```
 
-[animateTransform元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=20)
+[animateTransform元素DEMO](https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=20)
 
 ##### animateMotion元素
 
 可以让 SVG 图形沿着特定的 path 路径运动。
 
 ```html
-<svg width="360" height="200">
-    <text font-family="microsoft yahei" font-size="40" x="0" y="0" fill="#0aa">SVG
-        <animateMotion path="M10,80 q100,120 120,20 q140,-50 160,0" begin="0s" dur="3s" rotate="auto" repeatCount="indefinite"/>
-    </text>
-    <path d="M10,80 q100,120 120,20 q80,-80 160,0" stroke="#0aa" stroke-width="2" fill="none" />
-</svg>
+<section class="box_21">
+    <svg width="360" height="200">
+        <text font-family="microsoft yahei" font-size="40" x="0" y="0" fill="#0aa">SVG
+            <animateMotion path="M10,80 q100,120 120,20 q140,-50 160,0" begin="0s" dur="3s" rotate="auto"
+                           repeatCount="indefinite" />
+        </text>
+        <path d="M10,80 q100,120 120,20 q80,-80 160,0" stroke="#0aa" stroke-width="2" fill="none" />
+    </svg>
+</section>
 ```
 
-[animateMotion元素DEMO](https://1927344728.github.io/fed-knowledge/demo/26-svg.html?type=21)
+[animateMotion元素DEMO](https://1927344728.github.io/demo-lizh/html/21-svg03.html?type=21)
 
 #### 与使用 CSS 动画的区别
 

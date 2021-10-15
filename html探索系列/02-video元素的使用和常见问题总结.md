@@ -2,7 +2,7 @@
 
 **HTML`<video>`元素** 用于在`HTML`或者`XHTML`文档中嵌入媒体播放器，用于支持文档内的视频播放。你也可以将 `<video>` 标签用于音频内容，但是`audio`元素可能在用户体验上更合适。
 
-以下是一个局域播放的示例，允许`html`元素在视频上方，[Demo查看](https://1927344728.github.io/fed-knowledge/demo/11-video.html)：
+以下是一个局域播放的示例，允许`html`元素在视频上方：
 
 ```html
 <div class="player_box">
@@ -10,7 +10,7 @@
         controls
         controlslist="nodownload nofullscreen noremoteplayback"
         loop="true"
-        poster="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/media/美人谷-阿兰.jpg"
+        poster="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/media/美人谷-阿兰.jpg"
 
         x5-playsinline="true"
         x5-video-player-type="h5-page"
@@ -20,8 +20,8 @@
         currentTime="100"
         muted
     >
-        <source src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/media/美人谷.mp4" type="video/mp4">
-        <!-- <source src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/media/Vives En Mi-art--Sharlene Taule--art-af1309f88d9fda37e0dc4ad2e2c4c9b8.mp4" type="video/mp4"> -->
+        <source src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/media/美人谷.mp4" type="video/mp4">
+        <!-- <source src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/media/Vives En Mi-art--Sharlene Taule--art-af1309f88d9fda37e0dc4ad2e2c4c9b8.mp4" type="video/mp4"> -->
         <p>
             Your browser doesn't support HTML5 video. Here is a <a href="myVideo.mp4">link to the video</a> instead.
         </p>
@@ -34,6 +34,8 @@
     <div class="player_pop"></div>
 </div>
 ```
+
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/06-video.html)
 
 ` <video>` 标签的内容是针对浏览器不支持此元素时候的降级处理。浏览器并不是都支持相同的视频格式，所以你可以在 `<source> `元素里提供多个视频源，然后浏览器将会使用它所支持的第一个源。
 

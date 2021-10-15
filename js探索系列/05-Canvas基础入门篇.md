@@ -90,7 +90,7 @@ context.strokeStyle = "#0dd" //设置或返回用于笔触的颜色、渐变或�
 
 **确定绘制只有两种方法，`fill()`和`stroke()`**，前者是指填充，后者是指描边。
 
-##### <img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200802152344385.png" alt="image-20200802152344385" style="zoom: 50%;" />
+##### <img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802152344385.png" alt="image-20200802152344385" style="zoom: 50%;" />
 
 ```js
 //绘制线条：青色
@@ -122,7 +122,7 @@ getContext2D().then(context => {
 })
 ```
 
-[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=1)
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=1)
 
 我们期待的结果页是：第一条线是青色，第二条线是粉红色，第一条线是深蓝。 然，最终渲染出的结果：三条线都是深蓝色。第一条线的青色，第二条线的粉红色了呢？其实，这里的原因是我之前一直强调的一点——**Canvas是基于状态的绘制**。
 
@@ -132,7 +132,7 @@ getContext2D().then(context => {
 
 为了让绘制方法不重复绘制，我们可以在每次绘制之前加上`beginPath()`，代表下次绘制的起始之处为`beginPath()`之后的代码。我们在三次绘制之前分别加上`context.beginPath()`。
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200802152715047.png" alt="image-20200802152715047" style="zoom:50%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802152715047.png" alt="image-20200802152715047" style="zoom:50%;" />
 
 ```js
 function drawMultBrokenLine (context) {
@@ -158,7 +158,7 @@ function drawMultBrokenLine (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=2)
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=2)
 
 `beginPath()`是绘制设置状态的起始点，它之后代码设置的绘制状态的作用域结束于绘制方法`stroke()`、`fill()`或者`closePath()`。
 
@@ -214,7 +214,7 @@ context.createLinearGradient(x0,y0,x1,y1)
 //y1	渐变结束点的 y 坐标
 ```
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200802153043369.png" alt="image-20200802153043369" style="zoom:50%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802153043369.png" alt="image-20200802153043369" style="zoom:50%;" />
 
 ```js
 function createLinearGradient (context) {
@@ -228,7 +228,7 @@ function createLinearGradient (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=3)
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=3)
 
 
 
@@ -244,7 +244,7 @@ context.createRadialGradient(x0,y0,r0,x1,y1,r1)
 //r1	结束圆的半径
 ```
 
-![image-20200802153527937](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200802153527937.png)
+![image-20200802153527937](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802153527937.png)
 
 ```js
 function createRadialGradient (context) {
@@ -256,7 +256,7 @@ function createRadialGradient (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=4)
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=4)
 
 gradient 对象中的颜色和位置：addColorStop
 
@@ -281,7 +281,7 @@ context.createPattern(image,"repeat|repeat-x|repeat-y|no-repeat")
 //不使用重复：no-repeat;
 ```
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200802154344739.png" alt="image-20200802154344739" style="zoom: 67%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802154344739.png" alt="image-20200802154344739" style="zoom: 67%;" />
 
 ```js
 function createPattern (context) {
@@ -303,7 +303,7 @@ function createPattern (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=5)
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=5)
 
 
 
@@ -334,7 +334,7 @@ context.arc(x,y,r,sAngle,eAngle,counterclockwise);
 //counterclockwise	可选。规定应该逆时针还是顺时针绘图。False = 顺时针(默认)，true = 逆时针。
 ```
 
-![image-20200802154748374](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200802154748374.png)
+![image-20200802154748374](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802154748374.png)
 
 ```js
 function drawArc (context) {
@@ -346,7 +346,7 @@ function drawArc (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=6)
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=6)
 
 
 
@@ -360,7 +360,7 @@ context.arcTo(x1,y1,x2,y2,r);
 //r	弧的半径
 ```
 
-![image-20200802154936529](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200802154936529.png)
+![image-20200802154936529](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802154936529.png)
 
 ```js
 function drawArcTo (context) {
@@ -375,7 +375,7 @@ function drawArcTo (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=7)
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=7)
 
 
 
@@ -394,7 +394,7 @@ context.quadraticCurveTo(cpx,cpy,x,y);
 
 > 二次贝塞尔曲线需要两个点。第一个点是用于二次贝塞尔计算中的控制点，第二个点是曲线的结束点。曲线的开始点是当前路径中最后一个点。如果路径不存在，那么请使用 `beginPath()` 和 `moveTo()` 方法来定义开始点
 
-![image-20200802160540181](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200802160540181.png)
+![image-20200802160540181](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802160540181.png)
 
 ```JS
 function drawQuadraticCurveTo (context) {
@@ -407,7 +407,7 @@ function drawQuadraticCurveTo (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=8)
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=8)
 
 
 
@@ -471,7 +471,7 @@ context.strokeText(text,x,y,maxWidth)
 //maxWidth	可选。允许的最大文本宽度，以像素计。
 ```
 
-![image-20200802160727162](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200802160727162.png)
+![image-20200802160727162](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802160727162.png)
 
 ```js
 function drawText (context) {
@@ -487,7 +487,7 @@ function drawText (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=9)
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=9)
 
 
 
@@ -537,7 +537,7 @@ context.setTransform(a,b,c,d,e,f);
 //区别：transform()变换是指在上一次变换的状态基础上再次变换；setTransform()变换是指先重置到最初始的状态再开始变换。
 ```
 
-![image-20200802162108256](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200802162108256.png)
+![image-20200802162108256](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802162108256.png)
 
 ```js
 function transform (context) {
@@ -584,7 +584,7 @@ function transform (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=10)
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=10)
 
 > 注意保存和恢复Canvas状态
 >
@@ -598,7 +598,7 @@ function transform (context) {
 
 需要注意的是**裁剪是对画布进行的，裁切后的画布不能恢复到原来的大小**，也就是说画布是越切越小的，要想保证最后仍然能在canvas最初定义的大小下绘图需要注意`save()`和`restore()`。画布是先裁切完了再进行绘图。并不一定非要是图片，路径也可以放进去~
 
-![image-20200802162403917](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200802162403917.png)
+![image-20200802162403917](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802162403917.png)
 
 ```js
 function setClip (context) {
@@ -624,7 +624,7 @@ function setClip (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=11)
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=11)
 
 
 
@@ -661,7 +661,7 @@ context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height)
 //height	可选。要使用的图像的高度。（伸展或缩小图像）
 ```
 
-![image-20200802162553067](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200802162553067.png)
+![image-20200802162553067](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802162553067.png)
 
 ```js
 function drawImage (context) {
@@ -674,7 +674,7 @@ function drawImage (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=12)
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=12)
 
 
 
@@ -702,7 +702,7 @@ function drawImage (context) {
 * 查看相交线的个数，如果为奇数，就填充，如果是偶数，就不填充
 ```
 
-![image-20200802162859005](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200802162859005.png)
+![image-20200802162859005](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802162859005.png)
 
 ```js
 drawCircular (context) {
@@ -719,7 +719,7 @@ drawCircular (context) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=13)
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=13)
 
 
 
@@ -789,7 +789,7 @@ putImageData()	//把图像数据（从指定的 ImageData 对象）放回画布�
 
 ### 绘制圆角矩形
 
-![image-20200802163558011](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200802163558011.png)
+![image-20200802163558011](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802163558011.png)
 
 ```js
 function roundRect (ctx, x, y, w, h, r) {
@@ -807,15 +807,15 @@ function roundRect (ctx, x, y, w, h, r) {
 }
 ```
 
-[查看DEMO](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=14)
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=14)
 
 
 
 ### 绘制圆角图片
 
-![image-20200802173138214](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200802173138214.png)
+![image-20200802173138214](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802173138214.png)
 
-![image-20200802173158563](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200802173158563.png)
+![image-20200802173158563](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802173158563.png)
 
 ```js
 //方法一
@@ -845,7 +845,7 @@ function drawRoundImg2 (ctx, x, y, w, h, r) {
 }
 ```
 
-[查看DEMO 圆角图片1](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=15) [查看DEMO 圆角图片2](https://1927344728.github.io/fed-knowledge/demo/15-canvas入门篇.html?type=16)
+[查看DEMO 圆角图片1](https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=15) [查看DEMO 圆角图片2](https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=16)
 
 
 
@@ -870,6 +870,8 @@ Canvas的标准一直在更新，大家可以访问 [W3C Canvas标准](http://ww
 
 
 ### 参考链接
+
+[Canvas API中文文档首页地图](https://www.canvasapi.cn/)
 
 [MDN - canvas](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API)
 

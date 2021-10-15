@@ -70,9 +70,9 @@ Debugger attached.
 
 **开始调试**：在 Chrome 浏览器的地址栏，键入 `chrome://inspect`或者`about:inspect`，回车后就可以看到下面的界面。
 
-![image-20200802195554438](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200802195554438.png)
+![image-20200802195554438](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802195554438.png)
 
-![image-20200802195718540](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200802195718540.png)
+![image-20200802195718540](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802195718540.png)
 
 #### NIM
 
@@ -168,9 +168,9 @@ node inspect -p 9229
 
 * 在左侧栏上方单击`start Debugging`。
 
-  ![image-20200803225503444.png](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200803225503444.png)
+  ![image-20200803225503444.png](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200803225503444.png)
 
-  ![image-20200803225915556.png](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200803225915556.png)
+  ![image-20200803225915556.png](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200803225915556.png)
 
 #### 配置launch.json
 

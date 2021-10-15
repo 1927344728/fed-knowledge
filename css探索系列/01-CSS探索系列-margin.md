@@ -8,27 +8,27 @@
 
 > 边界，元素周围生成额外的空白区。“空白区”通常是指其他元素不能出现且父元素背景可见的区域。
 >
-> ——CSS权威指南
+> ——CSS 权威指南
 
 #### Margin经常被用来做什么？
 
 - 让块元素水平居中
 - 让元素之间留有舒适的留白
-- 处理特殊的first或last
+- 处理特殊的 first 或 last
 - 一些布局
 
 #### 需要注意的地方
 
-- margin神奇的外边距折叠
-- margin怪异的百分比值
-- margin的auto值
-- margin和相对偏移top, right, bottom, left的异同
+- margin 神奇的外边距折叠
+- margin 怪异的百分比值
+- margin 的 auto 值
+- margin 和相对偏移 top、right、bottom、left 的异同
 
 
 
 ### Margin神奇的外边距折叠
 
-![image-20200504010557625](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200504010557625.png)
+![image-20200504010557625](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200504010557625.png)
 
 ```html
 <div class="wrap">
@@ -100,7 +100,7 @@
 
 - `margin` 折叠元素只发生在块元素上。
 - 浮动元素不与其他元素 `margin` 折叠。
-- 定义了属性overflow且值不为visible（即创建了新的块级格式化上下文）的块元素，不与它的**子元素**发生`margin` 折叠；
+- 定义了属性 overflow 且值不为 visible（即创建了新的块级格式化上下文）的块元素，不与它的**子元素**发生`margin` 折叠；
 - 绝对定位元素的 `margin` 不与任何 `margin` 发生折叠。
 - 根元素的 `margin` 不与其它任何 `margin` 发生折叠；
 
@@ -138,7 +138,7 @@
 </style>
 ```
 
-![image-20200504012208342](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200504012208342.png)
+![image-20200504012208342](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200504012208342.png)
 
 **事实告诉我们结果是 `60px 30px 60px 30px`。**
 
@@ -191,7 +191,7 @@ auto是margin的可选值之一。相信大家平时使用auto值时，最多的
 
 想象这样一个场景：一个宽200px的元素被包含在一个宽600px的元素，此元素的 `margin-left: auto`，大家觉得结果会怎样？
 
-![image-20200503234104813](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200503234104813.png)
+![image-20200503234104813](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200503234104813.png)
 
 ```html
 <div class="wrap">
@@ -247,7 +247,7 @@ auto是margin的可选值之一。相信大家平时使用auto值时，最多的
 
 ### Margin与Relative的异同
 
-![image-20200503225626449](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200503225626449.png)
+![image-20200503225626449](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200503225626449.png)
 
 ```html
 <div class="wrap">
@@ -315,7 +315,7 @@ auto是margin的可选值之一。相信大家平时使用auto值时，最多的
 
 不是很明白？！还是直接看图吧：
 
-![image-20200503225830177](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200503225830177.png)
+![image-20200503225830177](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200503225830177.png)
 
 ```html
 <div class="wrap">
@@ -370,7 +370,7 @@ auto是margin的可选值之一。相信大家平时使用auto值时，最多的
 
 这才是他在布局中的位置：
 
-![image-20200503230100757](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200503230100757.png)
+![image-20200503230100757](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200503230100757.png)
 
 
 
@@ -380,7 +380,7 @@ auto是margin的可选值之一。相信大家平时使用auto值时，最多的
 
 要求：不论是主栏还是侧栏，总是以最高的那列为基准高度。
 
-![image-20200504014912231](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200504014912231.png)
+![image-20200504014912231](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200504014912231.png)
 
 ```html
 <div class="wrap">
@@ -429,7 +429,7 @@ margin的实现方法：
 
 #### 去掉列表最后一项下边框
 
-![image-20200504015238324](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200504015238324.png)
+![image-20200504015238324](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200504015238324.png)
 
 ```html
 <div class="wrap">

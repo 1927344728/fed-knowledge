@@ -64,43 +64,45 @@
 
 `z-index`只是层叠等级中的一个属性而已，而理解`z-index`背后的原理实质上就是要理解层叠上下文。看一下下面示例：
 
-![image-20200505152727176](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200505152727176.png)
+![image-20200505152727176](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200505152727176.png)
 
 ```html
-<section class="wrap_1">
+<section class="box_01">
     <div><p></p></div>
     <div></div>
     <div></div>
 </section>
 <style>
-    .wrap_1 > div {
+    .box_01 > div {
         position: relative;
         padding: 5px;
         border-bottom: 1px solid #a0a;
         min-height: 100px;
     }
-    .wrap_1 > div:nth-child(1) {
+    .box_01 > div:nth-child(1) {
         background: #f00;
         z-index: 10;
     }
-    .wrap_1 > div:nth-child(1) p {
+    .box_01 > div:nth-child(1) p {
         min-height: 80px;
         margin-top: 40px;
         background: #fa0;
         z-index: -999;
     }
-    .wrap_1 > div:nth-child(2) {
+    .box_01 > div:nth-child(2) {
         margin: -30px 0 0 30px;
         background: #a0a;
         z-index: 8;
     }
-    .wrap_1 > div:nth-child(3) {
+    .box_01 > div:nth-child(3) {
         margin: -30px 0 0 60px;
         background: #0aa;
         z-index: 9;
     }
 </style>
 ```
+
+ [查看DEMO](https://1927344728.github.io/demo-lizh/html/05-z-index.html?type=1)
 
 在构造渲染树时，三个`div`元素生成三个盒子，按先后顺序做个标记：`div_1_box、div_2_box、div_3_box`，`p`元素生成`p_box`。
 
@@ -164,10 +166,10 @@
 
 将上面示例代码中的`div`的`position: relative`注释，你会发现所有的`z-index`值都失效了：
 
-![image-20200505183646658](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200505183646658.png)
+![image-20200505183646658](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200505183646658.png)
 
 ```css
-.wrap_1 > div {
+.box_01 > div {
     /*position: relative;*/
     padding: 5px;
     border-bottom: 1px solid #a0a;
@@ -183,40 +185,42 @@
 
 如图所示：红色`<p>`元素位于紫色`<p>`元素的上方。这个似乎没什么问题？毕竟红色`<p>`元素的`z-index`值大于紫色的！
 
-![image-20200505165644435](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200505165644435.png)
+![image-20200505165644435](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200505165644435.png)
 
 ```html
-<section class="wrap_2">
+<section class="box_02">
     <div style="z-index: auto;"><p></p></div>
     <div style="z-index: auto;"><p></p></div>
 </section>
 <style>
-    .wrap_2 > div {
+    .box_02 > div {
         position: relative;
     }
-    .wrap_2 > div > p {
+    .box_02 > div > p {
         position: relative;
         min-height: 100px;
     }
-    .wrap_2 > div:nth-child(1) > p {
+    .box_02 > div:nth-child(1) > p {
         margin: 0 0 -30px 30px;
         background: #f00;
         z-index: 2;
     }
-    .wrap_2 > div:nth-child(2) > p {
+    .box_02 > div:nth-child(2) > p {
         background: #a0a;
         z-index: 1;
     }
 </style>
 ```
 
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/05-z-index.html?type=2)
+
 接下来，我们把`div`标签中`z-index: auto`改为`z-index: 0`：
 
-![image-20200505170148154](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200505170148154.png)
+![image-20200505170148154](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200505170148154.png)
 
 ```html
 <!--把`z-index: auto`改为`z-index: 0`-->
-<section class="wrap_2">
+<section class="box_02">
     <div style="z-index: 0;"><p></p></div>
     <div style="z-index: 0;"><p></p></div>
 </section>
@@ -244,7 +248,7 @@
 
 **`stacking context`，通常翻译为层叠上下文，是 HTML 中的一个三维的概念**，特性类似于**BFC**。即层叠上下文的内部子元素再怎么折腾，它们都跳不出层叠上下文的限制，不会影响外部的元素。这有点像，孙猴子有七十二般变化、一个筋头十万八千里，但他逃不出如来佛的手掌心。
 
-![z-axis](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/zindex-z-axis.jpg)
+![z-axis](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/zindex-z-axis.jpg)
 
 在CSS2.1规范中，每个盒模型的位置是三维的，分别是平面画布上的`X轴`，`Y轴`以及表示层叠的`Z轴`。`x`轴指向屏幕的右边，`y`轴指向屏幕的底部，`z`轴的方向指向查看者。
 
@@ -270,7 +274,7 @@
 
 在HTML文档中，默认情况之下有一个自然层叠顺序（`Natural Stacing Order`），即元素在`z`轴上的顺序。它是由许多因素决定的。比如下图，它显示了元素盒子放入层叠上下文的顺序，从层叠的底部开始，共有七种层叠等级：
 
-![zindex-order](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/zindex-order.jpg?v=1)
+![zindex-order](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/zindex-order.jpg?v=1)
 
 - **背景和边框**：形成层叠上下文的元素的背景和边框。 层叠上下文中的最低等级。
 - **负`z-index`值**：层叠上下文内有着负z-index值的子元素。
@@ -290,52 +294,54 @@
 
 来做一个小的测试：如果你无法实现，或者对以下的实现方法不理解，那么恭喜你，即将学习新的技能。
 
-**问题：**尝试把红色的元素放到其他两个元素后面，但是必须遵守下面的规则 [点击试试？](https://1927344728.github.io/fed-knowledge/demo/10-z-index.html?type=3)：
+**问题：**尝试把红色的元素放到其他两个元素后面，但是必须遵守下面的规则 [点击试试？](https://1927344728.github.io/demo-lizh/html/05-z-index.html?type=3)：
 
 - 不能修改HTML中元素的顺序
 - 不能增加或修改任何元素的`z-index`属性
 - 不能增加或修改任何元素的`position`属性
 
-![image-20200505212244123](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200505212244123.png)
+![image-20200505212244123](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200505212244123.png)
 
 ```html
-<section class="wrap_3">
+<section class="box_03">
     <div><p></p></div>
     <div><p></p></div>
     <div><p></p></div>
 </section>
 <style>
-    .wrap_3 > div > p {
+    .box_03 > div > p {
         position: relative;
         min-height: 100px;
     }
-    .wrap_3 > div:nth-child(1) > p{
+    .box_03 > div:nth-child(1) > p{
         background: #f00;
         z-index: 1;
     }
-    .wrap_3 > div:nth-child(2) {
+    .box_03 > div:nth-child(2) {
         margin: -30px 0 0 30px;
     }
-    .wrap_3 > div:nth-child(2) > p{
+    .box_03 > div:nth-child(2) > p{
         background: #a0a;
     }
-    .wrap_3 > div:nth-child(3) {
+    .box_03 > div:nth-child(3) {
         margin: -30px 0 0 60px;
     }
-    .wrap_3 > div:nth-child(3) > p{
+    .box_03 > div:nth-child(3) > p{
         background: #0aa;
     }
 </style>
 ```
 
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/05-z-index.html?type=3)
+
 你想到解决方法了吗？
 
 其实很简单，你只需要给第一个div标签加`opacity`小于`1`。**注意：这里说的是第一个div标签，不是p标签**
 
-![image-20200506235557729](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200506235557729.png)
+![image-20200506235557729](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200506235557729.png)
 
 ```html
-<div class="wrap_3">
+<div class="box_03">
     <div style="opacity: .99;"><p></p></div>
     <div><p></p></div>
     <div><p></p></div>
@@ -358,32 +364,34 @@
 
 我们把`p`元素去删了，给div加上边框：
 
-![image-20200507214842574](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/css/image-20200507214842574.png)
+![image-20200507214842574](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200507214842574.png)
 
 ```html
-<section class="wrap_4">
+<section class="box_04">
     <div style="opacity: 0.99;"></div>
     <div></div>
     <div></div>
 </section>
 <style>
-    .wrap_4 > div {
+    .box_04 > div {
         min-height: 100px;
         background: #fff;
     }
-    .wrap_4 > div:nth-child(1) {
+    .box_04 > div:nth-child(1) {
         border: 1px solid #f00;
     }
-    .wrap_4 > div:nth-child(2) {
+    .box_04 > div:nth-child(2) {
         margin: -30px 0 0 30px;
         border: 1px solid #a0a;
     }
-    .wrap_4 > div:nth-child(3) {
+    .box_04 > div:nth-child(3) {
         margin: -30px 0 0 60px;
         border: 1px solid #0aa;
     }
 </style>
 ```
+
+[查看DEMO](https://1927344728.github.io/demo-lizh/html/05-z-index.html?type=4)
 
 设置了`opacity`小于1的div，属于不依赖`z-index`的层叠上下文，遵守层叠顺序**（具体查看上一节【层叠顺序】）**，它的层叠等级比其他两个div块级元素高。
 
@@ -441,23 +449,23 @@
 
 #### 为什么建议给absolute元素加z-index
 
-比如下面代码 [点击查看](https://1927344728.github.io/fed-knowledge/demo/10-z-index.html?type=5)：
+比如下面代码 [点击查看](https://1927344728.github.io/demo-lizh/html/05-z-index.html?type=5)：
 
 ```html
-<section class="wrap_5">
+<section class="box_05">
     <p>影斑驳，叶落纷纷，一路的繁华，消瘦在秋风里。</p>
-    <img src="../images/demo/s730j6s0dg6zk.jpg">
+    <img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/s730j6s0dg6zk.jpg">
 </section>
 <style>
-    .wrap_5 {
+    .box_05 {
         width: 300px;
         position: relative;
     }
-    .wrap_5 > img {
+    .box_05 > img {
         display: block;
         width: 100%;
     }
-    .wrap_5 > p {
+    .box_05 > p {
         position: absolute;
         left: 0;
         bottom: 0;
@@ -473,7 +481,7 @@
 
 **~~如果你已经掌握了层叠并且代码风格有良好规范，你可以忽略`z-index`。~~**
 
-![](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/demo/zindex-absolute.jpg?v=1)
+![](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/zindex-absolute.jpg?v=1)
 
 #### IE6/7的诡异行为
 

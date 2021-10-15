@@ -24,7 +24,7 @@ NAT（Network Address Translation，网络地址转换）属接入广域网(WAN)
 
 如下图所示，NAT网关有2个网络端口，其中公共网络端口的IP地址是统一分配的公共 IP，为`202.20.65.5`；私有网络端口的IP地址是保留地址，为`192.168.1.1`。
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/l8qxsuxoeu.png"/>
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/l8qxsuxoeu.png"/>
 
 1. **客户机发起请求：**私有网中的主机`192.168.1.2`向公共网中的主机`202.20.65.4`发送了1个IP包`Dst=202.20.65.4,Src=192.168.1.2`。（src = source，源；dst = destination，目的）
 
@@ -34,7 +34,7 @@ NAT（Network Address Translation，网络地址转换）属接入广域网(WAN)
 
 4. **NAT网关将公网IP转为私网IP**：`NAT Gateway`会将IP包的目的IP转换成私有网中主机的IP，然后将IP包`Des=192.168.1.2，Src=202.20.65.4`转发到私有网。对于通信双方而言，这种地址的转换过程是完全透明的
 
-![](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/7jmmzh3r96.png)
+![](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/7jmmzh3r96.png)
 
 5. **NAT网关连接跟踪：**`NAT Gateway`在收到响应包后，就需要判断将数据包转发给谁。此时如果子网内仅有少量客户机，可以用静态NAT手工指定；但如果内网有多台客户机，并且各自访问不同网站，这时候就需要连接跟踪`connection track`。
 
@@ -42,13 +42,13 @@ NAT（Network Address Translation，网络地址转换）属接入广域网(WAN)
 
    
 
-![](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/p9c6rbit97.png)
+![](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/p9c6rbit97.png)
 
 1. **NAT网关端口转换：**如果`Client A`和`Client B`同时访问`Web Server`，那么当`NAT Gateway`收到响应包的时候，就无法判断将数据包转发给哪台客户机。
 
    `NAT Gateway`会在`Connection Track`中加入端口信息加以区分。如果两客户机（端口不同）访问同一服务器，那么在`Track Table`里加入端口信息即可区分，如果两客户机端口正好相同，那么在实行NAT的同时对源端口也要做相应的转换。
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/hzkla28zra.png" alt="NAT网关端口转换"  />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/hzkla28zra.png" alt="NAT网关端口转换"  />
 
 
 
@@ -79,19 +79,19 @@ NAPT（Network Address Port Translation，网络地址端口转换），是NAT�
 
 1. **Sakura frp账号注册。**在官网[https://www.natfrp.com/](https://www.natfrp.com/)注册，成功后会跳转到 [管理面板](https://www.natfrp.com/user/)，在左侧栏点击软件下载，win10选第一个就好了。
 
-![image-20200809165843825](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200809165843825.png)
+![image-20200809165843825](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200809165843825.png)
 
 3. **创建并启动隧道。**
 
    * 打开刚才下载的软件，点击安装`SakuraLauncher.exe`，在界面中输入访问密钥进行登陆。密钥在官网的[管理面板](https://www.natfrp.com/user/)查看。
 
-![image-20200809183942429](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200809183942429.png)
+![image-20200809183942429](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200809183942429.png)
 
-![image-20200809184333846](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200809184333846.png)
+![image-20200809184333846](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200809184333846.png)
 
 * 登陆完成后，点左边菜单栏的隧道，点击新建隧道。**也可以在官网中创建隧道**，创建后，需要重启`SakuraLauncher.exe`，才能在软件隧道列表中看到。
 
-![image-20200809184538061](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200809184538061.png)
+![image-20200809184538061](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200809184538061.png)
 
 * 本地ip：通常可以填`127.0.0.1`。window通过`cmd`运行`ipconfig`查看。
 
@@ -109,13 +109,13 @@ NAPT（Network Address Port Translation，网络地址端口转换），是NAT�
 
 * 服务器：一般没有特殊需求可能随便选。**如果是web服务，则需要查看服务器是否支持建站。**[官网查看隧道类型介绍](https://www.natfrp.com/tunnel/create)
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200811004102324.png" alt="image-20200811004102324" style="zoom:150%;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200811004102324.png" alt="image-20200811004102324" style="zoom:150%;" />
 
 
 
 * 点击开启刚才的隧道，会弹出日志信息。这个日志信息上面的**IP或者服务器域名+端口**，是用于远程桌面连接、web页面访问的地址。
 
-![](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200810012342674.png)
+![](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200810012342674.png)
 
 
 #### Mac安装过程
@@ -162,21 +162,21 @@ NAPT（Network Address Port Translation，网络地址端口转换），是NAT�
 
 * 下载` RDP Warp`。项目地址：https://github.com/stascorp/rdpwrap，在页面的`Release`找到下载页面，下载`zip`文件，解压。
 
-![image-20200809172337095](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200809172337095.png)
+![image-20200809172337095](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200809172337095.png)
 
 * **首先运行RDPCheck.exe**，这是一个测试程序，会尝试建立一个和本机之间的远程连接。如果连接成功，那么说明你的主机是支持完整的远程桌面连接功能的，也就不需要进行后续操作了。如果失败，那么接着**以管理员身份运行install.bat**，执行安装。
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200809172512699.png" alt="image-20200809172512699"  />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200809172512699.png" alt="image-20200809172512699"  />
 
 * 安装程序结束之后，**运行RDPConf.exe**，查看目前的远程桌面服务的运行状态。
 
   **如果Wrapper state：Not installed**，是没有安装成功，可能是被杀毒软件拦截了。
 
-![image-20200809174016918](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200809174016918.png)
+![image-20200809174016918](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200809174016918.png)
 
 **如果Listener state一项是红色的，显示not listening [not supported]，**这是因为其中一个文件无效引起的，我们可以手动加下。
 
-![image-20200809182128358](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/image-20200809182128358.png)
+![image-20200809182128358](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200809182128358.png)
 
 **解决方法：**
 
@@ -232,7 +232,7 @@ window的远程桌面连接，可以使用自带的远程桌面连接；mac需�
 
 2. 添加被控制 PC 的 IP 、登录账号、密码。
 
-<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/20200809211913.jpg" style="zoom:;" />
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/20200809211913.jpg" style="zoom:;" />
 
 
 
@@ -244,7 +244,7 @@ TeamViewer 是全面的**远程访问、远程控制及远程支持**解决方�
 2. 注册账号。
 3. 输入伙伴的ID（被控电脑的teamviewer ID）。
 
-![image-20200812204943589](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md/images/js/ABD9-CB2A-D9B5-63F72FB35DA1.jpg)
+![image-20200812204943589](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/ABD9-CB2A-D9B5-63F72FB35DA1.jpg)
 
 
 
