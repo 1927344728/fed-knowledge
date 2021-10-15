@@ -1,0 +1,2125 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Canvas基础入门篇 · LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="06-SVG基础入门篇.html" />
+    
+    
+    <link rel="prev" href="04-深入理解JavaScript的浅拷贝和深拷贝.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/00-前端调试随笔.html">
+            
+                <a href="../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/05-JS常见问题概览.html">
+            
+                <a href="../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/07-小程序问题概览.html">
+            
+                <a href="../bugs/07-小程序问题概览.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    小程序问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../css探索系列/00-CSS基础知识.html">
+            
+                <a href="../css探索系列/00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../css探索系列/01-CSS探索系列-margin.html">
+            
+                <a href="../css探索系列/01-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../css探索系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../css探索系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../css探索系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../css探索系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../css探索系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../css探索系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../css探索系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../css探索系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../css探索系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="../css探索系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../css探索系列/11-CSS3中一些高级属性的应用.html">
+            
+                <a href="../css探索系列/11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../css探索系列/14-CSS探索系列-line-height.html">
+            
+                <a href="../css探索系列/14-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../css探索系列/_关于css.html">
+            
+                <a href="../css探索系列/_关于css.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../frontend/00-关于前端.html">
+            
+                <a href="../frontend/00-关于前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    关于前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../frontend/00-基础-02-浏览器工作原理.html">
+            
+                <a href="../frontend/00-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../frontend/00-进阶-04-如何保证高质量代码.html">
+            
+                <a href="../frontend/00-进阶-04-如何保证高质量代码.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    进阶 04 如何保证高质量代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../frontend/01-聊一聊Cookie的一些问题.html">
+            
+                <a href="../frontend/01-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../frontend/02-如何理解HTTP响应的状态码.html">
+            
+                <a href="../frontend/02-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../frontend/代码规范/">
+            
+                <a href="../frontend/代码规范/">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.6.1" data-path="../frontend/代码规范/00-W3C标准.html">
+            
+                <a href="../frontend/代码规范/00-W3C标准.html">
+            
+                    
+                        <b>4.6.1.</b>
+                    
+                    W3C标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.2" data-path="../frontend/代码规范/01-HTML.html">
+            
+                <a href="../frontend/代码规范/01-HTML.html">
+            
+                    
+                        <b>4.6.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.3" data-path="../frontend/代码规范/02-CSS.html">
+            
+                <a href="../frontend/代码规范/02-CSS.html">
+            
+                    
+                        <b>4.6.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.4" data-path="../frontend/代码规范/03-JS.html">
+            
+                <a href="../frontend/代码规范/03-JS.html">
+            
+                    
+                        <b>4.6.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.5" data-path="../frontend/代码规范/04-其他.html">
+            
+                <a href="../frontend/代码规范/04-其他.html">
+            
+                    
+                        <b>4.6.5.</b>
+                    
+                    其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../html探索系列/00-HTML基础知识.html">
+            
+                <a href="../html探索系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../html探索系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../html探索系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../html探索系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../html探索系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../html探索系列/_关于html.html">
+            
+                <a href="../html探索系列/_关于html.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Js探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="00-JS基础知识.html">
+            
+                <a href="00-JS基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    JS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="01-谈谈JavaScript的作用域和上下文.html">
+            
+                <a href="01-谈谈JavaScript的作用域和上下文.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="02-JavaScript-Date的使用和日期时间字符串格式.html">
+            
+                <a href="02-JavaScript-Date的使用和日期时间字符串格式.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    JavaScript Date的使用和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="03-四种判断数据类型方法的优缺点.html">
+            
+                <a href="03-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="04-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="04-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.6" data-path="05-Canvas基础入门篇.html">
+            
+                <a href="05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="06-SVG基础入门篇.html">
+            
+                <a href="06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="JavaScript笔记/">
+            
+                <a href="JavaScript笔记/">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    JavaScript笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1" data-path="JavaScript笔记/JavaScript之Ajax.html">
+            
+                <a href="JavaScript笔记/JavaScript之Ajax.html">
+            
+                    
+                        <b>6.8.1.</b>
+                    
+                    JavaScript之Ajax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2" data-path="JavaScript笔记/JavaScript之Promise.html">
+            
+                <a href="JavaScript笔记/JavaScript之Promise.html">
+            
+                    
+                        <b>6.8.2.</b>
+                    
+                    JavaScript之Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.3" data-path="JavaScript笔记/JavaScript之Touch事件.html">
+            
+                <a href="JavaScript笔记/JavaScript之Touch事件.html">
+            
+                    
+                        <b>6.8.3.</b>
+                    
+                    JavaScript之Touch事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.4" data-path="JavaScript笔记/JavaScript之键盘事件.html">
+            
+                <a href="JavaScript笔记/JavaScript之键盘事件.html">
+            
+                    
+                        <b>6.8.4.</b>
+                    
+                    JavaScript之键盘事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="_关于Javascript.html">
+            
+                <a href="_关于Javascript.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="nodeJs/">
+            
+                <a href="nodeJs/">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    NodeJs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.10.1" data-path="nodeJs/00-Node.js的三种调试方法.html">
+            
+                <a href="nodeJs/00-Node.js的三种调试方法.html">
+            
+                    
+                        <b>6.10.1.</b>
+                    
+                    Node.Js的三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.2" data-path="nodeJs/01-npm模块的一些机制.html">
+            
+                <a href="nodeJs/01-npm模块的一些机制.html">
+            
+                    
+                        <b>6.10.2.</b>
+                    
+                    Npm模块的一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.3" data-path="nodeJs/02-npm常用命令.html">
+            
+                <a href="nodeJs/02-npm常用命令.html">
+            
+                    
+                        <b>6.10.3.</b>
+                    
+                    Npm常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.4" data-path="nodeJs/03-从零开始，开发一个NPM包.html">
+            
+                <a href="nodeJs/03-从零开始，开发一个NPM包.html">
+            
+                    
+                        <b>6.10.4.</b>
+                    
+                    从零开始，开发一个NPM包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../research/02-如何监控前端异常？.html">
+            
+                <a href="../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../research/03-H5页面的跳转、刷新、回退+刷新.html">
+            
+                <a href="../research/03-H5页面的跳转、刷新、回退+刷新.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    H5页面的跳转、刷新、回退+刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>7.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../research/Javascript加密混淆.html">
+            
+                <a href="../research/Javascript加密混淆.html">
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="../research/Vue如何导入TypeScript.html">
+            
+                <a href="../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>7.8.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.9" data-path="../research/移动端PDF预览.html">
+            
+                <a href="../research/移动端PDF预览.html">
+            
+                    
+                        <b>7.9.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.10" data-path="../research/纯CSS绘制箭头.html">
+            
+                <a href="../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>7.10.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11" data-path="../research/网站性能测量和优化方法.html">
+            
+                <a href="../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>7.11.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../tech/04-sublime3插件篇.html">
+            
+                <a href="../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../tech/05-Charles安装及使用.html">
+            
+                <a href="../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../tools/Git/">
+            
+                <a href="../tools/Git/">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" data-path="../tools/Git/01-Git安装、使用及常用命令.html">
+            
+                <a href="../tools/Git/01-Git安装、使用及常用命令.html">
+            
+                    
+                        <b>9.1.1.</b>
+                    
+                    Git安装、使用及常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2" data-path="../tools/Git/02-git-clone速度太慢的解决办法.html">
+            
+                <a href="../tools/Git/02-git-clone速度太慢的解决办法.html">
+            
+                    
+                        <b>9.1.2.</b>
+                    
+                    Git Clone速度太慢的解决办法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3" data-path="../tools/Git/03-Git常见问题.html">
+            
+                <a href="../tools/Git/03-Git常见问题.html">
+            
+                    
+                        <b>9.1.3.</b>
+                    
+                    Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../tools/Gitbook/">
+            
+                <a href="../tools/Gitbook/">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    Gitbook
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="../tools/Gitbook/01-gitbook入门篇.html">
+            
+                <a href="../tools/Gitbook/01-gitbook入门篇.html">
+            
+                    
+                        <b>9.2.1.</b>
+                    
+                    Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" data-path="../tools/Gitbook/02-gitbook插件篇.html">
+            
+                <a href="../tools/Gitbook/02-gitbook插件篇.html">
+            
+                    
+                        <b>9.2.2.</b>
+                    
+                    Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.3" data-path="../tools/Gitbook/03-gitbook进阶篇.html">
+            
+                <a href="../tools/Gitbook/03-gitbook进阶篇.html">
+            
+                    
+                        <b>9.2.3.</b>
+                    
+                    Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Canvas基础入门篇</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="canvas&#x57FA;&#x7840;&#x5165;&#x95E8;&#x7BC7;">Canvas&#x57FA;&#x7840;&#x5165;&#x95E8;&#x7BC7;</h1>
+<p><code>Canvas API</code> &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x901A;&#x8FC7;<code>JavaScript</code>&#x548C; <code>HTML</code>&#x7684;<code>&lt;canvas&gt;</code>&#x5143;&#x7D20;&#x6765;&#x7ED8;&#x5236;&#x56FE;&#x5F62;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x52A8;&#x753B;&#x3001;&#x6E38;&#x620F;&#x753B;&#x9762;&#x3001;&#x6570;&#x636E;&#x53EF;&#x89C6;&#x5316;&#x3001;&#x56FE;&#x7247;&#x7F16;&#x8F91;&#x4EE5;&#x53CA;&#x5B9E;&#x65F6;&#x89C6;&#x9891;&#x5904;&#x7406;&#x7B49;&#x65B9;&#x9762;&#x3002;</p>
+<p><code>Canvas API</code>&#x4E3B;&#x8981;&#x805A;&#x7126;&#x4E8E;2D&#x56FE;&#x5F62;&#x3002;&#x800C;&#x540C;&#x6837;&#x4F7F;&#x7528;<code>&lt;canvas&gt;</code>&#x5143;&#x7D20;&#x7684; <code>WebGL API</code>&#x5219;&#x7528;&#x4E8E;&#x7ED8;&#x5236;&#x786C;&#x4EF6;&#x52A0;&#x901F;&#x7684;<code>2D</code>&#x548C;<code>3D</code>&#x56FE;&#x5F62;&#x3002;</p>
+<h3 id="&#x83B7;&#x53D6;&#x6E32;&#x67D3;&#x4E0A;&#x4E0B;&#x6587;2d&#x73AF;&#x5883;">&#x83B7;&#x53D6;&#x6E32;&#x67D3;&#x4E0A;&#x4E0B;&#x6587;(2D&#x73AF;&#x5883;)</h3>
+<p>&#x4F7F;&#x7528;<code>&lt;canvas&gt;</code>&#x5143;&#x7D20;&#x4E0D;&#x662F;&#x975E;&#x5E38;&#x96BE;&#xFF0C;&#x4F46;&#x4F60;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x7684;<code>HTML</code>&#x548C;<code>JavaScript</code>&#x77E5;&#x8BC6;&#x3002;&#x9664;&#x4E00;&#x4E9B;&#x8FC7;&#x65F6;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x652F;&#x6301;<code>&lt;canvas&gt;</code>&#x5143;&#x7D20;&#x5916;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x65B0;&#x7248;&#x672C;&#x4E3B;&#x6D41;&#x6D4F;&#x89C8;&#x5668;&#x90FD;&#x652F;&#x6301;&#x5B83;&#x3002;<code>Canvas</code>&#x7684;&#x9ED8;&#x8BA4;&#x5927;&#x5C0F;&#x4E3A;<code>300&#x50CF;&#x7D20;&#xD7;150&#x50CF;&#x7D20;</code>&#xFF08;&#x5BBD;&#xD7;&#x9AD8;&#xFF0C;&#x50CF;&#x7D20;&#x7684;&#x5355;&#x4F4D;&#x662F;<code>px</code>&#xFF09;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;HTML&#x7684;&#x9AD8;&#x5EA6;&#x548C;&#x5BBD;&#x5EA6;&#x5C5E;&#x6027;&#x6765;&#x81EA;&#x5B9A;&#x4E49;Canvas &#x7684;&#x5C3A;&#x5BF8;&#x3002;&#x4E3A;&#x4E86;&#x5728; Canvas &#x4E0A;&#x7ED8;&#x5236;&#x56FE;&#x5F62;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;JavaScript&#x4E0A;&#x4E0B;&#x6587;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x80FD;&#x52A8;&#x6001;&#x521B;&#x5EFA;&#x56FE;&#x50CF;&#xFF08; creates graphics on the fly&#xFF09;&#x3002;</p>
+<p>&#x6CE8;&#xFF1A;<code>css</code>&#x4E2D;&#x7684;<code>width\height</code>&#x63A7;&#x5236;&#x7684;&#x662F;&#x753B;&#x5E03;&#x5728;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x5BBD;&#x9AD8;&#xFF0C;&#x5F53;&#x5BBD;&#x5EA6;&#x6BD4;&#x4F8B;&#x4E0E;<code>canvas</code>&#x5C5E;&#x6027;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x5BBD;&#x5EA6;&#x4E0D;&#x4E00;&#x81F4;&#x65F6;&#xFF0C;&#x4F1A;&#x62C9;&#x4F38;<code>canvas</code>&#x5143;&#x7D20;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x628A;&#x56FA;&#x5B9A;&#x7684;&#x56FE;&#x7247;&#x62C9;&#x4F38;&#x4E86;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex_box&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;canvas&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex_item&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;500&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;500&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;canvas_base&quot;</span>)
+<span class="hljs-keyword">let</span> context = canvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>)
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x5C01;&#x88C5;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getContext2D</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+        <span class="hljs-keyword">let</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;canvas_base&quot;</span>)
+        <span class="hljs-keyword">let</span> context = canvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>)
+        <span class="hljs-keyword">if</span> (context) {
+            resolve(context)
+        } <span class="hljs-keyword">else</span> {
+            reject()
+        }
+    })
+}
+</code></pre>
+<h3 id="&#x72B6;&#x6001;&#x7684;&#x4FDD;&#x5B58;&#x548C;&#x6062;&#x590D;">&#x72B6;&#x6001;&#x7684;&#x4FDD;&#x5B58;&#x548C;&#x6062;&#x590D;</h3>
+<p>canvas&#x662F;&#x57FA;&#x4E8E;&#x72B6;&#x6001;&#x7684;&#x7ED8;&#x5236;&#x3002;&#x4FDD;&#x5B58;&#xFF08;&#x63A8;&#x9001;&#xFF09;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x5230;&#x5806;&#x6808;&#xFF0C;&#x8C03;&#x7528;&#x4EE5;&#x4E0B;&#x51FD;&#x6570;&#x3002;</p>
+<ul>
+<li>save()&#xFF1A;&#x4FDD;&#x5B58;&#x753B;&#x5E03;(canvas)&#x7684;&#x6240;&#x6709;&#x72B6;&#x6001;</li>
+<li>restore()&#xFF1A;save &#x548C; restore &#x65B9;&#x6CD5;&#x662F;&#x7528;&#x6765;&#x4FDD;&#x5B58;&#x548C;&#x6062;&#x590D; canvas &#x72B6;&#x6001;&#x7684;&#xFF0C;&#x90FD;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#x3002;Canvas &#x7684;&#x72B6;&#x6001;&#x5C31;&#x662F;&#x5F53;&#x524D;&#x753B;&#x9762;&#x5E94;&#x7528;&#x7684;&#x6240;&#x6709;&#x6837;&#x5F0F;&#x548C;&#x53D8;&#x5F62;&#x7684;&#x4E00;&#x4E2A;&#x5FEB;&#x7167;&#x3002;</li>
+</ul>
+<p>Canvas&#x72B6;&#x6001;&#x5B58;&#x50A8;&#x5728;&#x6808;&#x4E2D;&#xFF0C;&#x6BCF;&#x5F53;<code>save()</code>&#x65B9;&#x6CD5;&#x88AB;&#x8C03;&#x7528;&#x540E;&#xFF0C;&#x5F53;&#x524D;&#x7684;&#x72B6;&#x6001;&#x5C31;&#x88AB;&#x63A8;&#x9001;&#x5230;&#x6808;&#x4E2D;&#x4FDD;&#x5B58;&#x3002;&#x4E00;&#x4E2A;&#x7ED8;&#x753B;&#x72B6;&#x6001;&#x5305;&#x62EC;&#xFF1A;</p>
+<ul>
+<li>&#x5F53;&#x524D;&#x5E94;&#x7528;&#x7684;&#x53D8;&#x5F62;</li>
+<li>&#x4EE5;&#x53CA;&#x4E0B;&#x9762;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#xFF1A;<code>strokeStyle, fillStyle, globalAlpha, lineWidth, lineCap, lineJoin, miterLimit, lineDashOffset, shadowOffsetX, shadowOffsetY, shadowBlur, shadowColor, globalCompositeOperation, font, textAlign, textBaseline, direction, imageSmoothingEnabled</code></li>
+<li>&#x5F53;&#x524D;&#x7684;&#x88C1;&#x5207;&#x8DEF;&#x5F84;</li>
+</ul>
+<h3 id="&#x4ECE;&#x7EBF;&#x6761;&#x5F00;&#x59CB;">&#x4ECE;&#x7EBF;&#x6761;&#x5F00;&#x59CB;</h3>
+<h4 id="&#x79FB;&#x52A8;&#x753B;&#x7B14;moveto">&#x79FB;&#x52A8;&#x753B;&#x7B14;(moveTo())</h4>
+<pre><code class="lang-js">context.moveTo(x, y)
+</code></pre>
+<blockquote>
+<p>&#x8FD9;&#x53E5;&#x4EE3;&#x7801;&#x7684;&#x610F;&#x601D;&#x662F;<strong>&#x79FB;&#x52A8;&#x753B;&#x7B14;&#x81F3;(x, y)&#x8FD9;&#x4E2A;&#x70B9;&#xFF08;&#x5355;&#x4F4D;&#x662F;px&#xFF09;</strong>&#x3002;&#x8BB0;&#x4F4F;&#xFF0C;&#x8FD9;&#x91CC;&#x662F;&#x4EE5;<strong><code>canvas</code>&#x753B;&#x5E03;&#x7684;&#x5DE6;&#x4E0A;&#x89D2;&#x4E3A;&#x7B1B;&#x5361;&#x5C14;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x539F;&#x70B9;&#xFF0C;&#x4E14;y&#x8F74;&#x7684;&#x6B63;&#x65B9;&#x5411;&#x5411;&#x4E0B;&#xFF0C;x&#x8F74;&#x7684;&#x6B63;&#x65B9;&#x5411;&#x5411;&#x53F3;&#x3002;</strong></p>
+</blockquote>
+<h4 id="&#x7B14;&#x753B;&#x505C;&#x70B9;lineto">&#x7B14;&#x753B;&#x505C;&#x70B9;(lineTo())</h4>
+<pre><code class="lang-js">context.lineTo(x, y)
+</code></pre>
+<blockquote>
+<p>&#x8FD9;&#x53E5;&#x7684;&#x610F;&#x601D;&#x662F;&#x4ECE;<strong>&#x4E0A;&#x4E00;&#x7B14;&#x7684;&#x505C;&#x6B62;&#x70B9;</strong>&#x7ED8;&#x5236;&#x5230;(x, y)&#x8FD9;&#x91CC;&#x3002;&#x4E0D;&#x8FC7;&#x8981;&#x6E05;&#x695A;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;<code>moveTo()&#x3001;lineTo()</code>&#x90FD;&#x53EA;&#x662F;&#x72B6;&#x6001;&#x800C;&#x5DF2;&#xFF0C;&#x662F;&#x89C4;&#x5212;&#xFF0C;&#x662F;&#x6211;&#x51C6;&#x5907;&#x8981;&#x753B;&#xFF0C;&#x8FD8;&#x6CA1;&#x6709;&#x5F00;&#x59CB;&#x753B;&#xFF0C;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x8BA1;&#x5212;&#x800C;&#x5DF2;&#xFF01;</p>
+</blockquote>
+<h4 id="&#x9009;&#x62E9;&#x753B;&#x7B14;">&#x9009;&#x62E9;&#x753B;&#x7B14;</h4>
+<pre><code class="lang-js">context.lineWidth = <span class="hljs-number">2</span> <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x753B;&#x7B14;(&#x7EBF;&#x6761;)&#x7684;&#x7C97;&#x7EC6;&#x4E3A;2px</span>
+context.fillStyle = <span class="hljs-string">&quot;#0dd&quot;</span> <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6216;&#x8FD4;&#x56DE;&#x7528;&#x4E8E;&#x586B;&#x5145;&#x7ED8;&#x753B;&#x7684;&#x989C;&#x8272;&#x3001;&#x6E10;&#x53D8;&#x6216;&#x6A21;&#x5F0F;</span>
+context.strokeStyle = <span class="hljs-string">&quot;#0dd&quot;</span> <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6216;&#x8FD4;&#x56DE;&#x7528;&#x4E8E;&#x7B14;&#x89E6;&#x7684;&#x989C;&#x8272;&#x3001;&#x6E10;&#x53D8;&#x6216;&#x6A21;&#x5F0F;</span>
+</code></pre>
+<blockquote>
+<p>Canvas&#x662F;&#x57FA;&#x4E8E;&#x72B6;&#x6001;&#x7684;&#x7ED8;&#x5236;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5728;&#x9009;&#x62E9;&#x753B;&#x7B14;&#x7C97;&#x7EC6;&#x548C;&#x989C;&#x8272;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x5176;&#x5B9E;&#x4E5F;&#x662F;&#x9009;&#x62E9;&#x4E86;&#x7EBF;&#x6761;&#x7684;&#x7C97;&#x7EC6;&#x548C;&#x989C;&#x8272;&#x3002;</p>
+</blockquote>
+<h4 id="&#x786E;&#x5B9A;&#x7ED8;&#x5236;">&#x786E;&#x5B9A;&#x7ED8;&#x5236;</h4>
+<p><strong>&#x786E;&#x5B9A;&#x7ED8;&#x5236;&#x53EA;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;<code>fill()</code>&#x548C;<code>stroke()</code></strong>&#xFF0C;&#x524D;&#x8005;&#x662F;&#x6307;&#x586B;&#x5145;&#xFF0C;&#x540E;&#x8005;&#x662F;&#x6307;&#x63CF;&#x8FB9;&#x3002;</p>
+<h5 id=""><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802152344385.png" alt="image-20200802152344385" style="zoom: 50%;"></h5>
+<pre><code class="lang-js"><span class="hljs-comment">//&#x7ED8;&#x5236;&#x7EBF;&#x6761;&#xFF1A;&#x9752;&#x8272;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawLine</span> (<span class="hljs-params">context</span>) </span>{
+  context.moveTo(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>)
+  context.lineTo(<span class="hljs-number">300</span>, <span class="hljs-number">200</span>)
+  context.lineWidth = <span class="hljs-number">2</span>
+  context.strokeStyle = <span class="hljs-string">&quot;#0dd&quot;</span>
+  context.stroke()
+}
+
+<span class="hljs-comment">//&#x7ED8;&#x5236;&#x6298;&#x7EBF;&#xFF1A;&#x7C89;&#x7EA2; -&gt; &#x6DF1;&#x84DD;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawBrokenLine</span> (<span class="hljs-params">context</span>) </span>{
+  context.lineWidth = <span class="hljs-number">2</span>
+
+  context.moveTo(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>)
+  context.lineTo(<span class="hljs-number">300</span>, <span class="hljs-number">300</span>)
+  context.strokeStyle = <span class="hljs-string">&quot;#d0d&quot;</span>
+  context.stroke()
+
+  context.moveTo(<span class="hljs-number">300</span>, <span class="hljs-number">300</span>)
+  context.lineTo(<span class="hljs-number">100</span>, <span class="hljs-number">500</span>)
+  context.strokeStyle = <span class="hljs-string">&quot;#00d&quot;</span>
+  context.stroke()
+}
+getContext2D().then(context =&gt; {
+    drawLine(context) 
+    drawBrokenLine(context) 
+})
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=1" target="_blank">&#x67E5;&#x770B;DEMO</a></p>
+<p>&#x6211;&#x4EEC;&#x671F;&#x5F85;&#x7684;&#x7ED3;&#x679C;&#x9875;&#x662F;&#xFF1A;&#x7B2C;&#x4E00;&#x6761;&#x7EBF;&#x662F;&#x9752;&#x8272;&#xFF0C;&#x7B2C;&#x4E8C;&#x6761;&#x7EBF;&#x662F;&#x7C89;&#x7EA2;&#x8272;&#xFF0C;&#x7B2C;&#x4E00;&#x6761;&#x7EBF;&#x662F;&#x6DF1;&#x84DD;&#x3002; &#x7136;&#xFF0C;&#x6700;&#x7EC8;&#x6E32;&#x67D3;&#x51FA;&#x7684;&#x7ED3;&#x679C;&#xFF1A;&#x4E09;&#x6761;&#x7EBF;&#x90FD;&#x662F;&#x6DF1;&#x84DD;&#x8272;&#x3002;&#x7B2C;&#x4E00;&#x6761;&#x7EBF;&#x7684;&#x9752;&#x8272;&#xFF0C;&#x7B2C;&#x4E8C;&#x6761;&#x7EBF;&#x7684;&#x7C89;&#x7EA2;&#x8272;&#x4E86;&#x5462;&#xFF1F;&#x5176;&#x5B9E;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x539F;&#x56E0;&#x662F;&#x6211;&#x4E4B;&#x524D;&#x4E00;&#x76F4;&#x5F3A;&#x8C03;&#x7684;&#x4E00;&#x70B9;&#x2014;&#x2014;<strong>Canvas&#x662F;&#x57FA;&#x4E8E;&#x72B6;&#x6001;&#x7684;&#x7ED8;&#x5236;</strong>&#x3002;</p>
+<p>&#x4EC0;&#x4E48;&#x610F;&#x601D;&#x5462;&#xFF1F;&#x5176;&#x5B9E;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x6BCF;&#x6B21;&#x4F7F;&#x7528;<code>stroke()</code>&#x65F6;&#xFF0C;&#x5B83;&#x90FD;&#x4F1A;&#x628A;&#x4E4B;&#x524D;&#x8BBE;&#x7F6E;&#x7684;&#x72B6;&#x6001;&#x518D;&#x7ED8;&#x5236;&#x4E00;&#x904D;&#x3002;&#x7B2C;&#x4E00;&#x6B21;<code>stroke()</code>&#x65F6;&#xFF0C;&#x7ED8;&#x5236;&#x4E00;&#x6761;&#x9752;&#x8272;&#x7684;&#x6298;&#x7EBF;&#xFF1B;&#x7B2C;&#x4E8C;&#x6B21;<code>stroke()</code>&#x65F6;&#xFF0C;&#x4F1A;&#x518D;&#x91CD;&#x65B0;&#x7ED8;&#x5236;&#x4E4B;&#x524D;&#x7684;&#x90A3;&#x6761;&#x9752;&#x8272;&#x7684;&#x6298;&#x7EBF;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x7684;&#x753B;&#x7B14;&#x5DF2;&#x7ECF;&#x88AB;&#x66F4;&#x6362;&#x6210;&#x7C89;&#x7EA2;&#x8272;&#x7684;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x753B;&#x51FA;&#x7684;&#x6298;&#x7EBF;&#x5168;&#x662F;&#x7C89;&#x7EA2;&#x8272;&#x7684;&#x3002;&#x6362;&#x8A00;&#x4E4B;&#xFF0C;<code>strokeStyle</code>&#x5C5E;&#x6027;&#x88AB;&#x8986;&#x76D6;&#x4E86;&#x3002;&#x7B2C;&#x4E09;&#x6B21;stroke()&#x540C;&#x7406;&#xFF0C;&#x753B;&#x7B14;&#x66F4;&#x6362;&#x6210;&#x4E86;&#x6DF1;&#x84DD;&#x8272;&#x3002;&#x6240;&#x4EE5;&#x6700;&#x7EC8;&#x6E32;&#x67D3;&#xFF0C;&#x4E09;&#x6761;&#x7EBF;&#x90FD;&#x662F;&#x6DF1;&#x84DD;&#xFF01;&#x6240;&#x4EE5;&#xFF0C;&#x8FD9;&#x91CC;&#x770B;&#x5230;&#x7684;&#x4E09;&#x6761;&#x6298;&#x7EBF;&#xFF0C;&#x5176;&#x5B9E;&#x7ED8;&#x5236;&#x4E86;3&#x6B21;&#xFF0C;&#x4E00;&#x5171;&#x7ED8;&#x5236;&#x4E86;6&#x6761;&#x6298;&#x7EBF;&#x3002;</p>
+<h4 id="&#x4F7F;&#x7528;beginpath&#x5F00;&#x59CB;&#x7ED8;&#x5236;">&#x4F7F;&#x7528;beginPath()&#x5F00;&#x59CB;&#x7ED8;&#x5236;</h4>
+<p>&#x4E3A;&#x4E86;&#x8BA9;&#x7ED8;&#x5236;&#x65B9;&#x6CD5;&#x4E0D;&#x91CD;&#x590D;&#x7ED8;&#x5236;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x6BCF;&#x6B21;&#x7ED8;&#x5236;&#x4E4B;&#x524D;&#x52A0;&#x4E0A;<code>beginPath()</code>&#xFF0C;&#x4EE3;&#x8868;&#x4E0B;&#x6B21;&#x7ED8;&#x5236;&#x7684;&#x8D77;&#x59CB;&#x4E4B;&#x5904;&#x4E3A;<code>beginPath()</code>&#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x6211;&#x4EEC;&#x5728;&#x4E09;&#x6B21;&#x7ED8;&#x5236;&#x4E4B;&#x524D;&#x5206;&#x522B;&#x52A0;&#x4E0A;<code>context.beginPath()</code>&#x3002;</p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802152715047.png" alt="image-20200802152715047" style="zoom:50%;"></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawMultBrokenLine</span> (<span class="hljs-params">context</span>) </span>{
+  context.lineWidth = <span class="hljs-number">2</span>
+
+  context.beginPath()
+  context.moveTo(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>)
+  context.lineTo(<span class="hljs-number">300</span>, <span class="hljs-number">200</span>)
+  context.strokeStyle = <span class="hljs-string">&quot;#0dd&quot;</span>
+  context.stroke()
+
+  context.beginPath()
+  context.moveTo(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>)
+  context.lineTo(<span class="hljs-number">300</span>, <span class="hljs-number">300</span>)
+  context.strokeStyle = <span class="hljs-string">&quot;#d0d&quot;</span>
+  context.stroke()
+
+  context.beginPath()
+  context.moveTo(<span class="hljs-number">300</span>, <span class="hljs-number">300</span>)
+  context.lineTo(<span class="hljs-number">100</span>, <span class="hljs-number">500</span>)
+  context.strokeStyle = <span class="hljs-string">&quot;#00d&quot;</span>
+  context.stroke()
+}
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=2" target="_blank">&#x67E5;&#x770B;DEMO</a></p>
+<p><code>beginPath()</code>&#x662F;&#x7ED8;&#x5236;&#x8BBE;&#x7F6E;&#x72B6;&#x6001;&#x7684;&#x8D77;&#x59CB;&#x70B9;&#xFF0C;&#x5B83;&#x4E4B;&#x540E;&#x4EE3;&#x7801;&#x8BBE;&#x7F6E;&#x7684;&#x7ED8;&#x5236;&#x72B6;&#x6001;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x7ED3;&#x675F;&#x4E8E;&#x7ED8;&#x5236;&#x65B9;&#x6CD5;<code>stroke()</code>&#x3001;<code>fill()</code>&#x6216;&#x8005;<code>closePath()</code>&#x3002;</p>
+<h4 id="&#x7EBF;&#x6761;&#x5C5E;&#x6027;&#x6982;&#x8FF0;">&#x7EBF;&#x6761;&#x5C5E;&#x6027;&#x6982;&#x8FF0;</h4>
+<p><code>lineCap</code>&#x5C5E;&#x6027;&#xFF1A;&#x5B9A;&#x4E49;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x7EBF;&#x7684;&#x7AEF;&#x70B9;&#xFF0C;&#x53EF;&#x4EE5;&#x6709;&#x4EE5;&#x4E0B; 3 &#x4E2A;&#x503C;&#x3002;</p>
+<p>lineCap &#x5B9A;&#x4E49;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x7EBF;&#x7684;&#x7AEF;&#x70B9;&#xFF0C;&#x53EF;&#x4EE5;&#x6709;&#x4EE5;&#x4E0B; 3 &#x4E2A;&#x503C;&#x3002;</p>
+<ul>
+<li>butt&#xFF1A;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x7AEF;&#x70B9;&#x662F;&#x5782;&#x76F4;&#x4E8E;&#x7EBF;&#x6BB5;&#x8FB9;&#x7F18;&#x7684;&#x5E73;&#x76F4;&#x8FB9;&#x7F18;&#x3002;</li>
+<li>round&#xFF1A;&#x7AEF;&#x70B9;&#x662F;&#x5728;&#x7EBF;&#x6BB5;&#x8FB9;&#x7F18;&#x5904;&#x4EE5;&#x7EBF;&#x5BBD;&#x4E3A;&#x76F4;&#x5F84;&#x7684;&#x534A;&#x5706;&#x3002;</li>
+<li>square&#xFF1A;&#x7AEF;&#x70B9;&#x662F;&#x5728;&#x9009;&#x6BB5;&#x8FB9;&#x7F18;&#x5904;&#x4EE5;&#x7EBF;&#x5BBD;&#x4E3A;&#x957F;&#x3001;&#x4EE5;&#x4E00;&#x534A;&#x7EBF;&#x5BBD;&#x4E3A;&#x5BBD;&#x7684;&#x77E9;&#x5F62;&#x3002;</li>
+</ul>
+<p><code>lineJoin</code>&#x5C5E;&#x6027;&#xFF1A;&#x5B9A;&#x4E49;&#x4E24;&#x6761;&#x7EBF;&#x76F8;&#x4EA4;&#x4EA7;&#x751F;&#x7684;&#x62D0;&#x89D2;&#xFF0C;&#x53EF;&#x5C06;&#x5176;&#x79F0;&#x4E3A;&#x8FDE;&#x63A5;&#x3002;&#x5728;&#x8FDE;&#x63A5;&#x5904;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x586B;&#x5145;&#x4E09;&#x89D2;&#x5F62;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; lineJoin &#x8BBE;&#x7F6E;&#x5B83;&#x7684;&#x57FA;&#x672C;&#x5C5E;&#x6027;&#x3002;</p>
+<p>lineJoin &#x5B9A;&#x4E49;&#x4E24;&#x6761;&#x7EBF;&#x76F8;&#x4EA4;&#x4EA7;&#x751F;&#x7684;&#x62D0;&#x89D2;&#xFF0C;&#x53EF;&#x5C06;&#x5176;&#x79F0;&#x4E3A;&#x8FDE;&#x63A5;&#x3002;&#x5728;&#x8FDE;&#x63A5;&#x5904;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x586B;&#x5145;&#x4E09;&#x89D2;&#x5F62;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; lineJoin &#x8BBE;&#x7F6E;&#x5B83;&#x7684;&#x57FA;&#x672C;&#x5C5E;&#x6027;&#x3002;</p>
+<ul>
+<li>miter&#xFF1A;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x5728;&#x8FDE;&#x63A5;&#x5904;&#x8FB9;&#x7F18;&#x5EF6;&#x957F;&#x76F8;&#x63A5;&#x3002;miterLimit &#x662F;&#x89D2;&#x957F;&#x548C;&#x7EBF;&#x5BBD;&#x6240;&#x5141;&#x8BB8;&#x7684;&#x6700;&#x5927;&#x6BD4;&#x4F8B;(&#x9ED8;&#x8BA4;&#x662F; 10)&#x3002;</li>
+<li>bevel&#xFF1A;&#x8FDE;&#x63A5;&#x5904;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x89D2;&#x7EBF;&#x659C;&#x89D2;&#x3002;</li>
+<li>round&#xFF1A;&#x8FDE;&#x63A5;&#x5904;&#x662F;&#x4E00;&#x4E2A;&#x5706;&#x3002;</li>
+</ul>
+<p><code>lineWidth</code>&#x5C5E;&#x6027;&#xFF1A;&#x5B9A;&#x4E49;&#x7EBF;&#x7684;&#x5BBD;&#x5EA6;(&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 1.0)&#x3002;</p>
+<p><code>strokeStyle</code>&#x5C5E;&#x6027;&#xFF1A; &#x5B9A;&#x4E49;&#x7EBF;&#x548C;&#x5F62;&#x72B6;&#x8FB9;&#x6846;&#x7684;&#x989C;&#x8272;&#x548C;&#x6837;&#x5F0F;&#x3002;</p>
+<h3 id="&#x586B;&#x5145;&#x989C;&#x8272;">&#x586B;&#x5145;&#x989C;&#x8272;</h3>
+<h4 id="&#x57FA;&#x672C;&#x989C;&#x8272;">&#x57FA;&#x672C;&#x989C;&#x8272;</h4>
+<pre><code class="lang-js">context.fillStyle = <span class="hljs-string">&quot;red&quot;</span>
+context.fillStyle = <span class="hljs-string">&quot;#FF0000&quot;</span>
+context.fillStyle = <span class="hljs-string">&quot;#F00&quot;</span>
+context.fillStyle = <span class="hljs-string">&quot;rgb(255,0,0)&quot;</span>
+context.fillStyle = <span class="hljs-string">&quot;rgba(255,0,0,1)&quot;</span>
+context.fillStyle = <span class="hljs-string">&quot;hsl(0,100%,50%)&quot;</span>
+context.fillStyle = <span class="hljs-string">&quot;hsla(0,100%,50%,1)&quot;</span>
+</code></pre>
+<h4 id="&#x6E10;&#x53D8;&#x989C;&#x8272;&#xFF08;&#x53C8;&#x5206;&#x4E3A;&#x7EBF;&#x6027;&#x6E10;&#x53D8;&#x4E0E;&#x5F84;&#x5411;&#x6E10;&#x53D8;&#xFF09;">&#x6E10;&#x53D8;&#x989C;&#x8272;&#xFF08;&#x53C8;&#x5206;&#x4E3A;&#x7EBF;&#x6027;&#x6E10;&#x53D8;&#x4E0E;&#x5F84;&#x5411;&#x6E10;&#x53D8;&#xFF09;</h4>
+<h5 id="&#x5F84;&#x5411;&#x6E10;&#x53D8;&#xFF08;createlineargradient&#xFF09;">&#x5F84;&#x5411;&#x6E10;&#x53D8;&#xFF08;createLinearGradient&#xFF09;</h5>
+<pre><code class="lang-js">context.createLinearGradient(x0,y0,x1,y1)
+<span class="hljs-comment">//x0    &#x6E10;&#x53D8;&#x5F00;&#x59CB;&#x70B9;&#x7684; x &#x5750;&#x6807;</span>
+<span class="hljs-comment">//y0    &#x6E10;&#x53D8;&#x5F00;&#x59CB;&#x70B9;&#x7684; y &#x5750;&#x6807;</span>
+<span class="hljs-comment">//x1    &#x6E10;&#x53D8;&#x7ED3;&#x675F;&#x70B9;&#x7684; x &#x5750;&#x6807;</span>
+<span class="hljs-comment">//y1    &#x6E10;&#x53D8;&#x7ED3;&#x675F;&#x70B9;&#x7684; y &#x5750;&#x6807;</span>
+</code></pre>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802153043369.png" alt="image-20200802153043369" style="zoom:50%;"></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createLinearGradient</span> (<span class="hljs-params">context</span>) </span>{
+  context.rect(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">300</span>, <span class="hljs-number">300</span>);
+  <span class="hljs-keyword">let</span> grd = context.createLinearGradient(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">300</span>, <span class="hljs-number">300</span>)
+  grd.addColorStop(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;#dd0&quot;</span>)
+  grd.addColorStop(<span class="hljs-number">0.5</span>, <span class="hljs-string">&quot;#fd0&quot;</span>)
+  grd.addColorStop(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;#0dd&quot;</span>)
+  context.fillStyle = grd
+  context.fill()
+}
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=3" target="_blank">&#x67E5;&#x770B;DEMO</a></p>
+<h5 id="&#x5F84;&#x5411;&#x6E10;&#x53D8;&#xFF08;createradialgradient&#xFF09;">&#x5F84;&#x5411;&#x6E10;&#x53D8;&#xFF08;createRadialGradient&#xFF09;</h5>
+<pre><code class="lang-js">context.createRadialGradient(x0,y0,r0,x1,y1,r1)
+<span class="hljs-comment">//x0    &#x6E10;&#x53D8;&#x7684;&#x5F00;&#x59CB;&#x5706;&#x7684; x &#x5750;&#x6807;</span>
+<span class="hljs-comment">//y0    &#x6E10;&#x53D8;&#x7684;&#x5F00;&#x59CB;&#x5706;&#x7684; y &#x5750;&#x6807;</span>
+<span class="hljs-comment">//r0    &#x5F00;&#x59CB;&#x5706;&#x7684;&#x534A;&#x5F84;</span>
+<span class="hljs-comment">//x1    &#x6E10;&#x53D8;&#x7684;&#x7ED3;&#x675F;&#x5706;&#x7684; x &#x5750;&#x6807;</span>
+<span class="hljs-comment">//y1    &#x6E10;&#x53D8;&#x7684;&#x7ED3;&#x675F;&#x5706;&#x7684; y &#x5750;&#x6807;</span>
+<span class="hljs-comment">//r1    &#x7ED3;&#x675F;&#x5706;&#x7684;&#x534A;&#x5F84;</span>
+</code></pre>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802153527937.png" alt="image-20200802153527937"></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createRadialGradient</span> (<span class="hljs-params">context</span>) </span>{
+  <span class="hljs-keyword">let</span> grd = context.createRadialGradient(<span class="hljs-number">75</span>, <span class="hljs-number">50</span>, <span class="hljs-number">5</span>, <span class="hljs-number">90</span>, <span class="hljs-number">60</span>, <span class="hljs-number">100</span>)
+  grd.addColorStop(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;#0aa&quot;</span>)
+  grd.addColorStop(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;white&quot;</span>)
+  context.fillStyle = grd
+  context.fillRect(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">300</span>, <span class="hljs-number">300</span>)
+}
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=4" target="_blank">&#x67E5;&#x770B;DEMO</a></p>
+<p>gradient &#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x989C;&#x8272;&#x548C;&#x4F4D;&#x7F6E;&#xFF1A;addColorStop</p>
+<pre><code class="lang-js">gradient.addColorStop(stop,color)
+<span class="hljs-comment">//stop    &#x4ECB;&#x4E8E; 0.0 &#x4E0E; 1.0 &#x4E4B;&#x95F4;&#x7684;&#x503C;&#xFF0C;&#x8868;&#x793A;&#x6E10;&#x53D8;&#x4E2D;&#x5F00;&#x59CB;&#x4E0E;&#x7ED3;&#x675F;&#x4E4B;&#x95F4;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</span>
+<span class="hljs-comment">//color    &#x5728;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;&#x663E;&#x793A;&#x7684; CSS &#x989C;&#x8272;&#x503C;</span>
+</code></pre>
+<h5 id="&#x586B;&#x5145;&#x7EB9;&#x7406;">&#x586B;&#x5145;&#x7EB9;&#x7406;</h5>
+<p>&#x7EB9;&#x7406;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x56FE;&#x6848;&#x7684;&#x91CD;&#x590D;&#xFF0C;&#x586B;&#x5145;&#x56FE;&#x6848;&#x901A;&#x8FC7;<code>createPattern()</code>&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#x3002;</p>
+<pre><code class="lang-js">context.createPattern(image,<span class="hljs-string">&quot;repeat|repeat-x|repeat-y|no-repeat&quot;</span>)
+<span class="hljs-comment">//&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;Image&#x5BF9;&#x8C61;&#x3001;canvas&#x5BF9;&#x8C61;&#x3001;video&#x5BF9;&#x8C61;</span>
+<span class="hljs-comment">//&#x5E73;&#x9762;&#x4E0A;&#x91CD;&#x590D;&#xFF1A;repeat;</span>
+<span class="hljs-comment">//x&#x8F74;&#x4E0A;&#x91CD;&#x590D;&#xFF1A;repeat-x;</span>
+<span class="hljs-comment">//y&#x8F74;&#x4E0A;&#x91CD;&#x590D;&#xFF1A;repeat-y;</span>
+<span class="hljs-comment">//&#x4E0D;&#x4F7F;&#x7528;&#x91CD;&#x590D;&#xFF1A;no-repeat;</span>
+</code></pre>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802154344739.png" alt="image-20200802154344739" style="zoom: 67%;"></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createPattern</span> (<span class="hljs-params">context</span>) </span>{
+    <span class="hljs-keyword">let</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;canvas&quot;</span>)
+    <span class="hljs-keyword">let</span> context2 = canvas.getContext(<span class="hljs-string">&apos;2d&apos;</span>)
+    canvas.width = <span class="hljs-number">200</span>
+    canvas.height = <span class="hljs-number">200</span>
+    <span class="hljs-keyword">let</span> img = <span class="hljs-keyword">new</span> Image()
+    img.src = <span class="hljs-string">&quot;./img/pins_3338674420.jpg&quot;</span>
+    img.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        context2.drawImage(img, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">200</span>, <span class="hljs-number">200</span>)
+        <span class="hljs-keyword">let</span> pattern = context.createPattern(canvas, <span class="hljs-string">&apos;no-repeat&apos;</span>)
+        context.fillStyle = pattern
+        context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">500</span>, <span class="hljs-number">500</span>)
+        context.lineWidth = <span class="hljs-number">1</span>
+        context.strokeStyle = <span class="hljs-string">&apos;#0dd&apos;</span>
+        context.strokeRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">500</span>, <span class="hljs-number">500</span>)
+    }
+}
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=5" target="_blank">&#x67E5;&#x770B;DEMO</a></p>
+<h3 id="&#x7ED8;&#x5236;&#x77E9;&#x5F62;">&#x7ED8;&#x5236;&#x77E9;&#x5F62;</h3>
+<pre><code class="lang-js">context.rect(x,y,width,height)<span class="hljs-comment">//&#x9700;&#x8C03;&#x7528;stroke()&#x6216;fill()&#x5B8C;&#x6210;&#x7ED8;&#x5236;</span>
+context.fillRect(x,y,width,height)
+context.strokeRect(x,y,width,height)
+context.clearRect(x,y,width,height)
+<span class="hljs-comment">//x    &#x77E9;&#x5F62;&#x5DE6;&#x4E0A;&#x89D2;&#x7684; x &#x5750;&#x6807;</span>
+<span class="hljs-comment">//y    &#x77E9;&#x5F62;&#x5DE6;&#x4E0A;&#x89D2;&#x7684; y &#x5750;&#x6807;</span>
+<span class="hljs-comment">//width    &#x77E9;&#x5F62;&#x7684;&#x5BBD;&#x5EA6;&#xFF0C;&#x4EE5;&#x50CF;&#x7D20;&#x8BA1;</span>
+<span class="hljs-comment">//height    &#x77E9;&#x5F62;&#x7684;&#x9AD8;&#x5EA6;&#xFF0C;&#x4EE5;&#x50CF;&#x7D20;&#x8BA1;</span>
+</code></pre>
+<h3 id="&#x7ED8;&#x5236;&#x6807;&#x51C6;&#x5706;&#x5F27;">&#x7ED8;&#x5236;&#x6807;&#x51C6;&#x5706;&#x5F27;</h3>
+<pre><code class="lang-js">context.arc(x,y,r,sAngle,eAngle,counterclockwise);
+<span class="hljs-comment">//x    &#x5706;&#x7684;&#x4E2D;&#x5FC3;&#x7684; x &#x5750;&#x6807;&#x3002;</span>
+<span class="hljs-comment">//y    &#x5706;&#x7684;&#x4E2D;&#x5FC3;&#x7684; y &#x5750;&#x6807;&#x3002;</span>
+<span class="hljs-comment">//r    &#x5706;&#x7684;&#x534A;&#x5F84;&#x3002;</span>
+<span class="hljs-comment">//sAngle    &#x8D77;&#x59CB;&#x89D2;&#xFF0C;&#x4EE5;&#x5F27;&#x5EA6;&#x8BA1;&#x3002;&#xFF08;&#x5F27;&#x7684;&#x5706;&#x5F62;&#x7684;&#x4E09;&#x70B9;&#x949F;&#x4F4D;&#x7F6E;&#x662F; 0 &#x5EA6;&#xFF09;&#x3002;</span>
+<span class="hljs-comment">//eAngle    &#x7ED3;&#x675F;&#x89D2;&#xFF0C;&#x4EE5;&#x5F27;&#x5EA6;&#x8BA1;&#x3002;</span>
+<span class="hljs-comment">//counterclockwise    &#x53EF;&#x9009;&#x3002;&#x89C4;&#x5B9A;&#x5E94;&#x8BE5;&#x9006;&#x65F6;&#x9488;&#x8FD8;&#x662F;&#x987A;&#x65F6;&#x9488;&#x7ED8;&#x56FE;&#x3002;False = &#x987A;&#x65F6;&#x9488;(&#x9ED8;&#x8BA4;)&#xFF0C;true = &#x9006;&#x65F6;&#x9488;&#x3002;</span>
+</code></pre>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802154748374.png" alt="image-20200802154748374"></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawArc</span> (<span class="hljs-params">context</span>) </span>{
+  context.beginPath()
+  context.lineWidth = <span class="hljs-number">1</span>
+  context.strokeStyle = <span class="hljs-string">&apos;#0dd&apos;</span>
+  context.arc(<span class="hljs-number">100</span>, <span class="hljs-number">75</span>, <span class="hljs-number">100</span>, <span class="hljs-number">0</span>,  (<span class="hljs-number">120</span> / <span class="hljs-number">180</span>) * <span class="hljs-built_in">Math</span>.PI, <span class="hljs-literal">false</span>)
+  context.stroke()
+}
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=6" target="_blank">&#x67E5;&#x770B;DEMO</a></p>
+<pre><code class="lang-js"><span class="hljs-comment">//&#x5728;&#x753B;&#x5E03;&#x4E0A;&#x521B;&#x5EFA;&#x4ECB;&#x4E8E;&#x4E24;&#x4E2A;&#x5207;&#x7EBF;&#x4E4B;&#x95F4;&#x7684;&#x5F27;&#x7684;JavaScript&#x8BED;&#x6CD5;</span>
+context.arcTo(x1,y1,x2,y2,r);
+<span class="hljs-comment">//x1    &#x5F27;&#x7684;&#x8D77;&#x70B9;&#x7684; x &#x5750;&#x6807;</span>
+<span class="hljs-comment">//y1    &#x5F27;&#x7684;&#x8D77;&#x70B9;&#x7684; y &#x5750;&#x6807;</span>
+<span class="hljs-comment">//x2    &#x5F27;&#x7684;&#x7EC8;&#x70B9;&#x7684; x &#x5750;&#x6807;</span>
+<span class="hljs-comment">//y2    &#x5F27;&#x7684;&#x7EC8;&#x70B9;&#x7684; y &#x5750;&#x6807;</span>
+<span class="hljs-comment">//r    &#x5F27;&#x7684;&#x534A;&#x5F84;</span>
+</code></pre>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802154936529.png" alt="image-20200802154936529"></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawArcTo</span> (<span class="hljs-params">context</span>) </span>{
+  context.beginPath()
+  context.lineWidth = <span class="hljs-number">1</span>
+  context.strokeStyle = <span class="hljs-string">&apos;#0dd&apos;</span>
+  context.moveTo(<span class="hljs-number">20</span>, <span class="hljs-number">20</span>)
+  context.lineTo(<span class="hljs-number">100</span>, <span class="hljs-number">20</span>)
+  context.arcTo(<span class="hljs-number">150</span>, <span class="hljs-number">20</span>, <span class="hljs-number">150</span>, <span class="hljs-number">70</span>,<span class="hljs-number">50</span>)
+  context.lineTo(<span class="hljs-number">150</span>, <span class="hljs-number">100</span>)
+  context.stroke()
+}
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=7" target="_blank">&#x67E5;&#x770B;DEMO</a></p>
+<h3 id="&#x8D1D;&#x585E;&#x5C14;&#x66F2;&#x7EBF;">&#x8D1D;&#x585E;&#x5C14;&#x66F2;&#x7EBF;</h3>
+<h4 id="&#x4E8C;&#x6B21;&#x8D1D;&#x585E;&#x5C14;&#x66F2;&#x7EBF;">&#x4E8C;&#x6B21;&#x8D1D;&#x585E;&#x5C14;&#x66F2;&#x7EBF;</h4>
+<pre><code class="lang-JS"><span class="hljs-comment">//&#x4E8C;&#x6B21;&#x8D1D;&#x585E;&#x5C14;&#x66F2;&#x7EBF;</span>
+context.quadraticCurveTo(cpx,cpy,x,y);
+<span class="hljs-comment">//cpx    &#x8D1D;&#x585E;&#x5C14;&#x63A7;&#x5236;&#x70B9;&#x7684; x &#x5750;&#x6807;</span>
+<span class="hljs-comment">//cpy    &#x8D1D;&#x585E;&#x5C14;&#x63A7;&#x5236;&#x70B9;&#x7684; y &#x5750;&#x6807;</span>
+<span class="hljs-comment">//x    &#x7ED3;&#x675F;&#x70B9;&#x7684; x &#x5750;&#x6807;</span>
+<span class="hljs-comment">//y    &#x7ED3;&#x675F;&#x70B9;&#x7684; y &#x5750;&#x6807;</span>
+</code></pre>
+<blockquote>
+<p>&#x4E8C;&#x6B21;&#x8D1D;&#x585E;&#x5C14;&#x66F2;&#x7EBF;&#x9700;&#x8981;&#x4E24;&#x4E2A;&#x70B9;&#x3002;&#x7B2C;&#x4E00;&#x4E2A;&#x70B9;&#x662F;&#x7528;&#x4E8E;&#x4E8C;&#x6B21;&#x8D1D;&#x585E;&#x5C14;&#x8BA1;&#x7B97;&#x4E2D;&#x7684;&#x63A7;&#x5236;&#x70B9;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x70B9;&#x662F;&#x66F2;&#x7EBF;&#x7684;&#x7ED3;&#x675F;&#x70B9;&#x3002;&#x66F2;&#x7EBF;&#x7684;&#x5F00;&#x59CB;&#x70B9;&#x662F;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x4E2D;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x70B9;&#x3002;&#x5982;&#x679C;&#x8DEF;&#x5F84;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x4E48;&#x8BF7;&#x4F7F;&#x7528; <code>beginPath()</code> &#x548C; <code>moveTo()</code> &#x65B9;&#x6CD5;&#x6765;&#x5B9A;&#x4E49;&#x5F00;&#x59CB;&#x70B9;</p>
+</blockquote>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802160540181.png" alt="image-20200802160540181"></p>
+<pre><code class="lang-JS"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawQuadraticCurveTo</span> (<span class="hljs-params">context</span>) </span>{
+  context.lineWidth = <span class="hljs-number">1</span>
+  context.strokeStyle = <span class="hljs-string">&apos;#0dd&apos;</span>
+  context.beginPath()
+  context.moveTo(<span class="hljs-number">20</span>, <span class="hljs-number">20</span>)
+  context.quadraticCurveTo(<span class="hljs-number">20</span>, <span class="hljs-number">100</span>, <span class="hljs-number">200</span>, <span class="hljs-number">20</span>)
+  context.stroke()
+}
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=8" target="_blank">&#x67E5;&#x770B;DEMO</a></p>
+<h4 id="&#x4E09;&#x6B21;&#x8D1D;&#x585E;&#x5C14;&#x66F2;&#x7EBF;">&#x4E09;&#x6B21;&#x8D1D;&#x585E;&#x5C14;&#x66F2;&#x7EBF;</h4>
+<pre><code class="lang-JS"><span class="hljs-comment">//&#x4E09;&#x6B21;&#x8D1D;&#x585E;&#x5C14;&#x66F2;&#x7EBF;</span>
+context.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y);
+<span class="hljs-comment">//cp1x    &#x7B2C;&#x4E00;&#x4E2A;&#x8D1D;&#x585E;&#x5C14;&#x63A7;&#x5236;&#x70B9;&#x7684; x &#x5750;&#x6807;</span>
+<span class="hljs-comment">//cp1y    &#x7B2C;&#x4E00;&#x4E2A;&#x8D1D;&#x585E;&#x5C14;&#x63A7;&#x5236;&#x70B9;&#x7684; y &#x5750;&#x6807;</span>
+<span class="hljs-comment">//cp2x    &#x7B2C;&#x4E8C;&#x4E2A;&#x8D1D;&#x585E;&#x5C14;&#x63A7;&#x5236;&#x70B9;&#x7684; x &#x5750;&#x6807;</span>
+<span class="hljs-comment">//cp2y    &#x7B2C;&#x4E8C;&#x4E2A;&#x8D1D;&#x585E;&#x5C14;&#x63A7;&#x5236;&#x70B9;&#x7684; y &#x5750;&#x6807;</span>
+<span class="hljs-comment">//x    &#x7ED3;&#x675F;&#x70B9;&#x7684; x &#x5750;&#x6807;</span>
+<span class="hljs-comment">//y    &#x7ED3;&#x675F;&#x70B9;&#x7684; y &#x5750;&#x6807;</span>
+</code></pre>
+<blockquote>
+<p>&#x4E09;&#x6B21;&#x8D1D;&#x585E;&#x5C14;&#x66F2;&#x7EBF;&#x9700;&#x8981;&#x4E09;&#x4E2A;&#x70B9;&#x3002;&#x524D;&#x4E24;&#x4E2A;&#x70B9;&#x662F;&#x7528;&#x4E8E;&#x4E09;&#x6B21;&#x8D1D;&#x585E;&#x5C14;&#x8BA1;&#x7B97;&#x4E2D;&#x7684;&#x63A7;&#x5236;&#x70B9;&#xFF0C;&#x7B2C;&#x4E09;&#x4E2A;&#x70B9;&#x662F;&#x66F2;&#x7EBF;&#x7684;&#x7ED3;&#x675F;&#x70B9;&#x3002;&#x66F2;&#x7EBF;&#x7684;&#x5F00;&#x59CB;&#x70B9;&#x662F;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x4E2D;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x70B9;&#x3002;&#x5982;&#x679C;&#x8DEF;&#x5F84;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x4E48;&#x8BF7;&#x4F7F;&#x7528; <code>beginPath()</code> &#x548C; <code>moveTo()</code>&#x65B9;&#x6CD5;&#x6765;&#x5B9A;&#x4E49;&#x5F00;&#x59CB;&#x70B9;&#x3002;</p>
+</blockquote>
+<h3 id="&#x6587;&#x672C;&#x8BBE;&#x7F6E;">&#x6587;&#x672C;&#x8BBE;&#x7F6E;</h3>
+<pre><code class="lang-js">font    <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6216;&#x8FD4;&#x56DE;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x7684;&#x5F53;&#x524D;&#x5B57;&#x4F53;&#x5C5E;&#x6027;</span>
+textAlign    <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6216;&#x8FD4;&#x56DE;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x7684;&#x5F53;&#x524D;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;</span>
+textBaseline    <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6216;&#x8FD4;&#x56DE;&#x5728;&#x7ED8;&#x5236;&#x6587;&#x672C;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x5F53;&#x524D;&#x6587;&#x672C;&#x57FA;&#x7EBF;</span>
+
+context.font = <span class="hljs-string">&quot;[font-style] [font-variant] [font-weight] [font-size/line-height] [font-family]&quot;</span>
+<span class="hljs-comment">//font-style //&#x89C4;&#x5B9A;&#x5B57;&#x4F53;&#x6837;&#x5F0F;&#xFF1A;normal\italic\oblique</span>
+<span class="hljs-comment">//font-variant // &#x89C4;&#x5B9A;&#x5B57;&#x4F53;&#x53D8;&#x4F53;&#xFF1A;normal\small-caps</span>
+<span class="hljs-comment">//font-weight //&#x89C4;&#x5B9A;&#x5B57;&#x4F53;&#x7684;&#x7C97;&#x7EC6;&#xFF1A;normal\bold\bolder\lighter\100~900</span>
+<span class="hljs-comment">//font-size/line-height //&#x89C4;&#x5B9A;&#x5B57;&#x53F7;&#x548C;&#x884C;&#x9AD8;&#xFF0C;&#x4EE5;&#x50CF;&#x7D20;&#x8BA1;&#x3002;</span>
+<span class="hljs-comment">//font-family //&#x89C4;&#x5B9A;&#x5B57;&#x4F53;&#x7CFB;&#x5217;&#x3002;</span>
+
+context.textAlign = <span class="hljs-string">&quot;center|end|left|right|start&quot;</span>
+<span class="hljs-comment">//&#x9ED8;&#x8BA4;&#x3002;&#x6587;&#x672C;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x3002;</span>
+<span class="hljs-comment">//end    &#x6587;&#x672C;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x4F4D;&#x7F6E;&#x7ED3;&#x675F;&#x3002;</span>
+<span class="hljs-comment">//center    &#x6587;&#x672C;&#x7684;&#x4E2D;&#x5FC3;&#x88AB;&#x653E;&#x7F6E;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</span>
+<span class="hljs-comment">//left    &#x6587;&#x672C;&#x5DE6;&#x5BF9;&#x9F50;&#x3002;</span>
+<span class="hljs-comment">//right    &#x6587;&#x672C;&#x53F3;&#x5BF9;&#x9F50;&#x3002;</span>
+
+context.textBaseline = <span class="hljs-string">&quot;alphabetic|top|hanging|middle|ideographic|bottom&quot;</span>
+<span class="hljs-comment">//alphabetic    &#x9ED8;&#x8BA4;&#x3002;&#x6587;&#x672C;&#x57FA;&#x7EBF;&#x662F;&#x666E;&#x901A;&#x7684;&#x5B57;&#x6BCD;&#x57FA;&#x7EBF;&#x3002;</span>
+<span class="hljs-comment">//top    &#x6587;&#x672C;&#x57FA;&#x7EBF;&#x662F; em &#x65B9;&#x6846;&#x7684;&#x9876;&#x7AEF;&#x3002;&#x3002;</span>
+<span class="hljs-comment">//hanging    &#x6587;&#x672C;&#x57FA;&#x7EBF;&#x662F;&#x60AC;&#x6302;&#x57FA;&#x7EBF;&#x3002;</span>
+<span class="hljs-comment">//middle    &#x6587;&#x672C;&#x57FA;&#x7EBF;&#x662F; em &#x65B9;&#x6846;&#x7684;&#x6B63;&#x4E2D;&#x3002;</span>
+<span class="hljs-comment">//ideographic    &#x6587;&#x672C;&#x57FA;&#x7EBF;&#x662F;&#x8868;&#x610F;&#x57FA;&#x7EBF;&#x3002;</span>
+<span class="hljs-comment">//bottom    &#x6587;&#x672C;&#x57FA;&#x7EBF;&#x662F; em &#x65B9;&#x6846;&#x7684;&#x5E95;&#x7AEF;&#x3002;</span>
+</code></pre>
+<pre><code class="lang-js">fillText() <span class="hljs-comment">//&#x5728;&#x753B;&#x5E03;&#x4E0A;&#x7ED8;&#x5236;&#x201C;&#x88AB;&#x586B;&#x5145;&#x7684;&#x201D;&#x6587;&#x672C;</span>
+strokeText() <span class="hljs-comment">//&#x5728;&#x753B;&#x5E03;&#x4E0A;&#x7ED8;&#x5236;&#x6587;&#x672C;&#xFF08;&#x65E0;&#x586B;&#x5145;&#xFF09;</span>
+measureText() <span class="hljs-comment">//&#x8FD4;&#x56DE;&#x5305;&#x542B;&#x6307;&#x5B9A;&#x6587;&#x672C;&#x5BBD;&#x5EA6;&#x7684;&#x5BF9;&#x8C61;</span>
+
+context.fillText(text,x,y,maxWidth)
+context.strokeText(text,x,y,maxWidth)
+<span class="hljs-comment">//text    &#x89C4;&#x5B9A;&#x5728;&#x753B;&#x5E03;&#x4E0A;&#x8F93;&#x51FA;&#x7684;&#x6587;&#x672C;&#x3002;</span>
+<span class="hljs-comment">//x    &#x5F00;&#x59CB;&#x7ED8;&#x5236;&#x6587;&#x672C;&#x7684; x &#x5750;&#x6807;&#x4F4D;&#x7F6E;&#xFF08;&#x76F8;&#x5BF9;&#x4E8E;&#x753B;&#x5E03;&#xFF09;&#x3002;</span>
+<span class="hljs-comment">//y    &#x5F00;&#x59CB;&#x7ED8;&#x5236;&#x6587;&#x672C;&#x7684; y &#x5750;&#x6807;&#x4F4D;&#x7F6E;&#xFF08;&#x76F8;&#x5BF9;&#x4E8E;&#x753B;&#x5E03;&#xFF09;&#x3002;</span>
+<span class="hljs-comment">//maxWidth    &#x53EF;&#x9009;&#x3002;&#x5141;&#x8BB8;&#x7684;&#x6700;&#x5927;&#x6587;&#x672C;&#x5BBD;&#x5EA6;&#xFF0C;&#x4EE5;&#x50CF;&#x7D20;&#x8BA1;&#x3002;</span>
+</code></pre>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802160727162.png" alt="image-20200802160727162"></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawText</span> (<span class="hljs-params">context</span>) </span>{
+  context.fillStyle = <span class="hljs-string">&quot;#0aa&quot;</span>
+  context.strokeStyle = <span class="hljs-string">&quot;#0aa&quot;</span>
+
+  context.font = <span class="hljs-string">&quot;normal normal bold 30px/150px Times&quot;</span>
+  context.textAlign = <span class="hljs-string">&quot;center&quot;</span>
+  context.textBaseline = <span class="hljs-string">&quot;middle&quot;</span>
+
+  context.fillText(<span class="hljs-string">&quot;Hello Canvas&quot;</span>, <span class="hljs-number">200</span>, <span class="hljs-number">250</span>)
+  context.strokeText(<span class="hljs-string">&quot;width:&quot;</span> + context.measureText(<span class="hljs-string">&quot;Hello Canvas&quot;</span>).width, <span class="hljs-number">200</span>, <span class="hljs-number">300</span>, <span class="hljs-number">200</span>)
+}
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=9" target="_blank">&#x67E5;&#x770B;DEMO</a></p>
+<h3 id="&#x53D8;&#x6362;&#x8BBE;&#x7F6E;">&#x53D8;&#x6362;&#x8BBE;&#x7F6E;</h3>
+<pre><code class="lang-js">context.scale(scalewidth,scaleheight); <span class="hljs-comment">//&#x7F29;&#x653E;</span>
+<span class="hljs-comment">//scalewidth    &#x7F29;&#x653E;&#x5F53;&#x524D;&#x7ED8;&#x56FE;&#x7684;&#x5BBD;&#x5EA6; (1=100%, 0.5=50%, 2=200%, &#x4F9D;&#x6B21;&#x7C7B;&#x63A8;)</span>
+<span class="hljs-comment">//scaleheight    &#x7F29;&#x653E;&#x5F53;&#x524D;&#x7ED8;&#x56FE;&#x7684;&#x9AD8;&#x5EA6; (1=100%, 0.5=50%, 2=200%, etc.)</span>
+
+context.rotate(angle); <span class="hljs-comment">//&#x65CB;&#x8F6C;</span>
+<span class="hljs-comment">//angle    &#x65CB;&#x8F6C;&#x89D2;&#x5EA6;&#xFF0C;&#x4EE5;&#x5F27;&#x5EA6;&#x8BA1;&#x3002;</span>
+<span class="hljs-comment">//&#x5982;&#x9700;&#x5C06;&#x89D2;&#x5EA6;&#x8F6C;&#x6362;&#x4E3A;&#x5F27;&#x5EA6;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; degrees*Math.PI/180 &#x516C;&#x5F0F;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x3002;</span>
+<span class="hljs-comment">//&#x4E3E;&#x4F8B;&#xFF1A;&#x5982;&#x9700;&#x65CB;&#x8F6C; 5 &#x5EA6;&#xFF0C;&#x53EF;&#x89C4;&#x5B9A;&#x4E0B;&#x9762;&#x7684;&#x516C;&#x5F0F;&#xFF1A;5*Math.PI/180&#x3002;</span>
+
+context.translate(x,y); <span class="hljs-comment">//&#x4F4D;&#x79FB;</span>
+<span class="hljs-comment">//x    &#x6DFB;&#x52A0;&#x5230;&#x6C34;&#x5E73;&#x5750;&#x6807;&#xFF08;x&#xFF09;&#x4E0A;&#x7684;&#x503C;</span>
+<span class="hljs-comment">//y    &#x6DFB;&#x52A0;&#x5230;&#x5782;&#x76F4;&#x5750;&#x6807;&#xFF08;y&#xFF09;&#x4E0A;&#x7684;&#x503C;</span>
+</code></pre>
+<blockquote>
+<p>&#x5BF9;&#x4E8E;&#x7F29;&#x653E;&#x53D8;&#x6362;&#x6709;&#x4E24;&#x70B9;&#x95EE;&#x9898;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF1A;</p>
+<p>1.&#x7F29;&#x653E;&#x65F6;&#xFF0C;&#x56FE;&#x50CF;&#x5DE6;&#x4E0A;&#x89D2;&#x5750;&#x6807;&#x7684;&#x4F4D;&#x7F6E;&#x4E5F;&#x4F1A;&#x5BF9;&#x5E94;&#x7F29;&#x653E;</p>
+<p>2.&#x7F29;&#x653E;&#x65F6;&#xFF0C;&#x56FE;&#x50CF;&#x7EBF;&#x6761;&#x7684;&#x7C97;&#x7EC6;&#x4E5F;&#x4F1A;&#x5BF9;&#x5E94;&#x7F29;&#x653E;</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-comment">//&#x77E9;&#x9635;&#x8BBE;&#x7F6E;</span>
+context.transform(a,b,c,d,e,f);
+context.setTransform(a,b,c,d,e,f);
+<span class="hljs-comment">//a    &#x6C34;&#x5E73;&#x7F29;&#x653E;(1)</span>
+<span class="hljs-comment">//b    &#x6C34;&#x5E73;&#x503E;&#x659C;(0)</span>
+<span class="hljs-comment">//c    &#x5782;&#x76F4;&#x503E;&#x659C;(0)</span>
+<span class="hljs-comment">//d    &#x5782;&#x76F4;&#x7F29;&#x653E;(1)</span>
+<span class="hljs-comment">//e    &#x6C34;&#x5E73;&#x4F4D;&#x79FB;(0)</span>
+<span class="hljs-comment">//f    &#x5782;&#x76F4;&#x4F4D;&#x79FB;(0)</span>
+
+<span class="hljs-comment">//&#x5E73;&#x79FB;&#x53D8;&#x6362;&#xFF1A; x&#x2019; = x + dx&#xFF0C; y&#x2019; = y + dy&#x3002;</span>
+<span class="hljs-comment">//&#x4E5F;&#x5373;&#x662F;&#x8BF4;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; context.transform (1,0,0,1,dx,dy)&#x4EE3;&#x66FF;context.translate(dx,dy)&#x3002;</span>
+
+<span class="hljs-comment">//&#x540C;&#x7406;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; context.transform(sx,0,0,sy,0,0)&#x4EE3;&#x66FF;context.scale(sx, sy);</span>
+<span class="hljs-comment">//&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;context.transform(0,sy,sx,0,0,0);</span>
+
+<span class="hljs-comment">//context.transform(Math.cos(&#x3B8;*Math.PI/180)&#xFF0C;Math.sin(&#x3B8;*Math.PI/180), -Math.sin(&#x3B8;*Math.PI/180),Math.cos(&#x3B8;*Math.PI/180)&#xFF0C;0&#xFF0C;0&#xFF09;&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;context.rotate(&#x3B8;)&#x3002;</span>
+<span class="hljs-comment">//&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; context.transform(-Math.sin(&#x3B8;*Math.PI/180),Math.cos(&#x3B8;*Math.PI/180)&#xFF0C; Math.cos(&#x3B8;*Math.PI/180)&#xFF0C;Math.sin(&#x3B8;*Math.PI/180)&#xFF0C;0&#xFF0C;0&#xFF09;&#x66FF;&#x4EE3;&#x3002;</span>
+
+<span class="hljs-comment">//&#x533A;&#x522B;&#xFF1A;transform()&#x53D8;&#x6362;&#x662F;&#x6307;&#x5728;&#x4E0A;&#x4E00;&#x6B21;&#x53D8;&#x6362;&#x7684;&#x72B6;&#x6001;&#x57FA;&#x7840;&#x4E0A;&#x518D;&#x6B21;&#x53D8;&#x6362;&#xFF1B;setTransform()&#x53D8;&#x6362;&#x662F;&#x6307;&#x5148;&#x91CD;&#x7F6E;&#x5230;&#x6700;&#x521D;&#x59CB;&#x7684;&#x72B6;&#x6001;&#x518D;&#x5F00;&#x59CB;&#x53D8;&#x6362;&#x3002;</span>
+</code></pre>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802162108256.png" alt="image-20200802162108256"></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transform</span> (<span class="hljs-params">context</span>) </span>{
+  context.save()
+  context.fillStyle = <span class="hljs-string">&quot;#0aa&quot;</span>
+  context.scale(<span class="hljs-number">1</span>, <span class="hljs-number">0.5</span>)
+  context.rotate(<span class="hljs-number">10</span> * <span class="hljs-built_in">Math</span>.PI / <span class="hljs-number">180</span>)
+  context.translate(<span class="hljs-number">20</span>, <span class="hljs-number">0</span>)
+  context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">150</span>, <span class="hljs-number">150</span>)
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;scale&apos;</span>)
+  context.restore()
+
+
+  <span class="hljs-comment">//transform</span>
+  context.save()
+  context.translate(<span class="hljs-number">100</span>, <span class="hljs-number">0</span>)
+  context.fillStyle = <span class="hljs-string">&quot;yellow&quot;</span>
+  context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">150</span>, <span class="hljs-number">100</span>)
+
+  context.transform(<span class="hljs-number">1</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">-0.5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">30</span>, <span class="hljs-number">10</span>)
+  context.fillStyle = <span class="hljs-string">&quot;red&quot;</span>
+  context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">150</span>, <span class="hljs-number">100</span>)
+
+  context.transform(<span class="hljs-number">1</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">-0.5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">30</span>, <span class="hljs-number">10</span>)
+  context.fillStyle = <span class="hljs-string">&quot;blue&quot;</span>
+  context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">150</span>, <span class="hljs-number">100</span>)
+  context.restore()
+
+
+  <span class="hljs-comment">//setTransform</span>
+  context.save()
+  context.translate(<span class="hljs-number">400</span>, <span class="hljs-number">0</span>)
+  context.fillStyle = <span class="hljs-string">&quot;yellow&quot;</span>
+  context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">150</span>, <span class="hljs-number">100</span>)
+
+  context.setTransform(<span class="hljs-number">1</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">-0.5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">100</span>, <span class="hljs-number">0</span>)
+  context.fillStyle = <span class="hljs-string">&quot;red&quot;</span>
+  context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">150</span>, <span class="hljs-number">100</span>)
+
+  context.setTransform(<span class="hljs-number">1</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">-0.5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">100</span>, <span class="hljs-number">0</span>)
+  context.fillStyle = <span class="hljs-string">&quot;blue&quot;</span>
+  context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">150</span>, <span class="hljs-number">100</span>)
+  context.restore()
+}
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=10" target="_blank">&#x67E5;&#x770B;DEMO</a></p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#x4FDD;&#x5B58;&#x548C;&#x6062;&#x590D;Canvas&#x72B6;&#x6001;</p>
+<p>&#x53D8;&#x6362;&#x53EA;&#x4F1A;&#x5F71;&#x54CD; transform() &#x7B49;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E4B;&#x540E;&#x7684;&#x7ED8;&#x56FE;</p>
+</blockquote>
+<h3 id="&#x88C1;&#x526A;&#x533A;&#x57DF;">&#x88C1;&#x526A;&#x533A;&#x57DF;</h3>
+<p><code>clip()</code>&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;Canvas&#x7684;&#x56FE;&#x50CF;&#x88C1;&#x526A;&#x529F;&#x80FD;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x4F7F;&#x7528;&#x8DEF;&#x5F84;&#x6765;&#x5BF9;Canvas&#x753B;&#x5E03;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x88C1;&#x526A;&#x533A;&#x57DF;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5FC5;&#x987B;&#x5148;&#x521B;&#x5EFA;&#x597D;&#x8DEF;&#x5F84;&#x3002;&#x521B;&#x5EFA;&#x5B8C;&#x6574;&#x540E;&#xFF0C;&#x8C03;&#x7528;<code>clip()</code>&#x65B9;&#x6CD5;&#x6765;&#x8BBE;&#x7F6E;&#x88C1;&#x526A;&#x533A;&#x57DF;&#x3002;</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;<strong>&#x88C1;&#x526A;&#x662F;&#x5BF9;&#x753B;&#x5E03;&#x8FDB;&#x884C;&#x7684;&#xFF0C;&#x88C1;&#x5207;&#x540E;&#x7684;&#x753B;&#x5E03;&#x4E0D;&#x80FD;&#x6062;&#x590D;&#x5230;&#x539F;&#x6765;&#x7684;&#x5927;&#x5C0F;</strong>&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x753B;&#x5E03;&#x662F;&#x8D8A;&#x5207;&#x8D8A;&#x5C0F;&#x7684;&#xFF0C;&#x8981;&#x60F3;&#x4FDD;&#x8BC1;&#x6700;&#x540E;&#x4ECD;&#x7136;&#x80FD;&#x5728;canvas&#x6700;&#x521D;&#x5B9A;&#x4E49;&#x7684;&#x5927;&#x5C0F;&#x4E0B;&#x7ED8;&#x56FE;&#x9700;&#x8981;&#x6CE8;&#x610F;<code>save()</code>&#x548C;<code>restore()</code>&#x3002;&#x753B;&#x5E03;&#x662F;&#x5148;&#x88C1;&#x5207;&#x5B8C;&#x4E86;&#x518D;&#x8FDB;&#x884C;&#x7ED8;&#x56FE;&#x3002;&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x975E;&#x8981;&#x662F;&#x56FE;&#x7247;&#xFF0C;&#x8DEF;&#x5F84;&#x4E5F;&#x53EF;&#x4EE5;&#x653E;&#x8FDB;&#x53BB;~</p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802162403917.png" alt="image-20200802162403917"></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setClip</span> (<span class="hljs-params">context</span>) </span>{
+  context.save()
+  context.beginPath()
+  context.fillStyle = <span class="hljs-string">&apos;#0aa&apos;</span>
+  context.arc(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">2</span> * <span class="hljs-built_in">Math</span>.PI, <span class="hljs-literal">false</span>)
+  context.clip()
+  <span class="hljs-keyword">let</span> img = <span class="hljs-keyword">new</span> Image()
+  img.src = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;@/assets/image/01eb485e44bf8fa8012165187fa336.jpg@1280w_1l_2o_100sh.jpg&quot;</span>)
+  img.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    context.drawImage(img, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">350</span>, <span class="hljs-number">250</span>)
+    context.closePath()
+    context.restore()
+
+    context.beginPath()
+    context.moveTo(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>)
+    context.lineTo(<span class="hljs-number">300</span>, <span class="hljs-number">100</span>)
+    context.strokeStyle = <span class="hljs-string">&apos;#0aa&apos;</span>
+    context.stroke()
+    context.closePath()
+  }
+}
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=11" target="_blank">&#x67E5;&#x770B;DEMO</a></p>
+<h3 id="&#x7ED8;&#x5236;&#x56FE;&#x50CF;">&#x7ED8;&#x5236;&#x56FE;&#x50CF;</h3>
+<p><code>canvas</code>&#x66F4;&#x6709;&#x610F;&#x601D;&#x7684;&#x4E00;&#x9879;&#x7279;&#x6027;&#x5C31;&#x662F;&#x56FE;&#x50CF;&#x64CD;&#x4F5C;&#x80FD;&#x529B;&#x3002;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x52A8;&#x6001;&#x7684;&#x56FE;&#x50CF;&#x5408;&#x6210;&#x6216;&#x8005;&#x4F5C;&#x4E3A;&#x56FE;&#x5F62;&#x7684;&#x80CC;&#x666F;&#xFF0C;&#x4EE5;&#x53CA;&#x6E38;&#x620F;&#x754C;&#x9762;&#xFF08;Sprites&#xFF09;&#x7B49;&#x7B49;&#x3002;&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#x7684;&#x4EFB;&#x610F;&#x683C;&#x5F0F;&#x7684;&#x5916;&#x90E8;&#x56FE;&#x7247;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF0C;&#x6BD4;&#x5982;<code>PNG&#x3001;GIF&#x3001;JPEG</code>&#x3002; &#x4F60;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x5C06;&#x540C;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x4E2D;&#x5176;&#x4ED6;canvas&#x5143;&#x7D20;&#x751F;&#x6210;&#x7684;&#x56FE;&#x7247;&#x4F5C;&#x4E3A;&#x56FE;&#x7247;&#x6E90;&#x3002;</p>
+<p>&#x5F15;&#x5165;&#x56FE;&#x50CF;&#x5230;canvas&#x91CC;&#x9700;&#x8981;&#x4EE5;&#x4E0B;&#x4E24;&#x6B65;&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<ul>
+<li><p>&#x83B7;&#x5F97;&#x4E00;&#x4E2A;&#x6307;&#x5411;<code>HTMLImageElement</code>&#x7684;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x53E6;&#x4E00;&#x4E2A;<code>canvas</code>&#x5143;&#x7D20;&#x7684;&#x5F15;&#x7528;&#x4F5C;&#x4E3A;&#x6E90;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;URL&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x4F7F;&#x7528;&#x56FE;&#x7247;&#x3002;<code>canvas</code>&#x7684;API&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x8FD9;&#x4E9B;&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x4E00;&#x79CD;&#x4F5C;&#x4E3A;&#x56FE;&#x7247;&#x7684;&#x6E90;&#xFF1A;</p>
+<ul>
+<li>HTMLImageElement&#xFF1A;&#x8FD9;&#x4E9B;&#x56FE;&#x7247;&#x662F;&#x7531;<code>Image()</code>&#x51FD;&#x6570;&#x6784;&#x9020;&#x51FA;&#x6765;&#x7684;&#xFF0C;&#x6216;&#x8005;&#x4EFB;&#x4F55;&#x7684;<code>&lt;img&gt;</code>&#x5143;&#x7D20;</li>
+<li>HTMLVideoElement&#xFF1A;&#x7528;&#x4E00;&#x4E2A;HTML&#x7684; <code>&lt;video&gt;</code>&#x5143;&#x7D20;&#x4F5C;&#x4E3A;&#x4F60;&#x7684;&#x56FE;&#x7247;&#x6E90;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x89C6;&#x9891;&#x4E2D;&#x6293;&#x53D6;&#x5F53;&#x524D;&#x5E27;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x56FE;&#x50CF;</li>
+<li>HTMLCanvasElement&#xFF1A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x53E6;&#x4E00;&#x4E2A;<code>&lt;canvas&gt;</code>&#x5143;&#x7D20;&#x4F5C;&#x4E3A;&#x4F60;&#x7684;&#x56FE;&#x7247;&#x6E90;&#x3002;</li>
+<li>ImageBitmap&#xFF1A;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x9AD8;&#x6027;&#x80FD;&#x7684;&#x4F4D;&#x56FE;&#xFF0C;&#x53EF;&#x4EE5;&#x4F4E;&#x5EF6;&#x8FDF;&#x5730;&#x7ED8;&#x5236;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x4ECE;&#x4E0A;&#x8FF0;&#x7684;&#x6240;&#x6709;&#x6E90;&#x4EE5;&#x53CA;&#x5176;&#x5B83;&#x51E0;&#x79CD;&#x6E90;&#x4E2D;&#x751F;&#x6210;&#x3002;</li>
+</ul>
+<p>&#x8FD9;&#x4E9B;&#x6E90;&#x7EDF;&#x4E00;&#x7531; <code>CanvasImageSource</code>&#x7C7B;&#x578B;&#x6765;&#x5F15;&#x7528;&#x3002;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;<code>drawImage()</code>&#x51FD;&#x6570;&#x5C06;&#x56FE;&#x7247;&#x7ED8;&#x5236;&#x5230;&#x753B;&#x5E03;&#x4E0A;</p>
+</li>
+</ul>
+<pre><code class="lang-js">context.drawImage(img,x,y)
+context.drawImage(img,x,y,width,height)
+context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height)
+
+<span class="hljs-comment">//img    &#x89C4;&#x5B9A;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x56FE;&#x50CF;&#x3001;&#x753B;&#x5E03;&#x6216;&#x89C6;&#x9891;&#x3002;</span>
+<span class="hljs-comment">//sx    &#x53EF;&#x9009;&#x3002;&#x5F00;&#x59CB;&#x526A;&#x5207;&#x7684; x &#x5750;&#x6807;&#x4F4D;&#x7F6E;&#x3002;</span>
+<span class="hljs-comment">//sy    &#x53EF;&#x9009;&#x3002;&#x5F00;&#x59CB;&#x526A;&#x5207;&#x7684; y &#x5750;&#x6807;&#x4F4D;&#x7F6E;&#x3002;</span>
+<span class="hljs-comment">//swidth    &#x53EF;&#x9009;&#x3002;&#x88AB;&#x526A;&#x5207;&#x56FE;&#x50CF;&#x7684;&#x5BBD;&#x5EA6;&#x3002;</span>
+<span class="hljs-comment">//sheight    &#x53EF;&#x9009;&#x3002;&#x88AB;&#x526A;&#x5207;&#x56FE;&#x50CF;&#x7684;&#x9AD8;&#x5EA6;&#x3002;</span>
+<span class="hljs-comment">//x    &#x5728;&#x753B;&#x5E03;&#x4E0A;&#x653E;&#x7F6E;&#x56FE;&#x50CF;&#x7684; x &#x5750;&#x6807;&#x4F4D;&#x7F6E;&#x3002;</span>
+<span class="hljs-comment">//y    &#x5728;&#x753B;&#x5E03;&#x4E0A;&#x653E;&#x7F6E;&#x56FE;&#x50CF;&#x7684; y &#x5750;&#x6807;&#x4F4D;&#x7F6E;&#x3002;</span>
+<span class="hljs-comment">//width    &#x53EF;&#x9009;&#x3002;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x56FE;&#x50CF;&#x7684;&#x5BBD;&#x5EA6;&#x3002;&#xFF08;&#x4F38;&#x5C55;&#x6216;&#x7F29;&#x5C0F;&#x56FE;&#x50CF;&#xFF09;</span>
+<span class="hljs-comment">//height    &#x53EF;&#x9009;&#x3002;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x56FE;&#x50CF;&#x7684;&#x9AD8;&#x5EA6;&#x3002;&#xFF08;&#x4F38;&#x5C55;&#x6216;&#x7F29;&#x5C0F;&#x56FE;&#x50CF;&#xFF09;</span>
+</code></pre>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802162553067.png" alt="image-20200802162553067"></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawImage</span> (<span class="hljs-params">context</span>) </span>{
+    <span class="hljs-keyword">let</span> img = <span class="hljs-keyword">new</span> Image()
+    img.src = <span class="hljs-string">&quot;./img/pins_3338674420.jpg&quot;</span>
+    img.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-comment">// context.drawImage(img, 0, 0, 500, 500, 0, 0, window.innerWidth, window.innerHeight)</span>
+        context.drawImage(img, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">350</span>, <span class="hljs-number">250</span>)
+    }
+}
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=12" target="_blank">&#x67E5;&#x770B;DEMO</a></p>
+<h3 id="&#x975E;&#x96F6;&#x73AF;&#x7ED5;&#x539F;&#x5219;&#x4E0E;&#x5947;&#x5076;&#x539F;&#x5219;">&#x975E;&#x96F6;&#x73AF;&#x7ED5;&#x539F;&#x5219;&#x4E0E;&#x5947;&#x5076;&#x539F;&#x5219;</h3>
+<p>&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x4F7F;&#x7528;Canvas&#x7684;fill&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x662F;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x586B;&#x5145;&#x8DEF;&#x5F84;&#x3002;&#x5176;&#x5B9E;fill&#x65B9;&#x6CD5;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x53EF;&#x9009;&#xFF1A;<code>nonzero</code> | <code>evenodd</code> &#xFF0C;&#x201C;nonzero&#x201D;&#x662F;&#x975E;&#x96F6;&#x73AF;&#x7ED5;&#x539F;&#x5219;&#xFF0C;&#x4E5F;&#x662F;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x201C;evenodd&#x201D;&#x4E3A;&#x5947;&#x5076;&#x539F;&#x5219;&#x3002;</p>
+<h5 id="&#x975E;&#x96F6;&#x73AF;&#x7ED5;&#x539F;&#x5219;nonzero">&#x975E;&#x96F6;&#x73AF;&#x7ED5;&#x539F;&#x5219;nonzero</h5>
+<pre><code class="lang-js">&#x662F;&#x7528;&#x6765;&#x5224;&#x65AD;&#x54EA;&#x4E9B;&#x533A;&#x57DF;&#x5C5E;&#x4E8E;&#x8DEF;&#x5F84;&#x5185;( &#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x975E;<span class="hljs-number">0</span>&#xFF0C;&#x5373;&#x4E3A;&#x8DEF;&#x5F84;&#x5185; )&#x3002;
+* &#x5728;&#x8DEF;&#x5F84;&#x5305;&#x56F4;&#x7684;&#x533A;&#x57DF;&#x4E2D;&#xFF0C;&#x968F;&#x4FBF;&#x627E;&#x4E00;&#x70B9;&#xFF0C;&#x5411;&#x5916;&#x53D1;&#x5C04;&#x4E00;&#x6761;&#x5C04;&#x7EBF;&#xFF0C;
+* &#x548C;&#x6240;&#x6709;&#x56F4;&#x7ED5;&#x5B83;&#x7684;&#x8FB9;&#x76F8;&#x4EA4;&#xFF0C;
+* &#x7136;&#x540E;&#x5F00;&#x542F;&#x4E00;&#x4E2A;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x4ECE;<span class="hljs-number">0</span>&#x8BA1;&#x6570;&#xFF0C;
+* &#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x5C04;&#x7EBF;&#x9047;&#x5230;&#x987A;&#x65F6;&#x9488;&#x56F4;&#x7ED5;&#xFF0C;&#x90A3;&#x4E48;+<span class="hljs-number">1</span>&#xFF0C;
+* &#x5982;&#x679C;&#x9047;&#x5230;&#x9006;&#x65F6;&#x9488;&#x56F4;&#x7ED5;&#xFF0C;&#x90A3;&#x4E48;<span class="hljs-number">-1</span>&#xFF0C;
+* &#x5982;&#x679C;&#x6700;&#x7EC8;&#x503C;&#x975E;<span class="hljs-number">0</span>&#xFF0C;&#x5219;&#x8FD9;&#x5757;&#x533A;&#x57DF;&#x5728;&#x8DEF;&#x5F84;&#x5185;&#x3002;&#x7ED3;&#x679C;&#x4E3A;<span class="hljs-number">0</span>&#xFF0C;&#x4EE3;&#x8868;&#x8FD9;&#x5757;&#x533A;&#x57DF;&#x4E0D;&#x8981;&#x586B;&#x5145;&#xFF0C;&#x5426;&#x5219;&#xFF0C;&#x5FC5;&#x987B;&#x586B;&#x5145;
+</code></pre>
+<h5 id="&#x5947;&#x5076;&#x539F;&#x5219;">&#x5947;&#x5076;&#x539F;&#x5219;</h5>
+<pre><code class="lang-js">* &#x5728;&#x8DEF;&#x5F84;&#x5305;&#x56F4;&#x7684;&#x533A;&#x57DF;&#x4E2D;&#xFF0C;&#x968F;&#x4FBF;&#x627E;&#x4E00;&#x70B9;&#xFF0C;&#x5411;&#x5916;&#x53D1;&#x5C04;&#x4E00;&#x6761;&#x5C04;&#x7EBF;&#xFF0C;
+* &#x548C;&#x6240;&#x6709;&#x56F4;&#x7ED5;&#x5B83;&#x7684;&#x8FB9;&#x76F8;&#x4EA4;&#xFF0C;
+* &#x67E5;&#x770B;&#x76F8;&#x4EA4;&#x7EBF;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x4E3A;&#x5947;&#x6570;&#xFF0C;&#x5C31;&#x586B;&#x5145;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x5076;&#x6570;&#xFF0C;&#x5C31;&#x4E0D;&#x586B;&#x5145;
+</code></pre>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802162859005.png" alt="image-20200802162859005"></p>
+<pre><code class="lang-js">drawCircular (context) {
+  context.shadowColor = <span class="hljs-string">&quot;#545454&quot;</span>;
+  context.shadowOffsetX = <span class="hljs-number">5</span>;
+  context.shadowOffsetY = <span class="hljs-number">5</span>;
+  context.shadowBlur = <span class="hljs-number">2</span>;
+  context.globalCompositeOperation = <span class="hljs-string">&apos;source-over&apos;</span>
+
+  context.fillStyle = <span class="hljs-string">&quot;#00AAAA&quot;</span>
+  context.arc(<span class="hljs-number">200</span>, <span class="hljs-number">200</span>, <span class="hljs-number">100</span>, <span class="hljs-number">0</span>, <span class="hljs-built_in">Math</span>.PI * <span class="hljs-number">2</span> ,<span class="hljs-literal">false</span>)
+  context.arc(<span class="hljs-number">200</span>, <span class="hljs-number">200</span>, <span class="hljs-number">115</span>, <span class="hljs-number">0</span>, <span class="hljs-built_in">Math</span>.PI * <span class="hljs-number">2</span> ,<span class="hljs-literal">true</span>)
+  context.fill()
+}
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=13" target="_blank">&#x67E5;&#x770B;DEMO</a></p>
+<h3 id="&#x5176;&#x4ED6;&#x5C5E;&#x6027;">&#x5176;&#x4ED6;&#x5C5E;&#x6027;</h3>
+<h4 id="&#x9634;&#x5F71;&#x8BBE;&#x7F6E;">&#x9634;&#x5F71;&#x8BBE;&#x7F6E;</h4>
+<pre><code class="lang-js">shadowColor <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6216;&#x8FD4;&#x56DE;&#x7528;&#x4E8E;&#x9634;&#x5F71;&#x7684;&#x989C;&#x8272;</span>
+shadowBlur <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6216;&#x8FD4;&#x56DE;&#x7528;&#x4E8E;&#x9634;&#x5F71;&#x7684;&#x6A21;&#x7CCA;&#x7EA7;&#x522B;</span>
+shadowOffsetX <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6216;&#x8FD4;&#x56DE;&#x9634;&#x5F71;&#x8DDD;&#x5F62;&#x72B6;&#x7684;&#x6C34;&#x5E73;&#x8DDD;&#x79BB;</span>
+shadowOffsetY <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6216;&#x8FD4;&#x56DE;&#x9634;&#x5F71;&#x8DDD;&#x5F62;&#x72B6;&#x7684;&#x5782;&#x76F4;&#x8DDD;&#x79BB;</span>
+</code></pre>
+<blockquote>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x9634;&#x5F71;&#x540C;&#x5176;&#x4ED6;&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E00;&#x6837;&#xFF0C;&#x90FD;&#x662F;&#x57FA;&#x4E8E;&#x72B6;&#x6001;&#x7684;&#x8BBE;&#x7F6E;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x53EA;&#x60F3;&#x4E3A;&#x67D0;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5E94;&#x7528;&#x9634;&#x5F71;&#x800C;&#x4E0D;&#x662F;&#x5168;&#x5C40;&#x9634;&#x5F71;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x4E0B;&#x6B21;&#x7ED8;&#x5236;&#x524D;&#x91CD;&#x7F6E;&#x9634;&#x5F71;&#x7684;&#x8FD9;&#x56DB;&#x4E2A;&#x5C5E;&#x6027;&#x3002;</p>
+</blockquote>
+<h4 id="&#x5168;&#x5C40;&#x900F;&#x660E;">&#x5168;&#x5C40;&#x900F;&#x660E;</h4>
+<pre><code class="lang-js">globalAlpha
+<span class="hljs-comment">//&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;1.0&#xFF0C;&#x4EE3;&#x8868;&#x5B8C;&#x5168;&#x4E0D;&#x900F;&#x660E;&#xFF0C;&#x53D6;&#x503C;&#x8303;&#x56F4;&#x662F;0.0&#xFF08;&#x5B8C;&#x5168;&#x900F;&#x660E;&#xFF09;~1.0&#x3002;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x4E0E;&#x9634;&#x5F71;&#x8BBE;&#x7F6E;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x60F3;&#x9488;&#x5BF9;&#x5168;&#x5C40;&#x8BBE;&#x7F6E;&#x4E0D;&#x900F;&#x660E;&#x5EA6;&#xFF0C;&#x5C31;&#x5F97;&#x5728;&#x4E0B;&#x6B21;&#x7ED8;&#x5236;&#x524D;&#x91CD;&#x7F6E;globalAlpha&#x3002;</span>
+</code></pre>
+<h4 id="&#x56FE;&#x50CF;&#x5408;&#x6210;&#x67E5;&#x770B;&#x6548;&#x679C;">&#x56FE;&#x50CF;&#x5408;&#x6210;(<a href="https://blog.csdn.net/laijieyao/article/details/41862473" target="_blank">&#x67E5;&#x770B;&#x6548;&#x679C;</a>)</h4>
+<pre><code class="lang-js">globalCompositeOperation
+<span class="hljs-comment">//source-over    &#x9ED8;&#x8BA4;&#x3002;&#x5728;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x4E0A;&#x663E;&#x793A;&#x6E90;&#x56FE;&#x50CF;&#x3002;</span>
+<span class="hljs-comment">//source-atop    &#x5728;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x9876;&#x90E8;&#x663E;&#x793A;&#x6E90;&#x56FE;&#x50CF;&#x3002;&#x6E90;&#x56FE;&#x50CF;&#x4F4D;&#x4E8E;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x4E4B;&#x5916;&#x7684;&#x90E8;&#x5206;&#x662F;&#x4E0D;&#x53EF;&#x89C1;&#x7684;&#x3002;</span>
+<span class="hljs-comment">//source-in    &#x5728;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x4E2D;&#x663E;&#x793A;&#x6E90;&#x56FE;&#x50CF;&#x3002;&#x53EA;&#x6709;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x5185;&#x7684;&#x6E90;&#x56FE;&#x50CF;&#x90E8;&#x5206;&#x4F1A;&#x663E;&#x793A;&#xFF0C;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x662F;&#x900F;&#x660E;&#x7684;&#x3002;</span>
+<span class="hljs-comment">//source-out    &#x5728;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x4E4B;&#x5916;&#x663E;&#x793A;&#x6E90;&#x56FE;&#x50CF;&#x3002;&#x53EA;&#x4F1A;&#x663E;&#x793A;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x4E4B;&#x5916;&#x6E90;&#x56FE;&#x50CF;&#x90E8;&#x5206;&#xFF0C;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x662F;&#x900F;&#x660E;&#x7684;&#x3002;</span>
+<span class="hljs-comment">//destination-over    &#x5728;&#x6E90;&#x56FE;&#x50CF;&#x4E0A;&#x65B9;&#x663E;&#x793A;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x3002;</span>
+<span class="hljs-comment">//destination-atop    &#x5728;&#x6E90;&#x56FE;&#x50CF;&#x9876;&#x90E8;&#x663E;&#x793A;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x3002;&#x6E90;&#x56FE;&#x50CF;&#x4E4B;&#x5916;&#x7684;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x90E8;&#x5206;&#x4E0D;&#x4F1A;&#x88AB;&#x663E;&#x793A;&#x3002;</span>
+<span class="hljs-comment">//destination-in    &#x5728;&#x6E90;&#x56FE;&#x50CF;&#x4E2D;&#x663E;&#x793A;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x3002;&#x53EA;&#x6709;&#x6E90;&#x56FE;&#x50CF;&#x5185;&#x7684;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x90E8;&#x5206;&#x4F1A;&#x88AB;&#x663E;&#x793A;&#xFF0C;&#x6E90;&#x56FE;&#x50CF;&#x662F;&#x900F;&#x660E;&#x7684;&#x3002;</span>
+<span class="hljs-comment">//destination-out    &#x5728;&#x6E90;&#x56FE;&#x50CF;&#x5916;&#x663E;&#x793A;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x3002;&#x53EA;&#x6709;&#x6E90;&#x56FE;&#x50CF;&#x5916;&#x7684;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x90E8;&#x5206;&#x4F1A;&#x88AB;&#x663E;&#x793A;&#xFF0C;&#x6E90;&#x56FE;&#x50CF;&#x662F;&#x900F;&#x660E;&#x7684;&#x3002;</span>
+<span class="hljs-comment">//lighter    &#x663E;&#x793A;&#x6E90;&#x56FE;&#x50CF; + &#x76EE;&#x6807;&#x56FE;&#x50CF;&#x3002;</span>
+<span class="hljs-comment">//copy    &#x663E;&#x793A;&#x6E90;&#x56FE;&#x50CF;&#x3002;&#x5FFD;&#x7565;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x3002;</span>
+<span class="hljs-comment">//xor    &#x4F7F;&#x7528;&#x5F02;&#x6216;&#x64CD;&#x4F5C;&#x5BF9;&#x6E90;&#x56FE;&#x50CF;&#x4E0E;&#x76EE;&#x6807;&#x56FE;&#x50CF;&#x8FDB;&#x884C;&#x7EC4;&#x5408;&#x3002;</span>
+</code></pre>
+<h4 id="&#x6A61;&#x76AE;&#x64E6;">&#x6A61;&#x76AE;&#x64E6;</h4>
+<pre><code class="lang-js">context.clearRect(x,y,w,h)
+<span class="hljs-comment">//&#x6E05;&#x7A7A;&#x6307;&#x5B9A;&#x77E9;&#x5F62;&#x4E0A;&#x7684;&#x753B;&#x5E03;&#x4E0A;&#x7684;&#x50CF;&#x7D20;&#x3002;&#x5B83;&#x63A5;&#x53D7;&#x56DB;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x548C;&#x5176;&#x4ED6;&#x7ED8;&#x5236;&#x77E9;&#x5F62;&#x7684;&#x65B9;&#x6CD5;&#x4E00;&#x6837;</span>
+</code></pre>
+<h4 id="&#x70B9;&#x662F;&#x5426;&#x4F4D;&#x4E8E;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x4E2D;">&#x70B9;&#x662F;&#x5426;&#x4F4D;&#x4E8E;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x4E2D;</h4>
+<pre><code class="lang-js">isPointInPath()
+</code></pre>
+<h4 id="&#x50CF;&#x7D20;&#x64CD;&#x4F5C;api">&#x50CF;&#x7D20;&#x64CD;&#x4F5C;API</h4>
+<pre><code class="lang-js">width    <span class="hljs-comment">//&#x8FD4;&#x56DE; ImageData &#x5BF9;&#x8C61;&#x7684;&#x5BBD;&#x5EA6;</span>
+height    <span class="hljs-comment">//&#x8FD4;&#x56DE; ImageData &#x5BF9;&#x8C61;&#x7684;&#x9AD8;&#x5EA6;</span>
+data    <span class="hljs-comment">//&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x5305;&#x542B;&#x6307;&#x5B9A;&#x7684; ImageData &#x5BF9;&#x8C61;&#x7684;&#x56FE;&#x50CF;&#x6570;&#x636E;</span>
+
+createImageData()    <span class="hljs-comment">//&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x3001;&#x7A7A;&#x767D;&#x7684; ImageData &#x5BF9;&#x8C61;</span>
+getImageData()    <span class="hljs-comment">//&#x8FD4;&#x56DE; ImageData &#x5BF9;&#x8C61;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x4E3A;&#x753B;&#x5E03;&#x4E0A;&#x6307;&#x5B9A;&#x7684;&#x77E9;&#x5F62;&#x590D;&#x5236;&#x50CF;&#x7D20;&#x6570;&#x636E;</span>
+putImageData()    <span class="hljs-comment">//&#x628A;&#x56FE;&#x50CF;&#x6570;&#x636E;&#xFF08;&#x4ECE;&#x6307;&#x5B9A;&#x7684; ImageData &#x5BF9;&#x8C61;&#xFF09;&#x653E;&#x56DE;&#x753B;&#x5E03;&#x4E0A;</span>
+</code></pre>
+<h3 id="&#x7ED8;&#x5236;&#x5706;&#x89D2;&#x77E9;&#x5F62;">&#x7ED8;&#x5236;&#x5706;&#x89D2;&#x77E9;&#x5F62;</h3>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802163558011.png" alt="image-20200802163558011"></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">roundRect</span> (<span class="hljs-params">ctx, x, y, w, h, r</span>) </span>{
+  <span class="hljs-keyword">var</span> min_size = <span class="hljs-built_in">Math</span>.min(w, h);
+  <span class="hljs-keyword">if</span> (r &gt; min_size / <span class="hljs-number">2</span>){
+    r = min_size / <span class="hljs-number">2</span>
+  }
+  ctx.beginPath()
+  ctx.moveTo(x + r, y)
+  ctx.arcTo(x + w, y, x + w, y + h, r)
+  ctx.arcTo(x + w, y + h, x, y + h, r)
+  ctx.arcTo(x, y + h, x, y, r)
+  ctx.arcTo(x, y, x + w, y, r)
+  ctx.closePath()
+}
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=14" target="_blank">&#x67E5;&#x770B;DEMO</a></p>
+<h3 id="&#x7ED8;&#x5236;&#x5706;&#x89D2;&#x56FE;&#x7247;">&#x7ED8;&#x5236;&#x5706;&#x89D2;&#x56FE;&#x7247;</h3>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802173138214.png" alt="image-20200802173138214"></p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802173158563.png" alt="image-20200802173158563"></p>
+<pre><code class="lang-js"><span class="hljs-comment">//&#x65B9;&#x6CD5;&#x4E00;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawRoundImg</span> (<span class="hljs-params">ctx, x, y, w, h, r</span>) </span>{
+    ctx.save();
+    <span class="hljs-keyword">let</span> img = <span class="hljs-keyword">new</span> Image()
+    img.src = <span class="hljs-string">&quot;./img/pins_3338674420.jpg&quot;</span>
+    img.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        roundRect(ctx, x, y, w, h, r)
+        ctx.clip();
+        ctx.drawImage(img, x, y, w, h)
+        ctx.restore()
+    }
+}
+
+<span class="hljs-comment">//&#x65B9;&#x6CD5;&#x4E8C;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawRoundImg2</span> (<span class="hljs-params">ctx, x, y, w, h, r</span>) </span>{
+    ctx.save();
+    <span class="hljs-keyword">let</span> img = <span class="hljs-keyword">new</span> Image()
+    img.src = <span class="hljs-string">&quot;./img/pins_3338674420.jpg&quot;</span>
+    img.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">let</span> pattern = ctx.createPattern(img, <span class="hljs-string">&quot;no-repeat&quot;</span>);
+        roundRect(ctx, x, y, w, h, r)
+        ctx.fillStyle = pattern
+        ctx.fill()
+    }
+}
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=15" target="_blank">&#x67E5;&#x770B;DEMO &#x5706;&#x89D2;&#x56FE;&#x7247;1</a> <a href="https://1927344728.github.io/demo-lizh/html/10-canvas.html?type=16" target="_blank">&#x67E5;&#x770B;DEMO &#x5706;&#x89D2;&#x56FE;&#x7247;2</a></p>
+<h3 id="canvas-api&#x6CA1;&#x6709;&#x7ED3;&#x675F;">Canvas API&#x6CA1;&#x6709;&#x7ED3;&#x675F;</h3>
+<p>Canvas&#x7684;&#x6807;&#x51C6;&#x4E00;&#x76F4;&#x5728;&#x66F4;&#x65B0;&#xFF0C;&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE; <a href="http://www.w3.org/TR/2dcontext" target="_blank">W3C Canvas&#x6807;&#x51C6;</a>&#x67E5;&#x770B;&#x6700;&#x65B0;&#x7684;API&#x3002;&#x4F46;&#x662F;&#x4E00;&#x822C;&#x6700;&#x65B0;&#x7684;API&#x5F88;&#x591A;&#x6D4F;&#x89C8;&#x5668;&#x90FD;&#x4E0D;&#x4F1A;&#x7ACB;&#x523B;&#x53BB;&#x652F;&#x6301;&#x3002;</p>
+<h3 id="&#x5E38;&#x7528;&#x95EE;&#x9898;">&#x5E38;&#x7528;&#x95EE;&#x9898;</h3>
+<h4 id="&#x56FE;&#x7247;&#x7684;&#x8DE8;&#x57DF;&#x95EE;&#x9898;">&#x56FE;&#x7247;&#x7684;&#x8DE8;&#x57DF;&#x95EE;&#x9898;</h4>
+<p>&#x5728; <code>HTMLImageElement</code>&#x4E0A;&#x4F7F;&#x7528;<code>crossOrigin</code>&#x5C5E;&#x6027;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8BF7;&#x6C42;&#x52A0;&#x8F7D;&#x5176;&#x5B83;&#x57DF;&#x540D;&#x4E0A;&#x7684;&#x56FE;&#x7247;&#x3002;&#x5982;&#x679C;&#x56FE;&#x7247;&#x7684;&#x670D;&#x52A1;&#x5668;&#x5141;&#x8BB8;&#x8DE8;&#x57DF;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;&#x56FE;&#x7247;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x56FE;&#x7247;&#x800C;&#x4E0D;&#x6C61;&#x67D3;canvas&#xFF0C;&#x5426;&#x5219;&#xFF0C;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x56FE;&#x7247;&#x5C06;&#x4F1A;&#x6C61;&#x67D3;canvas&#x3002;</p>
+<h4 id="vue&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x56FE;&#x7247;&#x7684;&#x5F15;&#x7528;">vue&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x56FE;&#x7247;&#x7684;&#x5F15;&#x7528;</h4>
+<ul>
+<li><p>&#x653E;&#x7F6E;&#x5728; <code>public</code> &#x76EE;&#x5F55;&#x4E0B;&#x6216;&#x901A;&#x8FC7;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x88AB;&#x5F15;&#x7528;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;require&#x3002;&#x5982;<code>img.src = require(&quot;@/assets/image/01eb485e44bf8fa8012165187fa336.jpg&quot;)</code></p>
+</li>
+</ul>
+<h3 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;">&#x53C2;&#x8003;&#x94FE;&#x63A5;</h3>
+<p><a href="https://www.canvasapi.cn/" target="_blank">Canvas API&#x4E2D;&#x6587;&#x6587;&#x6863;&#x9996;&#x9875;&#x5730;&#x56FE;</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API" target="_blank">MDN - canvas</a></p>
+<p><a href="https://blog.csdn.net/zeping891103/article/details/72730968" target="_blank">&#x539F;&#x751F;HTML5 Canvas &#x53C2;&#x8003;API&#x6587;&#x6863;</a></p>
+<p><a href="http://caibaojian.com/canvas/" target="_blank">canvas</a> </p>
+<footer class="page-footer"><span class="copyright">&#xA9; lizhao all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-10-15 23:10:31
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="04-深入理解JavaScript的浅拷贝和深拷贝.html" class="navigation navigation-prev " aria-label="Previous page: 深入理解JavaScript的浅拷贝和深拷贝">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="06-SVG基础入门篇.html" class="navigation navigation-next " aria-label="Next page: SVG基础入门篇">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Canvas基础入门篇","level":"6.6","depth":1,"next":{"title":"SVG基础入门篇","level":"6.7","depth":1,"path":"js探索系列/06-SVG基础入门篇.md","ref":"js探索系列/06-SVG基础入门篇.md","articles":[]},"previous":{"title":"深入理解JavaScript的浅拷贝和深拷贝","level":"6.5","depth":1,"path":"js探索系列/04-深入理解JavaScript的浅拷贝和深拷贝.md","ref":"js探索系列/04-深入理解JavaScript的浅拷贝和深拷贝.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","summary","theme-comscore","splitter","fontsettings","tbfed-pagefooter","theme-default","pageview-count","accordion","sharing-plus","klipse","back-to-top-button","chapter-fold","livereload"],"root":"/","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"livereload":{},"summary":{},"splitter":{},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"twitter":false,"vk":false,"pocket":false,"google":true,"qzone":true},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"search-plus":{}},"theme":"default","page":{"title":"前端知识库(lizh)"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"authorName":"lizhao"},"title":"LIZHAO","gitbook":"3.2.3"},"file":{"path":"js探索系列/05-Canvas基础入门篇.md","mtime":"2021-10-15T15:10:31.293Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-15T16:58:39.485Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

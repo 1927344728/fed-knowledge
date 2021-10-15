@@ -1,0 +1,1707 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>JavaScript之Ajax · LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="JavaScript之Promise.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../bugs/00-前端调试随笔.html">
+            
+                <a href="../../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../bugs/05-JS常见问题概览.html">
+            
+                <a href="../../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../bugs/07-小程序问题概览.html">
+            
+                <a href="../../bugs/07-小程序问题概览.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    小程序问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../css探索系列/00-CSS基础知识.html">
+            
+                <a href="../../css探索系列/00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../css探索系列/01-CSS探索系列-margin.html">
+            
+                <a href="../../css探索系列/01-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../css探索系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../../css探索系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../css探索系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../../css探索系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../css探索系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../../css探索系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../../css探索系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../../css探索系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../../css探索系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="../../css探索系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../../css探索系列/11-CSS3中一些高级属性的应用.html">
+            
+                <a href="../../css探索系列/11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../../css探索系列/14-CSS探索系列-line-height.html">
+            
+                <a href="../../css探索系列/14-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../../css探索系列/_关于css.html">
+            
+                <a href="../../css探索系列/_关于css.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../frontend/00-关于前端.html">
+            
+                <a href="../../frontend/00-关于前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    关于前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../frontend/00-基础-02-浏览器工作原理.html">
+            
+                <a href="../../frontend/00-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../../frontend/00-进阶-04-如何保证高质量代码.html">
+            
+                <a href="../../frontend/00-进阶-04-如何保证高质量代码.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    进阶 04 如何保证高质量代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../../frontend/01-聊一聊Cookie的一些问题.html">
+            
+                <a href="../../frontend/01-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../../frontend/02-如何理解HTTP响应的状态码.html">
+            
+                <a href="../../frontend/02-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../../frontend/代码规范/">
+            
+                <a href="../../frontend/代码规范/">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.6.1" data-path="../../frontend/代码规范/00-W3C标准.html">
+            
+                <a href="../../frontend/代码规范/00-W3C标准.html">
+            
+                    
+                        <b>4.6.1.</b>
+                    
+                    W3C标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.2" data-path="../../frontend/代码规范/01-HTML.html">
+            
+                <a href="../../frontend/代码规范/01-HTML.html">
+            
+                    
+                        <b>4.6.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.3" data-path="../../frontend/代码规范/02-CSS.html">
+            
+                <a href="../../frontend/代码规范/02-CSS.html">
+            
+                    
+                        <b>4.6.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.4" data-path="../../frontend/代码规范/03-JS.html">
+            
+                <a href="../../frontend/代码规范/03-JS.html">
+            
+                    
+                        <b>4.6.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.5" data-path="../../frontend/代码规范/04-其他.html">
+            
+                <a href="../../frontend/代码规范/04-其他.html">
+            
+                    
+                        <b>4.6.5.</b>
+                    
+                    其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../html探索系列/00-HTML基础知识.html">
+            
+                <a href="../../html探索系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../html探索系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../../html探索系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../../html探索系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../../html探索系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../../html探索系列/_关于html.html">
+            
+                <a href="../../html探索系列/_关于html.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Js探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../00-JS基础知识.html">
+            
+                <a href="../00-JS基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    JS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../01-谈谈JavaScript的作用域和上下文.html">
+            
+                <a href="../01-谈谈JavaScript的作用域和上下文.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../02-JavaScript-Date的使用和日期时间字符串格式.html">
+            
+                <a href="../02-JavaScript-Date的使用和日期时间字符串格式.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    JavaScript Date的使用和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../03-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../03-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../04-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../04-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../05-Canvas基础入门篇.html">
+            
+                <a href="../05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../06-SVG基础入门篇.html">
+            
+                <a href="../06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    JavaScript笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="6.8.1" data-path="JavaScript之Ajax.html">
+            
+                <a href="JavaScript之Ajax.html">
+            
+                    
+                        <b>6.8.1.</b>
+                    
+                    JavaScript之Ajax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2" data-path="JavaScript之Promise.html">
+            
+                <a href="JavaScript之Promise.html">
+            
+                    
+                        <b>6.8.2.</b>
+                    
+                    JavaScript之Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.3" data-path="JavaScript之Touch事件.html">
+            
+                <a href="JavaScript之Touch事件.html">
+            
+                    
+                        <b>6.8.3.</b>
+                    
+                    JavaScript之Touch事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.4" data-path="JavaScript之键盘事件.html">
+            
+                <a href="JavaScript之键盘事件.html">
+            
+                    
+                        <b>6.8.4.</b>
+                    
+                    JavaScript之键盘事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../_关于Javascript.html">
+            
+                <a href="../_关于Javascript.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../nodeJs/">
+            
+                <a href="../nodeJs/">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    NodeJs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.10.1" data-path="../nodeJs/00-Node.js的三种调试方法.html">
+            
+                <a href="../nodeJs/00-Node.js的三种调试方法.html">
+            
+                    
+                        <b>6.10.1.</b>
+                    
+                    Node.Js的三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.2" data-path="../nodeJs/01-npm模块的一些机制.html">
+            
+                <a href="../nodeJs/01-npm模块的一些机制.html">
+            
+                    
+                        <b>6.10.2.</b>
+                    
+                    Npm模块的一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.3" data-path="../nodeJs/02-npm常用命令.html">
+            
+                <a href="../nodeJs/02-npm常用命令.html">
+            
+                    
+                        <b>6.10.3.</b>
+                    
+                    Npm常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.4" data-path="../nodeJs/03-从零开始，开发一个NPM包.html">
+            
+                <a href="../nodeJs/03-从零开始，开发一个NPM包.html">
+            
+                    
+                        <b>6.10.4.</b>
+                    
+                    从零开始，开发一个NPM包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../../research/02-如何监控前端异常？.html">
+            
+                <a href="../../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../../research/03-H5页面的跳转、刷新、回退+刷新.html">
+            
+                <a href="../../research/03-H5页面的跳转、刷新、回退+刷新.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    H5页面的跳转、刷新、回退+刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>7.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../../research/Javascript加密混淆.html">
+            
+                <a href="../../research/Javascript加密混淆.html">
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="../../research/Vue如何导入TypeScript.html">
+            
+                <a href="../../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>7.8.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.9" data-path="../../research/移动端PDF预览.html">
+            
+                <a href="../../research/移动端PDF预览.html">
+            
+                    
+                        <b>7.9.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.10" data-path="../../research/纯CSS绘制箭头.html">
+            
+                <a href="../../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>7.10.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11" data-path="../../research/网站性能测量和优化方法.html">
+            
+                <a href="../../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>7.11.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../../tech/04-sublime3插件篇.html">
+            
+                <a href="../../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../../tech/05-Charles安装及使用.html">
+            
+                <a href="../../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../../tools/Git/">
+            
+                <a href="../../tools/Git/">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" data-path="../../tools/Git/01-Git安装、使用及常用命令.html">
+            
+                <a href="../../tools/Git/01-Git安装、使用及常用命令.html">
+            
+                    
+                        <b>9.1.1.</b>
+                    
+                    Git安装、使用及常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2" data-path="../../tools/Git/02-git-clone速度太慢的解决办法.html">
+            
+                <a href="../../tools/Git/02-git-clone速度太慢的解决办法.html">
+            
+                    
+                        <b>9.1.2.</b>
+                    
+                    Git Clone速度太慢的解决办法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3" data-path="../../tools/Git/03-Git常见问题.html">
+            
+                <a href="../../tools/Git/03-Git常见问题.html">
+            
+                    
+                        <b>9.1.3.</b>
+                    
+                    Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../../tools/Gitbook/">
+            
+                <a href="../../tools/Gitbook/">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    Gitbook
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="../../tools/Gitbook/01-gitbook入门篇.html">
+            
+                <a href="../../tools/Gitbook/01-gitbook入门篇.html">
+            
+                    
+                        <b>9.2.1.</b>
+                    
+                    Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" data-path="../../tools/Gitbook/02-gitbook插件篇.html">
+            
+                <a href="../../tools/Gitbook/02-gitbook插件篇.html">
+            
+                    
+                        <b>9.2.2.</b>
+                    
+                    Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.3" data-path="../../tools/Gitbook/03-gitbook进阶篇.html">
+            
+                <a href="../../tools/Gitbook/03-gitbook进阶篇.html">
+            
+                    
+                        <b>9.2.3.</b>
+                    
+                    Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >JavaScript之Ajax</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="javascript&#x7B14;&#x8BB0;&#x4E4B;ajax">JavaScript&#x7B14;&#x8BB0;&#x4E4B;Ajax</h2>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#xFF0C;&#x91C7;&#x7528; HTTP &#x534F;&#x8BAE;&#x901A;&#x4FE1;&#x3002;&#x7528;&#x6237;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x5730;&#x5740;&#x680F;&#x952E;&#x5165;&#x4E00;&#x4E2A;&#x7F51;&#x5740;&#xFF0C;&#x6216;&#x8005;&#x901A;&#x8FC7;&#x7F51;&#x9875;&#x8868;&#x5355;&#x5411;&#x670D;&#x52A1;&#x5668;&#x63D0;&#x4EA4;&#x5185;&#x5BB9;&#xFF0C;&#x8FD9;&#x65F6;&#x6D4F;&#x89C8;&#x5668;&#x5C31;&#x4F1A;&#x5411;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x51FA; HTTP &#x8BF7;&#x6C42;&#x3002;</p>
+<p>1999&#x5E74;&#xFF0C;&#x5FAE;&#x8F6F;&#x516C;&#x53F8;&#x53D1;&#x5E03; IE &#x6D4F;&#x89C8;&#x5668;5.0&#x7248;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x5F15;&#x5165;&#x65B0;&#x529F;&#x80FD;&#xFF1A;&#x5141;&#x8BB8; JavaScript &#x811A;&#x672C;&#x5411;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x8D77; HTTP &#x8BF7;&#x6C42;&#x3002;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x5F53;&#x65F6;&#x5E76;&#x6CA1;&#x6709;&#x5F15;&#x8D77;&#x6CE8;&#x610F;&#xFF0C;&#x76F4;&#x5230;2004&#x5E74; Gmail &#x53D1;&#x5E03;&#x548C;2005&#x5E74; Google Map &#x53D1;&#x5E03;&#xFF0C;&#x624D;&#x5F15;&#x8D77;&#x5E7F;&#x6CDB;&#x91CD;&#x89C6;&#x3002;2005&#x5E74;2&#x6708;&#xFF0C;AJAX &#x8FD9;&#x4E2A;&#x8BCD;&#x7B2C;&#x4E00;&#x6B21;&#x6B63;&#x5F0F;&#x63D0;&#x51FA;&#xFF0C;&#x5B83;&#x662F; Asynchronous JavaScript and XML &#x7684;&#x7F29;&#x5199;&#xFF0C;&#x6307;&#x7684;&#x662F;&#x901A;&#x8FC7; JavaScript &#x7684;&#x5F02;&#x6B65;&#x901A;&#x4FE1;&#xFF0C;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x83B7;&#x53D6; XML &#x6587;&#x6863;&#x4ECE;&#x4E2D;&#x63D0;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x518D;&#x66F4;&#x65B0;&#x5F53;&#x524D;&#x7F51;&#x9875;&#x7684;&#x5BF9;&#x5E94;&#x90E8;&#x5206;&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x5237;&#x65B0;&#x6574;&#x4E2A;&#x7F51;&#x9875;&#x3002;&#x540E;&#x6765;&#xFF0C;<strong>AJAX &#x8FD9;&#x4E2A;&#x8BCD;&#x5C31;&#x6210;&#x4E3A; JavaScript &#x811A;&#x672C;&#x53D1;&#x8D77; HTTP &#x901A;&#x4FE1;&#x7684;&#x4EE3;&#x540D;&#x8BCD;</strong>&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x53EA;&#x8981;&#x7528;&#x811A;&#x672C;&#x53D1;&#x8D77;&#x901A;&#x4FE1;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x53EB;&#x505A; AJAX &#x901A;&#x4FE1;&#x3002;W3C &#x4E5F;&#x5728;2006&#x5E74;&#x53D1;&#x5E03;&#x4E86;&#x5B83;&#x7684;&#x56FD;&#x9645;&#x6807;&#x51C6;&#x3002;</p>
+<p><strong>Ajax &#x4E0D;&#x662F;&#x6307;&#x4E00;&#x79CD;&#x5355;&#x4E00;&#x7684;&#x6280;&#x672F;&#xFF0C;&#x800C;&#x662F;&#x6709;&#x673A;&#x5730;&#x5229;&#x7528;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x76F8;&#x5173;&#x7684;&#x6280;&#x672F;&#x3002;</strong>&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;AJAX &#x5305;&#x62EC;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x6B65;&#x9AA4;&#x3002;</p>
+<ul>
+<li>&#x521B;&#x5EFA; XMLHttpRequest &#x5B9E;&#x4F8B;</li>
+<li>&#x53D1;&#x51FA; HTTP &#x8BF7;&#x6C42;</li>
+<li>&#x63A5;&#x6536;&#x670D;&#x52A1;&#x5668;&#x4F20;&#x56DE;&#x7684;&#x6570;&#x636E;</li>
+<li>&#x66F4;&#x65B0;&#x7F51;&#x9875;&#x6570;&#x636E;</li>
+</ul>
+<p>&#x6982;&#x62EC;&#x8D77;&#x6765;&#xFF0C;&#x5C31;&#x662F;&#x4E00;&#x53E5;&#x8BDD;&#xFF0C;AJAX &#x901A;&#x8FC7;&#x539F;&#x751F;&#x7684; <code>XMLHttpRequest</code> &#x5BF9;&#x8C61;&#x53D1;&#x51FA; HTTP &#x8BF7;&#x6C42;&#xFF0C;&#x5F97;&#x5230;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x540E;&#xFF0C;&#x518D;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;&#x73B0;&#x5728;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x90FD;&#x662F; JSON &#x683C;&#x5F0F;&#x7684;&#x6570;&#x636E;&#xFF0C;XML &#x683C;&#x5F0F;&#x5DF2;&#x7ECF;&#x8FC7;&#x65F6;&#x4E86;&#xFF0C;&#x4F46;&#x662F; AJAX &#x8FD9;&#x4E2A;&#x540D;&#x5B57;&#x5DF2;&#x7ECF;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x540D;&#x8BCD;&#xFF0C;&#x5B57;&#x9762;&#x542B;&#x4E49;&#x5DF2;&#x7ECF;&#x6D88;&#x5931;&#x4E86;&#x3002;</p>
+<p>&#x5E38;&#x7528;&#x7684; Ajax &#x5E93;&#x6709;&#xFF1A;<strong>XMLHttpRequest&#x3001;Node HTTP&#x3001;fetch&#x3001;node-fetch&#x3001;axios&#x3002;&#x3002;&#x3002;</strong></p>
+<h3 id="xmlhttp">XMLHTTP</h3>
+<p>XMLHTTP &#x662F;&#x4E00;&#x7EC4;API&#x51FD;&#x6570;&#x96C6;&#xFF0C;&#x53EF;&#x88AB; <code>JavaScript&#x3001;JScript&#x3001;VBScript</code> &#x4EE5;&#x53CA;&#x5176;&#x5B83; web &#x6D4F;&#x89C8;&#x5668;&#x5185;&#x5D4C;&#x7684;&#x811A;&#x672C;&#x8BED;&#x8A00;&#x8C03;&#x7528;&#xFF0C;&#x901A;&#x8FC7; HTTP &#x5728;&#x6D4F;&#x89C8;&#x5668;&#x548C; web &#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x6536;&#x53D1;XML&#x6216;&#x5176;&#x5B83;&#x6570;&#x636E;&#x3002;</p>
+<p>XMLHTTP&#x6700;&#x5927;&#x7684;&#x597D;&#x5904;&#x5728;&#x4E8E;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x5730;&#x66F4;&#x65B0;&#x7F51;&#x9875;&#xFF0C;&#x5B83;&#x65E0;&#x9700;&#x91CD;&#x65B0;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x8BFB;&#x53D6;&#x6574;&#x4E2A;&#x7F51;&#x9875;&#xFF0C;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x989D;&#x5916;&#x7684;&#x63D2;&#x4EF6;&#x3002;XMLHTTP &#x662F; Ajax &#x7F51;&#x9875;&#x5F00;&#x53D1;&#x6280;&#x672F;&#x7684;&#x91CD;&#x8981;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#x3002;&#x9664; XML &#x4E4B;&#x5916;&#xFF0C;XMLHTTP &#x8FD8;&#x80FD;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x5176;&#x5B83;&#x683C;&#x5F0F;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5982; JSON &#x6216;&#x8005;&#x751A;&#x81F3;&#x7EAF;&#x6587;&#x672C;&#x3002;</p>
+<h3 id="xmlhttprequest">XMLHttpRequest</h3>
+<p>XMLHttpRequest &#x5BF9;&#x8C61;&#x662F; AJAX &#x7684;&#x4E3B;&#x8981;&#x63A5;&#x53E3;&#xFF0C;&#x7528;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#x3002;&#x5C3D;&#x7BA1;&#x540D;&#x5B57;&#x91CC;&#x9762;&#x6709; XML &#x548C; Http&#xFF0C;&#x5B83;<strong>&#x5B9E;&#x9645;&#x4E0A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x591A;&#x79CD;&#x534F;&#x8BAE;&#xFF08;&#x6BD4;&#x5982;file&#x6216;ftp&#xFF0C;&#x4F46;&#x53EF;&#x80FD;&#x53D7;&#x5230;&#x66F4;&#x591A;&#x51FA;&#x4E8E;&#x5B89;&#x5168;&#x7B49;&#x539F;&#x56E0;&#x7684;&#x9650;&#x5236;&#xFF09;</strong>&#xFF0C;&#x53D1;&#x9001;&#x4EFB;&#x4F55;&#x683C;&#x5F0F;&#x7684;&#x6570;&#x636E;&#xFF08;&#x5305;&#x62EC;&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x4E8C;&#x8FDB;&#x5236;&#xFF09;&#x3002;</p>
+<p>XMLHttpRequest &#x672C;&#x8EAB;&#x662F;&#x4E00;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>new</code> &#x547D;&#x4EE4;&#x751F;&#x6210;&#x5B9E;&#x4F8B;&#x3002;&#x5B83;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F; <code>XMLHttpRequest</code> &#x5BF9;&#x8C61;&#x7B80;&#x5355;&#x7528;&#x6CD5;&#x7684;&#x5B8C;&#x6574;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendXMLHttpRequest</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest()
+    xhr.withCredentials = <span class="hljs-literal">true</span>
+    xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-comment">// &#x901A;&#x4FE1;&#x6210;&#x529F;&#x65F6;&#xFF0C;&#x72B6;&#x6001;&#x503C;&#x4E3A;4</span>
+        <span class="hljs-keyword">if</span> (xhr.readyState === <span class="hljs-number">4</span>) {
+            <span class="hljs-keyword">if</span> (xhr.status === <span class="hljs-number">200</span>) {
+                <span class="hljs-built_in">console</span>.log(xhr.responseText)
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-built_in">console</span>.error(xhr.statusText)
+            }
+        }
+    }
+    xhr.onerror = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+        <span class="hljs-built_in">console</span>.error(xhr.statusText)
+    }
+    xhr.open(<span class="hljs-string">&apos;GET&apos;</span>, <span class="hljs-string">&apos;http://localhost:3000&apos;</span>, <span class="hljs-literal">true</span>)
+    xhr.send(<span class="hljs-literal">null</span>)
+}
+</code></pre>
+<h3 id="xmlhttprequest-&#x7684;&#x5B9E;&#x4F8B;&#x5C5E;&#x6027;">XMLHttpRequest &#x7684;&#x5B9E;&#x4F8B;&#x5C5E;&#x6027;</h3>
+<h4 id="1readystate">1.readyState</h4>
+<p>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x8868;&#x793A;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x7684;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x3002;&#x8BE5;&#x5C5E;&#x6027;&#x53EA;&#x8BFB;&#x3002;&#x5B83;&#x53EF;&#x80FD;&#x8FD4;&#x56DE;&#x4EE5;&#x4E0B;&#x503C;&#xFF1A;</p>
+<ul>
+<li>0&#xFF1A;&#x8868;&#x793A; XMLHttpRequest &#x5B9E;&#x4F8B;&#x5DF2;&#x7ECF;&#x751F;&#x6210;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x4F8B;&#x7684; <code>open()</code> &#x65B9;&#x6CD5;&#x8FD8;&#x6CA1;&#x6709;&#x88AB;&#x8C03;&#x7528;&#x3002;</li>
+<li>1&#xFF1A;&#x8868;&#x793A; <code>open()</code> &#x65B9;&#x6CD5;&#x5DF2;&#x7ECF;&#x8C03;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x4F8B;&#x7684; <code>send()</code> &#x65B9;&#x6CD5;&#x8FD8;&#x6CA1;&#x6709;&#x8C03;&#x7528;&#xFF0C;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B9E;&#x4F8B;&#x7684; <code>setRequestHeader()</code> &#x65B9;&#x6CD5;&#xFF0C;&#x8BBE;&#x5B9A; HTTP &#x8BF7;&#x6C42;&#x7684;&#x5934;&#x4FE1;&#x606F;&#x3002;</li>
+<li>2&#xFF1A;&#x8868;&#x793A;&#x5B9E;&#x4F8B;&#x7684; <code>send()</code> &#x65B9;&#x6CD5;&#x5DF2;&#x7ECF;&#x8C03;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x5934;&#x4FE1;&#x606F;&#x548C;&#x72B6;&#x6001;&#x7801;&#x5DF2;&#x7ECF;&#x6536;&#x5230;&#x3002;</li>
+<li>3&#xFF1A;&#x8868;&#x793A;&#x6B63;&#x5728;&#x63A5;&#x6536;&#x670D;&#x52A1;&#x5668;&#x4F20;&#x6765;&#x7684;&#x6570;&#x636E;&#x4F53;&#xFF08;body &#x90E8;&#x5206;&#xFF09;&#x3002;&#x8FD9;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x5B9E;&#x4F8B;&#x7684; <code>responseType</code> &#x5C5E;&#x6027;&#x7B49;&#x4E8E; <code>text</code> &#x6216;&#x8005;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;<code>responseText</code> &#x5C5E;&#x6027;&#x5C31;&#x4F1A;&#x5305;&#x542B;&#x5DF2;&#x7ECF;&#x6536;&#x5230;&#x7684;&#x90E8;&#x5206;&#x4FE1;&#x606F;&#x3002;</li>
+<li>4&#xFF1A;&#x8868;&#x793A;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x5DF2;&#x7ECF;&#x5B8C;&#x5168;&#x63A5;&#x6536;&#xFF0C;&#x6216;&#x8005;&#x672C;&#x6B21;&#x63A5;&#x6536;&#x5DF2;&#x7ECF;&#x5931;&#x8D25;&#x3002;</li>
+</ul>
+<p>&#x901A;&#x4FE1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6BCF;&#x5F53;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x53D1;&#x751F;&#x72B6;&#x6001;&#x53D8;&#x5316;&#xFF0C;&#x5B83;&#x7684; <code>readyState</code> &#x5C5E;&#x6027;&#x7684;&#x503C;&#x5C31;&#x4F1A;&#x6539;&#x53D8;&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x6BCF;&#x4E00;&#x6B21;&#x53D8;&#x5316;&#xFF0C;&#x90FD;&#x4F1A;&#x89E6;&#x53D1;<code>readyStateChange</code>&#x4E8B;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-js">xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">if</span> (xhr.readyState === <span class="hljs-number">4</span>){
+    }
+}
+</code></pre>
+<h4 id="2onreadystatechange">2.onreadystatechange</h4>
+<p>&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x76D1;&#x542C;&#x51FD;&#x6570;&#x3002;<code>readystatechange</code>&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#xFF08;&#x5B9E;&#x4F8B;&#x7684; <code>readyState</code>&#x5C5E;&#x6027;&#x53D8;&#x5316;&#xFF09;&#xFF0C;&#x5C31;&#x4F1A;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x5B9E;&#x4F8B;&#x7684; <code>abort()</code>&#x65B9;&#x6CD5;&#xFF0C;&#x7EC8;&#x6B62; <code>XMLHttpRequest</code>&#x8BF7;&#x6C42;&#xFF0C;&#x4E5F;&#x4F1A;&#x9020;&#x6210; <code>readyState</code>&#x5C5E;&#x6027;&#x53D8;&#x5316;&#x3002;</p>
+<h4 id="3response">3.response</h4>
+<p>&#x8868;&#x793A;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x4F53;&#xFF08;&#x5373; HTTP &#x56DE;&#x5E94;&#x7684; body &#x90E8;&#x5206;&#xFF09;&#x3002;&#x5B83;&#x53EF;&#x80FD;&#x662F;&#x4EFB;&#x4F55;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x6BD4;&#x5982;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x5BF9;&#x8C61;&#x3001;&#x4E8C;&#x8FDB;&#x5236;&#x5BF9;&#x8C61;&#x7B49;&#x7B49;&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x7C7B;&#x578B;&#x7531;<code>XMLHttpRequest.responseType</code> &#x5C5E;&#x6027;&#x51B3;&#x5B9A;&#x3002;&#x8BE5;&#x5C5E;&#x6027;&#x53EA;&#x8BFB;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x672C;&#x6B21;&#x8BF7;&#x6C42;&#x6CA1;&#x6709;&#x6210;&#x529F;&#x6216;&#x8005;&#x6570;&#x636E;&#x4E0D;&#x5B8C;&#x6574;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x7B49;&#x4E8E;<code>null</code>&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C; <code>responseType</code> &#x5C5E;&#x6027;&#x7B49;&#x4E8E;<code>text</code>&#x6216;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5728;&#x8BF7;&#x6C42;&#x6CA1;&#x6709;&#x7ED3;&#x675F;&#x4E4B;&#x524D;&#xFF08;<code>readyState</code>&#x7B49;&#x4E8E;3&#x7684;&#x9636;&#x6BB5;&#xFF09;&#xFF0C;<code>response</code>&#x5C5E;&#x6027;&#x5305;&#x542B;&#x670D;&#x52A1;&#x5668;&#x5DF2;&#x7ECF;&#x8FD4;&#x56DE;&#x7684;&#x90E8;&#x5206;&#x6570;&#x636E;&#x3002;</p>
+<h4 id="4responsetype">4.responseType</h4>
+<p>&#x8BE5;&#x5C5E;&#x6027;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8868;&#x793A;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x662F;&#x53EF;&#x5199;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8C03;&#x7528; <code>open()</code> &#x65B9;&#x6CD5;&#x4E4B;&#x540E;&#x3001;&#x8C03;&#x7528; <code>send()</code> &#x65B9;&#x6CD5;&#x4E4B;&#x524D;&#xFF0C;&#x8BBE;&#x7F6E;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x503C;&#xFF0C;&#x544A;&#x8BC9;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x3002;&#x5982;&#x679C;<code>responseType</code>&#x8BBE;&#x4E3A;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5C31;&#x7B49;&#x540C;&#x4E8E;&#x9ED8;&#x8BA4;&#x503C;<code>text</code>&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x53D6;&#x4EE5;&#x4E0B;&#x503C;&#xFF1A;</p>
+<ul>
+<li>&#x201D;&#x201C;&#xFF08;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF09;&#xFF1A;&#x7B49;&#x540C;&#x4E8E; <code>text</code>&#xFF0C;&#x8868;&#x793A;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x6587;&#x672C;&#x6570;&#x636E;&#x3002;</li>
+<li>&#x201C;arraybuffer&#x201D;&#xFF1A;ArrayBuffer &#x5BF9;&#x8C61;&#xFF0C;&#x8868;&#x793A;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x7EC4;&#x3002;</li>
+<li>&#x201C;blob&#x201D;&#xFF1A;Blob &#x5BF9;&#x8C61;&#xFF0C;&#x8868;&#x793A;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x4E8C;&#x8FDB;&#x5236;&#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x201C;document&#x201D;&#xFF1A;Document &#x5BF9;&#x8C61;&#xFF0C;&#x8868;&#x793A;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x201C;json&#x201D;&#xFF1A;JSON &#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x201C;text&#x201D;&#xFF1A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</li>
+</ul>
+<p>&#x4E0A;&#x9762;&#x51E0;&#x79CD;&#x7C7B;&#x578B;&#x4E4B;&#x4E2D;&#xFF0C;<code>text</code> &#x7C7B;&#x578B;&#x9002;&#x5408;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#xFF0C;&#x800C;&#x4E14;&#x76F4;&#x63A5;&#x5904;&#x7406;&#x6587;&#x672C;&#x4E5F;&#x6BD4;&#x8F83;&#x65B9;&#x4FBF;&#x3002;<code>document</code> &#x7C7B;&#x578B;&#x9002;&#x5408;&#x8FD4;&#x56DE; HTML / XML &#x6587;&#x6863;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x5BF9;&#x4E8E;&#x90A3;&#x4E9B;&#x6253;&#x5F00; CORS &#x7684;&#x7F51;&#x7AD9;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528; Ajax &#x6293;&#x53D6;&#x7F51;&#x9875;&#xFF0C;&#x7136;&#x540E;&#x4E0D;&#x7528;&#x89E3;&#x6790; HTML &#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x76F4;&#x63A5;&#x5BF9;&#x6293;&#x53D6;&#x56DE;&#x6765;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C; DOM &#x64CD;&#x4F5C;&#x3002;<code>blob</code>&#x7C7B;&#x578B;&#x9002;&#x5408;&#x8BFB;&#x53D6;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#xFF0C;&#x6BD4;&#x5982;&#x56FE;&#x7247;&#x6587;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loadImage</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest()
+    xhr.withCredentials = <span class="hljs-literal">true</span>
+    xhr.open(<span class="hljs-string">&apos;GET&apos;</span>, <span class="hljs-string">&apos;assets/img/20190419141710_4735vxaqwhri_small.jpg&apos;</span>, <span class="hljs-literal">true</span>)
+    xhr.responseType = <span class="hljs-string">&apos;blob&apos;</span>
+    xhr.onload = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+        <span class="hljs-keyword">var</span> img = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;img&apos;</span>)
+        img.style.width = <span class="hljs-string">&apos;100%&apos;</span>
+        img.src = <span class="hljs-built_in">window</span>.URL.createObjectURL(<span class="hljs-keyword">this</span>.response)
+        <span class="hljs-built_in">document</span>.body.appendChild(img)
+    }
+    xhr.send()
+}
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/19-ajax.html" target="_blank">&#x67E5;&#x770B;DEMO</a></p>
+<h4 id="5responsetext">5.responseText</h4>
+<p>&#x8FD4;&#x56DE;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x63A5;&#x6536;&#x5230;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x4E3A;&#x53EA;&#x8BFB;&#x3002;&#x53EA;&#x6709; HTTP &#x8BF7;&#x6C42;&#x5B8C;&#x6210;&#x63A5;&#x6536;&#x4EE5;&#x540E;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x624D;&#x4F1A;&#x5305;&#x542B;&#x5B8C;&#x6574;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<h4 id="6responsexml">6.responseXML</h4>
+<p>&#x8FD4;&#x56DE;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x63A5;&#x6536;&#x5230;&#x7684; HTML &#x6216; XML &#x6587;&#x6863;&#x5BF9;&#x8C61;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x4E3A;&#x53EA;&#x8BFB;&#x3002;&#x5982;&#x679C;&#x672C;&#x6B21;&#x8BF7;&#x6C42;&#x6CA1;&#x6709;&#x6210;&#x529F;&#xFF0C;&#x6216;&#x8005;&#x6536;&#x5230;&#x7684;&#x6570;&#x636E;&#x4E0D;&#x80FD;&#x88AB;&#x89E3;&#x6790;&#x4E3A; XML &#x6216; HTML&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x7B49;&#x4E8E;<code>null</code>&#x3002;</p>
+<p>&#x8BE5;&#x5C5E;&#x6027;&#x751F;&#x6548;&#x7684;&#x524D;&#x63D0;&#x662F; HTTP &#x56DE;&#x5E94;&#x7684; Content-Type &#x5934;&#x4FE1;&#x606F;&#x7B49;&#x4E8E; <code>text/xml</code> &#x6216; <code>application/xml</code>&#x3002;&#x8FD9;&#x8981;&#x6C42;&#x5728;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x524D;&#xFF0C;<code>XMLHttpRequest.responseType</code>&#x5C5E;&#x6027;&#x8981;&#x8BBE;&#x4E3A; <code>document</code>&#x3002;&#x5982;&#x679C; HTTP &#x56DE;&#x5E94;&#x7684; Content-Type &#x5934;&#x4FE1;&#x606F;&#x4E0D;&#x7B49;&#x4E8E; <code>text/xml</code> &#x548C; <code>application/xml</code>&#xFF0C;&#x4F46;&#x662F;&#x60F3;&#x4ECE; <code>responseXML</code>&#x62FF;&#x5230;&#x6570;&#x636E;&#xFF08;&#x5373;&#x628A;&#x6570;&#x636E;&#x6309;&#x7167; DOM &#x683C;&#x5F0F;&#x89E3;&#x6790;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x624B;&#x52A8;&#x8C03;&#x7528;<code>XMLHttpRequest.overrideMimeType()</code> &#x65B9;&#x6CD5;&#xFF0C;&#x5F3A;&#x5236;&#x8FDB;&#x884C; XML &#x89E3;&#x6790;&#x3002;</p>
+<p>&#x8BE5;&#x5C5E;&#x6027;&#x5F97;&#x5230;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x662F;&#x76F4;&#x63A5;&#x89E3;&#x6790;&#x540E;&#x7684;&#x6587;&#x6863; DOM &#x6811;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest()
+xhr.open(<span class="hljs-string">&apos;GET&apos;</span>, <span class="hljs-string">&apos;/server&apos;</span>, <span class="hljs-literal">true</span>)
+xhr.responseType = <span class="hljs-string">&apos;document&apos;</span>
+xhr.overrideMimeType(<span class="hljs-string">&apos;text/xml&apos;</span>)
+xhr.onload = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (xhr.readyState === <span class="hljs-number">4</span> &amp;&amp; xhr.status === <span class="hljs-number">200</span>) {
+        <span class="hljs-built_in">console</span>.log(xhr.responseXML)
+    }
+}
+xhr.send(<span class="hljs-literal">null</span>)
+</code></pre>
+<h4 id="7responseurl">7.responseURL</h4>
+<p>&#x8BE5;&#x5C5E;&#x6027;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8868;&#x793A;&#x53D1;&#x9001;&#x6570;&#x636E;&#x7684;&#x670D;&#x52A1;&#x5668;&#x7684;&#x7F51;&#x5740;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x4E0E; <code>open()</code> &#x65B9;&#x6CD5;&#x6307;&#x5B9A;&#x7684;&#x8BF7;&#x6C42;&#x7F51;&#x5740;&#x4E0D;&#x4E00;&#x5B9A;&#x76F8;&#x540C;&#x3002;&#x5982;&#x679C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53D1;&#x751F;&#x8DF3;&#x8F6C;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x8FD4;&#x56DE;&#x6700;&#x540E;&#x5B9E;&#x9645;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x7684;&#x7F51;&#x5740;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x5982;&#x679C;&#x539F;&#x59CB; URL &#x5305;&#x62EC;&#x951A;&#x70B9;&#xFF08;fragment&#xFF09;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x4F1A;&#x628A;&#x951A;&#x70B9;&#x5265;&#x79BB;&#x3002;</p>
+<h4 id="8status">8.status</h4>
+<p>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x8868;&#x793A;&#x670D;&#x52A1;&#x5668;&#x56DE;&#x5E94;&#x7684; HTTP &#x72B6;&#x6001;&#x7801;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x5982;&#x679C;&#x901A;&#x4FE1;&#x6210;&#x529F;&#x7684;&#x8BDD;&#xFF0C;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x7801;&#x662F;200&#xFF1B;&#x5982;&#x679C;&#x670D;&#x52A1;&#x5668;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x7801;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x9ED8;&#x8BA4;&#x662F;200&#x3002;&#x8BF7;&#x6C42;&#x53D1;&#x51FA;&#x4E4B;&#x524D;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x4E3A;<code>0</code>&#x3002;&#x8BE5;&#x5C5E;&#x6027;&#x53EA;&#x8BFB;&#x3002;</p>
+<ul>
+<li>200&#xFF1A;OK&#xFF0C;&#x8BBF;&#x95EE;&#x6B63;&#x5E38;</li>
+<li>301&#xFF1A;Moved Permanently&#xFF0C;&#x6C38;&#x4E45;&#x79FB;&#x52A8;</li>
+<li>302&#xFF1A;Move temporarily&#xFF0C;&#x6682;&#x65F6;&#x79FB;&#x52A8;</li>
+<li>304&#xFF1A;Not Modified&#xFF0C;&#x672A;&#x4FEE;&#x6539;</li>
+<li>307&#xFF1A;Temporary Redirect&#xFF0C;&#x6682;&#x65F6;&#x91CD;&#x5B9A;&#x5411;</li>
+<li>401&#xFF1A;Unauthorized&#xFF0C;&#x672A;&#x6388;&#x6743;</li>
+<li>403&#xFF1A;Forbidden&#xFF0C;&#x7981;&#x6B62;&#x8BBF;&#x95EE;</li>
+<li>404&#xFF1A;Not Found&#xFF0C;&#x672A;&#x53D1;&#x73B0;&#x6307;&#x5B9A;&#x7F51;&#x5740;</li>
+<li>500&#xFF1A;Internal Server Error&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x751F;&#x9519;&#x8BEF;</li>
+</ul>
+<h4 id="9statustext">9.statusText</h4>
+<p>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8868;&#x793A;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x7684;&#x72B6;&#x6001;&#x63D0;&#x793A;&#x3002;&#x4E0D;&#x540C;&#x4E8E;<code>status</code>&#x5C5E;&#x6027;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x5305;&#x542B;&#x6574;&#x4E2A;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#xFF0C;&#x6BD4;&#x5982; <code>OK</code>&#x548C; <code>Not Found</code> &#x3002;&#x5728;&#x8BF7;&#x6C42;&#x53D1;&#x9001;&#x4E4B;&#x524D;&#xFF08;&#x5373;&#x8C03;&#x7528;<code>open()</code>&#x65B9;&#x6CD5;&#x4E4B;&#x524D;&#xFF09;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x662F;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF1B;&#x5982;&#x679C;&#x670D;&#x52A1;&#x5668;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x63D0;&#x793A;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x9ED8;&#x8BA4;&#x4E3A; <code>OK</code> &#x3002;&#x8BE5;&#x5C5E;&#x6027;&#x4E3A;&#x53EA;&#x8BFB;&#x5C5E;&#x6027;&#x3002;</p>
+<h4 id="10timeout">10.timeout</h4>
+<p>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x8868;&#x793A;&#x591A;&#x5C11;&#x6BEB;&#x79D2;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x8BF7;&#x6C42;&#x4ECD;&#x7136;&#x6CA1;&#x6709;&#x5F97;&#x5230;&#x7ED3;&#x679C;&#xFF0C;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x7EC8;&#x6B62;&#x3002;&#x5982;&#x679C;&#x8BE5;&#x5C5E;&#x6027;&#x7B49;&#x4E8E;0&#xFF0C;&#x5C31;&#x8868;&#x793A;&#x6CA1;&#x6709;&#x65F6;&#x95F4;&#x9650;&#x5236;&#x3002;</p>
+<h4 id="11ontimeout">11.ontimeout</h4>
+<p>&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x76D1;&#x542C;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x53D1;&#x751F; timeout &#x4E8B;&#x4EF6;&#xFF0C;&#x5C31;&#x4F1A;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x76D1;&#x542C;&#x51FD;&#x6570;&#x3002;</p>
+<h4 id="12&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x5C5E;&#x6027;">12.&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x5C5E;&#x6027;</h4>
+<p>XMLHttpRequest &#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x5BF9;&#x4EE5;&#x4E0B;&#x4E8B;&#x4EF6;&#x6307;&#x5B9A;&#x76D1;&#x542C;&#x51FD;&#x6570;&#x3002;</p>
+<ul>
+<li>onloadstart&#xFF1A;loadstart &#x4E8B;&#x4EF6;&#xFF08;HTTP &#x8BF7;&#x6C42;&#x53D1;&#x51FA;&#xFF09;&#x7684;&#x76D1;&#x542C;&#x51FD;&#x6570;</li>
+<li>onprogress&#xFF1A;progress&#x4E8B;&#x4EF6;&#xFF08;&#x6B63;&#x5728;&#x53D1;&#x9001;&#x548C;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#xFF09;&#x7684;&#x76D1;&#x542C;&#x51FD;&#x6570;</li>
+<li>onabort&#xFF1A;abort &#x4E8B;&#x4EF6;&#xFF08;&#x8BF7;&#x6C42;&#x4E2D;&#x6B62;&#xFF0C;&#x6BD4;&#x5982;&#x7528;&#x6237;&#x8C03;&#x7528;&#x4E86;abort()&#x65B9;&#x6CD5;&#xFF09;&#x7684;&#x76D1;&#x542C;&#x51FD;&#x6570;</li>
+<li>onerror&#xFF1A;error &#x4E8B;&#x4EF6;&#xFF08;&#x8BF7;&#x6C42;&#x5931;&#x8D25;&#xFF09;&#x7684;&#x76D1;&#x542C;&#x51FD;&#x6570;</li>
+<li>onload&#xFF1A;load &#x4E8B;&#x4EF6;&#xFF08;&#x8BF7;&#x6C42;&#x6210;&#x529F;&#x5B8C;&#x6210;&#xFF09;&#x7684;&#x76D1;&#x542C;&#x51FD;&#x6570;</li>
+<li>ontimeout&#xFF1A;timeout &#x4E8B;&#x4EF6;&#xFF08;&#x7528;&#x6237;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x9650;&#x8D85;&#x8FC7;&#x4E86;&#xFF0C;&#x8BF7;&#x6C42;&#x8FD8;&#x672A;&#x5B8C;&#x6210;&#xFF09;&#x7684;&#x76D1;&#x542C;&#x51FD;&#x6570;</li>
+<li>onloadend&#xFF1A;loadend &#x4E8B;&#x4EF6;&#xFF08;&#x8BF7;&#x6C42;&#x5B8C;&#x6210;&#xFF0C;&#x4E0D;&#x7BA1;&#x6210;&#x529F;&#x6216;&#x5931;&#x8D25;&#xFF09;&#x7684;&#x76D1;&#x542C;&#x51FD;&#x6570;</li>
+</ul>
+<p><code>progress</code> &#x4E8B;&#x4EF6;&#x7684;&#x76D1;&#x542C;&#x51FD;&#x6570;&#x6709;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;&#x53C2;&#x6570;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x6709;&#x4E09;&#x4E2A;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li>loaded&#xFF1A;&#x8FD4;&#x56DE;&#x5DF2;&#x7ECF;&#x4F20;&#x8F93;&#x7684;&#x6570;&#x636E;&#x91CF;</li>
+<li>total&#xFF1A;&#x5C5E;&#x6027;&#x8FD4;&#x56DE;&#x603B;&#x7684;&#x6570;&#x636E;&#x91CF;</li>
+<li>lengthComputable&#xFF1A;&#x5C5E;&#x6027;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x8868;&#x793A;&#x52A0;&#x8F7D;&#x7684;&#x8FDB;&#x5EA6;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x3002;</li>
+</ul>
+<p>&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x76D1;&#x542C;&#x51FD;&#x6570;&#x91CC;&#x9762;&#xFF0C;&#x53EA;&#x6709;<code>progress</code>&#x4E8B;&#x4EF6;&#x7684;&#x76D1;&#x542C;&#x51FD;&#x6570;&#x6709;&#x53C2;&#x6570;&#xFF0C;&#x5176;&#x4ED6;&#x51FD;&#x6570;&#x90FD;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong>&#x5982;&#x679C;&#x53D1;&#x751F;&#x7F51;&#x7EDC;&#x9519;&#x8BEF;&#xFF08;&#x6BD4;&#x5982;&#x670D;&#x52A1;&#x5668;&#x65E0;&#x6CD5;&#x8FDE;&#x901A;&#xFF09;&#xFF0C;<code>onerror</code> &#x4E8B;&#x4EF6;&#x65E0;&#x6CD5;&#x83B7;&#x53D6;&#x62A5;&#x9519;&#x4FE1;&#x606F;&#x3002;</p>
+<h4 id="13withcredentials">13.withCredentials</h4>
+<p>&#x8BE5;&#x5C5E;&#x6027;&#x662F;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x8868;&#x793A;&#x8DE8;&#x57DF;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF08;&#x6BD4;&#x5982; Cookie &#x548C;&#x8BA4;&#x8BC1;&#x7684; HTTP &#x5934;&#x4FE1;&#x606F;&#xFF09;&#x662F;&#x5426;&#x4F1A;&#x5305;&#x542B;&#x5728;&#x8BF7;&#x6C42;&#x4E4B;&#x4E2D;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;<code>false</code>&#xFF0C;&#x5373;&#x5411;<code>example.com</code>&#x53D1;&#x51FA;&#x8DE8;&#x57DF;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x4E0D;&#x4F1A;&#x53D1;&#x9001;<code>example.com</code>&#x8BBE;&#x7F6E;&#x5728;&#x672C;&#x673A;&#x4E0A;&#x7684; Cookie&#xFF08;&#x5982;&#x679C;&#x6709;&#x7684;&#x8BDD;&#xFF09;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x8DE8;&#x57DF; AJAX &#x8BF7;&#x6C42;&#x53D1;&#x9001; Cookie&#xFF0C;&#x9700;&#x8981; <code>withCredentials</code> &#x5C5E;&#x6027;&#x8BBE;&#x4E3A; <code>true</code>&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x540C;&#x6E90;&#x7684;&#x8BF7;&#x6C42;&#x4E0D;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x8BA9;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x751F;&#x6548;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x5FC5;&#x987B;&#x663E;&#x5F0F;&#x8FD4;&#x56DE; <code>Access-Control-Allow-Credentials</code> &#x8FD9;&#x4E2A;&#x5934;&#x4FE1;&#x606F;&#x3002;</p>
+<pre><code class="lang-java">Access-Control-Allow-Credentials: <span class="hljs-keyword">true</span>
+</code></pre>
+<p><code>withCredentials</code>&#x5C5E;&#x6027;&#x6253;&#x5F00;&#x7684;&#x8BDD;&#xFF0C;&#x8DE8;&#x57DF;&#x8BF7;&#x6C42;&#x4E0D;&#x4EC5;&#x4F1A;&#x53D1;&#x9001; Cookie&#xFF0C;&#x8FD8;&#x4F1A;&#x8BBE;&#x7F6E;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x6307;&#x5B9A;&#x7684; Cookie&#x3002;&#x53CD;&#x4E4B;&#x4E5F;&#x6210;&#x7ACB;&#xFF0C;&#x5982;&#x679C;<code>withCredentials</code>&#x5C5E;&#x6027;&#x6CA1;&#x6709;&#x6253;&#x5F00;&#xFF0C;&#x90A3;&#x4E48;&#x8DE8;&#x57DF;&#x7684; AJAX &#x8BF7;&#x6C42;&#x5373;&#x4F7F;&#x660E;&#x786E;&#x8981;&#x6C42;&#x6D4F;&#x89C8;&#x5668;&#x8BBE;&#x7F6E; Cookie&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x4E5F;&#x4F1A;&#x5FFD;&#x7565;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x811A;&#x672C;&#x603B;&#x662F;&#x9075;&#x5B88;&#x540C;&#x6E90;&#x653F;&#x7B56;&#xFF0C;&#x65E0;&#x6CD5;&#x4ECE;<code>document.cookie</code>&#x6216;&#x8005; HTTP &#x56DE;&#x5E94;&#x7684;&#x5934;&#x4FE1;&#x606F;&#x4E4B;&#x4E2D;&#xFF0C;&#x8BFB;&#x53D6;&#x8DE8;&#x57DF;&#x7684; Cookie&#xFF0C;<code>withCredentials</code>&#x5C5E;&#x6027;&#x4E0D;&#x5F71;&#x54CD;&#x8FD9;&#x4E00;&#x70B9;&#x3002;</p>
+<h4 id="14upload">14.upload</h4>
+<p>XMLHttpRequest &#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x53D1;&#x9001;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x5C31;&#x662F; AJAX &#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x3002;&#x53D1;&#x9001;&#x6587;&#x4EF6;&#x4EE5;&#x540E;&#xFF0C;&#x901A;&#x8FC7; <code>XMLHttpRequest.upload</code> &#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x901A;&#x8FC7;&#x89C2;&#x5BDF;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x5F97;&#x77E5;&#x4E0A;&#x4F20;&#x7684;&#x8FDB;&#x5C55;&#x3002;&#x4E3B;&#x8981;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x76D1;&#x542C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5404;&#x79CD;&#x4E8B;&#x4EF6;&#xFF1A;loadstart&#x3001;loadend&#x3001;load&#x3001;abort&#x3001;error&#x3001;progress&#x3001;timeout&#x3002;</p>
+<p>&#x5F53;&#x8BF7;&#x6C42;&#x4E00;&#x5207;&#x6B63;&#x5E38;&#x65F6;&#xFF0C;&#x76F8;&#x5173;&#x7684;&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x987A;&#x5E8F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js">xhr.onreadystatechange <span class="hljs-comment">//&#x4E4B;&#x540E;&#x6BCF;&#x6B21;readyState&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x90FD;&#x4F1A;&#x89E6;&#x53D1;&#x4E00;&#x6B21;</span>
+xhr.onloadstart
+<span class="hljs-comment">//&#x4E0A;&#x4F20;&#x5F00;&#x59CB;</span>
+xhr.upload.onloadstart
+xhr.upload.onprogress
+xhr.upload.onload
+xhr.upload.onloadend
+<span class="hljs-comment">//&#x4E0A;&#x4F20;&#x7ED3;&#x675F;</span>
+xhr.onprogress
+xhr.onload
+xhr.onloadend
+</code></pre>
+<h3 id="xmlhttprequest-&#x7684;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;">XMLHttpRequest &#x7684;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;</h3>
+<h4 id="1open">1.open()</h4>
+<p>&#x7528;&#x4E8E;&#x6307;&#x5B9A; HTTP &#x8BF7;&#x6C42;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x521D;&#x59CB;&#x5316; XMLHttpRequest &#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x3002;&#x5B83;&#x4E00;&#x5171;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x4E94;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-js">xhr.open(method, url, <span class="hljs-keyword">async</span>, user, password)
+</code></pre>
+<ul>
+<li>method&#xFF1A;&#x8868;&#x793A; HTTP &#x52A8;&#x8BCD;&#x65B9;&#x6CD5;&#xFF0C;&#x6BD4;&#x5982;<code>GET</code>&#x3001;<code>POST</code>&#x3001;<code>PUT</code>&#x3001;<code>DELETE</code>&#x3001;<code>HEAD</code>&#x7B49;&#x3002;</li>
+<li>url&#xFF1A;&#x8868;&#x793A;&#x8BF7;&#x6C42;&#x53D1;&#x9001;&#x76EE;&#x6807; URL&#x3002;</li>
+<li>async&#xFF1A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x8868;&#x793A;&#x8BF7;&#x6C42;&#x662F;&#x5426;&#x4E3A;&#x5F02;&#x6B65;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;<code>true</code>&#x3002;&#x5982;&#x679C;&#x8BBE;&#x4E3A;<code>false</code>&#xFF0C;&#x5219;<code>send()</code>&#x65B9;&#x6CD5;&#x53EA;&#x6709;&#x7B49;&#x5230;&#x6536;&#x5230;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x4E86;&#x7ED3;&#x679C;&#xFF0C;&#x624D;&#x4F1A;&#x8FDB;&#x884C;&#x4E0B;&#x4E00;&#x6B65;&#x64CD;&#x4F5C;&#x3002;&#x8BE5;&#x53C2;&#x6570;&#x53EF;&#x9009;&#x3002;&#x7531;&#x4E8E;&#x540C;&#x6B65; AJAX &#x8BF7;&#x6C42;&#x4F1A;&#x9020;&#x6210;&#x6D4F;&#x89C8;&#x5668;&#x5931;&#x53BB;&#x54CD;&#x5E94;&#xFF0C;&#x8BB8;&#x591A;&#x6D4F;&#x89C8;&#x5668;&#x5DF2;&#x7ECF;&#x7981;&#x6B62;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4F7F;&#x7528;&#xFF0C;&#x53EA;&#x5141;&#x8BB8; Worker &#x91CC;&#x9762;&#x4F7F;&#x7528;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x8F7B;&#x6613;&#x4E0D;&#x5E94;&#x8BE5;&#x8BBE;&#x4E3A;<code>false</code>&#x3002;</li>
+<li><code>user</code>&#xFF1A;&#x8868;&#x793A;&#x7528;&#x4E8E;&#x8BA4;&#x8BC1;&#x7684;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x8BE5;&#x53C2;&#x6570;&#x53EF;&#x9009;&#x3002;</li>
+<li><code>password</code>&#xFF1A;&#x8868;&#x793A;&#x7528;&#x4E8E;&#x8BA4;&#x8BC1;&#x7684;&#x5BC6;&#x7801;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x8BE5;&#x53C2;&#x6570;&#x53EF;&#x9009;&#x3002;</li>
+</ul>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x4F7F;&#x7528;&#x8FC7;open()&#x65B9;&#x6CD5;&#x7684; AJAX &#x8BF7;&#x6C42;&#xFF0C;&#x518D;&#x6B21;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x7B49;&#x540C;&#x4E8E;&#x8C03;&#x7528; <code>abort()</code> &#xFF0C;&#x5373;&#x7EC8;&#x6B62;&#x8BF7;&#x6C42;&#x3002;</p>
+<h4 id="2send">2.send()</h4>
+<p>&#x7528;&#x4E8E;&#x5B9E;&#x9645;&#x53D1;&#x51FA; HTTP &#x8BF7;&#x6C42;&#x3002;&#x5B83;&#x7684;&#x53C2;&#x6570;&#x662F;&#x53EF;&#x9009;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5E26;&#x53C2;&#x6570;&#xFF0C;&#x5C31;&#x8868;&#x793A; HTTP &#x8BF7;&#x6C42;&#x53EA;&#x5305;&#x542B;&#x5934;&#x4FE1;&#x606F;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x53EA;&#x6709;&#x4E00;&#x4E2A; URL&#xFF0C;&#x5178;&#x578B;&#x4F8B;&#x5B50;&#x5C31;&#x662F; GET &#x8BF7;&#x6C42;&#xFF1B;&#x5982;&#x679C;&#x5E26;&#x6709;&#x53C2;&#x6570;&#xFF0C;&#x5C31;&#x8868;&#x793A;&#x9664;&#x4E86;&#x5934;&#x4FE1;&#x606F;&#xFF0C;&#x8FD8;&#x5E26;&#x6709;&#x5305;&#x542B;&#x5177;&#x4F53;&#x6570;&#x636E;&#x7684;&#x4FE1;&#x606F;&#x4F53;&#xFF0C;&#x5178;&#x578B;&#x4F8B;&#x5B50;&#x5C31;&#x662F; POST &#x8BF7;&#x6C42;&#x3002;</p>
+<p>&#x5176;&#x53C2;&#x6570;&#x6280;&#x591A;&#x79CD;&#x683C;&#x5F0F;&#xFF1A;ArrayBufferView&#x3001;Blob&#x3001;Document&#x3001;String&#x3001;FormData&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x6240;&#x6709; XMLHttpRequest &#x7684;&#x76D1;&#x542C;&#x4E8B;&#x4EF6;&#xFF0C;&#x90FD;&#x5FC5;&#x987B;&#x5728;<code>send()</code>&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E4B;&#x524D;&#x8BBE;&#x5B9A;&#x3002;</p>
+<h4 id="3setrequestheader">3.setRequestHeader()</h4>
+<p>&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x9001;&#x7684; HTTP &#x8BF7;&#x6C42;&#x7684;&#x5934;&#x4FE1;&#x606F;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x5728;<code>open()</code>&#x4E4B;&#x540E;&#x3001;<code>send()</code>&#x4E4B;&#x524D;&#x8C03;&#x7528;&#x3002;&#x5982;&#x679C;&#x8BE5;&#x65B9;&#x6CD5;&#x591A;&#x6B21;&#x8C03;&#x7528;&#xFF0C;&#x8BBE;&#x5B9A;&#x540C;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;<strong>&#x5219;&#x6BCF;&#x4E00;&#x6B21;&#x8C03;&#x7528;&#x7684;&#x503C;&#x4F1A;&#x88AB;&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#x5355;&#x4E00;&#x7684;&#x503C;&#x53D1;&#x9001;</strong>&#x3002;</p>
+<pre><code class="lang-js">xhr.setRequestHeader(<span class="hljs-string">&apos;Content-Type&apos;</span>, <span class="hljs-string">&apos;application/json&apos;</span>)
+</code></pre>
+<h4 id="4overridemimetype">4.overrideMimeType()</h4>
+<p>&#x7528;&#x6765;&#x6307;&#x5B9A; MIME &#x7C7B;&#x578B;&#xFF0C;&#x8986;&#x76D6;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x771F;&#x6B63;&#x7684; MIME &#x7C7B;&#x578B;&#xFF0C;&#x4ECE;&#x800C;&#x8BA9;&#x6D4F;&#x89C8;&#x5668;&#x8FDB;&#x884C;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x5904;&#x7406;&#x3002;&#x4E3E;&#x4F8B;&#x6765;&#x8BF4;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;<code>text/xml</code>&#xFF0C;&#x7531;&#x4E8E;&#x79CD;&#x79CD;&#x539F;&#x56E0;&#x6D4F;&#x89C8;&#x5668;&#x89E3;&#x6790;&#x4E0D;&#x6210;&#x529F;&#x62A5;&#x9519;&#xFF0C;&#x8FD9;&#x65F6;&#x5C31;&#x62FF;&#x4E0D;&#x5230;&#x6570;&#x636E;&#x4E86;&#x3002;&#x4E3A;&#x4E86;&#x62FF;&#x5230;&#x539F;&#x59CB;&#x6570;&#x636E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A; MIME &#x7C7B;&#x578B;&#x6539;&#x6210;<code>text/plain</code>&#xFF0C;&#x8FD9;&#x6837;&#x6D4F;&#x89C8;&#x5668;&#x5C31;&#x4E0D;&#x4F1A;&#x53BB;&#x81EA;&#x52A8;&#x89E3;&#x6790;&#xFF0C;&#x4ECE;&#x800C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x539F;&#x59CB;&#x6587;&#x672C;&#x4E86;&#x3002;</p>
+<pre><code class="lang-js">xhr.overrideMimeType(<span class="hljs-string">&apos;text/plain&apos;</span>)
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x5728;<code>send()</code>&#x65B9;&#x6CD5;&#x4E4B;&#x524D;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="5getresponseheader">5.getResponseHeader()</h4>
+<p>&#x8FD4;&#x56DE; HTTP &#x5934;&#x4FE1;&#x606F;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x8FD8;&#x6CA1;&#x6709;&#x6536;&#x5230;&#x670D;&#x52A1;&#x5668;&#x56DE;&#x5E94;&#x6216;&#x8005;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x8FD4;&#x56DE;<code>null</code>&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x5B57;&#x6BB5;&#x540C;&#x540D;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x503C;&#x4F1A;&#x88AB;&#x8FDE;&#x63A5;&#x4E3A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B57;&#x6BB5;&#x4E4B;&#x95F4;&#x4F7F;&#x7528;&#x201C;&#x9017;&#x53F7;+&#x7A7A;&#x683C;&#x201D;&#x5206;&#x9694;&#x3002;</p>
+<h4 id="6getallresponseheaders">6.getAllResponseHeaders()</h4>
+<p>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8868;&#x793A;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x6765;&#x7684;&#x6240;&#x6709; HTTP &#x5934;&#x4FE1;&#x606F;&#x3002;&#x683C;&#x5F0F;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6BCF;&#x4E2A;&#x5934;&#x4FE1;&#x606F;&#x4E4B;&#x95F4;&#x4F7F;&#x7528;<code>CRLF</code>&#x5206;&#x9694;&#xFF08;&#x56DE;&#x8F66;+&#x6362;&#x884C;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6536;&#x5230;&#x670D;&#x52A1;&#x5668;&#x56DE;&#x5E94;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x4E3A;<code>null</code>&#x3002;&#x5982;&#x679C;&#x53D1;&#x751F;&#x7F51;&#x7EDC;&#x9519;&#x8BEF;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x4E3A;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<h4 id="7abort">7.abort()</h4>
+<p>&#x7528;&#x6765;&#x7EC8;&#x6B62;&#x5DF2;&#x7ECF;&#x53D1;&#x51FA;&#x7684; HTTP &#x8BF7;&#x6C42;&#x3002;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4EE5;&#x540E;&#xFF0C;<code>readyState</code>&#x5C5E;&#x6027;&#x53D8;&#x4E3A;<code>4</code>&#xFF0C;<code>status</code>&#x5C5E;&#x6027;&#x53D8;&#x4E3A;<code>0</code>&#x3002;</p>
+<h3 id="xmlhttprequest-&#x5B9E;&#x4F8B;&#x7684;&#x4E8B;&#x4EF6;">XMLHttpRequest &#x5B9E;&#x4F8B;&#x7684;&#x4E8B;&#x4EF6;</h3>
+<p>&#x66F4;&#x591A;&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x5305;&#x62EC; Firefox&#xFF0C;&#x9664;&#x4E86;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E; on* &#x5C5E;&#x6027;&#x5916;&#xFF0C;&#x4E5F;&#x63D0;&#x4F9B;&#x6807;&#x51C6;&#x7684;&#x76D1;&#x542C;&#x5668; addEventListener() API &#x6765;&#x76D1;&#x542C; XMLHttpRequest &#x4E8B;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-js">xhr.addEventListener(<span class="hljs-string">&apos;readystatechange&apos;</span>, () =&gt; {})
+</code></pre>
+<h4 id="1readystatechange-&#x4E8B;&#x4EF6;">1.readyStateChange &#x4E8B;&#x4EF6;</h4>
+<p><code>readyState</code> &#x5C5E;&#x6027;&#x7684;&#x503C;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF0C;&#x5C31;&#x4F1A;&#x89E6;&#x53D1; readyStateChange &#x4E8B;&#x4EF6;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>onReadyStateChange</code> &#x5C5E;&#x6027;&#xFF0C;&#x6307;&#x5B9A;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x7684;&#x76D1;&#x542C;&#x51FD;&#x6570;&#xFF0C;&#x5BF9;&#x4E0D;&#x540C;&#x72B6;&#x6001;&#x8FDB;&#x884C;&#x4E0D;&#x540C;&#x5904;&#x7406;&#x3002;&#x5C24;&#x5176;&#x662F;&#x5F53;&#x72B6;&#x6001;&#x53D8;&#x4E3A;<code>4</code>&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8868;&#x793A;&#x901A;&#x4FE1;&#x6210;&#x529F;&#xFF0C;&#x8FD9;&#x65F6;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5C31;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x670D;&#x52A1;&#x5668;&#x4F20;&#x9001;&#x56DE;&#x6765;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<h4 id="2progress-&#x4E8B;&#x4EF6;">2.progress &#x4E8B;&#x4EF6;</h4>
+<p>&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;XMLHTTPRequest &#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x548C;&#x5B9E;&#x4F8B;&#x7684;<code>upload</code>&#x5C5E;&#x6027;&#xFF0C;&#x90FD;&#x6709;&#x4E00;&#x4E2A;<code>progress</code>&#x4E8B;&#x4EF6;&#xFF0C;&#x4F1A;&#x4E0D;&#x65AD;&#x8FD4;&#x56DE;&#x4E0A;&#x4F20;&#x7684;&#x8FDB;&#x5EA6;&#x3002;</p>
+<h4 id="3load-&#x4E8B;&#x4EF6;&#x3001;error-&#x4E8B;&#x4EF6;&#x3001;abort-&#x4E8B;&#x4EF6;&#x3001;loadend-&#x4E8B;&#x4EF6;">3.load &#x4E8B;&#x4EF6;&#x3001;error &#x4E8B;&#x4EF6;&#x3001;abort &#x4E8B;&#x4EF6;&#x3001;loadend &#x4E8B;&#x4EF6;</h4>
+<ul>
+<li>load &#x4E8B;&#x4EF6;&#xFF1A;&#x8868;&#x793A;&#x670D;&#x52A1;&#x5668;&#x4F20;&#x6765;&#x7684;&#x6570;&#x636E;&#x63A5;&#x6536;&#x5B8C;&#x6BD5;</li>
+<li>error &#x4E8B;&#x4EF6;&#xFF1A;&#x8868;&#x793A;&#x8BF7;&#x6C42;&#x51FA;&#x9519;</li>
+<li>abort &#x4E8B;&#x4EF6;&#xFF1A;&#x8868;&#x793A;&#x8BF7;&#x6C42;&#x88AB;&#x4E2D;&#x65AD;&#xFF08;&#x6BD4;&#x5982;&#x7528;&#x6237;&#x53D6;&#x6D88;&#x8BF7;&#x6C42;&#xFF09;</li>
+<li>loadend &#x4E8B;&#x4EF6;&#xFF1A;<code>abort&#x3001;load&#x3001;error</code> &#x8FD9;&#x4E09;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x4F1A;&#x4F34;&#x968F;&#x4E00;&#x4E2A; loadend &#x4E8B;&#x4EF6;&#xFF0C;&#x8868;&#x793A;&#x8BF7;&#x6C42;&#x7ED3;&#x675F;&#xFF0C;&#x4F46;&#x4E0D;&#x77E5;&#x9053;&#x5176;&#x662F;&#x5426;&#x6210;&#x529F;&#x3002;</li>
+</ul>
+<h4 id="4timeout-&#x4E8B;&#x4EF6;">4.timeout &#x4E8B;&#x4EF6;</h4>
+<p>&#x670D;&#x52A1;&#x5668;&#x8D85;&#x8FC7;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x8FD8;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF0C;&#x5C31;&#x4F1A;&#x89E6;&#x53D1; timeout &#x4E8B;&#x4EF6;&#x3002;</p>
+<h3 id="&#x5E38;&#x89C1;&#x95EE;&#x9898;">&#x5E38;&#x89C1;&#x95EE;&#x9898;</h3>
+<h4 id="ajax-&#x548C;-xmlhttprequest-&#x7684;&#x6B63;&#x786E;&#x7406;&#x89E3;">Ajax &#x548C; XMLHttpRequest &#x7684;&#x6B63;&#x786E;&#x7406;&#x89E3;</h4>
+<p>ajax &#x662F; asynchronous javascript and XML&#x7684;&#x7B80;&#x5199;&#xFF0C;&#x4E2D;&#x6587;&#x7FFB;&#x8BD1;&#x662F;&#x5F02;&#x6B65;&#x7684; javascript &#x548C; XML&#xFF0C;&#x8FD9;&#x4E00;&#x6280;&#x672F;&#x80FD;&#x591F;&#x5411;&#x670D;&#x52A1;&#x5668;&#x8BF7;&#x6C42;&#x989D;&#x5916;&#x7684;&#x6570;&#x636E;&#x800C;&#x65E0;&#x987B;&#x5378;&#x8F7D;&#x9875;&#x9762;&#xFF0C;&#x4F1A;&#x5E26;&#x6765;&#x66F4;&#x597D;&#x7684;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x3002;<strong>&#x5B83;&#x662F;&#x4E00;&#x79CD;&#x6280;&#x672F;&#x65B9;&#x6848;&#xFF0C;&#x4F46;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x79CD;&#x65B0;&#x6280;&#x672F;&#x3002;</strong></p>
+<p>XMLHttpRequest&#xFF08;XHR&#xFF09;&#x662F;&#x53EF;&#x7528;&#x4E8E; Web &#x6D4F;&#x89C8;&#x5668;&#x811A;&#x672C;&#x8BED;&#x8A00;&#xFF08;&#x4F8B;&#x5982;JavaScript&#xFF09;&#x7684;API&#x3002;&#x5B83;&#x7528;&#x4E8E;&#x5C06; HTTP &#x6216; HTTPS &#x8BF7;&#x6C42;&#x53D1;&#x9001;&#x5230; Web &#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5E76;&#x5C06;&#x670D;&#x52A1;&#x5668;&#x54CD;&#x5E94;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x56DE;&#x811A;&#x672C;&#x4E2D;&#x3002;</p>
+<p><strong>&#x5C31;&#x662F;&#x4E00;&#x53E5;&#x8BDD;&#xFF0C;ajax &#x901A;&#x8FC7;&#x539F;&#x751F;&#x7684; XMLHttpRequest &#x5BF9;&#x8C61;&#x53D1;&#x51FA;HTTP&#x8BF7;&#x6C42;&#xFF0C;&#x5F97;&#x5230;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x540E;&#xFF0C;&#x518D;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</strong></p>
+<h4 id="&#x54CD;&#x5E94;&#x5934;&#x53D6;date&#x5F02;&#x5E38;">&#x54CD;&#x5E94;&#x5934;&#x53D6;Date&#x5F02;&#x5E38;</h4>
+<p>&#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x54CD;&#x5E94;&#x4E2D;&#x7684;Date&#x5BF9;&#x8C61;: <code>res.request.getResponseHeader(&quot;Date&quot;)</code>&#xFF0C;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x62A5;&#x9519;<code>Refused to get unsafe header &quot;Date&quot;</code>&#x3002;</p>
+<p><strong>&#x539F;&#x56E0;</strong>&#xFF1A;&#x9ED8;&#x8BA4;&#x7684;&#x8BF7;&#x6C42;&#x4E0A;&#xFF0C; &#x6D4F;&#x89C8;&#x5668;&#x53EA;&#x80FD;&#x8BBF;&#x95EE;&#x4EE5;&#x4E0B;&#x9ED8;&#x8BA4;&#x7684;&#x54CD;&#x5E94;&#x5934;</p>
+<ul>
+<li>Cache-Control</li>
+<li>Content-Language</li>
+<li>Content-Type</li>
+<li>Expires</li>
+<li>Last-Modified</li>
+<li>Pragma</li>
+</ul>
+<p><strong>&#x89E3;&#x51B3;</strong>&#xFF1A;&#x60F3;&#x8BA9;&#x6D4F;&#x89C8;&#x5668;&#x80FD;&#x8BBF;&#x95EE;&#x5230;&#x5176;&#x4ED6;&#x7684; &#x54CD;&#x5E94;&#x5934;&#x7684;&#x8BDD; &#x9700;&#x8981;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x8BBE;&#x7F6E; <code>Access-Control-Expose-Headers</code>&#x3002;&#x6BD4;&#x5982;&#x60F3;&#x83B7;&#x53D6;&#x65F6;&#x95F4;<code>Access-Control-Expose-Headers : &apos;Date&apos;</code></p>
+<h3 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;">&#x53C2;&#x8003;&#x94FE;&#x63A5;</h3>
+<p><a href="https://javascript.ruanyifeng.com/bom/ajax.html" target="_blank">&#x962E;&#x4E00;&#x5CF0; JavaScript &#x6807;&#x51C6;&#x53C2;&#x8003;&#x6559;&#x7A0B;&#xFF08;alpha&#xFF09;- Ajax</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest" target="_blank">MDN XMLHttpRequest</a> </p>
+<footer class="page-footer"><span class="copyright">&#xA9; lizhao all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-10-14 23:44:32
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: JavaScript笔记">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="JavaScript之Promise.html" class="navigation navigation-next " aria-label="Next page: JavaScript之Promise">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"JavaScript之Ajax","level":"6.8.1","depth":2,"next":{"title":"JavaScript之Promise","level":"6.8.2","depth":2,"path":"js探索系列/JavaScript笔记/JavaScript之Promise.md","ref":"js探索系列/JavaScript笔记/JavaScript之Promise.md","articles":[]},"previous":{"title":"JavaScript笔记","level":"6.8","depth":1,"path":"js探索系列/JavaScript笔记/README.md","ref":"js探索系列/JavaScript笔记/README.md","articles":[{"title":"JavaScript之Ajax","level":"6.8.1","depth":2,"path":"js探索系列/JavaScript笔记/JavaScript之Ajax.md","ref":"js探索系列/JavaScript笔记/JavaScript之Ajax.md","articles":[]},{"title":"JavaScript之Promise","level":"6.8.2","depth":2,"path":"js探索系列/JavaScript笔记/JavaScript之Promise.md","ref":"js探索系列/JavaScript笔记/JavaScript之Promise.md","articles":[]},{"title":"JavaScript之Touch事件","level":"6.8.3","depth":2,"path":"js探索系列/JavaScript笔记/JavaScript之Touch事件.md","ref":"js探索系列/JavaScript笔记/JavaScript之Touch事件.md","articles":[]},{"title":"JavaScript之键盘事件","level":"6.8.4","depth":2,"path":"js探索系列/JavaScript笔记/JavaScript之键盘事件.md","ref":"js探索系列/JavaScript笔记/JavaScript之键盘事件.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","summary","theme-comscore","splitter","fontsettings","tbfed-pagefooter","theme-default","pageview-count","accordion","sharing-plus","klipse","back-to-top-button","chapter-fold","livereload"],"root":"/","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"livereload":{},"summary":{},"splitter":{},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"twitter":false,"vk":false,"pocket":false,"google":true,"qzone":true},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"search-plus":{}},"theme":"default","page":{"title":"前端知识库(lizh)"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"authorName":"lizhao"},"title":"LIZHAO","gitbook":"3.2.3"},"file":{"path":"js探索系列/JavaScript笔记/JavaScript之Ajax.md","mtime":"2021-10-14T15:44:32.403Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-15T16:58:39.485Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

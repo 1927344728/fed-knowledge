@@ -1,0 +1,1909 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CSS探索系列 Margin · LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02-由z-index引发的层叠上下文思考.html" />
+    
+    
+    <link rel="prev" href="00-CSS基础知识.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/00-前端调试随笔.html">
+            
+                <a href="../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/05-JS常见问题概览.html">
+            
+                <a href="../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/07-小程序问题概览.html">
+            
+                <a href="../bugs/07-小程序问题概览.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    小程序问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="00-CSS基础知识.html">
+            
+                <a href="00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="01-CSS探索系列-margin.html">
+            
+                <a href="01-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="04-CSS探索系列-flex布局.html">
+            
+                <a href="04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="05-CSS探索系列-gradient.html">
+            
+                <a href="05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="11-CSS3中一些高级属性的应用.html">
+            
+                <a href="11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="14-CSS探索系列-line-height.html">
+            
+                <a href="14-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="_关于css.html">
+            
+                <a href="_关于css.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../frontend/00-关于前端.html">
+            
+                <a href="../frontend/00-关于前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    关于前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../frontend/00-基础-02-浏览器工作原理.html">
+            
+                <a href="../frontend/00-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../frontend/00-进阶-04-如何保证高质量代码.html">
+            
+                <a href="../frontend/00-进阶-04-如何保证高质量代码.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    进阶 04 如何保证高质量代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../frontend/01-聊一聊Cookie的一些问题.html">
+            
+                <a href="../frontend/01-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../frontend/02-如何理解HTTP响应的状态码.html">
+            
+                <a href="../frontend/02-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../frontend/代码规范/">
+            
+                <a href="../frontend/代码规范/">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.6.1" data-path="../frontend/代码规范/00-W3C标准.html">
+            
+                <a href="../frontend/代码规范/00-W3C标准.html">
+            
+                    
+                        <b>4.6.1.</b>
+                    
+                    W3C标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.2" data-path="../frontend/代码规范/01-HTML.html">
+            
+                <a href="../frontend/代码规范/01-HTML.html">
+            
+                    
+                        <b>4.6.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.3" data-path="../frontend/代码规范/02-CSS.html">
+            
+                <a href="../frontend/代码规范/02-CSS.html">
+            
+                    
+                        <b>4.6.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.4" data-path="../frontend/代码规范/03-JS.html">
+            
+                <a href="../frontend/代码规范/03-JS.html">
+            
+                    
+                        <b>4.6.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.5" data-path="../frontend/代码规范/04-其他.html">
+            
+                <a href="../frontend/代码规范/04-其他.html">
+            
+                    
+                        <b>4.6.5.</b>
+                    
+                    其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../html探索系列/00-HTML基础知识.html">
+            
+                <a href="../html探索系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../html探索系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../html探索系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../html探索系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../html探索系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../html探索系列/_关于html.html">
+            
+                <a href="../html探索系列/_关于html.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Js探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../js探索系列/00-JS基础知识.html">
+            
+                <a href="../js探索系列/00-JS基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    JS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../js探索系列/01-谈谈JavaScript的作用域和上下文.html">
+            
+                <a href="../js探索系列/01-谈谈JavaScript的作用域和上下文.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../js探索系列/02-JavaScript-Date的使用和日期时间字符串格式.html">
+            
+                <a href="../js探索系列/02-JavaScript-Date的使用和日期时间字符串格式.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    JavaScript Date的使用和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../js探索系列/03-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../js探索系列/03-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../js探索系列/04-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../js探索系列/04-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../js探索系列/05-Canvas基础入门篇.html">
+            
+                <a href="../js探索系列/05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../js探索系列/06-SVG基础入门篇.html">
+            
+                <a href="../js探索系列/06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../js探索系列/JavaScript笔记/">
+            
+                <a href="../js探索系列/JavaScript笔记/">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    JavaScript笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1" data-path="../js探索系列/JavaScript笔记/JavaScript之Ajax.html">
+            
+                <a href="../js探索系列/JavaScript笔记/JavaScript之Ajax.html">
+            
+                    
+                        <b>6.8.1.</b>
+                    
+                    JavaScript之Ajax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2" data-path="../js探索系列/JavaScript笔记/JavaScript之Promise.html">
+            
+                <a href="../js探索系列/JavaScript笔记/JavaScript之Promise.html">
+            
+                    
+                        <b>6.8.2.</b>
+                    
+                    JavaScript之Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.3" data-path="../js探索系列/JavaScript笔记/JavaScript之Touch事件.html">
+            
+                <a href="../js探索系列/JavaScript笔记/JavaScript之Touch事件.html">
+            
+                    
+                        <b>6.8.3.</b>
+                    
+                    JavaScript之Touch事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.4" data-path="../js探索系列/JavaScript笔记/JavaScript之键盘事件.html">
+            
+                <a href="../js探索系列/JavaScript笔记/JavaScript之键盘事件.html">
+            
+                    
+                        <b>6.8.4.</b>
+                    
+                    JavaScript之键盘事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../js探索系列/_关于Javascript.html">
+            
+                <a href="../js探索系列/_关于Javascript.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../js探索系列/nodeJs/">
+            
+                <a href="../js探索系列/nodeJs/">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    NodeJs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.10.1" data-path="../js探索系列/nodeJs/00-Node.js的三种调试方法.html">
+            
+                <a href="../js探索系列/nodeJs/00-Node.js的三种调试方法.html">
+            
+                    
+                        <b>6.10.1.</b>
+                    
+                    Node.Js的三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.2" data-path="../js探索系列/nodeJs/01-npm模块的一些机制.html">
+            
+                <a href="../js探索系列/nodeJs/01-npm模块的一些机制.html">
+            
+                    
+                        <b>6.10.2.</b>
+                    
+                    Npm模块的一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.3" data-path="../js探索系列/nodeJs/02-npm常用命令.html">
+            
+                <a href="../js探索系列/nodeJs/02-npm常用命令.html">
+            
+                    
+                        <b>6.10.3.</b>
+                    
+                    Npm常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.4" data-path="../js探索系列/nodeJs/03-从零开始，开发一个NPM包.html">
+            
+                <a href="../js探索系列/nodeJs/03-从零开始，开发一个NPM包.html">
+            
+                    
+                        <b>6.10.4.</b>
+                    
+                    从零开始，开发一个NPM包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../research/02-如何监控前端异常？.html">
+            
+                <a href="../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../research/03-H5页面的跳转、刷新、回退+刷新.html">
+            
+                <a href="../research/03-H5页面的跳转、刷新、回退+刷新.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    H5页面的跳转、刷新、回退+刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>7.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../research/Javascript加密混淆.html">
+            
+                <a href="../research/Javascript加密混淆.html">
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="../research/Vue如何导入TypeScript.html">
+            
+                <a href="../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>7.8.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.9" data-path="../research/移动端PDF预览.html">
+            
+                <a href="../research/移动端PDF预览.html">
+            
+                    
+                        <b>7.9.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.10" data-path="../research/纯CSS绘制箭头.html">
+            
+                <a href="../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>7.10.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11" data-path="../research/网站性能测量和优化方法.html">
+            
+                <a href="../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>7.11.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../tech/04-sublime3插件篇.html">
+            
+                <a href="../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../tech/05-Charles安装及使用.html">
+            
+                <a href="../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../tools/Git/">
+            
+                <a href="../tools/Git/">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" data-path="../tools/Git/01-Git安装、使用及常用命令.html">
+            
+                <a href="../tools/Git/01-Git安装、使用及常用命令.html">
+            
+                    
+                        <b>9.1.1.</b>
+                    
+                    Git安装、使用及常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2" data-path="../tools/Git/02-git-clone速度太慢的解决办法.html">
+            
+                <a href="../tools/Git/02-git-clone速度太慢的解决办法.html">
+            
+                    
+                        <b>9.1.2.</b>
+                    
+                    Git Clone速度太慢的解决办法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3" data-path="../tools/Git/03-Git常见问题.html">
+            
+                <a href="../tools/Git/03-Git常见问题.html">
+            
+                    
+                        <b>9.1.3.</b>
+                    
+                    Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../tools/Gitbook/">
+            
+                <a href="../tools/Gitbook/">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    Gitbook
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="../tools/Gitbook/01-gitbook入门篇.html">
+            
+                <a href="../tools/Gitbook/01-gitbook入门篇.html">
+            
+                    
+                        <b>9.2.1.</b>
+                    
+                    Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" data-path="../tools/Gitbook/02-gitbook插件篇.html">
+            
+                <a href="../tools/Gitbook/02-gitbook插件篇.html">
+            
+                    
+                        <b>9.2.2.</b>
+                    
+                    Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.3" data-path="../tools/Gitbook/03-gitbook进阶篇.html">
+            
+                <a href="../tools/Gitbook/03-gitbook进阶篇.html">
+            
+                    
+                        <b>9.2.3.</b>
+                    
+                    Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >CSS探索系列 Margin</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="css&#x63A2;&#x7D22;&#x7CFB;&#x5217;&#x4E4B;margin">CSS&#x63A2;&#x7D22;&#x7CFB;&#x5217;&#x4E4B;Margin</h2>
+<h3 id="margin&#x662F;&#x4EC0;&#x4E48;&#xFF1F;">Margin&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</h3>
+<blockquote>
+<p>CSS &#x8FB9;&#x8DDD;&#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x5143;&#x7D20;&#x5468;&#x56F4;&#x7684;&#x7A7A;&#x95F4;&#x3002;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x5355;&#x72EC;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;&#x4E0A;&#x3001;&#x53F3;&#x3001;&#x4E0B;&#x3001;&#x5DE6;&#x7684;&#x5916;&#x8FB9;&#x8DDD;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7B80;&#x5199;&#x7684;&#x5916;&#x8FB9;&#x8DDD;&#x5C5E;&#x6027;&#x540C;&#x65F6;&#x6539;&#x53D8;&#x6240;&#x6709;&#x7684;&#x5916;&#x8FB9;&#x8DDD;&#x3002;</p>
+<p>&#x2014;&#x2014;W3School</p>
+<p>&#x8FB9;&#x754C;&#xFF0C;&#x5143;&#x7D20;&#x5468;&#x56F4;&#x751F;&#x6210;&#x989D;&#x5916;&#x7684;&#x7A7A;&#x767D;&#x533A;&#x3002;&#x201C;&#x7A7A;&#x767D;&#x533A;&#x201D;&#x901A;&#x5E38;&#x662F;&#x6307;&#x5176;&#x4ED6;&#x5143;&#x7D20;&#x4E0D;&#x80FD;&#x51FA;&#x73B0;&#x4E14;&#x7236;&#x5143;&#x7D20;&#x80CC;&#x666F;&#x53EF;&#x89C1;&#x7684;&#x533A;&#x57DF;&#x3002;</p>
+<p>&#x2014;&#x2014;CSS &#x6743;&#x5A01;&#x6307;&#x5357;</p>
+</blockquote>
+<h4 id="margin&#x7ECF;&#x5E38;&#x88AB;&#x7528;&#x6765;&#x505A;&#x4EC0;&#x4E48;&#xFF1F;">Margin&#x7ECF;&#x5E38;&#x88AB;&#x7528;&#x6765;&#x505A;&#x4EC0;&#x4E48;&#xFF1F;</h4>
+<ul>
+<li>&#x8BA9;&#x5757;&#x5143;&#x7D20;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;</li>
+<li>&#x8BA9;&#x5143;&#x7D20;&#x4E4B;&#x95F4;&#x7559;&#x6709;&#x8212;&#x9002;&#x7684;&#x7559;&#x767D;</li>
+<li>&#x5904;&#x7406;&#x7279;&#x6B8A;&#x7684; first &#x6216; last</li>
+<li>&#x4E00;&#x4E9B;&#x5E03;&#x5C40;</li>
+</ul>
+<h4 id="&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;">&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;</h4>
+<ul>
+<li>margin &#x795E;&#x5947;&#x7684;&#x5916;&#x8FB9;&#x8DDD;&#x6298;&#x53E0;</li>
+<li>margin &#x602A;&#x5F02;&#x7684;&#x767E;&#x5206;&#x6BD4;&#x503C;</li>
+<li>margin &#x7684; auto &#x503C;</li>
+<li>margin &#x548C;&#x76F8;&#x5BF9;&#x504F;&#x79FB; top&#x3001;right&#x3001;bottom&#x3001;left &#x7684;&#x5F02;&#x540C;</li>
+</ul>
+<h3 id="margin&#x795E;&#x5947;&#x7684;&#x5916;&#x8FB9;&#x8DDD;&#x6298;&#x53E0;">Margin&#x795E;&#x5947;&#x7684;&#x5916;&#x8FB9;&#x8DDD;&#x6298;&#x53E0;</h3>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200504010557625.png" alt="image-20200504010557625"></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrap&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x6211;&#x559C;&#x6B22;&#x56DE;&#x5FC6;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x56DE;&#x5FC6;&#x662F;&#x6211;&#x4EEC;&#x5BA1;&#x89C6;&#x81EA;&#x5DF1;&#x751F;&#x6D3B;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x3002;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x56DE;&#x5FC6;&#x6A21;&#x7CCA;&#x4E0D;&#x6E05;&#xFF0C;&#x5C31;&#x7ED9;&#x81EA;&#x6211;&#x6B3A;&#x9A97;&#x63D0;&#x4F9B;&#x4E86;&#x673A;&#x4F1A;&#x3002;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;</span><span class="css">
+    <span class="hljs-selector-class">.wrap</span> {
+      <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#f00</span>;
+    }
+    <span class="hljs-selector-class">.wrap</span> <span class="hljs-selector-tag">p</span> {
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">50px</span>;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<p>&#x6309;&#x7167;&#x5E38;&#x89C4;&#x601D;&#x8DEF;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A; <code>&lt;p&gt;</code> &#x4E4B;&#x95F4;&#x7684;&#x7A7A;&#x767D;&#x5E94;&#x8BE5;&#x662F;&#x7B2C;&#x4E00;&#x4E2A; <code>margin-bottom</code> 50px &#x52A0;&#x4E0A;&#x7B2C;&#x4E8C;&#x7684; <code>margin-top</code> 50px&#xFF0C;&#x5373; <code>50 + 50px = 100px</code> &#xFF0C;&#x4F46;&#x7ED3;&#x679C;&#x603B;&#x662F;&#x51FA;&#x4E4E;&#x610F;&#x6599;&#x4E0D;&#x662F;&#x4E48;&#xFF1F;</p>
+<p><strong>&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x53EA;&#x5269;&#x4E0B;&#x4E86; <code>50px</code>&#x3002;</strong></p>
+<h4 id="why">Why?</h4>
+<p><strong>&#x8FD9;&#x5C31;&#x662F;Margin&#x7684;&#x5916;&#x8FB9;&#x8DDD;&#x6298;&#x53E0;&#x73B0;&#x8C61;&#x3002;</strong></p>
+<p>&#x8FD9;&#xFF1F;&#x8FD9;&#x5185;&#x90E8;&#x5230;&#x5E95;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#xFF0C;&#x624D;&#x4F1A;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x8868;&#x73B0;</p>
+<p>&#x65E9;&#x5728;<code>CSS1</code>&#x4E2D;&#x5C31;&#x6709;&#x5BF9; <code>margin</code> &#x6298;&#x53E0;&#x7684;&#x8BF4;&#x660E;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#xFF1A;</p>
+<blockquote>
+<p>&#x539F;&#x6587;&#xFF1A;The width of the margin on non-floating block-level elements specifies the minimum distance to the edges of surrounding boxes. Two or more adjoining vertical margins (i.e., with no border, padding or content between them) are collapsed to use the maximum of the margin values. In most cases, after collapsing the vertical margins the result is visually more pleasing and closer to what the designer expects.</p>
+<p>&#x7FFB;&#x8BD1;&#xFF1A;&#x5916;&#x8FB9;&#x8DDD;&#x7528;&#x6765;&#x6307;&#x5B9A;<strong>&#x975E;&#x6D6E;&#x52A8;&#x5143;&#x7D20;</strong>&#x4E0E;&#x5176;&#x5468;&#x56F4;&#x76D2;&#x5B50;&#x8FB9;&#x7F18;&#x7684;&#x6700;&#x5C0F;&#x8DDD;&#x79BB;&#x3002;&#x4E24;&#x4E2A;&#x6216;&#x4E24;&#x4E2A;&#x4EE5;&#x4E0A;&#x7684;&#x76F8;&#x90BB;&#x7684;<strong>&#x5782;&#x76F4;&#x5916;&#x8FB9;&#x8DDD;</strong>&#x4F1A;&#x88AB;&#x6298;&#x53E0;&#x5E76;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;<strong>&#x6700;&#x5927;&#x7684;&#x90A3;&#x4E2A;&#x5916;&#x8FB9;&#x8DDD;&#x503C;</strong>&#x3002;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<strong>&#x6298;&#x53E0;&#x5782;&#x76F4;&#x5916;&#x8FB9;&#x8DDD;&#x53EF;&#x4EE5;&#x5728;&#x89C6;&#x89C9;&#x4E0A;&#x663E;&#x5F97;&#x66F4;&#x7F8E;&#x89C2;&#xFF0C;&#x4E5F;&#x66F4;&#x8D34;&#x8FD1;&#x8BBE;&#x8BA1;&#x5E08;&#x7684;&#x9884;&#x671F;&#x3002;</strong></p>
+</blockquote>
+<p>&#x4ECE;&#x8FD9;&#x6BB5;&#x8BDD;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x80FD;&#x83B7;&#x5F97;&#x4E00;&#x4E9B;&#x6709;&#x7528;&#x7684;&#x4FE1;&#x606F;&#xFF1A;</p>
+<ul>
+<li><p>&#x53D1;&#x751F;&#x6298;&#x53E0;&#x9700;&#x8981;&#x662F;&#x76F8;&#x90BB;&#x7684;&#x975E;&#x6D6E;&#x52A8;&#x5143;&#x7D20;&#x3002;</p>
+</li>
+<li><p>&#x6298;&#x53E0;&#x53D1;&#x751F;&#x5728;&#x5782;&#x76F4;&#x5916;&#x8FB9;&#x8DDD;&#x4E0A;&#xFF0C;&#x5373;<code>margin-top/margin-bottom</code>&#x3002;</p>
+<p><strong>&#x6CE8;&#xFF1A;&#x6B64;&#x7279;&#x6027;&#x53D7;&#x4E66;&#x5199;&#x6A21;&#x5F0F;&#x5F71;&#x54CD;&#xFF0C;&#x5177;&#x4F53;&#x53EF;&#x770B;&#x672C;&#x6587;&#x540E;&#x9762;&#x7AE0;&#x8282;&#x3002;</strong></p>
+</li>
+<li><p>&#x6298;&#x53E0;&#x540E;&#x53D6;&#x5176;&#x4E2D;&#x6700;&#x5927;&#x7684;&#x90A3;&#x4E2A;<code>margin</code>&#x503C;&#x4F5C;&#x4E3A;&#x6700;&#x7EC8;&#x503C;&#x3002;</p>
+</li>
+</ul>
+<h4 id="&#x5230;&#x5E95;&#x4EC0;&#x4E48;&#x662F;margin&#x6298;&#x53E0;&#xFF1F;">&#x5230;&#x5E95;&#x4EC0;&#x4E48;&#x662F;Margin&#x6298;&#x53E0;&#xFF1F;</h4>
+<p>&#x5728;CSS&#x4E2D;&#xFF0C;&#x4E24;&#x4E2A;&#x6216;&#x4EE5;&#x4E0A;&#x7684;&#x5757;&#x5143;&#x7D20;&#xFF08;&#x53EF;&#x80FD;&#x662F;&#x5144;&#x5F1F;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x4E0D;&#x662F;&#xFF09;&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x90BB;&#x5916;&#x8FB9;&#x8DDD;&#x53EF;&#x4EE5;&#x88AB;&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x5916;&#x8FB9;&#x8DDD;&#x3002;&#x901A;&#x8FC7;&#x6B64;&#x65B9;&#x5F0F;&#x5408;&#x5E76;&#x7684;&#x5916;&#x8FB9;&#x8DDD;&#x88AB;&#x79F0;&#x4E3A;&#x6298;&#x53E0;&#xFF0C;&#x4E14;&#x4EA7;&#x751F;&#x7684;&#x5DF2;&#x5408;&#x5E76;&#x7684;&#x5916;&#x8FB9;&#x8DDD;&#x88AB;&#x79F0;&#x4E3A;<strong>&#x6298;&#x53E0;&#x5916;&#x8FB9;&#x8DDD;</strong>&#x3002;</p>
+<p>&#x5904;&#x4E8E;&#x540C;&#x4E00;&#x4E2A;&#x5757;&#x7EA7;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x7684;&#x5757;&#x5143;&#x7D20;&#xFF0C;&#x6CA1;&#x6709;&#x884C;&#x6846;&#x3001;&#x6CA1;&#x6709;&#x95F4;&#x9699;&#x3001;&#x6CA1;&#x6709;&#x5185;&#x8FB9;&#x8DDD;&#x548C;&#x8FB9;&#x6846;&#x9694;&#x5F00;&#x5B83;&#x4EEC;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x5143;&#x7D20;&#x5782;&#x76F4;&#x8FB9;&#x7F18;&#x6BD7;&#x90BB;&#xFF0C;&#x5219;&#x79F0;&#x4E4B;&#x4E3A;&#x76F8;&#x90BB;&#x3002;</p>
+<h5 id="&#x4EC0;&#x4E48;&#x662F;&#x5782;&#x76F4;&#x8FB9;&#x7F18;&#x6BD7;&#x90BB;&#xFF1F;">&#x4EC0;&#x4E48;&#x662F;&#x5782;&#x76F4;&#x8FB9;&#x7F18;&#x6BD7;&#x90BB;&#xFF1F;</h5>
+<ul>
+<li>&#x5143;&#x7D20;&#x7684;&#x4E0A;&#x5916;&#x8FB9;&#x8DDD;&#x548C;&#x5176;&#x5C5E;&#x4E8E;&#x5E38;&#x89C4;&#x6D41;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B69;&#x5B50;&#x7684;&#x4E0A;&#x5916;&#x8FB9;&#x8DDD;&#x3002;</li>
+<li>&#x5143;&#x7D20;&#x7684;&#x4E0B;&#x5916;&#x8FB9;&#x8DDD;&#x548C;&#x5176;&#x5C5E;&#x4E8E;&#x5E38;&#x89C4;&#x6D41;&#x4E2D;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x5144;&#x5F1F;&#x7684;&#x4E0A;&#x5916;&#x8FB9;&#x8DDD;&#x3002;</li>
+<li>&#x5C5E;&#x4E8E;&#x5E38;&#x89C4;&#x6D41;&#x4E2D;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B69;&#x5B50;&#x7684;&#x4E0B;&#x5916;&#x8FB9;&#x8DDD;&#x548C;&#x5176;&#x7236;&#x4EB2;&#x7684;&#x4E0B;&#x5916;&#x8FB9;&#x8DDD;&#xFF0C;&#x5982;&#x679C;&#x5176;&#x7236;&#x4EB2;&#x7684;&#x9AD8;&#x5EA6;&#x8BA1;&#x7B97;&#x503C;&#x4E3A; <code>auto</code>&#x3002;</li>
+<li>&#x5143;&#x7D20;&#x7684;&#x4E0A;&#x3001;&#x4E0B;&#x5916;&#x8FB9;&#x8DDD;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x5143;&#x7D20;&#x6CA1;&#x6709;&#x5EFA;&#x7ACB;&#x65B0;&#x7684;&#x5757;&#x7EA7;&#x683C;&#x5F0F;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x4E14; <code>min-height</code> &#x7684;&#x8BA1;&#x7B97;&#x503C;&#x4E3A;&#x96F6;&#x3001;<code>height</code> &#x7684;&#x8BA1;&#x7B97;&#x503C;&#x4E3A;&#x96F6;&#x6216; <code>auto</code>&#x3001;&#x4E14;&#x6CA1;&#x6709;&#x5C5E;&#x4E8E;&#x5E38;&#x89C4;&#x6D41;&#x4E2D;&#x7684;&#x5B69;&#x5B50;&#x3002;</li>
+</ul>
+<p>&#x8BF4;&#x5F97;&#x5F88;&#x6E05;&#x695A;&#x4E86;&#xFF0C;&#x6211;&#x60F3;&#x662F;&#x7684;&#x3002;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x53D1;&#x751F; <code>margin</code> &#x6298;&#x53E0;&#x7684;&#x5143;&#x7D20;<strong>&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x5144;&#x5F1F;&#x5173;&#x7CFB;&#xFF0C;&#x4E5F;&#x80FD;&#x662F;&#x7236;&#x5B50;&#x6216;&#x7956;&#x5148;&#x7684;&#x5173;&#x7CFB;&#x3002;</strong></p>
+<h4 id="&#x5982;&#x4F55;&#x907F;&#x514D;margin&#x6298;&#x53E0;&#xFF1F;">&#x5982;&#x4F55;&#x907F;&#x514D;margin&#x6298;&#x53E0;&#xFF1F;</h4>
+<p>&#x6211;&#x60F3;&#x80AF;&#x5B9A;&#x6709;&#x4EBA;&#x8981;&#x95EE;&#xFF0C;&#x90A3;&#x6211;&#x4E0D;&#x60F3;&#x6709; <code>margin</code> &#x6298;&#x53E0;&#x7684;&#x60C5;&#x51B5;&#x53D1;&#x751F;&#xFF0C;&#x8BE5;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x5176;&#x5B9E;&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x53EF;&#x4EE5;&#x62BD;&#x51FA;&#x907F;&#x514D; <code>margin</code> &#x6298;&#x53E0;&#x7684;&#x6761;&#x4EF6;&#x6765;&#x3002;</p>
+<h5 id="&#x4E0D;&#x6298;&#x53E0;&#x573A;&#x666F;&#xFF1A;">&#x4E0D;&#x6298;&#x53E0;&#x573A;&#x666F;&#xFF1A;</h5>
+<ul>
+<li><code>margin</code> &#x6298;&#x53E0;&#x5143;&#x7D20;&#x53EA;&#x53D1;&#x751F;&#x5728;&#x5757;&#x5143;&#x7D20;&#x4E0A;&#x3002;</li>
+<li>&#x6D6E;&#x52A8;&#x5143;&#x7D20;&#x4E0D;&#x4E0E;&#x5176;&#x4ED6;&#x5143;&#x7D20; <code>margin</code> &#x6298;&#x53E0;&#x3002;</li>
+<li>&#x5B9A;&#x4E49;&#x4E86;&#x5C5E;&#x6027; overflow &#x4E14;&#x503C;&#x4E0D;&#x4E3A; visible&#xFF08;&#x5373;&#x521B;&#x5EFA;&#x4E86;&#x65B0;&#x7684;&#x5757;&#x7EA7;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;&#xFF09;&#x7684;&#x5757;&#x5143;&#x7D20;&#xFF0C;&#x4E0D;&#x4E0E;&#x5B83;&#x7684;<strong>&#x5B50;&#x5143;&#x7D20;</strong>&#x53D1;&#x751F;<code>margin</code> &#x6298;&#x53E0;&#xFF1B;</li>
+<li>&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;&#x5143;&#x7D20;&#x7684; <code>margin</code> &#x4E0D;&#x4E0E;&#x4EFB;&#x4F55; <code>margin</code> &#x53D1;&#x751F;&#x6298;&#x53E0;&#x3002;</li>
+<li>&#x6839;&#x5143;&#x7D20;&#x7684; <code>margin</code> &#x4E0D;&#x4E0E;&#x5176;&#x5B83;&#x4EFB;&#x4F55; <code>margin</code> &#x53D1;&#x751F;&#x6298;&#x53E0;&#xFF1B;</li>
+</ul>
+<h5 id="&#x6298;&#x53E0;&#x573A;&#x666F;&#xFF1A;">&#x6298;&#x53E0;&#x573A;&#x666F;&#xFF1A;</h5>
+<ul>
+<li>&#x4E0A;&#x5916;&#x8FB9;&#x8DDD;&#x6298;&#x53E0;&#xFF1A;&#x5982;&#x679C;&#x5E38;&#x89C4;&#x6D41;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5757;&#x5143;&#x7D20;&#x6CA1;&#x6709; <code>border-top</code>&#x3001;<code>padding-top</code>&#xFF0C;&#x4E14;&#x5176;&#x7B2C;&#x4E00;&#x4E2A;&#x6D6E;&#x52A8;&#x7684;&#x5757;&#x7EA7;&#x5B50;&#x5143;&#x7D20;&#x6CA1;&#x6709;&#x95F4;&#x9699;&#xFF0C;&#x5219;&#x8BE5;&#x5143;&#x7D20;&#x7684;&#x4E0A;&#x5916;&#x8FB9;&#x8DDD;&#x4F1A;&#x4E0E;&#x5176;&#x5E38;&#x89C4;&#x6D41;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5757;&#x7EA7;&#x5B50;&#x5143;&#x7D20;&#x7684;&#x4E0A;&#x5916;&#x8FB9;&#x8DDD;&#x6298;&#x53E0;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7684; <code>min-height</code> &#x5C5E;&#x6027;&#x4E3A;0&#xFF0C;&#x4E14;&#x6CA1;&#x6709;&#x4E0A;&#x6216;&#x4E0B;&#x8FB9;&#x6846;&#x4EE5;&#x53CA;&#x4E0A;&#x6216;&#x4E0B;&#x5185;&#x8FB9;&#x8DDD;&#xFF0C;&#x4E14; <code>height</code> &#x4E3A;0&#x6216;&#x8005; <code>auto</code>&#xFF0C;&#x4E14;&#x4E0D;&#x5305;&#x542B;&#x884C;&#x6846;&#xFF0C;&#x4E14;&#x5176;&#x5C5E;&#x4E8E;&#x5E38;&#x89C4;&#x6D41;&#x7684;&#x6240;&#x6709;&#x5B69;&#x5B50;&#x7684;&#x5916;&#x8FB9;&#x8DDD;&#x90FD;&#x6298;&#x53E0;&#x4E86;&#xFF0C;&#x5219;&#x6298;&#x53E0;&#x5176;&#x5916;&#x8FB9;&#x8DDD;&#x3002;</li>
+</ul>
+<h3 id="margin&#x602A;&#x5F02;&#x7684;&#x767E;&#x5206;&#x6BD4;">Margin&#x602A;&#x5F02;&#x7684;&#x767E;&#x5206;&#x6BD4;</h3>
+<h4 id="&#x4F60;&#x53EF;&#x80FD;&#x4ECE;&#x6CA1;&#x6CE8;&#x610F;&#x8FC7;&#x5B83;">&#x4F60;&#x53EF;&#x80FD;&#x4ECE;&#x6CA1;&#x6CE8;&#x610F;&#x8FC7;&#x5B83;</h4>
+<p>&#x6211;&#x5FC5;&#x987B;&#x627F;&#x8BA4;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x57FA;&#x7840;&#x7684;&#x77E5;&#x8BC6;&#x70B9;&#xFF0C;&#x4F46;&#x4ECD;&#x7136;&#x6709;&#x5F88;&#x591A;&#x4EBA;&#x53EF;&#x80FD;&#x5BF9;&#x6B64;&#x6709;&#x9519;&#x8BEF;&#x7684;&#x8BA4;&#x77E5;&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x4E00;&#x4E2A;&#x5757;&#x7EA7;&#x5305;&#x542B;&#x5BB9;&#x5668;&#xFF0C;&#x5BBD;600px&#xFF0C;&#x9AD8;300px&#xFF0C;&#x5757;&#x7EA7;&#x5B50;&#x5143;&#x7D20;&#x5B9A;&#x4E49; <code>margin:10% 5%;</code> &#x5927;&#x5BB6;&#x8BF4;&#x8BF4; margin &#x7684; top, right, bottom, left &#x8BA1;&#x7B97;&#x503C;&#x6700;&#x7EC8;&#x662F;&#x591A;&#x5C11;&#xFF1F;</p>
+<p>&#x5E94;&#x8BE5;&#x6709;&#x4E0D;&#x5C11;&#x4EBA;&#x8131;&#x53E3;&#x800C;&#x51FA;&#xFF1A;<code>60px 15px 60px 15px</code> &#x3002;</p>
+<pre><code class="lang-css">&lt;div class=&quot;wrap&quot;&gt;
+    &lt;p&gt;&#x6211;&#x559C;&#x6B22;&#x56DE;&#x5FC6;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x56DE;&#x5FC6;&#x662F;&#x6211;&#x4EEC;&#x5BA1;&#x89C6;&#x81EA;&#x5DF1;&#x751F;&#x6D3B;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x3002;&lt;/p&gt;
+&lt;/div&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+    .wrap {
+      width: 600px;
+      height: 300px;
+      border: 1px solid #f00;
+    }
+    .wrap p {
+        margin: 10% 5%;
+        background: #0aa;
+    }
+&lt;/style&gt;
+</code></pre>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200504012208342.png" alt="image-20200504012208342"></p>
+<p><strong>&#x4E8B;&#x5B9E;&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#x7ED3;&#x679C;&#x662F; <code>60px 30px 60px 30px</code>&#x3002;</strong></p>
+<h4 id="&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x8FD9;&#x6837;&#xFF1F;">&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x8FD9;&#x6837;&#xFF1F;</h4>
+<p>&#x8BE7;&#x5F02;&#x5417;&#xFF1F;&#x4E0D;&#x7528;&#x6000;&#x7591;&#x6D4F;&#x89C8;&#x5668;&#x51FA;&#x4E86;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x662F;&#x6B63;&#x786E;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x89C4;&#x8303;&#x4E2D;&#x6CE8;&#x660E; <strong>margin &#x7684;&#x767E;&#x5206;&#x6BD4;&#x503C;&#x53C2;&#x7167;&#x5176;&#x5305;&#x542B;&#x5757;&#x7684;&#x5BBD;&#x5EA6;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x3002;</strong></p>
+<pre><code>Note that in a horizontal flow, percentages on &#x2018;margin-top&#x2019; and &#x2018;margin-bottom&#x2019; are relative to the width of the containing block, not the height (and in vertical flow, &#x2018;margin-left&#x2019; and &#x2018;margin-right&#x2019; are relative to the height, not the width).
+Note that percentages on &#x2018;padding-top&#x2019; and &#x2018;padding-bottom&#x2019; are relative to the width of the containing block, not the height (at least in a horizontal flow; in a vertical flow they are relative to the height).
+</code></pre><p>&#x5F53;&#x7136;&#xFF0C;&#x5B83;&#x4E0D;&#x4F1A;&#x8FD9;&#x4E48;&#x7B80;&#x5355;&#xFF0C;&#x4EE5;&#x4E0A;&#x53EA;&#x662F;&#x53D1;&#x751F;&#x5728;&#x9ED8;&#x8BA4;&#x7684;&#x6A2A;&#x5411;&#x4E66;&#x5199;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x3002;</p>
+<p><strong>&#x6CE8;&#xFF1A;&#x6B64;&#x7279;&#x6027;&#x53D7;&#x4E66;&#x5199;&#x6A21;&#x5F0F;&#x5F71;&#x54CD;&#xFF0C;&#x5177;&#x4F53;&#x53EF;&#x770B;&#x672C;&#x6587;&#x540E;&#x9762;&#x7AE0;&#x8282;&#x3002;</strong></p>
+<h4 id="&#x4E3A;&#x4EC0;&#x4E48;&#x53C2;&#x7167;&#x7684;&#x662F;width&#xFF0C;&#x800C;&#x4E0D;&#x662F;height">&#x4E3A;&#x4EC0;&#x4E48;&#x53C2;&#x7167;&#x7684;&#x662F;width&#xFF0C;&#x800C;&#x4E0D;&#x662F;height?</h4>
+<p>&#x5BF9;&#x4E8E;<code>margin/padding-top/bottom</code> &#x7684;&#x767E;&#x5206;&#x6BD4;&#x4E4B;&#x6240;&#x4EE5;&#x6309;&#x7167; width &#x8BA1;&#x7B97;&#xFF0C;&#x76EE;&#x524D;&#x4E3B;&#x8981;&#x6709;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x89E3;&#x91CA;&#xFF1A;</p>
+<h5 id="&#x76F8;&#x5BF9;&#x4E8E;height&#x8BA1;&#x7B97;&#x4F1A;&#x5F15;&#x8D77;&#x65E0;&#x7EBF;&#x5FAA;&#x73AF;">&#x76F8;&#x5BF9;&#x4E8E;height&#x8BA1;&#x7B97;&#x4F1A;&#x5F15;&#x8D77;&#x65E0;&#x7EBF;&#x5FAA;&#x73AF;</h5>
+<p>&#x6B63;&#x5E38;&#x6D41;&#x4E2D;&#x7684;&#x5927;&#x591A;&#x6570;&#x5143;&#x7D20;&#x90FD;&#x4F1A;&#x8DB3;&#x591F;&#x9AD8;&#x4EE5;&#x5305;&#x542B;&#x5176;&#x540E;&#x4EE3;&#x5143;&#x7D20;&#xFF08;&#x5305;&#x62EC;&#x5916;&#x8FB9;&#x8DDD;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x4E0A;&#x4E0B;&#x5916;&#x8FB9;&#x8DDD;&#x662F;&#x7236;&#x5143;&#x7D20;&#x7684;height&#x7684;&#x767E;&#x5206;&#x6570;&#xFF0C;&#x5C31;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x4E00;&#x4E2A;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#xFF0C;&#x7236;&#x5143;&#x7D20;&#x7684;height&#x4F1A;&#x589E;&#x52A0;&#xFF0C;&#x4EE5;&#x9002;&#x5E94;&#x540E;&#x4EE3;&#x5143;&#x7D20;&#x4E0A;&#x4E0B;&#x5916;&#x8FB9;&#x8DDD;&#x7684;&#x589E;&#x52A0;&#xFF0C;&#x800C;&#x76F8;&#x5E94;&#x7684;&#xFF0C;&#x4E0A;&#x4E0B;&#x5916;&#x8FB9;&#x8DDD;&#x56E0;&#x4E3A;&#x7236;&#x5143;&#x7D20;height&#x7684;&#x589E;&#x52A0;&#x4E5F;&#x4F1A;&#x589E;&#x52A0;&#xFF0C;&#x5982;&#x6B64;&#x5FAA;&#x73AF;&#x3002;</p>
+<h5 id="&#x57FA;&#x4E8E;&#x6392;&#x7248;&#x7684;&#x9700;&#x6C42;">&#x57FA;&#x4E8E;&#x6392;&#x7248;&#x7684;&#x9700;&#x6C42;</h5>
+<p>&#x4E4B;&#x6240;&#x4EE5;&#x6309;&#x7167;&#x540C;&#x4E00;&#x4E2A;width&#x6765;&#x8BA1;&#x7B97;&#xFF0C;&#x662F;&#x4E3A;&#x4E86;&#x8981;&#x6A2A;&#x5411;&#x548C;&#x7EB5;&#x5411;2&#x4E2A;&#x65B9;&#x5411;&#x90FD;&#x521B;&#x5EFA;&#x76F8;&#x540C;&#x7684;<code>margin/padding</code>&#xFF0C;&#x5982;&#x679C;&#x5B83;&#x4EEC;&#x7684;&#x53C2;&#x7167;&#x7269;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x90A3;&#x7528;&#x767E;&#x5206;&#x6BD4;&#x5C31;&#x65E0;&#x6CD5;&#x5F97;&#x5230;&#x5782;&#x76F4;&#x548C;&#x6C34;&#x5E73;&#x4E00;&#x81F4;&#x7684;&#x7559;&#x767D;&#x3002;</p>
+<h3 id="margin-auto">Margin: Auto</h3>
+<p>auto&#x662F;margin&#x7684;&#x53EF;&#x9009;&#x503C;&#x4E4B;&#x4E00;&#x3002;&#x76F8;&#x4FE1;&#x5927;&#x5BB6;&#x5E73;&#x65F6;&#x4F7F;&#x7528;auto&#x503C;&#x65F6;&#xFF0C;&#x6700;&#x591A;&#x7684;&#x7528;&#x6CD5;&#x5927;&#x6982;&#x662F; <code>margin: 0 auto;</code> &#x548C; <code>margin: auto;</code>&#xFF0C;&#x6069;&#xFF0C;&#x662F;&#x7684;&#xFF0C;&#x5757;&#x5143;&#x7D20;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#x3002;</p>
+<p>&#x4E0D;&#x8FC7;&#x4F60;&#x53EF;&#x80FD;&#x4E5F;&#x53D1;&#x73B0;&#x4E86;&#xFF0C;&#x4E0D;&#x8BBA;&#x662F; <code>margin: auto;</code> &#x8FD8;&#x662F; <code>margin: 0 auto;</code> &#x6548;&#x679C;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x90FD;&#x662F;&#x8BA9;&#x5143;&#x7D20;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#x4E86;&#xFF0C;&#x4F46;&#x7EB5;&#x5411;&#x5E76;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x53D8;&#x5316;&#x3002;</p>
+<p>&#x6839;&#x636E;&#x89C4;&#x8303;&#xFF0C;<code>margin-top: auto;</code> &#x548C; <code>margin-bottom: auto;</code>&#xFF0C;&#x5176;&#x8BA1;&#x7B97;&#x503C;&#x4E3A;0&#x3002;&#x8FD9;&#x4E5F;&#x5C31;&#x89E3;&#x91CA;&#x4E86;&#x4E3A;&#x4EC0;&#x4E48; <code>margin: auto;</code> &#x7B49;&#x540C;&#x4E8E; <code>margin: 0 auto;</code>&#x3002;</p>
+<h4 id="&#x4E3A;&#x4EC0;&#x4E48;auto&#x80FD;&#x5B9E;&#x73B0;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#xFF1F;">&#x4E3A;&#x4EC0;&#x4E48;auto&#x80FD;&#x5B9E;&#x73B0;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#xFF1F;</h4>
+<p><strong>&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x6C34;&#x5E73;&#x65B9;&#x5411;&#x7684; <code>auto</code>&#xFF0C;&#x5176;&#x8BA1;&#x7B97;&#x503C;&#x53D6;&#x51B3;&#x4E8E;&#x53EF;&#x7528;&#x7A7A;&#x95F4;&#xFF08;&#x5269;&#x4F59;&#x7A7A;&#x95F4;&#xFF09;&#x3002;</strong></p>
+<p><strong>&#x6CE8;&#xFF1A;&#x6B64;&#x7279;&#x6027;&#x53D7;&#x4E66;&#x5199;&#x6A21;&#x5F0F;&#x5F71;&#x54CD;&#xFF0C;&#x5177;&#x4F53;&#x53EF;&#x770B;&#x672C;&#x6587;&#x540E;&#x9762;&#x7AE0;&#x8282;&#x3002;</strong></p>
+<p>&#x60F3;&#x8C61;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x573A;&#x666F;&#xFF1A;&#x4E00;&#x4E2A;&#x5BBD;200px&#x7684;&#x5143;&#x7D20;&#x88AB;&#x5305;&#x542B;&#x5728;&#x4E00;&#x4E2A;&#x5BBD;600px&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x6B64;&#x5143;&#x7D20;&#x7684; <code>margin-left: auto</code>&#xFF0C;&#x5927;&#x5BB6;&#x89C9;&#x5F97;&#x7ED3;&#x679C;&#x4F1A;&#x600E;&#x6837;&#xFF1F;</p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200503234104813.png" alt="image-20200503234104813"></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrap&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;margin_left&quot;</span>&gt;</span>
+      &#x6211;&#x559C;&#x6B22;&#x56DE;&#x5FC6;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x56DE;&#x5FC6;&#x662F;&#x6211;&#x4EEC;&#x5BA1;&#x89C6;&#x81EA;&#x5DF1;&#x751F;&#x6D3B;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x3002;&#x56DE;&#x5FC6;&#x6A21;&#x7CCA;&#x4E0D;&#x6E05;&#xFF0C;&#x5C31;&#x7ED9;&#x81EA;&#x6211;&#x6B3A;&#x9A97;&#x63D0;&#x4F9B;&#x4E86;&#x673A;&#x4F1A;&#x3002;&#x2014;&#x2014; &#x77F3;&#x9ED1;&#x4E00;&#x96C4;&#x300A;&#x8FDC;&#x5C71;&#x6DE1;&#x5F71;&#x300B;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;</span><span class="css">
+  <span class="hljs-selector-class">.wrap</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">600px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#f00</span>;
+  }
+  <span class="hljs-selector-class">.wrap</span> <span class="hljs-selector-class">.margin_left</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">margin-left</span>: auto;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#0aa</span>;
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<p>&#x8FD9;&#x4E0E;&#x89C4;&#x8303;&#x63CF;&#x8FF0;&#x4E00;&#x81F4;&#x3002;<code>margin-left:auto;</code> &#x81EA;&#x52A8;&#x5360;&#x636E;&#x4E86;&#x7236;&#x8282;&#x70B9;&#x7684;&#x7684;&#x53EF;&#x7528;&#x7A7A;&#x95F4;&#xFF0C;&#x5373;600 - 200px = 400px&#x3002;&#x800C;&#x5143;&#x7D20;&#x4E2D;&#x6CA1;&#x6709;<code>margin-right</code>&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x53EF;&#x7528;&#x7A7A;&#x95F4;&#x5168;&#x90E8;&#x662F;<code>margin-left</code>&#x5360;&#x7528;&#x7684;&#xFF0C;&#x6700;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x8981;&#x5F53;&#x4E8E; <code>margin-left:400px;</code>&#x3002;&#x5373; <code>margin-left:auto;</code> &#x7684;&#x7ED3;&#x679C;&#x4F1A;&#x76F8;&#x5F53;&#x4E8E;&#x53F3;&#x5BF9;&#x9F50;&#x3002;</p>
+<p>&#x540C;&#x6837;&#xFF0C;<code>margin: auto;</code> &#x548C; <code>margin: 0 auto;</code> &#x80FD;&#x5B9E;&#x73B0;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#x4E86;&#x3002;&#x56E0;&#x4E3A;&#x5DE6;&#x53F3;&#x65B9;&#x5411;&#x7684;auto&#x503C;&#x5747;&#x5206;&#x4E86;&#x53EF;&#x7528;&#x7A7A;&#x95F4;&#xFF0C;&#x4F7F;&#x5F97;&#x5757;&#x5143;&#x7D20;&#x5F97;&#x4EE5;&#x5728;&#x5305;&#x542B;&#x5757;&#x5185;&#x5C45;&#x4E2D;&#x663E;&#x793A;&#x3002;</p>
+<h4 id="auto&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x5E38;&#x89C4;&#x6D41;&#x4E2D;&#x7684;-block-level-&#x5143;&#x7D20;">auto&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x5E38;&#x89C4;&#x6D41;&#x4E2D;&#x7684; block-level &#x5143;&#x7D20;</h4>
+<h5 id="&#x5E38;&#x89C4;&#x6D41;">&#x5E38;&#x89C4;&#x6D41;</h5>
+<p>&#x5E38;&#x89C4;&#x6D41;&#xFF0C;&#x6709;&#x7684;&#x4E5F;&#x79F0;&#x4E3A;&#x666E;&#x901A;&#x6D41;&#xFF0C;&#x6807;&#x51C6;&#x4E2D;&#x662F;&#x7528;<strong>normal flow</strong>&#x4E00;&#x8BCD;&#x3002;</p>
+<p>&#x5C06;&#x7A97;&#x4F53;&#x81EA;&#x4E0A;&#x800C;&#x4E0B;&#x5206;&#x6210;&#x4E00;&#x884C;&#x4E00;&#x884C;&#xFF0C;&#x5757;&#x7EA7;&#x5143;&#x7D20;&#x4ECE;&#x4E0A;&#x81F3;&#x4E0B;&#x3001; &#x884C;&#x5185;&#x5143;&#x7D20;&#x5728;&#x6BCF;&#x884C;&#x4E2D;&#x6309;&#x4ECE;&#x5DE6;&#x81F3;&#x53F3;&#x7684;&#x4F9D;&#x6B21;&#x6392;&#x653E;&#x7684;&#x5E03;&#x5C40;&#x79F0;&#x4E3A;&#x5E38;&#x89C4;&#x6D41;&#x3002;</p>
+<p>&#x6D6E;&#x52A8;&#x673A;&#x5236;&#xFF08;float&#xFF09;&#x3001;&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;&#xFF08;postion: absolute&#xFF09;&#x5E03;&#x5C40;&#x88AB;&#x79F0;&#x4E3A;&#x662F;&#x8131;&#x79BB;&#x5E38;&#x89C4;&#x6D41;&#x3002;</p>
+<p>&#x9664;&#x975E;&#x53E6;&#x5916;&#x6307;&#x5B9A;&#xFF0C;&#x5426;&#x5219;<strong>&#x6240;&#x6709;&#x5143;&#x7D20;&#x9ED8;&#x8BA4;&#x90FD;&#x662F;&#x666E;&#x901A;&#x6D41;&#x5B9A;&#x4F4D;</strong>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8BF4;&#xFF0C;&#x666E;&#x901A;&#x6D41;&#x4E2D;&#x5143;&#x7D20;&#x7684;&#x4F4D;&#x7F6E;&#x7531;&#x8BE5;&#x5143;&#x7D20;&#x5728; HTML &#x6587;&#x6863;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x51B3;&#x5B9A;&#x3002;</p>
+<h5 id="block-level-&#x5143;&#x7D20;">block-level &#x5143;&#x7D20;</h5>
+<p> <code>block-level</code> &#x6307;&#x7684;&#x662F; <code>display</code> &#x503C;&#x4E3A; <code>block</code> &#x7684;&#x5143;&#x7D20;&#x5417;&#xFF1F;&#x6211;&#x77E5;&#x9053;&#x4E0D;&#x5C11;&#x4EBA;&#x4E00;&#x76F4;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x8BA4;&#x77E5;&#xFF0C;&#x4E0D;&#x8FC7;&#x8FD9;&#x4E0D;&#x5B8C;&#x5168;&#x51C6;&#x786E;&#x3002;</p>
+<p><code>block-level</code> &#x5143;&#x7D20;&#x5305;&#x542B; <code>display</code> &#x503C;&#x4E3A;&#xFF1A;</p>
+<ul>
+<li>block</li>
+<li>list-item</li>
+<li>table</li>
+<li>table-*</li>
+<li>flex</li>
+<li>&#x5982;&#x679C;position&#x65E2;&#x4E0D;&#x662F;static&#x4E5F;&#x4E0D;&#x662F;relative&#x3001;float&#x4E0D;&#x662F;none&#x6216;&#x8005;&#x5143;&#x7D20;&#x662F;&#x6839;&#x5143;&#x7D20;&#xFF0C;&#x5F53;display:inline-table&#x65F6;&#xFF0C;display&#x7684;&#x8BA1;&#x7B97;&#x503C;&#x4E3A;table&#xFF1B;&#x5F53;display&#x503C;&#x4E3A; inline | inline-block | run-in | table-* &#x65F6;&#xFF0C;display&#x7684;&#x8BA1;&#x7B97;&#x503C;&#x4E3A;block</li>
+</ul>
+<h3 id="margin&#x4E0E;relative&#x7684;&#x5F02;&#x540C;">Margin&#x4E0E;Relative&#x7684;&#x5F02;&#x540C;</h3>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200503225626449.png" alt="image-20200503225626449"></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrap&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;compare&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;margin&quot;</span>&gt;</span>
+      &#x6211;&#x559C;&#x6B22;&#x56DE;&#x5FC6;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x56DE;&#x5FC6;&#x662F;&#x6211;&#x4EEC;&#x5BA1;&#x89C6;&#x81EA;&#x5DF1;&#x751F;&#x6D3B;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x3002;&#x56DE;&#x5FC6;&#x6A21;&#x7CCA;&#x4E0D;&#x6E05;&#xFF0C;&#x5C31;&#x7ED9;&#x81EA;&#x6211;&#x6B3A;&#x9A97;&#x63D0;&#x4F9B;&#x4E86;&#x673A;&#x4F1A;&#x3002;&#x2014;&#x2014; &#x77F3;&#x9ED1;&#x4E00;&#x96C4;&#x300A;&#x8FDC;&#x5C71;&#x6DE1;&#x5F71;&#x300B;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;compare&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;relative&quot;</span>&gt;</span>
+      &#x6211;&#x559C;&#x6B22;&#x56DE;&#x5FC6;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x56DE;&#x5FC6;&#x662F;&#x6211;&#x4EEC;&#x5BA1;&#x89C6;&#x81EA;&#x5DF1;&#x751F;&#x6D3B;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x3002;&#x56DE;&#x5FC6;&#x6A21;&#x7CCA;&#x4E0D;&#x6E05;&#xFF0C;&#x5C31;&#x7ED9;&#x81EA;&#x6211;&#x6B3A;&#x9A97;&#x63D0;&#x4F9B;&#x4E86;&#x673A;&#x4F1A;&#x3002;&#x2014;&#x2014; &#x77F3;&#x9ED1;&#x4E00;&#x96C4;&#x300A;&#x8FDC;&#x5C71;&#x6DE1;&#x5F71;&#x300B;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;</span><span class="css">
+  <span class="hljs-selector-class">.wrap</span> {
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#f00</span>;
+  }
+  <span class="hljs-selector-class">.wrap</span> <span class="hljs-selector-class">.compare</span> {
+    <span class="hljs-attribute">display</span>: inline-block;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">49%</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">vertical-align</span>: top;
+    <span class="hljs-attribute">box-sizing</span>: border-box;
+  }
+  <span class="hljs-selector-class">.wrap</span> <span class="hljs-selector-class">.margin</span> {
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">50px</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#a0a</span>;
+  }
+  <span class="hljs-selector-class">.wrap</span> <span class="hljs-selector-class">.relative</span> {
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">50px</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#0aa</span>;
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<p>&#x8FD9;&#x4F3C;&#x4E4E;&#x6CA1;&#x4EC0;&#x4E48;&#x4E0D;&#x540C;&#xFF1F;&#x90FD;&#x5B8C;&#x6210;&#x4E86;&#x5411;&#x4E0B;&#x504F;&#x79FB; 50px&#x7684;&#x9700;&#x6C42;&#x3002;</p>
+<p>&#x597D;&#x5427;&#x3002;&#x8FD9;&#x91CC;&#x8FD8;&#x771F;&#x6CA1;&#x4EC0;&#x4E48;&#x4E0D;&#x540C;&#xFF0C;&#x81F3;&#x5C11;&#x5728;&#x8FD9;&#x91CC;&#x6CA1;&#x6709;&#xFF01;&#x4E0D;&#x8BBA;&#x662F; <code>margin-top</code> &#x8FD8;&#x662F; <code>relative top</code> &#x90FD;&#x662F;&#x4EE5;<strong>&#x81EA;&#x8EAB;&#x4F5C;&#x4E3A;&#x53C2;&#x7167;&#x7269;</strong>&#x8FDB;&#x884C;&#x504F;&#x79FB;&#x7684;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A; <code>absolute</code> &#x504F;&#x79FB;&#x76F8;&#x5BF9;&#x7684;&#x662F;<strong>&#x4E0A;&#x4E00;&#x4E2A;&#x4E0D;&#x4E3A;static&#x7684;&#x5143;&#x7D20;</strong> &#xFF0C;&#x5E76;&#x4E14;&#x504F;&#x79FB;&#x503C;&#x662F;&#x4ECE;&#x5176; <code>padding</code> &#x533A;&#x57DF;&#x5F00;&#x59CB;&#x8BA1;&#x7B97;&#x3002;</p>
+<h4 id="&#x4F46;&#x5B83;&#x4EEC;&#x771F;&#x7684;&#x4E0D;&#x4E00;&#x6837;">&#x4F46;&#x5B83;&#x4EEC;&#x771F;&#x7684;&#x4E0D;&#x4E00;&#x6837;!</h4>
+<p>&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#x89C4;&#x8303;&#x600E;&#x4E48;&#x8BF4;&#xFF1A;</p>
+<p><strong>margin:</strong></p>
+<blockquote>
+<p>&#x539F;&#x6587;&#xFF1A;Margins in CSS serve to add both horizontal and vertical space between boxes.</p>
+<p>&#x7FFB;&#x8BD1;&#xFF1A;CSS&#x4E2D;&#x7684;margin&#x7528;&#x6765;&#x6DFB;&#x52A0;&#x76D2;&#x5B50;&#x4E4B;&#x95F4;&#x7684;&#x6C34;&#x5E73;&#x548C;&#x5782;&#x76F4;&#x95F4;&#x9699;&#x3002;</p>
+</blockquote>
+<p><strong>top, right, bottom, left:</strong></p>
+<blockquote>
+<p>&#x539F;&#x6587;&#xFF1A;An element is said to be positioned if its &#x2018;position&#x2019; property has a value other than &#x2018;static&#x2019;. Positioned elements generate positioned boxes, and may be laid out according to the following four physical properties: top, right, bottom, left.</p>
+<p>&#x7FFB;&#x8BD1;&#xFF1A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7684;position&#x5C5E;&#x6027;&#x503C;&#x5982;&#x679C;&#x4E0D;&#x4E3A;static&#x5219;&#x53D1;&#x751F;&#x5B9A;&#x4F4D;&#x3002;&#x5B9A;&#x4F4D;&#x5143;&#x7D20;&#x4F1A;&#x4EA7;&#x751F;&#x5B9A;&#x4F4D;&#x76D2;&#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x6839;&#x636E; top, right, bottom, left &#x8FD9;4&#x4E2A;&#x7269;&#x7406;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x6392;&#x7248;&#x5E03;&#x5C40;&#x3002;</p>
+</blockquote>
+<p>&#x610F;&#x601D;&#x5F88;&#x660E;&#x767D;&#xFF0C;<code>margin</code> &#x662F;&#x7528;&#x6765;&#x589E;&#x52A0;&#x81EA;&#x8EAB;&#x4E0E;&#x4ED6;&#x4EBA;&#x4E4B;&#x95F4;&#x7684;&#x7A7A;&#x767D;&#xFF0C;&#x800C; <code>top, right, bottom, left</code> &#x662F;&#x7528;&#x6765;&#x5BF9;&#x81EA;&#x8EAB;&#x8FDB;&#x884C;&#x6392;&#x7248;&#xFF0C;&#x4F5C;&#x7528;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x3002;</p>
+<p>&#x4E5F;&#x5C31;&#x662F;&#x8BF4; <code>margin</code> &#x662F;&#x4E92;&#x52A8;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x8981;&#x5F71;&#x54CD;&#x4ED6;&#x4EBA;&#xFF1B;</p>
+<p>&#x800C; <code>top, right, bottom, left</code>&#x662F;&#x5B64;&#x72EC;&#x7684;&#xFF0C;&#x4ED6;&#x53EA;&#x662F;&#x81EA;&#x5DF1;&#x4E00;&#x4E2A;&#x4EBA;&#x73A9;&#xFF0C;&#x4E0D;&#x5F71;&#x54CD;&#x4ED6;&#x4EBA;&#x3002;</p>
+<p>&#x4E0D;&#x662F;&#x5F88;&#x660E;&#x767D;&#xFF1F;&#xFF01;&#x8FD8;&#x662F;&#x76F4;&#x63A5;&#x770B;&#x56FE;&#x5427;&#xFF1A;</p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200503225830177.png" alt="image-20200503225830177"></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrap&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;compare&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;margin&quot;</span>&gt;</span>
+      &#x6211;&#x559C;&#x6B22;&#x56DE;&#x5FC6;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x56DE;&#x5FC6;&#x662F;&#x6211;&#x4EEC;&#x5BA1;&#x89C6;&#x81EA;&#x5DF1;&#x751F;&#x6D3B;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x3002;&#x56DE;&#x5FC6;&#x6A21;&#x7CCA;&#x4E0D;&#x6E05;&#xFF0C;&#x5C31;&#x7ED9;&#x81EA;&#x6211;&#x6B3A;&#x9A97;&#x63D0;&#x4F9B;&#x4E86;&#x673A;&#x4F1A;&#x3002;&#x2014;&#x2014; &#x77F3;&#x9ED1;&#x4E00;&#x96C4;&#x300A;&#x8FDC;&#x5C71;&#x6DE1;&#x5F71;&#x300B;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;diff&quot;</span>&gt;</span>&#x6211;&#x4EEC;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x6BCF;&#x4E2A;&#x4EBA;&#x90FD;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x5883;&#x9047;&#x3002;&#x3002;&#x3002;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;compare&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;relative&quot;</span>&gt;</span>
+      &#x6211;&#x559C;&#x6B22;&#x56DE;&#x5FC6;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x56DE;&#x5FC6;&#x662F;&#x6211;&#x4EEC;&#x5BA1;&#x89C6;&#x81EA;&#x5DF1;&#x751F;&#x6D3B;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x3002;&#x56DE;&#x5FC6;&#x6A21;&#x7CCA;&#x4E0D;&#x6E05;&#xFF0C;&#x5C31;&#x7ED9;&#x81EA;&#x6211;&#x6B3A;&#x9A97;&#x63D0;&#x4F9B;&#x4E86;&#x673A;&#x4F1A;&#x3002;&#x2014;&#x2014; &#x77F3;&#x9ED1;&#x4E00;&#x96C4;&#x300A;&#x8FDC;&#x5C71;&#x6DE1;&#x5F71;&#x300B;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;diff&quot;</span>&gt;</span>&#x6211;&#x4EEC;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x6BCF;&#x4E2A;&#x4EBA;&#x90FD;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x5883;&#x9047;&#x3002;&#x3002;&#x3002;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;</span><span class="css">
+  <span class="hljs-selector-class">.wrap</span> {
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#f00</span>;
+  }
+  <span class="hljs-selector-class">.wrap</span> <span class="hljs-selector-class">.compare</span> {
+    <span class="hljs-attribute">display</span>: inline-block;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">49%</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">vertical-align</span>: top;
+    <span class="hljs-attribute">box-sizing</span>: border-box;
+  }
+  <span class="hljs-selector-class">.wrap</span> <span class="hljs-selector-class">.margin</span> {
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">50px</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#a0a</span>;
+  }
+  <span class="hljs-selector-class">.wrap</span> <span class="hljs-selector-class">.relative</span> {
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">50px</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#0aa</span>;
+  }
+  <span class="hljs-selector-class">.wrap</span> <span class="hljs-selector-class">.diff</span> {
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#f00</span>;
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x6709;&#x51FA;&#x4E4E;&#x4F60;&#x7684;&#x610F;&#x6599;&#x5417;&#xFF1F;&#x597D;&#x5427;&#xFF0C;&#x4E0D;&#x8BBA;&#x600E;&#x4E48;&#xFF0C;&#x89E3;&#x91CA;&#x4E0B;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x8FD9;&#x6837;&#xFF1F;</p>
+<p>&#x4E0A;&#x9762;&#x8BF4;&#x8FC7;&#xFF0C;<code>margin</code> &#x662F;&#x7528;&#x6765;&#x589E;&#x52A0;&#x81EA;&#x8EAB;&#x4E0E;&#x4ED6;&#x4EBA;&#x4E4B;&#x95F4;&#x7684;&#x7A7A;&#x767D;&#xFF0C;&#x662F;&#x4E92;&#x52A8;&#x7684;&#xFF0C;<strong>&#x56E0;&#x4E3A;&#x4ED6;&#x8981;&#x5F71;&#x54CD;&#x4ED6;&#x4EBA;</strong>&#x3002;&#x5373;<code>margin</code>&#x5143;&#x7D20;&#x5F80;&#x4E0B;&#x504F;&#x79FB;&#x4E86;50px&#xFF0C;&#x4ED6;&#x540E;&#x9762;&#x7684;&#x5144;&#x5F1F;&#x5143;&#x7D20;&#x662F;<strong>&#x4ECE;&#x4ED6;&#x504F;&#x79FB;&#x540E;&#x7684;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x6392;&#x7248;</strong>&#xFF1B;</p>
+<p>&#x800C; <code>top, right, bottom, left</code> &#x662F;&#x7528;&#x6765;&#x5BF9;&#x81EA;&#x8EAB;&#x8FDB;&#x884C;&#x6392;&#x7248;&#xFF0C;&#x4ED6;&#x53EA;&#x662F;&#x81EA;&#x5DF1;&#x4E00;&#x4E2A;&#x4EBA;&#x73A9;&#xFF0C;<strong>&#x4E0D;&#x5F71;&#x54CD;&#x4ED6;&#x4EBA;</strong>&#x3002;&#x5373;<code>ralative</code>&#x5143;&#x7D20;&#x867D;&#x7136;&#x4E5F;&#x5F80;&#x4E0B;&#x504F;&#x79FB;&#x4E86;50px&#xFF0C;&#x4F46;&#x4ED6;&#x7684;&#x5144;&#x5F1F;&#x5143;&#x7D20;&#xFF0C;&#x8FD8;&#x662F;<strong>&#x4ECE;&#x4ED6;&#x504F;&#x79FB;&#x524D;&#x7684;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x6392;&#x7248;</strong>&#x3002;</p>
+<p>&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x4F60;&#x773C;&#x775B;&#x770B;&#x5230;&#x7684;<code>relative</code>&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x4ED6;&#x5728;&#x5E03;&#x5C40;&#x4E2D;&#x7684;&#x771F;&#x6B63;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>&#x8FD9;&#x624D;&#x662F;&#x4ED6;&#x5728;&#x5E03;&#x5C40;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#xFF1A;</p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200503230100757.png" alt="image-20200503230100757"></p>
+<h3 id="margin-&#x7075;&#x6D3B;&#x5E94;&#x7528;">Margin &#x7075;&#x6D3B;&#x5E94;&#x7528;</h3>
+<h4 id="&#x7B49;&#x9AD8;&#x5E03;&#x5C40;">&#x7B49;&#x9AD8;&#x5E03;&#x5C40;</h4>
+<p>&#x8981;&#x6C42;&#xFF1A;&#x4E0D;&#x8BBA;&#x662F;&#x4E3B;&#x680F;&#x8FD8;&#x662F;&#x4FA7;&#x680F;&#xFF0C;&#x603B;&#x662F;&#x4EE5;&#x6700;&#x9AD8;&#x7684;&#x90A3;&#x5217;&#x4E3A;&#x57FA;&#x51C6;&#x9AD8;&#x5EA6;&#x3002;</p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200504014912231.png" alt="image-20200504014912231"></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrap&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span>&#x4F46;&#x51E1;&#x6B7B;&#x7F20;&#x70C2;&#x6253;&#x7684;&#x4EBA;&#xFF0C;&#x5927;&#x90FD;&#x4E0D;&#x662F;&#x771F;&#x7684;&#x6DF1;&#x7231;&#x4F60;&#xFF0C;&#x90A3;&#x53EA;&#x662F;&#x5728;&#x8DDF;&#x81EA;&#x5DF1;&#x8D5B;&#x8DD1;&#x3002;&#x771F;&#x6B63;&#x7231;&#x4F60;&#x7684;&#x4EBA;&#xFF0C;&#x505A;&#x4E0D;&#x5230;&#x6B7B;&#x7F20;&#x70C2;&#x6253;&#x3002;&#x56E0;&#x4E3A;&#x81EA;&#x5C0A;&#x4E0D;&#x5141;&#x8BB8;&#x3002;&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x6DF1;&#x4FE1;&#xFF0C;&#x7231;&#x5C31;&#x662F;&#x628A;&#x6700;&#x597D;&#x7684;&#x4E00;&#x5207;&#x7ED9;&#x4E88;&#x5BF9;&#x65B9;&#xFF0C;&#x5305;&#x62EC;&#x5C0A;&#x4E25;&#x3002;--&#x591A;&#x5C11;&#x6D45;&#x6D45;&#x6DE1;&#x6DE1;&#x7684;&#x8F6C;&#x8EAB;&#xFF0C;&#x662F;&#x65C1;&#x4EBA;&#x770B;&#x4E0D;&#x61C2;&#x7684;&#x60C5;&#x6DF1;&#x3002;&#x2014;&#x2014; &#x82CF;&#x82A9;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;aside&quot;</span>&gt;</span>&#x591A;&#x5C11;&#x6D45;&#x6D45;&#x6DE1;&#x6DE1;&#x7684;&#x8F6C;&#x8EAB;&#xFF0C;&#x662F;&#x65C1;&#x4EBA;&#x770B;&#x4E0D;&#x61C2;&#x7684;&#x60C5;&#x6DF1;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.wrap</span> {
+    <span class="hljs-attribute">overflow</span>: hidden;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">0</span>;
+}
+<span class="hljs-selector-class">.main</span>,
+<span class="hljs-selector-class">.aside</span>{
+    <span class="hljs-attribute">display</span>: inline-block;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">font-size</span>: initial;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#a0a</span>;
+    <span class="hljs-attribute">vertical-align</span>: top;
+    <span class="hljs-attribute">box-sizing</span>: border-box;
+}
+<span class="hljs-selector-class">.aside</span> {
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#0aa</span>;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<p>margin&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.main</span>,
+<span class="hljs-selector-class">.aside</span>{
+    <span class="hljs-attribute">margin-bottom</span>: -<span class="hljs-number">999px</span>;
+    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">999px</span>;
+
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<p>&#x9700;&#x8981;&#x63D0;&#x9192;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x5176;&#x5B9E;&#x53EA;&#x662F;&#x89C6;&#x89C9;&#x6B3A;&#x9A97;&#xFF0C;&#x505A;&#x5230;&#x7684;&#x4E86;&#x4F2A;&#x9AD8;&#x7B49;&#x9AD8;&#x3002;&#x4E3B;&#x680F;&#x548C;&#x4FA7;&#x680F;&#x7684;&#x5B9E;&#x9645;&#x9AD8;&#x5EA6;&#x5176;&#x5B9E;&#x5E76;&#x4E0D;&#x76F8;&#x7B49;&#xFF0C;&#x4E4B;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x8FBE;&#x6210;&#x8FD9;&#x6837;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x5176;&#x539F;&#x56E0;&#x5728;&#x4E8E;&#x8D1F; <code>margin</code> &#x503C;&#x3002;</p>
+<p><code>margin</code> &#x4F1A;&#x5F71;&#x54CD;&#x5176;&#x4E0A;&#x4E0B;&#x6587;&#x5E03;&#x5C40;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x5C06;&#x5143;&#x7D20;&#x7684; <code>margin-bottom</code> &#x8BBE;&#x7F6E;&#x4E3A;&#x8D1F;&#x503C;&#x65F6;&#xFF0C;&#x5143;&#x7D20;&#x53CA;&#x5176;&#x76F8;&#x90BB;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5E95;&#x90E8;&#x4F1A;&#x81EA;&#x52A8;&#x4E0A;&#x53BB;&#x5176;&#x8D1F;&#x503C;&#x7684;&#x9AD8;&#x5EA6;&#xFF0C;&#x76F4;&#x5230;&#x6700;&#x9AD8;&#x7684;&#x90A3;&#x5217;&#x5E95;&#x90E8;&#x8FB9;&#x7F18;&#x4E3A;&#x6B62;&#xFF0C;&#x7136;&#x540E;&#x88C1;&#x526A;&#x3002;&#x4F46;&#x8BE5;&#x5217;&#x672C;&#x8EAB;&#x7684;&#x9AD8;&#x5EA6;&#x5E76;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x540C;&#x65F6;&#x56E0;&#x4E3A;&#x6709; <code>padding-bottom</code> &#x5411;&#x4E0B;&#x6269;&#x5C55;&#xFF0C;&#x989C;&#x8272;&#x88AB;&#x586B;&#x5145;&#x6EE1;padding&#x533A;&#x57DF;&#xFF0C;&#x4E8E;&#x662F;&#x8FBE;&#x5230;&#x89C6;&#x89C9;&#x4E0A;&#x7684;&#x7B49;&#x9AD8;&#x3002;</p>
+<h4 id="&#x53BB;&#x6389;&#x5217;&#x8868;&#x6700;&#x540E;&#x4E00;&#x9879;&#x4E0B;&#x8FB9;&#x6846;">&#x53BB;&#x6389;&#x5217;&#x8868;&#x6700;&#x540E;&#x4E00;&#x9879;&#x4E0B;&#x8FB9;&#x6846;</h4>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200504015238324.png" alt="image-20200504015238324"></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrap&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x591A;&#x5C11;&#x6D45;&#x6D45;&#x6DE1;&#x6DE1;&#x7684;&#x8F6C;&#x8EAB;&#xFF0C;&#x662F;&#x65C1;&#x4EBA;&#x770B;&#x4E0D;&#x61C2;&#x7684;&#x60C5;&#x6DF1;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x591A;&#x5C11;&#x6D45;&#x6D45;&#x6DE1;&#x6DE1;&#x7684;&#x8F6C;&#x8EAB;&#xFF0C;&#x662F;&#x65C1;&#x4EBA;&#x770B;&#x4E0D;&#x61C2;&#x7684;&#x60C5;&#x6DF1;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x591A;&#x5C11;&#x6D45;&#x6D45;&#x6DE1;&#x6DE1;&#x7684;&#x8F6C;&#x8EAB;&#xFF0C;&#x662F;&#x65C1;&#x4EBA;&#x770B;&#x4E0D;&#x61C2;&#x7684;&#x60C5;&#x6DF1;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x591A;&#x5C11;&#x6D45;&#x6D45;&#x6DE1;&#x6DE1;&#x7684;&#x8F6C;&#x8EAB;&#xFF0C;&#x662F;&#x65C1;&#x4EBA;&#x770B;&#x4E0D;&#x61C2;&#x7684;&#x60C5;&#x6DF1;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x591A;&#x5C11;&#x6D45;&#x6D45;&#x6DE1;&#x6DE1;&#x7684;&#x8F6C;&#x8EAB;&#xFF0C;&#x662F;&#x65C1;&#x4EBA;&#x770B;&#x4E0D;&#x61C2;&#x7684;&#x60C5;&#x6DF1;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-class">.wrap</span> <span class="hljs-selector-tag">li</span>{
+        <span class="hljs-attribute">list-style</span>: none;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span>;
+        <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#a0a</span>;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#x5F88;&#x591A;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A; <code>:first-child</code>, <code>:nth-last-child(n)</code>, <code>:nth-last-of-type(n)</code> &#x4E4B;&#x7C7B;&#x7684;CSS3&#x9009;&#x62E9;&#x7B26;&#xFF0C;&#x4EE5;&#x53CA;&#x6700;&#x539F;&#x59CB;&#x7684;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x9879;&#x5355;&#x72EC;&#x5199;&#x4E00;&#x4E2A;&#x53BB;&#x9664;&#x8FB9;&#x6846;&#x7684;class&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x7528;margin&#x4E5F;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x5B83;&#x6709;&#x4E00;&#x5B9A;&#x4F18;&#x52BF;&#xFF0C;&#x6BD4;&#x5982;&#x517C;&#x5BB9;ie6-8&#x3001;&#x9700;&#x8981;&#x7528;&#x5230;<strong>&#x4E0D;&#x517C;&#x5BB9;css3&#x7684;html&#x8F6C;pdf&#x7684;&#x63D2;&#x4EF6;</strong>&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x7528;&#x4E0D;&#x4E0A;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4E86;&#x89E3;&#x4E0B;&#x3002;&#x3002;&#x3002;</p>
+<p>&#x65B9;&#x6CD5;&#x5F88;&#x7B80;&#x5355;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-class">.wrap</span>{
+        <span class="hljs-attribute">overflow</span>: hidden;
+    }
+    <span class="hljs-selector-class">.wrap</span> <span class="hljs-selector-tag">ul</span>{
+        <span class="hljs-attribute">margin-bottom</span>: -<span class="hljs-number">1px</span>;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<h4 id="margin&#x5DE6;&#x53F3;&#x7ED3;&#x6784;&#x5E03;&#x5C40;">Margin&#x5DE6;&#x53F3;&#x7ED3;&#x6784;&#x5E03;&#x5C40;</h4>
+<ol>
+<li><p>absolute + margin &#x65B9;&#x5F0F;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;aside&quot;</span>&gt;</span>&#x4FA7;&#x8FB9;&#x680F;&#x56FA;&#x5B9A;&#x5BBD;&#x5EA6;<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span>&#x4E3B;&#x5185;&#x5BB9;&#x680F;&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-class">.aside</span>{
+        <span class="hljs-attribute">position</span>: absolute;
+        <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+        <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+        <span class="hljs-attribute">background</span>: <span class="hljs-number">#a0a</span>;
+    }
+    <span class="hljs-selector-class">.main</span>{
+        <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">210px</span>;
+        <span class="hljs-attribute">background</span>: <span class="hljs-number">#0aa</span>;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>float + margin &#x65B9;&#x5F0F;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;aside&quot;</span>&gt;</span>&#x4FA7;&#x8FB9;&#x680F;&#x56FA;&#x5B9A;&#x5BBD;&#x5EA6;<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span>&#x4E3B;&#x5185;&#x5BB9;&#x680F;&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-class">.aside</span>{
+        <span class="hljs-attribute">float</span>: left;
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+        <span class="hljs-attribute">background</span>: <span class="hljs-number">#a0a</span>;
+    }
+    <span class="hljs-selector-class">.main</span>{
+        <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">210px</span>;
+        <span class="hljs-attribute">background</span>: <span class="hljs-number">#0aa</span>;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>float + &#x8D1F;margin &#x65B9;&#x5F0F;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!--&#x6CE8;&#x610F;&#xFF1A;&#x5DE6;&#x4FA7;&#x5185;&#x5BB9;&#x6807;&#x7B7E;&#xFF0C;&#x653E;&#x5728;&#x4E3B;&#x5185;&#x5BB9;&#x540E;&#x9762;--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrap&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span>&#x4E3B;&#x5185;&#x5BB9;&#x680F;&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;aside&quot;</span>&gt;</span>&#x4FA7;&#x8FB9;&#x680F;&#x56FA;&#x5B9A;&#x5BBD;&#x5EA6;<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-class">.wrap</span> {
+        <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">210px</span>;
+    }
+    <span class="hljs-comment">/*&#x4E3B;&#x5185;&#x5BB9;&#x5FC5;&#x9700;&#x52A0;float: left&#xFF0C;&#x4E0D;&#x7136;&#x540E;&#x9762;&#x5185;&#x5BB9;&#x4F1A;&#x6362;&#x884C;*/</span>
+    <span class="hljs-selector-class">.main</span>{
+        <span class="hljs-attribute">float</span>: left;
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">background</span>: <span class="hljs-number">#0aa</span>;
+    }
+    <span class="hljs-selector-class">.aside</span>{
+        <span class="hljs-attribute">float</span>: left;
+        <span class="hljs-attribute">position</span>: relative;
+        <span class="hljs-attribute">left</span>: -<span class="hljs-number">210px</span>;
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+        <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">background</span>: <span class="hljs-number">#a0a</span>;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+</li>
+</ol>
+<p>&#x6CE8;&#xFF1A;&#x8FD9;&#x4E09;&#x79CD;&#x65B9;&#x6CD5;&#x53EA;&#x9002;&#x7528;&#x5DE6;&#x4FA7;&#x5BBD;&#x5EA6;&#x56FA;&#x5B9A;&#x7684;&#x3002;</p>
+<p>&#x65B9;&#x6CD5;1&#xFF0C;&#x65E0;&#x6CD5;&#x6491;&#x5F00;&#x7236;&#x5143;&#x7D20;&#x7684;&#x9AD8;&#x5EA6;&#xFF0C;&#x5B83;&#x5C06;&#x4F1A;&#x6EA2;&#x51FA;&#x7236;&#x5143;&#x7D20;&#x533A;&#x57DF;&#x3002;&#x65B9;&#x6CD5;2&#xFF0C;&#x65E0;&#x6CD5;&#x652F;&#x6301;&#x4E3B;&#x5185;&#x5BB9;&#x4F18;&#x5148;&#x663E;&#x793A;&#x3002;&#x65B9;&#x6CD5;3&#xFF0C;&#x6CE8;&#x610F;&#x6E05;&#x9664;float&#x3002;</p>
+<h3 id="&#x4E66;&#x5199;&#x6A21;&#x5F0F;&#x5BF9;margin&#x7684;&#x5F71;&#x54CD;">&#x4E66;&#x5199;&#x6A21;&#x5F0F;&#x5BF9;Margin&#x7684;&#x5F71;&#x54CD;</h3>
+<p>CSS&#x4E2D;&#x6709;&#x4E00;&#x4E9B;&#x6837;&#x5F0F;&#x662F;&#x53D7;&#x4E66;&#x5199;&#x6A21;&#x5F0F;&#x5F71;&#x54CD;&#x7684;&#x3002;&#x975E;&#x5E38;&#x4E0D;&#x5E78;&#xFF0C;<code>margin</code> &#x6B63;&#x597D;&#x662F;&#x5176;&#x4E2D;&#x4E4B;&#x4E00;&#x3002;</p>
+<ul>
+<li>&#x5728;&#x6C34;&#x5E73;&#x4E66;&#x5199;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x53D1;&#x751F; <code>margin</code> &#x6298;&#x53E0;&#x7684;&#x662F;<strong>&#x5782;&#x76F4;&#x65B9;&#x5411;</strong>&#xFF0C;&#x5373; <code>margin-top/margin-bottom</code>&#xFF1B;&#x5728;&#x5782;&#x76F4;&#x4E66;&#x5199;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x53D1;&#x751F; <code>margin</code> &#x6298;&#x53E0;&#x662F;&#x7684;<strong>&#x6C34;&#x5E73;&#x65B9;&#x5411;</strong>&#xFF0C;&#x5373; <code>margin-right/margin-left</code>&#x3002;</li>
+<li>&#x5728;&#x6C34;&#x5E73;&#x4E66;&#x5199;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C; <code>margin/padding-*</code> &#x7684;&#x767E;&#x5206;&#x6BD4;&#x90FD;&#x6309;&#x7167;width&#x8BA1;&#x7B97;&#x3002;&#x5728;&#x5782;&#x76F4;&#x4E66;&#x5199;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C; <code>margin/padding-*</code> &#x90FD;&#x6309;&#x7167; height&#x8BA1;&#x7B97;&#x3002;</li>
+<li>&#x5728;&#x6C34;&#x5E73;&#x4E66;&#x5199;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C; <code>margin: auto;</code> &#x7B49;&#x540C;&#x4E8E; <code>margin: 0 auto;</code> &#xFF0C;&#x5373;<code>top&#x3001;bottom</code>&#x4E3A;0&#xFF1B;&#x5728;&#x5782;&#x76F4;&#x4E66;&#x5199;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;  <code>margin: auto;</code> &#x7B49;&#x540C;&#x4E8E; <code>margin: auto 0;</code> &#xFF0C;&#x5373;<code>left&#x3001;right</code>&#x4E3A;0&#x3002;</li>
+</ul>
+<p>&#x53EF;&#x7528; <code>write-mode</code> &#x66F4;&#x6539;&#x4E66;&#x5199;&#x6A21;&#x5F0F;&#xFF0C;&#x5C5E;&#x6027;&#x503C;&#xFF1A;</p>
+<h5 id="css-&#x4E66;&#x5199;&#x6A21;&#x5F0F;&#x7684;24&#x79CD;&#x65B9;&#x5F0F;"><a href="https://zhuanlan.zhihu.com/p/24979353" target="_blank">CSS &#x4E66;&#x5199;&#x6A21;&#x5F0F;&#x7684;24&#x79CD;&#x65B9;&#x5F0F;</a></h5>
+<pre><code class="lang-css"><span class="hljs-comment">/* &#x5173;&#x952E;&#x503C; */</span> 
+<span class="hljs-selector-tag">horizontal-tb</span>&#xFF1A;&#x6C34;&#x5E73;&#x65B9;&#x5411;&#x81EA;&#x4E0A;&#x800C;&#x4E0B;&#x7684;&#x4E66;&#x5199;&#x65B9;&#x5F0F;&#x3002;&#x5373; <span class="hljs-selector-tag">left-right-top-bottom</span>
+<span class="hljs-selector-tag">vertical-rl</span>&#xFF1A;&#x5782;&#x76F4;&#x65B9;&#x5411;&#x81EA;&#x53F3;&#x800C;&#x5DE6;&#x7684;&#x4E66;&#x5199;&#x65B9;&#x5F0F;&#x3002;&#x5373; <span class="hljs-selector-tag">top-bottom-right-left</span>
+<span class="hljs-selector-tag">vertical-lr</span>&#xFF1A;&#x5782;&#x76F4;&#x65B9;&#x5411;&#x5185;&#x5185;&#x5BB9;&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#xFF0C;&#x6C34;&#x5E73;&#x65B9;&#x5411;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;
+<span class="hljs-selector-tag">sideways-rl</span>&#xFF1A;&#x5185;&#x5BB9;&#x5782;&#x76F4;&#x65B9;&#x5411;&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#x6392;&#x5217;
+<span class="hljs-selector-tag">sideways-lr</span>&#xFF1A;&#x5185;&#x5BB9;&#x5782;&#x76F4;&#x65B9;&#x5411;&#x4ECE;&#x4E0B;&#x5230;&#x4E0A;&#x6392;&#x5217;
+<span class="hljs-comment">/*&#x9664;&#x706B;&#x72D0;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x90FD;&#x4E0D;&#x652F;&#x6301; sideways-*/</span>
+</code></pre>
+<p>&#x5728;&#x6C34;&#x5E73;&#x4E66;&#x5199;&#x6A21;&#x5F0F;&#xFF08;&#x9ED8;&#x8BA4;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-comment">/*&#x5757;&#x7EA7;&#x65B9;&#x5411;&#xFF1A;&#x7531;&#x4E0A;&#x5230;&#x4E0B;&#xFF1B;&#x884C;&#x5185;&#x65B9;&#x5411;&#xFF1A;&#x6C34;&#x5E73;&#x65B9;&#x5411;&#xFF0C;&#x4ECE;&#x5DE6;&#x81F3;&#x53F3;&#x3002; */</span>
+<span class="hljs-selector-class">.h</span> {
+    <span class="hljs-attribute">writing-mode</span>: horizontal-tb;
+    <span class="hljs-attribute">direction</span>: ltr;
+}
+</code></pre>
+<p>&#x5728;&#x5782;&#x76F4;&#x4E66;&#x5199;&#x6A21;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.v</span> {
+    <span class="hljs-attribute">writing-mode</span>: vertical-rl; 
+}
+</code></pre>
+<blockquote>
+<p><strong><code>direction</code></strong> &#xFF1A;&#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x6587;&#x672C;&#x3001;&#x8868;&#x5217;&#x6C34;&#x5E73;&#x6EA2;&#x51FA;&#x7684;&#x65B9;&#x5411;&#x3002; <code>rtl</code> &#x8868;&#x793A;&#x4ECE;&#x53F3;&#x5230;&#x5DE6; (&#x7C7B;&#x4F3C;&#x5E0C;&#x4F2F;&#x6765;&#x8BED;&#x6216;&#x963F;&#x62C9;&#x4F2F;&#x8BED;)&#xFF0C; <code>ltr</code> &#x8868;&#x793A;&#x4ECE;&#x5DE6;&#x5230;&#x53F3; (&#x7C7B;&#x4F3C;&#x82F1;&#x8BED;&#x7B49;&#x5927;&#x90E8;&#x5206;&#x8BED;&#x8A00;)&#x3002;</p>
+</blockquote>
+<h3 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;">&#x53C2;&#x8003;&#x94FE;&#x63A5;</h3>
+<p><a href="https://blog.doyoe.com/2013/12/31/css/margin&#x7CFB;&#x5217;&#x4E4B;&#x5E03;&#x5C40;&#x7BC7;/" target="_blank">margin&#x7CFB;&#x5217;&#x6587;&#x7AE0;</a> </p>
+<footer class="page-footer"><span class="copyright">&#xA9; lizhao all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-10-15 23:10:31
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="00-CSS基础知识.html" class="navigation navigation-prev " aria-label="Previous page: CSS基础知识">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02-由z-index引发的层叠上下文思考.html" class="navigation navigation-next " aria-label="Next page: 由Z Index引发的层叠上下文思考">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CSS探索系列 Margin","level":"2.2","depth":1,"next":{"title":"由Z Index引发的层叠上下文思考","level":"2.3","depth":1,"path":"css探索系列/02-由z-index引发的层叠上下文思考.md","ref":"css探索系列/02-由z-index引发的层叠上下文思考.md","articles":[]},"previous":{"title":"CSS基础知识","level":"2.1","depth":1,"path":"css探索系列/00-CSS基础知识.md","ref":"css探索系列/00-CSS基础知识.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","summary","theme-comscore","splitter","fontsettings","tbfed-pagefooter","theme-default","pageview-count","accordion","sharing-plus","klipse","back-to-top-button","chapter-fold","livereload"],"root":"/","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"livereload":{},"summary":{},"splitter":{},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"twitter":false,"vk":false,"pocket":false,"google":true,"qzone":true},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"search-plus":{}},"theme":"default","page":{"title":"前端知识库(lizh)"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"authorName":"lizhao"},"title":"LIZHAO","gitbook":"3.2.3"},"file":{"path":"css探索系列/01-CSS探索系列-margin.md","mtime":"2021-10-15T15:10:31.293Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-15T16:58:39.485Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

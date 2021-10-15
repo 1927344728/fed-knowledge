@@ -1,0 +1,1654 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>JavaScript之Touch事件 · LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="JavaScript之键盘事件.html" />
+    
+    
+    <link rel="prev" href="JavaScript之Promise.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../bugs/00-前端调试随笔.html">
+            
+                <a href="../../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../bugs/05-JS常见问题概览.html">
+            
+                <a href="../../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../bugs/07-小程序问题概览.html">
+            
+                <a href="../../bugs/07-小程序问题概览.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    小程序问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../css探索系列/00-CSS基础知识.html">
+            
+                <a href="../../css探索系列/00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../css探索系列/01-CSS探索系列-margin.html">
+            
+                <a href="../../css探索系列/01-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../css探索系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../../css探索系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../css探索系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../../css探索系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../css探索系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../../css探索系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../../css探索系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../../css探索系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../../css探索系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="../../css探索系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../../css探索系列/11-CSS3中一些高级属性的应用.html">
+            
+                <a href="../../css探索系列/11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../../css探索系列/14-CSS探索系列-line-height.html">
+            
+                <a href="../../css探索系列/14-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../../css探索系列/_关于css.html">
+            
+                <a href="../../css探索系列/_关于css.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../frontend/00-关于前端.html">
+            
+                <a href="../../frontend/00-关于前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    关于前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../frontend/00-基础-02-浏览器工作原理.html">
+            
+                <a href="../../frontend/00-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../../frontend/00-进阶-04-如何保证高质量代码.html">
+            
+                <a href="../../frontend/00-进阶-04-如何保证高质量代码.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    进阶 04 如何保证高质量代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../../frontend/01-聊一聊Cookie的一些问题.html">
+            
+                <a href="../../frontend/01-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../../frontend/02-如何理解HTTP响应的状态码.html">
+            
+                <a href="../../frontend/02-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../../frontend/代码规范/">
+            
+                <a href="../../frontend/代码规范/">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.6.1" data-path="../../frontend/代码规范/00-W3C标准.html">
+            
+                <a href="../../frontend/代码规范/00-W3C标准.html">
+            
+                    
+                        <b>4.6.1.</b>
+                    
+                    W3C标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.2" data-path="../../frontend/代码规范/01-HTML.html">
+            
+                <a href="../../frontend/代码规范/01-HTML.html">
+            
+                    
+                        <b>4.6.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.3" data-path="../../frontend/代码规范/02-CSS.html">
+            
+                <a href="../../frontend/代码规范/02-CSS.html">
+            
+                    
+                        <b>4.6.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.4" data-path="../../frontend/代码规范/03-JS.html">
+            
+                <a href="../../frontend/代码规范/03-JS.html">
+            
+                    
+                        <b>4.6.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.5" data-path="../../frontend/代码规范/04-其他.html">
+            
+                <a href="../../frontend/代码规范/04-其他.html">
+            
+                    
+                        <b>4.6.5.</b>
+                    
+                    其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../html探索系列/00-HTML基础知识.html">
+            
+                <a href="../../html探索系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../html探索系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../../html探索系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../../html探索系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../../html探索系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../../html探索系列/_关于html.html">
+            
+                <a href="../../html探索系列/_关于html.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Js探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../00-JS基础知识.html">
+            
+                <a href="../00-JS基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    JS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../01-谈谈JavaScript的作用域和上下文.html">
+            
+                <a href="../01-谈谈JavaScript的作用域和上下文.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../02-JavaScript-Date的使用和日期时间字符串格式.html">
+            
+                <a href="../02-JavaScript-Date的使用和日期时间字符串格式.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    JavaScript Date的使用和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../03-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../03-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../04-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../04-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../05-Canvas基础入门篇.html">
+            
+                <a href="../05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../06-SVG基础入门篇.html">
+            
+                <a href="../06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    JavaScript笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1" data-path="JavaScript之Ajax.html">
+            
+                <a href="JavaScript之Ajax.html">
+            
+                    
+                        <b>6.8.1.</b>
+                    
+                    JavaScript之Ajax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2" data-path="JavaScript之Promise.html">
+            
+                <a href="JavaScript之Promise.html">
+            
+                    
+                        <b>6.8.2.</b>
+                    
+                    JavaScript之Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.8.3" data-path="JavaScript之Touch事件.html">
+            
+                <a href="JavaScript之Touch事件.html">
+            
+                    
+                        <b>6.8.3.</b>
+                    
+                    JavaScript之Touch事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.4" data-path="JavaScript之键盘事件.html">
+            
+                <a href="JavaScript之键盘事件.html">
+            
+                    
+                        <b>6.8.4.</b>
+                    
+                    JavaScript之键盘事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../_关于Javascript.html">
+            
+                <a href="../_关于Javascript.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../nodeJs/">
+            
+                <a href="../nodeJs/">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    NodeJs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.10.1" data-path="../nodeJs/00-Node.js的三种调试方法.html">
+            
+                <a href="../nodeJs/00-Node.js的三种调试方法.html">
+            
+                    
+                        <b>6.10.1.</b>
+                    
+                    Node.Js的三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.2" data-path="../nodeJs/01-npm模块的一些机制.html">
+            
+                <a href="../nodeJs/01-npm模块的一些机制.html">
+            
+                    
+                        <b>6.10.2.</b>
+                    
+                    Npm模块的一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.3" data-path="../nodeJs/02-npm常用命令.html">
+            
+                <a href="../nodeJs/02-npm常用命令.html">
+            
+                    
+                        <b>6.10.3.</b>
+                    
+                    Npm常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.4" data-path="../nodeJs/03-从零开始，开发一个NPM包.html">
+            
+                <a href="../nodeJs/03-从零开始，开发一个NPM包.html">
+            
+                    
+                        <b>6.10.4.</b>
+                    
+                    从零开始，开发一个NPM包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../../research/02-如何监控前端异常？.html">
+            
+                <a href="../../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../../research/03-H5页面的跳转、刷新、回退+刷新.html">
+            
+                <a href="../../research/03-H5页面的跳转、刷新、回退+刷新.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    H5页面的跳转、刷新、回退+刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>7.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../../research/Javascript加密混淆.html">
+            
+                <a href="../../research/Javascript加密混淆.html">
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="../../research/Vue如何导入TypeScript.html">
+            
+                <a href="../../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>7.8.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.9" data-path="../../research/移动端PDF预览.html">
+            
+                <a href="../../research/移动端PDF预览.html">
+            
+                    
+                        <b>7.9.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.10" data-path="../../research/纯CSS绘制箭头.html">
+            
+                <a href="../../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>7.10.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11" data-path="../../research/网站性能测量和优化方法.html">
+            
+                <a href="../../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>7.11.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../../tech/04-sublime3插件篇.html">
+            
+                <a href="../../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../../tech/05-Charles安装及使用.html">
+            
+                <a href="../../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../../tools/Git/">
+            
+                <a href="../../tools/Git/">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" data-path="../../tools/Git/01-Git安装、使用及常用命令.html">
+            
+                <a href="../../tools/Git/01-Git安装、使用及常用命令.html">
+            
+                    
+                        <b>9.1.1.</b>
+                    
+                    Git安装、使用及常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2" data-path="../../tools/Git/02-git-clone速度太慢的解决办法.html">
+            
+                <a href="../../tools/Git/02-git-clone速度太慢的解决办法.html">
+            
+                    
+                        <b>9.1.2.</b>
+                    
+                    Git Clone速度太慢的解决办法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3" data-path="../../tools/Git/03-Git常见问题.html">
+            
+                <a href="../../tools/Git/03-Git常见问题.html">
+            
+                    
+                        <b>9.1.3.</b>
+                    
+                    Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../../tools/Gitbook/">
+            
+                <a href="../../tools/Gitbook/">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    Gitbook
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="../../tools/Gitbook/01-gitbook入门篇.html">
+            
+                <a href="../../tools/Gitbook/01-gitbook入门篇.html">
+            
+                    
+                        <b>9.2.1.</b>
+                    
+                    Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" data-path="../../tools/Gitbook/02-gitbook插件篇.html">
+            
+                <a href="../../tools/Gitbook/02-gitbook插件篇.html">
+            
+                    
+                        <b>9.2.2.</b>
+                    
+                    Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.3" data-path="../../tools/Gitbook/03-gitbook进阶篇.html">
+            
+                <a href="../../tools/Gitbook/03-gitbook进阶篇.html">
+            
+                    
+                        <b>9.2.3.</b>
+                    
+                    Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >JavaScript之Touch事件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="javascript&#x7B14;&#x8BB0;&#x4E4B;touch&#x4E8B;&#x4EF6;">JavaScript&#x7B14;&#x8BB0;&#x4E4B;Touch&#x4E8B;&#x4EF6;</h2>
+<p>&#x4E3A;&#x4E86;&#x7ED9;&#x57FA;&#x4E8E;&#x89E6;&#x6478;&#x7684;&#x7528;&#x6237;&#x754C;&#x9762;&#x63D0;&#x4F9B;&#x9AD8;&#x8D28;&#x91CF;&#x7684;&#x652F;&#x6301;&#xFF0C;Touch &#x4E8B;&#x4EF6;&#x63D0;&#x4F9B;&#x4E86;&#x5728;&#x89E6;&#x6478;&#x5C4F;&#x6216;&#x89E6;&#x63A7;&#x677F;&#x4E0A;&#x89E3;&#x91CA;&#x624B;&#x6307;&#xFF08;&#x6216;&#x89E6;&#x63A7;&#x7B14;&#xFF09;&#x6D3B;&#x52A8;&#x7684;&#x80FD;&#x529B;&#x3002;</p>
+<p>Touch &#x4E8B;&#x4EF6;&#x63A5;&#x53E3;&#x662F;&#x8F83;&#x4E3A;&#x5E95;&#x5C42;&#x7684; API&#xFF0C;&#x53EF;&#x4E3A;&#x7279;&#x5B9A;&#x7A0B;&#x5E8F;&#x63D0;&#x4F9B;&#x591A;&#x70B9;&#x89E6;&#x63A7;&#x4EA4;&#x4E92;&#xFF08;&#x6BD4;&#x5982;&#x53CC;&#x6307;&#x624B;&#x52BF;&#xFF09;&#x7684;&#x652F;&#x6301;&#x3002;&#x591A;&#x70B9;&#x89E6;&#x63A7;&#x4EA4;&#x4E92;&#x5F00;&#x59CB;&#x4E8E;&#x4E00;&#x4E2A;&#x624B;&#x6307;&#xFF08;&#x6216;&#x89E6;&#x63A7;&#x7B14;&#xFF09;&#x5F00;&#x59CB;&#x63A5;&#x89E6;&#x8BBE;&#x5907;&#x5E73;&#x9762;&#x7684;&#x65F6;&#x523B;&#x3002;&#x968F;&#x540E;&#x5176;&#x4ED6;&#x624B;&#x6307;&#x4E5F;&#x53EF;&#x89E6;&#x6478;&#x8BBE;&#x5907;&#x8868;&#x9762;&#xFF0C;&#x5E76;&#x968F;&#x610F;&#x8FDB;&#x884C;&#x5212;&#x52A8;&#x3002;&#x5F53;&#x6240;&#x6709;&#x624B;&#x6307;&#x79BB;&#x5F00;&#x8BBE;&#x5907;&#x5E73;&#x9762;&#x65F6;&#xFF0C;&#x4EA4;&#x4E92;&#x7ED3;&#x675F;&#x3002;&#x6574;&#x4E2A;&#x4EA4;&#x4E92;&#x671F;&#x95F4;&#xFF0C;&#x7A0B;&#x5E8F;&#x63A5;&#x6536;&#x5F00;&#x59CB;&#x3001;&#x79FB;&#x52A8;&#x3001;&#x7ED3;&#x675F;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;&#x7684;&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#x3002;</p>
+<h3 id="&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#x7684;api">&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#x7684;API</h3>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x89E6;&#x6478; API &#x7531;&#x4E09;&#x4E2A;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#x3002;</p>
+<ul>
+<li>Touch&#xFF1A;&#x8868;&#x793A;&#x7528;&#x6237;&#x4E0E;&#x89E6;&#x6478;&#x8868;&#x9762;&#x95F4;&#x7684;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x63A5;&#x89E6;&#x70B9;&#x3002;</li>
+<li>TouchList&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x7EC4; Touch&#xFF0C;&#x7528;&#x4E8E;&#x591A;&#x70B9;&#x89E6;&#x63A7;&#x7684;&#x60C5;&#x51B5;&#x3002;</li>
+<li>TouchEvent&#xFF1A;&#x8868;&#x793A;&#x4F4D;&#x4E8E;&#x8868;&#x9762;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x89E6;&#x6478;&#x70B9;&#x7684;&#x67D0;&#x4E2A;&#x72B6;&#x6001;&#x53D1;&#x751F;&#x6539;&#x53D8;&#x65F6;&#x4EA7;&#x751F;&#x7684;&#x4E8B;&#x4EF6;&#x3002;</li>
+</ul>
+<p>Touch &#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x7528;&#x6765;&#x8868;&#x793A;&#x89E6;&#x6478;&#x70B9;&#xFF08;&#x4E00;&#x6839;&#x624B;&#x6307;&#x6216;&#x8005;&#x4E00;&#x6839;&#x89E6;&#x6478;&#x7B14;&#xFF09;&#xFF0C;&#x5305;&#x62EC;&#x4F4D;&#x7F6E;&#x3001;&#x5927;&#x5C0F;&#x3001;&#x5F62;&#x72B6;&#x3001;&#x538B;&#x529B;&#x3001;&#x76EE;&#x6807;&#x5143;&#x7D20;&#x7B49;&#x5C5E;&#x6027;&#x3002;&#x6709;&#x65F6;&#xFF0C;&#x89E6;&#x6478;&#x52A8;&#x4F5C;&#x7531;&#x591A;&#x4E2A;&#x89E6;&#x6478;&#x70B9;&#xFF08;&#x591A;&#x6839;&#x624B;&#x6307;&#xFF09;&#x7EC4;&#x6210;&#xFF0C;&#x591A;&#x4E2A;&#x89E6;&#x6478;&#x70B9;&#x7684;&#x96C6;&#x5408;&#x7531; TouchList &#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x8868;&#x793A;&#x3002;TouchEvent &#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x4EE3;&#x8868;&#x7531;&#x89E6;&#x6478;&#x5F15;&#x53D1;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x53EA;&#x6709;&#x89E6;&#x6478;&#x5C4F;&#x624D;&#x4F1A;&#x5F15;&#x53D1;&#x8FD9;&#x4E00;&#x7C7B;&#x4E8B;&#x4EF6;&#x3002;</p>
+<p>&#x5728;&#x5F88;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#x548C;&#x9F20;&#x6807;&#x4E8B;&#x4EF6;&#x4F1A;&#x540C;&#x65F6;&#x88AB;&#x89E6;&#x53D1;&#xFF08;&#x76EE;&#x7684;&#x662F;&#x8BA9;&#x6CA1;&#x6709;&#x5BF9;&#x89E6;&#x6478;&#x8BBE;&#x5907;&#x4F18;&#x5316;&#x7684;&#x4EE3;&#x7801;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x5728;&#x89E6;&#x6478;&#x8BBE;&#x5907;&#x4E0A;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF09;&#x3002;&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;&#x4E86;&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x8C03;&#x7528; event.preventDefault() &#x6765;&#x963B;&#x6B62;&#x9F20;&#x6807;&#x4E8B;&#x4EF6;&#x88AB;&#x89E6;&#x53D1;&#x3002;</p>
+<h3 id="&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#x7684;&#x7C7B;&#x578B;">&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#x7684;&#x7C7B;&#x578B;</h3>
+<p>&#x4E3A;&#x4E86;&#x533A;&#x522B;&#x89E6;&#x6478;&#x76F8;&#x5173;&#x7684;&#x72B6;&#x6001;&#x6539;&#x53D8;&#xFF0C;&#x5B58;&#x5728;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x68C0;&#x67E5;&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#x7684; TouchEvent.type &#x5C5E;&#x6027;&#x6765;&#x786E;&#x5B9A;&#x5F53;&#x524D;&#x4E8B;&#x4EF6;&#x5C5E;&#x4E8E;&#x54EA;&#x79CD;&#x7C7B;&#x578B;&#x3002;&#x89E6;&#x6478;&#x5F15;&#x53D1;&#x7684;&#x4E8B;&#x4EF6;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#xFF1A;</p>
+<ul>
+<li><p>touchstart&#xFF1A;&#x5F53;&#x7528;&#x6237;&#x5728;&#x89E6;&#x6478;&#x5E73;&#x9762;&#x4E0A;&#x653E;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A;&#x89E6;&#x70B9;&#x65F6;&#x89E6;&#x53D1;&#x3002;&#x4E8B;&#x4EF6;&#x7684;&#x76EE;&#x6807;&#x5143;&#x7D20;&#x5C06;&#x662F;&#x89E6;&#x70B9;&#x4F4D;&#x7F6E;&#x4E0A;&#x7684;&#x90A3;&#x4E2A;&#x76EE;&#x6807;&#x5143;&#x7D20;&#x3002;</p>
+</li>
+<li><p>touchend&#xFF1A;&#x5F53;&#x4E00;&#x4E2A;&#x89E6;&#x70B9;&#x88AB;&#x7528;&#x6237;&#x4ECE;&#x89E6;&#x6478;&#x5E73;&#x9762;&#x4E0A;&#x79FB;&#x9664;&#xFF08;&#x5373;&#x7528;&#x6237;&#x7684;&#x4E00;&#x4E2A;&#x624B;&#x6307;&#x6216;&#x624B;&#x5199;&#x7B14;&#x79BB;&#x5F00;&#x89E6;&#x6478;&#x5E73;&#x9762;&#xFF09;&#x65F6;&#x89E6;&#x53D1;&#x3002;&#x5F53;&#x89E6;&#x70B9;&#x79FB;&#x51FA;&#x89E6;&#x6478;&#x5E73;&#x9762;&#x7684;&#x8FB9;&#x754C;&#x65F6;&#x4E5F;&#x5C06;&#x89E6;&#x53D1;&#x3002;&#x4F8B;&#x5982;&#x7528;&#x6237;&#x5C06;&#x624B;&#x6307;&#x5212;&#x51FA;&#x5C4F;&#x5E55;&#x8FB9;&#x7F18;&#x3002;</p>
+<p>&#x4E8B;&#x4EF6;&#x7684;&#x76EE;&#x6807;&#x5143;&#x7D20;&#x4E0E;&#x89E6;&#x53D1; touchstart &#x4E8B;&#x4EF6;&#x7684;&#x76EE;&#x6807;&#x5143;&#x7D20;&#x76F8;&#x540C;&#xFF0C;&#x5373;&#x4F7F; touchend &#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x65F6;&#xFF0C;&#x89E6;&#x70B9;&#x5DF2;&#x7ECF;&#x79FB;&#x51FA;&#x4E86;&#x8BE5;&#x5143;&#x7D20; &#x3002;</p>
+<p>&#x5DF2;&#x7ECF;&#x88AB;&#x4ECE;&#x89E6;&#x6478;&#x5E73;&#x9762;&#x4E0A;&#x79FB;&#x9664;&#x7684;&#x89E6;&#x70B9;&#xFF0C;&#x53EF;&#x4EE5;&#x5728; changedTouches &#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x7684; TouchList &#x4E2D;&#x627E;&#x5230;&#x3002;</p>
+</li>
+<li><p>touchmove&#xFF1A;&#x5F53;&#x7528;&#x6237;&#x5728;&#x89E6;&#x6478;&#x5E73;&#x9762;&#x4E0A;&#x79FB;&#x52A8;&#x89E6;&#x70B9;&#x65F6;&#x89E6;&#x53D1;&#x3002;&#x4E8B;&#x4EF6;&#x7684;&#x76EE;&#x6807;&#x5143;&#x7D20;&#x548C;&#x89E6;&#x53D1; touchstart &#x4E8B;&#x4EF6;&#x7684;&#x76EE;&#x6807;&#x5143;&#x7D20;&#x76F8;&#x540C;&#xFF0C;&#x5373;&#x4F7F;&#x5F53; touchmove &#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x65F6;&#xFF0C;&#x89E6;&#x70B9;&#x5DF2;&#x7ECF;&#x79FB;&#x51FA;&#x4E86;&#x8BE5;&#x5143;&#x7D20; &#x3002;</p>
+<p>&#x5F53;&#x89E6;&#x70B9;&#x7684;&#x534A;&#x5F84;&#x3001;&#x65CB;&#x8F6C;&#x89D2;&#x5EA6;&#x4EE5;&#x53CA;&#x538B;&#x529B;&#x5927;&#x5C0F;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x4E5F;&#x5C06;&#x89E6;&#x53D1;&#x6B64;&#x4E8B;&#x4EF6;&#x3002;</p>
+</li>
+<li><p>touchcancel&#xFF1A;&#x5F53;&#x89E6;&#x70B9;&#x7531;&#x4E8E;&#x67D0;&#x4E9B;&#x539F;&#x56E0;&#x88AB;&#x4E2D;&#x65AD;&#x65F6;&#x89E6;&#x53D1;&#x3002;&#x6709;&#x51E0;&#x79CD;&#x53EF;&#x80FD;&#x7684;&#x539F;&#x56E0;&#x5982;&#x4E0B;&#xFF08;&#x5177;&#x4F53;&#x7684;&#x539F;&#x56E0;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x5907;&#x548C;&#x6D4F;&#x89C8;&#x5668;&#x6709;&#x6240;&#x4E0D;&#x540C;&#xFF09;&#xFF1A;</p>
+<ul>
+<li>&#x7531;&#x4E8E;&#x67D0;&#x4E2A;&#x4E8B;&#x4EF6;&#x51FA;&#x73B0;&#x800C;&#x53D6;&#x6D88;&#x4E86;&#x89E6;&#x6478;&#xFF1A;&#x4F8B;&#x5982;&#x89E6;&#x6478;&#x8FC7;&#x7A0B;&#x88AB;&#x5F39;&#x7A97;&#x6253;&#x65AD;&#x3002;</li>
+<li>&#x89E6;&#x70B9;&#x79BB;&#x5F00;&#x4E86;&#x6587;&#x6863;&#x7A97;&#x53E3;&#xFF0C;&#x800C;&#x8FDB;&#x5165;&#x4E86;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x754C;&#x9762;&#x5143;&#x7D20;&#x3001;&#x63D2;&#x4EF6;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x5916;&#x90E8;&#x5185;&#x5BB9;&#x533A;&#x57DF;&#x3002;</li>
+<li>&#x5F53;&#x7528;&#x6237;&#x4EA7;&#x751F;&#x7684;&#x89E6;&#x70B9;&#x4E2A;&#x6570;&#x8D85;&#x8FC7;&#x4E86;&#x8BBE;&#x5907;&#x652F;&#x6301;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x4ECE;&#x800C;&#x5BFC;&#x81F4; TouchList &#x4E2D;&#x6700;&#x65E9;&#x7684; Touch &#x5BF9;&#x8C61;&#x88AB;&#x53D6;&#x6D88;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h3 id="touch&#x63A5;&#x53E3;">Touch&#x63A5;&#x53E3;</h3>
+<p>Touch &#x5BF9;&#x8C61;&#x8868;&#x793A;&#x5728;&#x89E6;&#x63A7;&#x8BBE;&#x5907;&#x4E0A;&#x7684;&#x89E6;&#x6478;&#x70B9;&#x3002;&#x901A;&#x5E38;&#x662F;&#x6307;&#x624B;&#x6307;&#x6216;&#x8005;&#x89E6;&#x63A7;&#x7B14;&#x5728;&#x89E6;&#x5C4F;&#x8BBE;&#x5907;&#x6216;&#x8005;&#x89E6;&#x6478;&#x677F;&#x4E0A;&#x7684;&#x64CD;&#x4F5C;&#x3002;Touch &#x5BF9;&#x8C61;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x89E6;&#x70B9;&#xFF0C;&#x6BCF;&#x4E2A;&#x89E6;&#x70B9;&#x5305;&#x542B;&#x4F4D;&#x7F6E;&#xFF0C;&#x5927;&#x5C0F;&#xFF0C;&#x5F62;&#x72B6;&#xFF0C;&#x538B;&#x529B;&#x5927;&#x5C0F;&#xFF0C;&#x548C;&#x76EE;&#x6807;&#x5143;&#x7D20;&#x5C5E;&#x6027;&#x3002;</p>
+<p>Touch &#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x5C5E;&#x6027;&#x83B7;&#x53D6;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x4E09;&#x4E2A;&#x5C5E;&#x6027;&#x662F;&#x6709;&#x533A;&#x522B;&#xFF1A;</p>
+<ul>
+<li><code>touches</code>&#xFF1A;&#x5F53;&#x524D;&#x5C4F;&#x5E55;&#x4E0A;&#x6240;&#x6709;&#x89E6;&#x6478;&#x70B9;&#x7684;&#x96C6;&#x5408;&#x5217;&#x8868;</li>
+<li><code>targetTouches</code>&#xFF1A;&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;&#x7684;&#x90A3;&#x4E2A;&#x7ED3;&#x70B9;&#x4E0A;&#x7684;&#x89E6;&#x6478;&#x70B9;&#x7684;&#x96C6;&#x5408;&#x5217;&#x8868;</li>
+<li><code>changedTouches</code>&#xFF1A;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x65F6;&#x6539;&#x53D8;&#x7684;&#x89E6;&#x6478;&#x70B9;&#x7684;&#x96C6;&#x5408;</li>
+</ul>
+<h4 id="touch&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;">Touch&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;</h4>
+<pre><code class="lang-js">clientX: <span class="hljs-number">341.6842346191406</span>
+clientY: <span class="hljs-number">229.68423461914062</span>
+force: <span class="hljs-number">1</span>
+identifier: <span class="hljs-number">0</span>
+pageX: <span class="hljs-number">341.6842346191406</span>
+pageY: <span class="hljs-number">229.68423461914062</span>
+radiusX: <span class="hljs-number">12.105263710021973</span>
+radiusY: <span class="hljs-number">12.105263710021973</span>
+region: <span class="hljs-literal">null</span>
+rotationAngle: <span class="hljs-number">0</span>
+screenX: <span class="hljs-number">345.6000061035156</span>
+screenY: <span class="hljs-number">356</span>
+target: canvas.element_canvas1
+</code></pre>
+<ul>
+<li><p>identifier&#xFF1A;&#x53EA;&#x8BFB;&#x3002;&#x6B64; Touch &#x5BF9;&#x8C61;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x7B26;&#x3002; &#x4E00;&#x6B21;&#x89E6;&#x6478;&#x52A8;&#x4F5C;&#xFF08;&#x4F8B;&#x5982;&#x624B;&#x6307;&#x89E6;&#x6478;&#xFF09;&#x5728;&#x5E73;&#x9762;&#x4E0A;&#x79FB;&#x52A8;&#x7684;&#x6574;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x8BE5;&#x6807;&#x8BC6;&#x7B26;&#x4E0D;&#x53D8;&#x3002;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5B83;&#x6765;&#x5224;&#x65AD;&#x8DDF;&#x8E2A;&#x7684;&#x662F;&#x5426;&#x662F;&#x540C;&#x4E00;&#x6B21;&#x89E6;&#x6478;&#x8FC7;&#x7A0B;&#x3002;</p>
+</li>
+<li><p>screenX&#x3001;screenY&#xFF1A;&#x53EA;&#x8BFB;&#x3002;&#x89E6;&#x70B9;&#x76F8;&#x5BF9;&#x4E8E;&#x5C4F;&#x5E55;&#x5DE6;&#x8FB9;&#x7F18;&#x7684;X&#x5750;&#x6807;&#x3001;&#x4E0A;&#x8FB9;&#x7F18;&#x7684;Y&#x5750;&#x6807;&#x3002;</p>
+</li>
+<li><p>clientX&#x3001;clientY&#xFF1A;&#x53EA;&#x8BFB;&#x3002;&#x89E6;&#x70B9;&#x76F8;&#x5BF9;&#x4E8E;&#x53EF;&#x89C1;&#x89C6;&#x533A;&#x5DE6;&#x8FB9;&#x7F18;&#x7684;X&#x5750;&#x6807;&#x3001;&#x4E0A;&#x8FB9;&#x7F18;&#x7684;Y&#x5750;&#x6807;&#x3002;&#x4E0D;&#x5305;&#x62EC;&#x4EFB;&#x4F55;&#x6EDA;&#x52A8;&#x504F;&#x79FB;&#x3002;</p>
+</li>
+<li><p>pageX&#x3001;pageY&#xFF1A;&#x53EA;&#x8BFB;&#x3002;&#x89E6;&#x70B9;&#x76F8;&#x5BF9;&#x4E8E;HTML&#x6587;&#x6863;&#x5DE6;&#x8FB9;&#x7F18;&#x7684;X&#x5750;&#x6807;&#x3001;&#x4E0A;&#x8FB9;&#x7F18;&#x7684;Y&#x5750;&#x6807;&#x3002;&#x5F53;&#x5B58;&#x5728;&#x6C34;&#x5E73;&#x3001;&#x5782;&#x76F4;&#x6EDA;&#x52A8;&#x7684;&#x504F;&#x79FB;&#x65F6;&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x5305;&#x542B;&#x4E86;&#x6C34;&#x5E73;&#x3001;&#x5782;&#x76F4;&#x6EDA;&#x52A8;&#x7684;&#x504F;&#x79FB;&#x3002;</p>
+</li>
+<li><p>target&#xFF1A;&#x53EA;&#x8BFB;&#x3002;&#x8FD4;&#x56DE;&#x89E6;&#x6478;&#x70B9;&#x6700;&#x521D;&#x63A5;&#x89E6;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5373;&#x4F7F;&#x8FD9;&#x4E2A;&#x89E6;&#x6478;&#x70B9;&#x5DF2;&#x7ECF;&#x79FB;&#x51FA;&#x90A3;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x4EA4;&#x4E92;&#x533A;&#x57DF;&#x3002;</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF1A;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x5728;&#x89E6;&#x6478;&#x8FC7;&#x7A0B;&#x4E2D;&#x88AB;&#x79FB;&#x9664;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x4ECD;&#x7136;&#x4F1A;&#x6307;&#x5411;&#x5B83;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x4E5F;&#x4E0D;&#x4F1A;&#x5192;&#x6CE1;&#x5230; window &#x6216; document &#x5BF9;&#x8C61;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x5143;&#x7D20;&#x5728;&#x89E6;&#x6478;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EF;&#x80FD;&#x88AB;&#x79FB;&#x9664;&#xFF0C;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x662F;&#x5C06;&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#x7684;&#x76D1;&#x542C;&#x5668;&#x7ED1;&#x5B9A;&#x5230;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x672C;&#x8EAB;&#xFF0C;&#x9632;&#x6B62;&#x5143;&#x7D20;&#x88AB;&#x79FB;&#x9664;&#x540E;&#xFF0C;&#x65E0;&#x6CD5;&#x518D;&#x4ECE;&#x5B83;&#x7684;&#x4E0A;&#x4E00;&#x7EA7;&#x5143;&#x7D20;&#x4E0A;&#x4FA6;&#x6D4B;&#x5230;&#x4ECE;&#x8BE5;&#x5143;&#x7D20;&#x5192;&#x6CE1;&#x7684;&#x4E8B;&#x4EF6;&#x3002;</p>
+</li>
+<li><p>radiusX&#x3001;radiusY&#xFF1A;&#x53EA;&#x8BFB;&#x3002;&#x8FD4;&#x56DE;&#x80FD;&#x591F;&#x5305;&#x56F4;&#x63A5;&#x89E6;&#x533A;&#x57DF;&#x7684;&#x6700;&#x5C0F;&#x692D;&#x5706;&#x7684;&#x6C34;&#x5E73;&#x8F74;&#xFF08;X&#x8F74;&#xFF09;&#x3001;&#x5782;&#x76F4;&#x8F74;&#xFF08;Y&#x8F74;&#xFF09;&#x534A;&#x5F84;&#x3002;</p>
+</li>
+<li>rotationAngle&#xFF1A;&#x53EA;&#x8BFB;&#x3002;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;0&#x5230;90&#x7684;&#x89D2;&#x5EA6;&#x503C;&#xFF0C;&#x8868;&#x793A;&#x4E0A;&#x8FF0;&#x7531; radiusX &#x548C; radiusY &#x63CF;&#x8FF0;&#x7684;&#x692D;&#x5706;&#x4E3A;&#x4E86;&#x5C3D;&#x53EF;&#x80FD;&#x7CBE;&#x786E;&#x5730;&#x8986;&#x76D6;&#x7528;&#x6237;&#x4E0E;&#x5E73;&#x9762;&#x4E4B;&#x95F4;&#x7684;&#x63A5;&#x89E6;&#x533A;&#x57DF;&#x800C;&#x9700;&#x8981;&#x987A;&#x65F6;&#x9488;&#x65CB;&#x8F6C;&#x7684;&#x89D2;&#x5EA6;&#x3002;</li>
+<li>force&#xFF1A;&#x53EA;&#x8BFB;&#x3002;&#x8FD4;&#x56DE;&#x7528;&#x6237;&#x5BF9;&#x89E6;&#x6478;&#x5E73;&#x9762;&#x7684;&#x538B;&#x529B;&#x5927;&#x5C0F;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x4ECE;0.0(&#x6CA1;&#x6709;&#x538B;&#x529B;)&#x5230;1.0(&#x6700;&#x5927;&#x538B;&#x529B;)&#x7684;&#x6D6E;&#x70B9;&#x6570;&#x3002;</li>
+<li>region&#xFF1A;&#x6682;&#x65F6;&#x6CA1;&#x6709;&#x627E;&#x76F8;&#x5173;&#x8BF4;&#x660E;&#x3002;</li>
+</ul>
+<h3 id="touchlist&#x63A5;&#x53E3;">TouchList&#x63A5;&#x53E3;</h3>
+<p>TouchList &#x63A5;&#x53E3;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x89E6;&#x6478;&#x5E73;&#x9762;&#x4E0A;&#x6240;&#x6709;&#x89E6;&#x70B9;&#x7684;&#x5217;&#x8868;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x7528;&#x4E09;&#x6839;&#x624B;&#x6307;&#x63A5;&#x89E6;&#x5C4F;&#x5E55;&#xFF08;&#x6216;&#x8005;&#x89E6;&#x63A7;&#x677F;&#xFF09;&#xFF0C;&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x7684; TouchList &#x4F1A;&#x5305;&#x542B;&#x6BCF;&#x6839;&#x624B;&#x6307;&#x7684; Touch &#x5BF9;&#x8C61;&#xFF0C;&#x603B;&#x5171;&#x4E09;&#x4E2A;&#x3002;</p>
+<p><strong>TouchList&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF1A;</strong></p>
+<ul>
+<li>length&#xFF1A;&#x53EA;&#x8BFB;&#x3002;&#x8FD4;&#x56DE;TouchList&#x4E2D; Touch &#x5BF9;&#x8C61;&#x7684;&#x6570;&#x91CF;&#x3002;</li>
+<li>identifiedTouch()&#xFF1A;&#x5217;&#x8868;&#x4E2D;&#x6807;&#x793A;&#x7B26;&#x4E0E;&#x6307;&#x5B9A;&#x503C;&#x5339;&#x914D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;Touch &#x5BF9;&#x8C61;&#x4F1A;&#x88AB;&#x8FD4;&#x56DE;&#x3002;</li>
+<li>item()&#xFF1A;&#x8FD4;&#x56DE;&#x5217;&#x8868;&#x4E2D;&#x4EE5;&#x6307;&#x5B9A;&#x503C;&#x4F5C;&#x4E3A;&#x7D22;&#x5F15;&#x7684; Touch &#x5BF9;&#x8C61;&#x3002;</li>
+</ul>
+<h3 id="touchevent&#x63A5;&#x53E3;">TouchEvent&#x63A5;&#x53E3;</h3>
+<p>TouchEvent &#x662F;&#x4E00;&#x7C7B;&#x63CF;&#x8FF0;&#x624B;&#x6307;&#x5728;&#x89E6;&#x6478;&#x5E73;&#x9762;&#xFF08;&#x89E6;&#x6478;&#x5C4F;&#x3001;&#x89E6;&#x6478;&#x677F;&#x7B49;&#xFF09;&#x7684;&#x72B6;&#x6001;&#x53D8;&#x5316;&#x7684;&#x4E8B;&#x4EF6;&#x3002;&#x8FD9;&#x7C7B;&#x4E8B;&#x4EF6;&#x7528;&#x4E8E;&#x63CF;&#x8FF0;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x89E6;&#x70B9;&#xFF0C;&#x4F7F;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x68C0;&#x6D4B;&#x89E6;&#x70B9;&#x7684;&#x79FB;&#x52A8;&#xFF0C;&#x89E6;&#x70B9;&#x7684;&#x589E;&#x52A0;&#x548C;&#x51CF;&#x5C11;&#xFF0C;&#x7B49;&#x7B49;&#x3002;</p>
+<p>TouchEvent &#x7684;&#x5C5E;&#x6027;&#x7EE7;&#x627F;&#x4E86; UIEvent &#x548C; Event&#xFF1A;</p>
+<pre><code class="lang-js">altKey: <span class="hljs-literal">false</span>
+ctrlKey: <span class="hljs-literal">false</span>
+shiftKey: <span class="hljs-literal">false</span>
+metaKey: <span class="hljs-literal">false</span>
+touches: TouchList {<span class="hljs-number">0</span>: Touch, length: <span class="hljs-number">1</span>}
+targetTouches: TouchList {<span class="hljs-number">0</span>: Touch, length: <span class="hljs-number">1</span>}
+changedTouches: TouchList {<span class="hljs-number">0</span>: Touch, length: <span class="hljs-number">1</span>}
+
+<span class="hljs-comment">// Event&#x4E8B;&#x4EF6;&#x5C5E;&#x6027;</span>
+currentTarget: <span class="hljs-literal">null</span>
+srcElement: canvas.element_canvas1
+target: canvas.element_canvas1
+type: <span class="hljs-string">&quot;touchstart&quot;</span>
+bubbles: <span class="hljs-literal">true</span> <span class="hljs-comment">// &#x8BE5;&#x4E8B;&#x4EF6;&#x662F;&#x5426;&#x4F1A;&#x5728; DOM &#x4E2D;&#x5192;&#x6CE1;</span>
+cancelBubble: <span class="hljs-literal">false</span> <span class="hljs-comment">// stopPropagation() &#x7684;&#x5386;&#x53F2;&#x522B;&#x540D;&#x3002;&#x5728;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5668;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E4B;&#x524D;&#xFF0C;&#x5C06;&#x6B64;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A; true&#xFF0C;&#x4EA6;&#x53EF;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7EE7;&#x7EED;&#x5192;&#x6CE1;</span>
+cancelable: <span class="hljs-literal">true</span> <span class="hljs-comment">// &#x8868;&#x793A;&#x4E8B;&#x4EF6;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x53D6;&#x6D88;</span>
+composed: <span class="hljs-literal">true</span> <span class="hljs-comment">// &#x8868;&#x793A;&#x4E8B;&#x4EF6;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x7A7F;&#x8FC7; Shadow DOM &#x548C;&#x5E38;&#x89C4; DOM &#x4E4B;&#x95F4;&#x7684;&#x9694;&#x9602;&#x8FDB;&#x884C;&#x5192;&#x6CE1;</span>
+defaultPrevented: <span class="hljs-literal">true</span> <span class="hljs-comment">// &#x8868;&#x793A; preventDefault() &#x65B9;&#x6CD5;&#x662F;&#x5426;&#x53D6;&#x6D88;&#x4E86;&#x4E8B;&#x4EF6;&#x7684;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;</span>
+eventPhase: <span class="hljs-number">0</span> <span class="hljs-comment">// &#x8868;&#x793A;&#x4E8B;&#x4EF6;&#x6D41;&#x6B63;&#x88AB;&#x5904;&#x7406;&#x5230;&#x4E86;&#x54EA;&#x4E2A;&#x9636;&#x6BB5;</span>
+isTrusted: <span class="hljs-literal">true</span> <span class="hljs-comment">// &#x8868;&#x793A;&#x4E8B;&#x4EF6;&#x662F;&#x7531;&#x6D4F;&#x89C8;&#x5668;&#xFF08;&#x4F8B;&#x5982;&#x7528;&#x6237;&#x70B9;&#x51FB;&#xFF09;&#x53D1;&#x8D77;&#x7684;&#xFF0C;&#x8FD8;&#x662F;&#x7531;&#x811A;&#x672C;&#xFF08;&#x4F7F;&#x7528;&#x4E8B;&#x4EF6;&#x521B;&#x5EFA;&#x65B9;&#x6CD5;&#xFF09;&#x53D1;&#x51FA;&#x7684;&#x3002;</span>
+path: <span class="hljs-comment">// &#x4E00;&#x4E2A;&#x7531;&#x4E8B;&#x4EF6;&#x6D41;&#x6240;&#x7ECF;&#x8FC7;&#x7684; DOM &#x8282;&#x70B9;&#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;&#x3002;&#x5B9E;&#x9A8C;&#x4E2D;&#xFF0C;&#x53EF;&#x80FD;&#x7528; deepPath &#x7C7B;&#x4F3C;</span>
+returnValue: <span class="hljs-literal">false</span> <span class="hljs-comment">// &#x65E7;&#x7248; IE &#x5F15;&#x5165;&#x7684;&#x4E00;&#x4E2A;&#x975E;&#x6807;&#x51C6;&#x5386;&#x53F2;&#x5C5E;&#x6027;&#xFF0C;&#x4E3A;&#x4FDD;&#x8BC1;&#x4F9D;&#x8D56;&#x6B64;&#x5C5E;&#x6027;&#x7684;&#x7F51;&#x9875;&#x6B63;&#x5E38;&#x8FD0;&#x4F5C;&#xFF0C;&#x6B64;&#x5C5E;&#x6027;&#x6700;&#x7EC8;&#x88AB;&#x6536;&#x5165;&#x89C4;&#x8303;</span>
+timeStamp: <span class="hljs-number">2128.1449999660254</span> <span class="hljs-comment">// &#x4E8B;&#x4EF6;&#x521B;&#x5EFA;&#x65F6;&#x7684;&#x65F6;&#x95F4;&#x6233;&#xFF08;&#x7CBE;&#x5EA6;&#x4E3A;&#x6BEB;&#x79D2;&#xFF09;</span>
+
+<span class="hljs-comment">// UIEvent&#x4E8B;&#x4EF6;&#x5C5E;&#x6027;</span>
+sourceCapabilities: <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;InputDeviceCapabilities&#xFF0C;&#x5176;&#x63D0;&#x4F9B;&#x4E86;&#x5173;&#x4E8E;&#x8D1F;&#x8D23;&#x4EA7;&#x751F;&#x7684;&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#xFF0C;&#x7269;&#x7406;&#x88C5;&#x7F6E;&#x4FE1;&#x606F;&#x7684;&#x63A5;&#x53E3;&#x3002;</span>
+detail: <span class="hljs-number">0</span> <span class="hljs-comment">// &#x5F53;&#x503C;&#x4E3A;&#x975E;&#x7A7A;&#x7684;&#x65F6;&#x5019;, &#x63D0;&#x4F9B;&#x5F53;&#x524D;&#x70B9;&#x51FB;&#x6570;(&#x548C;&#x73AF;&#x5883;&#x6709;&#x5173;) &#x3002;</span>
+view: <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x7684;&#x751F;&#x6210;&#x4E8B;&#x4EF6;&#x7684; document.defaultView &#x5BF9;&#x8C61;&#x3002;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#xFF0C;&#x8FD9;&#x662F;&#x4E8B;&#x4EF6;&#x6240;&#x5728;&#x7684; Window &#x5BF9;&#x8C61;&#x3002;</span>
+which: <span class="hljs-number">0</span> <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BF9;&#x5E94;&#xFF08;&#x952E;&#x76D8;&#xFF09;&#x6309;&#x4E0B;&#x7684;&#x6570;&#x5B57;&#x7C7B;&#x578B;&#x7684; keyCode &#xFF0C;&#x6216;&#x8005;&#x4E00;&#x4E2A;&#x5B57;&#x6BCD;&#x6570;&#x5B57;&#x952E;&#x6309;&#x4E0B;&#x65F6;&#x7684;&#x5B57;&#x7B26;&#x7801;</span>
+</code></pre>
+<ul>
+<li><p>type&#xFF1A;&#x8868;&#x793A;&#x4E8B;&#x4EF6;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x3002;</p>
+</li>
+<li><p>altKey&#xFF1A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x8868;&#x793A;&#x89E6;&#x6478;&#x65F6;&#x662F;&#x5426;&#x6309;&#x4E0B;&#x4E86; Alt &#x952E;&#x3002;</p>
+</li>
+<li><p>ctrlKey&#xFF1A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x8868;&#x793A;&#x89E6;&#x6478;&#x65F6;&#x662F;&#x5426;&#x6309;&#x4E0B;&#x4E86; Ctrl &#x952E;&#x3002;</p>
+</li>
+<li><p>shiftKey&#xFF1A;&#x5E03;&#x5C14;&#x503C;&#xFF1A;&#x8868;&#x793A;&#x89E6;&#x6478;&#x65F6;&#x662F;&#x5426;&#x6309;&#x4E0B;&#x4E86; Shift &#x952E;&#x3002;</p>
+</li>
+<li><p>metaKey&#xFF1A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x8868;&#x793A;&#x89E6;&#x6478;&#x65F6;&#x662F;&#x5426;&#x6309;&#x4E0B;&#x4E86; Meta &#x952E;&#xFF08;&#x6216; Windows &#x952E;&#xFF09;&#x3002;</p>
+</li>
+<li><p>touches&#xFF1A;&#x5F53;&#x524D;&#x5C4F;&#x5E55;&#x4E0A;&#x6240;&#x6709;&#x89E6;&#x6478;&#x70B9;&#x7684;&#x96C6;&#x5408;&#x5217;&#x8868;&#x3002;</p>
+</li>
+<li><p>targetTouches&#xFF1A;&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;&#x7684;&#x90A3;&#x4E2A;&#x7ED3;&#x70B9;&#x4E0A;&#x7684;&#x89E6;&#x6478;&#x70B9;&#x7684;&#x96C6;&#x5408;&#x5217;&#x8868;&#x3002;</p>
+</li>
+<li><p>changedTouches&#xFF1A;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x65F6;&#x6539;&#x53D8;&#x7684;&#x89E6;&#x6478;&#x70B9;&#x7684;&#x96C6;&#x5408;&#x3002;</p>
+</li>
+<li><p>currentTarget&#xFF1A;&#x6307;&#x5411;&#x4E8B;&#x4EF6;&#x6240;&#x7ED1;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#xFF0C;<strong>&#x662F;&#x76D1;&#x542C;&#x4E8B;&#x4EF6;&#x8005;</strong>&#x3002;&#x5728;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x5185;&#x90E8;&#xFF0C;&#x5BF9;&#x8C61; this &#x59CB;&#x7EC8;&#x7B49;&#x4E8E;currentTarget &#x7684;&#x503C;&#x3002;</p>
+</li>
+<li><p>target&#xFF1A;&#x6307;&#x5411;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#x7684;&#x5143;&#x7D20;&#xFF0C;<strong>&#x662F;&#x4E8B;&#x4EF6;&#x7684;&#x771F;&#x6B63;&#x53D1;&#x51FA;&#x8005;</strong>&#x3002;IE&#x6709;&#x517C;&#x5BB9;&#x95EE;&#x9898;&#x3002;</p>
+</li>
+<li><p>srcElement&#xFF1A;&#x548C; target &#x76F8;&#x540C;&#xFF0C;firFox &#x4E0D;&#x517C;&#x5BB9;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x83B7;&#x53D6;&#x76F4;&#x63A5;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x7684;&#x517C;&#x5BB9;&#x5199;&#x6CD5;</span>
+<span class="hljs-keyword">let</span> target = e.target || e.srcElement
+</code></pre>
+</li>
+</ul>
+<h3 id="&#x5E38;&#x89C1;&#x95EE;&#x9898;">&#x5E38;&#x89C1;&#x95EE;&#x9898;</h3>
+<h5 id="targettouches-&#x548C;-changedtouches-&#x7684;&#x533A;&#x522B;">targetTouches &#x548C; changedTouches &#x7684;&#x533A;&#x522B;</h5>
+<p>targetTouches &#x662F;&#x5F53;&#x524D;&#x89E6;&#x6478;&#x5143;&#x7D20;&#x4E0A;&#x7684;&#x89E6;&#x6478;&#x70B9;&#x7684;&#x96C6;&#x5408;&#x5217;&#x8868;&#xFF1B;changedTouches &#x662F;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x65F6;&#x6539;&#x53D8;&#x7684;&#x89E6;&#x6478;&#x70B9;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x5305;&#x62EC;&#x5DF2;&#x7ECF;&#x88AB;&#x4ECE;&#x89E6;&#x6478;&#x5E73;&#x9762;&#x4E0A;&#x79FB;&#x9664;&#x7684;&#x89E6;&#x70B9;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x5728; touchend&#x3001;touchcancel &#x4E8B;&#x4EF6;&#x4E2D;&#xFF0C;&#x53EA;&#x80FD;&#x7528; changedTouches &#x83B7;&#x53D6; Touch &#x5BF9;&#x8C61;&#x3002;</p>
+<h4 id="300ms&#x5EF6;&#x8FDF;">300ms&#x5EF6;&#x8FDF;</h4>
+<p>&#x79FB;&#x52A8;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x5728; <code>touchend</code> &#x548C; <code>click</code> &#x4E8B;&#x4EF6;&#x4E4B;&#x95F4;&#xFF0C;&#x7B49;&#x5F85; 300 - 350 ms&#xFF0C;&#x5224;&#x65AD;&#x7528;&#x6237;&#x662F;&#x5426;&#x4F1A;&#x8FDB;&#x884C;&#x53CC;&#x51FB;&#x624B;&#x52BF;&#x7528;&#x4EE5;&#x7F29;&#x653E;&#x6587;&#x5B57;&#x3002;</p>
+<p>&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x89E6;&#x6478;&#x5C4F;&#x5E55;&#x7684;&#x884C;&#x4E3A;&#x88AB;&#x91CD;&#x8F7D;(overload)&#x4E86;&#x3002;&#x5728;&#x624B;&#x6307;&#x89E6;&#x6478;&#x5C4F;&#x5E55;&#x7684;&#x77AC;&#x95F4;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x65E0;&#x6CD5;&#x9884;&#x77E5;&#x7528;&#x6237;&#x662F;&#x5728;&#x8F7B;&#x89E6;(Tap)&#x3001;&#x53CC;&#x89E6;(Double-Tap)&#x3001;&#x6ED1;&#x52A8;(Swipe)&#x3001;&#x6309;&#x4F4F;&#x4E0D;&#x653E;(Hold)&#x8FD8;&#x662F;&#x5176;&#x4ED6;&#x4EC0;&#x4E48;&#x64CD;&#x4F5C;&#x3002;&#x552F;&#x4E00;&#x4FDD;&#x9669;&#x7684;&#x505A;&#x6CD5;&#x5C31;&#x662F;&#x7B49;&#x4E0A;&#x4E00;&#x4F1A;&#x513F;&#x770B;&#x63A5;&#x4E0B;&#x6765;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#x3002;</p>
+<p><strong>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E00;&#xFF1A;</strong> &#x7981;&#x7528;&#x7F29;&#x653E;&#x3002;&#x6CE8;&#xFF1A;&#x6D4F;&#x89C8;&#x5668;&#x53EF;&#x80FD;&#x4E0D;&#x652F;&#x6301;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;user-scalable=no&quot;</span> /&gt;</span>
+</code></pre>
+<pre><code class="lang-css"><span class="hljs-selector-tag">html</span> {
+    <span class="hljs-comment">/*&#x6CE8;&#x610F;&#x6D4F;&#x89C8;&#x5668;&#x524D;&#x7F00;*/</span>
+    <span class="hljs-attribute">touch-action</span>: manipulation;
+}
+</code></pre>
+<p><strong>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E8C;&#xFF1A;</strong> &#x6539;&#x53D8;&#x89C6;&#x53E3;&#x5BBD;&#x5EA6;&#x3002;&#x4E3A;&#x7528;&#x6237;&#x9002;&#x914D;&#x4E86;&#x9875;&#x9762;&#x5927;&#x5C0F;&#x548C;&#x963B;&#x6B62;&#x4E86;&#x7528;&#x6237;&#x7F29;&#x653E;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x5C31;&#x4E0D;&#x7528;&#x518D;&#x5224;&#x65AD;&#x7528;&#x6237;&#x53CC;&#x51FB;&#x7F29;&#x653E;&#x4E86;&#xFF0C;&#x4E8E;&#x662F;&#x4FBF;&#x81EA;&#x52A8;&#x53D6;&#x6D88;&#x4E86;click&#x4E8B;&#x4EF6;&#x7684; 300ms &#x5EF6;&#x8FDF;&#x3002;&#x6CE8;&#xFF1A;safari &#x6D4F;&#x89C8;&#x5668;&#x53EF;&#x80FD;&#x4E0D;&#x652F;&#x6301;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width&quot;</span> /&gt;</span>
+</code></pre>
+<p><strong>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E09;&#xFF1A;</strong> &#x5F15;&#x7528; fastclick &#x5E93;&#x3002;<strong>&#xFF08;&#x4E0D;&#x63A8;&#x8350;&#xFF09;</strong></p>
+<p><strong>&#x539F;&#x7406;:</strong>  &#x79FB;&#x52A8;&#x7AEF;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#xFF0C;&#x4F1A;&#x89E6;&#x53D1; <code>touchStart -&gt; touchMove -&gt; touchEnd -&gt; click</code> &#xFF0C;fastclick &#x662F;&#x5728;&#x76D1;&#x542C;&#x5230; touchEnd &#x4E8B;&#x4EF6;&#x65F6;&#xFF0C;&#x7ACB;&#x5373;&#x89E6;&#x53D1;click&#x4E8B;&#x4EF6;&#xFF0C;&#x5E76;&#x963B;&#x6B62;&#x539F;&#x6765;&#x4E8B;&#x4EF6;&#x7684;&#x53D1;&#x751F;&#x3002;</p>
+<p><strong>&#x7F3A;&#x70B9;&#xFF1A;</strong> &#x53EF;&#x4EE5;&#x4F1A;&#x5F15;&#x8D77;&#x8868;&#x5355; input &#x5143;&#x7D20;&#x83B7;&#x53D6;&#x7126;&#x70B9;&#x65F6;&#xFF0C;&#x5524;&#x8D77;&#x8F6F;&#x4EF6;&#x952E;&#x7684;&#x4E00;&#x4E9B;&#x5F02;&#x5E38;&#xFF1B;&#x8FD8;&#x6709;&#x5176;&#x4ED6;Bug&#x3002;</p>
+<h4 id="&#x5B9E;&#x65F6;&#x83B7;&#x53D6;&#x89E6;&#x6478;&#x70B9;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x7684;&#x5143;&#x7D20;">&#x5B9E;&#x65F6;&#x83B7;&#x53D6;&#x89E6;&#x6478;&#x70B9;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x7684;&#x5143;&#x7D20;</h4>
+<p>touchmove &#x4E8B;&#x4EF6;&#x7684;&#x76EE;&#x6807;&#x5143;&#x7D20;&#x548C;&#x89E6;&#x53D1; touchstart &#x4E8B;&#x4EF6;&#x7684;&#x76EE;&#x6807;&#x5143;&#x7D20;&#x76F8;&#x540C;&#xFF0C;&#x5373;&#x4F7F;&#x5F53; touchmove &#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x65F6;&#xFF0C;&#x89E6;&#x70B9;&#x5DF2;&#x7ECF;&#x79FB;&#x51FA;&#x4E86;&#x8BE5;&#x5143;&#x7D20; &#x3002;&#x5982;&#x679C;&#x8981;&#x5B9E;&#x65F6;&#x83B7;&#x53D6;&#x89E6;&#x6478;&#x70B9;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x666E;&#x901A;&#x65B9;&#x6CD5;&#x5DF2;&#x4E0D;&#x594F;&#x6548;&#x3002;  </p>
+<p><strong>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E00;(&#x63A8;&#x8350;)&#xFF1A;</strong></p>
+<pre><code class="lang-js"><span class="hljs-comment">//&#x83B7;&#x53D6;&#x5B58;&#x50A8;&#x5F53;&#x524D;&#x89E6;&#x6478;&#x70B9;&#x4F4D;&#x7F6E;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x53D6;clientX&#x53CA;clientY&#xFF0C;&#x518D;&#x901A;&#x8FC7; elementFromPoint &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x89E6;&#x6478;&#x4F4D;&#x7F6E;&#x7684;&#x5143;&#x7D20;</span>
+<span class="hljs-keyword">let</span> myLocation = e.originalEvent.changedTouches[<span class="hljs-number">0</span>];
+<span class="hljs-keyword">let</span> realTarget = <span class="hljs-built_in">document</span>.elementFromPoint(myLocation.clientX, myLocation.clientY);
+</code></pre>
+<blockquote>
+<p>&#x6B64;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x6700;&#x9876;&#x5C42;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x6240;&#x4EE5;&#x52A1;&#x5FC5;&#x5C06;&#x4F60;&#x9700;&#x8981;&#x7684;&#x5143;&#x7D20;&#x7684; z-index &#x8BBE;&#x7F6E;&#x4E3A;&#x6700;&#x9AD8;&#x3002;<br>&#x7531;&#x4E8E;&#x624B;&#x673A;&#x517C;&#x5BB9;&#x6027;&#x95EE;&#x9898;&#x3002;touchmove &#x4E8B;&#x4EF6;&#x7684;&#x76D1;&#x542C;&#x51FD;&#x6570;&#x9700;&#x52A0;&#x4E0A; e.stopPropagation &#x548C; e.preventDefault&#x3002;</p>
+</blockquote>
+<p><strong>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E8C;&#xFF1A;</strong> &#x5728;&#x7236;&#x5143;&#x7D20;&#x4E0A;&#x5B9A;&#x4E49; touchmove &#x4E8B;&#x4EF6;&#x3002;</p>
+<h4 id="touchend&#x76D1;&#x542C;&#x4E8B;&#x4EF6;&#x65E0;&#x6CD5;&#x89E6;&#x53D1;">touchend&#x76D1;&#x542C;&#x4E8B;&#x4EF6;&#x65E0;&#x6CD5;&#x89E6;&#x53D1;</h4>
+<p>&#x90E8;&#x5206;&#x5B89;&#x5353;&#x673A;&#x4E2D;&#xFF0C;touchend &#x4E8B;&#x4EF6;&#x65E0;&#x6548;&#x3002;</p>
+<p><strong>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E00;&#xFF1A;</strong>&#x5728; <code>touchstart</code> &#x6216;&#x8005; <code>touchmove</code> &#x4E8B;&#x4EF6;&#x7684;&#x76D1;&#x542C;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A; <code>event.preventDefault()</code>&#xFF0C;&#x90A3;&#x4E48;&#x5230; <code>touchend</code> &#x5C31;&#x80FD;&#x6B63;&#x5E38;&#x89E6;&#x53D1;&#x3002;  </p>
+<blockquote>
+<p><code>touchend</code>&#x662F;&#x89E6;&#x53D1;&#x4E86;&#xFF0C;&#x4F46;&#x9875;&#x9762;&#x9ED8;&#x8BA4;&#x6EDA;&#x52A8;&#x9875;&#x9762;&#x88AB;&#x963B;&#x6B62;&#x6389;&#x4E86;&#x3002;
+&#x5728;&#x5B89;&#x5353;4.0&#x7CFB;&#x7EDF;&#xFF08;&#x5373;Android ICS&#x7CFB;&#x7EDF;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x5728; <code>touchstart</code> &#x548C;&#x7B2C;&#x4E00;&#x4E2A; <code>touchmove</code> &#x89E6;&#x53D1;&#x65F6;&#xFF0C;&#x6CA1;&#x6709;&#x8C03;&#x7528; <code>preventDefault</code>&#xFF0C;&#x90A3;&#x4E48;&#x540E;&#x9762; <code>touchmove</code>&#xFF08;&#x8FDE;&#x7EED;&#x89E6;&#x53D1;&#xFF09;&#x4EE5;&#x53CA;&#x6700;&#x540E;&#x7684; <code>touchend</code> &#x90FD;&#x4E0D;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x51B3;&#x5B9A;&#x7B2C;&#x4E00;&#x4E2A; <code>touchmove</code> &#x662F;&#x5426;&#x662F;&#x4E00;&#x4E2A;&#x6EDA;&#x52A8;&#x4E8B;&#x4EF6;&#xFF08;&#x5982;&#x679C;&#x662F;&#xFF0C;&#x5219;&#x4E0D;&#x80FD; <code>preventDefault</code> &#x963B;&#x6B62;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x624B;&#x52A8;&#x89E6;&#x53D1;<code>touchend</code>&#x3002;  </p>
+</blockquote>
+<p><strong>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E8C;&#xFF1A;</strong>&#x540C;&#x65F6;&#x7ED1;&#x5B9A; <code>touchcancel</code> &#x548C; <code>touchend</code> &#x4E8B;&#x4EF6;</p>
+<p>&#x8FD9;&#x4E2A;&#x53EF;&#x4EE5;&#x89E3;&#x51B3; <code>touchend</code> &#x7684;&#x89E6;&#x53D1;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x5176;&#x5B9E;&#x8FD8;&#x4E0D;&#x662F;&#x6700;&#x4F18;&#x89E3;&#xFF0C;<code>touchend</code> &#x8FD8;&#x662F;&#x6BD4;&#x8F83;&#x96BE;&#x89E6;&#x53D1;&#x3002;&#x6700;&#x6839;&#x672C;&#x7684;&#x8FD8;&#x662F;&#x5BC4;&#x5E0C;&#x671B;&#x4E8E;&#x8C37;&#x6B4C;&#x5C3D;&#x65E9;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x5386;&#x53F2;&#x9057;&#x7559;bug&#x3002;</p>
+<h3 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h3>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Touch" target="_blank">MDN Touch</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Touch_events" target="_blank">MDN &#x89E6;&#x6478;&#x4E8B;&#x4EF6;</a></p>
+<p><a href="https://wangdoc.com/javascript/events/touch.html" target="_blank">&#x962E;&#x4E00;&#x5CF0; &#x89E6;&#x6478;&#x4E8B;&#x4EF6;</a> </p>
+<footer class="page-footer"><span class="copyright">&#xA9; lizhao all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-07-25 19:11:14
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="JavaScript之Promise.html" class="navigation navigation-prev " aria-label="Previous page: JavaScript之Promise">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="JavaScript之键盘事件.html" class="navigation navigation-next " aria-label="Next page: JavaScript之键盘事件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"JavaScript之Touch事件","level":"6.8.3","depth":2,"next":{"title":"JavaScript之键盘事件","level":"6.8.4","depth":2,"path":"js探索系列/JavaScript笔记/JavaScript之键盘事件.md","ref":"js探索系列/JavaScript笔记/JavaScript之键盘事件.md","articles":[]},"previous":{"title":"JavaScript之Promise","level":"6.8.2","depth":2,"path":"js探索系列/JavaScript笔记/JavaScript之Promise.md","ref":"js探索系列/JavaScript笔记/JavaScript之Promise.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","summary","theme-comscore","splitter","fontsettings","tbfed-pagefooter","theme-default","pageview-count","accordion","sharing-plus","klipse","back-to-top-button","chapter-fold","livereload"],"root":"/","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"livereload":{},"summary":{},"splitter":{},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"twitter":false,"vk":false,"pocket":false,"google":true,"qzone":true},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"search-plus":{}},"theme":"default","page":{"title":"前端知识库(lizh)"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"authorName":"lizhao"},"title":"LIZHAO","gitbook":"3.2.3"},"file":{"path":"js探索系列/JavaScript笔记/JavaScript之Touch事件.md","mtime":"2021-07-25T11:11:14.783Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-15T16:58:39.485Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

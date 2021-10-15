@@ -1,0 +1,1817 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CSS探索系列 Gradient · LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="06-为什么使用PostCSS处理CSS？.html" />
+    
+    
+    <link rel="prev" href="04-CSS探索系列-flex布局.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/00-前端调试随笔.html">
+            
+                <a href="../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/05-JS常见问题概览.html">
+            
+                <a href="../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/07-小程序问题概览.html">
+            
+                <a href="../bugs/07-小程序问题概览.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    小程序问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="00-CSS基础知识.html">
+            
+                <a href="00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="01-CSS探索系列-margin.html">
+            
+                <a href="01-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="04-CSS探索系列-flex布局.html">
+            
+                <a href="04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.6" data-path="05-CSS探索系列-gradient.html">
+            
+                <a href="05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="11-CSS3中一些高级属性的应用.html">
+            
+                <a href="11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="14-CSS探索系列-line-height.html">
+            
+                <a href="14-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="_关于css.html">
+            
+                <a href="_关于css.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../frontend/00-关于前端.html">
+            
+                <a href="../frontend/00-关于前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    关于前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../frontend/00-基础-02-浏览器工作原理.html">
+            
+                <a href="../frontend/00-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../frontend/00-进阶-04-如何保证高质量代码.html">
+            
+                <a href="../frontend/00-进阶-04-如何保证高质量代码.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    进阶 04 如何保证高质量代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../frontend/01-聊一聊Cookie的一些问题.html">
+            
+                <a href="../frontend/01-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../frontend/02-如何理解HTTP响应的状态码.html">
+            
+                <a href="../frontend/02-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../frontend/代码规范/">
+            
+                <a href="../frontend/代码规范/">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.6.1" data-path="../frontend/代码规范/00-W3C标准.html">
+            
+                <a href="../frontend/代码规范/00-W3C标准.html">
+            
+                    
+                        <b>4.6.1.</b>
+                    
+                    W3C标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.2" data-path="../frontend/代码规范/01-HTML.html">
+            
+                <a href="../frontend/代码规范/01-HTML.html">
+            
+                    
+                        <b>4.6.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.3" data-path="../frontend/代码规范/02-CSS.html">
+            
+                <a href="../frontend/代码规范/02-CSS.html">
+            
+                    
+                        <b>4.6.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.4" data-path="../frontend/代码规范/03-JS.html">
+            
+                <a href="../frontend/代码规范/03-JS.html">
+            
+                    
+                        <b>4.6.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.5" data-path="../frontend/代码规范/04-其他.html">
+            
+                <a href="../frontend/代码规范/04-其他.html">
+            
+                    
+                        <b>4.6.5.</b>
+                    
+                    其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../html探索系列/00-HTML基础知识.html">
+            
+                <a href="../html探索系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../html探索系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../html探索系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../html探索系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../html探索系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../html探索系列/_关于html.html">
+            
+                <a href="../html探索系列/_关于html.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Js探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../js探索系列/00-JS基础知识.html">
+            
+                <a href="../js探索系列/00-JS基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    JS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../js探索系列/01-谈谈JavaScript的作用域和上下文.html">
+            
+                <a href="../js探索系列/01-谈谈JavaScript的作用域和上下文.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../js探索系列/02-JavaScript-Date的使用和日期时间字符串格式.html">
+            
+                <a href="../js探索系列/02-JavaScript-Date的使用和日期时间字符串格式.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    JavaScript Date的使用和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../js探索系列/03-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../js探索系列/03-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../js探索系列/04-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../js探索系列/04-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../js探索系列/05-Canvas基础入门篇.html">
+            
+                <a href="../js探索系列/05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../js探索系列/06-SVG基础入门篇.html">
+            
+                <a href="../js探索系列/06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../js探索系列/JavaScript笔记/">
+            
+                <a href="../js探索系列/JavaScript笔记/">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    JavaScript笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1" data-path="../js探索系列/JavaScript笔记/JavaScript之Ajax.html">
+            
+                <a href="../js探索系列/JavaScript笔记/JavaScript之Ajax.html">
+            
+                    
+                        <b>6.8.1.</b>
+                    
+                    JavaScript之Ajax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2" data-path="../js探索系列/JavaScript笔记/JavaScript之Promise.html">
+            
+                <a href="../js探索系列/JavaScript笔记/JavaScript之Promise.html">
+            
+                    
+                        <b>6.8.2.</b>
+                    
+                    JavaScript之Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.3" data-path="../js探索系列/JavaScript笔记/JavaScript之Touch事件.html">
+            
+                <a href="../js探索系列/JavaScript笔记/JavaScript之Touch事件.html">
+            
+                    
+                        <b>6.8.3.</b>
+                    
+                    JavaScript之Touch事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.4" data-path="../js探索系列/JavaScript笔记/JavaScript之键盘事件.html">
+            
+                <a href="../js探索系列/JavaScript笔记/JavaScript之键盘事件.html">
+            
+                    
+                        <b>6.8.4.</b>
+                    
+                    JavaScript之键盘事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../js探索系列/_关于Javascript.html">
+            
+                <a href="../js探索系列/_关于Javascript.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../js探索系列/nodeJs/">
+            
+                <a href="../js探索系列/nodeJs/">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    NodeJs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.10.1" data-path="../js探索系列/nodeJs/00-Node.js的三种调试方法.html">
+            
+                <a href="../js探索系列/nodeJs/00-Node.js的三种调试方法.html">
+            
+                    
+                        <b>6.10.1.</b>
+                    
+                    Node.Js的三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.2" data-path="../js探索系列/nodeJs/01-npm模块的一些机制.html">
+            
+                <a href="../js探索系列/nodeJs/01-npm模块的一些机制.html">
+            
+                    
+                        <b>6.10.2.</b>
+                    
+                    Npm模块的一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.3" data-path="../js探索系列/nodeJs/02-npm常用命令.html">
+            
+                <a href="../js探索系列/nodeJs/02-npm常用命令.html">
+            
+                    
+                        <b>6.10.3.</b>
+                    
+                    Npm常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.4" data-path="../js探索系列/nodeJs/03-从零开始，开发一个NPM包.html">
+            
+                <a href="../js探索系列/nodeJs/03-从零开始，开发一个NPM包.html">
+            
+                    
+                        <b>6.10.4.</b>
+                    
+                    从零开始，开发一个NPM包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../research/02-如何监控前端异常？.html">
+            
+                <a href="../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../research/03-H5页面的跳转、刷新、回退+刷新.html">
+            
+                <a href="../research/03-H5页面的跳转、刷新、回退+刷新.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    H5页面的跳转、刷新、回退+刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>7.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../research/Javascript加密混淆.html">
+            
+                <a href="../research/Javascript加密混淆.html">
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="../research/Vue如何导入TypeScript.html">
+            
+                <a href="../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>7.8.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.9" data-path="../research/移动端PDF预览.html">
+            
+                <a href="../research/移动端PDF预览.html">
+            
+                    
+                        <b>7.9.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.10" data-path="../research/纯CSS绘制箭头.html">
+            
+                <a href="../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>7.10.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11" data-path="../research/网站性能测量和优化方法.html">
+            
+                <a href="../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>7.11.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../tech/04-sublime3插件篇.html">
+            
+                <a href="../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../tech/05-Charles安装及使用.html">
+            
+                <a href="../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../tools/Git/">
+            
+                <a href="../tools/Git/">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" data-path="../tools/Git/01-Git安装、使用及常用命令.html">
+            
+                <a href="../tools/Git/01-Git安装、使用及常用命令.html">
+            
+                    
+                        <b>9.1.1.</b>
+                    
+                    Git安装、使用及常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2" data-path="../tools/Git/02-git-clone速度太慢的解决办法.html">
+            
+                <a href="../tools/Git/02-git-clone速度太慢的解决办法.html">
+            
+                    
+                        <b>9.1.2.</b>
+                    
+                    Git Clone速度太慢的解决办法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3" data-path="../tools/Git/03-Git常见问题.html">
+            
+                <a href="../tools/Git/03-Git常见问题.html">
+            
+                    
+                        <b>9.1.3.</b>
+                    
+                    Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../tools/Gitbook/">
+            
+                <a href="../tools/Gitbook/">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    Gitbook
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="../tools/Gitbook/01-gitbook入门篇.html">
+            
+                <a href="../tools/Gitbook/01-gitbook入门篇.html">
+            
+                    
+                        <b>9.2.1.</b>
+                    
+                    Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" data-path="../tools/Gitbook/02-gitbook插件篇.html">
+            
+                <a href="../tools/Gitbook/02-gitbook插件篇.html">
+            
+                    
+                        <b>9.2.2.</b>
+                    
+                    Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.3" data-path="../tools/Gitbook/03-gitbook进阶篇.html">
+            
+                <a href="../tools/Gitbook/03-gitbook进阶篇.html">
+            
+                    
+                        <b>9.2.3.</b>
+                    
+                    Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >CSS探索系列 Gradient</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="css3&#x63A2;&#x7D22;&#x7CFB;&#x5217;&#x4E4B;gradient">CSS3&#x63A2;&#x7D22;&#x7CFB;&#x5217;&#x4E4B;gradient</h2>
+<p><code>&lt;gradient&gt;</code>&#x662F;&#x4E00;&#x79CD;&#x7279;&#x522B;&#x7684;<code>&lt;image&gt;</code>&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x7528;&#x4E8E;&#x8868;&#x73B0;&#x4E24;&#x79CD;&#x6216;&#x591A;&#x79CD;&#x989C;&#x8272;&#x7684;&#x8FC7;&#x6E21;&#x8F6C;&#x53D8;&#x3002;<code>&lt;gradient&gt;</code>&#x53EA;&#x80FD;&#x88AB;&#x7528;&#x4E8E;<code>&lt;image&gt;</code>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7684;&#x5730;&#x65B9;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5B83;&#x5E76;&#x4E0D;&#x9002;&#x7528;&#x4E8E;<code>background-color</code>&#x4EE5;&#x53CA;&#x7C7B;&#x4F3C;&#x7684;&#x4F7F;&#x7528;<code>&lt;color&gt;</code>&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027;&#x4E2D;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#xFF0C;&#x5728;CSS&#x4E2D;&#x6E10;&#x53D8;&#x5C31;&#x662F;<code>background</code>&#x7684;<code>background-image</code>&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;<strong>&#x9002;&#x7528;&#x4E8E;&#x80CC;&#x666F;&#x56FE;&#x50CF;&#x7684;CSS&#x5C5E;&#x6027;&#x90FD;&#x9002;&#x5408;&#x4E8E;&#x6E10;&#x53D8;&#x3002;</strong></p>
+<h3 id="&#x6E10;&#x53D8;&#x5BB9;&#x5668;&#xFF08;&#x6E10;&#x53D8;&#x6846;&#xFF09;">&#x6E10;&#x53D8;&#x5BB9;&#x5668;&#xFF08;&#x6E10;&#x53D8;&#x6846;&#xFF09;</h3>
+<p><code>&lt;gradient&gt;</code> &#x56FE;&#x50CF;&#x548C;&#x4F20;&#x7EDF;&#x7684;&#x80CC;&#x666F;&#x56FE;&#x50CF;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x5B83;&#x662F;&#x65E0;&#x9650;&#x7684;&#x6E10;&#x53D8;&#x56FE;&#x50CF;&#xFF0C;&#x53EF;&#x89C1;&#x533A;&#x57DF;&#x662F;&#x7531;&#x6E10;&#x53D8;&#x5BB9;&#x5668;&#x5927;&#x5C0F;&#x6765;&#x51B3;&#x5B9A;&#x7684;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;DOM&#x5143;&#x7D20;&#x7684;<code>background-image</code>&#x4F7F;&#x7528;<code>linear-gradient</code>&#xFF0C;&#x5176;&#x663E;&#x793A;&#x533A;&#x57DF;&#x5C31;&#x662F;&#x5143;&#x7D20;&#x7684;<code>border-box</code>&#x533A;&#x57DF;&#xFF08;&#x5373;&#xFF1A;&#x5305;&#x62EC;&#x5185;&#x5BB9;&#x3001;&#x5185;&#x8FB9;&#x8DDD;&#x548C;&#x8FB9;&#x6846;&#xFF0C;&#x4F46;&#x4E0D;&#x5305;&#x62EC;&#x5916;&#x8FB9;&#x8DDD;&#xFF09;&#x3002;&#x5176;&#x5B9E;&#x4E5F;&#x662F;<code>background-color</code>&#x6216;&#x8005;&#x8BF4;&#x901A;&#x8FC7;<code>url</code>&#x5F15;&#x5165;&#x80CC;&#x666F;&#x56FE;&#x50CF;&#x7684;&#x663E;&#x793A;&#x533A;&#x57DF;&#x3002;</p>
+<p>&#x7136;&#x800C;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x901A;&#x8FC7;CSS&#x7684;<code>background-size</code>&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x5C3A;&#x5BF8;&#xFF0C;&#x6BD4;&#x5982;&#x8BF4;<code>200px * 200px</code>&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6E10;&#x53D8;&#x5BB9;&#x5668;&#xFF08;&#x6E10;&#x53D8;&#x5C3A;&#x5BF8;&#xFF09;&#x5C31;&#x662F;<code>200px * 200px</code>&#x3002;&#x5728;&#x6CA1;&#x6709;&#x4F7F;&#x7528;<code>background-position</code>&#x8BBE;&#x7F6E;&#x4E3A;&#x5176;&#x4ED6;&#x503C;&#x65F6;&#xFF0C;&#x5B83;&#x9ED8;&#x8BA4;&#x662F;&#x663E;&#x793A;&#x5728;DOM&#x5143;&#x7D20;&#x7684;&#x5DE6;&#x4E0A;&#x89D2;&#xFF08;&#x4E5F;&#x5C31;&#x662F;<code>background-position: left top</code>&#xFF09;&#x3002;</p>
+<h3 id="&#x7EBF;&#x5F62;&#x6E10;&#x53D8;">&#x7EBF;&#x5F62;&#x6E10;&#x53D8;</h3>
+<p>&#x989C;&#x8272;&#x503C;&#x6CBF;&#x7740;&#x4E00;&#x6761;&#x9690;&#x5F0F;&#x7684;&#x76F4;&#x7EBF;&#x9010;&#x6E10;&#x8FC7;&#x6E21;&#x3002;&#x7531;<code>linear-gradient()</code>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x4E24;&#x79CD;&#x6216;&#x591A;&#x79CD;&#x989C;&#x8272;&#x7EBF;&#x6027;&#x6E10;&#x53D8;&#x7684;&#x56FE;&#x7247;&#x3002;</p>
+<h4 id="&#x8BED;&#x6CD5;">&#x8BED;&#x6CD5;</h4>
+<pre><code class="lang-css"><span class="hljs-selector-tag">linear-gradient</span>(<span class="hljs-selector-attr">[ &lt;angle&gt; | to &lt;side-or-corner&gt; ,]</span>? &lt;<span class="hljs-selector-tag">linear-color-stop</span>&gt; <span class="hljs-selector-attr">[&lt;color-hint&gt;]</span> &lt;<span class="hljs-selector-tag">linear-color-stop</span>&gt; ... )
+</code></pre>
+<ul>
+<li><p><code>&lt;side-or-corner&gt;</code></p>
+<p>&#x901A;&#x8FC7;&#x6307;&#x5411;&#x8FB9;&#x6216;&#x8005;&#x89D2;&#xFF0C;&#x6307;&#x5B9A;&#x6E10;&#x53D8;&#x7684;&#x65B9;&#x5411;&#xFF0C;&#x53EF;&#x4E0D;&#x5199;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>to bottom</code>&#x3002;</p>
+<p>&#x53D6;&#x503C;&#xFF1A;<code>to left/ to right/ to top/ to bottom/ to top left/ to bottom right</code>&#x3002;&#x5173;&#x952E;&#x8BCD;&#x7684;&#x5148;&#x540E;&#x987A;&#x5E8F;&#x65E0;&#x5F71;&#x54CD;&#xFF0C;&#x5373;<code>to top left</code>&#x548C;<code>to left top</code>&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+</li>
+<li><p><code>&lt;angle&gt;</code></p>
+<p>&#x7528;&#x89D2;&#x5EA6;&#x503C;&#x6307;&#x5B9A;&#x6E10;&#x53D8;&#x7684;&#x65B9;&#x5411;&#xFF08;&#x6216;&#x89D2;&#x5EA6;&#xFF09;&#xFF0C;&#x53EF;&#x4E0D;&#x5199;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>180deg</code>&#xFF08;&#x7B49;&#x4EF7;<code>to bottom</code>&#xFF09;&#x3002; <code>0deg</code>&#x8868;&#x793A;&#x6307;&#x5411;&#x5317;&#x65B9;&#x7684;&#x65B9;&#x5411;&#xFF0C;&#x89D2;&#x5EA6;&#x987A;&#x65F6;&#x9488;&#x589E;&#x52A0;&#x3002;</p>
+<p>&#x53D6;&#x503C;&#xFF1A;<code>90deg</code>&#x3001;<code>135deg</code>&#x3001;<code>0.25turn</code>&#x3001;<code>100grid</code>&#x3001;<code>1rad</code>&#x3002;</p>
+<p>&#x5728;&#x5E26;&#x524D;&#x7F00;&#x7684;&#x53D8;&#x4F53;&#x548C;&#x4E0D;&#x5E26;&#x524D;&#x7F00;&#x7684;&#x63D0;&#x6848;&#x4E4B;&#x95F4;&#x4ECD;&#x7136;&#x5B58;&#x5728;&#x4E00;&#x9879;&#x8BED;&#x4E49;&#x7684;&#x5206;&#x6B67;&#xFF1A;<strong>&#x6807;&#x51C6;&#x5C06;<code>0deg</code>&#x6307;&#x5411;&#x5317;&#x65B9;&#xFF0C;&#x5E26;&#x524D;&#x7F00;&#x7684;&#x4FDD;&#x6301;&#x539F;&#x59CB;&#x7684;&#x89D2;&#x5EA6;&#x5B9A;&#x4E49;&#xFF0C;&#x5373;<code>0deg</code>&#x6307;&#x5411;&#x4E1C;&#x65B9;</strong>&#x3002;</p>
+<blockquote>
+<p><strong>CSS&#x89D2;&#x5EA6;&#x5355;&#x4F4D;&#xFF1A;deg&#x3001;grad&#x3001;rad&#x3001;turn</strong></p>
+<p><strong>90deg = 100grad = 0.25turn &#x2248; 1.570796326794897rad</strong></p>
+<ul>
+<li>deg&#xFF1A;&#x5EA6;&#xFF08;Degress&#xFF09;&#x3002;&#x4E00;&#x4E2A;&#x5706;&#x5171;360&#x5EA6;</li>
+<li>grad&#xFF1A;&#x68AF;&#x5EA6;&#xFF08;Gradians&#xFF09;&#x3002;&#x4E00;&#x4E2A;&#x5706;&#x5171;400&#x68AF;&#x5EA6;</li>
+<li>rad&#xFF1A;&#x5F27;&#x5EA6;&#xFF08;Radians&#xFF09;&#x3002;&#x4E00;&#x4E2A;&#x5706;&#x5171;2&#x3C0;&#x5F27;&#x5EA6;</li>
+<li>turn&#xFF1A;&#x8F6C;&#x3001;&#x5708;&#xFF08;Turns&#xFF09;&#x3002;&#x4E00;&#x4E2A;&#x5706;&#x5171;1&#x5708;</li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>&lt;linear-color-stop&gt;</code></p>
+<p>&#x989C;&#x8272;&#x7EC8;&#x6B62;&#x70B9;&#xFF0C;&#x7531;<code>&lt;&#x989C;&#x8272;&#x503C; &#x4F4D;&#x7F6E;&gt;</code>&#x7EC4;&#x6210;&#xFF0C;&#x4F4D;&#x7F6E;&#x53EF;&#x4E0D;&#x5199;&#x3002;&#x5982;&#xFF1A;<code>#e66465</code>&#x3001;<code>#e66465 50%</code>&#x3001;<code>#e66465 100px</code>&#x7B49;&#x3002;&#x53EF;&#x5199;&#x4E24;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x989C;&#x8272;&#x7EC8;&#x6B62;&#x70B9;&#x3002;</p>
+<p>&#x989C;&#x8272;&#x7EC8;&#x6B62;&#x5217;&#x8868;&#x4E2D;&#x989C;&#x8272;&#x7684;&#x7EC8;&#x6B62;&#x70B9;&#x5E94;&#x8BE5;&#x662F;&#x4F9D;&#x6B21;&#x9012;&#x589E;&#x7684;&#x3002;<strong>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x989C;&#x8272;&#x4E2D;&#x95F4;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#x6BD4;&#x524D;&#x4E00;&#x4E2A;&#x5C0F;&#xFF0C;&#x90A3;&#x4E48;&#x5C06;&#x4F1A;&#x88AB;&#x8BBE;&#x5B9A;&#x6210;&#x4E0E;&#x524D;&#x4E00;&#x4E2A;&#x76F8;&#x540C;&#x7684;&#x503C;&#x3002;</strong></p>
+<p>&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x989C;&#x8272;&#x4E2D;&#x95F4;&#x70B9;&#x6CA1;&#x6709;&#x4F4D;&#x7F6E;&#x5C5E;&#x6027;,&#x90A3;&#x4E48;&#x5B83;&#x9ED8;&#x8BA4;&#x4E3A;0%&#x3002;&#x5982;&#x679C;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x989C;&#x8272;&#x4E2D;&#x95F4;&#x70B9;&#x6CA1;&#x6709;&#x4F4D;&#x7F6E;&#x5C5E;&#x6027;, &#x5219;&#x9ED8;&#x8BA4;&#x4E3A;100%&#x3002;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x65E2;&#x4E0D;&#x662F;&#x8D77;&#x59CB;&#x4E5F;&#x4E0D;&#x662F;&#x7EC8;&#x6B62;&#x7684;&#x989C;&#x8272;&#x4E2D;&#x95F4;&#x70B9;&#xFF0C;&#x6CA1;&#x6709;&#x88AB;&#x660E;&#x786E;&#x58F0;&#x660E;&#x4F4D;&#x7F6E;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x989C;&#x8272;&#x5C31;&#x4F1A;&#x4ECE;&#x524D;&#x540E;&#x4E24;&#x4E2A;&#x989C;&#x8272;&#x7684;&#x4E2D;&#x95F4;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x3002;</p>
+</li>
+<li><p><code>&lt;color-hint&gt;</code></p>
+<p>&#x5B9A;&#x4E49;&#x4E86;&#x5728;&#x76F8;&#x90BB;<code>&lt;linear-color-stop&gt;</code>&#x4E4B;&#x95F4;&#x8FC7;&#x6E21;&#x7684;&#x4E2D;&#x70B9;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;50%&#x3002;<strong>&#x6CE8;&#xFF1A;&#x76F8;&#x90BB;&#x4E24;&#x4E2A;<code>&lt;linear-color-stop&gt;</code>&#x4E4B;&#x95F4;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x8FC7;&#x6E21;&#x70B9;&#x3002;</strong></p>
+</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-tag">background-image</span>: <span class="hljs-selector-tag">linear-gradient</span>(<span class="hljs-selector-id">#e66465</span>, <span class="hljs-selector-id">#9198e5</span>); <span class="hljs-comment">/*&#x4E0B;&#x56FE;&#x5DE6;&#xFF0C;&#x4E0E;&#x3010;#e66465, 50%, #9198e5&#x3011;&#x7B49;&#x4EF7;*/</span>
+<span class="hljs-selector-tag">background-image</span>: <span class="hljs-selector-tag">linear-gradient</span>(<span class="hljs-selector-id">#e66465</span>, 10%, <span class="hljs-selector-id">#9198e5</span>); <span class="hljs-comment">/*&#x4E0B;&#x56FE;&#x4E2D;*/</span>
+<span class="hljs-selector-tag">background-image</span>: <span class="hljs-selector-tag">linear-gradient</span>(<span class="hljs-selector-id">#fb3</span> 40%, <span class="hljs-selector-id">#e66465</span> 30%, <span class="hljs-selector-id">#9198e5</span>); <span class="hljs-comment">/*&#x4E0B;&#x56FE;&#x53F3;*/</span>
+</code></pre>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200716232328505.png" alt="image-20200716232328505"></p>
+<h4 id="&#x793A;&#x4F8B;-&#x67E5;&#x770B;demo">&#x793A;&#x4F8B; <a href="https://1927344728.github.io/demo-lizh/html/08-gradient.html" target="_blank">&#x67E5;&#x770B;DEMO</a></h4>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box_01&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_01&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_01&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_01&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_01&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-css"><span class="hljs-selector-class">.box_01</span> <span class="hljs-selector-class">.item_01</span> {
+    <span class="hljs-attribute">display</span>: inline-block;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">15px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#0aa</span>;
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">linear-gradient</span>(#e66465, #9198e5);
+}
+<span class="hljs-selector-class">.box_01</span> <span class="hljs-selector-class">.item_01</span><span class="hljs-selector-pseudo">:nth-child(2)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">linear-gradient</span>(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+}
+<span class="hljs-selector-class">.box_01</span> <span class="hljs-selector-class">.item_01</span><span class="hljs-selector-pseudo">:nth-child(3)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">linear-gradient</span>(217deg, rgba(255, 0, 0, .8), <span class="hljs-built_in">rgba</span>(255, 0, 0, 0) <span class="hljs-number">70.71%</span>),
+        <span class="hljs-built_in">linear-gradient</span>(127deg, rgba(0, 255, 0, .8), <span class="hljs-built_in">rgba</span>(0, 255, 0, 0) <span class="hljs-number">70.71%</span>),
+        <span class="hljs-built_in">linear-gradient</span>(336deg, rgba(0, 0, 255, .8), <span class="hljs-built_in">rgba</span>(0, 0, 255, 0) <span class="hljs-number">70.71%</span>);
+}
+<span class="hljs-selector-class">.box_01</span> <span class="hljs-selector-class">.item_01</span><span class="hljs-selector-pseudo">:nth-child(4)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">linear-gradient</span>(#3f87a6 33.33%, #fb3 0, #fb3 66.66%, #e45b5a 0);
+    <span class="hljs-attribute">background-size</span>: <span class="hljs-number">100%</span> <span class="hljs-number">42px</span>;
+}
+</code></pre>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200716234706958.png" alt="image-20200716234706958"></p>
+<h3 id="&#x5F84;&#x5411;&#x6E10;&#x53D8;">&#x5F84;&#x5411;&#x6E10;&#x53D8;</h3>
+<p>&#x989C;&#x8272;&#x503C;&#x7531;&#x4E00;&#x4E2A;&#x4E2D;&#x5FC3;&#x70B9;&#xFF08;&#x539F;&#x70B9;&#xFF09;&#x5411;&#x5916;&#x6269;&#x6563;&#x5E76;&#x9010;&#x6E10;&#x8FC7;&#x6E21;&#x5230;&#x5176;&#x4ED6;&#x989C;&#x8272;&#x503C;&#x3002;&#x7531;<code>radial-gradient()</code>&#x51FD;&#x6570;&#x4EA7;&#x751F;&#x3002;</p>
+<h4 id="&#x8BED;&#x6CD5;">&#x8BED;&#x6CD5;</h4>
+<pre><code class="lang-css"><span class="hljs-selector-tag">radial-gradient</span>(<span class="hljs-selector-attr">[ &lt;shape&gt; [&lt;extent-keyword&gt; | &lt;size&gt;]</span> <span class="hljs-selector-tag">at</span> &lt;<span class="hljs-selector-tag">position</span>&gt; ]? &lt;<span class="hljs-selector-tag">linear-color-stop</span>&gt; <span class="hljs-selector-attr">[&lt;color-hint&gt;]</span> &lt;<span class="hljs-selector-tag">linear-color-stop</span>&gt; ... )
+</code></pre>
+<ul>
+<li><p><code>&lt;position&gt;</code></p>
+<p>&#x8868;&#x793A;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x76F8;&#x5BF9;&#x4E8E;&#x6846;&#x7684;&#x4F4D;&#x7F6E;&#x7684;<code>2D</code>&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x5750;&#x6807;&#xFF0C;&#x5373;x&#x8F74;&#x3001;y&#x8F74;&#x5750;&#x6807;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;<code>center</code>&#x3002;</p>
+<p>&#x53D6;&#x503C;&#xFF1A;&#x5173;&#x952E;&#x5B57;&#xFF08;<code>left, right, top, bottom or center</code>&#xFF09;&#xFF0C;&#x6216;&#x8005;&#x767E;&#x5206;&#x6BD4;&#xFF0C;&#x6216;&#x662F;&#x4E00;&#x4E2A;&#x7EDD;&#x5BF9;&#x7684;&#x957F;&#x5EA6;&#x503C;</p>
+<p>&#x5982;&#xFF1A;<code>left</code>&#x3001;<code>left top</code>&#x3001;<code>left center</code>&#x3001;<code>center top</code>&#x3001;<code>50%</code>&#x3001;<code>100px</code>&#x3001;<code>5rem</code>&#x7B49;&#x3002;x&#x8F74;&#x3001;y&#x8F74;&#x90FD;&#x662F;&#x5173;&#x952E;&#x5B57;&#x65F6;&#xFF0C;&#x987A;&#x5E8F;&#x65E0;&#x5F71;&#x54CD;&#x3002;</p>
+</li>
+<li><p><code>&lt;shape&gt;</code>
+&#x6E10;&#x53D8;&#x7684;&#x5F62;&#x72B6;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;<code>ellipse</code>&#xFF08;&#x692D;&#x5706;&#xFF09;&#x3002;</p>
+<p>&#x53D6;&#x503C;&#xFF1A;<code>ellipse</code>&#xFF08;&#x692D;&#x5706;&#xFF09;&#x3001;<code>circle</code>&#xFF08;&#x6B63;&#x5706;&#xFF09;</p>
+</li>
+<li><p><code>&lt;size&gt;</code>
+&#x6E10;&#x53D8;&#x5706;&#x7684;&#x534A;&#x5F84;&#x957F;&#x5EA6;&#x3002;</p>
+<p> &#x5F53;&#x6E10;&#x53D8;&#x7C7B;&#x578B;&#x4E3A; <code>circle</code> &#x65F6;&#xFF0C;&#x53EA;&#x80FD;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;<code>size</code>&#x503C;&#xFF0C;&#x503C;&#x5FC5;&#x9700;&#x4E3A;&#x5177;&#x4F53;&#x7684;&#x957F;&#x5EA6;&#x503C;&#xFF0C;&#x5373;&#x76F4;&#x5F84;&#xFF1B;&#x5F53;&#x6E10;&#x53D8;&#x7C7B;&#x578B;&#x4E3A; <code>ellopse</code>&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E24;&#x4E2A;<code>size</code>&#x503C;&#xFF0C;&#x5373;&#x6C34;&#x5E73;&#x534A;&#x5F84;&#xFF0C;&#x5782;&#x76F4;&#x534A;&#x5F84;&#xFF0C;&#x503C;&#x53EF;&#x4EE5;&#x4E3A;&#x5177;&#x4F53;&#x7684;&#x957F;&#x5EA6;&#x503C;&#x6216;&#x8005;&#x767E;&#x5206;&#x6BD4;&#x3002;</p>
+</li>
+<li><p><code>&lt;extent-keyword&gt;</code>
+&#x5173;&#x952E;&#x5B57;&#x7528;&#x4E8E;&#x63CF;&#x8FF0;&#x8FB9;&#x7F18;&#x8F6E;&#x5ED3;&#x7684;&#x5177;&#x4F53;&#x4F4D;&#x7F6E;&#x3002;&#x4EE5;&#x4E0B;&#x4E3A;&#x5173;&#x952E;&#x5B57;&#x5E38;&#x91CF;&#xFF1A;</p>
+<p>| &#x5E38;&#x91CF;              | &#x63CF;&#x8FF0;                                                         |
+| :---------------- | :----------------------------------------------------------- |
+| <code>closest-side</code>    | &#x6E10;&#x53D8;&#x7684;&#x8FB9;&#x7F18;&#x5F62;&#x72B6;&#x4E0E;&#x5BB9;&#x5668;&#x8DDD;&#x79BB;&#x6E10;&#x53D8;&#x4E2D;&#x5FC3;&#x70B9;&#x6700;&#x8FD1;&#x7684;&#x4E00;&#x8FB9;&#x76F8;&#x5207;&#xFF08;&#x5706;&#x5F62;&#xFF09;&#x6216;&#x8005;&#x81F3;&#x5C11;&#x4E0E;&#x8DDD;&#x79BB;&#x6E10;&#x53D8;&#x4E2D;&#x5FC3;&#x70B9;&#x6700;&#x8FD1;&#x7684;&#x5782;&#x76F4;&#x548C;&#x6C34;&#x5E73;&#x8FB9;&#x76F8;&#x5207;&#xFF08;&#x692D;&#x5706;&#xFF09;&#x3002; |
+| <code>closest-corner</code>  | &#x6E10;&#x53D8;&#x7684;&#x8FB9;&#x7F18;&#x5F62;&#x72B6;&#x4E0E;&#x5BB9;&#x5668;&#x8DDD;&#x79BB;&#x6E10;&#x53D8;&#x4E2D;&#x5FC3;&#x70B9;&#x6700;&#x8FD1;&#x7684;&#x4E00;&#x4E2A;&#x89D2;&#x76F8;&#x4EA4;&#x3002;         |
+| <code>farthest-side</code>   | &#x4E0E;closest-side&#x76F8;&#x53CD;&#xFF0C;&#x8FB9;&#x7F18;&#x5F62;&#x72B6;&#x4E0E;&#x5BB9;&#x5668;&#x8DDD;&#x79BB;&#x6E10;&#x53D8;&#x4E2D;&#x5FC3;&#x70B9;&#x6700;&#x8FDC;&#x7684;&#x4E00;&#x8FB9;&#x76F8;&#x5207;&#xFF08;&#x6216;&#x6700;&#x8FDC;&#x7684;&#x5782;&#x76F4;&#x548C;&#x6C34;&#x5E73;&#x8FB9;&#xFF09;&#x3002; |
+| <code>farthest-corner</code> | &#x6E10;&#x53D8;&#x7684;&#x8FB9;&#x7F18;&#x5F62;&#x72B6;&#x4E0E;&#x5BB9;&#x5668;&#x8DDD;&#x79BB;&#x6E10;&#x53D8;&#x4E2D;&#x5FC3;&#x70B9;&#x6700;&#x8FDC;&#x7684;&#x4E00;&#x4E2A;&#x89D2;&#x76F8;&#x4EA4;&#x3002;         |</p>
+</li>
+<li><p><code>&lt;linear-color-stop&gt;</code></p>
+<p>&#x989C;&#x8272;&#x7EC8;&#x6B62;&#x70B9;&#xFF0C;&#x7531;<code>&lt;&#x989C;&#x8272;&#x503C; &#x4F4D;&#x7F6E;&gt;</code>&#x7EC4;&#x6210;&#xFF0C;&#x4F4D;&#x7F6E;&#x53EF;&#x4E0D;&#x5199;&#x3002;&#x5982;&#xFF1A;<code>#e66465</code>&#x3001;<code>#e66465 50%</code>&#x3001;<code>#e66465 100px</code>&#x7B49;&#x3002;&#x53EF;&#x5199;&#x4E24;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x989C;&#x8272;&#x7EC8;&#x6B62;&#x70B9;&#x3002;</p>
+<p>&#x989C;&#x8272;&#x7EC8;&#x6B62;&#x5217;&#x8868;&#x4E2D;&#x989C;&#x8272;&#x7684;&#x7EC8;&#x6B62;&#x70B9;&#x5E94;&#x8BE5;&#x662F;&#x4F9D;&#x6B21;&#x9012;&#x589E;&#x7684;&#x3002;<strong>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x989C;&#x8272;&#x4E2D;&#x95F4;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#x6BD4;&#x524D;&#x4E00;&#x4E2A;&#x5C0F;&#xFF0C;&#x90A3;&#x4E48;&#x5C06;&#x4F1A;&#x88AB;&#x8BBE;&#x5B9A;&#x6210;&#x4E0E;&#x524D;&#x4E00;&#x4E2A;&#x76F8;&#x540C;&#x7684;&#x503C;&#x3002;</strong></p>
+<p>&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x989C;&#x8272;&#x4E2D;&#x95F4;&#x70B9;&#x6CA1;&#x6709;&#x4F4D;&#x7F6E;&#x5C5E;&#x6027;,&#x90A3;&#x4E48;&#x5B83;&#x9ED8;&#x8BA4;&#x4E3A;0%&#x3002;&#x5982;&#x679C;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x989C;&#x8272;&#x4E2D;&#x95F4;&#x70B9;&#x6CA1;&#x6709;&#x4F4D;&#x7F6E;&#x5C5E;&#x6027;, &#x5219;&#x9ED8;&#x8BA4;&#x4E3A;100%&#x3002;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x65E2;&#x4E0D;&#x662F;&#x8D77;&#x59CB;&#x4E5F;&#x4E0D;&#x662F;&#x7EC8;&#x6B62;&#x7684;&#x989C;&#x8272;&#x4E2D;&#x95F4;&#x70B9;&#xFF0C;&#x6CA1;&#x6709;&#x88AB;&#x660E;&#x786E;&#x58F0;&#x660E;&#x4F4D;&#x7F6E;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x989C;&#x8272;&#x5C31;&#x4F1A;&#x4ECE;&#x524D;&#x540E;&#x4E24;&#x4E2A;&#x989C;&#x8272;&#x7684;&#x4E2D;&#x95F4;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x3002;</p>
+</li>
+<li><p><code>&lt;color-hint&gt;</code></p>
+<p>&#x5B9A;&#x4E49;&#x4E86;&#x5728;&#x76F8;&#x90BB;<code>&lt;linear-color-stop&gt;</code>&#x4E4B;&#x95F4;&#x8FC7;&#x6E21;&#x7684;&#x4E2D;&#x70B9;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;50%&#x3002;</p>
+</li>
+</ul>
+<h4 id="&#x793A;&#x4F8B;-&#x67E5;&#x770B;demo">&#x793A;&#x4F8B; <a href="https://1927344728.github.io/demo-lizh/html/08-gradient.html?type=2" target="_blank">&#x67E5;&#x770B;DEMO</a></h4>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box_02&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_02&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_02&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_02&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_02&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_02&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_02&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-css"><span class="hljs-selector-class">.box_02</span> <span class="hljs-selector-class">.item_02</span> {
+    <span class="hljs-attribute">display</span>: inline-block;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">15px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#0aa</span>;
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">radial-gradient</span>(#ff0, #9198e5);
+}
+<span class="hljs-selector-class">.box_02</span> <span class="hljs-selector-class">.item_02</span><span class="hljs-selector-pseudo">:nth-child(2)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">radial-gradient</span>(at top, #ff0, #9198e5);
+}
+<span class="hljs-selector-class">.box_02</span> <span class="hljs-selector-class">.item_02</span><span class="hljs-selector-pseudo">:nth-child(3)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">radial-gradient</span>(circle at top, #ff0, #9198e5);
+}
+<span class="hljs-selector-class">.box_02</span> <span class="hljs-selector-class">.item_02</span><span class="hljs-selector-pseudo">:nth-child(4)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">radial-gradient</span>(circle closest-corner at top, #ff0, #9198e5);
+}
+<span class="hljs-selector-class">.box_02</span> <span class="hljs-selector-class">.item_02</span><span class="hljs-selector-pseudo">:nth-child(5)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">radial-gradient</span>(ellipse 50px 50px at top, #ff0, #9198e5);
+}
+<span class="hljs-selector-class">.box_02</span> <span class="hljs-selector-class">.item_02</span><span class="hljs-selector-pseudo">:nth-child(6)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">radial-gradient</span>(#3f87a6 33.33%, #fb3 0, #fb3 66.66%, #e45b5a 0);
+    <span class="hljs-attribute">background-size</span>: <span class="hljs-number">42px</span> <span class="hljs-number">42px</span>;
+}
+</code></pre>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200717005804964.png" alt="image-20200717005804964"></p>
+<h3 id="&#x5706;&#x9525;&#x6E10;&#x53D8;">&#x5706;&#x9525;&#x6E10;&#x53D8;</h3>
+<p>&#x5706;&#x9525;&#x6E10;&#x53D8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x56FE;&#x50CF;&#xFF0C;&#x7531;&#x4E00;&#x4E2A;&#x68AF;&#x5EA6;&#x7EC4;&#x6210;&#xFF0C;&#x989C;&#x8272;&#x8D77;&#x59CB;&#x70B9;&#x662F;&#x56FE;&#x5F62;&#x4E2D;&#x5FC3;&#xFF0C;&#x7136;&#x540E;&#x4EE5;&#x987A;&#x65F6;&#x9488;&#x65B9;&#x5411;&#x7ED5;&#x4E2D;&#x5FC3;&#x5B9E;&#x73B0;&#x6E10;&#x53D8;&#x6548;&#x679C;&#xFF08;&#x800C;&#x4E0D;&#x662F;&#x4ECE;&#x4E2D;&#x5FC3;&#x8F90;&#x5C04;&#xFF09;&#x3002;&#x7531;<code>conic-gradient()</code>&#x51FD;&#x6570;&#x4EA7;&#x751F;&#x3002;</p>
+<h4 id="&#x8BED;&#x6CD5;">&#x8BED;&#x6CD5;</h4>
+<pre><code class="lang-css"><span class="hljs-selector-tag">conic-gradient</span>(<span class="hljs-selector-attr">[ from &lt;angle&gt; ]</span>? <span class="hljs-selector-attr">[ at &lt;position&gt; ]</span>?, &lt;<span class="hljs-selector-tag">angular-color-stop</span>&gt; <span class="hljs-selector-attr">[&lt;color-hint&gt;]</span> &lt;<span class="hljs-selector-tag">angular-color-stop</span>&gt; ... ) )
+</code></pre>
+<ul>
+<li><p><code>&lt;angle&gt;</code></p>
+<p>&#x989C;&#x8272;&#x56F4;&#x7ED5;&#x4E2D;&#x5FC3;&#x70B9;&#x65CB;&#x8F6C;&#x7684;&#x89D2;&#x5EA6;&#x503C;&#xFF0C;&#x53EF;&#x4E0D;&#x5199;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>0deg</code>&#xFF08;&#x6307;&#x5411;&#x5317;&#x65B9;&#xFF09;&#x3002;</p>
+</li>
+<li><p><code>&lt;position&gt;</code></p>
+<p>&#x8868;&#x793A;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x76F8;&#x5BF9;&#x4E8E;&#x6846;&#x7684;&#x4F4D;&#x7F6E;&#x7684;<code>2D</code>&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x5750;&#x6807;&#xFF0C;&#x5373;x&#x8F74;&#x3001;y&#x8F74;&#x5750;&#x6807;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;<code>center</code>&#x3002;</p>
+<p>&#x53D6;&#x503C;&#xFF1A;&#x5173;&#x952E;&#x5B57;&#xFF08;<code>left, right, top, bottom or center</code>&#xFF09;&#xFF0C;&#x6216;&#x8005;&#x767E;&#x5206;&#x6BD4;&#xFF0C;&#x6216;&#x662F;&#x4E00;&#x4E2A;&#x7EDD;&#x5BF9;&#x7684;&#x957F;&#x5EA6;&#x503C;</p>
+<p>&#x5982;&#xFF1A;<code>left</code>&#x3001;<code>left top</code>&#x3001;<code>left center</code>&#x3001;<code>center top</code>&#x3001;<code>50%</code>&#x3001;<code>100px</code>&#x3001;<code>5rem</code>&#x7B49;&#x3002;x&#x8F74;&#x3001;y&#x8F74;&#x90FD;&#x662F;&#x5173;&#x952E;&#x5B57;&#x65F6;&#xFF0C;&#x987A;&#x5E8F;&#x65E0;&#x5F71;&#x54CD;&#x3002;</p>
+</li>
+<li><p><code>&lt;angular-color-stop&gt;</code>
+&#x989C;&#x8272;&#x7EC8;&#x6B62;&#x70B9;&#xFF0C;&#x7531;<code>&lt;&#x989C;&#x8272;&#x503C; &#x89D2;&#x5EA6;&gt;</code>&#x7EC4;&#x6210;&#xFF0C;&#x4F4D;&#x7F6E;&#x53EF;&#x4E0D;&#x5199;&#x3002;&#x5982;&#xFF1A;<code>#e66465</code>&#x3001;<code>#e66465 90deg</code>&#x3001;<code>#e66465 0.25turn</code>&#x3001;<code>#e66465 0.25turn 0.75turn</code>&#x7B49;&#x3002;&#x53EF;&#x5199;&#x4E24;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x989C;&#x8272;&#x7EC8;&#x6B62;&#x70B9;&#x3002;</p>
+</li>
+<li><p><code>&lt;color-hint&gt;</code></p>
+<p>&#x5B9A;&#x4E49;&#x4E86;&#x5728;&#x76F8;&#x90BB;<code>&lt;angular-color-stop&gt;</code>&#x4E4B;&#x95F4;&#x8FC7;&#x6E21;&#x7684;&#x4E2D;&#x70B9;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;<code>50%</code>&#x3002;</p>
+</li>
+</ul>
+<h4 id="&#x793A;&#x4F8B;-&#x67E5;&#x770B;demo">&#x793A;&#x4F8B; <a href="https://1927344728.github.io/demo-lizh/html/08-gradient.html?type=3" target="_blank">&#x67E5;&#x770B;DEMO</a></h4>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box_03&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_03&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_03&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_03&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_03&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_03&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_03&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_03&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-css"><span class="hljs-selector-class">.box_03</span> <span class="hljs-selector-class">.item_03</span> {
+    <span class="hljs-attribute">display</span>: inline-block;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">15px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#0aa</span>;
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">conic-gradient</span>(red, orange, yellow, green, teal, blue, purple);
+}
+<span class="hljs-selector-class">.box_03</span> <span class="hljs-selector-class">.item_03</span><span class="hljs-selector-pseudo">:nth-child(2)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">conic-gradient</span>(from 40deg, red 0deg, orange 90deg, yellow 180deg, green 270deg, blue 360deg)
+}
+<span class="hljs-selector-class">.box_03</span> <span class="hljs-selector-class">.item_03</span><span class="hljs-selector-pseudo">:nth-child(3)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">conic-gradient</span>(from 40deg at 25% 25%, red 0deg, orange 90deg, yellow 180deg, green 270deg, blue 360deg)
+}
+<span class="hljs-selector-class">.box_03</span> <span class="hljs-selector-class">.item_03</span><span class="hljs-selector-pseudo">:nth-child(4)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">conic-gradient</span>(red 36deg, orange 36deg 170deg, yellow 170deg);
+}
+<span class="hljs-selector-class">.box_03</span> <span class="hljs-selector-class">.item_03</span><span class="hljs-selector-pseudo">:nth-child(5)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">conic-gradient</span>(red 12.5%, orange 0 37.5%, red 0 62.5%, orange 0 87.5%, red 0);
+    <span class="hljs-attribute">background-size</span>: <span class="hljs-number">50px</span> <span class="hljs-number">50px</span>;
+}
+<span class="hljs-selector-class">.box_03</span> <span class="hljs-selector-class">.item_03</span><span class="hljs-selector-pseudo">:nth-child(6)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">conic-gradient</span>(#3f87a6 33.33%, #fb3 0, #fb3 66.66%, #e45b5a 0);
+    <span class="hljs-attribute">background-size</span>: <span class="hljs-number">42px</span> <span class="hljs-number">42px</span>;
+}
+<span class="hljs-selector-class">.box_03</span> <span class="hljs-selector-class">.item_03</span><span class="hljs-selector-pseudo">:nth-child(7)</span> {
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-attribute">background</span>: <span class="hljs-built_in">conic-gradient</span>(rgba(255, 152, 0, 1) <span class="hljs-number">0</span>, <span class="hljs-built_in">rgba</span>(255, 152, 0, 0) <span class="hljs-number">100%</span>);
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">text-align</span>: center;
+    <span class="hljs-attribute">vertical-align</span>: top;
+}
+<span class="hljs-selector-class">.box_03</span> <span class="hljs-selector-class">.item_03</span><span class="hljs-selector-pseudo">:nth-child(7)</span><span class="hljs-selector-pseudo">:after</span> {
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">10%</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">10%</span>;
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">80%</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">80%</span>;
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot; &quot;</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#fff</span>;
+}
+</code></pre>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200724230512764.png" alt="image-20200724230512764"></p>
+<h3 id="&#x91CD;&#x590D;&#x6E10;&#x53D8;">&#x91CD;&#x590D;&#x6E10;&#x53D8;</h3>
+<p>&#x91CD;&#x590D;&#x591A;&#x6B21;&#x6E10;&#x53D8;&#x56FE;&#x6848;&#x76F4;&#x5230;&#x8DB3;&#x591F;&#x586B;&#x6EE1;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x3002;</p>
+<h4 id="&#x91CD;&#x590D;&#x7EBF;&#x6027;&#x6E10;&#x53D8;">&#x91CD;&#x590D;&#x7EBF;&#x6027;&#x6E10;&#x53D8;</h4>
+<p> <code>repeating-linear-gradient()</code>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7531;&#x91CD;&#x590D;&#x7EBF;&#x6027;&#x6E10;&#x53D8;&#x7EC4;&#x6210;&#x7684;<code>&lt;image&gt;</code>&#xFF0C; &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;<code>linear-gradient</code> &#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x4E14;<strong>&#x91C7;&#x7528;&#x76F8;&#x540C;&#x7684;&#x53C2;&#x6570;</strong>&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x4F1A;&#x5728;&#x6240;&#x6709;&#x65B9;&#x5411;&#x4E0A;&#x91CD;&#x590D;&#x6E10;&#x53D8;&#x4EE5;&#x8986;&#x76D6;&#x5176;&#x6574;&#x4E2A;&#x5BB9;&#x5668;&#x3002;</p>
+<h4 id="&#x91CD;&#x590D;&#x5F84;&#x5411;&#x6E10;&#x53D8;">&#x91CD;&#x590D;&#x5F84;&#x5411;&#x6E10;&#x53D8;</h4>
+<p><code>repeating-radial-gradient()</code> &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4ECE;&#x539F;&#x70B9;&#x8F90;&#x5C04;&#x7684;&#x91CD;&#x590D;&#x6E10;&#x53D8;&#x7EC4;&#x6210;&#x7684;<code>&lt;image&gt;</code> &#x3002;&#x5B83;&#x7C7B;&#x4F3C;&#x4E8E;<code>radial-gradient</code>&#x5E76;&#x4E14;<strong>&#x91C7;&#x7528;&#x76F8;&#x540C;&#x7684;&#x53C2;&#x6570;</strong>&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x4F1A;&#x5728;&#x6240;&#x6709;&#x65B9;&#x5411;&#x4E0A;&#x91CD;&#x590D;&#x989C;&#x8272;&#xFF0C;&#x4EE5;&#x8986;&#x76D6;&#x5176;&#x6574;&#x4E2A;&#x5BB9;&#x5668;&#x3002;</p>
+<h4 id="&#x91CD;&#x590D;&#x5706;&#x9525;&#x6E10;&#x53D8;">&#x91CD;&#x590D;&#x5706;&#x9525;&#x6E10;&#x53D8;</h4>
+<p><code>repaeting-conic-gradient</code> &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x989C;&#x8272;&#x8FC7;&#x6E21;&#x65CB;&#x8F6C;&#x56F4;&#x7ED5;&#x4E2D;&#x5FC3;&#x70B9;&#x7684;&#x91CD;&#x590D;&#x6E10;&#x53D8;&#x7EC4;&#x6210;&#x7684;<code>&lt;image&gt;</code> &#x3002;&#x91CD;&#x590D;&#x5706;&#x9525;&#x6E10;&#x53D8;&#x8BED;&#x6CD5;&#x4E0E;<code>conic-gradient()</code>&#x76F8;&#x4F3C;&#x3002;</p>
+<h4 id="&#x793A;&#x4F8B;-&#x67E5;&#x770B;demo">&#x793A;&#x4F8B; <a href="https://1927344728.github.io/demo-lizh/html/08-gradient.html?type=4" target="_blank">&#x67E5;&#x770B;DEMO</a></h4>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box_04&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_04&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_04&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_04&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_04&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_04&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_04&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-css"><span class="hljs-selector-class">.box_04</span> <span class="hljs-selector-class">.item_04</span> {
+    <span class="hljs-attribute">display</span>: inline-block;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">15px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#0aa</span>;
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">repeating-linear-gradient</span>(-45deg, transparent, transparent 25px, orange 25px, orange 50px);
+}
+<span class="hljs-selector-class">.box_04</span> <span class="hljs-selector-class">.item_04</span><span class="hljs-selector-pseudo">:nth-child(2)</span> {
+    <span class="hljs-attribute">background-image</span>:
+        <span class="hljs-built_in">repeating-linear-gradient</span>(transparent, transparent 23%, orange 23%, orange 27%),
+        <span class="hljs-built_in">repeating-linear-gradient</span>(90deg, transparent, transparent 23%, orange 23%, orange 27%);
+}
+<span class="hljs-selector-class">.box_04</span> <span class="hljs-selector-class">.item_04</span><span class="hljs-selector-pseudo">:nth-child(3)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">repeating-radial-gradient</span>(red, yellow 10%, green 15%);
+}
+<span class="hljs-selector-class">.box_04</span> <span class="hljs-selector-class">.item_04</span><span class="hljs-selector-pseudo">:nth-child(4)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">repeating-radial-gradient</span>(circle, red, red 10px, yellow 10px, yellow 20px);
+    <span class="hljs-attribute">background-size</span>: <span class="hljs-number">25px</span>;
+}
+<span class="hljs-selector-class">.box_04</span> <span class="hljs-selector-class">.item_04</span><span class="hljs-selector-pseudo">:nth-child(5)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">repeating-conic-gradient</span>(red 0 9deg, yellow 9deg 18deg);
+}
+<span class="hljs-selector-class">.box_04</span> <span class="hljs-selector-class">.item_04</span><span class="hljs-selector-pseudo">:nth-child(6)</span> {
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">repeating-conic-gradient</span>(red 0 9deg, yellow 9deg 18deg);
+    <span class="hljs-attribute">background-size</span>: <span class="hljs-number">50px</span> <span class="hljs-number">50px</span>;
+}
+</code></pre>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200725001722017.png" alt="image-20200725001722017"></p>
+<h3 id="&#x5176;&#x4ED6;&#x6E10;&#x53D8;-&#x67E5;&#x770B;demo">&#x5176;&#x4ED6;&#x6E10;&#x53D8; <a href="https://1927344728.github.io/demo-lizh/html/08-gradient.html?type=5" target="_blank">&#x67E5;&#x770B;DEMO</a></h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box_05&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_05&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_05&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>&#x613F;&#x4F60;&#x8D70;&#x51FA;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_05&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;&#x534A;&#x751F;&#x5F52;&#x6765;&quot;</span>&gt;</span>&#x534A;&#x751F;&#x5F52;&#x6765;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item_05&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">viewBoxs</span>=<span class="hljs-string">&quot;0 0 500 300&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;svgBox&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">defs</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">linearGradient</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;SVGID_1_&quot;</span> <span class="hljs-attr">gradientUnits</span>=<span class="hljs-string">&quot;userSpaceOnUse&quot;</span> <span class="hljs-attr">x1</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">&quot;10&quot;</span> <span class="hljs-attr">x2</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">y2</span>=<span class="hljs-string">&quot;50&quot;</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">stop</span> <span class="hljs-attr">offset</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;stop-color: red&quot;</span> /&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">stop</span> <span class="hljs-attr">offset</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;stop-color: orange&quot;</span> /&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">linearGradient</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">defs</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">text-anchor</span>=<span class="hljs-string">&quot;middle&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;gradient-text-three&quot;</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;100px&quot;</span> <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;30%&quot;</span>&gt;</span>&#x4ECD;&#x662F;&#x5C11;&#x5E74;<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-css"><span class="hljs-selector-class">.box_05</span> <span class="hljs-selector-class">.item_05</span> {
+    <span class="hljs-attribute">display</span>: inline-block;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">15px</span>;
+    <span class="hljs-attribute">vertical-align</span>: middle;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#0aa</span>;
+}
+<span class="hljs-selector-class">.box_05</span> <span class="hljs-selector-class">.item_05</span><span class="hljs-selector-pseudo">:nth-child(1)</span> {
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">10px</span> solid transparent;
+    <span class="hljs-attribute">border-image</span>: <span class="hljs-built_in">linear-gradient</span>(to top, red, orange);
+    <span class="hljs-attribute">border-image-slice</span>: <span class="hljs-number">10</span>;
+}
+<span class="hljs-selector-class">.box_05</span> <span class="hljs-selector-class">.item_05</span><span class="hljs-selector-pseudo">:nth-child(2)</span>&gt;<span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">60px</span>;
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">60px</span>;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">42px</span>;
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">linear-gradient</span>(to top, red, orange);
+    <span class="hljs-attribute">-webkit-background-clip</span>: text;
+    <span class="hljs-attribute">-webkit-text-fill-color</span>: transparent;
+    <span class="hljs-attribute">text-align</span>: center;
+}
+<span class="hljs-selector-class">.box_05</span> <span class="hljs-selector-class">.item_05</span><span class="hljs-selector-pseudo">:nth-child(3)</span>&gt;<span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">60px</span>;
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">60px</span>;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">42px</span>;
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-attribute">color</span>: red;
+    <span class="hljs-attribute">text-align</span>: center;
+}
+<span class="hljs-selector-class">.box_05</span> <span class="hljs-selector-class">.item_05</span><span class="hljs-selector-pseudo">:nth-child(3)</span>&gt;<span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:before</span> {
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">color</span>: orange;
+    <span class="hljs-attribute">-webkit-mask</span>: <span class="hljs-built_in">linear-gradient</span>(to top, red, transparent);
+    <span class="hljs-attribute">content</span>: <span class="hljs-built_in">attr</span>(text);
+    <span class="hljs-attribute">z-index</span>: <span class="hljs-number">1</span>;
+}
+<span class="hljs-selector-class">.box_05</span> <span class="hljs-selector-class">.item_05</span><span class="hljs-selector-pseudo">:nth-child(4)</span>&gt;<span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">60px</span>;
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">60px</span>;
+    <span class="hljs-attribute">text-align</span>: center;
+}
+<span class="hljs-selector-class">.box_05</span> <span class="hljs-selector-class">.item_05</span><span class="hljs-selector-pseudo">:nth-child(4)</span>&gt;<span class="hljs-selector-tag">div</span> <span class="hljs-selector-class">.gradient-text-three</span> {
+    <span class="hljs-attribute">fill</span>: <span class="hljs-built_in">url</span>(#SVGID_1_);
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">48px</span>;
+}
+</code></pre>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200727221512513.png" alt="image-20200727221512513"></p>
+<h3 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;">&#x53C2;&#x8003;&#x94FE;&#x63A5;</h3>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Using_CSS_gradients" target="_blank">MDN &#x4F7F;&#x7528; CSS &#x6E10;&#x53D8;</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/linear-gradient" target="_blank">MDN linear-gradient</a></p>
+<p><a href="https://www.cnblogs.com/coco1s/p/7079529.html" target="_blank">&#x795E;&#x5947;&#x7684; conic-gradient &#x5706;&#x9525;&#x6E10;&#x53D8;</a></p>
+<p><a href="https://bennettfeely.com/gradients/" target="_blank">&#x590D;&#x6742;&#x7684;css&#x80CC;&#x666F;&#x56FE;</a> </p>
+<footer class="page-footer"><span class="copyright">&#xA9; lizhao all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-10-15 23:10:31
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="04-CSS探索系列-flex布局.html" class="navigation navigation-prev " aria-label="Previous page: CSS探索系列 Flex布局">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="06-为什么使用PostCSS处理CSS？.html" class="navigation navigation-next " aria-label="Next page: 为什么使用PostCSS处理CSS？">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CSS探索系列 Gradient","level":"2.6","depth":1,"next":{"title":"为什么使用PostCSS处理CSS？","level":"2.7","depth":1,"path":"css探索系列/06-为什么使用PostCSS处理CSS？.md","ref":"css探索系列/06-为什么使用PostCSS处理CSS？.md","articles":[]},"previous":{"title":"CSS探索系列 Flex布局","level":"2.5","depth":1,"path":"css探索系列/04-CSS探索系列-flex布局.md","ref":"css探索系列/04-CSS探索系列-flex布局.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","summary","theme-comscore","splitter","fontsettings","tbfed-pagefooter","theme-default","pageview-count","accordion","sharing-plus","klipse","back-to-top-button","chapter-fold","livereload"],"root":"/","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"livereload":{},"summary":{},"splitter":{},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"twitter":false,"vk":false,"pocket":false,"google":true,"qzone":true},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"search-plus":{}},"theme":"default","page":{"title":"前端知识库(lizh)"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"authorName":"lizhao"},"title":"LIZHAO","gitbook":"3.2.3"},"file":{"path":"css探索系列/05-CSS探索系列-gradient.md","mtime":"2021-10-15T15:10:31.293Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-15T16:58:39.485Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

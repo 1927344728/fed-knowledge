@@ -1,0 +1,1734 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>进阶 04 如何保证高质量代码 · LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="01-聊一聊Cookie的一些问题.html" />
+    
+    
+    <link rel="prev" href="00-基础-02-浏览器工作原理.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/00-前端调试随笔.html">
+            
+                <a href="../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/05-JS常见问题概览.html">
+            
+                <a href="../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/07-小程序问题概览.html">
+            
+                <a href="../bugs/07-小程序问题概览.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    小程序问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../css探索系列/00-CSS基础知识.html">
+            
+                <a href="../css探索系列/00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../css探索系列/01-CSS探索系列-margin.html">
+            
+                <a href="../css探索系列/01-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../css探索系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../css探索系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../css探索系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../css探索系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../css探索系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../css探索系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../css探索系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../css探索系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../css探索系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="../css探索系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../css探索系列/11-CSS3中一些高级属性的应用.html">
+            
+                <a href="../css探索系列/11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../css探索系列/14-CSS探索系列-line-height.html">
+            
+                <a href="../css探索系列/14-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../css探索系列/_关于css.html">
+            
+                <a href="../css探索系列/_关于css.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="00-关于前端.html">
+            
+                <a href="00-关于前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    关于前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="00-基础-02-浏览器工作原理.html">
+            
+                <a href="00-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.3" data-path="00-进阶-04-如何保证高质量代码.html">
+            
+                <a href="00-进阶-04-如何保证高质量代码.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    进阶 04 如何保证高质量代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="01-聊一聊Cookie的一些问题.html">
+            
+                <a href="01-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="02-如何理解HTTP响应的状态码.html">
+            
+                <a href="02-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="代码规范/">
+            
+                <a href="代码规范/">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.6.1" data-path="代码规范/00-W3C标准.html">
+            
+                <a href="代码规范/00-W3C标准.html">
+            
+                    
+                        <b>4.6.1.</b>
+                    
+                    W3C标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.2" data-path="代码规范/01-HTML.html">
+            
+                <a href="代码规范/01-HTML.html">
+            
+                    
+                        <b>4.6.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.3" data-path="代码规范/02-CSS.html">
+            
+                <a href="代码规范/02-CSS.html">
+            
+                    
+                        <b>4.6.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.4" data-path="代码规范/03-JS.html">
+            
+                <a href="代码规范/03-JS.html">
+            
+                    
+                        <b>4.6.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.5" data-path="代码规范/04-其他.html">
+            
+                <a href="代码规范/04-其他.html">
+            
+                    
+                        <b>4.6.5.</b>
+                    
+                    其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../html探索系列/00-HTML基础知识.html">
+            
+                <a href="../html探索系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../html探索系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../html探索系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../html探索系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../html探索系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../html探索系列/_关于html.html">
+            
+                <a href="../html探索系列/_关于html.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Js探索系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../js探索系列/00-JS基础知识.html">
+            
+                <a href="../js探索系列/00-JS基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    JS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../js探索系列/01-谈谈JavaScript的作用域和上下文.html">
+            
+                <a href="../js探索系列/01-谈谈JavaScript的作用域和上下文.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../js探索系列/02-JavaScript-Date的使用和日期时间字符串格式.html">
+            
+                <a href="../js探索系列/02-JavaScript-Date的使用和日期时间字符串格式.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    JavaScript Date的使用和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../js探索系列/03-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../js探索系列/03-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../js探索系列/04-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../js探索系列/04-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../js探索系列/05-Canvas基础入门篇.html">
+            
+                <a href="../js探索系列/05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../js探索系列/06-SVG基础入门篇.html">
+            
+                <a href="../js探索系列/06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../js探索系列/JavaScript笔记/">
+            
+                <a href="../js探索系列/JavaScript笔记/">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    JavaScript笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1" data-path="../js探索系列/JavaScript笔记/JavaScript之Ajax.html">
+            
+                <a href="../js探索系列/JavaScript笔记/JavaScript之Ajax.html">
+            
+                    
+                        <b>6.8.1.</b>
+                    
+                    JavaScript之Ajax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2" data-path="../js探索系列/JavaScript笔记/JavaScript之Promise.html">
+            
+                <a href="../js探索系列/JavaScript笔记/JavaScript之Promise.html">
+            
+                    
+                        <b>6.8.2.</b>
+                    
+                    JavaScript之Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.3" data-path="../js探索系列/JavaScript笔记/JavaScript之Touch事件.html">
+            
+                <a href="../js探索系列/JavaScript笔记/JavaScript之Touch事件.html">
+            
+                    
+                        <b>6.8.3.</b>
+                    
+                    JavaScript之Touch事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.4" data-path="../js探索系列/JavaScript笔记/JavaScript之键盘事件.html">
+            
+                <a href="../js探索系列/JavaScript笔记/JavaScript之键盘事件.html">
+            
+                    
+                        <b>6.8.4.</b>
+                    
+                    JavaScript之键盘事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../js探索系列/_关于Javascript.html">
+            
+                <a href="../js探索系列/_关于Javascript.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../js探索系列/nodeJs/">
+            
+                <a href="../js探索系列/nodeJs/">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    NodeJs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.10.1" data-path="../js探索系列/nodeJs/00-Node.js的三种调试方法.html">
+            
+                <a href="../js探索系列/nodeJs/00-Node.js的三种调试方法.html">
+            
+                    
+                        <b>6.10.1.</b>
+                    
+                    Node.Js的三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.2" data-path="../js探索系列/nodeJs/01-npm模块的一些机制.html">
+            
+                <a href="../js探索系列/nodeJs/01-npm模块的一些机制.html">
+            
+                    
+                        <b>6.10.2.</b>
+                    
+                    Npm模块的一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.3" data-path="../js探索系列/nodeJs/02-npm常用命令.html">
+            
+                <a href="../js探索系列/nodeJs/02-npm常用命令.html">
+            
+                    
+                        <b>6.10.3.</b>
+                    
+                    Npm常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10.4" data-path="../js探索系列/nodeJs/03-从零开始，开发一个NPM包.html">
+            
+                <a href="../js探索系列/nodeJs/03-从零开始，开发一个NPM包.html">
+            
+                    
+                        <b>6.10.4.</b>
+                    
+                    从零开始，开发一个NPM包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../research/02-如何监控前端异常？.html">
+            
+                <a href="../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../research/03-H5页面的跳转、刷新、回退+刷新.html">
+            
+                <a href="../research/03-H5页面的跳转、刷新、回退+刷新.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    H5页面的跳转、刷新、回退+刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>7.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../research/Javascript加密混淆.html">
+            
+                <a href="../research/Javascript加密混淆.html">
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="../research/Vue如何导入TypeScript.html">
+            
+                <a href="../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>7.8.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.9" data-path="../research/移动端PDF预览.html">
+            
+                <a href="../research/移动端PDF预览.html">
+            
+                    
+                        <b>7.9.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.10" data-path="../research/纯CSS绘制箭头.html">
+            
+                <a href="../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>7.10.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11" data-path="../research/网站性能测量和优化方法.html">
+            
+                <a href="../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>7.11.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../tech/04-sublime3插件篇.html">
+            
+                <a href="../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../tech/05-Charles安装及使用.html">
+            
+                <a href="../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../tools/Git/">
+            
+                <a href="../tools/Git/">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" data-path="../tools/Git/01-Git安装、使用及常用命令.html">
+            
+                <a href="../tools/Git/01-Git安装、使用及常用命令.html">
+            
+                    
+                        <b>9.1.1.</b>
+                    
+                    Git安装、使用及常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2" data-path="../tools/Git/02-git-clone速度太慢的解决办法.html">
+            
+                <a href="../tools/Git/02-git-clone速度太慢的解决办法.html">
+            
+                    
+                        <b>9.1.2.</b>
+                    
+                    Git Clone速度太慢的解决办法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3" data-path="../tools/Git/03-Git常见问题.html">
+            
+                <a href="../tools/Git/03-Git常见问题.html">
+            
+                    
+                        <b>9.1.3.</b>
+                    
+                    Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../tools/Gitbook/">
+            
+                <a href="../tools/Gitbook/">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    Gitbook
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="../tools/Gitbook/01-gitbook入门篇.html">
+            
+                <a href="../tools/Gitbook/01-gitbook入门篇.html">
+            
+                    
+                        <b>9.2.1.</b>
+                    
+                    Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" data-path="../tools/Gitbook/02-gitbook插件篇.html">
+            
+                <a href="../tools/Gitbook/02-gitbook插件篇.html">
+            
+                    
+                        <b>9.2.2.</b>
+                    
+                    Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.3" data-path="../tools/Gitbook/03-gitbook进阶篇.html">
+            
+                <a href="../tools/Gitbook/03-gitbook进阶篇.html">
+            
+                    
+                        <b>9.2.3.</b>
+                    
+                    Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >进阶 04 如何保证高质量代码</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5982;&#x4F55;&#x4FDD;&#x8BC1;&#x9AD8;&#x8D28;&#x91CF;&#x4EE3;&#x7801;">&#x5982;&#x4F55;&#x4FDD;&#x8BC1;&#x9AD8;&#x8D28;&#x91CF;&#x4EE3;&#x7801;</h1>
+<p>&#x901A;&#x5E38;&#x9879;&#x76EE;&#x4E2D;&#x6211;&#x4EEC;&#x901A;&#x8FC7; <code>eslint</code> &#x548C; <code>stylelint</code> &#x8FD9;&#x4E9B; lint &#x5DE5;&#x5177;&#x6765;&#x68C0;&#x67E5;&#x4EE3;&#x7801;&#x7684;&#x89C4;&#x8303;&#x4E0E;&#x5426;&#xFF0C;&#x4FDD;&#x8BC1;&#x826F;&#x597D;&#x7684;&#x4EE3;&#x7801;&#x89C4;&#x8303;&#xFF0C;&#x4ECE;&#x800C;&#x5728;&#x591A;&#x4EBA;&#x534F;&#x4F5C;&#x4E2D;&#x4FDD;&#x969C;&#x9879;&#x76EE;&#x8D28;&#x91CF;&#x548C;&#x53EF;&#x7EF4;&#x62A4;&#x6027;&#x3002;&#x6B63;&#x5E38;&#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x524D;&#x624B;&#x52A8;&#x6267;&#x884C;&#x8BED;&#x6CD5;&#x68C0;&#x67E5;&#xFF0C;&#x800C; <code>lint-staged</code> &#x548C; <code>husky</code> &#x8BA9;&#x8FD9;&#x4E00;&#x8FC7;&#x7A0B;&#x81EA;&#x52A8;&#x5316;&#xFF0C;&#x5728; <code>git</code> &#x7684; <code>pre-commit</code> &#x9636;&#x6BB5;&#x6765;&#x68C0;&#x6D4B;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#x4F1A;&#x4E2D;&#x65AD; commit&#x3002;</p>
+<h3 id="eslint"><a href="http://eslint.cn" target="_blank">ESlint</a></h3>
+<p>ESLint &#x5C5E;&#x4E8E;&#x4E00;&#x79CD;QA&#x5DE5;&#x5177;&#xFF0C;&#x662F;&#x4E00;&#x4E2A; <code>ECMAScript/JavaScript</code> &#x8BED;&#x6CD5;&#x89C4;&#x5219;&#x548C;&#x4EE3;&#x7801;&#x98CE;&#x683C;&#x7684;&#x68C0;&#x67E5;&#x5DE5;&#x5177;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4FDD;&#x8BC1;&#x5199;&#x51FA;&#x8BED;&#x6CD5;&#x6B63;&#x786E;&#x3001;&#x98CE;&#x683C;&#x7EDF;&#x4E00;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p>ESLint &#x65E8;&#x5728;&#x5B8C;&#x5168;&#x53EF;&#x914D;&#x7F6E;&#xFF0C;&#x5B83;&#x7684;&#x76EE;&#x6807;&#x662F;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x63D2;&#x4EF6;&#x5316;&#x7684; Javascript &#x4EE3;&#x7801;&#x68C0;&#x6D4B;&#x5DE5;&#x5177;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x60A8;&#x53EF;&#x4EE5;&#x5173;&#x95ED;&#x6BCF;&#x4E2A;&#x89C4;&#x5219;&#xFF0C;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x9A8C;&#x8BC1;&#xFF0C;&#x6216;&#x8005;&#x6DF7;&#x5408;&#x5E76;&#x5339;&#x914D;&#x6346;&#x7ED1;&#x7684;&#x89C4;&#x5219;&#x548C;&#x81EA;&#x5B9A;&#x4E49;&#x89C4;&#x5219;&#xFF0C;&#x4F7F;ESLint&#x5B8C;&#x7F8E;&#x7684;&#x9002;&#x7528;&#x4E8E;&#x60A8;&#x7684;&#x9879;&#x76EE;&#x3002;</p>
+<p><strong>&#x5B89;&#x88C5;&#xFF1A;</strong><code>npm i eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-vue -D</code></p>
+<p><strong>&#x914D;&#x7F6E;&#xFF1A;</strong><code>eslint --init</code>  // &#x8FD0;&#x884C;&#x540E;&#xFF0C;&#x4F1A;&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x751F;&#x6210;&#x4E00;&#x4E2A;<code>.eslintrc</code>&#x6587;&#x4EF6;</p>
+<p><strong>&#x6709;&#x4E24;&#x79CD;&#x4E3B;&#x8981;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x914D;&#x7F6E;ESLint&#xFF1A;</strong></p>
+<ul>
+<li><p><strong>&#x914D;&#x7F6E;&#x6CE8;&#x91CA;&#xFF1A;</strong>&#x4F7F;&#x7528; JavaScript &#x6CE8;&#x91CA;&#x5C06;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x76F4;&#x63A5;&#x5D4C;&#x5165;&#x5230;&#x6587;&#x4EF6;&#x4E2D;&#x3002;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x7528;&#x6CE8;&#x91CA;&#x6307;&#x5B9A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">/* global var1, var2 */</span>
+</code></pre>
+<p>&#x6307;&#x5B9A;&#x53D8;&#x91CF;&#x4E0D;&#x5E94;&#x88AB;&#x91CD;&#x5199;&#xFF08;&#x53EA;&#x8BFB;&#xFF09;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x4EEC;&#x8BBE;&#x7F6E;&#x4E3A; false&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">/* global var1:false, var2:false */</span>
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x884C;&#x6CE8;&#x91CA;&#x7981;&#x7528;&#x89C4;&#x5219;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">/* eslint-disable no-alert, no-console */</span>
+alert(<span class="hljs-string">&apos;foo&apos;</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;bar&apos;</span>);
+<span class="hljs-comment">/* eslint-enable no-alert, no-console */</span>
+</code></pre>
+</li>
+<li><p><strong>ESLint&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;</strong>&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x4EFB;&#x4E00;&#x7684;&#x6587;&#x4EF6;&#x6765;&#x4E3A;&#x5168;&#x90E8;&#x7684;&#x76EE;&#x5F55;&#x548C;&#x5B83;&#x7684;&#x5B50;&#x76EE;&#x5F55;&#x6307;&#x5B9A;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</p>
+<ul>
+<li>JavaScript&#xFF1A; <code>.eslintrc.js</code> </li>
+<li>YAML&#xFF1A; <code>.eslintrc.yaml</code> &#x6216; <code>.eslintrc.yml</code> </li>
+<li><p>JSON&#xFF1A; <code>.eslintrc.json</code> &#xFF0C;ESLint &#x7684; JSON &#x6587;&#x4EF6;&#x5141;&#x8BB8; JavaScript &#x98CE;&#x683C;&#x7684;&#x6CE8;&#x91CA;&#x3002;</p>
+</li>
+<li><p><strong>(&#x4E0D;&#x63A8;&#x8350;)</strong>  &#x4F7F;&#x7528; <code>.eslintrc</code>&#xFF0C;&#x53EF;&#x4EE5;&#x662F; JSON &#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F; YAML&#x3002;</p>
+</li>
+<li><p>package.json&#xFF1A; <code>package.json</code> &#x4E2D;&#x65B0;&#x589E; <code>eslintConfig</code>&#x5C5E;&#x6027;&#xFF0C;&#x5728;&#x90A3;&#x91CC;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x6570;&#x636E;&#x3002;</p>
+</li>
+</ul>
+<p>&#x5982;&#x679C;&#x540C;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;&#x6709;&#x591A;&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;ESLint &#x53EA;&#x4F1A;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x3002;&#x4F18;&#x5148;&#x7EA7;&#x987A;&#x5E8F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li><p><code>.eslintrc.js</code></p>
+</li>
+<li><p><code>.eslintrc.yaml</code></p>
+</li>
+<li><p><code>.eslintrc.yml</code></p>
+</li>
+<li><p><code>.eslintrc.json</code></p>
+</li>
+<li><p><code>.eslintrc</code>&#xFF08;&#x5DF2;&#x5F03;&#x7528;&#xFF09;</p>
+</li>
+<li><p><code>package.json</code> </p>
+</li>
+</ol>
+</li>
+</ul>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;ESLint &#x4F1A;&#x5728;&#x6240;&#x6709;&#x7236;&#x7EA7;&#x76EE;&#x5F55;&#x91CC;&#x5BFB;&#x627E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x4E00;&#x76F4;&#x5230;&#x6839;&#x76EE;&#x5F55;&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x4F60;&#x6240;&#x6709;&#x9879;&#x76EE;&#x90FD;&#x9075;&#x5FAA;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x7EA6;&#x5B9A;&#x65F6;&#xFF0C;&#x8FD9;&#x5C06;&#x4F1A;&#x5F88;&#x6709;&#x7528;&#xFF0C;&#x4F46;&#x6709;&#x65F6;&#x5019;&#x4F1A;&#x5BFC;&#x81F4;&#x610F;&#x60F3;&#x4E0D;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x4E3A;&#x4E86;&#x5C06; ESLint &#x9650;&#x5236;&#x5230;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x5728;&#x4F60;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684; <code>package.json</code> &#x6587;&#x4EF6;&#x6216;&#x8005; <code>.eslintrc.*</code> &#x6587;&#x4EF6;&#x91CC;&#x8BBE;&#x7F6E; <code>&quot;root&quot;: true</code>&#x3002;ESLint &#x4E00;&#x65E6;&#x53D1;&#x73B0;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6709; <code>&quot;root&quot;: true</code>&#xFF0C;&#x5B83;&#x5C31;&#x4F1A;&#x505C;&#x6B62;&#x5728;&#x7236;&#x7EA7;&#x76EE;&#x5F55;&#x4E2D;&#x5BFB;&#x627E;&#x3002;</p>
+<p><code>.eslintrc.js</code>&#x6587;&#x4EF6;&#x793A;&#x4F8B;&#xFF1A;<a href="http://eslint.cn/" target="_blank">ESlint &#x4E2D;&#x6587;&#x5B98;&#x65B9;&#x7F51;&#x7AD9;</a></p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+    root: <span class="hljs-literal">true</span>,
+    parser: <span class="hljs-string">&quot;vue-eslint-parser&quot;</span>,
+    parserOptions: {
+        parser: <span class="hljs-string">&apos;babel-eslint&apos;</span>
+    },
+    env: {
+        browser: <span class="hljs-literal">true</span>,
+    },
+    globals: {},
+    <span class="hljs-comment">// https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style</span>
+    extends: [<span class="hljs-string">&apos;plugin:vue/recommended&apos;</span>, <span class="hljs-string">&apos;eslint:recommended&apos;</span>],
+    rules: {
+        <span class="hljs-string">&quot;no-unused-vars&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;no-console&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&apos;no-debugger&apos;</span>: process.env.NODE_ENV === <span class="hljs-string">&apos;production&apos;</span> ? <span class="hljs-number">2</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&apos;indent&apos;</span>: [<span class="hljs-number">2</span>, <span class="hljs-number">2</span>], <span class="hljs-comment">//&#x6587;&#x4EF6;&#x7F29;&#x8FDB;</span>
+        <span class="hljs-string">&quot;eqeqeq&quot;</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">//&#x4E25;&#x683C;&#x6BD4;&#x8F83; === &#x548C; !==</span>
+        <span class="hljs-string">&quot;no-useless-escape&quot;</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">//&#x65E0;&#x6548;&#x8F6C;&#x4E49;&#x7B26;</span>
+        <span class="hljs-string">&quot;quotes&quot;</span>: [<span class="hljs-number">1</span>, <span class="hljs-string">&apos;single&apos;</span>],  <span class="hljs-comment">//&#x5355;&#x5F15;&#x53F7;</span>
+        <span class="hljs-string">&quot;semi&quot;</span>: [<span class="hljs-string">&quot;error&quot;</span>, <span class="hljs-string">&quot;never&quot;</span>], <span class="hljs-comment">//&#x540D;&#x672B;&#x5206;&#x53F7;</span>
+        <span class="hljs-string">&quot;no-new&quot;</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">//new &#x672A;&#x8D4B;&#x503C;&#x7ED9;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;</span>
+        <span class="hljs-string">&quot;no-multiple-empty-lines&quot;</span>: [<span class="hljs-number">1</span>, { <span class="hljs-string">&quot;max&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;maxEOF&quot;</span>: <span class="hljs-number">1</span> }], <span class="hljs-comment">//&#x6700;&#x591A;&#x7A7A;&#x884C;&#x3001;&#x6587;&#x4EF6;&#x7ED3;&#x5C3E;&#x6700;&#x591A;&#x7A7A;&#x884C;</span>
+        <span class="hljs-string">&quot;no-undef&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;no-empty&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;no-case-declarations&quot;</span>: <span class="hljs-number">0</span>,
+
+        <span class="hljs-string">&quot;vue/max-attributes-per-line&quot;</span>: [<span class="hljs-number">2</span>, { <span class="hljs-comment">//&#x5355;&#x884C;&#x6700;&#x591A;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;</span>
+            <span class="hljs-string">&quot;singleline&quot;</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-string">&quot;multiline&quot;</span>: {
+                <span class="hljs-string">&quot;max&quot;</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-string">&quot;allowFirstLine&quot;</span>: <span class="hljs-literal">false</span>
+            }
+        }],
+        <span class="hljs-string">&quot;vue/require-v-for-key&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;vue/no-use-v-if-with-v-for&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;vue/require-default-prop&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;vue/no-unused-vars&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;vue/require-prop-types&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;vue/no-unused-components&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;vue/valid-v-on&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;vue/no-v-html&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;vue/require-component-is&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;vue/valid-v-for&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;vue/no-parsing-error&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;vue/no-async-in-computed-properties&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;vue/no-side-effects-in-computed-properties&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;vue/valid-v-bind&quot;</span>: <span class="hljs-number">0</span>
+    }
+}
+</code></pre>
+<p><strong>Eslint&#x4F7F;&#x7528;&#xFF1A;</strong></p>
+<ul>
+<li><p>&#x547D;&#x4EE4;&#x884C;&#xFF1A;<code>eslint --fix &apos;{src,packages}/**/*.{js,vue,ts}&apos;</code></p>
+</li>
+<li><p>webpack.config.js&#xFF1A;</p>
+<pre><code class="lang-js">{
+    <span class="hljs-built_in">module</span>: {
+        rules: [
+            {
+                test: <span class="hljs-regexp">/\.(js|vue)$/</span>,
+                loader: <span class="hljs-string">&apos;eslint-loader&apos;</span>,
+                enforce: <span class="hljs-string">&quot;pre&quot;</span>,
+                include: [resolve(<span class="hljs-string">&apos;src&apos;</span>), resolve(<span class="hljs-string">&apos;packages&apos;</span>)],
+                options: {
+                    formatter: <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;eslint-friendly-formatter&apos;</span>),
+                    fix: <span class="hljs-literal">true</span>
+                }
+            }
+        ]
+    }
+}
+</code></pre>
+</li>
+<li><p>&#x5FFD;&#x7565;&#x6587;&#x4EF6;&#xFF1A;&#x65B0;&#x589E;<code>eslintignore</code>&#x6587;&#x4EF6;&#xFF0C;&#x52A0;&#x4E0A;&#x9700;&#x8981;&#x5FFD;&#x7565;&#x7684;&#x8DEF;&#x5F84;&#xFF1A;</p>
+<pre><code class="lang-sh">docs/**
+</code></pre>
+</li>
+</ul>
+<h3 id="stylelint"><a href="https://www.npmjs.com/package/stylelint" target="_blank">Stylelint</a></h3>
+<p>&#x4E00;&#x4E2A;&#x5F3A;&#x5927;&#x7684;css&#x6821;&#x9A8C;&#x63D2;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x4F60;&#x907F;&#x514D;&#x9519;&#x8BEF;&#x548C;&#x5F3A;&#x5236;&#x7EA6;&#x5B9A;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;&#x98CE;&#x683C;</p>
+<p><strong>&#x5B89;&#x88C5;&#xFF1A;</strong><code>npm i stylelint stylelint-config-standard stylelint-selector-bem-pattern -D</code></p>
+<p><strong>&#x914D;&#x7F6E;&#xFF1A;</strong>&#x4EE3;&#x7801;&#x68C0;&#x67E5;&#x5DE5;&#x5177;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x5BF9;&#x8C61;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x5236;&#x4F5C;&#x81EA;&#x5DF1;&#x7684;&#x914D;&#x7F6E;&#x6216;&#x7EE7;&#x627F;&#x73B0;&#x6709;&#x914D;&#x7F6E;&#x3002; &#x67E5;&#x627E;&#x548C;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x5BF9;&#x8C61;&#x4ECE;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x5F00;&#x59CB;&#xFF0C;&#x5B83;&#x5C06;&#x6309;&#x4EE5;&#x4E0B;&#x987A;&#x5E8F;&#x67E5;&#x627E;&#x4EE5;&#x4E0B;&#x53EF;&#x80FD;&#x7684;&#x6E90;&#xFF1A;</p>
+<ul>
+<li><code>package.json</code> &#x4E2D;&#x7684; <code>stylelint</code> &#x5C5E;&#x6027;</li>
+<li><code>.stylelintrc</code> &#x6587;&#x4EF6;</li>
+<li><code>stylelint.config.js</code> &#x6587;&#x4EF6;</li>
+</ul>
+<p><code>.stylelintrc</code> &#x6587;&#x4EF6;&#xFF08;&#x6CA1;&#x6709;&#x6269;&#x5C55;&#x540D;&#xFF09;&#x53EF;&#x4EE5;&#x662F; JSON &#x6216; YAML &#x683C;&#x5F0F;&#x3002;&#x6216;&#x8005;&#x60A8;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x6269;&#x5C55;&#x540D;&#x4EE5;&#x6307;&#x5B9A;&#x683C;&#x5F0F;&#xFF1A;<code>.stylelintrc.json</code>&#x3001; <code>.stylelintrc.yaml</code>&#x3001; <code>.stylelintrc.yml</code>&#x3001; <code>.stylelintrc.js</code>&#x3002;</p>
+<p>&#x627E;&#x5230;&#x5E76;&#x89E3;&#x6790;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x540E;&#xFF0C;&#x641C;&#x7D22;&#x5C06;&#x505C;&#x6B62;&#x5E76;&#x5C06;&#x4F7F;&#x7528;&#x8BE5;&#x5BF9;&#x8C61;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>config</code> &#x6216; <code>configFile</code> &#x9009;&#x9879;&#x7ED5;&#x8FC7;&#x914D;&#x7F6E;&#x641C;&#x7D22;&#x3002;</p>
+<p><code>stylelint.config.js</code>&#x6587;&#x4EF6;&#x793A;&#x4F8B;&#xFF1A;<a href="https://stylelint.docschina.org/user-guide/configuration/" target="_blank">stylelint&#x914D;&#x7F6E;</a></p>
+<pre><code class="lang-js">{
+    <span class="hljs-string">&quot;extends&quot;</span>: <span class="hljs-string">&quot;stylelint-config-standard&quot;</span>,
+    <span class="hljs-string">&quot;plugins&quot;</span>: [
+        <span class="hljs-string">&quot;stylelint-selector-bem-pattern&quot;</span>
+    ],
+    <span class="hljs-string">&quot;rules&quot;</span>: {
+        <span class="hljs-string">&quot;block-no-empty&quot;</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-string">&quot;color-no-invalid-hex&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;comment-empty-line-before&quot;</span>: [ <span class="hljs-string">&quot;always&quot;</span>, {
+            <span class="hljs-string">&quot;ignore&quot;</span>: [<span class="hljs-string">&quot;stylelint-commands&quot;</span>, <span class="hljs-string">&quot;after-comment&quot;</span>]
+        }
+        ],
+        <span class="hljs-string">&quot;declaration-colon-space-after&quot;</span>: <span class="hljs-string">&quot;always&quot;</span>,
+        <span class="hljs-string">&quot;indentation&quot;</span>: [<span class="hljs-string">&quot;tab&quot;</span>, {
+            <span class="hljs-string">&quot;except&quot;</span>: [<span class="hljs-string">&quot;value&quot;</span>]
+        }],
+        <span class="hljs-string">&quot;max-empty-lines&quot;</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-string">&quot;rule-empty-line-before&quot;</span>: [ <span class="hljs-string">&quot;always&quot;</span>, {
+            <span class="hljs-string">&quot;except&quot;</span>: [<span class="hljs-string">&quot;first-nested&quot;</span>],
+            <span class="hljs-string">&quot;ignore&quot;</span>: [<span class="hljs-string">&quot;after-comment&quot;</span>]
+        }
+        ],
+        <span class="hljs-string">&quot;unit-whitelist&quot;</span>: [<span class="hljs-string">&quot;em&quot;</span>, <span class="hljs-string">&quot;rem&quot;</span>, <span class="hljs-string">&quot;%&quot;</span>, <span class="hljs-string">&quot;s&quot;</span>],
+        <span class="hljs-string">&quot;plugin/selector-bem-pattern&quot;</span>: {
+            componentSelectors: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">componentName</span>) </span>{
+                <span class="hljs-keyword">var</span> word = <span class="hljs-string">&apos;[a-z0-9]+&apos;</span>;
+                <span class="hljs-keyword">var</span> namespace = <span class="hljs-string">`bx-tool`</span>;
+                <span class="hljs-keyword">var</span> block = <span class="hljs-string">`(?:-<span class="hljs-subst">${word}</span>)+`</span>;
+                <span class="hljs-keyword">var</span> elementOrModifier = <span class="hljs-string">`(?:-|--<span class="hljs-subst">${word}</span>)*`</span>;
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">`^\\.<span class="hljs-subst">${namespace}</span><span class="hljs-subst">${block}</span><span class="hljs-subst">${elementOrModifier}</span>`</span>);
+            },
+            implicitComponents: <span class="hljs-string">&quot;packages/**/*.css&quot;</span>,
+            ignoreSelectors: [
+                <span class="hljs-string">&apos;\.img-responsive&apos;</span>,
+                <span class="hljs-string">&apos;\.animate-.+$&apos;</span>,
+                <span class="hljs-string">&apos;\.transition-.+$&apos;</span>,
+            ]
+        }
+    }
+}
+</code></pre>
+<p><code>stylelint-selector-bem-pattern</code>&#xFF0C;&#x662F;<code>stylelint</code>&#x7684;&#x6269;&#x5C55;&#x63D2;&#x4EF6;&#xFF0C;&#x4E3A;css&#x9009;&#x62E9;&#x5668;&#x6307;&#x5B9A;&#x6B63;&#x5219;&#x5339;&#x914D;&#x3002;</p>
+<p><strong>Eslint&#x4F7F;&#x7528;&#xFF1A;</strong></p>
+<ul>
+<li><p>&#x547D;&#x4EE4;&#x884C;&#xFF1A;<code>stylelint --cache **/*.{html,vue,css,sass,scss} --fix</code></p>
+</li>
+<li><p>&#x5404;&#x79CD;&#x7F16;&#x8F91;&#x5668;&#xFF1A;<code>Sublime Text&#x3001;Atom&#x3001;Visual Studio Code</code>&#x7B49;</p>
+</li>
+<li><p>&#x5404;&#x79CD;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#xFF1A;Gulp&#x3001;Webpack&#x7B49;</p>
+</li>
+<li><p>&#x901A;&#x8FC7; Node.js &#x7684;api</p>
+</li>
+<li><p>&#x4F5C;&#x4E3A; postcss &#x7684;&#x63D2;&#x4EF6;</p>
+</li>
+</ul>
+<h3 id="husky"><a href="https://www.npmjs.com/package/husky" target="_blank">Husky</a></h3>
+<p>&#x73B0;&#x5728;&#x6700;&#x6D41;&#x884C;&#x7684;&#x7248;&#x672C;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#x975E;<code>git</code>&#x83AB;&#x5C5E;&#xFF0C;&#x800C;&#x826F;&#x597D;&#x7684;&#x4EE3;&#x7801;&#x89C4;&#x8303;&#x6709;&#x52A9;&#x4E8E;&#x9879;&#x76EE;&#x7684;&#x7EF4;&#x62A4;&#xFF0C;&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x4E00;&#x4E9B;&#x4E0D;&#x89C4;&#x8303;&#x7684;&#x4EE3;&#x7801;  <code>commit</code>&#x5E76;<code>push</code>&#x5230;&#x8FDC;&#x7AEF;,&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;<code>git</code>&#x547D;&#x4EE4;&#x6267;&#x884C;&#x524D;&#x7528;&#x4E00;&#x4E9B;&#x94A9;&#x5B50;&#x6765;&#x68C0;&#x6D4B;&#x5E76;&#x963B;&#x6B62;&#x3002;&#x73B0;&#x5728;&#x5927;&#x524D;&#x7AEF;&#x4E3B;&#x8981;&#x6709;&#x4E24;&#x79CD;<code>git</code>&#x94A9;&#x5B50;&#x63D2;&#x4EF6;&#xFF1A;<code>husky</code>&#xFF08;jquery&#x4E0E;next.js&#x90FD;&#x5728;&#x7528;&#xFF09;&#xFF0C;<code>pre-commit</code>(antd&#x5728;&#x7528;) &#x3002;husky&#x80FD;&#x591F;&#x9632;&#x6B62;&#x4E0D;&#x89C4;&#x8303;&#x4EE3;&#x7801;&#x88AB;commit&#x3001;push&#x3001;merge&#x7B49;&#x7B49;&#x3002; </p>
+<p>&#x5B89;&#x88C5;&#xFF1A;<code>npm i husky -D</code></p>
+<pre><code class="lang-js"><span class="hljs-comment">//package.json</span>
+{
+    <span class="hljs-string">&quot;scripts&quot;</span>: {
+        <span class="hljs-string">&quot;precommit&quot;</span>: <span class="hljs-string">&quot;lint-staged&quot;</span>
+    }
+}
+</code></pre>
+<h3 id="lint-staged"><a href="https://github.com/okonet/lint-staged" target="_blank">Lint-staged</a></h3>
+<p> <a href="https://github.com/okonet/lint-staged" target="_blank">lint-staged</a>&#x53EF;&#x4EE5;&#x5728;<code>git staged</code>&#x9636;&#x6BB5;&#x7684;&#x6587;&#x4EF6;&#x4E0A;&#x6267;&#x884C;<code>linters</code>&#xFF0C;&#x7B80;&#x5355;&#x70B9;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x5F53;&#x6211;&#x4EEC;&#x8FD0;&#x884C;<code>eslint</code>&#x6216;<code>stylelint</code>&#x7684;&#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x53EA;&#x4F1A;&#x68C0;&#x67E5;&#x6211;&#x4EEC;&#x901A;&#x8FC7;<code>git add</code>&#x6DFB;&#x52A0;&#x5230;&#x6682;&#x5B58;&#x533A;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x6211;&#x4EEC;&#x6BCF;&#x6B21;&#x68C0;&#x67E5;&#x90FD;&#x628A;&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x68C0;&#x67E5;&#x4E00;&#x904D;&#x3002;</p>
+<p> &#x5B89;&#x88C5;&#xFF1A;<code>npm i lint-staged -D</code></p>
+<pre><code class="lang-js"><span class="hljs-comment">//package.json</span>
+{
+    <span class="hljs-string">&quot;scripts&quot;</span>: {
+        <span class="hljs-string">&quot;precommit&quot;</span>: <span class="hljs-string">&quot;lint-staged&quot;</span>
+    },
+    <span class="hljs-string">&quot;lint-staged&quot;</span>: {
+        <span class="hljs-string">&quot;{src,packages}/**/*.{js,vue}&quot;</span>: [
+            <span class="hljs-string">&quot;eslint --fix&quot;</span>,
+            <span class="hljs-string">&quot;prettier --write&quot;</span>,
+            <span class="hljs-string">&quot;git add&quot;</span>
+        ],
+        <span class="hljs-string">&quot;{src,packages}/**/*.{css,vue}&quot;</span>: [
+            <span class="hljs-string">&quot;stylelint --fix&quot;</span>,
+            <span class="hljs-string">&quot;git add&quot;</span>
+        ]
+    }
+}
+</code></pre>
+<h3 id="prettier">Prettier</h3>
+<p>Prettier&#x5DE5;&#x5177;&#x4E3B;&#x8981;&#x7528;&#x6765;&#x7EDF;&#x4E00;&#x4EE3;&#x7801;&#x683C;&#x5F0F;&#x7684;&#xFF0C;eslint &#x4E5F;&#x4F1A;&#x5BF9;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x7684;&#x683C;&#x5F0F;&#x6821;&#x9A8C;&#xFF0C;&#x4F46;&#x4E3B;&#x8981;&#x662F;&#x7528;&#x6765;&#x5BF9;&#x4EE3;&#x7801;&#x89C4;&#x8303;&#x7684;&#x626B;&#x63CF;&#xFF0C;&#x800C; prettier &#x5219;&#x662F;&#x4E13;&#x95E8;&#x7528;&#x6765;&#x5BF9;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x683C;&#x5F0F;&#x5316;&#xFF0C;&#x4E24;&#x4E2A;&#x5DE5;&#x5177;&#x5404;&#x53F8;&#x5176;&#x804C;&#xFF0C;&#x4E3A;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x8FDB;&#x884C;&#x4FDD;&#x9A7E;&#x62A4;&#x822A;&#x3002;&#x5B83;&#x7684;&#x4E3B;&#x8981;&#x539F;&#x7406;&#x662F;<strong>&#x5C06;&#x683C;&#x5F0F;&#x5316;&#x524D;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x683C;&#x5F0F;&#x5316;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x6BD4;&#x5BF9;&#xFF0C;&#x5982;&#x679C;&#x53D1;&#x73B0;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;prettier&#x5C31;&#x4F1A;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x6807;&#x8BB0;&#x5E76;&#x6309;&#x7167;&#x6307;&#x5B9A;&#x7684;&#x683C;&#x5F0F;&#x5316;&#x89C4;&#x8303;&#x8FDB;&#x884C;&#x4FEE;&#x590D;</strong>&#x3002;</p>
+<p><strong>&#x5B89;&#x88C5;&#xFF1A;</strong><code>npm i prettier eslint-plugin-prettier eslint-config-prettier -D</code></p>
+<p><strong>&#x914D;&#x7F6E;&#xFF1A;</strong></p>
+<ol>
+<li><code>.prettierrc</code> &#x6587;&#x4EF6;</li>
+<li><code>prettier.config.js</code>&#x6587;&#x4EF6;</li>
+<li><code>package.json</code> &#x4E2D;&#x914D;&#x7F6E;<code>prettier</code>&#x5C5E;&#x6027;</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-comment">//prettier.config.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+    printWidth: <span class="hljs-number">80</span>,
+    semi: <span class="hljs-literal">true</span>,
+    singleQuote: <span class="hljs-literal">true</span>,
+    trailingComma: <span class="hljs-string">&apos;none&apos;</span>,
+    bracketSpacing: <span class="hljs-literal">true</span>,
+    jsxBracketSameLine: <span class="hljs-literal">false</span>,
+    arrowParens: <span class="hljs-string">&apos;avoid&apos;</span>,
+    requirePragma: <span class="hljs-literal">false</span>,
+    proseWrap: <span class="hljs-string">&apos;preserve&apos;</span>
+}
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x548C;<code>eslint</code>&#x914D;&#x5408;&#x4F7F;&#x7528;&#x9700;&#x8981;&#x5F15;&#x5165;&#x4E24;&#x4E2A;&#x63D2;&#x4EF6;<code>eslint-plugin-prettier&#x548C;eslint-config-prettier</code>&#xFF0C;&#x5176;&#x4E2D;&#x9700;&#x8981;&#x8BF4;&#x660E;&#x7684;&#x662F; <code>eslint-config-prettier</code> &#x63D2;&#x4EF6;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#x662F;&#x5982;&#x679C; <code>eslint</code>&#x7684;&#x89C4;&#x5219;&#x548C; <code>prettier</code>&#x7684;&#x89C4;&#x5219;&#x53D1;&#x751F;&#x51B2;&#x7A81;&#x7684;&#x65F6;&#x5019;&#xFF08;&#x4E3B;&#x8981;&#x662F;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x51B2;&#x7A81;&#xFF09;&#xFF0C;&#x4F8B;&#x5982;<code>eslint</code>&#x9650;&#x5236;&#x4E86;&#x5FC5;&#x987B;&#x5355;&#x5F15;&#x53F7;&#xFF0C;<code>prettier</code>&#x4E5F;&#x9650;&#x5236;&#x4E86;&#x5FC5;&#x987B;&#x5355;&#x5F15;&#x53F7;&#xFF0C;&#x90A3;&#x4E48;&#x5982;&#x679C;&#x7528; <code>eslint</code>&#x9A71;&#x52A8; <code>prettier</code>&#x6765;&#x505A;&#x4EE3;&#x7801;&#x68C0;&#x67E5;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x4F1A;&#x63D0;&#x793A;2&#x79CD;&#x62A5;&#x9519;&#xFF0C;&#x867D;&#x7136;&#x4ED6;&#x4EEC;&#x90FD;&#x6307;&#x5411;&#x540C;&#x4E00;&#x79CD;&#x4EE3;&#x7801;&#x9519;&#x8BEF;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x7531;&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#x6765;&#x5173;&#x95ED;&#x6389;&#x989D;&#x5916;&#x7684;&#x62A5;&#x9519;&#x3002;</p>
+<h3 id="&#x94A9;&#x5B50;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;">&#x94A9;&#x5B50;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h3>
+<p>&#x5F53;&#x5F00;&#x53D1;&#x8005;&#x6267;&#x884C; <code>git add</code> &#x64CD;&#x4F5C;&#x5C06;&#x4EE3;&#x7801;&#x63D0;&#x4EA4;&#x5230;&#x6682;&#x5B58;&#x533A;&#x540E;&#xFF0C;&#x518D;&#x6267;&#x884C; <code>git commit</code> &#x64CD;&#x4F5C;&#xFF1A;</p>
+<ol>
+<li>&#x7531;&#x4E8E;&#x5B89;&#x88C5;<code>husky</code>&#x540E;&#xFF0C;&#x5176;&#x5728;<code>.git/hooks</code>&#x4E2D;&#x5199;&#x5165;&#x4E86;<code>pre-commit</code>&#x94A9;&#x5B50;&#xFF0C;&#x8BE5;&#x94A9;&#x5B50;&#x5728; <code>git commit</code> &#x6267;&#x884C;&#x65F6;&#x88AB;&#x89E6;&#x53D1;&#xFF0C;&#x6267;&#x884C;<code>npm run precommit</code>&#x811A;&#x672C;&#xFF08;&#x5373;<code>lint-staged</code>&#x547D;&#x4EE4;&#xFF09;&#xFF1B;</li>
+<li><code>lint-staged</code>&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5C31;&#x662F;&#x5229;&#x7528;<code>linters</code>&#x5BF9;&#x6682;&#x5B58;&#x533A;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x5E94;&#x7528;&#x8FC7;&#x6EE4;&#x89C4;&#x5219;&#xFF0C;&#x5339;&#x914D;&#x7684;&#x6587;&#x4EF6;&#x5C06;&#x6267;&#x884C;&#x540E;&#x9762;&#x914D;&#x7F6E;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x4EFB;&#x52A1;&#x5C31;&#x662F;&#x8C03;&#x7528;&#x9879;&#x76EE;&#x4E2D;&#x7684;<code>eslint</code>&#x6307;&#x4EE4;&#x68C0;&#x67E5;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x62A5;&#x9519;&#x5219;&#x5148;&#x81EA;&#x52A8;&#x4FEE;&#x590D;<code>--fix</code>&#xFF0C;&#x6700;&#x540E;&#x628A;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#x7684;&#x4EE3;&#x7801;&#x52A0;&#x5165;&#x6682;&#x5B58;&#x533A;<code>git add</code>&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6700;&#x7EC8;&#x8FD8;&#x6709;&#x62A5;&#x9519;&#xFF0C;&#x5219;&#x6D41;&#x7A0B;&#x7EC8;&#x6B62;&#xFF0C;&#x65E0;&#x6CD5;&#x6267;&#x884C; commit &#x64CD;&#x4F5C;&#x3002;</li>
+</ol>
+<h3 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;">&#x53C2;&#x8003;&#x94FE;&#x63A5;</h3>
+<p><a href="https://juejin.im/post/5c67fcaae51d457fcb4078c9#heading-8" target="_blank">eslint+husky+prettier+lint-staged&#x63D0;&#x5347;&#x524D;&#x7AEF;&#x5E94;&#x7528;&#x8D28;&#x91CF;</a></p>
+<p><a href="https://www.imqianduan.com/tool/171.html" target="_blank">&#x4F7F;&#x7528;husky&#x3001;lint-staged&#x3001;prettier&#x3001;eslint&#x4FDD;&#x6301;&#x56E2;&#x961F;&#x4EE3;&#x7801;&#x4E00;&#x81F4;</a></p>
+<p><a href="https://juejin.im/post/5bab946cf265da0ae92a75ca" target="_blank">&#x6DF1;&#x5165;&#x6D45;&#x51FA;eslint&#x2014;&#x2014;&#x5173;&#x4E8E;&#x6211;&#x5B66;&#x4E60;eslint&#x7684;&#x5FC3;&#x5F97;</a></p>
+<p><a href="https://www.jianshu.com/p/1c805c52c51d" target="_blank">&#x81EA;&#x5B9A;&#x4E49;&#x89C4;&#x5219;</a></p>
+<p><a href="https://segmentfault.com/a/1190000018532745" target="_blank">&#x9AD8;&#x7EA7;&#x524D;&#x7AEF;&#x57FA;&#x7840;-JavaScript&#x62BD;&#x8C61;&#x8BED;&#x6CD5;&#x6811;AST</a></p>
+<footer class="page-footer"><span class="copyright">&#xA9; lizhao all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-09-25 22:40:21
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="00-基础-02-浏览器工作原理.html" class="navigation navigation-prev " aria-label="Previous page: 基础 02 浏览器工作原理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="01-聊一聊Cookie的一些问题.html" class="navigation navigation-next " aria-label="Next page: 聊一聊Cookie的一些问题">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"进阶 04 如何保证高质量代码","level":"4.3","depth":1,"next":{"title":"聊一聊Cookie的一些问题","level":"4.4","depth":1,"path":"frontend/01-聊一聊Cookie的一些问题.md","ref":"frontend/01-聊一聊Cookie的一些问题.md","articles":[]},"previous":{"title":"基础 02 浏览器工作原理","level":"4.2","depth":1,"path":"frontend/00-基础-02-浏览器工作原理.md","ref":"frontend/00-基础-02-浏览器工作原理.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","summary","theme-comscore","splitter","fontsettings","tbfed-pagefooter","theme-default","pageview-count","accordion","sharing-plus","klipse","back-to-top-button","chapter-fold","livereload"],"root":"/","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"livereload":{},"summary":{},"splitter":{},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"twitter":false,"vk":false,"pocket":false,"google":true,"qzone":true},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"search-plus":{}},"theme":"default","page":{"title":"前端知识库(lizh)"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"authorName":"lizhao"},"title":"LIZHAO","gitbook":"3.2.3"},"file":{"path":"frontend/00-进阶-04-如何保证高质量代码.md","mtime":"2021-09-25T14:40:21.715Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-15T16:58:39.485Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
