@@ -9,6 +9,7 @@
 - [JS常见问题概览](bugs/05-JS常见问题概览.md)
 - [移动端兼容性问题概览](bugs/06-移动端兼容性问题概览.md)
 - [小程序问题概览](bugs/07-小程序问题概览.md)
+- [其他问题汇总](bugs/99-其他问题汇总.md)
 
 ## Css探索系列
 
@@ -29,10 +30,12 @@
 ## Frontend
 
 - [关于前端](frontend/00-关于前端.md)
-- [基础 02 浏览器工作原理](frontend/00-基础-02-浏览器工作原理.md)
-- [进阶 04 如何保证高质量代码](frontend/00-进阶-04-如何保证高质量代码.md)
-- [聊一聊Cookie的一些问题](frontend/01-聊一聊Cookie的一些问题.md)
-- [如何理解HTTP响应的状态码](frontend/02-如何理解HTTP响应的状态码.md)
+- [基础 02 浏览器工作原理](frontend/01-基础-02-浏览器工作原理.md)
+- [基础 03 谈谈跨域访问及其解决方法](frontend/01-基础-03-谈谈跨域访问及其解决方法.md)
+- [聊一聊Cookie的一些问题](frontend/05-聊一聊Cookie的一些问题.md)
+- [如何启动本地HTTPS服务](frontend/07-如何启动本地HTTPS服务.md)
+- [0.0.0.0、127.0.0.1和Localhost的区别](frontend/08-0.0.0.0、127.0.0.1和localhost的区别.md)
+- [如何理解HTTP响应的状态码](frontend/09-如何理解HTTP响应的状态码.md)
 - [代码规范](frontend/代码规范/README.md)
 
     - [W3C标准](frontend/代码规范/00-W3C标准.md)

@@ -8,7 +8,7 @@ HTTP 响应状态代码指示特定 HTTP 请求是否已成功完成。状态代
 - 4xx：客户端错误
 - 5xx：服务器错误
 
- 
+<img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/http-status-code.png" alt="HTTP状态码"/>
 
 ### 一般故障排除提示
 
