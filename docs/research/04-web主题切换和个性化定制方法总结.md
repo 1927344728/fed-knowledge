@@ -469,3 +469,6 @@ getComputedStyle(document.documentElement).getPropertyValue('--major-color')
 [一文总结前端换肤换主题](https://www.jianshu.com/p/35e0581629d2)
 
 [实现三方库按需引入与多主题方案](https://hstory.cn/2018/08/31/%E5%AE%9E%E7%8E%B0%E4%B8%89%E6%96%B9%E5%BA%93%E6%8C%89%E9%9C%80%E5%BC%95%E5%85%A5%E4%B8%8E%E5%A4%9A%E4%B8%BB%E9%A2%98%E6%96%B9%E6%A1%88/)
+
+[阮一峰-CSS 变量教程](https://www.ruanyifeng.com/blog/2017/05/css-variables.html)
+

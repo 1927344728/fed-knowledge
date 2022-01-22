@@ -1,151 +1,49 @@
 ## CSS基础知识
 
-### Img标签图片空隙问题
+#### 什么是幽灵空白节点？
 
-img本来是行内元素，却可以用width 和height，当父元素没有设置高度的时候，用子元素们的高度计算出的高度给父元素的时候就会出现3px空隙这类的问题。
+在 HTML5 规范中有这样一句话：
 
-img图片默认排版为 inline-block;而所有的inline-block元素之间都会有空白。
-![](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/1245223-a1d7789ea88eef3f.png)
+> Each line box starts with a zero-width inline box with the element's font and line height properties. We call that imaginary box a 'strut'.
+>
+> 每个行框盒子都以一个具有元素的字体和行高属性的零宽度行内框开始。我们称这个假想的盒子为"支柱"。
 
-#### 解决方法
+在**HTML5 文档声明**中，内联元素的所有解析和渲染表现就如同每个行框盒子的前面有一个“空白节点”一样。这个 “空白节点” 永远透明，不占据任何宽度，也无法通过脚本获取，就好像幽灵一样，但又确确实实地存在，表现如同文本节点一样。也就是官方规范中的“`strut`”，在张鑫旭《CSS 世界》一书中根据其特点，称之为 “幽灵空白节点”。
 
-- **方法一：** `display:block`，把 `img` 标签设为块级元素 ；
-- **方法二：** `font-size:0`，将父容器字体大小设为零；
-- **方法三：** 去掉 `img` 标签之间的空格，将所用的 `img` 标签书写在同一行（即各个 `img`标签之间不换行、不留空格）；
-- **方法四：** `vertical-align: top|bottom|text-top|text-bottom`，修改 `img`元素的垂直对齐方式；
-- **方法五：** `img` 元素、 `img` 的父元素设置相同宽高，父元素加 `overflow:hidden` ，截掉超出的空白部分；
-- **方法六：** `float: left`，设置 `img` 的浮动属性；
-- **方法七：** 图片宽高最好为偶数。[具体原理与设备的象素比有关](https://juejin.im/entry/59e70320f265da431c6f6514)
+幽灵空白节点引起的典型问题是：内联元素与父元素的底部会留有空白，比如 `img` 标签图片空隙。留空白的具体原因及解决方法，可查看 [img元素底部为何有空白？](https://app.gitbook.com/s/-M8fDLTBWl2H-MOzligj/css-tan-suo-xi-lie/14css-tan-suo-xi-lie-lineheight#img-yuan-su-di-bu-wei-he-you-kong-bai)。
 
-### rem产生的小数像素问题
+#### 什么是空白字符？
 
-rem 是 css 中的相对长度单位。**概括地说**，rem 单位的意思是"根元素的字体大小“，即 HTML 节点的 fontsize 值。响应式开发中，用rem 做单位，可以通过修改 HTML 节点的 fontsize 值，实现在不同屏宽下，渲染出不同尺寸的元素。
+浏览器会把内联元素间的空白字符（空格、换行、Tab 等）渲染成一个空格，该空格会占用一定宽度。而为了美观，我们通常在编写代码时，让一个标签占用一行。这样就导致标签之间会有空白字符。
 
-比如：HTML 节点的 `font-size: 16px`，其子元素 `font-size: 1rem`，最终计算子元素的 font-size 值 `16px * 1 = 16px`。
+空白字符与幽灵空白节点的区别：
 
-与此同时，rem 单位的使用也带来一个问题：对于单倍像素密度的屏幕而言，px 是最小的单位，如果子元素 `font-size: 1.03rem`，最终计算出来的值是 `16px * 1.03 = 16.475px`。那么，这`16.475px` 最终是如果渲染的呢？
+* 相同点：都是不可见、有行高的行内框，**都会引起内联元素与父元素的底部留空白问题**；
+* 不同点：空白字符是有宽度的，**它还会导致两个相连内联元素在水平方向空白。**
 
-![image-20210916000059171](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20210916000059171.png)
+解决水平方向空白的办法：
 
-```html
-<section>
-  <style type="text/css">
-    .box1 ul li {
-      height: 1.03rem;
-    }
-  </style>
-  <div class="box1">
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-  </div>
-</section>
-<script>
-    console.log('LI元素的CSS计算高度和实际渲染高度：')
-    Array.prototype.slice.call(document.querySelector('.box1').getElementsByTagName('li')).map((e, i) => {
-        console.log(`第${i + 1}个：`, getComputedStyle(e).height, e.clientHeight)
-    })
-</script>
-```
+* 父元素与子元素之间、多个子元素之间不要有空白字符（空格、换行、Tab 等）；
+* 父元素的 `font-size` 设置为 0，在子元素内定义需要的 `font-size`（**注意：** Safari 浏览器可能依然会出现空白间隔）；
 
-[查看DEMO](https://1927344728.github.io/demo-lizh/html/others_01.html)
+#### 让 Chrome 支持小 12px 的文字
 
-从示例可见，元素最终渲染出来的高度，有可能是17，也有可能是16。
+在 Chrome 下，CSS 设置字体大小为 `12px` 及以下时，显示都是一样大小，都是默认 `12px`。
 
-浏览器的渲染规则：**对像素小数进行四舍五入，元素最终渲染出来的像素是整数体，但是，元素真实占据的空间依旧是原始大小，即带小数的值。**
+* **-webkit-text-size-adjust：** `-webkit-text-size-adjust:none`，字体大小就不受限制了，但是 Chrome 更新到 27 版本之后就不可以用了。
 
-也就是说，如果当前元素没有被其他元素占用空间，其尺寸带小数 `0.475px`，那么小数部分的渲染尺寸应该是 `0px`，但它会占用其临近的元素的空间。如果其临近的元素也带小数 `0.475px` ，加上被占用的 `0.475px`，实际的小数部分是`0.95px`，四舍五入，最终渲染为 `1px`，同时，它还有 `0.05px` 的空间可以被其它元素占用。
+* **scale(0.5)：** `transform: scale(0.5)` 可以缩小字体，默认是以元素的中心为源点，可以通过 `transform-origin` 修改。注意，缩小的是整个元素的大小，且元素必须是块元素。
 
-了解更多，可参考 http://trac.webkit.org/wiki/LayoutUnit
+* 使用图片。
 
-### 文本超出时省略
+#### 常见的元素隐藏方式
 
-```css
-/*单行*/
-{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow:ellipsis;
-}
-/*多行*/
-{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display:-moz-box;
-    display:-webkit-box;
-    display:box;
-    -moz-line-clamp: 3;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -moz-box-orient: vertical;
-    -webkit-box-orient: vertical;
-    box-orient: vertical;
-}
-```
-
-### 自定义滚动条的颜色
-
-注：设置在 `body` 上的滚动条颜色样式无效，需加在 `html` 标签。
-
-```css
-/*滚动条整体样式*/
-/*高宽分别对应横竖滚动条的尺寸*/
-html::-webkit-scrollbar {
-    width: 15px;  
-    /*height: 1px;*/
-}
-/*滚动条里面小方块*/
-html::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: skyblue;
-    background-image: -webkit-linear-gradient(
-        45deg,
-        rgba(255, 255, 255, 0.2) 25%,
-        transparent 25%,
-        transparent 50%,
-        rgba(255, 255, 255, 0.2) 50%,
-        rgba(255, 255, 255, 0.2) 75%,
-        transparent 75%,
-        transparent
-    );
-}
-/*滚动条里面轨道*/
-html::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-    background: #ededed;
-    border-radius: 10px;
-}
-```
-
-### table圆角效果
-
-在 `table` 中设置 `border-radius` 发现不起作用，原因是 `border-collapse: collapse` 和 `border-radius`不兼容。
-
-```css
-/* 方法一 */
-table {
-    border-radius: 12px;
-    border-spacing: 0;
-    border: 1px solid #ccc;
-}
-```
-
-```css
-/* 方法二 */
-table {
-    border-radius: 12px;
-    border-style: hidden;
-    box-shadow: 0 0 0 1px #ccc;
-}
-```
-
-
+* **display: none：** 元素不占空间，也不会响应绑定的监听事件。
+* **visibility: hidden：** 元素仍占据空间，但是不会响应绑定的监听事件。
+* **opacity: 0：** 元素仍占据空间，并且能够响应元素绑定的监听事件。
+* **z-index：** 设置负值，使其他元素遮盖住该元素。
+* **clip/clip-path：** 元素仍占据空间，但是不会响应绑定的监听事件。
+* **transform: scale(0,0)：** 元素仍占据空间，但是不会响应绑定的监听事件。
+* **height: 0：** 元素仍占据空间，但是不会响应绑定的监听事件。
+* 通过绝对定位将元素移除可视区域内。
 
