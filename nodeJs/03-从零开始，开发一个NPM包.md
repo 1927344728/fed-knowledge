@@ -1,6 +1,6 @@
 # 从零开始，开发一个NPM包
 
-[npm](https://www.npmjs.com/) (Node Package Manager) 本来是 Node.js 的包管理工具，但随着JS这几年的蓬勃发展，现在npm 已经成为了几乎所有跟 JS 相关的工具和软件包的管理工具，并且还在不断的发展完善中。
+[npm](https://www.npmjs.com/) (Node Package Manager) 本来是 Node.js 的包管理工具，但随着JS这几年的蓬勃发展，现在 npm 已经成为了几乎所有跟 JS 相关的工具和软件包的管理工具，并且还在不断的发展完善中。
 
 现在最新版的 Node.js 的安装都会自带npm，装上Node.js就可以使用npm。
 
@@ -92,6 +92,7 @@ npm unlink
 * 注册：`npm adduser`
 
 * 判断是否登录：`npm whoami`
+
 * 登录：`npm login`
 
 * 发布：`npm publish`。每次发布，必须修改版本号。版本号更新，要遵循 `Semver(语义化版本号)` 规范：
@@ -99,15 +100,39 @@ npm unlink
   * 升级小版本号：npm version minor
   * 升级大版本号：npm version major
 
-* 删除：**npm包发布后是无法删除的。**即使是你删除了，也只是无法被搜索到，仍可以通过链接直接访问。
+* 删除：**根据规范，只有在发包的24小时内才允许撤销发布的包。**即使是你删除了，也只是无法被搜索到，仍可以通过链接直接访问。
 
+  ```shell
+  npm unpublish --force
+  ```
 
+  
 
 ### 使用npm包
 
 安装：`npm install [npm包名]`
 
 使用：`import "[npm包名]`或者`import Obj, {Obj1, Obj2} from 'npm包名'`
+
+
+
+### 权限转让
+
+要使用 CLI 将软件包传输给另一个 npm 用户，请依次运行 `npm owner add` 和 `rm` 命令。
+
+```shell
+npm owner add <their-username> <package-name>
+npm owner rm <your-username> <package-name>
+```
+
+如果您为写入启用了双重身份验证，则将一次性密码添加到参数 --otp：
+
+```shell
+# 其中123456是来自身份验证器应用程序的代码
+npm owner add <their-username> <package-name> --otp=123456
+npm owner rm <your-username> <package-name> --otp=123456
+```
+
 
 
 

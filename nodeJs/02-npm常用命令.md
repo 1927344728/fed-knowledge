@@ -2,7 +2,7 @@
 
 NPM的全称是 `Node Package Manager`，是随同NodeJS一起安装的包管理和分发工具，它很方便让`JavaScript`开发者下载、安装、上传以及管理已经安装的包。
 
-```
+```shell
 npm -h # 列出帮助信息
 npm <command> -h # 列出该命令的帮助信息
 npm help <term> # 查看帮助信息
