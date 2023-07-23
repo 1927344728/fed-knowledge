@@ -522,9 +522,11 @@ place-content: center start;
 }
 ```
 
+### 相关问题
 
+#### iPhone 设备兼容
 
-
+iPhone 11pro、iPhone 不支持  `justify-content: right`，请用 `justify-content: flex-end` 代替。
 
 ### 参考链接
 

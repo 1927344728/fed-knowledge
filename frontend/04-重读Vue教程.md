@@ -201,7 +201,7 @@ props 可以是数组或对象，用于接收来自父组件的数据。props �
 ```js
 props: {
   propB: {
-		type: String || Array, // 原生构造函数，或原生构造函数组成的数组。包括：String、Number、Boolean、Array、Object、Date、Function、Symbol、任何自定义构造函数。
+		type: [String, Array], // 原生构造函数，或原生构造函数组成的数组。包括：String、Number、Boolean、Array、Object、Date、Function、Symbol、任何自定义构造函数。
     default: any || () => ({}), // 默认值。对象或数组的默认值必须从一个工厂函数返回。
 		required：Boolean, // 是否是必传项
     validator: value => { // 自定义验证函数，将该 prop 的值作为唯一的参数代入。
@@ -648,7 +648,60 @@ computed: {
 
 虽然计算属性在大多数情况下更合适，但有时也需要自定义的**侦听属性**。比如：当需要在数据变化时执行异步或开销较大的操作时、一个数据改变影响多个数据。
 
+**注意：** 组件初始化时，如果 watch 对象的选项 immediate 值为 true，则该 watch 计算会先于 computed 计算，其执行顺序：beforeCreate -> watch -> created -> beforeMount -> computed（如果计算的属性未使用，则不会触发） -> mounted。
 
+##### Vue 组件有哪些通信方式？
+
+8 种常规的 Vue 组件通信方案：
+
+* 通过 props 传递。
+
+* 通过 $emit 触发自定义事件。
+
+* 使用 ref。
+
+* $parent 或$root。
+
+* $attrs 与 $listeners：逐级向下传属性 $attrs 和 $listeners。
+
+* Provide 与 Inject：在祖先组件定义 provide 属性，返回传递的值；在后代组件通过inject接收组件传递过来的值。
+
+* Vuex：共享数据中心。
+
+* EventBus（适用兄弟组件传值）：创建一个中央事件总线 EventBus，兄弟组件通过 $emit 触发自定义事件，另一个兄弟组件通过 $on 监听自定义事件。
+
+  ```javascript
+  // Bus.js
+  class Bus {  
+    constructor() {
+      this.callbacks = {};
+    }
+    $on(name, fn) {
+      this.callbacks[name] = this.callbacks[name] || [];  
+      this.callbacks[name].push(fn);
+    }
+    $emit(name, args) {
+      if (this.callbacks[name]) {
+        this.callbacks[name].forEach((cb) => cb(args));  
+      }
+    }
+  }
+  
+  // main.js  
+  Vue.prototype.$bus = new Bus() // 将$bus挂载到vue实例的原型上  
+  // 另一种方式  
+  Vue.prototype.$bus = new Vue() // Vue已经实现了Bus的功能 
+  ```
+
+  ```html
+  <!-- Children1.vue -->
+  this.$bus.$emit('foo')
+  ```
+
+  ```html
+  <!-- Children2.vue -->
+  this.$bus.$on('foo', this.handle)
+  ```
 
 ### 参考资料
 

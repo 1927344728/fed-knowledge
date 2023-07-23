@@ -432,7 +432,17 @@ conic-gradient([ from <angle> ]? [ at <position> ]?, <angular-color-stop> [<colo
 
 ![image-20200727221512513](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200727221512513.png)
 
+### 常见问题
 
+#### iPhone 设备兼容
+
+iPhone 11pro 不支持如下写法：
+
+```css
+background: linear-gradient(to bottom, rgba(255, 0, 0, 0.1), white 10%, white);
+```
+
+背景渐变色应避免用 rgba 设置透明度。
 
 ### 参考链接
 

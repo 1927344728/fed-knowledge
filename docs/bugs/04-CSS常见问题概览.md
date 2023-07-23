@@ -205,8 +205,6 @@ document.documentElement.style.height = `${window.innerHeight}px`
 
 * table中 实现圆角效果：在 table 中设置 `border-radius` 发现不起作用，原因是 `border-collapse: collapse` 和 `border-radius` 不兼容。以下方法解决**（chrome试验可行，未测手机兼容性）**：
 
-* 在 table 中设置 `border-radius` 发现不起作用，原因是 `border-collapse: collapse` 和 `border-radius`不兼容。
-
   ```css
   /* 解决方法一 */
   table {
@@ -222,6 +220,7 @@ document.documentElement.style.height = `${window.innerHeight}px`
       box-shadow: 0 0 0 1px #ccc;
   }
   ```
+
 
 
 

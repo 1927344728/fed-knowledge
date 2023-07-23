@@ -1,0 +1,593 @@
+## Handlebars基础入门篇
+> 本文因示例代码中有一些特殊字符：#、{{}}等，无法编译成HTMl。暂以 .tx 格式保存。
+
+Handlebars 是一种简单的 **模板语言**。
+
+它使用模板和输入对象来生成 HTML 或其他文本格式。Handlebars 模板看起来像常规的文本，但是它带有嵌入式的 Handlebars 表达式。
+
+Handlebars 表达式是一个两个大括号 ，中间包含一些内容。执行模板时，这些表达式会被输入对象中的值所替换。
+
+```js
+<p>{{firstname}} {{lastname}}</p>
+```
+
+Handlebars 是轻量的语义化模板：
+
+- 语义化模板：Handlebars 提供了必要的功能，使你可以高效地构建语义化模板。
+- 兼容 Mustache：Handlebars 与 Mustache 模板基本兼容。大多数情况下，您可以在使用 Handlebars 的同时继续使用您当前的模板。
+- 高速执行：Handlebars 会将模板编译为 JavaScript 函数。这使得 Handlebars 的执行速度比其他大多数模板引擎都要快。
+
+### 安装 Handlebars
+
+有多种安装 Handlebars 的方法，具体取决于你所使用的编程语言和环境。
+
+#### npm 或 yarn （推荐）
+
+Handlebars 引擎使用 JavaScript 编写。我们最常使用 `npm` 或 `yarn` 来安装：
+
+```shell
+npm install handlebars
+# 或者
+yarn add handlebars
+```
+
+然后，你可以通过 `require` 来使用 Handlebars。
+
+```js
+const Handlebars = require("handlebars");
+const template = Handlebars.compile("Name: {{name}}");
+console.log(template({ name: "张三" }));
+```
+
+> **内置在 npm-package 中的浏览器预编译版本**
+>
+> 浏览器预编译版本位于 `node_modules/handlebars/dist/` 让 Handlebars 可供浏览器使用取决于你所使用的编译系统，但使用预编译 的话事情就会变得像复制文件一样简单。
+>
+> 这是使用预编译器时的首选安装方法，因为它可以确保预编译的模板始终在相同版本的运行时上运行。
+
+#### 下载 Handlebars
+
+以下下载内容是为了方便社区。它们不是供生产使用的，但是它们无需设置构建引擎即可快速入门。
+
+ 编译模板：https://s3.amazonaws.com/builds.handlebarsjs.com/handlebars-v4.7.6.js
+
+预编译模板：https://s3.amazonaws.com/builds.handlebarsjs.com/handlebars.runtime-v4.7.6.js
+
+
+
+### 编译和预编译
+
+#### Handlebars.compile(template, options)
+
+编译一个模版以立即运行：
+
+```js
+const template = Handlebars.compile("{{foo}}");
+template({});
+```
+
+支持多种选项以更改模版的执行方式。查看 [编译和预编译](https://www.handlebarsjs.cn/api-reference/compilation.html#handlebars-compile-template-options)
+
+#### Handlebars.precompile(template, options)
+
+对一个模版进行预编译，这样可以直接将模版送到客户端并执行而不需要再编译：
+
+```js
+templateSpec = Handlebars.precompile("{{foo}}");
+```
+
+与 `Handlebars.compile` 方法的参数相同，并且额外的参数有：
+
+- `srcName`: 生成输入文件的源键值表。当运行时，返回的结构为 `{code, map}`。 `code` 包含模版的定义，`map` 包含源键值表。
+- `destName`: 可选，本参数可以与 `srcName` 一起使用以在生成源键值表的时候同时提供目标文件的名称。
+
+#### Handlebars.template(templateSpec)
+
+设置一个已经被 `Handlebars.precompile` 预编译的模版。
+
+```js
+var template = Handlebars.template(templateSpec);
+template({});
+```
+
+
+
+### 基础用法
+
+#### 编译字符串
+
+```js
+handlebarsTest1: function () {
+    let template = Handlebars.compile(`Hellow, <span>{{text}}</span>`);
+    let templateStr = template({
+        text: "Handlebars!",
+    })
+    console.log(templateStr)
+    return templateStr
+}
+```
+
+[编译字符串DEMO](https://1927344728.github.io/demo-lizh/html/20-handlebars模板.html)
+
+#### 编译HTML模板
+
+```html
+<script id="html-template" type="text/x-handlebars-template">
+    <div>
+        <h1>{{title}}</h1>
+        <div>
+            Hellow, I am <span>{{body}}</span>.
+        </div>
+    </div>
+</script>
+```
+
+```js
+handlebarsTest2: function () {
+    let htmlTemplate = document.querySelector('#html-template').innerHTML
+    let template = Handlebars.compile(htmlTemplate);
+    let templateStr = template({
+        title: "Handlebars!",
+        body: "html template body!"
+    })
+    console.log(templateStr)
+    return templateStr
+}
+```
+
+[编译HTML模板DEMO](https://1927344728.github.io/demo-lizh/html/20-handlebars模板.html?type=2)
+
+
+
+### 表达式
+
+Handlebars 表达式是 Handlebars 模板的基本单位。 您可以在表达式中使用参数或 Hash 参数、助手代码、块助手代码、内置助手代码以及 @data 变量 。
+
+#### 表达式基本用法
+
+Handlebars 表达式是一些以两个大括号括起来的内容。
+
+```js
+handlebarsTest3: function () {
+    let template = Handlebars.compile(`<p>{{firstname}} {{lastname}}</p>`);
+    let templateStr = template({
+        firstname: "Yehuda",
+        lastname: "Katz"
+    })
+    console.log(templateStr)
+    return templateStr
+}
+```
+
+[表达式基本用法DEMO](https://1927344728.github.io/demo-lizh/html/20-handlebars模板.html?type=3)
+
+#### 路径表达式
+
+Handlebars 表达式亦可为以句点分隔的路径。
+
+```js
+handlebarsTest4: function () {
+    let template = Handlebars.compile(`{{person.firstname}} {{person.lastname}}`);
+    let templateStr = template({
+        person: {
+            firstname: "Yehuda",
+            lastname: "Katz"
+        }
+    })
+    console.log(templateStr)
+    return templateStr
+}
+```
+
+[路径表达式DEMO](https://1927344728.github.io/demo-lizh/html/20-handlebars模板.html?type=4)
+
+#### 更改上下文
+
+以下方法，可以更改 handlebars 的上下文：
+
+- `with` ：将对象指定为上下文，可以访问其属性。
+- `eatch`：迭代一个数组，使你可以通过 Handlebars 简单访问每个对象的属性表达式。
+- `../`：转回父级上下文。
+
+```js
+handlebarsTest5: function () {
+    let template = Handlebars.compile(`
+        {{#with author}}
+        <p>Author: <span>{{firstname}} {{lastname}}!</span></p>
+        {{/with}}
+        {{#each people}}
+        <p>{{../prefix}} <span>{{firstname}}</span> </p>
+        {{/each}}
+    `);
+    let templateStr = template({
+        people: [
+            { firstname: "Nils" },
+            { firstname: "Yehuda" },
+        ],
+        prefix: "Hello, ",
+        author: { firstname: "li", lastname: "zhao" }
+    })
+    console.log(templateStr)
+    return templateStr
+}
+```
+
+[更改上下文DEMO](https://1927344728.github.io/demo-lizh/html/20-handlebars模板.html?type=5)
+
+#### HTML 转义
+
+在 Handlebars 中，由两个大括号返回的值是 HTML 转义的。也就是说，如果一个表达式包含 `&`，那么返回的 HTML 转义的内 容将会包含 `&`。如果你不希望 Handlebars 转义字符的话，请使用三个大括号。
+
+```js
+不转义：{{{expression}}}
+HTML转义：{{expression}}
+```
+
+
+
+### 助手代码
+
+助手代码可以实现一些并非 Handlesbars 语言本身的功能。
+
+通过调用 Handlebars.registerHelper 方法，你可以从模板中的任何上下文中访问 Handlebars 助手代码，实际上，相当于定了一个能在 handlebars 模板中使用的函数。
+
+```js
+handlebarsTest6: function () {
+    let template = Handlebars.compile(`<span>{{firstname}} {{uCase lastname}}</span>`);
+    Handlebars.registerHelper('uCase', s => s.toUpperCase())
+    let templateStr = template({
+        firstname: "Yehuda",
+        lastname: "Katz"
+    })
+    console.log(templateStr)
+    return templateStr
+}
+```
+
+[助手代码DEMO](https://1927344728.github.io/demo-lizh/html/20-handlebars模板.html?type=6)
+
+**有几个注意问题：**
+
+* 返回值的转义。
+
+  * Handlebars.SafeString(string)：字符串渲染为 HTML 内容。
+
+  * Handlebars.escapeExpression(string)：使得字符串可以安全地在 HTML 内容中渲染为文字。
+
+* 可以传多个参数：助手代码可以传一个或多个参数。多个参数调用时，以空格分割。
+
+* 可以含有 Hash 参数：Hash 参数来作为助手代码的最后一个参数，可以从最后一个参数 `options`  的 `hash` 属性中获取。
+
+* 子级表达式：Handlebars 对子级表达式提供了支持，你可以在单个表达式中调用多个助手代码，并且将内部助手代码调用的返回值作为 外部助手代码的参数传递。子级表达式使用括号定界。
+
+```js
+handlebarsTest7: function () {
+    let template = Handlebars.compile(`{{link (uCase people.name) "Welcome to visit!" href=people.url cssStyle="color: #0aa;"}}`);
+    Handlebars.registerHelper('uCase', s => s.toUpperCase())
+    Handlebars.registerHelper("link", (n, tx, options) => {
+        var name = Handlebars.escapeExpression(n)
+        var text = Handlebars.escapeExpression(tx)
+        let href = Handlebars.escapeExpression(options.hash.href)
+        let cssStyle = Handlebars.escapeExpression(options.hash.cssStyle)
+        return new Handlebars.SafeString(`<a style="${cssStyle}" href="${href}">Hellow, ${name}! ${text}</a>`);
+    });
+    let templateStr = template({
+        people: {
+            name: 'lizh',
+            url: "https://www.baidu.com/"
+        }
+    })
+    console.log(templateStr)
+    return templateStr
+},
+```
+
+[助手代码DEMO2](https://1927344728.github.io/demo-lizh/html/20-handlebars模板.html?type=7)
+
+
+
+### 块助手代码
+
+Handlebars 代码片段通过创建共享模板允许代码复用。你可以使用 `registerPartial` 方法：
+
+```js
+handlebarsTest8: function () {
+    let template = Handlebars.compile(`
+        {{> firstPartial}}
+        {{> (lookup . 'partName')}}
+    `);
+    Handlebars.registerPartial('firstPartial', '<p>Hellow, <span>{{first}}</span></p>');
+    Handlebars.registerPartial('secondPartial', '<p>Hellow, <span>{{second}}</span></p>');
+    let templateStr = template({
+        partName: 'secondPartial',
+        first: '我是第一块代码片段。',
+        second: '我是第二块代码片段。',
+    })
+    console.log(templateStr)
+    return templateStr
+}
+```
+
+[块助手代码DEMO](https://1927344728.github.io/demo-lizh/html/20-handlebars模板.html?type=8)
+
+
+
+块助手代码可以自定义上下文，可以通过 Hash 参数将自定义数据（也可以传父级上下文的参数）传递到代码片段。
+
+```js
+handlebarsTest9: function () {
+    let template = Handlebars.compile(`
+        {{> firstPartial myOtherContext }}
+        {{#each people}}
+        {{> secondPartial prefix=../prefix firstname=firstname lastname=lastname}}
+        {{/each}}
+    `);
+    Handlebars.registerPartial('firstPartial', '<p><span>{{information}}</span></p>');
+    Handlebars.registerPartial('secondPartial', '<p><span>{{prefix}}, {{firstname}} {{lastname}}</span></p>');
+    let templateStr = template({
+        myOtherContext: { information: "Interesting!" },
+        people: [
+            { firstname: "Nils", lastname: "Knappmeier" },
+            { firstname: "Yehuda", lastname: "Katz" }
+        ],
+        prefix: "Hello"
+    })
+    console.log(templateStr)
+    return templateStr
+}
+```
+
+[块助手代码传参DEMO](https://1927344728.github.io/demo-lizh/html/20-handlebars模板.html?type=9)
+
+其他一些用法：
+
+* 定义缺省代码片段。一般来讲，尝试渲染一个未注册的代码片段会抛出错误。我们可以在代码块中嵌套代码片段，阻止错误抛出。当所引入的代码片段没有定义时，会渲染嵌套的代码片段。
+
+* 调用嵌套代码片段。`@partial-block` 指向代码片段中的嵌套代码片段。
+
+* 自定义局部代码片段。`registerPartial` 注册的代码片段可以在所有 hanldbars 模板中调用，我们也可以通过 `*inline` 修饰符自定义一个只在当前代码块范围使用的代码片段。
+
+```js
+handlebarsTest10: function () {
+    let template = Handlebars.compile(`
+        {{#> firstPartial }}
+        <span>sorry, 此代码片段未注册！</span>
+        {{/firstPartial}}
+        {{#*inline "secondPartial"}}
+        <span>{{firstname}}。 这是局部注册的 secondPartial 代码片段！</span>
+        {{/inline}}
+        {{#each people}}
+        <p>Hellow, {{> secondPartial}}</p>
+        {{/each}}
+    `);
+    Handlebars.registerPartial('firstPartial', 'firstPartial： {{> @partial-block }}');
+    let templateStr = template({
+        people: [
+            { firstname: "Nils" },
+            { firstname: "Yehuda" },
+        ]
+    })
+    console.log(templateStr)
+    return templateStr
+}
+```
+
+[块助手代码传参DEMO](https://1927344728.github.io/demo-lizh/html/20-handlebars模板.html?type=10)
+
+
+
+### 内置助手代码
+
+####  #if
+
+你可以使用 `if` 助手代码来根据条件渲染代码块。如果其参数返回 `false`、`undefined`、`null`、`""`、 `0` 或者 `[]`，Handlebars 将不会渲染该块。
+
+```js
+{{#if author}}
+	<h1>{{firstName}} {{lastName}}</h1>
+{{else}}
+ 	<h1>Withour author!</h1>
+{{/if}}
+```
+
+#### 子表达式
+
+将自定义的助手代码应用到表达式的子表达式中。
+
+```js
+{{#if (isEqual 1 2)}}
+	true
+{{else}}
+	false
+{{/if}}
+Handlebars.registerHelper('isEqual', function (v1, v2) {
+  return v1 === v2
+});
+```
+
+#### #unless
+
+可以将 `unless` 助手代码看作与 `if` 助手代码相反。如果表达式返回 false 则将渲染代码块。
+
+```js
+{{#unless author}}
+	<h1>Withour author!</h1>
+{{else}}
+ 	<h1>{{firstName}} {{lastName}}</h1>
+{{/unless}}
+```
+
+#### #each
+
+你可以使用内置的 `each` 助手代码遍历列表。在块内，你可以使用 `this` 来引用被迭代的元素。
+
+```js
+{{#each people}}
+    <p>{{this}}</p>
+{{else}}
+ 	No content!
+{{/each}}
+```
+
+*  `{{else}}`：列表为空时显示
+* `{{@index}}` ：引用当前循环的索引
+* `{{@key}}` ：引用当前的键名
+* `@first` ：记录迭代的第一项
+* `@last`：记录迭代的最后一项
+*  `{{@../index}}`：访问父级的索引
+
+#### #with
+
+`with` 助手代码允许你更改模板中局部区域的上下文表达式。 `{{else}}` 仅在传递的值为空时渲染。
+
+```js
+{{#with person}}
+	{{firstname}} {{lastname}}
+{{else}}
+	No city found
+{{/with}}
+```
+
+`with` 还可与代码块参数一起使用来以定义当前代码块中的已知引用。例如，上面的例子可以转换成
+
+```js
+{{#with city as | city |}}
+	{{#with city.location as | loc |}}
+		{{city.name}}: {{loc.north}} {{loc.east}}
+	{{/with}}
+{{/with}}
+```
+
+#### lookup
+
+`lookup` 助手代码允许使用 Handlebars 变量进行动态的参数解析。
+
+```js
+{{#each people}}
+	{{.}} lives in {{lookup ../cities @index}}
+{{/each}}
+{
+    people: ["Nils", "Yehuda"],
+	cities: [ "Darmstadt", "San Francisco" ]
+}
+```
+
+它可以在子表达式中使用 `lookup` 将上下文表达式更改为另一个 “ 属性-值” 的对象。
+
+```js
+{{#each persons as | person |}}
+	{{name}} lives in {{#with (lookup ../cities [resident-in])~}}
+		{{name}} ({{country}})
+    {{/with}}
+{{/each}}
+  
+{
+	persons: [
+		{ name: "Nils", "resident-in": "darmstadt" },
+		{ name: "Yehuda", "resident-in": "san-francisco" }
+	],
+    cities: {
+        darmstadt: { name: "Darmstadt", country: "Germany" },
+		"san-francisco": { name: "San Francisco", country: "USA" },
+    }
+}
+```
+
+#### log
+
+`log` 助手代码允许在执行模板时记录上下文的状态。
+
+```js
+{{log 'firstname' firstname 'lastname' lastname}}
+```
+
+可以使用 `level` 参数设置日志级别。支持的值为 `debug`、`info`、`warn` 和 `error`（`info` 是默认值）。
+
+```js
+{{log "debug logging" level="debug"}}
+{{log "info logging" level="info"}}
+{{log "info logging is the default"}}
+{{log "logging a warning" level="warn"}}
+{{log "logging an error" level="error"}}
+```
+
+
+
+### @data变量
+
+下面的 @data 变量是由 Handlebars 及其内建助手代码实现的。
+
+#### @root
+
+初始化模版被执行时的上下文。除非特意改变，对于页面渲染时的每一部分，本项的值恒定。因此，当深度参数不能够引用它们的父模版时，本项可以在代码片段内使用 。
+
+```js
+{{#each array}}
+	{{@root.foo}}
+{{/each}}
+```
+
+#### @first
+
+each 助手代码首次迭代时，该值为 true。
+
+```js
+{{#each array}}
+	{{#if @first}}
+    	First item!
+    {{/if}}
+{{/each}}
+```
+
+#### @index
+
+从零开始的编号，表示当前的迭代次数。由 each 助手代码设置。
+
+```js
+{{#each array}}
+	{{@index}}
+{{/each}}
+```
+
+#### @key
+
+当前迭代次数的键。在遍历对象时被 each 助手代码设置。
+
+```js
+{{#each array}}
+	{{@key}}
+{{/each}}
+```
+
+#### @last
+
+each 助手代码迭代到最后一步时，该值为 true。
+
+```js
+{{#each array}}
+	{{#if @last}}
+    	Last item!
+	{{/if}}
+{{/each}}
+```
+
+#### @level
+
+设定 log 的输出级别。当设定时，程序会按照设定的级别选择输出的信息。
+
+```js
+template({}, { data: { level: Handlebars.logger.WARN } });
+```
+
+可以为以下值：
+
+* Handlebars.logger.DEBUG
+* Handlebars.logger.INFO
+* Handlebars.logger.WARN
+* Handlebars.logger.ERROR：**默认值**
+
+
+
+### 参考资料
+
+[Handlebars 中文文档 | Handlebars 中文网](https://www.handlebarsjs.cn/)

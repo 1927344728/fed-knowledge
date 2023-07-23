@@ -318,7 +318,7 @@ Emitted 'error' event at:
 
 #### 内容无法在gitbook.com显示
 
-**原因：文件夹名称有大写字母**
+文件夹名称有大写字母或者文件名中有空格会导致 gitbook.com 网站中对应的链接无法访问。
 
 
 
