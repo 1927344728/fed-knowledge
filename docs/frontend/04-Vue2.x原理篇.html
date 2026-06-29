@@ -1,0 +1,4585 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Vue2.X原理篇 · 技术驿站•LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 6.0.2">
+        <meta name="author" content="lizhao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04-Vue3初步了解及迁移指南.html" />
+    
+    
+    <link rel="prev" href="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/00-前端调试随笔.html">
+            
+                <a href="../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/05-JS常见问题概览.html">
+            
+                <a href="../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/07-微信小程序开发.html">
+            
+                <a href="../bugs/07-微信小程序开发.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    微信小程序开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bugs/08-NodeJs常见问题概览.html">
+            
+                <a href="../bugs/08-NodeJs常见问题概览.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    NodeJs常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../bugs/09-Mac常见问题概览.html">
+            
+                <a href="../bugs/09-Mac常见问题概览.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Mac常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../bugs/10-微信环境前端开发指南.html">
+            
+                <a href="../bugs/10-微信环境前端开发指南.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    微信环境前端开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../bugs/99-其他问题汇总.html">
+            
+                <a href="../bugs/99-其他问题汇总.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    其他问题汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../css系列/00-CSS基础知识.html">
+            
+                <a href="../css系列/00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../css系列/00-CSS常见问答.html">
+            
+                <a href="../css系列/00-CSS常见问答.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../css系列/00-CSS常见问答02.html">
+            
+                <a href="../css系列/00-CSS常见问答02.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    CSS常见问答02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../css系列/00-CSS应用示例.html">
+            
+                <a href="../css系列/00-CSS应用示例.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    CSS应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../css系列/00-CSS应用示例02.html">
+            
+                <a href="../css系列/00-CSS应用示例02.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS应用示例02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../css系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../css系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../css系列/04-CSS探索系列-margin.html">
+            
+                <a href="../css系列/04-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                <a href="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    CSS探索系列 Auto关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../css系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../css系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../css系列/05-CSS探索系列-line-height.html">
+            
+                <a href="../css系列/05-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../css系列/05-CSS探索系列-元素居中.html">
+            
+                <a href="../css系列/05-CSS探索系列-元素居中.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    CSS探索系列 元素居中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../css系列/05-CSS探索系列-动画.html">
+            
+                <a href="../css系列/05-CSS探索系列-动画.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    CSS探索系列 动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../css系列/08-重新认识伪类与伪元素.html">
+            
+                <a href="../css系列/08-重新认识伪类与伪元素.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    重新认识伪类与伪元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../css系列/09-自定义表单伪元素样式.html">
+            
+                <a href="../css系列/09-自定义表单伪元素样式.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    自定义表单伪元素样式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../css系列/10-如何理解css中的display属性.html">
+            
+                <a href="../css系列/10-如何理解css中的display属性.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    如何理解Css中的Display属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                <a href="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                <a href="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    一文彻底弄懂CSS中的长度单位
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                <a href="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                    
+                        <b>2.21.</b>
+                    
+                    CSS中一些有特性的属性或属性值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../css系列/14-Web中如何实现长宽比.html">
+            
+                <a href="../css系列/14-Web中如何实现长宽比.html">
+            
+                    
+                        <b>2.22.</b>
+                    
+                    Web中如何实现长宽比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../css系列/15-@规则：@font-face.html">
+            
+                <a href="../css系列/15-@规则：@font-face.html">
+            
+                    
+                        <b>2.23.</b>
+                    
+                    @规则：@Font Face
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                <a href="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                    
+                        <b>2.24.</b>
+                    
+                    @规则：@Media（媒体查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../css系列/15-@规则：其他.html">
+            
+                <a href="../css系列/15-@规则：其他.html">
+            
+                    
+                        <b>2.25.</b>
+                    
+                    @规则：其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../css系列/_关于css.html">
+            
+                <a href="../css系列/_关于css.html">
+            
+                    
+                        <b>2.26.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="00-00-关于Web前端.html">
+            
+                <a href="00-00-关于Web前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    00 关于Web前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="00-01-前端知识概览.html">
+            
+                <a href="00-01-前端知识概览.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    01 前端知识概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="00-02-常用前端库概览.html">
+            
+                <a href="00-02-常用前端库概览.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    02 常用前端库概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="01-基础-00-前端常见问题01.html">
+            
+                <a href="01-基础-00-前端常见问题01.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    基础 00 前端常见问题01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="01-基础-01-浏览器缓存.html">
+            
+                <a href="01-基础-01-浏览器缓存.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    基础 01 浏览器缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="01-基础-02-浏览器工作原理.html">
+            
+                <a href="01-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                <a href="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    基础 03 谈谈前端跨域问题及解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="02-进阶-01-Web性能优化.html">
+            
+                <a href="02-进阶-01-Web性能优化.html">
+            
+                    
+                        <b>4.8.</b>
+                    
+                    进阶 01 Web性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                <a href="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                    
+                        <b>4.9.</b>
+                    
+                    进阶 02 搜索引擎优化（SEO）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                <a href="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                    
+                        <b>4.10.</b>
+                    
+                    进阶 03 前端模块化编程：CommonJS、AMD、CMD、UMD、ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                <a href="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                    
+                        <b>4.11.</b>
+                    
+                    进阶 04 规范代码：Linter、Prettier、EditorConfig
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="02-进阶-05-Web离线应用.html">
+            
+                <a href="02-进阶-05-Web离线应用.html">
+            
+                    
+                        <b>4.12.</b>
+                    
+                    进阶 05 Web离线应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="02-进阶-06-WebSocket.html">
+            
+                <a href="02-进阶-06-WebSocket.html">
+            
+                    
+                        <b>4.13.</b>
+                    
+                    进阶 06 WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="02-进阶-07-Web跨页面通信.html">
+            
+                <a href="02-进阶-07-Web跨页面通信.html">
+            
+                    
+                        <b>4.14.</b>
+                    
+                    进阶 07 Web跨页面通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="02-进阶-08-页面可见性和生命周期.html">
+            
+                <a href="02-进阶-08-页面可见性和生命周期.html">
+            
+                    
+                        <b>4.15.</b>
+                    
+                    进阶 08 页面可见性和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                <a href="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                    
+                        <b>4.16.</b>
+                    
+                    进阶 09 事件循环、宏任务、微任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="02-进阶-10-内存泄漏.html">
+            
+                <a href="02-进阶-10-内存泄漏.html">
+            
+                    
+                        <b>4.17.</b>
+                    
+                    进阶 10 内存泄漏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="02-进阶-11-前端自动化测试.html">
+            
+                <a href="02-进阶-11-前端自动化测试.html">
+            
+                    
+                        <b>4.18.</b>
+                    
+                    进阶 11 前端自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                <a href="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                    
+                        <b>4.19.</b>
+                    
+                    进阶 12 前端也玩多线程？WebWorker其实很简单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="03-高级-01-前端安全深度解析.html">
+            
+                <a href="03-高级-01-前端安全深度解析.html">
+            
+                    
+                        <b>4.20.</b>
+                    
+                    高级 01 前端安全深度解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.21" data-path="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                <a href="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                    
+                        <b>4.21.</b>
+                    
+                    高级 02 CI、CD（Docker+Jenkins+Nginx）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.22" data-path="04-Vue2.x原理篇.html">
+            
+                <a href="04-Vue2.x原理篇.html">
+            
+                    
+                        <b>4.22.</b>
+                    
+                    Vue2.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.23" data-path="04-Vue3初步了解及迁移指南.html">
+            
+                <a href="04-Vue3初步了解及迁移指南.html">
+            
+                    
+                        <b>4.23.</b>
+                    
+                    Vue3初步了解及迁移指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.24" data-path="04-重读Vue教程.html">
+            
+                <a href="04-重读Vue教程.html">
+            
+                    
+                        <b>4.24.</b>
+                    
+                    重读Vue教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.25" data-path="05-React17.x原理篇.html">
+            
+                <a href="05-React17.x原理篇.html">
+            
+                    
+                        <b>4.25.</b>
+                    
+                    React17.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.26" data-path="05-你必须知道的React问题.html">
+            
+                <a href="05-你必须知道的React问题.html">
+            
+                    
+                        <b>4.26.</b>
+                    
+                    你必须知道的React问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.27" data-path="05-重读React教程.html">
+            
+                <a href="05-重读React教程.html">
+            
+                    
+                        <b>4.27.</b>
+                    
+                    重读React教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.28" data-path="06-聊一聊Cookie的一些问题.html">
+            
+                <a href="06-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.28.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.29" data-path="07-SSL证书简介及其生成、使用.md">
+            
+                <span>
+            
+                    
+                        <b>4.29.</b>
+                    
+                    SSL证书简介及其生成、使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.30" data-path="07-如何启动本地HTTPS服务.html">
+            
+                <a href="07-如何启动本地HTTPS服务.html">
+            
+                    
+                        <b>4.30.</b>
+                    
+                    如何启动本地HTTPS服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.31" data-path="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                <a href="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                    
+                        <b>4.31.</b>
+                    
+                    0.0.0.0、127.0.0.1和Localhost的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.32" data-path="09-如何理解HTTP响应的状态码.html">
+            
+                <a href="09-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.32.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.33" data-path="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                <a href="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                    
+                        <b>4.33.</b>
+                    
+                    字符编码那点事：ASCII、Unicode、GBK、UTF 8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.34" data-path="11-HTTP协议的演变历史.md">
+            
+                <span>
+            
+                    
+                        <b>4.34.</b>
+                    
+                    HTTP协议的演变历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.35" data-path="12-webpack4.x原理篇.html">
+            
+                <a href="12-webpack4.x原理篇.html">
+            
+                    
+                        <b>4.35.</b>
+                    
+                    Webpack4.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.36" data-path="12-webpack基础入门篇.html">
+            
+                <a href="12-webpack基础入门篇.html">
+            
+                    
+                        <b>4.36.</b>
+                    
+                    Webpack基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.37" data-path="12-webpack构建优化篇.html">
+            
+                <a href="12-webpack构建优化篇.html">
+            
+                    
+                        <b>4.37.</b>
+                    
+                    Webpack构建优化篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.38" data-path="13-TypeScript使用指南.html">
+            
+                <a href="13-TypeScript使用指南.html">
+            
+                    
+                        <b>4.38.</b>
+                    
+                    TypeScript使用指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.39" data-path="14-Web中图片的使用.html">
+            
+                <a href="14-Web中图片的使用.html">
+            
+                    
+                        <b>4.39.</b>
+                    
+                    Web中图片的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.40" data-path="15-2026年，还需要微前端吗？——三大框架对比与选型思考.md">
+            
+                <span>
+            
+                    
+                        <b>4.40.</b>
+                    
+                    2026年，还需要微前端吗？——三大框架对比与选型思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.41" data-path="16-Electron基础篇.html">
+            
+                <a href="16-Electron基础篇.html">
+            
+                    
+                        <b>4.41.</b>
+                    
+                    Electron基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.42" data-path="17-uniapp基础篇.html">
+            
+                <a href="17-uniapp基础篇.html">
+            
+                    
+                        <b>4.42.</b>
+                    
+                    Uniapp基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.43" data-path="17-uniapp离线打包（Android）篇.html">
+            
+                <a href="17-uniapp离线打包（Android）篇.html">
+            
+                    
+                        <b>4.43.</b>
+                    
+                    Uniapp离线打包（Android）篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.44" data-path="18-sentry基础篇（vue）.html">
+            
+                <a href="18-sentry基础篇（vue）.html">
+            
+                    
+                        <b>4.44.</b>
+                    
+                    Sentry基础篇（Vue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.45" data-path="19-视口和软键盘对视口的影响.html">
+            
+                <a href="19-视口和软键盘对视口的影响.html">
+            
+                    
+                        <b>4.45.</b>
+                    
+                    视口和软键盘对视口的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.46" data-path="20-WebGL从入门到实践.html">
+            
+                <a href="20-WebGL从入门到实践.html">
+            
+                    
+                        <b>4.46.</b>
+                    
+                    WebGL从入门到实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.47" data-path="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                <a href="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                    
+                        <b>4.47.</b>
+                    
+                    Three.Js基础实战：从画一个立方体开始，掌握3D世界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.48" data-path="22-ReactNative基础篇.html">
+            
+                <a href="22-ReactNative基础篇.html">
+            
+                    
+                        <b>4.48.</b>
+                    
+                    ReactNative基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49" data-path="代码规范/">
+            
+                <a href="代码规范/">
+            
+                    
+                        <b>4.49.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.49.1" data-path="代码规范/00-前端规范.html">
+            
+                <a href="代码规范/00-前端规范.html">
+            
+                    
+                        <b>4.49.1.</b>
+                    
+                    前端规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.2" data-path="代码规范/01-HTML.html">
+            
+                <a href="代码规范/01-HTML.html">
+            
+                    
+                        <b>4.49.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.3" data-path="代码规范/02-CSS.html">
+            
+                <a href="代码规范/02-CSS.html">
+            
+                    
+                        <b>4.49.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.4" data-path="代码规范/03-JS.html">
+            
+                <a href="代码规范/03-JS.html">
+            
+                    
+                        <b>4.49.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../html系列/00-HTML基础知识.html">
+            
+                <a href="../html系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../html系列/00-HTML基础知识02.html">
+            
+                <a href="../html系列/00-HTML基础知识02.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML基础知识02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../html系列/00-HTML常见问答.html">
+            
+                <a href="../html系列/00-HTML常见问答.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    HTML常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../html系列/00-HTML经典实践用例.html">
+            
+                <a href="../html系列/00-HTML经典实践用例.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    HTML经典实践用例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../html系列/03-html探索系列-meta标签.md">
+            
+                <span>
+            
+                    
+                        <b>5.7.</b>
+                    
+                    Html探索系列 Meta标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                <a href="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                    
+                        <b>5.8.</b>
+                    
+                    DOCTYPE：文档类型与浏览器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="../html系列/05-DHTML（动态网页）简介.html">
+            
+                <a href="../html系列/05-DHTML（动态网页）简介.html">
+            
+                    
+                        <b>5.9.</b>
+                    
+                    DHTML（动态网页）简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="../html系列/06-HTML标签详解.md">
+            
+                <span>
+            
+                    
+                        <b>5.10.</b>
+                    
+                    HTML标签详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="../html系列/07-HTML布局的几种方式.html">
+            
+                <a href="../html系列/07-HTML布局的几种方式.html">
+            
+                    
+                        <b>5.11.</b>
+                    
+                    HTML布局的几种方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="../html系列/08-HTML全局属性.html">
+            
+                <a href="../html系列/08-HTML全局属性.html">
+            
+                    
+                        <b>5.12.</b>
+                    
+                    HTML全局属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                <a href="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                    
+                        <b>5.13.</b>
+                    
+                    标记语言演进：从GML到HTML动态标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.14" data-path="../html系列/_关于html.html">
+            
+                <a href="../html系列/_关于html.html">
+            
+                    
+                        <b>5.14.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Javascript系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../javascript系列/00-基础知识.html">
+            
+                <a href="../javascript系列/00-基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../javascript系列/00-常见问答.html">
+            
+                <a href="../javascript系列/00-常见问答.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../javascript系列/00-应用示例.html">
+            
+                <a href="../javascript系列/00-应用示例.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../javascript系列/00-趣味示例.html">
+            
+                <a href="../javascript系列/00-趣味示例.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    趣味示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../javascript系列/00-进阶知识.html">
+            
+                <a href="../javascript系列/00-进阶知识.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    进阶知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    基础篇 01 数据类型之基本类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    基础篇 01 数据类型之引用类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                <a href="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    基础篇 02 类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../javascript系列/01-基础篇-03-运算符.html">
+            
+                <a href="../javascript系列/01-基础篇-03-运算符.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                    基础篇 03 运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                <a href="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    基础篇 04 正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                <a href="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                    
+                        <b>6.11.</b>
+                    
+                    基础篇 05 AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="../javascript系列/01-基础篇-06--window对象.html">
+            
+                <a href="../javascript系列/01-基础篇-06--window对象.html">
+            
+                    
+                        <b>6.12.</b>
+                    
+                    基础篇 06  Window对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                <a href="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                    
+                        <b>6.13.</b>
+                    
+                    基础篇 07 Error、JSON、Math、Console对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                <a href="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                    
+                        <b>6.14.</b>
+                    
+                    基础篇 08 History、URL、Screen、Navigator、Location对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                    
+                        <b>6.15.</b>
+                    
+                    基础篇 09 文档对象模型（DOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                <a href="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                    
+                        <b>6.16.</b>
+                    
+                    基础篇 10 Document对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.17" data-path="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                <a href="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                    
+                        <b>6.17.</b>
+                    
+                    基础篇 11 Element对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.18" data-path="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                <a href="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                    
+                        <b>6.18.</b>
+                    
+                    基础篇 12 Event对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.19" data-path="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                <a href="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                    
+                        <b>6.19.</b>
+                    
+                    基础篇 13 键盘、鼠标、触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.20" data-path="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                <a href="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                    
+                        <b>6.20.</b>
+                    
+                    基础篇 14 MutationObserver对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.21" data-path="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                    
+                        <b>6.21.</b>
+                    
+                    基础篇 15 CSS对象模型（CSSOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.22" data-path="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                <a href="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                    
+                        <b>6.22.</b>
+                    
+                    进阶篇 01 Prototype对象和继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.23" data-path="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                    
+                        <b>6.23.</b>
+                    
+                    进阶篇 02 Promise对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.24" data-path="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                <a href="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                    
+                        <b>6.24.</b>
+                    
+                    进阶篇 03 有特性的一些事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.25" data-path="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                    
+                        <b>6.25.</b>
+                    
+                    进阶篇 04 Proxy对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.26" data-path="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                    
+                        <b>6.26.</b>
+                    
+                    进阶篇 05 Reflect对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.27" data-path="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                <a href="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                    
+                        <b>6.27.</b>
+                    
+                    进阶篇 06 Class（类）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.28" data-path="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                <a href="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                    
+                        <b>6.28.</b>
+                    
+                    进阶篇 07 迭代器（Iterator）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.29" data-path="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                <a href="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                    
+                        <b>6.29.</b>
+                    
+                    进阶篇 08 Generator和Async函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.30" data-path="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                <a href="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                    
+                        <b>6.30.</b>
+                    
+                    进阶篇 09 JavaScript异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.31" data-path="../javascript系列/04-Date对象和日期时间字符串格式.md">
+            
+                <span>
+            
+                    
+                        <b>6.31.</b>
+                    
+                    Date对象和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.32" data-path="../javascript系列/05-Canvas基础入门篇.html">
+            
+                <a href="../javascript系列/05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.32.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.33" data-path="../javascript系列/05-Canvas进阶篇.html">
+            
+                <a href="../javascript系列/05-Canvas进阶篇.html">
+            
+                    
+                        <b>6.33.</b>
+                    
+                    Canvas进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.34" data-path="../javascript系列/06-SVG基础入门篇.html">
+            
+                <a href="../javascript系列/06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.34.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.35" data-path="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.35.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.36" data-path="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.36.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.37" data-path="../javascript系列/08-谈谈JavaScript的作用域和上下文.md">
+            
+                <span>
+            
+                    
+                        <b>6.37.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.38" data-path="../javascript系列/10-复制内容到剪贴板.html">
+            
+                <a href="../javascript系列/10-复制内容到剪贴板.html">
+            
+                    
+                        <b>6.38.</b>
+                    
+                    复制内容到剪贴板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.39" data-path="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                <a href="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                    
+                        <b>6.39.</b>
+                    
+                    44道JavaScript难题，还不来考考？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.40" data-path="../javascript系列/_关于Javascript.html">
+            
+                <a href="../javascript系列/_关于Javascript.html">
+            
+                    
+                        <b>6.40.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java系列</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../java系列/01-00-Java入门篇.html">
+            
+                <a href="../java系列/01-00-Java入门篇.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    00 Java入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../java系列/01-01-Java进阶篇.html">
+            
+                <a href="../java系列/01-01-Java进阶篇.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    01 Java进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../java系列/01-02-Java高级篇.html">
+            
+                <a href="../java系列/01-02-Java高级篇.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    02 Java高级篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../java系列/02-pom.xml详解.html">
+            
+                <a href="../java系列/02-pom.xml详解.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Pom.Xml详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../java系列/03-01-SpringBoot入门篇.html">
+            
+                <a href="../java系列/03-01-SpringBoot入门篇.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    01 SpringBoot入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../java系列/05-轻量应用服务器部署指南（腾讯云）.md">
+            
+                <span>
+            
+                    
+                        <b>7.6.</b>
+                    
+                    轻量应用服务器部署指南（腾讯云）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../java系列/06-keytool命令行工具.md">
+            
+                <span>
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Keytool命令行工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">NodeJs</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../nodeJs/00-0关于Node.js.html">
+            
+                <a href="../nodeJs/00-0关于Node.js.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    0关于Node.Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../nodeJs/00-常见问题.html">
+            
+                <a href="../nodeJs/00-常见问题.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                <a href="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Node.Js：三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                <a href="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                    
+                        <b>8.4.</b>
+                    
+                    Npm包管理器简介及一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                <a href="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                    
+                        <b>8.5.</b>
+                    
+                    NPM：Package.Json详解（中文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                <a href="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                    
+                        <b>8.6.</b>
+                    
+                    NPM：从零开始，开发一个软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="../nodeJs/05-NPM：常用命令.html">
+            
+                <a href="../nodeJs/05-NPM：常用命令.html">
+            
+                    
+                        <b>8.7.</b>
+                    
+                    NPM：常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                <a href="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                    
+                        <b>8.8.</b>
+                    
+                    Node.Js：Fs（文件系统）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                <a href="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                    
+                        <b>8.9.</b>
+                    
+                    Node.Js：Global（全局变量）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="../nodeJs/08-Node.js：HTTP.html">
+            
+                <a href="../nodeJs/08-Node.js：HTTP.html">
+            
+                    
+                        <b>8.10.</b>
+                    
+                    Node.Js：HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="../nodeJs/09-Node.js：module（模块）.html">
+            
+                <a href="../nodeJs/09-Node.js：module（模块）.html">
+            
+                    
+                        <b>8.11.</b>
+                    
+                    Node.Js：Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="../nodeJs/10-Node.js：path（路径）.html">
+            
+                <a href="../nodeJs/10-Node.js：path（路径）.html">
+            
+                    
+                        <b>8.12.</b>
+                    
+                    Node.Js：Path（路径）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                <a href="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                    
+                        <b>8.13.</b>
+                    
+                    Node.Js：Readline（逐行读取）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.14" data-path="../nodeJs/12-锁定项目的Node版本.html">
+            
+                <a href="../nodeJs/12-锁定项目的Node版本.html">
+            
+                    
+                        <b>8.14.</b>
+                    
+                    锁定项目的Node版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../research/02-如何监控前端异常？.html">
+            
+                <a href="../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../research/03-H5页面跳转和刷新.html">
+            
+                <a href="../research/03-H5页面跳转和刷新.html">
+            
+                    
+                        <b>9.3.</b>
+                    
+                    H5页面跳转和刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>9.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>9.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>9.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../research/07-H5可视化编辑.html">
+            
+                <a href="../research/07-H5可视化编辑.html">
+            
+                    
+                        <b>9.7.</b>
+                    
+                    H5可视化编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="../research/08-Web常用功能.html">
+            
+                <a href="../research/08-Web常用功能.html">
+            
+                    
+                        <b>9.8.</b>
+                    
+                    Web常用功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" data-path="../research/10-H5页面生成图片方案总结.html">
+            
+                <a href="../research/10-H5页面生成图片方案总结.html">
+            
+                    
+                        <b>9.9.</b>
+                    
+                    H5页面生成图片方案总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10" data-path="../research/Javascript加密混淆.html">
+            
+                <a href="../research/Javascript加密混淆.html">
+            
+                    
+                        <b>9.10.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.11" data-path="../research/Vue如何导入TypeScript.html">
+            
+                <a href="../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>9.11.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.12" data-path="../research/移动端PDF预览.html">
+            
+                <a href="../research/移动端PDF预览.html">
+            
+                    
+                        <b>9.12.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.13" data-path="../research/纯CSS绘制箭头.html">
+            
+                <a href="../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>9.13.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.14" data-path="../research/网站性能测量和优化方法.html">
+            
+                <a href="../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>9.14.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../tech/00-编程基础知识.html">
+            
+                <a href="../tech/00-编程基础知识.html">
+            
+                    
+                        <b>10.1.</b>
+                    
+                    编程基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="../tech/00-计算机问题概览.html">
+            
+                <a href="../tech/00-计算机问题概览.html">
+            
+                    
+                        <b>10.2.</b>
+                    
+                    计算机问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>10.3.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                <a href="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                    
+                        <b>10.4.</b>
+                    
+                    GOOGLE浏览器的搜索技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="../tech/03-curl的用法指南.html">
+            
+                <a href="../tech/03-curl的用法指南.html">
+            
+                    
+                        <b>10.5.</b>
+                    
+                    Curl的用法指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="../tech/04-sublime3插件篇.html">
+            
+                <a href="../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>10.6.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="../tech/05-Charles安装及使用.html">
+            
+                <a href="../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>10.7.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                <a href="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                    
+                        <b>10.8.</b>
+                    
+                    通过.Gitlab Ci.Yml配置任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="../tech/07-MySQL的基本使用.html">
+            
+                <a href="../tech/07-MySQL的基本使用.html">
+            
+                    
+                        <b>10.9.</b>
+                    
+                    MySQL的基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="../tech/08-看懂什么是环境变量.html">
+            
+                <a href="../tech/08-看懂什么是环境变量.html">
+            
+                    
+                        <b>10.10.</b>
+                    
+                    看懂什么是环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.11" data-path="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                <a href="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                    
+                        <b>10.11.</b>
+                    
+                    为什么0.1+0.2=0.30000000000000004
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.12" data-path="../tech/10-Nginx使用手册：安装、配置、模块扩展与代理详解.md">
+            
+                <span>
+            
+                    
+                        <b>10.12.</b>
+                    
+                    Nginx使用手册：安装、配置、模块扩展与代理详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.13" data-path="../tech/11-常见智力题总结.html">
+            
+                <a href="../tech/11-常见智力题总结.html">
+            
+                    
+                        <b>10.13.</b>
+                    
+                    常见智力题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.14" data-path="../tech/12-Mac终端命令使用.html">
+            
+                <a href="../tech/12-Mac终端命令使用.html">
+            
+                    
+                        <b>10.14.</b>
+                    
+                    Mac终端命令使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.15" data-path="../tech/13-01-Shell脚本入门篇.html">
+            
+                <a href="../tech/13-01-Shell脚本入门篇.html">
+            
+                    
+                        <b>10.15.</b>
+                    
+                    01 Shell脚本入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.16" data-path="../tech/13-02-Shell脚本进阶篇.html">
+            
+                <a href="../tech/13-02-Shell脚本进阶篇.html">
+            
+                    
+                        <b>10.16.</b>
+                    
+                    02 Shell脚本进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.17" data-path="../tech/14-一篇搞定排序算法：原理+图解+JS实现+V8源码解读.md">
+            
+                <span>
+            
+                    
+                        <b>10.17.</b>
+                    
+                    一篇搞定排序算法：原理+图解+JS实现+V8源码解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.18" data-path="../tech/15-glob模式通配符.html">
+            
+                <a href="../tech/15-glob模式通配符.html">
+            
+                    
+                        <b>10.18.</b>
+                    
+                    Glob模式通配符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.19" data-path="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                <a href="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                    
+                        <b>10.19.</b>
+                    
+                    代码整洁之道（摘录笔记）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.20" data-path="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                <a href="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                    
+                        <b>10.20.</b>
+                    
+                    Java的24种设计模式与7大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.21" data-path="../tech/18-观察者和发布订阅模式.html">
+            
+                <a href="../tech/18-观察者和发布订阅模式.html">
+            
+                    
+                        <b>10.21.</b>
+                    
+                    观察者和发布订阅模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.22" data-path="../tech/19-AI模型基础应用篇.html">
+            
+                <a href="../tech/19-AI模型基础应用篇.html">
+            
+                    
+                        <b>10.22.</b>
+                    
+                    AI模型基础应用篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../tools/01-01-Git基础教程.html">
+            
+                <a href="../tools/01-01-Git基础教程.html">
+            
+                    
+                        <b>11.1.</b>
+                    
+                    01 Git基础教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../tools/01-02-Git常见问题.html">
+            
+                <a href="../tools/01-02-Git常见问题.html">
+            
+                    
+                        <b>11.2.</b>
+                    
+                    02 Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../tools/02-01-gitbook入门篇.html">
+            
+                <a href="../tools/02-01-gitbook入门篇.html">
+            
+                    
+                        <b>11.3.</b>
+                    
+                    01 Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="../tools/02-02-gitbook插件篇.html">
+            
+                <a href="../tools/02-02-gitbook插件篇.html">
+            
+                    
+                        <b>11.4.</b>
+                    
+                    02 Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="../tools/02-03-gitbook进阶篇.html">
+            
+                <a href="../tools/02-03-gitbook进阶篇.html">
+            
+                    
+                        <b>11.5.</b>
+                    
+                    03 Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">整理中</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Vue2.X原理篇</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="vue2x原理篇">Vue2.x原理篇</h2>
+<p>Vue 是一款用于构建用户界面的 JavaScript 框架。它基于标准 HTML、CSS 和 JavaScript 构建，并提供了一套声明式的、组件化的编程模型，帮助高效地开发用户界面。</p>
+<p>Vue 的两个核心功能：</p>
+<ul>
+<li>声明式渲染：Vue 基于标准 HTML 拓展了一套模板语法，使得可以声明式地描述最终输出的 HTML 和 JavaScript 状态之间的关系。</li>
+<li>响应性：Vue 会自动跟踪 JavaScript 状态并在其发生变化时响应式地更新 DOM。</li>
+</ul>
+<h3 id="核心概念">核心概念</h3>
+<h4 id="响应式系统">响应式系统</h4>
+<p>Vue 最标志性的功能就是其低侵入性的<strong>响应式系统</strong>。组件状态都是由响应式的 JavaScript 对象组成的。当更改它们时，视图会随即自动更新。</p>
+<p>本质上，响应性是一种可以使声明式地处理变化的编程范式。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>
+<span class="hljs-keyword">let</span> b = <span class="hljs-title function_">update</span>() <span class="hljs-comment">// 2</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params"></span>) {
+  b = a + <span class="hljs-number">1</span>
+}
+
+a = <span class="hljs-number">2</span>
+</code></pre>
+<p>响应式系统要做的就是当变量 a 的值变化时，让变量 b 也自动更新。</p>
+<p>原生 JavaScript 没有提供任何机制能做到这一点，但是，可以通过追踪对象属性的读写来实现。</p>
+<p>在 JavaScript 中有两种劫持 property 访问的方式：getter / setters 和 Proxies。Vue 2 使用 getter / setters 完全是出于支持旧版本浏览器的限制；而 Vue 3 则使用了 Proxy 来创建响应式对象，仅将 getter / setter 用于 ref。</p>
+<p>defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。还允许修改对象的属性的属性描述符。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Object</span>.<span class="hljs-title function_">defineProperty</span>(obj, prop, descriptor)
+</code></pre>
+<p>descriptor 是属性描述符对象，有以下属性：</p>
+<ul>
+<li>configurable：布尔值，默认值：false，表示该属性的描述符是否能够被改变。</li>
+<li>enumerable：布尔值，默认值：false，表示该属性是否出现在对象的枚举属性中。</li>
+<li>value（数据描述符）： 属性的值。</li>
+<li>writable（数据描述符）： 布尔值，默认值：false，表示属性的值是否能被修改。</li>
+<li>get（存取描述符）： 属性的 getter 函数，当访问该属性时，会调用此函数，返回值会被用作属性的值，默认值：undefined。</li>
+<li>set（存取描述符）： 属性的 setter 函数，当属性值被修改时，会调用此函数，默认值：undefined。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> obj = {
+  <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-literal">null</span>
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">defineReactive</span> (<span class="hljs-params">obj, key, val</span>) {
+  <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">defineProperty</span>(obj, key, {
+    <span class="hljs-attr">get</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+      <span class="hljs-keyword">return</span> val;
+    },
+    <span class="hljs-attr">set</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">newVal</span>) {
+      obj.<span class="hljs-property">b</span> = newVal + <span class="hljs-number">1</span>
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(obj.<span class="hljs-property">b</span>)
+      <span class="hljs-keyword">return</span> newVal
+    }
+  });
+}
+<span class="hljs-title function_">defineReactive</span>(obj, <span class="hljs-string">'a'</span>, obj.<span class="hljs-property">a</span>)
+obj.<span class="hljs-property">a</span> = <span class="hljs-number">10</span>
+</code></pre>
+<blockquote>
+<p>Object.defineProperty() 是 Vue 2.x 的核心。如果浏览器不支持 Object.defineProperty，比如，IE8，那就等于不支持 Vue 2.x 框架。</p>
+</blockquote>
+<h4 id="virtual-dom">Virtual DOM</h4>
+<p>虚拟节点（Virtual DOM）本质上就是一棵以 JavaScript 对象（VNode 节点）作为基础的树，使用 JavaScript 对象来描述 DOM 的结构，实际上它只是一层对真实 DOM 的抽象。应用的各种状态变化首先作用于 Virtual DOM，最终映射到 DOM。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"a"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"b"</span>&gt;</span>我是内容<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-javascript">{
+  <span class="hljs-attr">tag</span>:<span class="hljs-string">'div'</span>,      <span class="hljs-comment">// 元素标签</span>
+  <span class="hljs-attr">attrs</span>:{         <span class="hljs-comment">// 属性</span>
+    <span class="hljs-attr">class</span>:<span class="hljs-string">'a'</span>,
+    <span class="hljs-attr">id</span>:<span class="hljs-string">'b'</span>
+  },
+  <span class="hljs-attr">text</span>:<span class="hljs-string">'我是内容'</span>, <span class="hljs-comment">// 文本内容</span>
+  <span class="hljs-attr">children</span>:[]     <span class="hljs-comment">// 子元素</span>
+}
+</code></pre>
+<p>Virtual DOM 在 Vue 的底层实现上，借鉴了 Snabbdom（Virtual DOM 的一种简单实现，包括模块机制、钩子函数、diff 算法），将模板编译成 Virtual DOM 渲染函数，结合 Vue 自身的一些特性，如响应式系统、指令等。</p>
+<p>Vue 是数据驱动视图的，数据发生变化视图就要随之更新，在更新视图的时候难免要操作 DOM，而操作真实 DOM 又是非常耗费性能的，这是因为浏览器的标准就把 DOM 设计的非常复杂。</p>
+<p>而 JavaScript 的运算通常是比较快的，可以用 JavaScript 的计算性能来换取操作 DOM 所消耗的性能。当数据发生变化时，对比变化前后的虚拟节点，通过 DOM-Diff 算法计算出需要更新的地方，然后只更新需要更新的视图。这样就可以<strong>尽可能少的操作DOM</strong>。</p>
+<p>这就是虚拟节点产生的原因以及最大的用途。</p>
+<blockquote>
+<p>Vue 1.x 采用的是 DocumentFragment；而 Vue 2.x 借鉴 React 的 Virtual DOM，引入后，渲染速度提升了2~4倍，并大大降低了内存消耗。</p>
+</blockquote>
+<h4 id="dom-diff">DOM-Diff</h4>
+<p>前面提到，「当数据发生变化时，对比变化前后的虚拟节点，通过 DOM-Diff 算法计算出需要更新的地方」，以达到<strong>尽可能少的操作DOM</strong>的目的。</p>
+<p>在 Vue 中，把 DOM-Diff 过程叫做 patch 过程。patch，意为“补丁”，即指对旧的 VNode 修补，打补丁从而得到新的 VNode。其本质就是把对比新旧两份 VNode 的过程：<strong>以新 VNode 为基准，改造旧 VNode 使之成为跟新 VNode 一样</strong>。所谓旧 VNode 就是数据变化之前视图所对应的虚拟节点，而新 VNode 是数据变化之后将要渲染的新的视图所对应的虚拟节点。</p>
+<p>patch 过程做的其实就是事情：</p>
+<ul>
+<li>创建节点：新 VNode 有而旧 VNode 没有的节点，就在旧 VNode 中创建。</li>
+<li>删除节点：新 VNode 没有而旧 VNode 有的节点，就在旧 VNode 中删除。</li>
+<li>更新节点：新旧 VNode 都有的节点，就以新 VNode 为准，更新旧 VNode。</li>
+</ul>
+<p>DOM-Diff 算法采用的是<strong>深度优先遍历</strong>，把树形结构按照层级分解，只对<strong>同级的树节点</strong>进行比较，而不是对整个树进行逐层搜索遍历的方式。它先对比父节点是否相同，然后对比子节点是否相同，相同的话对比孙子节点是否相同。所以时间复杂度只有 O(n)，是一种相当高效的算法。</p>
+<p>DOM-Diff 算法的原理：逐个遍历新虚拟树的子节点，找到它在旧虚拟树中的位置，如果找到了就移动对应的节点，如果没找到说明是新增节点，则新建一个节点插入。遍历完成之后，如果旧虚拟树中还有没处理过的节点，则说明这些节点不需要了，删除它们即可。</p>
+<h4 id="观察者模式">观察者模式</h4>
+<p>观察者模式一般至少有一个可被观察的对象 Subject ，可以有多个观察者去观察这个对象。当被观察对象的状态发生变化时，会通知所有观察者对象，使它们能够自动更新。</p>
+<p>二者的关系是通过被观察者主动建立的，被观察者至少要有三个方法——添加观察者、移除观察者、通知观察者。当被观察者将某个观察者添加到自己的观察者列表后，观察者与被观察者的关联就建立起来了。此后只要被观察者在某种时机触发通知观察者方法时，观察者即可接收到来自被观察者的消息。</p>
+<p><strong>优点：</strong> 响应式。目标变化就会通知观察者，这是观察者最大的有点，也是因为这个优点，观察者模式在前端才会这么出名。</p>
+<p><strong>缺点：</strong> 不灵活。相比订阅发布模式，由于目标和观察者是耦合在一起的，所以观察者模式需要同时引入目标和观察者才能达到响应式的效果；而订阅发布模式只需要引入事件中心，订阅者和发布者可以不再一处。</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 被观察者</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Subject</span> {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">obs</span> = [];
+  }
+  <span class="hljs-title function_">add</span>(<span class="hljs-params">ob</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">obs</span>.<span class="hljs-title function_">push</span>(ob);
+  }
+  <span class="hljs-title function_">remove</span>(<span class="hljs-params">ob</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">obs</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">obs</span>.<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">o</span> =&gt;</span> o.<span class="hljs-property">name</span> !== ob.<span class="hljs-property">name</span>);
+  }
+  <span class="hljs-title function_">notify</span>(<span class="hljs-params">message</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">obs</span>.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">ob</span> =&gt;</span> ob.<span class="hljs-title function_">notified</span>(message));
+  }
+}
+
+<span class="hljs-comment">// 观察者</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Observer</span> {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">name</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = name;
+  }
+  <span class="hljs-title function_">notified</span>(<span class="hljs-params">message</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hellow, <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.name}</span>. This is <span class="hljs-subst">${message}</span>!`</span>);
+  }
+}
+
+<span class="hljs-keyword">const</span> subject = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Subject</span>();
+<span class="hljs-keyword">const</span> observerLi = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Observer</span>(<span class="hljs-string">'Li'</span>);
+<span class="hljs-keyword">const</span> observerZhao = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Observer</span>(<span class="hljs-string">'Zhao'</span>);
+subject.<span class="hljs-title function_">add</span>(observerLi);
+subject.<span class="hljs-title function_">add</span>(observerZhao);
+subject.<span class="hljs-title function_">notify</span>(<span class="hljs-string">'Subject messagge 01'</span>);
+subject.<span class="hljs-title function_">remove</span>(observerLi);
+subject.<span class="hljs-title function_">notify</span>(<span class="hljs-string">'Subject messagge 02'</span>);
+</code></pre>
+<h3 id="渲染流程">渲染流程</h3>
+<h4 id="初始化及挂载">初始化及挂载</h4>
+<p>在 new Vue() 之后。 Vue 会调用 _init 函数进行初始化。它会初始化生命周期、事件、 props、 methods、 data、 computed 与 watch 等。其中最重要的是通过 Object.defineProperty 设置 setter 与 getter 函数，用来实现「响应式」以及「依赖收集」。</p>
+<p>初始化之后，调用 $mount 会挂载组件。如果是运行时编译，即不存在 render 函数，但是存在 template 的情况，需要进行「编译」步骤。</p>
+<h4 id="编译">编译</h4>
+<p>编译是 template 到 render 函数的过程，可以分成 parse、optimize 与 generate 三个阶段：</p>
+<ul>
+<li>parse：用正则等方式解析 template 模板中的指令、class、style 等数据，形成 AST。</li>
+<li>optimize：标记 static 静态节点，这是 Vue 在编译过程中的一处优化，后面当 update 更新界面时，会有一个 patch 的过程， Diff 算法会直接跳过静态节点，从而减少了比较的过程，优化了 patch 的性能。</li>
+<li>generate：将 AST 转化成渲染函数字符串的过程，得到结果是 render 函数和 staticRenderFns 函数数组的字符串表达。</li>
+</ul>
+<p>generate 生成的字符串，最终会用 new Function 转换为相应的函数。</p>
+<h4 id="渲染">渲染</h4>
+<p>渲染是 render 函数到 DOM 的过程。</p>
+<p> render 函数会在挂载阶段被调用。因为会读取所需对象的值，所以会触发 getter 函数进行「依赖收集」，「依赖收集」的目的是将观察者 Watcher 对象存放到当前闭包中的订阅者 Dep 的 subs 中。</p>
+<p>在修改对象的值的时候，会触发对应的 setter， setter 通知之前「依赖收集」得到的 Dep 中的每一个 Watcher，告诉它们自己的值改变了，需要重新渲染视图。这时候这些 Watcher 就会开始调用 update 来更新视图，当然这中间还有一个 patch 的过程以及使用队列来异步更新的策略。</p>
+<h3 id="源码解读">源码解读</h3>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- Vue.js v2.7.14 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"content"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"x-template"</span>&gt;</span><span class="language-handlebars"><span class="language-xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"onClickAlert"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span></span><span class="hljs-template-variable">{{<span class="hljs-name">vueVersion</span>}}</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span></span><span class="hljs-template-variable">{{<span class="hljs-name">message</span>}}</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>({
+    <span class="hljs-attr">template</span>: <span class="hljs-string">'#content'</span>,
+    <span class="hljs-attr">props</span>: {
+      <span class="hljs-attr">name</span>: <span class="hljs-title class_">String</span>
+    },
+    <span class="hljs-attr">propsData</span>: {
+      <span class="hljs-attr">name</span>: <span class="hljs-string">'Lizhao'</span>
+    },
+    <span class="hljs-attr">setup</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+      <span class="hljs-keyword">return</span> {
+        <span class="hljs-attr">counter</span>: <span class="hljs-number">100</span>
+      }
+    },
+    <span class="hljs-attr">provide</span>: {
+      <span class="hljs-attr">createTime</span>: <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-number">2022</span>, <span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">9</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>).<span class="hljs-title function_">toString</span>()
+    },
+    <span class="hljs-attr">computed</span>: {
+      <span class="hljs-title function_">vueVersion</span> () {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">`Vue@<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.version}</span>`</span>
+      }
+    },
+    <span class="hljs-attr">watch</span>: {
+      <span class="hljs-attr">message</span>: [
+        <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) { <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'message is changed! 01'</span>) },
+        <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) { <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'message is changed! 02'</span>) },
+      ]
+    },
+    <span class="hljs-attr">data</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+      <span class="hljs-keyword">const</span> { name } = <span class="hljs-variable language_">this</span>
+      <span class="hljs-keyword">return</span> {
+        <span class="hljs-attr">version</span>: <span class="hljs-title class_">Vue</span>.<span class="hljs-property">version</span>,
+        <span class="hljs-attr">message</span>: <span class="hljs-string">`Hellow, <span class="hljs-subst">${name}</span>. This is <span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()}</span>.`</span>
+      }
+    },
+    <span class="hljs-attr">methods</span>: {
+      <span class="hljs-title function_">onClickAlert</span> () {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">message</span> = <span class="hljs-string">`Hellow, <span class="hljs-subst">${name}</span>. This is <span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()}</span>.`</span>
+      }
+    }
+  })
+  app.$mount(<span class="hljs-string">'#app'</span>)
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h4 id="new-vue">new Vue()</h4>
+<p>每个 Vue 应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的。new Vue() 根据传入的选项对象生成一个 Vue 实例。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>({
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'#content'</span>,
+  <span class="hljs-attr">data</span>: {
+    <span class="hljs-attr">message</span>: <span class="hljs-string">`Hellow, Lizhao. This is <span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()}</span>.`</span>
+  }
+})
+</code></pre>
+<h4 id="初始化（init）">初始化（_init）</h4>
+<p>Vue 实例化后，调用 this._init 方法来初始化实例对象。</p>
+<p>Vue 本质上是一个函数。该函数声明后，会在其原型上扩展一些方法，比如，<em>init、$mount、`<em>_patch</em></em><code>、$set、$delete、$watch、$on、$once、$off、$emit、</code>_update`、$forceUpdate、$destroy、$nextTick 等方法，以及 $data、$props 等属性，同时，也会注册 compile、use、mixin、extend、util 等静态方法或属性。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Vue</span>(<span class="hljs-params">options</span>) {
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_init</span>(options);
+}
+<span class="hljs-title function_">initMixin$1</span>(<span class="hljs-title class_">Vue</span>);
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">initMixin$1</span>(<span class="hljs-params">Vue</span>) {
+  <span class="hljs-title class_">Vue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_init</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">options</span>) {};
+}
+<span class="hljs-title class_">Vue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">$mount</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">el, hydrating</span>) {
+  el = el &amp;&amp; inBrowser ? <span class="hljs-title function_">query</span>(el) : <span class="hljs-literal">undefined</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-title function_">mountComponent</span>(<span class="hljs-variable language_">this</span>, el, hydrating);
+};
+</code></pre>
+<p>初始化流程：</p>
+<ul>
+<li>接收并处理 options 选项；</li>
+<li>在 vue 实例上创建一些空对象，比如：$children、$refs、<code>_events</code>、$slots、$attrs、$listeners、<code>_provided</code> 等；</li>
+<li>再调用 beforeCreate 钩子、初始化实例的状态（比如：<code>_props</code>、setup 选项、methods 中的方法、data 中的数据、computed 观察器、Watcher 观察器）、注入 <code>_provided</code> 数据、调用 beforeCreate 钩子；</li>
+<li>最后调用 vm.$mount 挂载实例。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">initMixin$1</span>(<span class="hljs-params">Vue</span>) {
+  <span class="hljs-title class_">Vue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_init</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">options</span>) {
+    <span class="hljs-comment">//...</span>
+    <span class="hljs-title function_">initProxy</span>(vm);
+    vm.<span class="hljs-property">_self</span> = vm;
+    <span class="hljs-title function_">initLifecycle</span>(vm);
+    <span class="hljs-title function_">initEvents</span>(vm);
+    <span class="hljs-title function_">initRender</span>(vm);
+    <span class="hljs-title function_">callHook$1</span>(vm, <span class="hljs-string">'beforeCreate'</span>, <span class="hljs-literal">undefined</span>, <span class="hljs-literal">false</span> <span class="hljs-comment">/* setContext */</span>);
+    <span class="hljs-title function_">initInjections</span>(vm); <span class="hljs-comment">// resolve injections before data/props</span>
+    <span class="hljs-title function_">initState</span>(vm);
+    <span class="hljs-title function_">initProvide</span>(vm); <span class="hljs-comment">// resolve provide after data/props</span>
+    <span class="hljs-title function_">callHook$1</span>(vm, <span class="hljs-string">'created'</span>);
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">if</span> (vm.<span class="hljs-property">$options</span>.<span class="hljs-property">el</span>) {
+      vm.$mount(vm.<span class="hljs-property">$options</span>.<span class="hljs-property">el</span>);
+    }
+  };
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">initState</span>(<span class="hljs-params">vm</span>) {
+  <span class="hljs-keyword">var</span> opts = vm.<span class="hljs-property">$options</span>;
+  <span class="hljs-keyword">if</span> (opts.<span class="hljs-property">props</span>)
+    <span class="hljs-title function_">initProps$1</span>(vm, opts.<span class="hljs-property">props</span>);
+  <span class="hljs-title function_">initSetup</span>(vm);
+  <span class="hljs-keyword">if</span> (opts.<span class="hljs-property">methods</span>)
+    <span class="hljs-title function_">initMethods</span>(vm, opts.<span class="hljs-property">methods</span>);
+  <span class="hljs-keyword">if</span> (opts.<span class="hljs-property">data</span>) {
+    <span class="hljs-title function_">initData</span>(vm);
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">var</span> ob = <span class="hljs-title function_">observe</span>((vm.<span class="hljs-property">_data</span> = {}));
+    ob &amp;&amp; ob.<span class="hljs-property">vmCount</span>++;
+  }
+  <span class="hljs-keyword">if</span> (opts.<span class="hljs-property">computed</span>)
+    <span class="hljs-title function_">initComputed$1</span>(vm, opts.<span class="hljs-property">computed</span>);
+  <span class="hljs-keyword">if</span> (opts.<span class="hljs-property">watch</span> &amp;&amp; opts.<span class="hljs-property">watch</span> !== nativeWatch) {
+    <span class="hljs-title function_">initWatch</span>(vm, opts.<span class="hljs-property">watch</span>);
+  }
+}
+</code></pre>
+<h4 id="挂载（mount）">挂载（$mount）</h4>
+<p>$mount 方法中最重要的两个方法：compileToFunctions，将 template 解析为一个渲染函数 render；mountComponent 将 render 函数的返回结果挂载到 DOM 节点。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Vue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">$mount</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">el, hydrating</span>) {
+    <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-title function_">mountComponent</span>(<span class="hljs-variable language_">this</span>, el, hydrating);
+};
+<span class="hljs-keyword">var</span> mount = <span class="hljs-title class_">Vue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">$mount</span>;
+<span class="hljs-title class_">Vue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">$mount</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">el, hydrating</span>) {
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">var</span> _a = <span class="hljs-title function_">compileToFunctions</span>(template, {
+      <span class="hljs-comment">// ...</span>
+    }, <span class="hljs-variable language_">this</span>), render = _a.<span class="hljs-property">render</span>, staticRenderFns = _a.<span class="hljs-property">staticRenderFns</span>;
+    options.<span class="hljs-property">render</span> = render;
+    <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">return</span> mount.<span class="hljs-title function_">call</span>(<span class="hljs-variable language_">this</span>, el, hydrating);
+};
+</code></pre>
+<p><strong>compileToFunctions 调用栈：</strong> compileToFunctions -&gt; createCompiler -&gt; createCompilerCreator -&gt; createCompileToFunctionFn -&gt; compileToFunctions -&gt; compile -&gt; baseCompile -&gt; parse -&gt; generate -&gt;  createFunction。</p>
+<p>生成 render 函数的主要流程：</p>
+<ul>
+<li>调用 parse 函数，将 template 或 el 选项的 DOM 节点，通过其 innerHTML 属性转换为字符串；</li>
+<li>解析字符串转为 AST，并解析其属性、指令（v-for、v-if、v-once）等；</li>
+<li>调用 generate 函数 将 AST 转换为生成函数的字符串，再转换成 render 函数。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> _a = <span class="hljs-title function_">createCompiler</span>(baseOptions);
+<span class="hljs-keyword">var</span> compileToFunctions = _a.<span class="hljs-property">compileToFunctions</span>;
+<span class="hljs-keyword">var</span> createCompiler = <span class="hljs-title function_">createCompilerCreator</span>(<span class="hljs-keyword">function</span> <span class="hljs-title function_">baseCompile</span>(<span class="hljs-params">template, options</span>) {
+  <span class="hljs-keyword">var</span> ast = <span class="hljs-title function_">parse</span>(template.<span class="hljs-title function_">trim</span>(), options);
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">var</span> code = <span class="hljs-title function_">generate</span>(ast, options);
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">ast</span>: ast,
+    <span class="hljs-attr">render</span>: code.<span class="hljs-property">render</span>,
+    <span class="hljs-attr">staticRenderFns</span>: code.<span class="hljs-property">staticRenderFns</span>
+  };
+});
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">createCompilerCreator</span>(<span class="hljs-params">baseCompile</span>) {
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">createCompiler</span>(<span class="hljs-params">baseOptions</span>) {
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">compile</span>(<span class="hljs-params">template, options</span>) {
+      <span class="hljs-comment">// ...</span>
+      <span class="hljs-keyword">var</span> compiled = <span class="hljs-title function_">baseCompile</span>(template.<span class="hljs-title function_">trim</span>(), finalOptions);
+      {
+        <span class="hljs-title function_">detectErrors</span>(compiled.<span class="hljs-property">ast</span>, warn);
+      }
+      compiled.<span class="hljs-property">errors</span> = errors;
+      compiled.<span class="hljs-property">tips</span> = tips;
+      <span class="hljs-keyword">return</span> compiled;
+    }
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">compile</span>: compile,
+      <span class="hljs-attr">compileToFunctions</span>: <span class="hljs-title function_">createCompileToFunctionFn</span>(compile)
+    };
+  };
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">createCompileToFunctionFn</span>(<span class="hljs-params">compile</span>) {
+  <span class="hljs-keyword">var</span> cache = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">create</span>(<span class="hljs-literal">null</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">compileToFunctions</span>(<span class="hljs-params">template, options, vm</span>) {
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">var</span> compiled = <span class="hljs-title function_">compile</span>(template, options);
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">var</span> res = {};
+    <span class="hljs-keyword">var</span> fnGenErrors = [];
+    res.<span class="hljs-property">render</span> = <span class="hljs-title function_">createFunction</span>(compiled.<span class="hljs-property">render</span>, fnGenErrors);
+    res.<span class="hljs-property">staticRenderFns</span> = compiled.<span class="hljs-property">staticRenderFns</span>.<span class="hljs-title function_">map</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">code</span>) {
+      <span class="hljs-keyword">return</span> <span class="hljs-title function_">createFunction</span>(code, fnGenErrors);
+    });
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">return</span> (cache[key] = res);
+  };
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">generate</span>(<span class="hljs-params">ast, options</span>) {
+  <span class="hljs-keyword">var</span> state = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CodegenState</span>(options);
+  <span class="hljs-keyword">var</span> code = ast ? ast.<span class="hljs-property">tag</span> === <span class="hljs-string">'script'</span> ? <span class="hljs-string">'null'</span> : <span class="hljs-title function_">genElement</span>(ast, state) : <span class="hljs-string">'_c("div")'</span>;
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">render</span>: <span class="hljs-string">"with(this){return "</span>.<span class="hljs-title function_">concat</span>(code, <span class="hljs-string">"}"</span>),
+    <span class="hljs-attr">staticRenderFns</span>: state.<span class="hljs-property">staticRenderFns</span>
+  };
+}
+</code></pre>
+<p><strong>mountComponent 调用栈：</strong> mountComponent -&gt; new Water -&gt; updateComponent -&gt; <code>vm._render()</code> -&gt; <code>Vue.prototype._render</code> -&gt; <code>vm._update</code> -&gt; Vue.prototype.<em>update -&gt; <code>__patch__</code> -&gt; `Vue.prototype.<em>_patch</em></em>` -&gt; patch -&gt; createPatchFunction -&gt; createElm -&gt; insert -&gt; nodeOps.appendChild -&gt; node.appendChild。</p>
+<p>挂载流程：</p>
+<ul>
+<li>new Watcher() 创建实例对象，并将 updateComponent 函数传入，Watcher 构造函数会执行该函数；</li>
+<li>updateComponent 函数调用 <code>vm._render</code> 生成虚拟节点，再以虚拟节点为入参，调用 <code>vm._update</code> 方法；</li>
+<li><code>vm._update</code> 方法最终调用的是 patch 函数，该函数核心是 DOM-Diff 算法，计算出需要更新的 VNode，以达到尽量少的渲染节点的目的；</li>
+<li>DOM-Diff 算法计算完成后，调用 createElm 或 patchVnode 函数更新节点，其本质上是调用原生节点的 node.appendChild、insertBefore 方法。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">mountComponent</span>(<span class="hljs-params">vm, el, hydrating</span>) {
+  <span class="hljs-comment">// ...</span>
+  updateComponent = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    vm.<span class="hljs-title function_">_update</span>(vm.<span class="hljs-title function_">_render</span>(), hydrating);
+  };
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">new</span> <span class="hljs-title class_">Watcher</span>(vm, updateComponent, noop, watcherOptions, <span class="hljs-literal">true</span>);
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">var</span> <span class="hljs-title class_">Watcher</span> = (<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">function</span> <span class="hljs-title function_">Watcher</span>(<span class="hljs-params">vm, expOrFn, cb, options, isRenderWatcher</span>) {
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isFunction</span>(expOrFn)) {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">getter</span> = expOrFn;
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">getter</span> = <span class="hljs-title function_">parsePath</span>(expOrFn);
+      <span class="hljs-comment">// ..</span>
+    }
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">lazy</span> ? <span class="hljs-literal">undefined</span> : <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">get</span>();
+  }
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Watcher</span>;
+}());
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">lifecycleMixin</span>(<span class="hljs-params">Vue</span>) {
+  <span class="hljs-title class_">Vue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_update</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">vnode, hydrating</span>) {
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">if</span> (!prevVnode) {
+      vm.<span class="hljs-property">$el</span> = vm.<span class="hljs-title function_">__patch__</span>(vm.<span class="hljs-property">$el</span>, vnode, hydrating, <span class="hljs-literal">false</span>);
+    } <span class="hljs-keyword">else</span> {
+      vm.<span class="hljs-property">$el</span> = vm.<span class="hljs-title function_">__patch__</span>(prevVnode, vnode);
+    }
+    <span class="hljs-comment">// ...</span>
+  };
+}
+
+<span class="hljs-keyword">var</span> patch = <span class="hljs-title function_">createPatchFunction</span>({ <span class="hljs-attr">nodeOps</span>: nodeOps, <span class="hljs-attr">modules</span>: modules$1 });
+<span class="hljs-title class_">Vue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">__patch__</span> = inBrowser ? patch : noop;
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">createPatchFunction</span>(<span class="hljs-params">backend</span>) {
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">function</span> <span class="hljs-title function_">createElm</span>(<span class="hljs-params">vnode, insertedVnodeQueue, parentElm, refElm, nested, ownerArray, index</span>) {
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isDef</span>(tag)) {
+      <span class="hljs-comment">// ...</span>
+      <span class="hljs-title function_">insert</span>(parentElm, vnode.<span class="hljs-property">elm</span>, refElm);
+      <span class="hljs-comment">// ...</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isTrue</span>(vnode.<span class="hljs-property">isComment</span>)) {
+      vnode.<span class="hljs-property">elm</span> = nodeOps.<span class="hljs-title function_">createComment</span>(vnode.<span class="hljs-property">text</span>);
+      <span class="hljs-title function_">insert</span>(parentElm, vnode.<span class="hljs-property">elm</span>, refElm);
+    } <span class="hljs-keyword">else</span> {
+      vnode.<span class="hljs-property">elm</span> = nodeOps.<span class="hljs-title function_">createTextNode</span>(vnode.<span class="hljs-property">text</span>);
+      <span class="hljs-title function_">insert</span>(parentElm, vnode.<span class="hljs-property">elm</span>, refElm);
+    }
+  }
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">patch</span>(<span class="hljs-params">oldVnode, vnode, hydrating, removeOnly</span>) {
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isUndef</span>(oldVnode)) {
+      isInitialPatch = <span class="hljs-literal">true</span>;
+      <span class="hljs-title function_">createElm</span>(vnode, insertedVnodeQueue);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">var</span> isRealElement = <span class="hljs-title function_">isDef</span>(oldVnode.<span class="hljs-property">nodeType</span>);
+      <span class="hljs-keyword">if</span> (!isRealElement &amp;&amp; <span class="hljs-title function_">sameVnode</span>(oldVnode, vnode)) {
+        <span class="hljs-title function_">patchVnode</span>(oldVnode, vnode, insertedVnodeQueue, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, removeOnly);
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-title function_">createElm</span>(vnode, insertedVnodeQueue, oldElm.<span class="hljs-property">_leaveCb</span> ? <span class="hljs-literal">null</span> : parentElm, nodeOps.<span class="hljs-title function_">nextSibling</span>(oldElm));
+        <span class="hljs-comment">// ...</span>
+      }
+    }
+    <span class="hljs-comment">// ...</span>
+  };
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">insert</span>(<span class="hljs-params">parent, elm, ref</span>) {
+  <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isDef</span>(parent)) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isDef</span>(ref)) {
+      <span class="hljs-keyword">if</span> (nodeOps.<span class="hljs-title function_">parentNode</span>(ref) === parent) {
+        nodeOps.<span class="hljs-title function_">insertBefore</span>(parent, elm, ref);
+      }
+    } <span class="hljs-keyword">else</span> {
+      nodeOps.<span class="hljs-title function_">appendChild</span>(parent, elm);
+    }
+  }
+}
+<span class="hljs-keyword">var</span> nodeOps = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">freeze</span>({
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-attr">insertBefore</span>: insertBefore,
+  <span class="hljs-attr">removeChild</span>: removeChild,
+  <span class="hljs-attr">appendChild</span>: appendChild,
+  <span class="hljs-comment">// ...</span>
+});
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">appendChild</span>(<span class="hljs-params">node, child</span>) {
+  node.<span class="hljs-title function_">appendChild</span>(child);
+}
+</code></pre>
+<h4 id="虚拟节点（vnode）">虚拟节点（VNode）</h4>
+<p>new VNode() 用一实例化一个虚拟节点，其调用栈：mountComponent -&gt; <code>vm._render</code> -&gt; <code>Vue.prototype._render</code>，最终返回一个 VNode 对象。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">renderMixin</span>(<span class="hljs-params">Vue</span>) {
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-title class_">Vue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_render</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">var</span> vnode;
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-title function_">setCurrentInstance</span>(vm);
+      currentRenderingInstance = vm;
+      vnode = render.<span class="hljs-title function_">call</span>(vm.<span class="hljs-property">_renderProxy</span>, vm.<span class="hljs-property">$createElement</span>);
+    }
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">return</span> vnode;
+  };
+}
+</code></pre>
+<p>render 函数的函数体长这样：</p>
+<pre><code class="lang-javascript">render.<span class="hljs-title function_">toString</span>()
+<span class="hljs-comment">// function anonymous() {with(this){return _c('div',{on:{"click":onClickAlert}},[_c('p',[_v(_s(vueVersion))]),_v(" "),_c('p',[_v(_s(message))])])}}</span>
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">anonymous</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">with</span>(<span class="hljs-params"><span class="hljs-variable language_">this</span></span>){
+    <span class="hljs-keyword">return</span> <span class="hljs-title function_">_c</span>(
+      <span class="hljs-string">'div'</span>,
+      {
+        <span class="hljs-attr">on</span>:{<span class="hljs-string">"click"</span>:onClickAlert}
+      },
+      [
+        <span class="hljs-title function_">_c</span>(
+          <span class="hljs-string">'p'</span>,
+          [
+            <span class="hljs-title function_">_v</span>(<span class="hljs-title function_">_s</span>(vueVersion))]),
+        <span class="hljs-title function_">_v</span>(<span class="hljs-string">" "</span>),
+        <span class="hljs-title function_">_c</span>(<span class="hljs-string">'p'</span>,[<span class="hljs-title function_">_v</span>(<span class="hljs-title function_">_s</span>(message))
+               ]
+          )
+      ]
+    )
+  }
+}
+</code></pre>
+<p>其中 <code>with(this)</code> 是指定语句块中的作用域，也就是 <code>render.call(vm._renderProxy, vm.$createElement)</code> 中的 <code>vm._renderProxy</code>，<code>_c、_v</code> 就是 <code>vm._renderProxy</code> 下的方法。</p>
+<pre><code class="lang-javascript">initProxy = <span class="hljs-keyword">function</span> <span class="hljs-title function_">initProxy</span>(<span class="hljs-params">vm</span>) {
+  <span class="hljs-keyword">if</span> (hasProxy_1) {
+    <span class="hljs-comment">// ...</span>
+    vm.<span class="hljs-property">_renderProxy</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Proxy</span>(vm, handlers);
+  } <span class="hljs-keyword">else</span> {
+    vm.<span class="hljs-property">_renderProxy</span> = vm;
+  }
+};
+</code></pre>
+<p><code>_c</code> 是一个简单的、返回 createElement$1 函数运行结果的函数，createElement$1 -&gt; _createElement -&gt; new VNode()。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">initRender</span>(<span class="hljs-params">vm</span>) {
+  <span class="hljs-comment">// ...</span>
+  vm.<span class="hljs-property">_c</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">a, b, c, d</span>) { <span class="hljs-keyword">return</span> <span class="hljs-title function_">createElement$1</span>(vm, a, b, c, d, <span class="hljs-literal">false</span>); };
+  vm.<span class="hljs-property">$createElement</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">a, b, c, d</span>) { <span class="hljs-keyword">return</span> <span class="hljs-title function_">createElement$1</span>(vm, a, b, c, d, <span class="hljs-literal">true</span>); };
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">createElement$1</span>(<span class="hljs-params">context, tag, data, children, normalizationType, alwaysNormalize</span>) {
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-title function_">_createElement</span>(context, tag, data, children, normalizationType);
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">_createElement</span>(<span class="hljs-params">context, tag, data, children, normalizationType</span>) {
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">var</span> vnode, ns;
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> tag === <span class="hljs-string">'string'</span>) {
+    <span class="hljs-keyword">var</span> <span class="hljs-title class_">Ctor</span> = <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>;
+    ns = (context.<span class="hljs-property">$vnode</span> &amp;&amp; context.<span class="hljs-property">$vnode</span>.<span class="hljs-property">ns</span>) || config.<span class="hljs-title function_">getTagNamespace</span>(tag);
+    <span class="hljs-keyword">if</span> (config.<span class="hljs-title function_">isReservedTag</span>(tag)) {
+      <span class="hljs-comment">// ...</span>
+      vnode = <span class="hljs-keyword">new</span> <span class="hljs-title class_">VNode</span>(config.<span class="hljs-title function_">parsePlatformTagName</span>(tag), data, children, <span class="hljs-literal">undefined</span>, <span class="hljs-literal">undefined</span>, context);
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ((!data || !data.<span class="hljs-property">pre</span>) &amp;&amp;
+      <span class="hljs-comment">// ...</span>
+      vnode = <span class="hljs-title function_">createComponent</span>(<span class="hljs-title class_">Ctor</span>, data, context, children, tag);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">// ...</span>
+      vnode = <span class="hljs-keyword">new</span> <span class="hljs-title class_">VNode</span>(tag, data, children, <span class="hljs-literal">undefined</span>, <span class="hljs-literal">undefined</span>, context);
+    }
+  } <span class="hljs-keyword">else</span> {
+    vnode = <span class="hljs-title function_">createComponent</span>(tag, data, context, children);
+  }
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>VNode 是一个创建虚拟节点的构造函数：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-title class_">VNode</span> = <span class="hljs-comment">/** <span class="hljs-doctag">@class</span> */</span> (<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">function</span> <span class="hljs-title function_">VNode</span>(<span class="hljs-params">tag, data, children, text, elm, context, componentOptions, asyncFactory</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">tag</span> = tag;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">data</span> = data;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">children</span> = children;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">text</span> = text;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">elm</span> = elm;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">ns</span> = <span class="hljs-literal">undefined</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">context</span> = context;
+    <span class="hljs-comment">// ...</span>
+  }
+  <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">defineProperty</span>(<span class="hljs-title class_">VNode</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>, <span class="hljs-string">"child"</span>, {
+    <span class="hljs-comment">// ...</span>
+  });
+  <span class="hljs-keyword">return</span> <span class="hljs-title class_">VNode</span>;
+}());
+</code></pre>
+<h4 id="dom-diff（patch）">DOM-Diff（patch）</h4>
+<p>DOM-Diff 用对比变化前后的虚拟节点，计算出需要更新的节点，以达到<strong>尽可能少的操作DOM</strong>的目的。DOM-Diff 是在 patch 函数中实现的。</p>
+<p>patch 函数的调用栈：mountComponent -&gt; <code>vm._update</code> -&gt; Vue.prototype.<em>update -&gt; <code>__patch__</code> -&gt; `Vue.prototype.<em>_patch</em></em>` -&gt; patch -&gt; createPatchFunction。</p>
+<p>patch 函数逻辑如下：</p>
+<ul>
+<li>如果 vnode 不存在，但是 oldVnode 存在，则销毁 oldVnode；</li>
+<li>如果 vnode 存在，但是 oldVnode 不存在，则创建 vnode；</li>
+<li>如果 oldVnode 不是真实节点，且 vnode 和 oldVnode 的 key、tag 等相同，则调用 patchVnode 方法，即更新 oldVnode。</li>
+</ul>
+<p>patchVnode 方法逻辑如下：</p>
+<ul>
+<li>如果 oldVnode 和 vnode 指向同一节点，则不处理；</li>
+<li>如果 VNode 和 oldVNode 均为静态节点，则不处理；</li>
+<li>如果 vnode 有 text，则直接替换文本内容；</li>
+<li>如果 oldVnode 和 vnode 都有 children，且两者 children 不是同一对象，则调用 updateChildren 方法；</li>
+<li>如果 只有 vnode 都有 children，则调用 addVnodes 新增子节点；</li>
+<li>如果 只有 oldVnode 都有 children，则调用 removeVnodes 删除子节点；</li>
+<li>如果 vnode 没有 text，则将节点文本置为空字符。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> patch = <span class="hljs-title function_">createPatchFunction</span>({ <span class="hljs-attr">nodeOps</span>: nodeOps, <span class="hljs-attr">modules</span>: modules$1 });
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">sameVnode</span>(<span class="hljs-params">a, b</span>) {
+  <span class="hljs-keyword">return</span> (a.<span class="hljs-property">key</span> === b.<span class="hljs-property">key</span> &amp;&amp;
+    a.<span class="hljs-property">asyncFactory</span> === b.<span class="hljs-property">asyncFactory</span> &amp;&amp;
+    ((a.<span class="hljs-property">tag</span> === b.<span class="hljs-property">tag</span> &amp;&amp;
+      a.<span class="hljs-property">isComment</span> === b.<span class="hljs-property">isComment</span> &amp;&amp;
+      <span class="hljs-title function_">isDef</span>(a.<span class="hljs-property">data</span>) === <span class="hljs-title function_">isDef</span>(b.<span class="hljs-property">data</span>) &amp;&amp;
+      <span class="hljs-title function_">sameInputType</span>(a, b)) ||
+      (<span class="hljs-title function_">isTrue</span>(a.<span class="hljs-property">isAsyncPlaceholder</span>) &amp;&amp; <span class="hljs-title function_">isUndef</span>(b.<span class="hljs-property">asyncFactory</span>.<span class="hljs-property">error</span>))));
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">createPatchFunction</span>(<span class="hljs-params">backend</span>) {
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">function</span> <span class="hljs-title function_">patchVnode</span>(<span class="hljs-params">oldVnode, vnode, insertedVnodeQueue, ownerArray, index, removeOnly</span>) {
+    <span class="hljs-keyword">if</span> (oldVnode === vnode) {
+      <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">var</span> oldCh = oldVnode.<span class="hljs-property">children</span>;
+    <span class="hljs-keyword">var</span> ch = vnode.<span class="hljs-property">children</span>;
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isDef</span>(data) &amp;&amp; <span class="hljs-title function_">isPatchable</span>(vnode)) {
+      <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; cbs.<span class="hljs-property">update</span>.<span class="hljs-property">length</span>; ++i)
+        cbs.<span class="hljs-property">update</span>[i](oldVnode, vnode);
+      <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isDef</span>((i = data.<span class="hljs-property">hook</span>)) &amp;&amp; <span class="hljs-title function_">isDef</span>((i = i.<span class="hljs-property">update</span>)))
+        <span class="hljs-title function_">i</span>(oldVnode, vnode);
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isUndef</span>(vnode.<span class="hljs-property">text</span>)) {
+      <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isDef</span>(oldCh) &amp;&amp; <span class="hljs-title function_">isDef</span>(ch)) {
+        <span class="hljs-keyword">if</span> (oldCh !== ch) {
+                    <span class="hljs-title function_">updateChildren</span>(elm, oldCh, ch, insertedVnodeQueue, removeOnly);
+        }
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isDef</span>(ch)) {
+        <span class="hljs-title function_">checkDuplicateKeys</span>(ch);
+        <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isDef</span>(oldVnode.<span class="hljs-property">text</span>)) {
+                    nodeOps.<span class="hljs-title function_">setTextContent</span>(elm, <span class="hljs-string">''</span>); 
+        }
+        <span class="hljs-title function_">addVnodes</span>(elm, <span class="hljs-literal">null</span>, ch, <span class="hljs-number">0</span>, ch.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>, insertedVnodeQueue);
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isDef</span>(oldCh)) {
+        <span class="hljs-title function_">removeVnodes</span>(oldCh, <span class="hljs-number">0</span>, oldCh.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>);
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isDef</span>(oldVnode.<span class="hljs-property">text</span>)) {
+        nodeOps.<span class="hljs-title function_">setTextContent</span>(elm, <span class="hljs-string">''</span>);
+      }
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (oldVnode.<span class="hljs-property">text</span> !== vnode.<span class="hljs-property">text</span>) {
+      nodeOps.<span class="hljs-title function_">setTextContent</span>(elm, vnode.<span class="hljs-property">text</span>);
+    }
+    <span class="hljs-comment">// ...</span>
+  }
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">patch</span>(<span class="hljs-params">oldVnode, vnode, hydrating, removeOnly</span>) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isUndef</span>(vnode)) {
+      <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isDef</span>(oldVnode))
+        <span class="hljs-title function_">invokeDestroyHook</span>(oldVnode);
+      <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">var</span> isInitialPatch = <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">var</span> insertedVnodeQueue = [];
+    <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isUndef</span>(oldVnode)) {
+      isInitialPatch = <span class="hljs-literal">true</span>;
+      <span class="hljs-title function_">createElm</span>(vnode, insertedVnodeQueue);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">var</span> isRealElement = <span class="hljs-title function_">isDef</span>(oldVnode.<span class="hljs-property">nodeType</span>);
+      <span class="hljs-keyword">if</span> (!isRealElement &amp;&amp; <span class="hljs-title function_">sameVnode</span>(oldVnode, vnode)) {
+        <span class="hljs-title function_">patchVnode</span>(oldVnode, vnode, insertedVnodeQueue, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, removeOnly);
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-title function_">createElm</span>(vnode, insertedVnodeQueue, oldElm.<span class="hljs-property">_leaveCb</span> ? <span class="hljs-literal">null</span> : parentElm, nodeOps.<span class="hljs-title function_">nextSibling</span>(oldElm));
+        <span class="hljs-comment">// ...</span>
+      }
+    }
+    <span class="hljs-title function_">invokeInsertHook</span>(vnode, insertedVnodeQueue, isInitialPatch);
+    <span class="hljs-keyword">return</span> vnode.<span class="hljs-property">elm</span>;
+  };
+}
+</code></pre>
+<p><strong>特别注意：</strong> <code>cbs.update[i](oldVnode, vnode)</code> 包含 updateAttrs、updateClass、updateDOMListeners、updateDOMProps、updateStyle 等函数的执行。这是因为，当虚拟节点是可 "修补" 的时，需要根据 VNode 的 data 数据，更新 oldVnode 下的真实 DOM 的属性、类名、样式、事件监听器等。</p>
+<p>updateChildren 函数用于更新子节点，内部算法是为了复用一些没有变化的元素：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">updateChildren</span>(<span class="hljs-params">parentElm, oldCh, newCh, insertedVnodeQueue, removeOnly</span>) {
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">while</span> (oldStartIdx &lt;= oldEndIdx &amp;&amp; newStartIdx &lt;= newEndIdx) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isUndef</span>(oldStartVnode)) {
+      oldStartVnode = oldCh[++oldStartIdx]; <span class="hljs-comment">// Vnode has been moved left</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isUndef</span>(oldEndVnode)) {
+      oldEndVnode = oldCh[--oldEndIdx];
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-title function_">sameVnode</span>(oldStartVnode, newStartVnode)) {
+      <span class="hljs-title function_">patchVnode</span>(oldStartVnode, newStartVnode, insertedVnodeQueue, newCh, newStartIdx);
+      oldStartVnode = oldCh[++oldStartIdx];
+      newStartVnode = newCh[++newStartIdx];
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-title function_">sameVnode</span>(oldEndVnode, newEndVnode)) {
+      <span class="hljs-title function_">patchVnode</span>(oldEndVnode, newEndVnode, insertedVnodeQueue, newCh, newEndIdx);
+      oldEndVnode = oldCh[--oldEndIdx];
+      newEndVnode = newCh[--newEndIdx];
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-title function_">sameVnode</span>(oldStartVnode, newEndVnode)) {
+      <span class="hljs-title function_">patchVnode</span>(oldStartVnode, newEndVnode, insertedVnodeQueue, newCh, newEndIdx);
+      canMove &amp;&amp;
+        nodeOps.<span class="hljs-title function_">insertBefore</span>(parentElm, oldStartVnode.<span class="hljs-property">elm</span>, nodeOps.<span class="hljs-title function_">nextSibling</span>(oldEndVnode.<span class="hljs-property">elm</span>));
+      oldStartVnode = oldCh[++oldStartIdx];
+      newEndVnode = newCh[--newEndIdx];
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-title function_">sameVnode</span>(oldEndVnode, newStartVnode)) {
+      <span class="hljs-title function_">patchVnode</span>(oldEndVnode, newStartVnode, insertedVnodeQueue, newCh, newStartIdx);
+      canMove &amp;&amp;
+        nodeOps.<span class="hljs-title function_">insertBefore</span>(parentElm, oldEndVnode.<span class="hljs-property">elm</span>, oldStartVnode.<span class="hljs-property">elm</span>);
+      oldEndVnode = oldCh[--oldEndIdx];
+      newStartVnode = newCh[++newStartIdx];
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isUndef</span>(oldKeyToIdx)) {
+        oldKeyToIdx = <span class="hljs-title function_">createKeyToOldIdx</span>(oldCh, oldStartIdx, oldEndIdx);
+      }
+      idxInOld = <span class="hljs-title function_">isDef</span>(newStartVnode.<span class="hljs-property">key</span>) ? oldKeyToIdx[newStartVnode.<span class="hljs-property">key</span>] : <span class="hljs-title function_">findIdxInOld</span>(newStartVnode, oldCh, oldStartIdx, oldEndIdx);
+      <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isUndef</span>(idxInOld)) {
+        <span class="hljs-title function_">createElm</span>(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.<span class="hljs-property">elm</span>, <span class="hljs-literal">false</span>, newCh, newStartIdx);
+      } <span class="hljs-keyword">else</span> {
+        vnodeToMove = oldCh[idxInOld];
+        <span class="hljs-keyword">if</span> (<span class="hljs-title function_">sameVnode</span>(vnodeToMove, newStartVnode)) {
+          <span class="hljs-title function_">patchVnode</span>(vnodeToMove, newStartVnode, insertedVnodeQueue, newCh, newStartIdx);
+          oldCh[idxInOld] = <span class="hljs-literal">undefined</span>;
+          canMove &amp;&amp;
+            nodeOps.<span class="hljs-title function_">insertBefore</span>(parentElm, vnodeToMove.<span class="hljs-property">elm</span>, oldStartVnode.<span class="hljs-property">elm</span>);
+        } <span class="hljs-keyword">else</span> {
+          <span class="hljs-title function_">createElm</span>(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.<span class="hljs-property">elm</span>, <span class="hljs-literal">false</span>, newCh, newStartIdx);
+        }
+      }
+      newStartVnode = newCh[++newStartIdx];
+    }
+  }
+  <span class="hljs-keyword">if</span> (oldStartIdx &gt; oldEndIdx) {
+    refElm = <span class="hljs-title function_">isUndef</span>(newCh[newEndIdx + <span class="hljs-number">1</span>]) ? <span class="hljs-literal">null</span> : newCh[newEndIdx + <span class="hljs-number">1</span>].<span class="hljs-property">elm</span>;
+    <span class="hljs-title function_">addVnodes</span>(parentElm, refElm, newCh, newStartIdx, newEndIdx, insertedVnodeQueue);
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (newStartIdx &gt; newEndIdx) {
+    <span class="hljs-title function_">removeVnodes</span>(oldCh, oldStartIdx, oldEndIdx);
+  }
+}
+</code></pre>
+<h4 id="响应式实现">响应式实现</h4>
+<p>响应式的核心原理是 Object.defineProperty，核心函数是 defineReactive，其实现主要依赖三个构造函数：Observer、Dep、Watcher。</p>
+<p>defineReactive 函数首先会实例化一个 Dep 对象，在读取数据时，get 方法会将 Dep.target（一个 Watcher 对象）存放到 Dep 对象的 subs 中；在更新数据时，set 方法会调用 Dep 对象的 notify 方法通知它内部所有的依赖执行 update。</p>
+<p><strong>注意：</strong> 只有触发 get 方法，Dep.target 才会被收集，也就是说，如果该属性没有被用到，则不收集到 subs。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">defineReactive</span>(<span class="hljs-params">obj, key, val, customSetter, shallow, mock</span>) {
+  <span class="hljs-keyword">var</span> dep = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Dep</span>();
+  <span class="hljs-keyword">var</span> property = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">getOwnPropertyDescriptor</span>(obj, key);
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-comment">// 默认对子属性也进行响应式绑定</span>
+  <span class="hljs-keyword">var</span> childOb = !shallow &amp;&amp; <span class="hljs-title function_">observe</span>(val, <span class="hljs-literal">false</span>, mock);
+  <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">defineProperty</span>(obj, key, {
+    <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">configurable</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">get</span>: <span class="hljs-keyword">function</span> <span class="hljs-title function_">reactiveGetter</span>(<span class="hljs-params"></span>) {
+      <span class="hljs-comment">// 当读取属性时，将 Dep.target 添加到 Dep 的依赖收集中</span>
+      <span class="hljs-keyword">var</span> value = getter ? getter.<span class="hljs-title function_">call</span>(obj) : val;
+      <span class="hljs-comment">// Dep.target 主要是的 Watch 函数的 get 方法中赋值的。当然，其他方也有</span>
+      <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Dep</span>.<span class="hljs-property">target</span>) {
+        dep.<span class="hljs-title function_">depend</span>({
+          <span class="hljs-attr">target</span>: obj,
+          <span class="hljs-attr">type</span>: <span class="hljs-string">"get"</span> <span class="hljs-comment">/* TrackOpTypes.GET */</span>,
+          <span class="hljs-attr">key</span>: key
+        });
+        <span class="hljs-keyword">if</span> (childOb) {
+          childOb.<span class="hljs-property">dep</span>.<span class="hljs-title function_">depend</span>();
+          <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isArray</span>(value)) {
+            <span class="hljs-title function_">dependArray</span>(value);
+          }
+        }
+      }
+      <span class="hljs-keyword">return</span> <span class="hljs-title function_">isRef</span>(value) &amp;&amp; !shallow ? value.<span class="hljs-property">value</span> : value;
+    },
+    <span class="hljs-attr">set</span>: <span class="hljs-keyword">function</span> <span class="hljs-title function_">reactiveSetter</span>(<span class="hljs-params">newVal</span>) {
+      <span class="hljs-comment">// ...</span>
+      childOb = !shallow &amp;&amp; <span class="hljs-title function_">observe</span>(newVal, <span class="hljs-literal">false</span>, mock);
+      dep.<span class="hljs-title function_">notify</span>({
+        <span class="hljs-attr">type</span>: <span class="hljs-string">"set"</span> <span class="hljs-comment">/* TriggerOpTypes.SET */</span>,
+        <span class="hljs-attr">target</span>: obj,
+        <span class="hljs-attr">key</span>: key,
+        <span class="hljs-attr">newValue</span>: newVal,
+        <span class="hljs-attr">oldValue</span>: value
+      });
+  });
+  <span class="hljs-keyword">return</span> dep;
+}
+</code></pre>
+<p>Observer 构造函数其实是对 defineReactive 函数封装。它接收一个对象，并对对象中的每个属性调用 defineReactive 函数，深度遍历每一项，定义每个子对象中属性的 get 和 set 方法。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-title class_">Observer</span> = (<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">function</span> <span class="hljs-title function_">Observer</span>(<span class="hljs-params">value, shallow, mock</span>) {
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isArray</span>(value)) {} <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">// ...</span>
+      <span class="hljs-keyword">var</span> keys = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">keys</span>(value);
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; keys.<span class="hljs-property">length</span>; i++) {
+        <span class="hljs-keyword">var</span> key = keys[i];
+        <span class="hljs-title function_">defineReactive</span>(value, key, <span class="hljs-variable constant_">NO_INIITIAL_VALUE</span>, <span class="hljs-literal">undefined</span>, shallow, mock);
+      }
+    }
+  }
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Observer</span>;
+}());
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">observe</span>(<span class="hljs-params">value, shallow, ssrMockReactivity</span>) {
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-comment">/** ... **/</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Observer</span>(value, shallow, ssrMockReactivity);
+  }
+}
+</code></pre>
+<p>Dep 构造函数定义的是观察者模式中的<strong>被观察者</strong>类。它很简单，主要工作是维护一个依赖数组，提供添加、删除以及通知各依赖的方法。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-title class_">Dep</span> = (<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">function</span> <span class="hljs-title function_">Dep</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">_pending</span> = <span class="hljs-literal">false</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">id</span> = uid$2++;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">subs</span> = [];
+  }
+  <span class="hljs-title class_">Dep</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">addSub</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">sub</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">subs</span>.<span class="hljs-title function_">push</span>(sub);
+  };
+  <span class="hljs-title class_">Dep</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">removeSub</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">sub</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">subs</span>[<span class="hljs-variable language_">this</span>.<span class="hljs-property">subs</span>.<span class="hljs-title function_">indexOf</span>(sub)] = <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">if</span> (!<span class="hljs-variable language_">this</span>.<span class="hljs-property">_pending</span>) {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">_pending</span> = <span class="hljs-literal">true</span>;
+      pendingCleanupDeps.<span class="hljs-title function_">push</span>(<span class="hljs-variable language_">this</span>);
+    }
+  };
+  <span class="hljs-title class_">Dep</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">depend</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">info</span>) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Dep</span>.<span class="hljs-property">target</span>) {
+      <span class="hljs-title class_">Dep</span>.<span class="hljs-property">target</span>.<span class="hljs-title function_">addDep</span>(<span class="hljs-variable language_">this</span>);
+      <span class="hljs-keyword">if</span> (info &amp;&amp; <span class="hljs-title class_">Dep</span>.<span class="hljs-property">target</span>.<span class="hljs-property">onTrack</span>) {
+        <span class="hljs-title class_">Dep</span>.<span class="hljs-property">target</span>.<span class="hljs-title function_">onTrack</span>(<span class="hljs-title function_">__assign</span>({ <span class="hljs-attr">effect</span>: <span class="hljs-title class_">Dep</span>.<span class="hljs-property">target</span> }, info));
+      }
+    }
+  };
+  <span class="hljs-title class_">Dep</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">notify</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">info</span>) {
+    <span class="hljs-keyword">if</span> (!config.<span class="hljs-property">async</span>) {
+      subs.<span class="hljs-title function_">sort</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) { <span class="hljs-keyword">return</span> a.<span class="hljs-property">id</span> - b.<span class="hljs-property">id</span>; });
+    }
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>, l = subs.<span class="hljs-property">length</span>; i &lt; l; i++) {
+      <span class="hljs-keyword">var</span> sub = subs[i];
+      <span class="hljs-keyword">if</span> (info) {
+        sub.<span class="hljs-property">onTrigger</span> &amp;&amp;
+          sub.<span class="hljs-title function_">onTrigger</span>(<span class="hljs-title function_">__assign</span>({ <span class="hljs-attr">effect</span>: subs[i] }, info));
+      }
+      sub.<span class="hljs-title function_">update</span>();
+    }
+  };
+  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Dep</span>;
+}());
+
+<span class="hljs-title class_">Dep</span>.<span class="hljs-property">target</span> = <span class="hljs-literal">null</span>;
+<span class="hljs-keyword">var</span> targetStack = [];
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">pushTarget</span>(<span class="hljs-params">target</span>) {
+  targetStack.<span class="hljs-title function_">push</span>(target);
+  <span class="hljs-title class_">Dep</span>.<span class="hljs-property">target</span> = target;
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">popTarget</span>(<span class="hljs-params"></span>) {
+  targetStack.<span class="hljs-title function_">pop</span>();
+  <span class="hljs-title class_">Dep</span>.<span class="hljs-property">target</span> = targetStack[targetStack.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>];
+}
+</code></pre>
+<p>Watcher 构造函数定义的是观察者模式中的<strong>观察者</strong>类：添加依赖到 subs， 以及提供 update 函数。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> uid$1 = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">var</span> <span class="hljs-title class_">Watcher</span> = <span class="hljs-comment">/** <span class="hljs-doctag">@class</span> */</span> (<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">function</span> <span class="hljs-title function_">Watcher</span>(<span class="hljs-params">vm, expOrFn, cb, options, isRenderWatcher</span>) {
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">lazy</span> ? <span class="hljs-literal">undefined</span> : <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">get</span>();
+  }
+  <span class="hljs-title class_">Watcher</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">get</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-title function_">pushTarget</span>(<span class="hljs-variable language_">this</span>);
+    <span class="hljs-keyword">var</span> value;
+    <span class="hljs-keyword">var</span> vm = <span class="hljs-variable language_">this</span>.<span class="hljs-property">vm</span>;
+    <span class="hljs-keyword">try</span> {
+      value = <span class="hljs-variable language_">this</span>.<span class="hljs-property">getter</span>.<span class="hljs-title function_">call</span>(vm, vm);
+    }
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">finally</span> {
+      <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">deep</span>) { <span class="hljs-title function_">traverse</span>(value); }
+      <span class="hljs-title function_">popTarget</span>();
+      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">cleanupDeps</span>();
+    }
+    <span class="hljs-keyword">return</span> value;
+  };
+  <span class="hljs-title class_">Watcher</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">addDep</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">dep</span>) { <span class="hljs-comment">/** ... **/</span>};
+  <span class="hljs-title class_">Watcher</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">cleanupDeps</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">dep</span>) { <span class="hljs-comment">/** ... **/</span>};
+  <span class="hljs-title class_">Watcher</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">update</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">lazy</span>) {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">dirty</span> = <span class="hljs-literal">true</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">sync</span>) {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">run</span>();
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-title function_">queueWatcher</span>(<span class="hljs-variable language_">this</span>);
+    }
+  };
+  <span class="hljs-title class_">Watcher</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">run</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">active</span>) {
+      <span class="hljs-keyword">var</span> value = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">get</span>();
+      <span class="hljs-comment">// ...</span>
+    }
+  };
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Watcher</span>;
+}());
+</code></pre>
+<p>总结来说（以 render 函数为例）：defineReactive 给组件的 data 选项的所有属性绑定 get 和 set 存取器；调用 render 函数时，先实例化一个 Watcher 对象，该对象在 get 方法中调用 render 函数，并将自己赋值给全局变量 Dep.target；如果 render 函数对 data 有读值操作，则将 Dep.target 添加到  subs；如果 render 函数有写值操作，则通过 dep.notify 通知 subs 下所有子元素执行 update 方法，即 Watcher 实例的 update 方法，重新调用 render 函数。</p>
+<h4 id="响应式数据绑定">响应式数据绑定</h4>
+<p>data 选项的响应性初始化：Vue -&gt; this._init -&gt; initState -&gt; initData：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">initData</span>(<span class="hljs-params">vm</span>) {
+  <span class="hljs-keyword">var</span> data = vm.<span class="hljs-property">$options</span>.<span class="hljs-property">data</span>;
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">var</span> ob = <span class="hljs-title function_">observe</span>(data);
+  ob &amp;&amp; ob.<span class="hljs-property">vmCount</span>++;
+}
+</code></pre>
+<p>computed 选项初始化，添加监听器到 <code>vm._computedWatchers</code>：Vue -&gt; this._init -&gt; initState -&gt; initComputed$1：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">initComputed$1</span>(<span class="hljs-params">vm, computed</span>) {
+  <span class="hljs-keyword">var</span> watchers = (vm.<span class="hljs-property">_computedWatchers</span> = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">create</span>(<span class="hljs-literal">null</span>));
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> computed) {
+    <span class="hljs-keyword">var</span> userDef = computed[key];
+    <span class="hljs-keyword">var</span> getter = <span class="hljs-title function_">isFunction</span>(userDef) ? userDef : userDef.<span class="hljs-property">get</span>;
+    <span class="hljs-keyword">if</span> (!isSSR) {
+      watchers[key] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Watcher</span>(vm, getter || noop, noop, computedWatcherOptions);
+    }
+    <span class="hljs-keyword">if</span> (!(key <span class="hljs-keyword">in</span> vm)) {
+      <span class="hljs-title function_">defineComputed</span>(vm, key, userDef);
+    }
+    <span class="hljs-comment">// ...</span>
+  }
+}
+</code></pre>
+<p>water 选项初始化：Vue -&gt; this._init -&gt; initState -&gt; initWatch：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">initWatch</span>(<span class="hljs-params">vm, watch</span>) {
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> watch) {
+    <span class="hljs-keyword">var</span> handler = watch[key];
+    <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isArray</span>(handler)) {
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; handler.<span class="hljs-property">length</span>; i++) {
+        <span class="hljs-title function_">createWatcher</span>(vm, key, handler[i]);
+      }
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-title function_">createWatcher</span>(vm, key, handler);
+    }
+  }
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">createWatcher</span>(<span class="hljs-params">vm, expOrFn, handler, options</span>) {
+  <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isPlainObject</span>(handler)) {
+    options = handler;
+    handler = handler.<span class="hljs-property">handler</span>;
+  }
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> handler === <span class="hljs-string">'string'</span>) {
+    handler = vm[handler];
+  }
+  <span class="hljs-keyword">return</span> vm.$watch(expOrFn, handler, options);
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">stateMixin</span>(<span class="hljs-params">Vue</span>) {
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-title class_">Vue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">$watch</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">expOrFn, cb, options</span>) {
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">var</span> watcher = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Watcher</span>(vm, expOrFn, cb, options);
+    <span class="hljs-comment">// ...</span>
+  };
+}
+</code></pre>
+<h3 id="一个简单的-vue">一个简单的 Vue</h3>
+<p>根据 Vue 的思路，模拟一个简单的响应式系统。</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// index.js</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">MyVue</span>(<span class="hljs-params">options</span>) {
+  <span class="hljs-variable language_">this</span>.<span class="hljs-property">$options</span> = options
+  <span class="hljs-variable language_">this</span>.<span class="hljs-property">template</span> = <span class="hljs-literal">null</span>
+  <span class="hljs-variable language_">this</span>.<span class="hljs-property">methods</span> = {}
+  <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">init</span>()
+}
+<span class="hljs-title class_">MyVue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">init</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> vm = <span class="hljs-variable language_">this</span>
+  vm.<span class="hljs-property">template</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(vm.<span class="hljs-property">$options</span>.<span class="hljs-property">template</span>)
+  vm.<span class="hljs-property">methods</span> = vm.<span class="hljs-property">$options</span>.<span class="hljs-property">methods</span>
+  <span class="hljs-keyword">const</span> data = vm.<span class="hljs-property">$options</span>.<span class="hljs-title function_">data</span>()
+  <span class="hljs-keyword">const</span> keys = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">keys</span>(data)
+  keys.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">k</span> =&gt;</span> {
+    <span class="hljs-title function_">defineReactive</span>(vm, k, data[k])
+  })
+}
+<span class="hljs-title class_">MyVue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">$mount</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">selector</span>) {
+  <span class="hljs-keyword">const</span> vm = <span class="hljs-variable language_">this</span>
+  <span class="hljs-keyword">new</span> <span class="hljs-title class_">Watcher</span>(<span class="hljs-variable language_">this</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-title function_">render</span>(selector, vm)
+  })
+}
+<span class="hljs-variable language_">window</span>.<span class="hljs-property">MyVue</span> = <span class="hljs-title class_">MyVue</span>
+</code></pre>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./index.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"content"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"x-template"</span>&gt;</span><span class="language-handlebars"><span class="language-xml">
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"onClickMessage"</span>&gt;</span>
+        </span><span class="hljs-template-variable">{{<span class="hljs-name">message</span>}}</span><span class="language-xml">
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MyVue</span>({
+    <span class="hljs-attr">template</span>: <span class="hljs-string">'#content'</span>,
+    <span class="hljs-attr">data</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+      <span class="hljs-keyword">return</span> {
+        <span class="hljs-attr">message</span>: <span class="hljs-string">`Hellow, Lizhao. This is <span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()}</span>.`</span>
+      }
+    },
+    <span class="hljs-attr">methods</span>: {
+      <span class="hljs-title function_">onClickMessage</span> () {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">message</span> = <span class="hljs-string">`Hellow, Lizhao. This is <span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()}</span>.`</span>
+      }
+    }
+  })
+  app.$mount(<span class="hljs-string">'#app'</span>)
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>响应式系统应该实现以下三点：</p>
+<ul>
+<li>将传参 data 处理成响应式；</li>
+<li>一个将模板解析为 DOM 的渲染函数；</li>
+<li>data 改变时，触发视图改变，即自动调用渲染函数。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">defineReactive</span>(<span class="hljs-params">obj, key, val</span>) {
+  <span class="hljs-keyword">var</span> dep = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Dep</span>();
+  <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">defineProperty</span>(obj, key, {
+    <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">configurable</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">get</span>: <span class="hljs-keyword">function</span> <span class="hljs-title function_">reactiveGetter</span>(<span class="hljs-params"></span>) {
+      <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Dep</span>.<span class="hljs-property">target</span>) {
+        dep.<span class="hljs-title function_">depend</span>();
+      }
+      <span class="hljs-keyword">return</span> val
+    },
+    <span class="hljs-attr">set</span>: <span class="hljs-keyword">function</span> <span class="hljs-title function_">reactiveSetter</span>(<span class="hljs-params">newVal</span>) {
+      val = newVal
+      dep.<span class="hljs-title function_">notify</span>();
+    }
+  });
+  <span class="hljs-keyword">return</span> dep;
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">render</span> (<span class="hljs-params">selector, inst</span>) {
+  <span class="hljs-keyword">const</span> dom = <span class="hljs-title function_">parseToDom</span>(inst.<span class="hljs-property">template</span>.<span class="hljs-property">innerHTML</span>, inst);
+  <span class="hljs-keyword">const</span> $app = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(selector);
+  $app.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">''</span>;
+  $app.<span class="hljs-title function_">appendChild</span>(dom)
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">parseToDom</span> (<span class="hljs-params">html, inst</span>) {
+  <span class="hljs-keyword">const</span> dom = <span class="hljs-keyword">new</span> <span class="hljs-title class_">DOMParser</span>().<span class="hljs-title function_">parseFromString</span>(html, <span class="hljs-string">'text/html'</span>).<span class="hljs-property">body</span>.<span class="hljs-property">childNodes</span>[<span class="hljs-number">0</span>]
+  dom.<span class="hljs-property">innerText</span> = dom.<span class="hljs-property">innerText</span>.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/{{.*}}/</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params">str</span>) {
+    <span class="hljs-keyword">const</span> key = str.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/{{(.*)}}/</span>, <span class="hljs-string">'$1'</span>)
+    <span class="hljs-keyword">return</span> inst[key]
+  })
+  <span class="hljs-keyword">const</span> methodName = dom.<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">'@click'</span>)
+  dom.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    inst.<span class="hljs-property">methods</span>[methodName].<span class="hljs-title function_">bind</span>(inst)()
+  }, <span class="hljs-literal">false</span>)  
+  <span class="hljs-keyword">return</span> dom
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-title class_">Dep</span> = (<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">function</span> <span class="hljs-title function_">Dep</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">subs</span> = [];
+  }
+  <span class="hljs-title class_">Dep</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">addSub</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">sub</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">subs</span>.<span class="hljs-title function_">push</span>(sub);
+  };
+  <span class="hljs-title class_">Dep</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">depend</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Dep</span>.<span class="hljs-property">target</span>) {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">addSub</span>(<span class="hljs-title class_">Dep</span>.<span class="hljs-property">target</span>)
+    }
+  }
+  <span class="hljs-title class_">Dep</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">removeSub</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">sub</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">subs</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">subs</span>.<span class="hljs-title function_">filter</span>(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> sub !== item)
+  };
+  <span class="hljs-title class_">Dep</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">notify</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">subs</span>.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">sub</span>) =&gt;</span> { sub.<span class="hljs-title function_">update</span>() })
+  };
+  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Dep</span>;
+}());
+<span class="hljs-title class_">Dep</span>.<span class="hljs-property">target</span> = <span class="hljs-literal">null</span>;
+
+<span class="hljs-keyword">var</span> <span class="hljs-title class_">Watcher</span> = (<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">function</span> <span class="hljs-title function_">Watcher</span>(<span class="hljs-params">vm, expOrFn</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">deps</span> = []
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">vm</span> = vm
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">getter</span> = expOrFn
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">get</span>()
+  }
+  <span class="hljs-title class_">Watcher</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">get</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-title class_">Dep</span>.<span class="hljs-property">target</span> = <span class="hljs-variable language_">this</span>
+    <span class="hljs-keyword">const</span> value = <span class="hljs-variable language_">this</span>.<span class="hljs-property">getter</span>.<span class="hljs-title function_">call</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">vm</span>)
+    <span class="hljs-title class_">Dep</span>.<span class="hljs-property">target</span> = <span class="hljs-literal">null</span>
+    <span class="hljs-keyword">return</span> value;
+  };
+
+  <span class="hljs-title class_">Watcher</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">addDep</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">dep</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">deps</span>.<span class="hljs-title function_">push</span>(dep)
+  };
+  <span class="hljs-title class_">Watcher</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">update</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">const</span> value = <span class="hljs-variable language_">this</span>.<span class="hljs-property">getter</span>.<span class="hljs-title function_">call</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">vm</span>)
+    <span class="hljs-keyword">return</span> value
+  };
+  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Watcher</span>;
+}());
+</code></pre>
+<h3 id="相关问题">相关问题</h3>
+<h4 id="为什么说-vue-没有完全遵循-mvvm-模型？">为什么说 Vue 没有完全遵循 MVVM 模型？</h4>
+<p>MVVM（Model–view–viewmodel）模型的定义：</p>
+<ul>
+<li>MVVM 由 3 个部分组成：Model（模型）是数据和逻辑；View（视图）是用户在屏幕上看到的结构、布局和外观，也称UI； ViewModel（视图模型）是一个绑定器，能和 View 层和 Model 层进行通信。</li>
+<li>MVVM 的核心实现是由 ViewModel 层数据绑定，核心思想是分离，即通过 ViewModel 让 View 层和 Model 层解耦。</li>
+</ul>
+<p>严格的 MVVM 要求 View 不能和 Model 直接通信，而 Vue 在组件提供了 $refs 这个属性，让 Model 可以直接操作 View，违反了这一规定，所以说 Vue 没有完全遵循 MVVM。</p>
+<h4 id="为什么要使用-virtual-dom-">为什么要使用 Virtual DOM ?</h4>
+<ul>
+<li><p>具备跨平台的优势：由于 Virtual DOM 是以 JavaScript 对象为基础而不依赖真实平台环境，所以使它具有了跨平台的能力，比如说浏览器平台、Weex、Node 等。</p>
+</li>
+<li><p>运行效率高：DOM 操作的执行速度远不如 Javascript 的运算速度快。因此，把大量的 DOM 操作转为 Javascript 计算，运用 DOM-Diff 算法计算出真正需要更新的节点，最大限度地减少 DOM 操作，从而显著提高性能。</p>
+</li>
+<li><p>提升渲染性能：Virtual DOM 的优势不在于单次的操作，而是在大量、频繁的数据更新下，能够对视图进行合理、高效的更新。</p>
+</li>
+</ul>
+<p><strong>注意：</strong> 关于性能方面，在首次渲染的时候肯定不如直接操作 DOM，因为要维护一层额外的 Virtual DOM。但如果后续有频繁操作 DOM 的操作，就可能会有性能的提升。</p>
+<h4 id="key-在虚拟节点中的作用？">key 在虚拟节点中的作用？</h4>
+<p>key 主要用在 Vue 的虚拟 DOM 算法，在新旧 nodes 对比时辨识 VNodes。如果不使用 key，Vue 会使用一种最大限度减少动态元素并且尽可能的尝试就地修改/复用相同类型元素的算法。而使用 key 时，它会基于 key 的变化重新排列元素顺序，并且会移除 key 不存在的元素。</p>
+<p>key 作用的原理是：Vue 在 patch 过程中通过 key 可以精准判断两个节点是否是同一个，从而避免频繁更新不同元素，使得整个 patch 过程更加高效，减少 Dom 操作量，提高性能。</p>
+<p>另外，若不设置 key 还可能在列表更新时候引发一些隐藏的 bug；key 也可以用于强制替换元素/组件而不是重复使用它，比如，完整地触发组件的生命周期钩子、触发过渡。</p>
+<p>有相同父元素的子元素必须有独特的 key。重复的 key 会造成渲染错误。</p>
+<h3 id="参考资料">参考资料</h3>
+<p><a href="https://v2.cn.vuejs.org/" target="_blank">Vue 2.x 中文文档</a></p>
+<p><a href="https://cn.vuejs.org/guide/extras/reactivity-in-depth.html" target="_blank">Vue 官网 - 深入响应式系统</a></p>
+<p><a href="https://juejin.cn/book/6844733705089449991/section/6844733705211084808" target="_blank">稀土掘金 - 剖析 Vue.js 内部运行机制</a></p>
+<p><a href="https://vue-js.com/learn-vue/" target="_blank">Vue中文社区 - Vue源码系列</a></p>
+<p><a href="https://github.com/answershuto/learnVue" target="_blank">Github - Vue.js源码分析</a></p>
+<p><a href="https://juejin.cn/post/7104871637710798885" target="_blank">稀土掘金 - Vue响应式原理和实现方式，Observer、Dep、Watcher源码解析（下），深入浅出</a></p>
+<p><a href="https://www.qinguanghui.com/vue/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86%E4%B8%8A%E7%AF%87.html" target="_blank">Vue源码解析 - 从零构建一个响应式系统</a></p>
+<p></p><footer class="page-footer"><span class="copyright">© lizhao all right reserved，powered by Gitbook</span><span class="footer-modification">文件修订时间：
+2022-11-14 21:42:42
+</span></footer><p></p>
+<div id="gitalk-container"></div> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"></link> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html" class="navigation navigation-prev " aria-label="Previous page: 高级 02 CI、CD（Docker+Jenkins+Nginx）">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04-Vue3初步了解及迁移指南.html" class="navigation navigation-next " aria-label="Next page: Vue3初步了解及迁移指南">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Vue2.X原理篇","level":"4.22","depth":1,"next":{"title":"Vue3初步了解及迁移指南","level":"4.23","depth":1,"path":"frontend/04-Vue3初步了解及迁移指南.md","ref":"frontend/04-Vue3初步了解及迁移指南.md","articles":[]},"previous":{"title":"高级 02 CI、CD（Docker+Jenkins+Nginx）","level":"4.21","depth":1,"path":"frontend/03-高级-02-CI、CD（Docker+Jenkins+Nginx）.md","ref":"frontend/03-高级-02-CI、CD（Docker+Jenkins+Nginx）.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","summary","sandpack","theme-default","theme-comscore","tbfed-pagefooter","pageview-count","accordion","sharing-plus","back-to-top-button","chapter-fold","klipse","mygitalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"summary":{"exclude":["docs/**"]},"search-pro":{"maxSearchIndexSize":10000000},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"mygitalk":{"flipMoveOptions":{},"clientID":"35175582adb321d85634","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["lizh"],"createIssueManually":false,"distractionFreeMode":false,"repo":"https://github.com/1927344728/fed-knowledge","owner":"lizh","enableHotKey":true,"clientSecret":"2e60c4d61474ec23e752f127e838aa2039e0433e","pagerDirection":"last","labels":["Gitalk"]},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":true,"qzone":true},"sandpack":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"lizhao","honkit":"^6.0.2","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术驿站•LIZHAO","language":"zh","gitbook":"*","description":"这是开发者的技术文档"},"file":{"path":"frontend/04-Vue2.x原理篇.md","mtime":"2022-11-14T13:42:42.723Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2026-06-29T12:14:32.945Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-sandpack/honkit-plugin-sandpack.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

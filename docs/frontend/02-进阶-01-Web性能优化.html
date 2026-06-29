@@ -1,0 +1,4004 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>进阶 01 Web性能优化 · 技术驿站•LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 6.0.2">
+        <meta name="author" content="lizhao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02-进阶-02-搜索引擎优化（SEO）.html" />
+    
+    
+    <link rel="prev" href="01-基础-03-谈谈前端跨域问题及解决方法.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/00-前端调试随笔.html">
+            
+                <a href="../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/05-JS常见问题概览.html">
+            
+                <a href="../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/07-微信小程序开发.html">
+            
+                <a href="../bugs/07-微信小程序开发.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    微信小程序开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bugs/08-NodeJs常见问题概览.html">
+            
+                <a href="../bugs/08-NodeJs常见问题概览.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    NodeJs常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../bugs/09-Mac常见问题概览.html">
+            
+                <a href="../bugs/09-Mac常见问题概览.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Mac常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../bugs/10-微信环境前端开发指南.html">
+            
+                <a href="../bugs/10-微信环境前端开发指南.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    微信环境前端开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../bugs/99-其他问题汇总.html">
+            
+                <a href="../bugs/99-其他问题汇总.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    其他问题汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../css系列/00-CSS基础知识.html">
+            
+                <a href="../css系列/00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../css系列/00-CSS常见问答.html">
+            
+                <a href="../css系列/00-CSS常见问答.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../css系列/00-CSS常见问答02.html">
+            
+                <a href="../css系列/00-CSS常见问答02.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    CSS常见问答02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../css系列/00-CSS应用示例.html">
+            
+                <a href="../css系列/00-CSS应用示例.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    CSS应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../css系列/00-CSS应用示例02.html">
+            
+                <a href="../css系列/00-CSS应用示例02.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS应用示例02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../css系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../css系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../css系列/04-CSS探索系列-margin.html">
+            
+                <a href="../css系列/04-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                <a href="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    CSS探索系列 Auto关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../css系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../css系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../css系列/05-CSS探索系列-line-height.html">
+            
+                <a href="../css系列/05-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../css系列/05-CSS探索系列-元素居中.html">
+            
+                <a href="../css系列/05-CSS探索系列-元素居中.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    CSS探索系列 元素居中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../css系列/05-CSS探索系列-动画.html">
+            
+                <a href="../css系列/05-CSS探索系列-动画.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    CSS探索系列 动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../css系列/08-重新认识伪类与伪元素.html">
+            
+                <a href="../css系列/08-重新认识伪类与伪元素.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    重新认识伪类与伪元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../css系列/09-自定义表单伪元素样式.html">
+            
+                <a href="../css系列/09-自定义表单伪元素样式.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    自定义表单伪元素样式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../css系列/10-如何理解css中的display属性.html">
+            
+                <a href="../css系列/10-如何理解css中的display属性.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    如何理解Css中的Display属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                <a href="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                <a href="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    一文彻底弄懂CSS中的长度单位
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                <a href="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                    
+                        <b>2.21.</b>
+                    
+                    CSS中一些有特性的属性或属性值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../css系列/14-Web中如何实现长宽比.html">
+            
+                <a href="../css系列/14-Web中如何实现长宽比.html">
+            
+                    
+                        <b>2.22.</b>
+                    
+                    Web中如何实现长宽比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../css系列/15-@规则：@font-face.html">
+            
+                <a href="../css系列/15-@规则：@font-face.html">
+            
+                    
+                        <b>2.23.</b>
+                    
+                    @规则：@Font Face
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                <a href="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                    
+                        <b>2.24.</b>
+                    
+                    @规则：@Media（媒体查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../css系列/15-@规则：其他.html">
+            
+                <a href="../css系列/15-@规则：其他.html">
+            
+                    
+                        <b>2.25.</b>
+                    
+                    @规则：其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../css系列/_关于css.html">
+            
+                <a href="../css系列/_关于css.html">
+            
+                    
+                        <b>2.26.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="00-00-关于Web前端.html">
+            
+                <a href="00-00-关于Web前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    00 关于Web前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="00-01-前端知识概览.html">
+            
+                <a href="00-01-前端知识概览.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    01 前端知识概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="00-02-常用前端库概览.html">
+            
+                <a href="00-02-常用前端库概览.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    02 常用前端库概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="01-基础-00-前端常见问题01.html">
+            
+                <a href="01-基础-00-前端常见问题01.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    基础 00 前端常见问题01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="01-基础-01-浏览器缓存.html">
+            
+                <a href="01-基础-01-浏览器缓存.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    基础 01 浏览器缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="01-基础-02-浏览器工作原理.html">
+            
+                <a href="01-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                <a href="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    基础 03 谈谈前端跨域问题及解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.8" data-path="02-进阶-01-Web性能优化.html">
+            
+                <a href="02-进阶-01-Web性能优化.html">
+            
+                    
+                        <b>4.8.</b>
+                    
+                    进阶 01 Web性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                <a href="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                    
+                        <b>4.9.</b>
+                    
+                    进阶 02 搜索引擎优化（SEO）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                <a href="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                    
+                        <b>4.10.</b>
+                    
+                    进阶 03 前端模块化编程：CommonJS、AMD、CMD、UMD、ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                <a href="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                    
+                        <b>4.11.</b>
+                    
+                    进阶 04 规范代码：Linter、Prettier、EditorConfig
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="02-进阶-05-Web离线应用.html">
+            
+                <a href="02-进阶-05-Web离线应用.html">
+            
+                    
+                        <b>4.12.</b>
+                    
+                    进阶 05 Web离线应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="02-进阶-06-WebSocket.html">
+            
+                <a href="02-进阶-06-WebSocket.html">
+            
+                    
+                        <b>4.13.</b>
+                    
+                    进阶 06 WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="02-进阶-07-Web跨页面通信.html">
+            
+                <a href="02-进阶-07-Web跨页面通信.html">
+            
+                    
+                        <b>4.14.</b>
+                    
+                    进阶 07 Web跨页面通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="02-进阶-08-页面可见性和生命周期.html">
+            
+                <a href="02-进阶-08-页面可见性和生命周期.html">
+            
+                    
+                        <b>4.15.</b>
+                    
+                    进阶 08 页面可见性和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                <a href="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                    
+                        <b>4.16.</b>
+                    
+                    进阶 09 事件循环、宏任务、微任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="02-进阶-10-内存泄漏.html">
+            
+                <a href="02-进阶-10-内存泄漏.html">
+            
+                    
+                        <b>4.17.</b>
+                    
+                    进阶 10 内存泄漏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="02-进阶-11-前端自动化测试.html">
+            
+                <a href="02-进阶-11-前端自动化测试.html">
+            
+                    
+                        <b>4.18.</b>
+                    
+                    进阶 11 前端自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                <a href="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                    
+                        <b>4.19.</b>
+                    
+                    进阶 12 前端也玩多线程？WebWorker其实很简单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="03-高级-01-前端安全深度解析.html">
+            
+                <a href="03-高级-01-前端安全深度解析.html">
+            
+                    
+                        <b>4.20.</b>
+                    
+                    高级 01 前端安全深度解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.21" data-path="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                <a href="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                    
+                        <b>4.21.</b>
+                    
+                    高级 02 CI、CD（Docker+Jenkins+Nginx）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.22" data-path="04-Vue2.x原理篇.html">
+            
+                <a href="04-Vue2.x原理篇.html">
+            
+                    
+                        <b>4.22.</b>
+                    
+                    Vue2.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.23" data-path="04-Vue3初步了解及迁移指南.html">
+            
+                <a href="04-Vue3初步了解及迁移指南.html">
+            
+                    
+                        <b>4.23.</b>
+                    
+                    Vue3初步了解及迁移指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.24" data-path="04-重读Vue教程.html">
+            
+                <a href="04-重读Vue教程.html">
+            
+                    
+                        <b>4.24.</b>
+                    
+                    重读Vue教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.25" data-path="05-React17.x原理篇.html">
+            
+                <a href="05-React17.x原理篇.html">
+            
+                    
+                        <b>4.25.</b>
+                    
+                    React17.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.26" data-path="05-你必须知道的React问题.html">
+            
+                <a href="05-你必须知道的React问题.html">
+            
+                    
+                        <b>4.26.</b>
+                    
+                    你必须知道的React问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.27" data-path="05-重读React教程.html">
+            
+                <a href="05-重读React教程.html">
+            
+                    
+                        <b>4.27.</b>
+                    
+                    重读React教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.28" data-path="06-聊一聊Cookie的一些问题.html">
+            
+                <a href="06-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.28.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.29" data-path="07-SSL证书简介及其生成、使用.md">
+            
+                <span>
+            
+                    
+                        <b>4.29.</b>
+                    
+                    SSL证书简介及其生成、使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.30" data-path="07-如何启动本地HTTPS服务.html">
+            
+                <a href="07-如何启动本地HTTPS服务.html">
+            
+                    
+                        <b>4.30.</b>
+                    
+                    如何启动本地HTTPS服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.31" data-path="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                <a href="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                    
+                        <b>4.31.</b>
+                    
+                    0.0.0.0、127.0.0.1和Localhost的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.32" data-path="09-如何理解HTTP响应的状态码.html">
+            
+                <a href="09-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.32.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.33" data-path="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                <a href="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                    
+                        <b>4.33.</b>
+                    
+                    字符编码那点事：ASCII、Unicode、GBK、UTF 8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.34" data-path="11-HTTP协议的演变历史.md">
+            
+                <span>
+            
+                    
+                        <b>4.34.</b>
+                    
+                    HTTP协议的演变历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.35" data-path="12-webpack4.x原理篇.html">
+            
+                <a href="12-webpack4.x原理篇.html">
+            
+                    
+                        <b>4.35.</b>
+                    
+                    Webpack4.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.36" data-path="12-webpack基础入门篇.html">
+            
+                <a href="12-webpack基础入门篇.html">
+            
+                    
+                        <b>4.36.</b>
+                    
+                    Webpack基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.37" data-path="12-webpack构建优化篇.html">
+            
+                <a href="12-webpack构建优化篇.html">
+            
+                    
+                        <b>4.37.</b>
+                    
+                    Webpack构建优化篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.38" data-path="13-TypeScript使用指南.html">
+            
+                <a href="13-TypeScript使用指南.html">
+            
+                    
+                        <b>4.38.</b>
+                    
+                    TypeScript使用指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.39" data-path="14-Web中图片的使用.html">
+            
+                <a href="14-Web中图片的使用.html">
+            
+                    
+                        <b>4.39.</b>
+                    
+                    Web中图片的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.40" data-path="15-2026年，还需要微前端吗？——三大框架对比与选型思考.md">
+            
+                <span>
+            
+                    
+                        <b>4.40.</b>
+                    
+                    2026年，还需要微前端吗？——三大框架对比与选型思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.41" data-path="16-Electron基础篇.html">
+            
+                <a href="16-Electron基础篇.html">
+            
+                    
+                        <b>4.41.</b>
+                    
+                    Electron基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.42" data-path="17-uniapp基础篇.html">
+            
+                <a href="17-uniapp基础篇.html">
+            
+                    
+                        <b>4.42.</b>
+                    
+                    Uniapp基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.43" data-path="17-uniapp离线打包（Android）篇.html">
+            
+                <a href="17-uniapp离线打包（Android）篇.html">
+            
+                    
+                        <b>4.43.</b>
+                    
+                    Uniapp离线打包（Android）篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.44" data-path="18-sentry基础篇（vue）.html">
+            
+                <a href="18-sentry基础篇（vue）.html">
+            
+                    
+                        <b>4.44.</b>
+                    
+                    Sentry基础篇（Vue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.45" data-path="19-视口和软键盘对视口的影响.html">
+            
+                <a href="19-视口和软键盘对视口的影响.html">
+            
+                    
+                        <b>4.45.</b>
+                    
+                    视口和软键盘对视口的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.46" data-path="20-WebGL从入门到实践.html">
+            
+                <a href="20-WebGL从入门到实践.html">
+            
+                    
+                        <b>4.46.</b>
+                    
+                    WebGL从入门到实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.47" data-path="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                <a href="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                    
+                        <b>4.47.</b>
+                    
+                    Three.Js基础实战：从画一个立方体开始，掌握3D世界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.48" data-path="22-ReactNative基础篇.html">
+            
+                <a href="22-ReactNative基础篇.html">
+            
+                    
+                        <b>4.48.</b>
+                    
+                    ReactNative基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49" data-path="代码规范/">
+            
+                <a href="代码规范/">
+            
+                    
+                        <b>4.49.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.49.1" data-path="代码规范/00-前端规范.html">
+            
+                <a href="代码规范/00-前端规范.html">
+            
+                    
+                        <b>4.49.1.</b>
+                    
+                    前端规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.2" data-path="代码规范/01-HTML.html">
+            
+                <a href="代码规范/01-HTML.html">
+            
+                    
+                        <b>4.49.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.3" data-path="代码规范/02-CSS.html">
+            
+                <a href="代码规范/02-CSS.html">
+            
+                    
+                        <b>4.49.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.4" data-path="代码规范/03-JS.html">
+            
+                <a href="代码规范/03-JS.html">
+            
+                    
+                        <b>4.49.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../html系列/00-HTML基础知识.html">
+            
+                <a href="../html系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../html系列/00-HTML基础知识02.html">
+            
+                <a href="../html系列/00-HTML基础知识02.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML基础知识02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../html系列/00-HTML常见问答.html">
+            
+                <a href="../html系列/00-HTML常见问答.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    HTML常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../html系列/00-HTML经典实践用例.html">
+            
+                <a href="../html系列/00-HTML经典实践用例.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    HTML经典实践用例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../html系列/03-html探索系列-meta标签.md">
+            
+                <span>
+            
+                    
+                        <b>5.7.</b>
+                    
+                    Html探索系列 Meta标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                <a href="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                    
+                        <b>5.8.</b>
+                    
+                    DOCTYPE：文档类型与浏览器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="../html系列/05-DHTML（动态网页）简介.html">
+            
+                <a href="../html系列/05-DHTML（动态网页）简介.html">
+            
+                    
+                        <b>5.9.</b>
+                    
+                    DHTML（动态网页）简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="../html系列/06-HTML标签详解.md">
+            
+                <span>
+            
+                    
+                        <b>5.10.</b>
+                    
+                    HTML标签详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="../html系列/07-HTML布局的几种方式.html">
+            
+                <a href="../html系列/07-HTML布局的几种方式.html">
+            
+                    
+                        <b>5.11.</b>
+                    
+                    HTML布局的几种方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="../html系列/08-HTML全局属性.html">
+            
+                <a href="../html系列/08-HTML全局属性.html">
+            
+                    
+                        <b>5.12.</b>
+                    
+                    HTML全局属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                <a href="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                    
+                        <b>5.13.</b>
+                    
+                    标记语言演进：从GML到HTML动态标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.14" data-path="../html系列/_关于html.html">
+            
+                <a href="../html系列/_关于html.html">
+            
+                    
+                        <b>5.14.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Javascript系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../javascript系列/00-基础知识.html">
+            
+                <a href="../javascript系列/00-基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../javascript系列/00-常见问答.html">
+            
+                <a href="../javascript系列/00-常见问答.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../javascript系列/00-应用示例.html">
+            
+                <a href="../javascript系列/00-应用示例.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../javascript系列/00-趣味示例.html">
+            
+                <a href="../javascript系列/00-趣味示例.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    趣味示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../javascript系列/00-进阶知识.html">
+            
+                <a href="../javascript系列/00-进阶知识.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    进阶知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    基础篇 01 数据类型之基本类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    基础篇 01 数据类型之引用类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                <a href="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    基础篇 02 类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../javascript系列/01-基础篇-03-运算符.html">
+            
+                <a href="../javascript系列/01-基础篇-03-运算符.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                    基础篇 03 运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                <a href="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    基础篇 04 正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                <a href="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                    
+                        <b>6.11.</b>
+                    
+                    基础篇 05 AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="../javascript系列/01-基础篇-06--window对象.html">
+            
+                <a href="../javascript系列/01-基础篇-06--window对象.html">
+            
+                    
+                        <b>6.12.</b>
+                    
+                    基础篇 06  Window对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                <a href="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                    
+                        <b>6.13.</b>
+                    
+                    基础篇 07 Error、JSON、Math、Console对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                <a href="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                    
+                        <b>6.14.</b>
+                    
+                    基础篇 08 History、URL、Screen、Navigator、Location对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                    
+                        <b>6.15.</b>
+                    
+                    基础篇 09 文档对象模型（DOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                <a href="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                    
+                        <b>6.16.</b>
+                    
+                    基础篇 10 Document对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.17" data-path="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                <a href="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                    
+                        <b>6.17.</b>
+                    
+                    基础篇 11 Element对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.18" data-path="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                <a href="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                    
+                        <b>6.18.</b>
+                    
+                    基础篇 12 Event对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.19" data-path="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                <a href="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                    
+                        <b>6.19.</b>
+                    
+                    基础篇 13 键盘、鼠标、触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.20" data-path="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                <a href="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                    
+                        <b>6.20.</b>
+                    
+                    基础篇 14 MutationObserver对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.21" data-path="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                    
+                        <b>6.21.</b>
+                    
+                    基础篇 15 CSS对象模型（CSSOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.22" data-path="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                <a href="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                    
+                        <b>6.22.</b>
+                    
+                    进阶篇 01 Prototype对象和继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.23" data-path="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                    
+                        <b>6.23.</b>
+                    
+                    进阶篇 02 Promise对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.24" data-path="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                <a href="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                    
+                        <b>6.24.</b>
+                    
+                    进阶篇 03 有特性的一些事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.25" data-path="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                    
+                        <b>6.25.</b>
+                    
+                    进阶篇 04 Proxy对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.26" data-path="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                    
+                        <b>6.26.</b>
+                    
+                    进阶篇 05 Reflect对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.27" data-path="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                <a href="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                    
+                        <b>6.27.</b>
+                    
+                    进阶篇 06 Class（类）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.28" data-path="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                <a href="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                    
+                        <b>6.28.</b>
+                    
+                    进阶篇 07 迭代器（Iterator）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.29" data-path="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                <a href="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                    
+                        <b>6.29.</b>
+                    
+                    进阶篇 08 Generator和Async函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.30" data-path="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                <a href="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                    
+                        <b>6.30.</b>
+                    
+                    进阶篇 09 JavaScript异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.31" data-path="../javascript系列/04-Date对象和日期时间字符串格式.md">
+            
+                <span>
+            
+                    
+                        <b>6.31.</b>
+                    
+                    Date对象和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.32" data-path="../javascript系列/05-Canvas基础入门篇.html">
+            
+                <a href="../javascript系列/05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.32.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.33" data-path="../javascript系列/05-Canvas进阶篇.html">
+            
+                <a href="../javascript系列/05-Canvas进阶篇.html">
+            
+                    
+                        <b>6.33.</b>
+                    
+                    Canvas进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.34" data-path="../javascript系列/06-SVG基础入门篇.html">
+            
+                <a href="../javascript系列/06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.34.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.35" data-path="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.35.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.36" data-path="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.36.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.37" data-path="../javascript系列/08-谈谈JavaScript的作用域和上下文.md">
+            
+                <span>
+            
+                    
+                        <b>6.37.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.38" data-path="../javascript系列/10-复制内容到剪贴板.html">
+            
+                <a href="../javascript系列/10-复制内容到剪贴板.html">
+            
+                    
+                        <b>6.38.</b>
+                    
+                    复制内容到剪贴板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.39" data-path="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                <a href="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                    
+                        <b>6.39.</b>
+                    
+                    44道JavaScript难题，还不来考考？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.40" data-path="../javascript系列/_关于Javascript.html">
+            
+                <a href="../javascript系列/_关于Javascript.html">
+            
+                    
+                        <b>6.40.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java系列</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../java系列/01-00-Java入门篇.html">
+            
+                <a href="../java系列/01-00-Java入门篇.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    00 Java入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../java系列/01-01-Java进阶篇.html">
+            
+                <a href="../java系列/01-01-Java进阶篇.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    01 Java进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../java系列/01-02-Java高级篇.html">
+            
+                <a href="../java系列/01-02-Java高级篇.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    02 Java高级篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../java系列/02-pom.xml详解.html">
+            
+                <a href="../java系列/02-pom.xml详解.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Pom.Xml详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../java系列/03-01-SpringBoot入门篇.html">
+            
+                <a href="../java系列/03-01-SpringBoot入门篇.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    01 SpringBoot入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../java系列/05-轻量应用服务器部署指南（腾讯云）.md">
+            
+                <span>
+            
+                    
+                        <b>7.6.</b>
+                    
+                    轻量应用服务器部署指南（腾讯云）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../java系列/06-keytool命令行工具.md">
+            
+                <span>
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Keytool命令行工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">NodeJs</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../nodeJs/00-0关于Node.js.html">
+            
+                <a href="../nodeJs/00-0关于Node.js.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    0关于Node.Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../nodeJs/00-常见问题.html">
+            
+                <a href="../nodeJs/00-常见问题.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                <a href="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Node.Js：三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                <a href="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                    
+                        <b>8.4.</b>
+                    
+                    Npm包管理器简介及一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                <a href="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                    
+                        <b>8.5.</b>
+                    
+                    NPM：Package.Json详解（中文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                <a href="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                    
+                        <b>8.6.</b>
+                    
+                    NPM：从零开始，开发一个软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="../nodeJs/05-NPM：常用命令.html">
+            
+                <a href="../nodeJs/05-NPM：常用命令.html">
+            
+                    
+                        <b>8.7.</b>
+                    
+                    NPM：常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                <a href="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                    
+                        <b>8.8.</b>
+                    
+                    Node.Js：Fs（文件系统）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                <a href="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                    
+                        <b>8.9.</b>
+                    
+                    Node.Js：Global（全局变量）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="../nodeJs/08-Node.js：HTTP.html">
+            
+                <a href="../nodeJs/08-Node.js：HTTP.html">
+            
+                    
+                        <b>8.10.</b>
+                    
+                    Node.Js：HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="../nodeJs/09-Node.js：module（模块）.html">
+            
+                <a href="../nodeJs/09-Node.js：module（模块）.html">
+            
+                    
+                        <b>8.11.</b>
+                    
+                    Node.Js：Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="../nodeJs/10-Node.js：path（路径）.html">
+            
+                <a href="../nodeJs/10-Node.js：path（路径）.html">
+            
+                    
+                        <b>8.12.</b>
+                    
+                    Node.Js：Path（路径）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                <a href="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                    
+                        <b>8.13.</b>
+                    
+                    Node.Js：Readline（逐行读取）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.14" data-path="../nodeJs/12-锁定项目的Node版本.html">
+            
+                <a href="../nodeJs/12-锁定项目的Node版本.html">
+            
+                    
+                        <b>8.14.</b>
+                    
+                    锁定项目的Node版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../research/02-如何监控前端异常？.html">
+            
+                <a href="../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../research/03-H5页面跳转和刷新.html">
+            
+                <a href="../research/03-H5页面跳转和刷新.html">
+            
+                    
+                        <b>9.3.</b>
+                    
+                    H5页面跳转和刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>9.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>9.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>9.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../research/07-H5可视化编辑.html">
+            
+                <a href="../research/07-H5可视化编辑.html">
+            
+                    
+                        <b>9.7.</b>
+                    
+                    H5可视化编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="../research/08-Web常用功能.html">
+            
+                <a href="../research/08-Web常用功能.html">
+            
+                    
+                        <b>9.8.</b>
+                    
+                    Web常用功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" data-path="../research/10-H5页面生成图片方案总结.html">
+            
+                <a href="../research/10-H5页面生成图片方案总结.html">
+            
+                    
+                        <b>9.9.</b>
+                    
+                    H5页面生成图片方案总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10" data-path="../research/Javascript加密混淆.html">
+            
+                <a href="../research/Javascript加密混淆.html">
+            
+                    
+                        <b>9.10.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.11" data-path="../research/Vue如何导入TypeScript.html">
+            
+                <a href="../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>9.11.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.12" data-path="../research/移动端PDF预览.html">
+            
+                <a href="../research/移动端PDF预览.html">
+            
+                    
+                        <b>9.12.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.13" data-path="../research/纯CSS绘制箭头.html">
+            
+                <a href="../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>9.13.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.14" data-path="../research/网站性能测量和优化方法.html">
+            
+                <a href="../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>9.14.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../tech/00-编程基础知识.html">
+            
+                <a href="../tech/00-编程基础知识.html">
+            
+                    
+                        <b>10.1.</b>
+                    
+                    编程基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="../tech/00-计算机问题概览.html">
+            
+                <a href="../tech/00-计算机问题概览.html">
+            
+                    
+                        <b>10.2.</b>
+                    
+                    计算机问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>10.3.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                <a href="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                    
+                        <b>10.4.</b>
+                    
+                    GOOGLE浏览器的搜索技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="../tech/03-curl的用法指南.html">
+            
+                <a href="../tech/03-curl的用法指南.html">
+            
+                    
+                        <b>10.5.</b>
+                    
+                    Curl的用法指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="../tech/04-sublime3插件篇.html">
+            
+                <a href="../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>10.6.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="../tech/05-Charles安装及使用.html">
+            
+                <a href="../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>10.7.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                <a href="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                    
+                        <b>10.8.</b>
+                    
+                    通过.Gitlab Ci.Yml配置任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="../tech/07-MySQL的基本使用.html">
+            
+                <a href="../tech/07-MySQL的基本使用.html">
+            
+                    
+                        <b>10.9.</b>
+                    
+                    MySQL的基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="../tech/08-看懂什么是环境变量.html">
+            
+                <a href="../tech/08-看懂什么是环境变量.html">
+            
+                    
+                        <b>10.10.</b>
+                    
+                    看懂什么是环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.11" data-path="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                <a href="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                    
+                        <b>10.11.</b>
+                    
+                    为什么0.1+0.2=0.30000000000000004
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.12" data-path="../tech/10-Nginx使用手册：安装、配置、模块扩展与代理详解.md">
+            
+                <span>
+            
+                    
+                        <b>10.12.</b>
+                    
+                    Nginx使用手册：安装、配置、模块扩展与代理详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.13" data-path="../tech/11-常见智力题总结.html">
+            
+                <a href="../tech/11-常见智力题总结.html">
+            
+                    
+                        <b>10.13.</b>
+                    
+                    常见智力题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.14" data-path="../tech/12-Mac终端命令使用.html">
+            
+                <a href="../tech/12-Mac终端命令使用.html">
+            
+                    
+                        <b>10.14.</b>
+                    
+                    Mac终端命令使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.15" data-path="../tech/13-01-Shell脚本入门篇.html">
+            
+                <a href="../tech/13-01-Shell脚本入门篇.html">
+            
+                    
+                        <b>10.15.</b>
+                    
+                    01 Shell脚本入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.16" data-path="../tech/13-02-Shell脚本进阶篇.html">
+            
+                <a href="../tech/13-02-Shell脚本进阶篇.html">
+            
+                    
+                        <b>10.16.</b>
+                    
+                    02 Shell脚本进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.17" data-path="../tech/14-一篇搞定排序算法：原理+图解+JS实现+V8源码解读.md">
+            
+                <span>
+            
+                    
+                        <b>10.17.</b>
+                    
+                    一篇搞定排序算法：原理+图解+JS实现+V8源码解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.18" data-path="../tech/15-glob模式通配符.html">
+            
+                <a href="../tech/15-glob模式通配符.html">
+            
+                    
+                        <b>10.18.</b>
+                    
+                    Glob模式通配符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.19" data-path="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                <a href="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                    
+                        <b>10.19.</b>
+                    
+                    代码整洁之道（摘录笔记）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.20" data-path="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                <a href="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                    
+                        <b>10.20.</b>
+                    
+                    Java的24种设计模式与7大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.21" data-path="../tech/18-观察者和发布订阅模式.html">
+            
+                <a href="../tech/18-观察者和发布订阅模式.html">
+            
+                    
+                        <b>10.21.</b>
+                    
+                    观察者和发布订阅模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.22" data-path="../tech/19-AI模型基础应用篇.html">
+            
+                <a href="../tech/19-AI模型基础应用篇.html">
+            
+                    
+                        <b>10.22.</b>
+                    
+                    AI模型基础应用篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../tools/01-01-Git基础教程.html">
+            
+                <a href="../tools/01-01-Git基础教程.html">
+            
+                    
+                        <b>11.1.</b>
+                    
+                    01 Git基础教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../tools/01-02-Git常见问题.html">
+            
+                <a href="../tools/01-02-Git常见问题.html">
+            
+                    
+                        <b>11.2.</b>
+                    
+                    02 Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../tools/02-01-gitbook入门篇.html">
+            
+                <a href="../tools/02-01-gitbook入门篇.html">
+            
+                    
+                        <b>11.3.</b>
+                    
+                    01 Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="../tools/02-02-gitbook插件篇.html">
+            
+                <a href="../tools/02-02-gitbook插件篇.html">
+            
+                    
+                        <b>11.4.</b>
+                    
+                    02 Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="../tools/02-03-gitbook进阶篇.html">
+            
+                <a href="../tools/02-03-gitbook进阶篇.html">
+            
+                    
+                        <b>11.5.</b>
+                    
+                    03 Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">整理中</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >进阶 01 Web性能优化</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="进阶篇：web性能优化">进阶篇：Web性能优化</h2>
+<p>很多资料表明，Web 的性能（加载速度、交互流畅度）优化对于提高用户留存、转化率等都有积极影响。</p>
+<ul>
+<li>来自Google的数据表明，一个有10条数据0.4秒能加载完的页面，变成30条数据0.9秒加载完之后，流量和广告收入下降90%。</li>
+<li>Google Map 首页文件大小从 100KB 减小到 70-80KB 后，流量在第一周涨了10%，接下来的三周涨了25%。</li>
+<li>亚马逊的数据表明：加载时间增加100毫秒，销量就下降1%。</li>
+</ul>
+<p>Web 的性能优化可以分为 <strong>web 前端性能优化</strong>、<strong>应用服务器端性能优化</strong>、<strong>存储服务器端性能优化</strong>。</p>
+<p>Web 前端性能优化一直以来都是前端工程领域中的一个重要部分。作为 Web 前端开发者，我们<strong>不仅要关注 Web 前端性能优化</strong>，还应对于<strong>应用服务器端性能优化</strong>、<strong>存储服务器端性能优化</strong>有所了解。比如：你不应当只了解 HTTP 缓存，网站的缓存策略还包括：DNS 缓存、客户端缓存、服务端缓存、数据库缓存。</p>
+<h3 id="什么是-web-性能？">什么是 web 性能？</h3>
+<p>Web 性能是客观的衡量标准，是用户对加载时间和运行时的直观体验，是指页面加载到可交互和可响应所消耗的时间，以及页面在交互时的流畅度——滚动是否顺滑？按钮能否点击？弹窗能否快速打开，动画是否平滑？</p>
+<p>Web 性能既包括客观的度量如加载时间，每秒帧数和到页面可交互的时间；也包括用户的对页面内容加载时间的主观感觉。 </p>
+<ul>
+<li><strong>客观度量：</strong> 从发出请求开始，到下载、解析和执行所有资源以及最终绘制的整个过程的时间度量。</li>
+<li><strong>主观感知：</strong> 用户对网站性能、响应能力和可靠性的主观衡量。换句话说，网站在用户看来有多快。主观感知的量化和衡量比客观度量更难，但也许也更重要。</li>
+</ul>
+<p>相比网站实际加载和渲染的速度，网站可感知的加载和渲染的速度对用户体验的影响更大。即使操作需要很长时间（由于主线程的延迟或不可用），也可以通过显示加载微调器或一系列有用的提示和技巧来让用户在等待时保持参与（或笑话，或其他任何您认为合适的内容）。这种方法比什么都不显示要好得多，这会让人感觉它花费了更长的时间，并可能导致您的用户认为它已损坏并放弃。</p>
+<p>作为 Web 开发者，我们可以优化客观性能，也可以在客观性能不够好时，提升用户的感知性能。</p>
+<p>另外，用户体验除了良好的网站性能，还包括友好的异常处理、容错降级策略、无障碍能力、视觉体验、交互体验等等。</p>
+<h3 id="web页面的内容是如何呈现的">Web页面的内容是如何呈现的?</h3>
+<p>为了有效地了解 Web 性能、以及其背后的问题，我们应该了解浏览器是如何工作的。</p>
+<p>工作的主要流程：</p>
+<ul>
+<li><strong>导航：</strong> 加载 web 页面的第一步，可以是用户通过在地址栏输入一个URL、点击一个链接、提交表单或者是其他的行为。</li>
+<li><strong>找缓存：</strong> 浏览器查找当前 URL 是否存在缓存，并检测缓存是否可用。</li>
+<li><strong>DNS查找：</strong>浏览器通过服务器名称请求 DNS 进行查找，最终返回一个 IP 地址。</li>
+<li><strong>TCP连接（三次握手）</strong>：一旦获取到服务器IP地址，浏览器就会通过TCP”三次握手“与服务器建立连接。</li>
+<li><strong>服务器响应：</strong>浏览器代表用户发送一个初始的 HTTP GET 请求，对于网站来说，这个请求通常是一个HTML文件。一旦服务器收到请求，它将使用相关的响应头和 HTML 的内容进行回复。</li>
+<li>浏览器解析文档和渲染页面。</li>
+<li>关闭TCP连接（四次挥手）。</li>
+</ul>
+<h3 id="什么是关键渲染路径（crp）？">什么是关键渲染路径（CRP）？</h3>
+<p><strong>关键渲染路径（CRP，Critical Rendering Path）</strong>是浏览器将 HTML，CSS 和 JavaScript 转换为屏幕上的像素所经历的步骤序列。优化关键渲染路径可提高渲染性能。关键渲染路径包含了 文档对象模型 (DOM)，CSS 对象模型 (CSSOM)，渲染树和布局。</p>
+<p>在解析 HTML 时会创建文档对象模型。HTML 可以请求 JavaScript，而 JavaScript  反过来，又可以更改 DOM。HTML 包含或请求样式，依次来构建 CSS 对象模型。浏览器引擎将两者结合起来以创建渲染树。布局确定页面上所有内容的大小和位置。确定布局后，将像素绘制到屏幕上。</p>
+<p>浏览器的渲染可分为以上5个步骤：</p>
+<ul>
+<li><p>处理 HTML 标记并构造 DOM 树；</p>
+</li>
+<li><p>处理 CSS 并构建 CSSOM 树；</p>
+</li>
+<li><p>将 DOM 和 CSSOM 组合成一个Render树；</p>
+</li>
+<li><p>在渲染树上运行布局以计算每个节点的几何体；</p>
+</li>
+<li><p>将各个节点绘制到屏幕上，第一次出现的节点称为<strong>首次有意义的绘制（FMP）</strong>。</p>
+</li>
+</ul>
+<p><strong>优化关键渲染路径即尽可能地缩短上述步骤耗费的总时间。</strong></p>
+<h4 id="阻塞渲染的资源">阻塞渲染的资源</h4>
+<ul>
+<li><p><strong>HTML：</strong> HTML 显然是必需的，因为如果没有 DOM，我们就没有可渲染的内容。</p>
+<p>浏览器处理 HTML 流程：<strong>字节</strong> → <strong>字符</strong> → <strong>令牌</strong> → <strong>节点</strong> → <strong>对象模型</strong>，最终得到的是<strong>文档对象模型 (DOM)</strong>。</p>
+<ul>
+<li><strong>字节转换字符：</strong> 浏览器读取 HTML 原始字节，根据指定编码转化为字符；</li>
+<li><strong>令牌化（字符转标签）：</strong> 将字符串转换成 <code>W3C HTML5</code> 标准规定的各种令牌，例如：<code>html、body</code> ；</li>
+<li><strong>词法分析（标签转node）：</strong> 将 token 转化为定义其属性与规则的 node；</li>
+<li><strong>DOM 构建：</strong> 将 node 连接在一起组成一颗 DOM 树。</li>
+</ul>
+</li>
+<li><p><strong>CSS：</strong> CSS 的必要性可能没那么明显。但可以想像下，不阻塞 css 会发生的情况：一、渲染最先渲染出来的页面缺少样式（丑，而且可能影响一些交互功能），通常称为 <strong>内容样式短暂失效 (FOUC，flash of unstyled content)</strong>；二、css 是可层叠的，当同一 DOM 在不同的 css 文件有定义样式时，每次加载完一个 css 资源都需重新绘制，可能会导致页面渲染闪动。</p>
+<p>所以，<strong>默认情况下，CSS 被视为阻塞渲染的资源</strong>，这意味着浏览器将不会渲染任何已处理的内容，直至 CSSOM 构建完毕。</p>
+<p>浏览器处理 CSS 流程 与 HTML 相似，最终得到的是<strong>CSS对象模型 (CSSOM)</strong>。</p>
+<ul>
+<li>CSS 会阻塞页面的渲染；</li>
+<li>CSS 会阻塞 Javascript 执行，因为 JavaScript 可能会查询或者修改样式；</li>
+<li>动态插入的外链 CSS 不会阻塞 DOM 的解析或渲染，即用 Js 插入 link 标签；</li>
+<li>动态插入的内联 CSS 会阻塞 DOM 的解析或渲染，即 CSS 文件中用 <code>@import</code> 指令导入另一 css 文件。</li>
+</ul>
+</li>
+<li><p><strong>JavaScript：</strong>JavaScript 允许修改网页的方方面面: 内容、样式以及它如何响应用户交互。 不过，JavaScript 也会阻止 DOM 构建和延缓网页渲染。因此，通常将 JavaScript 文件放在底部。</p>
+<ul>
+<li><p>同步的 JavaScript 都会阻塞 DOM 的解析或渲染</p>
+</li>
+<li><p>异步的 JavaScript 不会阻塞DOM 的解析或渲染（async 与 defer 的 JavaScript 脚本、动态插入的外链 JavaScript 脚本）</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>优化关键渲染路径在很大程度上是指<strong>了解和优化 HTML、CSS 和 JavaScript 之间的依赖关系谱。</strong></p>
+<h4 id="优化关键渲染路径">优化关键渲染路径</h4>
+<p>通过优化关键渲染路径，我们可以显著缩短首次渲染页面的时间。 此外，了解关键渲染路径还可以为构建高性能交互式应用打下基础。处理交互式更新的过程是相同的，只是在连续循环中完成，理想情况下每秒可以处理 60 帧！</p>
+<p>为尽快完成首次渲染，我们需要最大限度减小以下三种可变因素:</p>
+<ul>
+<li><strong>关键资源：</strong> 可能阻止网页首次渲染的资源；</li>
+<li><strong>关键路径长度：</strong> 获取所有关键资源所需的往返次数或总时间；</li>
+<li><strong>关键字节：</strong> 实现网页首次渲染所需的总字节数，它是所有关键资源传送文件大小的总和。</li>
+</ul>
+<p><strong>优化关键渲染路径的常规步骤如下: </strong></p>
+<ul>
+<li>对关键路径进行分析和特性描述: 资源数、字节数、长度。</li>
+<li>最大限度减少关键资源的数量（减少往返次数）: 删除它们、延迟它们的下载、将它们标记为异步等。</li>
+<li>优化关键字节数以缩短下载时间。</li>
+<li>优化其余关键资源的加载顺序: 您需要尽早下载所有关键资产，以缩短关键路径长度。</li>
+</ul>
+<h3 id="web-性能的主要领域">Web 性能的主要领域</h3>
+<ul>
+<li><p><strong>减少整体加载时间</strong>：呈现网站所需的文件需要多长时间才能下载到用户的计算机上？</p>
+<p>这往往会受到延迟、文件大小、文件数量以及其他因素的影响。一般策略是使文件尽可能小，尽可能减少发出的 HTTP 请求的数量，并采用巧妙的加载技术（例如 preload）使文件更快可用。</p>
+</li>
+<li><p><strong>使网站尽快可用</strong>：以合理的顺序加载网站资源，让用户可以真正快速地开始实际使用它。</p>
+<p>当用户继续执行主要任务时，任何其他资源都可以在后台继续加载，有时我们只在实际需要时才加载资源（这称为延迟加载）。</p>
+</li>
+<li><p><strong>流畅性和交互性</strong>：应用程序使用起来是否可靠和愉快？滚动是否流畅？按钮是否可点击？弹出窗口是否可以快速打开，并且在打开时动画流畅？</p>
+<p>要使应用程序感觉流畅，需要考虑许多最佳实践，例如：使用 CSS 动画而不是 JavaScript 来制作动画，以及最大限度地减少由于 DOM 的变化而导致的 UI 重绘次数。</p>
+</li>
+<li><p><strong>感知性能</strong>：网站在用户看来的速度比网站实际速度对用户体验的影响更大。</p>
+<p>用户如何看待您的表现与任何客观统计数据一样重要，甚至可能更重要，但它是主观的，不容易衡量。感知性能是用户视角，而不是指标。即使操作需要很长时间（由于延迟或其他原因），也可以通过显示加载微调器或一系列有用的提示和技巧（或笑话，或其他任何内容）来保持用户的参与度否则你认为可能是合适的）。这种方法比什么都不显示要好得多，这会让人感觉它花费了更长的时间，并可能导致您的用户认为它已损坏并放弃。</p>
+</li>
+<li><p><strong>性能测量</strong>：Web 性能涉及测量应用程序的实际速度和感知速度，在可能的情况下进行优化，然后监控性能，以确保您优化的内容保持优化。</p>
+</li>
+</ul>
+<p>总而言之，许多特性会影响性能，包括延迟、应用程序大小、DOM 节点数量、资源请求数量、JavaScript 性能、CPU 负载等。重要的是尽量减少加载和响应时间，并通过尽可能快地使体验尽可能可用和交互，同时在体验的较长尾部异步加载来添加附加功能以隐藏延迟。</p>
+<h3 id="web-性能测量指标">web 性能测量指标</h3>
+<p>为了能衡量用户视觉体验，Web 标准中定义了一些性能指标，这些性能指标被各大浏览器标准化实现，例如 <code>First Paint</code> 和 <code>First Contentful Paint</code>。还有一些由 Web 孵化器社区组（WICG）提出的性能指标，如 <code>Largest Contentful Paint</code> 、<code>`Time to Interactive</code>、<code>First Input Delay</code>、<code>First CPU Idle</code>。另外还有 Google 提出的 <code>First Meaningful Paint</code>、<code>Speed Index</code>，百度提出的 <code>First Screen Paint</code>。</p>
+<p>这些指标之间并不是毫无关联，而是在以用户为中心的目标中不断演进出来的，有的已经不再建议使用、有的被各种测试工具实现、有的则可以作为通用标准，有各大浏览器提供的可用于在生产环境测量的 API。</p>
+<p>指标可分为三类：<strong>文档加载相关</strong>、<strong>内容呈现相关</strong>、<strong>交互响应性相关</strong>。</p>
+<h4 id="文档加载相关">文档加载相关</h4>
+<ul>
+<li><strong>首次接收字节（TTFB，Time to First Byte）</strong>：浏览器从请求页面开始到接收第一字节的时间，这个时间段内包括 DNS 查找、TCP 连接和 SSL 连接。</li>
+<li><strong>文档加载完成（DCL，DomContentLoaded）</strong>：<strong><code>DOMContentLoaded</code></strong> 事件触发时间。当 HTML 文档被完全加载和解析完成之后，DOMContentLoaded 事件被触发，而无需等待样表、图像和子框架加载完成。</li>
+<li><strong>页面加载完成（Load）</strong>：<code>onLoad</code>事件触发的时间。页面所有资源都加载完毕后（比如图片，CSS），onLoad 事件才被触发。</li>
+</ul>
+<h4 id="内容呈现相关">内容呈现相关</h4>
+<ul>
+<li><p><strong>首次绘制（FP，First Paint）</strong>：由 Web 性能工作组在 W3C 标准 <a href="https://link.zhihu.com/?target=https%3A//www.w3.org/TR/paint-timing/%23sec-terminology" target="_blank">Paint Timing</a> 中提出。</p>
+<p><strong>从开始加载到浏览器首次绘制像素到屏幕上的时间</strong>，也就是页面在屏幕上首次发生视觉变化的时间。请注意，此绘制可能不可见；它可以是简单的背景颜色更新，也可以是更不引人注目的东西。</p>
+</li>
+<li><p><strong>首次内容绘制（FCP，First Contentful Paint）</strong>：由 Web 性能工作组在 W3C 标准 <a href="https://link.zhihu.com/?target=https%3A//www.w3.org/TR/paint-timing/%23sec-terminology" target="_blank">Paint Timing</a> 中提出。</p>
+<p><strong>浏览器首次绘制来自 DOM 的内容的时间</strong>，内容必须是文本、图片（包含背景图）、非白色的 canvas 或 SVG，也包括带有正在加载中的 Web 字体的文本。</p>
+<p>请注意，这是用户第一次开始看到页面内容，但不一定有用或有意义（例如 Header、导航栏等）。</p>
+</li>
+<li><p><strong>首次有意义的绘制（FMP，First Meaningful Paint）（非标准）</strong>：由 Google 在 <a href="https://link.zhihu.com/?target=https%3A//docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view%23" target="_blank">Time to First Meaningful Paint: a layout-based approach </a>中提出。</p>
+<p><strong>页面的主要内容绘制到屏幕上的时间</strong>，这是一个更好的衡量用户感知加载体验的指标，但仍然不理想。</p>
+<p>主要内容的定义因页面而异。例如对于博客文章，它的主要内容是标题和摘要；对于搜索页面，它的主要内容是搜索结果；对于电商的页面，图片则是主要内容。</p>
+<blockquote>
+<p><strong>计算方式：</strong> 采用 <strong>布局数量最大并且 Web 字体已加载</strong> 的时刻作为近似时间。</p>
+<p><strong>通过一种计算布局对象数量的方式来估算</strong>的，<a href="https://link.zhihu.com/?target=https%3A//docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view%23" target="_blank">该算法</a>将（添加到布局树的布局对象数 / max(1, 页面高度/屏幕高度)）最大的时刻作为 FMP 的时间点，如果在布局时正在加载字体，则布局变动时间将推迟到显示字体为止，以此来猜测页面的主要内容绘制到屏幕中的时间。</p>
+<p>这种计算方式对页面加载的微小差异过于敏感，容易导致结果不一致。此外，度量的定义依赖于特定于浏览器的实现细节，<strong>这意味着它不能标准化，也不能在所有 Web 浏览器中实现。</strong></p>
+<p>在 Lighthouse 6.0 中已不推荐使用 FMP，建议使用 <a href="https://link.zhihu.com/?target=https%3A//web.dev/largest-contentful-paint/" target="_blank">Largest Contentful Paint</a> 代替。</p>
+</blockquote>
+</li>
+<li><p><strong>最大内容绘制（LCP，Largest Contentful Paint）（非标准）：</strong>由 Web 孵化器社区组（WICG）在 <a href="https://link.zhihu.com/?target=https%3A//wicg.github.io/largest-contentful-paint/%23sec-intro" target="_blank">Largest Contentful Paint API</a> 中提出。</p>
+<p><strong>可视区域中最大的内容元素呈现</strong>到屏幕上的时间，用以估算页面的主要内容对用户可见时间。</p>
+<p>关于最大内容元素的计算可以查阅 <a href="https://link.zhihu.com/?target=https%3A//wicg.github.io/largest-contentful-paint/%23sec-intro" target="_blank">Largest Contentful Paint</a> 规范，此规范提供了 API 可以获取 LCP 时间（如果浏览器实现了此 API 的话，Chrome 浏览器是实现了的）。</p>
+</li>
+<li><p><strong>速度指数（SI，Speed Index）（非标准）</strong>：由 Google 在 <a href="https://link.zhihu.com/?target=https%3A//sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index" target="_blank">webpagetest.org</a> 中提出。</p>
+<p>测量可见屏幕上要绘制的像素的平均时间。</p>
+</li>
+<li><p><strong>首屏绘制（FSP，First Screen Paint）（非标准）</strong>：由百度在 W3C 标准提案 <a href="https://link.zhihu.com/?target=https%3A//www.w3.org/Submission/first-screen-paint/" target="_blank">First Screen Paint</a> 中提出。</p>
+<p>页面从开始加载到首屏内容全部绘制完成的时间，用户可以看到首屏的全部内容。</p>
+<p>如果说 LCP 是用户看到有效内容的最近似的时间，那么在 FSP 这个时间点用户已经看到了可视区域内完整的内容，可以说<strong>是衡量用户视觉体验最合适的指标</strong>。</p>
+</li>
+</ul>
+<h4 id="交互响应性相关">交互响应性相关</h4>
+<ul>
+<li><p><strong>可交互时间（TTI，Time to Interactive）（非标准）</strong>：由 Web 孵化器社区组（WICG）在 <a href="https://link.zhihu.com/?target=https%3A//github.com/WICG/time-to-interactive" target="_blank">Time To Interactive</a> 中提出。</p>
+<p>表示网页第一次 <strong>完全达到可交互状态</strong> 的时间点，浏览器已经可以持续性的响应用户的输入。</p>
+</li>
+<li><p><strong>首次CPU空闲时间（FCI，First CPU Idle）（非标准）</strong>：由 Web 孵化器社区小组提出的 <code>First Interactive</code> 指标，并已被用于各种工具中。这个指标在 LightHouse 中称为 <code>First CPU Idle（FCI）</code>。</p>
+<p>页面第一次可以响应用户输入的时间。</p>
+<p>FCI 和 TTI 都是页面可以响应用户输入的时间。FCI 发生在<strong>用户可以开始</strong>与页面交互时；TTI 发生在<strong>用户完全能够（可持续）</strong>与页面交互时。第一次可交互与可流畅交互的时间点如何确定可以在 Google 的 <a href="https://link.zhihu.com/?target=https%3A//docs.google.com/document/d/1GGiI9-7KeY3TPqS3YT271upUVimo-XiL5mwWorDUD4c/edit%23" target="_blank">First Interactive and Consistently Interactive</a> 中查阅。</p>
+</li>
+<li><p><strong>首次输入延迟 （FID，First Input Delay）（非标准）</strong>：此指标由网络孵化器社区小组（WICG）提出，并已被用于各种工具中。</p>
+<p>从用户第一次与页面交互（例如单击链接、点击按钮等）到浏览器实际能够响应该交互的时间。</p>
+<p>输入延迟是因为浏览器的主线程正忙于做其他事情，所以不能响应用户。发生这种情况的一个常见原因是浏览器正忙于解析和执行应用程序加载的大型 JavaScript 文件。</p>
+<p>第一次输入延迟通常发生在第一次内容绘制（FCP）和可持续交互时间（TTI）之间，因为页面已经呈现了一些内容，但还不能可靠地交互。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>用户体验核心指标</th>
+<th>定义</th>
+<th>衡量指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>白屏时间</strong></td>
+<td>页面开始有内容的时间，在没有内容之前是白屏</td>
+<td>FP 或 FCP</td>
+</tr>
+<tr>
+<td><strong>首屏时间</strong></td>
+<td>可视区域内容已完全呈现的时间</td>
+<td>FSP</td>
+</tr>
+<tr>
+<td><strong>可交互时间</strong></td>
+<td>用户第一次可以与页面交互的时间</td>
+<td>FCI</td>
+</tr>
+<tr>
+<td><strong>可流畅交互时间</strong></td>
+<td>用户第一次可以持续与页面交互的时间</td>
+<td>TTI</td>
+</tr>
+</tbody>
+</table>
+<h3 id="性能优化策略">性能优化策略</h3>
+<h4 id="加载优化策略（14）">加载优化策略（14）</h4>
+<ul>
+<li><p><strong>减少 HTTP 请求</strong></p>
+<p>Web 前端 80% 的响应时间花在图片、样式、脚本等资源下载上，<strong>减少资源下载时间是性能优化的黄金法则</strong>。最直接的方式是减少页面所需资源。</p>
+</li>
+<li><p><strong>静态资源使用 CDN</strong></p>
+<p>内容分发网络（CDN）是一组分散在不同地理位置的 web 服务器，用来给用户更高效地发送内容。典型地，选择用来发送内容的服务器是基于网络距离的衡量标准的。服务器离用户越远，延迟越高。</p>
+</li>
+<li><p><strong>使用 Gzip 压缩</strong></p>
+<p>通过 Gzip 压缩 HTML 文档、脚本、样式表（图片、 PDF 文件不应该被压缩，因为它们本来已经被压缩了），减少 HTTP 请求产生的响应包的大小（通常能将响应的数据量减少近 70%），从而降低传输时间，提高性能。</p>
+<p>Web 客户端可以通过 HTTP 请求 Header 中的 <code>Accept-Encoding</code> 来标识对压缩的支持：</p>
+<pre><code class="lang-shell">Content-Encoding: gzip, deflate, br
+</code></pre>
+<p>Web 服务器看到请求中的 Header，就会使用客户端列出的方法中的一种来压缩响应。Web 服务器通过响应 Header 中的 <code>Content-Encoding</code> 来告知 Web 客户端。</p>
+<pre><code class="lang-shell">Content-Encoding: gzip
+</code></pre>
+</li>
+<li><p><strong>减少 DNS 查询</strong></p>
+<p>用户输入 URL 以后，浏览器首先要查询域名对应服务器的 IP 地址，这个操作一般需要耗费 20-120 毫秒时间。DNS 查询完成之前，浏览器无法从服务器下载任何数据。</p>
+<p>基于性能考虑，ISP、局域网、操作系统、浏览器都会有相应的 DNS 缓存机制。</p>
+<ul>
+<li>IE 缓存 30 分钟，可以通过注册表中 DnsCacheTimeout 项设置；</li>
+<li>Firefox 缓存 1 分钟，通过 about:config -&gt; network.dnsCacheExpiration 配置；</li>
+<li>Chrome 缓存 1 分钟，通过 chrome://net-internals/#dns 配置。</li>
+</ul>
+<blockquote>
+<p><strong>注意：</strong></p>
+<p>同一时间针对同一域名下的请求有一定数量限制，超过限制数目的请求会被阻塞。大多数浏览器的并发数量都控制在6以内。有些资源的请求时间很长，因而会阻塞其他资源的请求。因此，对于一些静态资源，如果放到不同的域名下面就能实现与其他资源的并发请求。</p>
+<p>减少不同的域名可减少 DNS 查找，同时也减少了页面下载资源文件的并发量。也就是说，虽然避免 DNS 查找削减了响应时间，但是减少并行下载数量却增加了响应时间。</p>
+<p>原则是把组件分散在 2~4 个域名下，控制好数量，这是同时减少 DNS 查找和允许并发下载的折中方案。</p>
+</blockquote>
+</li>
+<li><p><strong>DNS预解析</strong></p>
+<p>尝试在请求资源之前解析域名。浏览器在获取域名的实际 IP 地址后，会对其 IP 进行缓存，减少网络请求的损耗。该域名可能是后面要加载的文件，也可能是用户尝试打开的链接目标。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://fonts.googleapis.com/"</span>&gt;</span>
+</code></pre>
+</li>
+<li><p><strong>预先建立连接</strong></p>
+<p>建立连接不仅需要 DNS 查询，还需要进行 TCP 协议握手，有些还会有 TLS/SSL 协议，这些都会导致连接的耗时。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preconnect"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//sample.com"</span>&gt;</span>
+</code></pre>
+<p>使用 Preconnect 时，浏览器大致做了如下处理：</p>
+<ul>
+<li>解析 Preconnect 的 url；</li>
+<li>根据当前 link 元素中的属性进行 cors 的设置；</li>
+<li>默认先将 credential 设为 true，如果 cors 为 Anonymous 并且存在跨域，则将 credential 置为 false；</li>
+<li>进行连接。</li>
+</ul>
+</li>
+<li><p><strong>使用多个域名</strong></p>
+<p>Chrome 等现代化浏览器，都会有同域名限制并发下载数的情况，使用不同的域名可以最大化下载线程。</p>
+<p>浏览器的并发限制：</p>
+<ul>
+<li>Chrome34/32：6</li>
+<li>IE10：8</li>
+<li>IE11：13</li>
+<li>Firefox27/26：6</li>
+<li>Safari7.0.1：6</li>
+</ul>
+</li>
+<li><p><strong>Ajax 时尽量使用 GET 方法</strong></p>
+<p>使用 <code>XMLHttpRequest</code> 时，浏览器的 POST 请求是通过一个两步的过程来实现的：先发送 HTTP 头，再发送数据。所以最好用 GET 请求，它只需要发送一个 TCP 报文（除非 Cookie 特别多）。</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>延迟加载</strong></p>
+<ul>
+<li>将不影响首屏的资源和当前屏幕不用的资源放到用户需要时才加载（懒加载）。如：非首屏使用的数据、样式、脚本、图片等；用户交互时才会显示的内容。</li>
+</ul>
+</li>
+<li><p>图片的延迟加载（滚屏加载）。如：当用户滚动页面看到内容时，再加载所需图片。</p>
+</li>
+<li><p><strong>预加载</strong></p>
+<p>预加载是可以充分利用浏览器空闲的时间，来请求将来会用到的资源（图片，样式和脚本等）。</p>
+<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preload"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"fonts/webfont.woff2"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"font"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"font/woff2"</span> <span class="hljs-attr">crossorigin</span>&gt;</span>
+</code></pre>
+<p><code>crossorigin</code> 属性是不可少的，即便加载的资源文件与 HTML 资源是同源的。</p>
+</li>
+<li><p><strong>给 Cookie 减肥</strong></p>
+<p>Cookie 通过 HTTP 头在服务器和浏览器间来回传送，减少 Cookie 大小可以降低其对响应速度的影响。</p>
+<p><strong>优化指南：</strong>去除不必要的 Cookie；尽量压缩 Cookie 大小；注意设置 Cookie 的 domain 级别，如无必要，不要影响到 sub-domain；设置合适的过期时间。</p>
+</li>
+<li><p><strong>静态资源域名不使用 Cookie</strong></p>
+<p>当浏览器请求静态图片并把 Cookie 一起发送到服务器时，Cookie 此时对服务器没什么用处，只是增加了网络流量。</p>
+<p>通常可以创建一个子域名来托管所有静态组件。</p>
+</li>
+<li><p><strong>避免 301/302 重定向</strong></p>
+<p>客户端收到服务器的重定向响应后，会根据响应头中 Location 的地址再次发送请求。重定向会影响用户体验，尤其是多次重定向时，用户在一段时间内看不到任何内容，只看到浏览器进度条一直在刷新。</p>
+<p>常见错误：URL 末尾应该添加 <code>/</code> ，但未添加。</p>
+</li>
+<li><p><strong>杜绝 404</strong></p>
+<p>HTTP 请求是昂贵的，所以发出 HTTP 请求但获得没用的响应（如 404）是完全不必要的，并且会降低用户体验。</p>
+<p>此外，如果链接指向外部 js，但却得到 404 结果。这样首先会降低（占用）并行下载数，其次浏览器可能会把 404 响应体当作 js 来解析。</p>
+</li>
+</ul>
+<h4 id="缓存优化策略（3）">缓存优化策略（3）</h4>
+<ul>
+<li><p><strong>HTTP 缓存</strong>：尽可能的利用所有可用的缓存资源。</p>
+<ul>
+<li>keep-alive：减少 Initial connection 耗时；</li>
+<li>Expires 或 Cache-Control（强缓存），设置资源是否缓存，以及缓存时间；</li>
+<li>Etag / If-None-Match（协商缓存）：通过<strong>对比资源唯一标识</strong>来决定要不要从服务器获取资源。</li>
+</ul>
+</li>
+<li><p>Last-Modified / If-Modified-Since（协商缓存）：通过<strong>对比时间</strong>来决定要不要从服务器获取资源。</p>
+</li>
+<li><p><strong>使用外部 JavaScript 和 Css</strong></p>
+<p>使用外部文件通常会产生较快的页面，因为 JavaScript 和 CSS 有机会被浏览器缓存起来。对于内联的情况，由于 HTML 文档通常不会被配置为可以进行缓存的，所以每次请求 HTML 文档都要下载 JavaScript 和 CSS。</p>
+</li>
+<li><p><strong>缓存 Ajax 请求</strong></p>
+</li>
+</ul>
+<h4 id="资源优化策略（8）">资源优化策略（8）</h4>
+<ul>
+<li><p><strong>确保代码简洁</strong>：去删无用代码，避免重复代码，提高代码复用率；</p>
+</li>
+<li><p><strong>代码合并（CSS，JS）</strong>：将多个小的资源文件，合成一个；</p>
+</li>
+<li><p><strong>压缩资源文件（HTML，CSS，JS，IMG等）</strong>：压缩文件可以减少文件下载时间；</p>
+<p>对 HTML、css、js 来说，就是从代码中去除不必要的字符（所有注释和不必要的空白字符：空格、换行、tab）以减少大小，从而提升加载速度。在 webpack 可以使用如下插件进行压缩：</p>
+<ul>
+<li>JavaScript：UglifyPlugin</li>
+</ul>
+</li>
+<li><p>CSS ：MiniCssExtractPlugin</p>
+<ul>
+<li>HTML：HtmlWebpackPlugin</li>
+</ul>
+<p>对 IMG 来说，可能通过 <a href="https://tinypng.com/" target="_blank">tinypng.com</a> 网站，或者其他图片压缩工具来减少文件大小。</p>
+</li>
+<li><p><strong>HTML</strong></p>
+<ul>
+<li>减少 DOM 节点： DOM 节点太多影响页面的渲染，尽量减少 DOM 节点。</li>
+<li>避免在 HTML 中书写 style；</li>
+<li>避免使用 iframe。加载代价昂贵，即使是空的页面；阻塞页面 load 事件触发，Iframe 完全加载以后，父页面才会触发 load 事件。</li>
+</ul>
+</li>
+<li><p><strong>Javascript</strong></p>
+<ul>
+<li>避免 Long Task；</li>
+</ul>
+</li>
+<li><p>优化 polyfill 的使用：只加载真正所需的 polyfill ；</p>
+<ul>
+<li>是否真的需要框架。如： React 技术栈 —— 你加载了 React、Redux、React-Redux、一堆 Reducers…… 好吧，整个 JavaScript 可能快 1MB 了。对于一个静态页（或者还有一些非常简单的表单交互），是否真的需要引用框架？</li>
+<li>减少 DOM 操作。如：缓存已经访问过的元素；使用 DocumentFragment 暂存 DOM，整理好以后再插入 DOM 树；使用 className 来操纵元素的样式；避免使用 JavaScript 修复布局。</li>
+<li>使用高效的事件处理。如：使用事件委托；DOM 操作尽量在 <code>DOMContentLoaded</code> 中， <code>DOMContentLoaded</code> 比 <code>onload</code> 事件更快。</li>
+</ul>
+</li>
+<li><p><strong>Css</strong></p>
+<ul>
+<li><p>选择合适的兼容性。如：Autoprefixer 的版本指定。</p>
+</li>
+<li><p>使用选用的布局方式：不滥用 float、table 布局，它们在渲染时计算量比较大，新版的 flex 进行布局性能更好。</p>
+</li>
+<li><p>使用 <code>&lt;link&gt;</code> 替代 <code>@import</code>；</p>
+</li>
+<li><p>降低 CSS 选择器的复杂性：浏览器读取选择器，遵循的原则是从选择器的右边到左边读取。如：</p>
+<pre><code class="lang-css"><span class="hljs-selector-id">#block</span> <span class="hljs-selector-class">.text</span> <span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">color</span>: red;
+}
+</code></pre>
+<p>查找流程：查所有 P 元素 -&gt; P 元素中类名为 <code>text</code> 的父元素 -&gt; <code>.text</code> 元素中 id 为 <code>block</code> 的父元素。</p>
+<blockquote>
+<p>注：实际 CSS 选择器没有优化的必要，因为最慢和慢快的选择器性能差别非常小。</p>
+</blockquote>
+</li>
+<li><p>避免使用通配<code>*</code>：<code>*</code> 是针对 CSS 中所有选择器，比较耗性能，尽量使用更具体的选择器。</p>
+</li>
+<li><p>避免使用 CSS 表达式。因为，有些表达式可能会高频触发，比如：页面滚动或鼠标移动。</p>
+<pre><code class="lang-css"><span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">expression</span>( (new <span class="hljs-built_in">Date</span>()).<span class="hljs-built_in">getHours</span>()%<span class="hljs-number">2</span> ? <span class="hljs-string">"#B8D4FF"</span> : <span class="hljs-string">"#F08A00"</span> );
+</code></pre>
+</li>
+<li><p>不滥用 Web 字体：Web字体需要下载、解析、重绘当前页面，尽量减少使用；</p>
+</li>
+<li><p>值为 0 时不需要任何单位：为了浏览器的兼容性和性能；</p>
+</li>
+<li><p>属性值为浮动小数 <code>0.**</code>，可以省略小数点之前的 0；</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>图片</strong></p>
+<ul>
+<li><p>尽可能使用 <code>CSS3、SVG、IconFont</code> 代替图片；</p>
+</li>
+<li><p>雪碧图：将多个小图标合并为一张大图，减少请求数；</p>
+</li>
+<li><p>使用合适的图片格式。如：图片本身应该是 <code>100*100px</code> 的，不要缩小 <code>500*500px</code> 的图片来用。</p>
+</li>
+<li><p>图像尽量避免使用 DataURL：DataURL 图像没有使用图像的压缩算法，文件会变大，并且要解码后再渲染，加载慢耗时长</p>
+</li>
+<li><p>图片质量的权衡。在大多数情况下，相较于 100 质量系数的压缩，80～85 的质量系数可以带来 30～40% 的大小缩减，同时对图片效果影响较小，即人眼不易分辨出质量效果的差异。</p>
+</li>
+<li><p>响应式图片：即浏览器能够根据屏幕大小自动加载合适的图片。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"banner_w1000.jpg"</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 801px)"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"banner_w800.jpg"</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(max-width: 800px)"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"banner_w800.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>使用合适的图片格式：尽量使用 webp 格式的图片，webp 优于 jpg/png。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>尽量避免重置图像大小：多次重置图像大小会引发图像的多次重绘，影响性能。</li>
+<li>避免图片 src 为空：src 属性为空字符串，但浏览器仍然会向服务器发起一个 HTTP 请求。</li>
+</ul>
+<ul>
+<li><p><strong>其他资源</strong></p>
+<ul>
+<li>使用字体图标 <code>iconfont</code> 代替图片图标；</li>
+<li>使用体积小、可缓存的 <code>favicon.ico</code>。避免 404，尽量小，最好小于 1K，并且设置较长的过期时间。</li>
+</ul>
+</li>
+</ul>
+<h4 id="渲染优化策略（10）">渲染优化策略（10）</h4>
+<ul>
+<li><p><strong>CSS 文件放在头部</strong></p>
+</li>
+<li><p><strong>JavaScript 文件放在底部</strong></p>
+</li>
+<li><p><strong>优化关键渲染路径</strong></p>
+</li>
+<li><p><strong>使用服务端渲染</strong></p>
+<p><strong>客户端渲染：</strong> 获取 HTML 文件，根据需要下载 JavaScript 文件，运行文件，生成 DOM，再渲染。</p>
+<p><strong>服务端渲染：</strong> HTML 是通过服务端渲染生成的，浏览器只需解析和渲染服务端返回的 HTML 就可以了。</p>
+</li>
+<li><p><strong>减少重流重绘</strong></p>
+</li>
+<li><p><strong>优化高频事件</strong>：<code>scroll</code>、<code>touchmove</code>等事件可导致多次渲染</p>
+<ul>
+<li><p>函数节流。限制函数一段时间内只能执行一次。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">throttle</span>(<span class="hljs-params">fn, delay</span>) {
+    <span class="hljs-keyword">let</span> timer
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+        <span class="hljs-keyword">let</span> _this = <span class="hljs-variable language_">this</span>
+        <span class="hljs-keyword">let</span> args = <span class="hljs-variable language_">arguments</span>
+        <span class="hljs-keyword">if</span> (timer) {
+            <span class="hljs-keyword">return</span>
+        }
+        timer = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+            fn.<span class="hljs-title function_">apply</span>(_this, args)
+            timer = <span class="hljs-literal">null</span>
+        }, delay)
+    }
+}
+</code></pre>
+</li>
+<li><p>函数防抖。在事件被触发 n 秒后再执行回调，如果在这n秒内又被触发，则重新计时。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">debounce</span>(<span class="hljs-params">fn, delay</span>) {
+    <span class="hljs-keyword">let</span> timer
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+        <span class="hljs-keyword">let</span> _this = <span class="hljs-variable language_">this</span>
+        <span class="hljs-keyword">let</span> args = <span class="hljs-variable language_">arguments</span>
+        <span class="hljs-keyword">if</span> (timer) {
+            <span class="hljs-built_in">clearTimeout</span>(timer)
+        }
+        timer = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+            fn.<span class="hljs-title function_">apply</span>(_this, args)
+        }, delay)
+    }
+}
+</code></pre>
+</li>
+<li><p>使用 <code>requestAnimationFrame</code> 监听帧变化</p>
+</li>
+<li><p>增加响应变化的时间间隔</p>
+</li>
+</ul>
+</li>
+<li><p><strong>GPU加速</strong>：使用某些 HTML5 标签和 CSS3 属性会触发 <code>GPU渲染</code>，请合理使用(<strong>过渡使用会引发手机耗电量增加</strong>)。</p>
+<ul>
+<li>HTML标签：<code>video</code>、<code>canvas</code>、<code>webgl</code></li>
+<li>CSS属性：<code>opacity</code>、<code>transform</code>、<code>transition</code></li>
+</ul>
+</li>
+<li><p><strong>优化动画</strong></p>
+<ul>
+<li><p>尽量使用 CSS3 动画</p>
+</li>
+<li><p>使用 requestAnimationFrame 来实现视觉变化。</p>
+<p>在使用 JavaScript 实现动画效果的时候，最好的情况就是每次代码都是在帧的开头开始执行。而保证 JavaScript 在帧开始时运行的唯一方式是使用 <code>requestAnimationFrame</code>。</p>
+</li>
+<li><p>适当使用 <code>Canvas</code> 动画：5个元素以内使用 CSS 动画，5个元素以上使用 Canvas 动画，iOS8+ 可使用 WebGL 动画。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>设置 viewport</strong>： HTML 的 viewport 可加速页面的渲染。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1"</span>&gt;</span>
+</code></pre>
+</li>
+<li><p><strong>避免页面卡顿</strong></p>
+<p>大多数设备的屏幕刷新率为 60 次/秒。因此，如果在页面中有一个动画或渐变效果，或者用户正在滚动页面，那么浏览器渲染动画或页面的每一帧的速率也需要跟设备屏幕的刷新率保持一致。</p>
+<p>每个帧的预算时间仅比 16 毫秒多一点 (1 秒/ 60 = 16.66 毫秒)。但实际上，浏览器有整理工作要做，因此您的<strong>所有工作需要在 10 毫秒内完成</strong>。</p>
+<p>如果无法符合此预算，帧率将下降，并且内容会在屏幕上抖动。 此现象通常称为卡顿，会对用户体验产生负面影响。</p>
+</li>
+</ul>
+<h3 id="前端优化的一些常见规则">前端优化的一些常见规则</h3>
+<h4 id="3秒首屏指标">3秒首屏指标</h4>
+<p>此规则顾名思义就是打开页面后3秒钟内完成渲染并展示内容。</p>
+<h4 id="2-5-8原则">2-5-8原则</h4>
+<p>在前端开发中，此规则作为一种开发指导思路，针对浏览器页面的性能优化。</p>
+<ul>
+<li>用户在2秒内得到响应，会感觉页面的响应速度很快 Fast；</li>
+<li>用户在2~5秒间得到响应，会感觉页面的响应速度还行 Medium；</li>
+<li>用户在5~8秒间得到响应，会感觉页面的响应速度很慢，但还可以接受 Slow；</li>
+<li>用户在8秒后仍然无法得到响应，会感觉页面有问题。</li>
+</ul>
+<h4 id="雅虎军规">雅虎军规</h4>
+<p>雅虎团队通过大量实践总结出以下7类35条前端优化规则：</p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20210715221703207.png" alt="image-20210715221703207"></img></p>
+<h3 id="相关链接">相关链接</h3>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Performance" target="_blank">Web 性能 MDN</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Performance/Critical_rendering_path" target="_blank">关键渲染路径 MND</a></p>
+<p><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path?hl=zh-cn" target="_blank">优化关键渲染路径</a></p>
+<p><a href="https://learnku.com/docs/f2e-performance-rules" target="_blank">35 条前端性能优化军规</a></p>
+<p><a href="https://juejin.cn/post/6844904150413606926" target="_blank">前端性能优化指南[1]--前言</a></p>
+<p><a href="https://alienzhou.github.io/fe-performance-journey/" target="_blank">前端性能优化</a></p>
+<p><a href="https://kaiwu.lagou.com/course/courseInfo.htm?courseId=638#/sale" target="_blank">前端性能优化方法与实战</a></p>
+<p></p><footer class="page-footer"><span class="copyright">© lizhao all right reserved，powered by Gitbook</span><span class="footer-modification">文件修订时间：
+2022-03-09 21:35:41
+</span></footer><p></p>
+<div id="gitalk-container"></div> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"></link> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01-基础-03-谈谈前端跨域问题及解决方法.html" class="navigation navigation-prev " aria-label="Previous page: 基础 03 谈谈前端跨域问题及解决方法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02-进阶-02-搜索引擎优化（SEO）.html" class="navigation navigation-next " aria-label="Next page: 进阶 02 搜索引擎优化（SEO）">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"进阶 01 Web性能优化","level":"4.8","depth":1,"next":{"title":"进阶 02 搜索引擎优化（SEO）","level":"4.9","depth":1,"path":"frontend/02-进阶-02-搜索引擎优化（SEO）.md","ref":"frontend/02-进阶-02-搜索引擎优化（SEO）.md","articles":[]},"previous":{"title":"基础 03 谈谈前端跨域问题及解决方法","level":"4.7","depth":1,"path":"frontend/01-基础-03-谈谈前端跨域问题及解决方法.md","ref":"frontend/01-基础-03-谈谈前端跨域问题及解决方法.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","summary","sandpack","theme-default","theme-comscore","tbfed-pagefooter","pageview-count","accordion","sharing-plus","back-to-top-button","chapter-fold","klipse","mygitalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"summary":{"exclude":["docs/**"]},"search-pro":{"maxSearchIndexSize":10000000},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"mygitalk":{"flipMoveOptions":{},"clientID":"35175582adb321d85634","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["lizh"],"createIssueManually":false,"distractionFreeMode":false,"repo":"https://github.com/1927344728/fed-knowledge","owner":"lizh","enableHotKey":true,"clientSecret":"2e60c4d61474ec23e752f127e838aa2039e0433e","pagerDirection":"last","labels":["Gitalk"]},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":true,"qzone":true},"sandpack":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"lizhao","honkit":"^6.0.2","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术驿站•LIZHAO","language":"zh","gitbook":"*","description":"这是开发者的技术文档"},"file":{"path":"frontend/02-进阶-01-Web性能优化.md","mtime":"2022-03-09T13:35:41.627Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2026-06-29T12:14:32.945Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-sandpack/honkit-plugin-sandpack.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

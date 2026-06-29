@@ -1,0 +1,4608 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>TypeScript使用指南 · 技术驿站•LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 6.0.2">
+        <meta name="author" content="lizhao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="14-Web中图片的使用.html" />
+    
+    
+    <link rel="prev" href="12-webpack构建优化篇.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/00-前端调试随笔.html">
+            
+                <a href="../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/05-JS常见问题概览.html">
+            
+                <a href="../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/07-微信小程序开发.html">
+            
+                <a href="../bugs/07-微信小程序开发.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    微信小程序开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bugs/08-NodeJs常见问题概览.html">
+            
+                <a href="../bugs/08-NodeJs常见问题概览.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    NodeJs常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../bugs/09-Mac常见问题概览.html">
+            
+                <a href="../bugs/09-Mac常见问题概览.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Mac常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../bugs/10-微信环境前端开发指南.html">
+            
+                <a href="../bugs/10-微信环境前端开发指南.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    微信环境前端开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../bugs/99-其他问题汇总.html">
+            
+                <a href="../bugs/99-其他问题汇总.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    其他问题汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../css系列/00-CSS基础知识.html">
+            
+                <a href="../css系列/00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../css系列/00-CSS常见问答.html">
+            
+                <a href="../css系列/00-CSS常见问答.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../css系列/00-CSS常见问答02.html">
+            
+                <a href="../css系列/00-CSS常见问答02.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    CSS常见问答02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../css系列/00-CSS应用示例.html">
+            
+                <a href="../css系列/00-CSS应用示例.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    CSS应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../css系列/00-CSS应用示例02.html">
+            
+                <a href="../css系列/00-CSS应用示例02.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS应用示例02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../css系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../css系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../css系列/04-CSS探索系列-margin.html">
+            
+                <a href="../css系列/04-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                <a href="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    CSS探索系列 Auto关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../css系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../css系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../css系列/05-CSS探索系列-line-height.html">
+            
+                <a href="../css系列/05-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../css系列/05-CSS探索系列-元素居中.html">
+            
+                <a href="../css系列/05-CSS探索系列-元素居中.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    CSS探索系列 元素居中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../css系列/05-CSS探索系列-动画.html">
+            
+                <a href="../css系列/05-CSS探索系列-动画.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    CSS探索系列 动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../css系列/08-重新认识伪类与伪元素.html">
+            
+                <a href="../css系列/08-重新认识伪类与伪元素.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    重新认识伪类与伪元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../css系列/09-自定义表单伪元素样式.html">
+            
+                <a href="../css系列/09-自定义表单伪元素样式.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    自定义表单伪元素样式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../css系列/10-如何理解css中的display属性.html">
+            
+                <a href="../css系列/10-如何理解css中的display属性.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    如何理解Css中的Display属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                <a href="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                <a href="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    一文彻底弄懂CSS中的长度单位
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                <a href="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                    
+                        <b>2.21.</b>
+                    
+                    CSS中一些有特性的属性或属性值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../css系列/14-Web中如何实现长宽比.html">
+            
+                <a href="../css系列/14-Web中如何实现长宽比.html">
+            
+                    
+                        <b>2.22.</b>
+                    
+                    Web中如何实现长宽比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../css系列/15-@规则：@font-face.html">
+            
+                <a href="../css系列/15-@规则：@font-face.html">
+            
+                    
+                        <b>2.23.</b>
+                    
+                    @规则：@Font Face
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                <a href="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                    
+                        <b>2.24.</b>
+                    
+                    @规则：@Media（媒体查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../css系列/15-@规则：其他.html">
+            
+                <a href="../css系列/15-@规则：其他.html">
+            
+                    
+                        <b>2.25.</b>
+                    
+                    @规则：其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../css系列/_关于css.html">
+            
+                <a href="../css系列/_关于css.html">
+            
+                    
+                        <b>2.26.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="00-00-关于Web前端.html">
+            
+                <a href="00-00-关于Web前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    00 关于Web前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="00-01-前端知识概览.html">
+            
+                <a href="00-01-前端知识概览.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    01 前端知识概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="00-02-常用前端库概览.html">
+            
+                <a href="00-02-常用前端库概览.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    02 常用前端库概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="01-基础-00-前端常见问题01.html">
+            
+                <a href="01-基础-00-前端常见问题01.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    基础 00 前端常见问题01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="01-基础-01-浏览器缓存.html">
+            
+                <a href="01-基础-01-浏览器缓存.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    基础 01 浏览器缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="01-基础-02-浏览器工作原理.html">
+            
+                <a href="01-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                <a href="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    基础 03 谈谈前端跨域问题及解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="02-进阶-01-Web性能优化.html">
+            
+                <a href="02-进阶-01-Web性能优化.html">
+            
+                    
+                        <b>4.8.</b>
+                    
+                    进阶 01 Web性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                <a href="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                    
+                        <b>4.9.</b>
+                    
+                    进阶 02 搜索引擎优化（SEO）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                <a href="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                    
+                        <b>4.10.</b>
+                    
+                    进阶 03 前端模块化编程：CommonJS、AMD、CMD、UMD、ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                <a href="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                    
+                        <b>4.11.</b>
+                    
+                    进阶 04 规范代码：Linter、Prettier、EditorConfig
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="02-进阶-05-Web离线应用.html">
+            
+                <a href="02-进阶-05-Web离线应用.html">
+            
+                    
+                        <b>4.12.</b>
+                    
+                    进阶 05 Web离线应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="02-进阶-06-WebSocket.html">
+            
+                <a href="02-进阶-06-WebSocket.html">
+            
+                    
+                        <b>4.13.</b>
+                    
+                    进阶 06 WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="02-进阶-07-Web跨页面通信.html">
+            
+                <a href="02-进阶-07-Web跨页面通信.html">
+            
+                    
+                        <b>4.14.</b>
+                    
+                    进阶 07 Web跨页面通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="02-进阶-08-页面可见性和生命周期.html">
+            
+                <a href="02-进阶-08-页面可见性和生命周期.html">
+            
+                    
+                        <b>4.15.</b>
+                    
+                    进阶 08 页面可见性和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                <a href="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                    
+                        <b>4.16.</b>
+                    
+                    进阶 09 事件循环、宏任务、微任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="02-进阶-10-内存泄漏.html">
+            
+                <a href="02-进阶-10-内存泄漏.html">
+            
+                    
+                        <b>4.17.</b>
+                    
+                    进阶 10 内存泄漏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="02-进阶-11-前端自动化测试.html">
+            
+                <a href="02-进阶-11-前端自动化测试.html">
+            
+                    
+                        <b>4.18.</b>
+                    
+                    进阶 11 前端自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                <a href="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                    
+                        <b>4.19.</b>
+                    
+                    进阶 12 前端也玩多线程？WebWorker其实很简单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="03-高级-01-前端安全深度解析.html">
+            
+                <a href="03-高级-01-前端安全深度解析.html">
+            
+                    
+                        <b>4.20.</b>
+                    
+                    高级 01 前端安全深度解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.21" data-path="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                <a href="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                    
+                        <b>4.21.</b>
+                    
+                    高级 02 CI、CD（Docker+Jenkins+Nginx）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.22" data-path="04-Vue2.x原理篇.html">
+            
+                <a href="04-Vue2.x原理篇.html">
+            
+                    
+                        <b>4.22.</b>
+                    
+                    Vue2.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.23" data-path="04-Vue3初步了解及迁移指南.html">
+            
+                <a href="04-Vue3初步了解及迁移指南.html">
+            
+                    
+                        <b>4.23.</b>
+                    
+                    Vue3初步了解及迁移指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.24" data-path="04-重读Vue教程.html">
+            
+                <a href="04-重读Vue教程.html">
+            
+                    
+                        <b>4.24.</b>
+                    
+                    重读Vue教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.25" data-path="05-React17.x原理篇.html">
+            
+                <a href="05-React17.x原理篇.html">
+            
+                    
+                        <b>4.25.</b>
+                    
+                    React17.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.26" data-path="05-你必须知道的React问题.html">
+            
+                <a href="05-你必须知道的React问题.html">
+            
+                    
+                        <b>4.26.</b>
+                    
+                    你必须知道的React问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.27" data-path="05-重读React教程.html">
+            
+                <a href="05-重读React教程.html">
+            
+                    
+                        <b>4.27.</b>
+                    
+                    重读React教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.28" data-path="06-聊一聊Cookie的一些问题.html">
+            
+                <a href="06-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.28.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.29" data-path="07-SSL证书简介及其生成、使用.md">
+            
+                <span>
+            
+                    
+                        <b>4.29.</b>
+                    
+                    SSL证书简介及其生成、使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.30" data-path="07-如何启动本地HTTPS服务.html">
+            
+                <a href="07-如何启动本地HTTPS服务.html">
+            
+                    
+                        <b>4.30.</b>
+                    
+                    如何启动本地HTTPS服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.31" data-path="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                <a href="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                    
+                        <b>4.31.</b>
+                    
+                    0.0.0.0、127.0.0.1和Localhost的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.32" data-path="09-如何理解HTTP响应的状态码.html">
+            
+                <a href="09-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.32.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.33" data-path="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                <a href="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                    
+                        <b>4.33.</b>
+                    
+                    字符编码那点事：ASCII、Unicode、GBK、UTF 8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.34" data-path="11-HTTP协议的演变历史.md">
+            
+                <span>
+            
+                    
+                        <b>4.34.</b>
+                    
+                    HTTP协议的演变历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.35" data-path="12-webpack4.x原理篇.html">
+            
+                <a href="12-webpack4.x原理篇.html">
+            
+                    
+                        <b>4.35.</b>
+                    
+                    Webpack4.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.36" data-path="12-webpack基础入门篇.html">
+            
+                <a href="12-webpack基础入门篇.html">
+            
+                    
+                        <b>4.36.</b>
+                    
+                    Webpack基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.37" data-path="12-webpack构建优化篇.html">
+            
+                <a href="12-webpack构建优化篇.html">
+            
+                    
+                        <b>4.37.</b>
+                    
+                    Webpack构建优化篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.38" data-path="13-TypeScript使用指南.html">
+            
+                <a href="13-TypeScript使用指南.html">
+            
+                    
+                        <b>4.38.</b>
+                    
+                    TypeScript使用指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.39" data-path="14-Web中图片的使用.html">
+            
+                <a href="14-Web中图片的使用.html">
+            
+                    
+                        <b>4.39.</b>
+                    
+                    Web中图片的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.40" data-path="15-2026年，还需要微前端吗？——三大框架对比与选型思考.md">
+            
+                <span>
+            
+                    
+                        <b>4.40.</b>
+                    
+                    2026年，还需要微前端吗？——三大框架对比与选型思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.41" data-path="16-Electron基础篇.html">
+            
+                <a href="16-Electron基础篇.html">
+            
+                    
+                        <b>4.41.</b>
+                    
+                    Electron基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.42" data-path="17-uniapp基础篇.html">
+            
+                <a href="17-uniapp基础篇.html">
+            
+                    
+                        <b>4.42.</b>
+                    
+                    Uniapp基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.43" data-path="17-uniapp离线打包（Android）篇.html">
+            
+                <a href="17-uniapp离线打包（Android）篇.html">
+            
+                    
+                        <b>4.43.</b>
+                    
+                    Uniapp离线打包（Android）篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.44" data-path="18-sentry基础篇（vue）.html">
+            
+                <a href="18-sentry基础篇（vue）.html">
+            
+                    
+                        <b>4.44.</b>
+                    
+                    Sentry基础篇（Vue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.45" data-path="19-视口和软键盘对视口的影响.html">
+            
+                <a href="19-视口和软键盘对视口的影响.html">
+            
+                    
+                        <b>4.45.</b>
+                    
+                    视口和软键盘对视口的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.46" data-path="20-WebGL从入门到实践.html">
+            
+                <a href="20-WebGL从入门到实践.html">
+            
+                    
+                        <b>4.46.</b>
+                    
+                    WebGL从入门到实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.47" data-path="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                <a href="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                    
+                        <b>4.47.</b>
+                    
+                    Three.Js基础实战：从画一个立方体开始，掌握3D世界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.48" data-path="22-ReactNative基础篇.html">
+            
+                <a href="22-ReactNative基础篇.html">
+            
+                    
+                        <b>4.48.</b>
+                    
+                    ReactNative基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49" data-path="代码规范/">
+            
+                <a href="代码规范/">
+            
+                    
+                        <b>4.49.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.49.1" data-path="代码规范/00-前端规范.html">
+            
+                <a href="代码规范/00-前端规范.html">
+            
+                    
+                        <b>4.49.1.</b>
+                    
+                    前端规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.2" data-path="代码规范/01-HTML.html">
+            
+                <a href="代码规范/01-HTML.html">
+            
+                    
+                        <b>4.49.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.3" data-path="代码规范/02-CSS.html">
+            
+                <a href="代码规范/02-CSS.html">
+            
+                    
+                        <b>4.49.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.4" data-path="代码规范/03-JS.html">
+            
+                <a href="代码规范/03-JS.html">
+            
+                    
+                        <b>4.49.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../html系列/00-HTML基础知识.html">
+            
+                <a href="../html系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../html系列/00-HTML基础知识02.html">
+            
+                <a href="../html系列/00-HTML基础知识02.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML基础知识02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../html系列/00-HTML常见问答.html">
+            
+                <a href="../html系列/00-HTML常见问答.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    HTML常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../html系列/00-HTML经典实践用例.html">
+            
+                <a href="../html系列/00-HTML经典实践用例.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    HTML经典实践用例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../html系列/03-html探索系列-meta标签.md">
+            
+                <span>
+            
+                    
+                        <b>5.7.</b>
+                    
+                    Html探索系列 Meta标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                <a href="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                    
+                        <b>5.8.</b>
+                    
+                    DOCTYPE：文档类型与浏览器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="../html系列/05-DHTML（动态网页）简介.html">
+            
+                <a href="../html系列/05-DHTML（动态网页）简介.html">
+            
+                    
+                        <b>5.9.</b>
+                    
+                    DHTML（动态网页）简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="../html系列/06-HTML标签详解.md">
+            
+                <span>
+            
+                    
+                        <b>5.10.</b>
+                    
+                    HTML标签详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="../html系列/07-HTML布局的几种方式.html">
+            
+                <a href="../html系列/07-HTML布局的几种方式.html">
+            
+                    
+                        <b>5.11.</b>
+                    
+                    HTML布局的几种方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="../html系列/08-HTML全局属性.html">
+            
+                <a href="../html系列/08-HTML全局属性.html">
+            
+                    
+                        <b>5.12.</b>
+                    
+                    HTML全局属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                <a href="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                    
+                        <b>5.13.</b>
+                    
+                    标记语言演进：从GML到HTML动态标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.14" data-path="../html系列/_关于html.html">
+            
+                <a href="../html系列/_关于html.html">
+            
+                    
+                        <b>5.14.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Javascript系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../javascript系列/00-基础知识.html">
+            
+                <a href="../javascript系列/00-基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../javascript系列/00-常见问答.html">
+            
+                <a href="../javascript系列/00-常见问答.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../javascript系列/00-应用示例.html">
+            
+                <a href="../javascript系列/00-应用示例.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../javascript系列/00-趣味示例.html">
+            
+                <a href="../javascript系列/00-趣味示例.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    趣味示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../javascript系列/00-进阶知识.html">
+            
+                <a href="../javascript系列/00-进阶知识.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    进阶知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    基础篇 01 数据类型之基本类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    基础篇 01 数据类型之引用类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                <a href="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    基础篇 02 类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../javascript系列/01-基础篇-03-运算符.html">
+            
+                <a href="../javascript系列/01-基础篇-03-运算符.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                    基础篇 03 运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                <a href="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    基础篇 04 正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                <a href="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                    
+                        <b>6.11.</b>
+                    
+                    基础篇 05 AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="../javascript系列/01-基础篇-06--window对象.html">
+            
+                <a href="../javascript系列/01-基础篇-06--window对象.html">
+            
+                    
+                        <b>6.12.</b>
+                    
+                    基础篇 06  Window对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                <a href="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                    
+                        <b>6.13.</b>
+                    
+                    基础篇 07 Error、JSON、Math、Console对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                <a href="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                    
+                        <b>6.14.</b>
+                    
+                    基础篇 08 History、URL、Screen、Navigator、Location对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                    
+                        <b>6.15.</b>
+                    
+                    基础篇 09 文档对象模型（DOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                <a href="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                    
+                        <b>6.16.</b>
+                    
+                    基础篇 10 Document对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.17" data-path="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                <a href="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                    
+                        <b>6.17.</b>
+                    
+                    基础篇 11 Element对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.18" data-path="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                <a href="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                    
+                        <b>6.18.</b>
+                    
+                    基础篇 12 Event对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.19" data-path="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                <a href="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                    
+                        <b>6.19.</b>
+                    
+                    基础篇 13 键盘、鼠标、触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.20" data-path="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                <a href="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                    
+                        <b>6.20.</b>
+                    
+                    基础篇 14 MutationObserver对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.21" data-path="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                    
+                        <b>6.21.</b>
+                    
+                    基础篇 15 CSS对象模型（CSSOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.22" data-path="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                <a href="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                    
+                        <b>6.22.</b>
+                    
+                    进阶篇 01 Prototype对象和继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.23" data-path="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                    
+                        <b>6.23.</b>
+                    
+                    进阶篇 02 Promise对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.24" data-path="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                <a href="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                    
+                        <b>6.24.</b>
+                    
+                    进阶篇 03 有特性的一些事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.25" data-path="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                    
+                        <b>6.25.</b>
+                    
+                    进阶篇 04 Proxy对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.26" data-path="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                    
+                        <b>6.26.</b>
+                    
+                    进阶篇 05 Reflect对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.27" data-path="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                <a href="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                    
+                        <b>6.27.</b>
+                    
+                    进阶篇 06 Class（类）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.28" data-path="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                <a href="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                    
+                        <b>6.28.</b>
+                    
+                    进阶篇 07 迭代器（Iterator）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.29" data-path="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                <a href="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                    
+                        <b>6.29.</b>
+                    
+                    进阶篇 08 Generator和Async函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.30" data-path="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                <a href="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                    
+                        <b>6.30.</b>
+                    
+                    进阶篇 09 JavaScript异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.31" data-path="../javascript系列/04-Date对象和日期时间字符串格式.md">
+            
+                <span>
+            
+                    
+                        <b>6.31.</b>
+                    
+                    Date对象和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.32" data-path="../javascript系列/05-Canvas基础入门篇.html">
+            
+                <a href="../javascript系列/05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.32.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.33" data-path="../javascript系列/05-Canvas进阶篇.html">
+            
+                <a href="../javascript系列/05-Canvas进阶篇.html">
+            
+                    
+                        <b>6.33.</b>
+                    
+                    Canvas进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.34" data-path="../javascript系列/06-SVG基础入门篇.html">
+            
+                <a href="../javascript系列/06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.34.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.35" data-path="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.35.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.36" data-path="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.36.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.37" data-path="../javascript系列/08-谈谈JavaScript的作用域和上下文.md">
+            
+                <span>
+            
+                    
+                        <b>6.37.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.38" data-path="../javascript系列/10-复制内容到剪贴板.html">
+            
+                <a href="../javascript系列/10-复制内容到剪贴板.html">
+            
+                    
+                        <b>6.38.</b>
+                    
+                    复制内容到剪贴板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.39" data-path="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                <a href="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                    
+                        <b>6.39.</b>
+                    
+                    44道JavaScript难题，还不来考考？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.40" data-path="../javascript系列/_关于Javascript.html">
+            
+                <a href="../javascript系列/_关于Javascript.html">
+            
+                    
+                        <b>6.40.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java系列</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../java系列/01-00-Java入门篇.html">
+            
+                <a href="../java系列/01-00-Java入门篇.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    00 Java入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../java系列/01-01-Java进阶篇.html">
+            
+                <a href="../java系列/01-01-Java进阶篇.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    01 Java进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../java系列/01-02-Java高级篇.html">
+            
+                <a href="../java系列/01-02-Java高级篇.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    02 Java高级篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../java系列/02-pom.xml详解.html">
+            
+                <a href="../java系列/02-pom.xml详解.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Pom.Xml详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../java系列/03-01-SpringBoot入门篇.html">
+            
+                <a href="../java系列/03-01-SpringBoot入门篇.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    01 SpringBoot入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../java系列/05-轻量应用服务器部署指南（腾讯云）.md">
+            
+                <span>
+            
+                    
+                        <b>7.6.</b>
+                    
+                    轻量应用服务器部署指南（腾讯云）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../java系列/06-keytool命令行工具.md">
+            
+                <span>
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Keytool命令行工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">NodeJs</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../nodeJs/00-0关于Node.js.html">
+            
+                <a href="../nodeJs/00-0关于Node.js.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    0关于Node.Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../nodeJs/00-常见问题.html">
+            
+                <a href="../nodeJs/00-常见问题.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                <a href="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Node.Js：三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                <a href="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                    
+                        <b>8.4.</b>
+                    
+                    Npm包管理器简介及一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                <a href="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                    
+                        <b>8.5.</b>
+                    
+                    NPM：Package.Json详解（中文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                <a href="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                    
+                        <b>8.6.</b>
+                    
+                    NPM：从零开始，开发一个软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="../nodeJs/05-NPM：常用命令.html">
+            
+                <a href="../nodeJs/05-NPM：常用命令.html">
+            
+                    
+                        <b>8.7.</b>
+                    
+                    NPM：常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                <a href="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                    
+                        <b>8.8.</b>
+                    
+                    Node.Js：Fs（文件系统）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                <a href="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                    
+                        <b>8.9.</b>
+                    
+                    Node.Js：Global（全局变量）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="../nodeJs/08-Node.js：HTTP.html">
+            
+                <a href="../nodeJs/08-Node.js：HTTP.html">
+            
+                    
+                        <b>8.10.</b>
+                    
+                    Node.Js：HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="../nodeJs/09-Node.js：module（模块）.html">
+            
+                <a href="../nodeJs/09-Node.js：module（模块）.html">
+            
+                    
+                        <b>8.11.</b>
+                    
+                    Node.Js：Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="../nodeJs/10-Node.js：path（路径）.html">
+            
+                <a href="../nodeJs/10-Node.js：path（路径）.html">
+            
+                    
+                        <b>8.12.</b>
+                    
+                    Node.Js：Path（路径）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                <a href="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                    
+                        <b>8.13.</b>
+                    
+                    Node.Js：Readline（逐行读取）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.14" data-path="../nodeJs/12-锁定项目的Node版本.html">
+            
+                <a href="../nodeJs/12-锁定项目的Node版本.html">
+            
+                    
+                        <b>8.14.</b>
+                    
+                    锁定项目的Node版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../research/02-如何监控前端异常？.html">
+            
+                <a href="../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../research/03-H5页面跳转和刷新.html">
+            
+                <a href="../research/03-H5页面跳转和刷新.html">
+            
+                    
+                        <b>9.3.</b>
+                    
+                    H5页面跳转和刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>9.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>9.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>9.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../research/07-H5可视化编辑.html">
+            
+                <a href="../research/07-H5可视化编辑.html">
+            
+                    
+                        <b>9.7.</b>
+                    
+                    H5可视化编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="../research/08-Web常用功能.html">
+            
+                <a href="../research/08-Web常用功能.html">
+            
+                    
+                        <b>9.8.</b>
+                    
+                    Web常用功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" data-path="../research/10-H5页面生成图片方案总结.html">
+            
+                <a href="../research/10-H5页面生成图片方案总结.html">
+            
+                    
+                        <b>9.9.</b>
+                    
+                    H5页面生成图片方案总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10" data-path="../research/Javascript加密混淆.html">
+            
+                <a href="../research/Javascript加密混淆.html">
+            
+                    
+                        <b>9.10.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.11" data-path="../research/Vue如何导入TypeScript.html">
+            
+                <a href="../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>9.11.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.12" data-path="../research/移动端PDF预览.html">
+            
+                <a href="../research/移动端PDF预览.html">
+            
+                    
+                        <b>9.12.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.13" data-path="../research/纯CSS绘制箭头.html">
+            
+                <a href="../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>9.13.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.14" data-path="../research/网站性能测量和优化方法.html">
+            
+                <a href="../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>9.14.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../tech/00-编程基础知识.html">
+            
+                <a href="../tech/00-编程基础知识.html">
+            
+                    
+                        <b>10.1.</b>
+                    
+                    编程基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="../tech/00-计算机问题概览.html">
+            
+                <a href="../tech/00-计算机问题概览.html">
+            
+                    
+                        <b>10.2.</b>
+                    
+                    计算机问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>10.3.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                <a href="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                    
+                        <b>10.4.</b>
+                    
+                    GOOGLE浏览器的搜索技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="../tech/03-curl的用法指南.html">
+            
+                <a href="../tech/03-curl的用法指南.html">
+            
+                    
+                        <b>10.5.</b>
+                    
+                    Curl的用法指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="../tech/04-sublime3插件篇.html">
+            
+                <a href="../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>10.6.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="../tech/05-Charles安装及使用.html">
+            
+                <a href="../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>10.7.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                <a href="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                    
+                        <b>10.8.</b>
+                    
+                    通过.Gitlab Ci.Yml配置任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="../tech/07-MySQL的基本使用.html">
+            
+                <a href="../tech/07-MySQL的基本使用.html">
+            
+                    
+                        <b>10.9.</b>
+                    
+                    MySQL的基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="../tech/08-看懂什么是环境变量.html">
+            
+                <a href="../tech/08-看懂什么是环境变量.html">
+            
+                    
+                        <b>10.10.</b>
+                    
+                    看懂什么是环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.11" data-path="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                <a href="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                    
+                        <b>10.11.</b>
+                    
+                    为什么0.1+0.2=0.30000000000000004
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.12" data-path="../tech/10-Nginx使用手册：安装、配置、模块扩展与代理详解.md">
+            
+                <span>
+            
+                    
+                        <b>10.12.</b>
+                    
+                    Nginx使用手册：安装、配置、模块扩展与代理详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.13" data-path="../tech/11-常见智力题总结.html">
+            
+                <a href="../tech/11-常见智力题总结.html">
+            
+                    
+                        <b>10.13.</b>
+                    
+                    常见智力题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.14" data-path="../tech/12-Mac终端命令使用.html">
+            
+                <a href="../tech/12-Mac终端命令使用.html">
+            
+                    
+                        <b>10.14.</b>
+                    
+                    Mac终端命令使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.15" data-path="../tech/13-01-Shell脚本入门篇.html">
+            
+                <a href="../tech/13-01-Shell脚本入门篇.html">
+            
+                    
+                        <b>10.15.</b>
+                    
+                    01 Shell脚本入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.16" data-path="../tech/13-02-Shell脚本进阶篇.html">
+            
+                <a href="../tech/13-02-Shell脚本进阶篇.html">
+            
+                    
+                        <b>10.16.</b>
+                    
+                    02 Shell脚本进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.17" data-path="../tech/14-一篇搞定排序算法：原理+图解+JS实现+V8源码解读.md">
+            
+                <span>
+            
+                    
+                        <b>10.17.</b>
+                    
+                    一篇搞定排序算法：原理+图解+JS实现+V8源码解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.18" data-path="../tech/15-glob模式通配符.html">
+            
+                <a href="../tech/15-glob模式通配符.html">
+            
+                    
+                        <b>10.18.</b>
+                    
+                    Glob模式通配符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.19" data-path="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                <a href="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                    
+                        <b>10.19.</b>
+                    
+                    代码整洁之道（摘录笔记）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.20" data-path="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                <a href="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                    
+                        <b>10.20.</b>
+                    
+                    Java的24种设计模式与7大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.21" data-path="../tech/18-观察者和发布订阅模式.html">
+            
+                <a href="../tech/18-观察者和发布订阅模式.html">
+            
+                    
+                        <b>10.21.</b>
+                    
+                    观察者和发布订阅模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.22" data-path="../tech/19-AI模型基础应用篇.html">
+            
+                <a href="../tech/19-AI模型基础应用篇.html">
+            
+                    
+                        <b>10.22.</b>
+                    
+                    AI模型基础应用篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../tools/01-01-Git基础教程.html">
+            
+                <a href="../tools/01-01-Git基础教程.html">
+            
+                    
+                        <b>11.1.</b>
+                    
+                    01 Git基础教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../tools/01-02-Git常见问题.html">
+            
+                <a href="../tools/01-02-Git常见问题.html">
+            
+                    
+                        <b>11.2.</b>
+                    
+                    02 Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../tools/02-01-gitbook入门篇.html">
+            
+                <a href="../tools/02-01-gitbook入门篇.html">
+            
+                    
+                        <b>11.3.</b>
+                    
+                    01 Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="../tools/02-02-gitbook插件篇.html">
+            
+                <a href="../tools/02-02-gitbook插件篇.html">
+            
+                    
+                        <b>11.4.</b>
+                    
+                    02 Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="../tools/02-03-gitbook进阶篇.html">
+            
+                <a href="../tools/02-03-gitbook进阶篇.html">
+            
+                    
+                        <b>11.5.</b>
+                    
+                    03 Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">整理中</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >TypeScript使用指南</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>TypeScript使用指南</p>
+<blockquote>
+<h4 id="typescript-is-javascript-with-syntax-for-types">TypeScript is JavaScript with syntax for types.</h4>
+<p>TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.</p>
+<p>——<a href="https://www.typescriptlang.org/zh/" target="_blank">TypeScript 官网</a></p>
+</blockquote>
+<p>TypeScript 是由微软开发的一种开源的编程语言，是 JavaScript 的一个超集，扩展了 JavaScript 的语法。</p>
+<p>从本质上说，<strong>TypeScript 是 JavaScript 的一个强类型（静态类型）的版本</strong>， 它可以编译成普通的 JavaScript 代码。 TypeScript 支持任意浏览器、任意环境、任意系统。</p>
+<h3 id="typescript特性">TypeScript特性</h3>
+<h4 id="类型系统">类型系统</h4>
+<p>从 TypeScript 的名字就可以看出来，<strong>「类型」</strong>是其最核心的特性。</p>
+<p>我们知道，JavaScript 是一门非常灵活的编程语言：</p>
+<ul>
+<li>它没有类型约束，一个变量可能初始化时是字符串，过一会儿又被赋值为数字。</li>
+<li>由于隐式类型转换的存在，有的变量的类型很难在运行前就确定。</li>
+<li><strong>基于原型的面向对象编程</strong>，使得原型上的属性或方法可以在运行时被修改。</li>
+<li>函数是 JavaScript 中的一等公民，可以赋值给变量，也可以当作参数或返回值。</li>
+</ul>
+<p>这种灵活性就像一把双刃剑，一方面使得 JavaScript 蓬勃发展，无所不能，从 2013 年开始就一直蝉联最普遍使用的编程语言排行榜冠军；另一方面也使得它的代码质量参差不齐，维护成本高，运行时错误多。</p>
+<p>而 TypeScript 的类型系统，为 JavaScript 提供了静态类型检查以及使用看起来像基于类的面向对象编程语法操作 Prototype，并且与编辑器紧密集成，在编辑器中尽早捕获错误，在很大程度上弥补了 JavaScript 的缺点。</p>
+<h4 id="静态类型">静态类型</h4>
+<p>类型系统按照<strong>「类型检查的时机」</strong>来分类，可以分为动态类型和静态类型。</p>
+<p><strong>动态类型</strong>是指在运行时才会进行类型检查，这种语言的类型错误往往会导致运行时错误。JavaScript 是一门解释型语言，没有编译阶段，所以它是动态类型，以下这段代码在运行时才会报错：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> foo = <span class="hljs-number">1</span>;
+foo.<span class="hljs-title function_">split</span>(<span class="hljs-string">' '</span>);
+<span class="hljs-comment">// Uncaught TypeError: foo.split is not a function</span>
+<span class="hljs-comment">// 运行时会报错（foo.split 不是一个函数），造成线上 bug</span>
+</code></pre>
+<p><strong>静态类型</strong>是指编译阶段就能确定每个变量的类型，这种语言的类型错误往往会导致语法错误。TypeScript 在运行前需要先编译为 JavaScript，而在编译阶段就会进行类型检查，所以 TypeScript 是静态类型，这段 TypeScript 代码在编译阶段就会报错了：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> foo = <span class="hljs-number">1</span>;
+foo.<span class="hljs-title function_">split</span>(<span class="hljs-string">' '</span>);
+<span class="hljs-comment">// Property 'split' does not exist on type 'number'.</span>
+<span class="hljs-comment">// 编译时会报错（数字没有 split 方法），无法通过编译</span>
+</code></pre>
+<h4 id="弱类型">弱类型</h4>
+<p>类型系统按照<strong>「是否允许隐式类型转换」</strong>来分类，可以分为强类型和弱类型。</p>
+<p>JavaScript 和 TypeScript 都是弱类型语言，所以以下代码都能正常运行：</p>
+<blockquote>
+<p>TypeScript 是完全兼容 JavaScript 的，它不会修改 JavaScript 运行时的特性，所以它也是弱类型。</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span> + <span class="hljs-string">'1'</span>
+<span class="hljs-keyword">typeof</span> a <span class="hljs-comment">// string</span>
+</code></pre>
+<p>运行时数字 1 会被隐式类型转换为字符串 '1'，加号（+）被识别为字符串拼接，所以打印出结果是字符串 '11'。</p>
+<p>作为对比，Python 是强类型，以下代码会在运行时报错：</p>
+<pre><code class="lang-python"><span class="hljs-built_in">print</span>(<span class="hljs-number">1</span> + <span class="hljs-string">'1'</span>)
+<span class="hljs-comment"># TypeError: unsupported operand type(s) for +: 'int' and 'str'</span>
+</code></pre>
+<p>若要修复该错误，需要进行强制类型转换：</p>
+<pre><code class="lang-python"><span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span>(<span class="hljs-number">1</span>) + <span class="hljs-string">'1'</span>)
+</code></pre>
+<p>强弱是相对的，Python 在处理整型和浮点型相加时，会将整型隐式转换为浮点型，但是这并不影响 Python 是强类型的结论，因为大部分情况下 Python 并不会进行隐式类型转换。</p>
+<p>相比而言，JavaScript 和 TypeScript 中不管加号两侧是什么类型，都可以通过隐式类型转换计算出一个结果——而不是报错——所以 JavaScript 和 TypeScript 都是弱类型。</p>
+<p>虽然 TypeScript 不限制加号两侧的类型，但是我们可以借助 TypeScript 提供的类型系统，以及 ESLint 提供的代码检查功能，来限制加号两侧必须同为数字或同为字符串。这在一定程度上使得 TypeScript 向「强类型」更近一步了——当然，这种限制是可选的。</p>
+<p>这样的类型系统体现了 TypeScript 的核心设计理念：<strong>在完整保留 JavaScript 运行时行为的基础上，通过引入静态类型系统来提高代码的可维护性，减少可能出现的 bug。</strong></p>
+<h4 id="适用于任何规模">适用于任何规模</h4>
+<p>TypeScript 非常适用于大型项目——这是显而易见的，类型系统可以为大型项目带来更高的可维护性，以及更少的 bug。</p>
+<p>在中小型项目中推行 TypeScript 的最大障碍就是认为使用 TypeScript 需要写额外的代码，降低开发效率。但事实上，由于有 <strong>类型推论</strong>，大部分类型都不需要手动声明了。相反，TypeScript 增强了编辑器（IDE）的功能，包括代码补全、接口提示、跳转到定义、代码重构等，这在很大程度上提高了开发效率。而且 TypeScript 有近百个编译选项，如果你认为类型检查过于严格，那么可以通过修改编译选项来降低类型检查的标准。</p>
+<p>TypeScript 还可以和 JavaScript 共存。这意味着如果你有一个使用 JavaScript 开发的旧项目，又想使用 TypeScript 的特性，那么你不需要急着把整个项目都迁移到 TypeScript，你可以使用 TypeScript 编写新文件，然后在后续更迭中逐步迁移旧文件。如果一些 JavaScript 文件的迁移成本太高，TypeScript 也提供了一个方案，可以让你在不修改 JavaScript 文件的前提下，编写一个类型声明文件，实现旧项目的渐进式迁移。</p>
+<p>事实上，就算你从来没学习过 TypeScript，你也可能已经在不知不觉中使用到了 TypeScript——在 VSCode 编辑器中编写 JavaScript 时，代码补全和接口提示等功能就是通过 TypeScript Language Service 实现的。</p>
+<h4 id="与标准同步发展">与标准同步发展</h4>
+<p>TypeScript 的另一个重要的特性就是坚持与 ECMAScript 标准同步发展。</p>
+<p>ECMAScript 是 JavaScript 核心语法的标准，自 2015 年起，每年都会发布一个新版本，包含一些新的语法。</p>
+<p>一个新的语法从提案到变成正式标准，需要经历以下几个阶段：</p>
+<ul>
+<li>Stage 0：展示阶段，仅仅是提出了讨论、想法，尚未正式提案。</li>
+<li>Stage 1：征求意见阶段，提供抽象的 API 描述，讨论可行性，关键算法等。</li>
+<li>Stage 2：草案阶段，使用正式的规范语言精确描述其语法和语义。</li>
+<li>Stage 3：候选人阶段，语法的设计工作已完成，需要浏览器、Node.js 等环境支持，搜集用户的反馈。</li>
+<li>Stage 4：定案阶段，已准备好将其添加到正式的 ECMAScript 标准中。</li>
+</ul>
+<p>一个语法进入到 Stage 3 阶段后，TypeScript 就会实现它。一方面，让我们可以尽早的使用到最新的语法，帮助它进入到下一个阶段；另一方面，处于 Stage 3 阶段的语法已经比较稳定了，基本不会有语法的变更，这使得我们能够放心的使用它。</p>
+<p>除了实现 ECMAScript 标准之外，TypeScript 团队也推进了诸多语法提案，比如可选链操作符（?.）、空值合并操作符（??）、Throw 表达式、正则匹配索引等。</p>
+<h3 id="为什么要使用typescript？">为什么要使用TypeScript？</h3>
+<p>TypeScript 解决了 JavaScript 的 <strong>痛点</strong>：</p>
+<ul>
+<li>弱类型和没有命名空间，很难模块化，难以运用到大型项目开发。TypeScript 在编译的时候提供了一套机制保证强类型判断，利用关键字 moudle 实现了类似命名空间的效果，适合进行大型项目的开发。</li>
+<li>JavaScript 不是面向对象语言。TypeScript 提供了一些语法糖帮助大家实现面向对象的编程。</li>
+</ul>
+<p>TypeScript 是为开发大型应用而设计的，编译它产生  JavaScript 以确保兼容性。由于 TypeScript 是 JavaScript 的严格超集，任何现有的 JavaScript 程序都是合法的 TypeScript 程序。</p>
+<p>TypeScript 编译器本身也是用 TypeScript 编写，并被转译为 JavaScript。</p>
+<h4 id="typescript更可靠">TypeScript更可靠</h4>
+<p>类型的定义和编译器的引入，可使你避免掉代码中的大多数愚蠢错误。</p>
+<ul>
+<li>静态类型化，通过类型注解提供编译时的静态类型检查；</li>
+<li>类型安全，在编码期间检测错误的功能，而不是在编译项目时检测错误。</li>
+</ul>
+<p>Rollbar 于 2018 年统计了<a href="https://rollbar.com/blog/top-10-javascript-errors-from-1000-projects-and-how-to-avoid-them/" target="_blank">前端项目中 Top10 的错误类型</a>：</p>
+<pre><code class="lang-shell">Uncaught TypeError: Cannot read property
+TypeError: ‘undefined’ is not an object (evaluating
+TypeError: null is not an object
+(unknown): Script error
+TypeError: Object doesn’t support property
+TypeError: ‘undefined’ is not a function
+Uncaught RangeError
+TypeError: Cannot read property ‘length’
+Uncaught TypeError: Cannot set property
+ReferenceError: event is not defined
+</code></pre>
+<p>事实证明，其中很多是 null 或未定义的错误。一个好的静态类型检查系统（如：Typescript）可以帮助避免它们。如果需要类型但尚未定义，它可以警告您。</p>
+<h4 id="typescript更清晰">TypeScript更清晰</h4>
+<p>显式类型使代码可读性更高，所以我们的注意力将会更集中在系统究竟是如何构建的，以及系统的不同部分如何相互作用。在大型系统中，能够在记住上下文的同时抽象出系统的其余部分是很重要的。类型的定义使我们能够做到这一点。</p>
+<p>TypeScript 包含一组非常好的面向对象编程（OOP）特性，这些特性有助于维护健壮和干净的代码；这提高了代码质量和可维护性。这些 OOP 特性使 TypeScript 代码非常整洁和有组织性。</p>
+<ul>
+<li>大型的开发项目，使用 TypeScript 工具来进行重构更容易、便捷；</li>
+<li>引入了JavaScript中没有的“类”概念；</li>
+<li>引入模块的概念，可以把声明、数据、函数和类封装在模块中。</li>
+</ul>
+<h4 id="typescript更灵活">TypeScript更灵活</h4>
+<p>与 Java、C++ 不同，Typescript 没有严格要求 100% 的静态类型覆盖。Javascript 代码可以用 Typescript 直接编译通过。所以 Javascript 项目想迁移 Typescript ，只需要批量把后缀改成 .ts，当你在一些地方希望享受静态类型的好处时，再逐渐补充类型定义。而碰到静态类型没有带来实质利益的 Case，也大可不必定义类型或者用 any 来定义。</p>
+<p>TypeScript 支持为现存 JavaScript 库添加类型信息的定义文件，方便其他程序像使用静态类型的值一样使用现有库中的值。</p>
+<h4 id="ide编辑器智能提示">IDE/编辑器智能提示</h4>
+<p>TypeScript 通过类型定义文件，解决了 IDE/编辑器无法智能提示的痛点。</p>
+<h3 id="发展历史">发展历史</h3>
+<p>TypeScript 开发者寻求一种不破坏现有标准兼容性和跨平台支持的解决方案。知道 ECMAScript 标准为未来基于类编程提供支持后，Typescript 开发便基于此方案。这形成了包含一组新的语法扩展的一个 JavaScript 编译器，一个基于此提案的超集，可将 TypeScript 语法编译为常规的 JavaScript。从这个意义上来讲，TypeScript 是ECMAScript 2015 预期内容的预览版本。提案中未包括的可选静态类型被添加到了 TypeScript 中，有助于促进工具和 IDE 支持。</p>
+<ul>
+<li>经过两年的内部开发，微软在 2012 年 10 月发布了 TypeScript 第一个版本（0.8）。最初，只有 Microsoft Visual Studio IDE 支持，随后，逐渐在其他 IDE 中以插件形式支持，目前大部分主流的文本编辑器，例如Emacs、Vim、Webstorm、Atom 和微软发布的 Visual Studio Code 都能支持 TypeScript 语法。</li>
+<li>2013 年，发布了 TypeScript 0.9 版本，增加了对泛型的支持。</li>
+<li>2014 年 4 月，发布了 TypeScript 1.0 版本。</li>
+<li>2014 年 7 月，发布了新的 TypeScript 编辑器，声称其性能提高了5倍。同时，代码托管由 CodePlex 迁移至GitHub。</li>
+<li>2014 年 10 月，Angular 发布了 2.0 版本，它是一个基于 TypeScript 开发的前端框架。</li>
+<li>2015 年 1 月，ts-loader 发布，webpack 可以编译 TypeScript 文件了。</li>
+<li>2015 年 4 月，微软发布了 Visual Studio Code，它内置了对 TypeScript 语言的支持，它自身也是用 TypeScript 开发的。</li>
+<li>2016 年 5 月，@types/react、@types/node 发布，TypeScript 可以开发 React、Node.js 应用了。</li>
+<li><p>2016 年 9 月 22 日，TypeScript 2.0 发布，其中引入了几个功能，例如开发者可以选择不为变量分配空值等。</p>
+</li>
+<li><p>2018 年 7 月 30 日，TypeScript 3.0 发布，其中包含许多新功能，例如剩余参数（页面存档备份，存于互联网档案馆）、展开语法（页面存档备份，存于互联网档案馆）、带有元组的剩余参数、带有通用类型的剩余参数等。</p>
+</li>
+<li><p>2019 年 2 月，TypeScript 宣布由官方团队来维护 typescript-eslint，以支持在 TypeScript 文件中运行 ESLint 检查。</p>
+</li>
+<li><p>2020 年 5 月，Deno 发布了 1.0 版本，它是一个 JavaScript 和 TypeScript 运行时。</p>
+</li>
+<li>2020 年 8 月，TypeScript 发布了 4.0 版本。</li>
+<li>2020 年 9 月，Vue 发布了 3.0 版本，官方支持 TypeScript。</li>
+</ul>
+<h3 id="一个简单示例">一个简单示例</h3>
+<p><strong>安装：</strong> <code>npm install -g typescript</code>。</p>
+<p><strong>运行</strong>： <code>tsc hello.ts</code>、<code>tsc -w hello.ts</code>（启动监听模式）。</p>
+<p>约定使用 TypeScript 编写的文件以 .ts 为后缀，用 TypeScript 编写 .jsx 时，以 .tsx 为后缀。</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">// hello.ts</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHello</span>(<span class="hljs-params"><span class="hljs-attr">person</span>: <span class="hljs-built_in">string</span></span>) {
+  <span class="hljs-keyword">return</span> <span class="hljs-string">'Hello, '</span> + person;
+}
+
+<span class="hljs-keyword">let</span> user = <span class="hljs-string">'Tom'</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">sayHello</span>(user));
+</code></pre>
+<p>这时候会生成一个编译好的文件 <code>hello.js</code>：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHello</span>(<span class="hljs-params">person</span>) {
+  <span class="hljs-keyword">return</span> <span class="hljs-string">'Hello, '</span> + person;
+}
+<span class="hljs-keyword">var</span> user = <span class="hljs-string">'Tom'</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">sayHello</span>(user));
+</code></pre>
+<p>TypeScript 最大的优势之一便是增强了编辑器和 IDE 的功能，包括代码补全、接口提示、跳转到定义、重构等。主流的编辑器都支持 TypeScript，推荐使用 Visual Studio Code。</p>
+<h3 id="类型定义">类型定义</h3>
+<h4 id="基础类型">基础类型</h4>
+<p>JavaScript 中基础类型有：布尔值、数字、字符串、null、undefined、Symbol、BigInt。</p>
+<p>布尔值类型定义：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> <span class="hljs-attr">isDone</span>: <span class="hljs-built_in">boolean</span> = <span class="hljs-literal">false</span>;
+</code></pre>
+<p>注意：boolean 表示是布尔值基础类型，使用构造函数 <code>Boolean</code> 创造的对象不是布尔值：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> <span class="hljs-attr">isDone</span>: <span class="hljs-built_in">boolean</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Boolean</span>(<span class="hljs-literal">true</span>);
+<span class="hljs-comment">// 'boolean' is a primitive, but 'Boolean' is a wrapper object. Prefer using 'boolean' when possible.</span>
+</code></pre>
+<p>事实上 <code>new Boolean()</code> 返回的是一个 Boolean 对象：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> <span class="hljs-attr">isDone</span>: <span class="hljs-title class_">Boolean</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Boolean</span>(<span class="hljs-literal">true</span>);
+</code></pre>
+<p>直接调用 Boolean 也可以返回一个 boolean 类型：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> <span class="hljs-attr">isDone</span>: <span class="hljs-built_in">boolean</span> = <span class="hljs-title class_">Boolean</span>(<span class="hljs-literal">true</span>);
+</code></pre>
+<p>在 TypeScript 中，boolean 是 JavaScript 中的基本类型，而 Boolean 是 JavaScript 中的构造函数。其他基础类型（除了 null 和 undefined）一样。</p>
+<p>数字类型定义：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">let</span> <span class="hljs-attr">decimalismNum</span>: <span class="hljs-built_in">number</span> = <span class="hljs-number">6</span>;   <span class="hljs-comment">// 十进制数字</span>
+<span class="hljs-keyword">let</span> <span class="hljs-attr">hexNum</span>: <span class="hljs-built_in">number</span> = <span class="hljs-number">0xf00d</span>;     <span class="hljs-comment">// 十六进制数字</span>
+<span class="hljs-keyword">let</span> <span class="hljs-attr">binaryNum</span>: <span class="hljs-built_in">number</span> = <span class="hljs-number">0b1010</span>;  <span class="hljs-comment">// 二进制数字</span>
+<span class="hljs-keyword">let</span> <span class="hljs-attr">octonaryNum</span>: <span class="hljs-built_in">number</span> = <span class="hljs-number">0o744</span>; <span class="hljs-comment">// 八进制数字</span>
+<span class="hljs-keyword">let</span> <span class="hljs-attr">notANum</span>: <span class="hljs-built_in">number</span> = <span class="hljs-title class_">NaN</span>;
+<span class="hljs-keyword">let</span> <span class="hljs-attr">infinityNum</span>: <span class="hljs-built_in">number</span> = <span class="hljs-title class_">Infinity</span>;
+</code></pre>
+<p>字符串类型定义：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">let</span> <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">'Tom'</span>;
+<span class="hljs-keyword">let</span> <span class="hljs-attr">title</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">`This is <span class="hljs-subst">${name}</span> sawyer`</span>;
+</code></pre>
+<p>Null和Undefined类型定义：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">let</span> <span class="hljs-attr">undef</span>: <span class="hljs-literal">undefined</span> = <span class="hljs-literal">undefined</span>;
+<span class="hljs-keyword">let</span> <span class="hljs-attr">nul</span>: <span class="hljs-literal">null</span> = <span class="hljs-literal">null</span>;
+</code></pre>
+<p>undefined 和 null 是所有类型的子类型。也就是说 undefined 类型的变量，可以赋值给数字、字符串等类型。</p>
+<p>然而，当你指定了 --strictNullChecks 标记，null 和 undefined 只能赋值给 void 和它们各自。 </p>
+<h4 id="any">Any</h4>
+<p>任意值（Any）用来表示允许赋值为任意类型。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">let</span> <span class="hljs-attr">num</span>: <span class="hljs-built_in">any</span> = <span class="hljs-string">'seven'</span>;
+num = <span class="hljs-number">7</span>;
+</code></pre>
+<p> any 类型访问任何属性都是允许的：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> <span class="hljs-attr">anyThing</span>: <span class="hljs-built_in">any</span> = <span class="hljs-string">'hello'</span>;
+anyThing.<span class="hljs-property">myName</span>
+anyThing.<span class="hljs-property">myName</span>.<span class="hljs-property">firstName</span>
+</code></pre>
+<p>变量如果在声明的时候，未指定其类型，那么它会被识别为任意值类型：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">let</span> something; <span class="hljs-comment">// 相当于 let something: any;</span>
+something = <span class="hljs-string">'seven'</span>;
+something = <span class="hljs-number">7</span>;
+</code></pre>
+<h4 id="void">Void</h4>
+<p>JavaScript 没有空值（Void）的概念，在 TypeScript 中，可以用 void 表示没有任何返回值的函数：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">alertName</span>(<span class="hljs-params"></span>): <span class="hljs-built_in">void</span> {
+  <span class="hljs-title function_">alert</span>(<span class="hljs-string">'My name is Tom'</span>);
+}
+</code></pre>
+<p>声明一个 void 类型的变量没有什么用，因为你只能将它赋值为 undefined 和 null（只在 --strictNullChecks 未指定时）：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">let</span> <span class="hljs-attr">unusable</span>: <span class="hljs-built_in">void</span> = <span class="hljs-literal">undefined</span>;
+</code></pre>
+<h4 id="never">Never</h4>
+<p>never 类型表示的是那些永不存在的值的类型：</p>
+<ul>
+<li>一个从来不会有返回值的函数；</li>
+<li>一个总是会抛出错误的函数。</li>
+</ul>
+<pre><code class="lang-typescript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">error</span>(<span class="hljs-params"><span class="hljs-attr">message</span>: <span class="hljs-built_in">string</span></span>): <span class="hljs-built_in">never</span> {
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(message);
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">fail</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">return</span> <span class="hljs-title function_">error</span>(<span class="hljs-string">"Something failed"</span>);
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">infiniteLoop</span>(<span class="hljs-params"></span>): <span class="hljs-built_in">never</span> {
+  <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+  }
+}
+</code></pre>
+<p>变量也可能是 never类型，当它们被<strong>永不为真的类型保护所约束时</strong>。？？</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> <span class="hljs-attr">nvr</span>: <span class="hljs-built_in">never</span> = (<span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">'Error'</span>);
+})();
+</code></pre>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">IObject</span> {
+  <span class="hljs-attr">a</span>: <span class="hljs-built_in">string</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-built_in">number</span>
+}
+<span class="hljs-keyword">const</span> obj : <span class="hljs-title class_">IObject</span> = {
+  <span class="hljs-attr">a</span>: <span class="hljs-string">''</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-number">0</span>
+}
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">TKey</span> = keyof <span class="hljs-title class_">IObject</span>
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">setValue</span> (<span class="hljs-params">option : <span class="hljs-built_in">any</span></span>) {
+  <span class="hljs-keyword">const</span> key : <span class="hljs-title class_">TKey</span> = option.<span class="hljs-property">key</span>;
+  obj[key] = <span class="hljs-string">''</span> <span class="hljs-comment">// 报错：Type 'string' is not assignable to type 'never'.(2322)</span>
+  <span class="hljs-comment">// (obj[key] as IObject[keyof IObject]) = '' // 正确</span>
+}
+</code></pre>
+<p>never 类型是任何类型的子类型，也可以赋值给任何类型；然而，没有类型是 never 的子类型或可以赋值给 never 类型（除了never 本身之外），即使 any 也不可以赋值给 never。</p>
+<h4 id="数组">数组</h4>
+<p> 有多种方式可以定义数组：一是在元素类型后面接上 []，表示由此类型元素组成的一个数组：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> <span class="hljs-attr">list</span>: <span class="hljs-built_in">number</span>[] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+</code></pre>
+<p>二是使用数组泛型，Array &lt;元素类型&gt;：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> <span class="hljs-attr">list</span>: <span class="hljs-title class_">Array</span>&lt;<span class="hljs-built_in">number</span>&gt; = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+</code></pre>
+<p>三是用接口表示数组，一般不会用这种方式，这种方式适用于类数组，如 IArguments、NodeList、HTMLCollection ：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">List</span> {
+  [<span class="hljs-attr">index</span>: <span class="hljs-built_in">number</span>]: <span class="hljs-built_in">number</span>;
+}
+<span class="hljs-keyword">const</span> <span class="hljs-attr">list</span>: <span class="hljs-title class_">List</span> = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+</code></pre>
+<pre><code class="lang-typescript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">let</span> <span class="hljs-attr">args</span>: {
+    [<span class="hljs-attr">index</span>: <span class="hljs-built_in">number</span>]: <span class="hljs-built_in">number</span>;
+    <span class="hljs-attr">length</span>: <span class="hljs-built_in">number</span>;
+    <span class="hljs-attr">callee</span>: <span class="hljs-title class_">Function</span>;
+  } = <span class="hljs-variable language_">arguments</span>;
+}
+</code></pre>
+<h4 id="元组">元组</h4>
+<p>元组类型允许表示一个已知元素数量和类型的数组，各元素的类型不必相同。 比如，你可以定义一对值分别为  string 和 number 类型的元组。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">let</span> <span class="hljs-attr">x</span>: [<span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>];
+x = [<span class="hljs-string">'hello'</span>, <span class="hljs-number">10</span>]; <span class="hljs-comment">// OK</span>
+x = [<span class="hljs-number">10</span>, <span class="hljs-string">'hello'</span>]; <span class="hljs-comment">// Error</span>
+</code></pre>
+<p>当访问一个越界的元素，会使用联合类型替代，即，可以是 string，也可以是 number，但不能是其他类型：</p>
+<pre><code class="lang-javascript">x[<span class="hljs-number">3</span>] = <span class="hljs-string">'world'</span> <span class="hljs-comment">// OK</span>
+x[<span class="hljs-number">5</span>] = <span class="hljs-string">'Tom'</span>   <span class="hljs-comment">// OK</span>
+x[<span class="hljs-number">6</span>] = <span class="hljs-literal">true</span>    <span class="hljs-comment">// Error</span>
+</code></pre>
+<h4 id="object">Object</h4>
+<p>object 表示非基础类型，也就是上述基础类型之外的类型。</p>
+<p>使用 object 类型，就可以更好的表示像 Object.create 这样的API。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"><span class="hljs-attr">o</span>: <span class="hljs-built_in">object</span> | <span class="hljs-literal">null</span></span>): <span class="hljs-built_in">void</span>;
+
+<span class="hljs-title function_">create</span>({ <span class="hljs-attr">prop</span>: <span class="hljs-number">0</span> }); <span class="hljs-comment">// OK</span>
+<span class="hljs-title function_">create</span>(<span class="hljs-literal">null</span>); <span class="hljs-comment">// OK</span>
+
+<span class="hljs-title function_">create</span>(<span class="hljs-number">42</span>); <span class="hljs-comment">// Error</span>
+<span class="hljs-title function_">create</span>(<span class="hljs-string">"string"</span>); <span class="hljs-comment">// Error</span>
+<span class="hljs-title function_">create</span>(<span class="hljs-literal">false</span>); <span class="hljs-comment">// Error</span>
+<span class="hljs-title function_">create</span>(<span class="hljs-literal">undefined</span>); <span class="hljs-comment">// Error</span>
+</code></pre>
+<h4 id="枚举">枚举</h4>
+<p>enum 类型是对 JavaScript 标准数据类型的一个补充。</p>
+<p><strong>数字类型枚举：</strong></p>
+<p>使用枚举我们可以定义一些有名字的数字常量。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">enum</span> <span class="hljs-title class_">Color</span> { <span class="hljs-title class_">Red</span>, <span class="hljs-title class_">Green</span>, <span class="hljs-title class_">Blue</span> }
+<span class="hljs-keyword">let</span> <span class="hljs-attr">c</span>: <span class="hljs-title class_">Color</span> = <span class="hljs-title class_">Color</span>.<span class="hljs-property">Green</span>;
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-title class_">Color</span>;
+(<span class="hljs-keyword">function</span> (<span class="hljs-params">Color</span>) {
+  <span class="hljs-title class_">Color</span>[<span class="hljs-title class_">Color</span>[<span class="hljs-string">"Red"</span>] = <span class="hljs-number">0</span>] = <span class="hljs-string">"Red"</span>;
+  <span class="hljs-title class_">Color</span>[<span class="hljs-title class_">Color</span>[<span class="hljs-string">"Green"</span>] = <span class="hljs-number">1</span>] = <span class="hljs-string">"Green"</span>;
+  <span class="hljs-title class_">Color</span>[<span class="hljs-title class_">Color</span>[<span class="hljs-string">"Blue"</span>] = <span class="hljs-number">2</span>] = <span class="hljs-string">"Blue"</span>;
+})(<span class="hljs-title class_">Color</span> || (<span class="hljs-title class_">Color</span> = {}));
+<span class="hljs-keyword">var</span> c = <span class="hljs-title class_">Color</span>.<span class="hljs-property">Green</span>;
+
+<span class="hljs-comment">// console.log(Color)</span>
+<span class="hljs-comment">// 0: "Red"</span>
+<span class="hljs-comment">// 1: "Green"</span>
+<span class="hljs-comment">// 2: "Blue"</span>
+<span class="hljs-comment">// Blue: 2</span>
+<span class="hljs-comment">// Green: 1</span>
+<span class="hljs-comment">// Red: 0</span>
+</code></pre>
+<p>默认情况下，从 0 开始为元素编号，也可以手动的指定成员的数值：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">enum</span> <span class="hljs-title class_">Color</span> { <span class="hljs-title class_">Red</span> = <span class="hljs-number">1</span>, <span class="hljs-title class_">Green</span>, <span class="hljs-title class_">Blue</span> }
+<span class="hljs-keyword">let</span> <span class="hljs-attr">c</span>: <span class="hljs-title class_">Color</span> = <span class="hljs-title class_">Color</span>.<span class="hljs-property">Green</span>;
+</code></pre>
+<p>或者，全部都采用手动赋值：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">enum</span> <span class="hljs-title class_">Color</span> {<span class="hljs-title class_">Red</span> = <span class="hljs-number">1</span>, <span class="hljs-title class_">Green</span> = <span class="hljs-number">2</span>, <span class="hljs-title class_">Blue</span> = <span class="hljs-number">4</span>}
+<span class="hljs-keyword">let</span> <span class="hljs-attr">c</span>: <span class="hljs-title class_">Color</span> = <span class="hljs-title class_">Color</span>.<span class="hljs-property">Green</span>;
+</code></pre>
+<p>枚举类型提供的一个便利是可以由枚举的值得到它的名字。 例如，知道数值为 2，但是不确定它映射到 Color 里的哪个名字：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">enum</span> <span class="hljs-title class_">Color</span> {<span class="hljs-title class_">Red</span> = <span class="hljs-number">1</span>, <span class="hljs-title class_">Green</span>, <span class="hljs-title class_">Blue</span>}
+<span class="hljs-keyword">const</span> <span class="hljs-attr">colorName</span>: <span class="hljs-built_in">string</span> = <span class="hljs-title class_">Color</span>[<span class="hljs-number">2</span>]; <span class="hljs-comment">// Green</span>
+</code></pre>
+<p><strong>字符串类型枚举：</strong></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">enum</span> <span class="hljs-title class_">Status</span> {
+  <span class="hljs-variable constant_">UNKNOWN</span> = <span class="hljs-string">'UNKNOWN'</span>,
+  <span class="hljs-variable constant_">SUCCESS</span> = <span class="hljs-string">'success'</span>,
+  <span class="hljs-variable constant_">ERROR</span> = <span class="hljs-string">'error'</span>,
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-title class_">Status</span>;
+(<span class="hljs-keyword">function</span> (<span class="hljs-params">Status</span>) {
+    <span class="hljs-title class_">Status</span>[<span class="hljs-string">"UNKNOWN"</span>] = <span class="hljs-string">"UNKNOWN"</span>;
+    <span class="hljs-title class_">Status</span>[<span class="hljs-string">"SUCCESS"</span>] = <span class="hljs-string">"success"</span>;
+    <span class="hljs-title class_">Status</span>[<span class="hljs-string">"ERROR"</span>] = <span class="hljs-string">"error"</span>;
+})(<span class="hljs-title class_">Status</span> || (<span class="hljs-title class_">Status</span> = {}));
+
+<span class="hljs-comment">// console.log(Status)</span>
+<span class="hljs-comment">// ERROR: "error"</span>
+<span class="hljs-comment">// SUCCESS: "success"</span>
+<span class="hljs-comment">// UNKNOWN: "UNKNOWN"</span>
+</code></pre>
+<h4 id="接口">接口</h4>
+<p>在 TypeScript 中，我们使用接口来定义对象的类型。</p>
+<p>在面向对象语言中，接口是一个很重要的概念，它是对行为的抽象，而具体如何行动需要由类去实现。</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">// 接口一般首字母大写。</span>
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Person</span> {
+  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
+  <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-comment">// 赋值的时候，变量的形状必须和接口的形状保持一致。</span>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">tom</span>: <span class="hljs-title class_">Person</span> = {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'Tom'</span>,
+  <span class="hljs-attr">age</span>: <span class="hljs-number">25</span>
+};
+</code></pre>
+<p>使用接口需要注意以下问题：</p>
+<ul>
+<li>变量的属性不能比接口少；</li>
+<li>变量的属性不能比接口多；</li>
+<li>接口可以定义可选属性；</li>
+<li>接口可以定义只读属性，只读属性应该在声明变量时赋值，而不是声明后再赋值；</li>
+<li>接口可以定义任意的属性，需要注意的是，一旦定义了任意属性，那么确定属性和可选属性的类型都必须是它的类型的子集。</li>
+</ul>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Person</span> {
+  <span class="hljs-keyword">readonly</span> <span class="hljs-attr">id</span>: <span class="hljs-built_in">number</span>, <span class="hljs-comment">// 只读属性</span>
+  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
+  <span class="hljs-attr">age</span>?: <span class="hljs-built_in">number</span>; <span class="hljs-comment">// 可选属性</span>
+  [<span class="hljs-attr">propName</span>: <span class="hljs-built_in">string</span>]: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span>; <span class="hljs-comment">// 任意属性，其属性类型必须包含 name、age 类型。</span>
+}
+
+<span class="hljs-keyword">const</span> <span class="hljs-attr">tom</span>: <span class="hljs-title class_">Person</span> = {
+  <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'Tom'</span>,
+  <span class="hljs-attr">age</span>: <span class="hljs-number">25</span>,
+  <span class="hljs-attr">gender</span>: <span class="hljs-string">'male'</span>, <span class="hljs-comment">// 任意属性</span>
+  <span class="hljs-attr">birthday</span>: <span class="hljs-number">1651056792048</span> <span class="hljs-comment">// 可加多个任意属性</span>
+};
+<span class="hljs-comment">// tom.id = 2</span>
+<span class="hljs-comment">// 'Person' only refers to a type, but is being used as a value here.ts</span>
+</code></pre>
+<h4 id="函数">函数</h4>
+<p>为函数定义类型，需要给每个参数添加类型之后再为函数本身添加返回值类型。</p>
+<p><strong>注意：</strong> TypeScript 能够根据返回语句自动推断出返回值类型，因此通常省略它。</p>
+<p><strong>用类型定义函数：</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params">x: number, y?: number</span>): number { <span class="hljs-comment">// ? 表示可选参数</span>
+  <span class="hljs-keyword">if</span> (y !== <span class="hljs-literal">undefined</span>) {
+    <span class="hljs-keyword">return</span> x + y
+  }
+  <span class="hljs-keyword">return</span> x
+}
+
+<span class="hljs-keyword">const</span> sum = <span class="hljs-keyword">function</span> (<span class="hljs-params">x: number, y: number</span>): <span class="hljs-function"><span class="hljs-params">number</span> =&gt;</span>
+  <span class="hljs-keyword">return</span> x + y
+}
+<span class="hljs-comment">// 其中，变量 sum 的类型相当于</span>
+<span class="hljs-keyword">const</span> sum : <span class="hljs-function">(<span class="hljs-params">x: number, y: number</span>) =&gt;</span> number = <span class="hljs-keyword">function</span> (<span class="hljs-params">x: number, y: number</span>): number {
+  <span class="hljs-keyword">return</span> x + y
+}
+</code></pre>
+<p><strong>用接口定义函数：</strong></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">SumFunc</span> {
+  (<span class="hljs-attr">x</span>: <span class="hljs-built_in">number</span>, <span class="hljs-attr">y</span>?: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">number</span>;
+}
+<span class="hljs-comment">// 或者</span>
+<span class="hljs-comment">// type SumFunc = (x: number, y?: number) =&gt; number;</span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-attr">sum</span>: <span class="hljs-title class_">SumFunc</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">x, y</span>) {
+  <span class="hljs-keyword">if</span> (y !== <span class="hljs-literal">undefined</span>) {
+    <span class="hljs-keyword">return</span> x + y
+  }
+  <span class="hljs-keyword">return</span> x
+}
+</code></pre>
+<h4 id="类">类</h4>
+<p>传统方法中，JavaScript 通过构造函数实现类的概念，通过原型链实现继承。而在 ES6 引入新特性—— Class。</p>
+<p>TypeScript 除了实现了所有 ES6 中的类的功能以外，还添加了一些新的用法。</p>
+<h5 id="访问修饰符">访问修饰符</h5>
+<ul>
+<li><strong>public：</strong> 修饰公有的属性或方法，可以在任何地方被访问到。默认所有的属性和方法都是公有的。</li>
+<li><strong>private：</strong> 修饰私有的属性或方法，不能在声明它的类的外部访问。</li>
+<li><strong>protected：</strong> 修饰受保护的属性或方法，它和 private 类似，区别是它在子类中也是允许被访问的。</li>
+</ul>
+<p>需要注意的是，修饰符仅用于 TypeScript 编译时代码的检查，并不影响运行时的可访问性。</p>
+<h5 id="readonly修饰符">readonly修饰符</h5>
+<p>readonly 将属性设置为只读的，只读属性必须在声明时或构造函数里被初始化。</p>
+<p>注意，readonly 必须写在上述三个修饰符后面。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> {
+  <span class="hljs-keyword">static</span> hello = <span class="hljs-string">"word"</span>
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> <span class="hljs-attr">type</span>: <span class="hljs-built_in">number</span> = <span class="hljs-number">1</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
+    <span class="hljs-title function_">constructor</span> (<span class="hljs-params"><span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = name
+  }
+    <span class="hljs-keyword">protected</span> <span class="hljs-title function_">getName</span> () : <span class="hljs-built_in">string</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>
+  }
+}
+</code></pre>
+<h5 id="抽象类">抽象类</h5>
+<p>abstract 用于定义抽象类和抽象类内定义抽象方法。抽象类与接口的区别是，抽象类可以包含成员的实现细节。 </p>
+<ul>
+<li>抽象类做为其它派生类的基类使用，一般不会直接被实例化；</li>
+<li>抽象类中的抽象方法必须被子类实现。</li>
+</ul>
+<pre><code class="lang-typescript"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> {
+  ...
+}
+
+<span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>()
+<span class="hljs-comment">// Cannot create an instance of an abstract class.ts(2511)</span>
+</code></pre>
+<h5 id="类与接口">类与接口</h5>
+<p>接口是对类的一部分行为进行抽象，类可以实现接口。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Person</span> {
+  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Person</span> {
+  name = <span class="hljs-string">''</span>
+}
+</code></pre>
+<p>类可以当做接口使用。类定义会创建类的实例的类型和一个构造函数，类能创建出类型，所以能够在允许使用接口的地方使用类。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Point</span> {
+  <span class="hljs-attr">x</span>: <span class="hljs-built_in">number</span>;
+  <span class="hljs-attr">y</span>: <span class="hljs-built_in">number</span>;
+}
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Point3</span>d <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Point</span> {
+  <span class="hljs-attr">z</span>: <span class="hljs-built_in">number</span>;
+}
+<span class="hljs-keyword">const</span> <span class="hljs-attr">point3d</span>: <span class="hljs-title class_">Point3</span>d = {<span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span>};
+</code></pre>
+<h4 id="泛型">泛型</h4>
+<p>泛型是指在定义函数、接口或类的时候，不预先指定具体的类型，而在使用的时候再指定类型的一种特性。使用泛型来创建可重用的函数，一个函数可以支持多种类型的数据。 </p>
+<h5 id="简单的使用">简单的使用</h5>
+<pre><code class="lang-typescript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getLen</span> (<span class="hljs-params"><span class="hljs-attr">arg</span>: <span class="hljs-built_in">number</span> []</span>): <span class="hljs-built_in">number</span> [] {
+  <span class="hljs-keyword">return</span> arg
+}
+</code></pre>
+<pre><code class="lang-typescript"><span class="hljs-title function_">getLen</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]) <span class="hljs-comment">// OK</span>
+<span class="hljs-title function_">getLen</span>(<span class="hljs-string">'123'</span>) <span class="hljs-comment">// Error. Argument of type 'string' is not assignable to parameter of type 'number[]'.</span>
+</code></pre>
+<p>为使该函数可以重用，一种方法是使用 any 类型来定义函数：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getLen</span> (<span class="hljs-params"><span class="hljs-attr">arg</span>: <span class="hljs-built_in">any</span></span>): <span class="hljs-built_in">any</span> {
+  <span class="hljs-keyword">return</span> arg
+}
+</code></pre>
+<p>但是， 使用 any 类型会导致这个函数可以接收和返回任何类型的参数，这样就丢失了一些信息：传入的类型与返回的类型应该是相同的。</p>
+<p>因此，需要一种方法能<strong>约束返回值的类型与传参的类型必须相同</strong>。 这里，我们使用了类型变量，它是一种特殊的变量，只用于表示类型而不是值。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">function</span> getLen&lt;T&gt; (<span class="hljs-attr">arg</span>: T): T {
+  <span class="hljs-keyword">return</span> arg
+}
+</code></pre>
+<p>类型变量 T 捕获传参的类型，之后就可以在函数中使用这个类型做返回值类型，这样就约束了参数类型与返回值类型必须相同。 这个使用类型变量的 getLen 函数就叫做<strong>泛型函数</strong>，它可以适用于多个类型。 </p>
+<p><strong>注意：</strong> T 是泛型参数名，也可以使用其他的泛型参数名（如，A、U、G），只要在数量和使用方式能对应即可。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">function</span> getLen&lt;U&gt; (<span class="hljs-attr">arg</span>: U): U {
+  <span class="hljs-keyword">return</span> arg
+}
+</code></pre>
+<p><strong>泛型函数有两种使用方法：</strong> 一是显示传入参数类型；二是利用类型推论 – 即编译器会根据传入的参数自动确定 T 的类型。。</p>
+<pre><code class="lang-typescript">getLen&lt;<span class="hljs-built_in">string</span>&gt;(<span class="hljs-string">'123'</span>)
+</code></pre>
+<h5 id="泛型约束">泛型约束</h5>
+<p>使用泛型需要注意，创建泛型函数时，函数体必须正确的使用这个通用的类型。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">function</span> getLen&lt;T&gt; (<span class="hljs-attr">arg</span>: T): T {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arg.<span class="hljs-property">length</span>)
+  <span class="hljs-keyword">return</span> arg
+}
+<span class="hljs-comment">// Property 'length' does not exist on type 'T'.</span>
+</code></pre>
+<p>因为，类型变量代表的是任意类型，也就是说，函数的传参可能是数字，而数字是没有 length 属性的。</p>
+<p>一种解决方法，明确指定变量类型是数组：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">function</span> getLen&lt;T&gt; (<span class="hljs-attr">arg</span>: T[]): T[] {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arg.<span class="hljs-property">length</span>)
+  <span class="hljs-keyword">return</span> arg
+}
+</code></pre>
+<p>另一种解决方法是使用<strong>泛型约束</strong>，即，创建一个包含 length 属性的接口，使用 extends 来约束函数的传参必须有一个 length 属性：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">ILength</span> {
+  <span class="hljs-attr">length</span>: <span class="hljs-built_in">number</span>;
+}
+<span class="hljs-keyword">function</span> getLen&lt;T <span class="hljs-keyword">extends</span> <span class="hljs-title class_">ILength</span>&gt; (<span class="hljs-attr">arg</span>: T): T {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arg.<span class="hljs-property">length</span>)
+  <span class="hljs-keyword">return</span> arg
+}
+</code></pre>
+<h5 id="泛型接口、泛型类">泛型接口、泛型类</h5>
+<p>除了泛型函数，还可以创建泛型接口、泛型类，但无法创建泛型枚举和泛型命名空间。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">IFnGetLen</span>&lt;T&gt; {
+  &lt;T&gt;(<span class="hljs-attr">arg</span>: T): T;
+}
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Point</span>&lt;T&gt; {
+  <span class="hljs-attr">z</span>: T;
+  <span class="hljs-attr">get</span>: <span class="hljs-function">(<span class="hljs-params"><span class="hljs-attr">x</span>: T, <span class="hljs-attr">y</span>: T</span>) =&gt;</span> T;
+}
+</code></pre>
+<h5 id="在泛型约束中使用类型参数">在泛型约束中使用类型参数</h5>
+<p>可以声明一个类型参数，且它被另一个类型参数所约束。比如，想用属性名从对象里获取这个属性，并且想确保这个属性存在于对象上的：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">function</span> getProp&lt;T, K <span class="hljs-keyword">extends</span> keyof T&gt;(<span class="hljs-attr">obj</span>: T, <span class="hljs-attr">key</span>: K) {
+  <span class="hljs-keyword">return</span> obj[key];
+}
+
+<span class="hljs-keyword">const</span> params = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">c</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">d</span>: <span class="hljs-number">4</span> };
+<span class="hljs-title function_">getProp</span>(params, <span class="hljs-string">"a"</span>); <span class="hljs-comment">// OK</span>
+<span class="hljs-title function_">getProp</span>(params, <span class="hljs-string">"m"</span>); <span class="hljs-comment">// Error. Argument of type '"m"' is not assignable to parameter of type '"a" | "b" | "c" | "d"'.</span>
+</code></pre>
+<h3 id="进阶内容">进阶内容</h3>
+<h4 id="类型推论">类型推论</h4>
+<p>类型推论即类型是在哪里如何被推断的。</p>
+<p>TypeScript 里，在有些没有明确指出类型的地方，TypeScript 会依照类型推论的规则推断出一个类型。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> num = <span class="hljs-string">'seven'</span>;
+<span class="hljs-comment">// 相当于</span>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">num</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">'seven'</span>;
+</code></pre>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> foo = {
+  <span class="hljs-attr">a</span>: <span class="hljs-number">123</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-number">456</span>
+};
+<span class="hljs-comment">// 相当于</span>
+<span class="hljs-keyword">const</span> foo : {
+  <span class="hljs-attr">a</span>: <span class="hljs-built_in">number</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-built_in">number</span>
+} = {
+  <span class="hljs-attr">a</span>: <span class="hljs-number">123</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-number">456</span>
+};
+foo.<span class="hljs-property">a</span> = <span class="hljs-string">'hello'</span>; <span class="hljs-comment">// Error</span>
+</code></pre>
+<p>如果定义的时候没有赋值，不管之后有没有赋值，都会被推断成 any 类型而完全不被类型检查。</p>
+<h4 id="类型断言">类型断言</h4>
+<p>类型断言相当于可以告诉编译器，“这个值，你当成 XXX 类型来检查”，有点像类型转换。与类型转换的区别是，类型断言只会影响 TypeScript 编译时的类型，不会真的影响到变量的类型。</p>
+<p>类型断言有两种形式：其一是 <strong>尖括号</strong> 语法：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> <span class="hljs-attr">value</span>: <span class="hljs-built_in">any</span> = <span class="hljs-string">"this is a string"</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-attr">len</span>: <span class="hljs-built_in">number</span> = (&lt;<span class="hljs-built_in">string</span>&gt;value).<span class="hljs-property">length</span>;
+</code></pre>
+<p>另一个为 <strong>as</strong> 语法：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> <span class="hljs-attr">value</span>: any = <span class="hljs-string">"this is a string"</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-attr">len</span>: number = (value <span class="hljs-keyword">as</span> string).<span class="hljs-property">length</span>;
+</code></pre>
+<p>两种形式是等价的。但，当在 TypeScript 里使用 JSX 时，只有 as 语法断言是被允许的。</p>
+<h4 id="字符串字面量类型">字符串字面量类型</h4>
+<p>字符串字面量类型用来约束取值只能是某几个字符串中的一个。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">type</span> <span class="hljs-title class_">Status</span> = <span class="hljs-string">'SUCCESS'</span> | <span class="hljs-string">'ERROR'</span> | <span class="hljs-string">'PENDING'</span>;
+<span class="hljs-keyword">let</span> sts : <span class="hljs-title class_">Status</span> =  <span class="hljs-string">"SUCCESS"</span> <span class="hljs-comment">// OK</span>
+sts = <span class="hljs-string">"OK"</span> <span class="hljs-comment">// Error. Type '"OK"' is not assignable to type 'Status'.</span>
+</code></pre>
+<h4 id="联合类型">联合类型</h4>
+<p>联合类型表示取值可以为多种类型中的一种。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">let</span> <span class="hljs-attr">num</span>: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span>;
+num = <span class="hljs-string">'seven'</span>;
+num = <span class="hljs-number">7</span>;
+</code></pre>
+<p>当 TypeScript 不确定一个联合类型的变量到底是哪个类型的时候，会访问此联合类型的所有类型里<strong>共有</strong>的属性或方法：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getLen</span>(<span class="hljs-params"><span class="hljs-attr">value</span>: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span></span>): <span class="hljs-built_in">number</span> {
+  <span class="hljs-keyword">return</span> value.<span class="hljs-property">length</span>;
+}
+<span class="hljs-comment">// Property 'length' does not exist on type 'string | number'.</span>
+<span class="hljs-comment">//   Property 'length' does not exist on type 'number'.ts</span>
+</code></pre>
+<p>当变量被赋值时，会根据类型推论的规则推断出一个类型：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">let</span> <span class="hljs-attr">num</span>: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span>;
+num = <span class="hljs-string">'seven'</span>;
+num.<span class="hljs-property">length</span>; <span class="hljs-comment">// OK</span>
+num = <span class="hljs-number">7</span>;
+num.<span class="hljs-property">length</span>; <span class="hljs-comment">// Error</span>
+</code></pre>
+<h4 id="交叉类型">交叉类型</h4>
+<p>交叉类型是将多个类型合并为一个类型，即把现有的多种类型叠加到一起成为一种类型，它包含了所需的所有类型的特性。</p>
+<p><strong>注意： 创建对象必须同时拥有了这三种类型的成员。</strong></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Person</span> {
+  <span class="hljs-attr">a</span>: <span class="hljs-built_in">string</span>
+}
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Person2</span> {
+  <span class="hljs-title function_">log</span> () : <span class="hljs-built_in">void</span>
+}
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Person3</span> {
+  <span class="hljs-attr">b</span>: <span class="hljs-built_in">number</span>
+}
+<span class="hljs-keyword">const</span> person : <span class="hljs-title class_">Person</span> &amp; <span class="hljs-title class_">Person2</span> &amp; <span class="hljs-title class_">Person3</span> = {
+  <span class="hljs-attr">a</span>: <span class="hljs-string">'a'</span>,
+  <span class="hljs-title function_">log</span> () {},
+  <span class="hljs-comment">// b: 1</span>
+}
+<span class="hljs-comment">// Type '{ a: string; log(): void; }' is not assignable to type 'Person &amp; Person2 &amp; Person3'.</span>
+<span class="hljs-comment">//  Property 'b' is missing in type '{ a: string; log(): void; }' but required in type 'Person3'.</span>
+</code></pre>
+<h4 id="命名空间">命名空间</h4>
+<p>类型可以存在于命名空间里，命名空间用来表示全局变量是一个对象，包含很多子属性。</p>
+<p> 比如，有这样的声明 <code>let x: A.B.C</code>， 我们就认为 C 类型来自 A.B 命名空间。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">namespace</span> <span class="hljs-title class_">A</span> {
+  <span class="hljs-keyword">declare</span> <span class="hljs-keyword">namespace</span> <span class="hljs-title class_">B</span> {
+    <span class="hljs-keyword">interface</span> C {}
+  }
+}
+</code></pre>
+<h4 id="模块">模块</h4>
+<p>只要在声明文件中，出现了 import 或 export，那么这个声明文件就是模块声明文件，而不再是全局声明文件。</p>
+<p>在模块声明文件中，所有声明都属于局部声明，都只能在文件内部使用，或者通过 export 供外部使用。</p>
+<p><strong>注意：</strong> <code>declare global</code> 块必须出现在模块声明文件中，才能有效声明全局变量或全局类型。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">export</span> {} <span class="hljs-comment">// 必需要有一个export和import语句</span>
+<span class="hljs-keyword">declare</span> <span class="hljs-variable language_">global</span> {
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p><code>declare module</code> 可以用来为一个没有类型声明的模块声明类型，也可以用来扩展一个模块的类型声明。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">declare</span> <span class="hljs-variable language_">module</span> <span class="hljs-string">'foo'</span> {
+    <span class="hljs-keyword">const</span> <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHello</span> (<span class="hljs-params"><span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span></span>): <span class="hljs-built_in">string</span>
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHi</span>(<span class="hljs-params"></span>): <span class="hljs-built_in">string</span>
+}
+</code></pre>
+<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> sayHi, { name, sayHello } <span class="hljs-keyword">from</span> <span class="hljs-string">'foo'</span>
+<span class="hljs-title function_">sayHi</span>()
+<span class="hljs-title function_">sayHello</span>(name)
+</code></pre>
+<h4 id="三斜线指令">三斜线指令</h4>
+<p>三斜线指令是包含单个 XML 标签的单行注释，用来加载声明文件。</p>
+<p>三斜线指令仅可放在包含它的文件的最顶端。 一个三斜线指令的前面只能出现单行或多行注释，这包括其它的三斜线指令。 如果它们出现在一个语句或声明之后，那么它们会被当做普通的单行注释，并且不具有特殊的涵义。</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference path="..." /&gt;</span>
+</code></pre>
+<p>默认情况下，TypeScript 编译器会加载命令行指定的或者 tsconfig.json 配置文件的 "files" 字段指定的所有声明文件。如果需要加载不在指定范围的声明文件，就需要用到三斜线指令。</p>
+<p><strong>三斜线指令语法：</strong></p>
+<ul>
+<li><code>/// &lt;reference path="..." /&gt;</code>：  用于声明对<strong>文件</strong>的依赖。</li>
+<li><code>/// &lt;reference types="..." /&gt;</code>： 用于声明对<strong>包</strong>的依赖。</li>
+<li><code>/// &lt;reference no-default-lib="true"/&gt;</code>： 告诉编译器在编译过程中不要包含这个默认库。 这与在命令行上使用 --noLib 相似。</li>
+<li><code>/// &lt;amd-module /&gt;</code>： 给编译器传入一个可选的模块名。默认情况下生成的 AMD 模块都是匿名的。</li>
+<li><code>/// &lt;amd-dependency /&gt;</code>： 告诉编译器有一个非 TypeScript 模块依赖需要被注入。这个指令被废弃了，使用 <code>import "moduleName";</code> 代替。</li>
+</ul>
+<p><strong>备注：</strong> path 类型声明的是对文件的依赖，包含路径（相对当前文件或者根目录）信息；types 类型声明的是对 <code>node_modules/@types</code> 文件夹下的类型的依赖，不包含路径信息。</p>
+<p><strong>注意：</strong> 如果指定了 --noResolve 编译选项，三斜线指令会被忽略。</p>
+<h3 id="关键字">关键字</h3>
+<h4 id="keyof操作符">keyof操作符</h4>
+<p>TypeScript 允许遍历某种类型的属性，并通过 keyof 操作符提取其属性的名称。keyof 操作符是在 TypeScript 2.1 版本引入的，该操作符可以用于获取某种类型的所有键（字符串或数字），其返回类型是联合类型。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">IObject</span> {
+    <span class="hljs-attr">a</span>: <span class="hljs-built_in">string</span>,
+    <span class="hljs-attr">b</span>: <span class="hljs-built_in">number</span>,
+    <span class="hljs-attr">c</span>: <span class="hljs-built_in">boolean</span>
+}
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">TKey</span> = keyof <span class="hljs-title class_">IObject</span> <span class="hljs-comment">// 相当于 type TKey = 'a' | 'b' | 'c'</span>
+</code></pre>
+<p>通常，在泛型约束中，可以使用 <code>extends keyof</code> 从对象里获取某个属性：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">function</span> getProp&lt;<span class="hljs-title class_">IObject</span>, K <span class="hljs-keyword">extends</span> keyof <span class="hljs-title class_">IObject</span>&gt;(<span class="hljs-attr">obj</span>: <span class="hljs-title class_">IObject</span>, <span class="hljs-attr">key</span>: K) {
+  <span class="hljs-keyword">return</span> obj[key];
+}
+</code></pre>
+<p><strong>注意：</strong> IObject 接口的属性是非基础类型，在未明确指定属性字段时，对象的属性赋值会报异常。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">IObject</span> {
+  <span class="hljs-attr">a</span>: <span class="hljs-title class_">String</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-title class_">Number</span>,
+  <span class="hljs-attr">c</span>: <span class="hljs-title class_">Boolean</span>
+}
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">TKey</span> = keyof <span class="hljs-title class_">IObject</span>
+
+<span class="hljs-keyword">const</span> obj : <span class="hljs-title class_">IObject</span> = {
+  <span class="hljs-attr">a</span>: <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<span class="hljs-string">''</span>),
+  <span class="hljs-attr">b</span>: <span class="hljs-keyword">new</span> <span class="hljs-title class_">Number</span>(<span class="hljs-number">0</span>),
+  <span class="hljs-attr">c</span>: <span class="hljs-keyword">new</span> <span class="hljs-title class_">Boolean</span>(<span class="hljs-literal">false</span>)
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">setValue</span> (<span class="hljs-params">option : <span class="hljs-built_in">any</span></span>) {
+  <span class="hljs-keyword">const</span> key : <span class="hljs-title class_">TKey</span> = option.<span class="hljs-property">key</span>;
+  obj[key] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<span class="hljs-string">''</span>)
+}
+<span class="hljs-comment">// 报错：</span>
+<span class="hljs-comment">// Type 'String' is not assignable to type 'String &amp; Number &amp; Boolean'.</span>
+<span class="hljs-comment">//  Type 'String' is missing the following properties from type 'Number': toFixed, toExponential, toPrecision(2322)</span>
+</code></pre>
+<h4 id="typeof操作符">typeof操作符</h4>
+<p>typeof 操作符用于获取变量的类型。因此这个操作符的后面接的始终是一个<strong>变量</strong>，且需要运用到类型定义当中。</p>
+<pre><code class="lang-javascript">interface <span class="hljs-title class_">IObject</span> {
+    <span class="hljs-attr">a</span>: string,
+    <span class="hljs-attr">b</span>: number,
+    <span class="hljs-attr">c</span>: boolean
+}
+<span class="hljs-keyword">const</span> obj : <span class="hljs-title class_">IObject</span> = {
+  <span class="hljs-attr">a</span>: <span class="hljs-string">''</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">c</span>: <span class="hljs-literal">false</span>
+}
+
+type <span class="hljs-title class_">TTemp</span> = <span class="hljs-keyword">typeof</span> obj <span class="hljs-comment">// 即 type TTemp = IObject</span>
+</code></pre>
+<p><strong>注意：</strong> typeof 通常用于具有结构的值，比如对象等。</p>
+<p>如果将 typeof 用于原始类型的值，返回的类型将是这个值，通常这样做没有意义：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> a = <span class="hljs-string">'hello'</span>
+<span class="hljs-keyword">type</span> <span class="hljs-variable constant_">T1</span> = <span class="hljs-keyword">typeof</span> a <span class="hljs-comment">// 相当于 type T1 = 'hello'</span>
+</code></pre>
+<h4 id="in">in</h4>
+<p>遍历一个联合类型。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">type</span> <span class="hljs-title class_">TKeys</span> = <span class="hljs-string">'a'</span> | <span class="hljs-string">'b'</span> | <span class="hljs-string">'c'</span>
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">TObj</span> =  {
+  [p <span class="hljs-keyword">in</span> <span class="hljs-title class_">TKeys</span>]: <span class="hljs-built_in">any</span>
+}
+</code></pre>
+<h4 id="extends">extends</h4>
+<p>在 TS 的类型系统中，<code>A extends B</code> 表示类型 A 是否是继承自类型 B，通常用于泛型约束和类型条件表达式。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">IObject</span> {
+  <span class="hljs-attr">a</span>: <span class="hljs-built_in">string</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-built_in">number</span>
+}
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">IObject2</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">IObject</span> {
+  <span class="hljs-attr">c</span>: <span class="hljs-built_in">boolean</span>
+}
+<span class="hljs-keyword">const</span> obj : <span class="hljs-title class_">IObject2</span> = {
+  <span class="hljs-attr">a</span>: <span class="hljs-string">'1'</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">c</span>: <span class="hljs-literal">false</span>
+}
+</code></pre>
+<pre><code class="lang-typescript"><span class="hljs-keyword">function</span> getProp&lt;<span class="hljs-title class_">IObject</span>, K <span class="hljs-keyword">extends</span> keyof <span class="hljs-title class_">IObject</span>&gt;(<span class="hljs-attr">obj</span>: <span class="hljs-title class_">IObject</span>, <span class="hljs-attr">key</span>: K) {
+  <span class="hljs-keyword">return</span> obj[key];
+}
+</code></pre>
+<pre><code class="lang-typescript"><span class="hljs-keyword">type</span> <span class="hljs-variable constant_">T1</span> = <span class="hljs-title class_">IObject2</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">IObject</span> ? <span class="hljs-built_in">number</span> : <span class="hljs-built_in">string</span> <span class="hljs-comment">// type T1 = number</span>
+<span class="hljs-keyword">type</span> <span class="hljs-variable constant_">T2</span> = <span class="hljs-title class_">RegExp</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">IObject</span> ? <span class="hljs-built_in">number</span> : <span class="hljs-built_in">string</span>   <span class="hljs-comment">// type T2 = string</span>
+</code></pre>
+<p>当泛型变量传入联合类型时，会有一些地方可能和想象结果不一样：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">type</span> <span class="hljs-title class_">TArr1</span>&lt;<span class="hljs-title class_">Type</span>&gt; = <span class="hljs-title class_">Type</span> <span class="hljs-keyword">extends</span> <span class="hljs-built_in">any</span> ? <span class="hljs-title class_">Type</span>[] : <span class="hljs-built_in">never</span>
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">TArr2</span>&lt;<span class="hljs-title class_">Type</span>&gt; = [<span class="hljs-title class_">Type</span>] <span class="hljs-keyword">extends</span> <span class="hljs-built_in">any</span> ? <span class="hljs-title class_">Type</span>[] : <span class="hljs-built_in">never</span>
+
+<span class="hljs-keyword">type</span> <span class="hljs-variable constant_">T1</span> = <span class="hljs-title class_">TArr1</span>&lt;<span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span>&gt; <span class="hljs-comment">// 相当于 type T1 = string[] | number[]</span>
+<span class="hljs-keyword">type</span> <span class="hljs-variable constant_">T2</span> = <span class="hljs-title class_">TArr2</span>&lt;<span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span>&gt; <span class="hljs-comment">// 相当于 type T2 = (string | number)[]</span>
+</code></pre>
+<h4 id="infer">infer</h4>
+<p>infer 意为推断，但依据它的作用，其实可以将其理解为「捕获」，infer X 语句的意思就相当于：捕获一个类型并将这个类型分配给类型变量 X 保存。</p>
+<p>infer X 语句放置在哪里呢，放置在一个想要捕获类型的地方，也就是说将 infer X 语句当作一个占位语句放置在本来应该书写类型的地方，就可以捕获到这个类型。</p>
+<p>比如，数组的类型、对象属性类型、函数参数的类型、函数的返回值等。</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">// 用变量 ItemType 捕获数组的类型，也可写为 Array&lt;infer ItemType&gt;</span>
+<span class="hljs-comment">// (infer ItemType)[] 表示任何类型的数组，比如 string[], number[] 等</span>
+<span class="hljs-comment">// infer ItemType 就是将 ItemType 当作一个类型变量，传入的是什么类型的数组，ItemType 就是什么类型。</span>
+<span class="hljs-keyword">type</span> <span class="hljs-variable constant_">T1</span>&lt;T&gt; = T <span class="hljs-title function_">extends</span> (infer <span class="hljs-title class_">ItemType</span>)[] ? <span class="hljs-title class_">ItemType</span> : T
+<span class="hljs-keyword">type</span> <span class="hljs-variable constant_">T11</span> = <span class="hljs-variable constant_">T1</span>&lt;<span class="hljs-built_in">string</span>[]&gt;      <span class="hljs-comment">// type T11 = string</span>
+<span class="hljs-keyword">type</span> <span class="hljs-variable constant_">T12</span> = <span class="hljs-variable constant_">T1</span>&lt;<span class="hljs-title class_">Array</span>&lt;<span class="hljs-built_in">number</span>&gt;&gt; <span class="hljs-comment">// type T12 = number</span>
+<span class="hljs-keyword">type</span> <span class="hljs-variable constant_">T13</span> = <span class="hljs-variable constant_">T1</span>&lt;<span class="hljs-built_in">string</span>&gt;        <span class="hljs-comment">// type T13 = string。非数组类型，条件表达式走了 false 分支，直接返回了泛型变量的类型</span>
+
+<span class="hljs-comment">// 用变量 MsgType 捕获对象属性的类型</span>
+<span class="hljs-keyword">type</span> <span class="hljs-variable constant_">T2</span>&lt;T&gt; = T <span class="hljs-keyword">extends</span> { <span class="hljs-attr">message</span>: infer <span class="hljs-title class_">MsgType</span> } ? <span class="hljs-title class_">MsgType</span> : T
+<span class="hljs-keyword">type</span> <span class="hljs-variable constant_">T21</span> = <span class="hljs-variable constant_">T2</span>&lt;{ <span class="hljs-attr">message</span>: <span class="hljs-built_in">string</span> }&gt; <span class="hljs-comment">// type T21 = string</span>
+<span class="hljs-keyword">type</span> <span class="hljs-variable constant_">T22</span> = <span class="hljs-variable constant_">T2</span>&lt;{ <span class="hljs-attr">message</span>: <span class="hljs-built_in">number</span> }&gt; <span class="hljs-comment">// type T22 = number</span>
+</code></pre>
+<h3 id="声明文件">声明文件</h3>
+<p>一般来讲，组织声明文件的方式取决于库是如何被使用的。 在 JavaScript 中一个库有很多使用方式，这就需要书写声明文件去匹配它们。</p>
+<h4 id="声明语句">声明语句</h4>
+<p>声明语句是指在 TypeScript 中用于声明变量类型、函数类型、类类型、接口、命名空间、模块的语句。</p>
+<ul>
+<li>declare var： 声明全局变量</li>
+<li>declare function： 声明全局方法</li>
+<li>declare class： 声明全局类</li>
+<li>declare enum： 声明全局枚举类型</li>
+<li>declare namespace： 声明（含有子属性的）全局对象</li>
+<li>interface： 声明全局类型</li>
+<li>type： 声明全局类型</li>
+<li>declare global： 扩展全局变量</li>
+<li>declare module： 扩展模块</li>
+</ul>
+<h4 id="声明文件">声明文件</h4>
+<p>声明文件是存放声明语句的文件。</p>
+<p><strong>注意： 声明文件必需以 .d.ts 为后缀。</strong></p>
+<p>一般来说，TypeScript 会解析项目中所有的 *.ts 文件，当然也包含以 <code>.d.ts</code> 结尾的文件。如果无法解析，那么可以检查下 <code>tsconfig.json</code> 中的 files、include 和 exclude 配置。</p>
+<h4 id="声明合并">声明合并</h4>
+<p>声明合并指的是，如果声明了两个以上的同名函数、同名接口、同名命名空间或同名 class ，那么它们会合并成一个类型。</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">reverse</span>(<span class="hljs-params"><span class="hljs-attr">x</span>: <span class="hljs-built_in">number</span></span>): <span class="hljs-built_in">number</span>;
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">reverse</span>(<span class="hljs-params"><span class="hljs-attr">x</span>: <span class="hljs-built_in">string</span></span>): <span class="hljs-built_in">string</span>;
+
+<span class="hljs-comment">// 相当于</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">reverse</span>(<span class="hljs-params"><span class="hljs-attr">x</span>: <span class="hljs-built_in">number</span> | <span class="hljs-built_in">string</span></span>): <span class="hljs-built_in">number</span> | <span class="hljs-built_in">string</span>;
+</code></pre>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Alarm</span> {  <span class="hljs-attr">price</span>: <span class="hljs-built_in">number</span>; }
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Alarm</span> { <span class="hljs-attr">weight</span>: <span class="hljs-built_in">number</span>; }
+
+<span class="hljs-comment">// 相当于</span>
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Alarm</span> {
+    <span class="hljs-attr">price</span>: <span class="hljs-built_in">number</span>;
+    <span class="hljs-attr">weight</span>: <span class="hljs-built_in">number</span>;
+}
+</code></pre>
+<h4 id="第三方声明文件">第三方声明文件</h4>
+<p>在 TypeScript 2.0 以上的版本，获取第三方库的类型声明文件只需要使用 npm。</p>
+<pre><code class="lang-shell">npm install --save @types/lodash
+</code></pre>
+<p>如果一个 lodash 的 npm 包已经包含了它的声明文件，那就不必再去下载相应的 @types 包了。</p>
+<p>下载完后，就可以直接在 TypeScript 里使用 lodash 了。 </p>
+<p>大多数情况下，类型声明包的名字总是与它们在 npm 上的包的名字相同，但是有 <code>@types/</code> 前缀， 但如果你需要的话，你可以在 <a href="https://aka.ms/types这里查找你喜欢的库。" target="_blank">https://aka.ms/types这里查找你喜欢的库。</a></p>
+<h3 id="配置文件">配置文件</h3>
+<p>TypeScript 使用 <code>tsconfig.json</code> 做为编译时的配置文件，TypeScript 编译器可以根据它的信息来对代码进行编译。</p>
+<p>如果一个目录下存在一个 <code>tsconfig.json</code>文件，那么它意味着这个目录是 TypeScript 项目的根目录。<code>tsconfig.json</code> 文件指定了用来编译这个项目的根文件和编译选项。 </p>
+<p>一个项目可以通过以下方式编译：</p>
+<ul>
+<li>不带任何输入文件的情况下调用 <code>tsc</code>，编译器会从当前目录开始去查找 tsconfig.json 文件，逐级向上搜索父目录。</li>
+<li>不带任何输入文件的情况下调用 <code>tsc</code>，且使用命令行参数 --project（或 -p）指定一个包含 tsconfig.json 文件的目录。</li>
+<li>当命令行上指定了输入文件时，<code>tsconfig.json</code> 文件会被忽略。</li>
+</ul>
+<p>运行 <code>tsc --init</code> 命令，初始化 TypeScript 项目并创建一个 <code>tsconfig.json</code> 文件，文件中包含默认配置选项：</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">"compilerOptions"</span>: {
+    <span class="hljs-string">"target"</span>: <span class="hljs-string">"es2016"</span>,
+    <span class="hljs-string">"module"</span>: <span class="hljs-string">"commonjs"</span>,
+    <span class="hljs-string">"esModuleInterop"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"forceConsistentCasingInFileNames"</span>: <span class="hljs-literal">true</span>,
+
+    <span class="hljs-string">"strict"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"skipLibCheck"</span>: <span class="hljs-literal">true</span>
+  }
+}
+</code></pre>
+<p><strong>注意：</strong> 如果 <code>tsconfig.json</code> 文件是个空文件，那么所有默认的文件都会以默认配置选项编译。</p>
+<p><strong>注意：</strong> 在命令行上指定的编译选项会覆盖在 <code>tsconfig.json</code> 文件里的相应选项。</p>
+<p>TypeScript 配置文件包含六个顶级配置项：compileOnSave、files、include、exclude、extends 和compilerOptions，其中 compilerOptions 用来配置编译选项。</p>
+<h4 id="compileroptions">compilerOptions</h4>
+<p>compilerOptions 可以被忽略，这时编译器会使用默认值。在这里查看完整的<a href="https://typescript.bootcss.com/compiler-options.html" target="_blank">编译器选项</a>列表。</p>
+<h5 id="target">target</h5>
+<p>target 指定编译之后的版本目标，可选值有：ES3（默认值）、ES5、ES2015、ES2016、ES2017、ESNext（最新 ES 规范版本）。</p>
+<h5 id="module">module</h5>
+<p>module 指定生成哪个模块系统码，可选值有：None、CommonJS、AMD、System、UMD、ES6 或 ES2015。</p>
+<p>如果不设置 module 选项，则如果 target 设为 ES6，那么 module 默认值为 ES6，否则是 commonjs。</p>
+<h5 id="lib">lib</h5>
+<p>lib 指定编译过程中需要引入的库文件的列表。</p>
+<p>如果你要使用一些 ES6 的新语法，你需要引入 ES6 这个库，或者也可以写 ES2015。如果没有指定 lib 配置，默认会加载一些库，而加载什么库是受 target 影响的。如果 target 为 ES5，默认包含的库有 DOM、ES5 和 ScriptHost；如果 target 是 ES6，默认引入的库有 DOM、ES6、DOM.Iterable 和ScriptHost。</p>
+<h5 id="outfile">outFile</h5>
+<p>outFile 指定将输出文件合并为一个文件，它的值为一个文件路径名。但是要注意，只有设置 module 的值为 amd 和 system 模块时才支持这个配置。</p>
+<p>文件合并的顺序是根据传入编译器的文件顺序和 <code>///&lt;reference&gt;</code> 和 import 的文件顺序决定的。</p>
+<h5 id="outdir">outDir</h5>
+<p>outDir 指定输出文件夹，值为一个文件夹路径字符串，输出的文件都将放置在这个文件夹。</p>
+<h5 id="baseurl">baseUrl</h5>
+<p>baseUrl 设置解析非相对模块名称的基本目录，相对模块不会受 baseUrl 的影响。</p>
+<h5 id="paths">paths</h5>
+<p>paths 设置模块名到基于 baseUrl 的路径映射。如果使用 paths，必须设置 baseUrl。</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">"compilerOptions"</span>: {
+    <span class="hljs-string">"baseUrl"</span>: <span class="hljs-string">"."</span>,
+    <span class="hljs-string">"paths"</span>: {
+      <span class="hljs-string">"jquery"</span>: [<span class="hljs-string">"node_modules/jquery/dist/jquery"</span>], <span class="hljs-comment">// 此处映射是相对于"baseUrl"</span>
+            <span class="hljs-string">"*"</span>: [<span class="hljs-string">"./node_modules/@types/*"</span>, <span class="hljs-string">"./typings/*"</span>],
+    }
+  }
+}
+</code></pre>
+<h5 id="types、typeroots、types">@types、typeRoots、types</h5>
+<p>默认所有可见的 @types 包会在编译过程中被包含进来。<code>node_modules/@types</code> 文件夹下以及它们子文件夹下的所有包都是可见的； 也就是说，<code>./node_modules/@types/</code>，<code>../node_modules/@types/</code>和 <code>../../node_modules/@types/</code> 等等。</p>
+<p>如果指定了 typeRoots，只有 typeRoots 下面的包才会被包含进来。</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">"compilerOptions"</span>: {
+    <span class="hljs-string">"typeRoots"</span> : [<span class="hljs-string">"./typings"</span>]
+  }
+}
+</code></pre>
+<p>这个配置文件会包含所有 <code>./typings</code>下面的包，而不包含 <code>./node_modules/@types</code> 里面的包。</p>
+<p>如果指定了 types，只有被列出来的包才会被包含进来。</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">"compilerOptions"</span>: {
+    <span class="hljs-string">"types"</span> : [<span class="hljs-string">"node"</span>, <span class="hljs-string">"lodash"</span>, <span class="hljs-string">"express"</span>]
+  }
+}
+</code></pre>
+<p>这个配置文件将仅会包含 <code>./node_modules/@types/node</code>、<code>./node_modules/@types/lodash</code> 和 <code>./node_modules/@types/express</code>。<code>/@types/</code>， <code>node_modules/@types/*</code> 里面的其它包不会被引入进来。</p>
+<p>指定 <code>"types": []</code> 来禁用自动引入 @types 包。</p>
+<p><strong>注意：</strong> 自动引入只在你使用了全局的声明时是重要的。 如果你使用 <code>import "foo"</code> 语句，TypeScript 仍然会查找 <code>node_modules</code> 和 <code>node_modules/@types</code> 文件夹来获取 foo 包。</p>
+<h4 id="files、include、exclude">files、include、exclude</h4>
+<p>files 指定一个包含相对或绝对文件路径的列表。</p>
+<p>include 和 exclude 属性指定一个文件 glob 匹配模式列表。</p>
+<p>支持的 glob 通配符有：</p>
+<ul>
+<li><code>*</code> 匹配 0 或多个字符（不包括目录分隔符）；</li>
+<li><code>?</code> 匹配一个任意字符（不包括目录分隔符）</li>
+<li><code>**/</code> 递归匹配任意子目录。</li>
+</ul>
+<p>如果一个 glob 模式里的某部分只包含 <code>*</code> 或 <code>.*</code>，那么仅有支持的文件扩展名类型被包含在内（<code>.ts</code>、<code>.tsx</code>、和<code>.d.ts</code>， 如果 allowJs 选项设置为 true，还包含 <code>.js</code> 和 <code>.jsx</code>）。</p>
+<p>如果 files 和 include 都没有被指定，编译器默认包含当前目录和子目录下所有的 TypeScript 文件（<code>.ts</code>、<code>.d.ts</code> 和 <code>.tsx</code>），排除在 exclude 里指定的文件。如果 allowJs 选项被设置成 true，JS 文件（<code>.js</code> 和 <code>.jsx</code>）也被包含进来。 </p>
+<p>如果指定了 files 或 include，编译器会将它们结合一并包含进来。 使用 outDir 指定的目录下的文件永远会被编译器排除，除非你明确地使用 files 将其包含进来（这时就算用 exclude 指定也没用）。</p>
+<p>使用 include 引入的文件可以使用 exclude 属性过滤。 然而，通过 files 属性明确指定的文件却总是会被包含在内，不管 exclude 如何设置。 如果没有特殊指定， exclude 默认情况下会排除 node_modules、bower_components、jspm_packages 和 outDir 指定的输出目录。</p>
+<p>任何被 files 或 include 指定的文件所引用的文件也会被包含进来。 如，A.ts 引用了 B.ts，因此 B.ts 不能被排除，除非引用它的 A.ts 在 exclude 列表中。</p>
+<p><strong>注意：</strong> 编译器不会去引入那些可能做为输出的文件；比如，假设包含了 index.ts，那么 index.d.ts 和 index.js 会被排除在外。 通常来讲，不推荐只有扩展名的不同来区分同目录下的文件。</p>
+<h4 id="extends">extends</h4>
+<p>tsconfig.json 文件可以利用 extends 属性从另一个配置文件里继承配置。</p>
+<p>extends 是 tsconfig.json 文件里的顶级属性（与compilerOptions、files、include、和 exclude 一样）。 extends 的值是一个字符串，包含指向另一个要继承文件的路径。</p>
+<p>在原文件里的配置先被加载，然后被所继承文件里的配置重写。 如果发现循环引用，则会报错。所继承配置文件的 files、include、exclude、compilerOptions 等属性覆盖源配置文件的属性。</p>
+<p>配置文件里的相对路径在解析时相对于它所在的文件。</p>
+<h4 id="compileonsave">compileOnSave</h4>
+<p>在最顶层设置 compileOnSave 标记，可以让 IDE 在保存文件的时候根据 tsconfig.json 重新生成文件。</p>
+<p>要想支持这个特性需要 Visual Studio 2015、TypeScript1.8.4 以上并且安装 atom-typescript 插件。</p>
+<h3 id="常见报错">常见报错</h3>
+<h5 id="globalproperties-报错（vue-3）">globalProperties 报错（Vue 3）</h5>
+<p>全局挂载过滤器方法，在模板中使用，TS 报错找不到名称。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+  {{filters.parseTime(createTime)}}
+<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-shell">Cannot find name 'filters'.
+</code></pre>
+<p>解决方案：</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">// main.ts</span>
+<span class="hljs-keyword">declare</span> <span class="hljs-variable language_">module</span> <span class="hljs-string">'@vue/runtime-core'</span> {
+  <span class="hljs-comment">// Custom properties added to component instances in any way and can be accessed through `this`</span>
+  <span class="hljs-keyword">interface</span> <span class="hljs-title class_">ComponentCustomProperties</span> {
+    <span class="hljs-attr">filters</span>: <span class="hljs-built_in">any</span>
+  }
+}
+
+app.<span class="hljs-property">config</span>.<span class="hljs-property">globalProperties</span>.<span class="hljs-property">filters</span> = filters
+</code></pre>
+<h5 id="错误码：2691">错误码：2691</h5>
+<pre><code class="lang-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">导入路径不能以<span class="hljs-string">'.ts'</span>扩展名结束。 考虑导入<span class="hljs-string">'./xxx'</span>。</span> 
+An import path cannot end with a '.ts' extension. Consider importing './XXX' instead。
+</code></pre>
+<p>TypeScript 导入 .ts 文件，不需要加 .ts 后缀。</p>
+<h5 id="错误码：2669">错误码：2669</h5>
+<pre><code class="lang-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">全局作用域的扩充只能直接嵌套在外部模块或环境模块声明中。</span> 
+Augmentations for the global scope can only be directly nested in external modules or ambient module declarations。
+</code></pre>
+<pre><code class="lang-typescript"><span class="hljs-comment">// 错误</span>
+<span class="hljs-keyword">declare</span> <span class="hljs-variable language_">global</span> {
+    <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Window</span> {
+        <span class="hljs-attr">DEBUG_TEMP_CONSOLE_FLAG</span>: <span class="hljs-title class_">Boolean</span>;
+    }
+}
+
+<span class="hljs-comment">// 正确</span>
+<span class="hljs-comment">// 有 import、export 语句的，认为是模板文件</span>
+<span class="hljs-keyword">export</span> {}
+<span class="hljs-keyword">declare</span> <span class="hljs-variable language_">global</span> {
+    <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Window</span> {
+        <span class="hljs-attr">DEBUG_FLAG</span>: <span class="hljs-title class_">Boolean</span>;
+    }
+}
+</code></pre>
+<h5 id="错误码：2362">错误码：2362</h5>
+<pre><code class="lang-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">算术运算的左边必须是“any”、“number”或枚举类型。</span> 
+The left-hand side of an arithmetic operation must be of type 'any', 'number' or an enum type.
+</code></pre>
+<pre><code class="lang-typescript"><span class="hljs-comment">// 错误</span>
+<span class="hljs-string">'a2'</span>.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/[^0-9]/</span>, <span class="hljs-string">''</span>) - <span class="hljs-number">1</span>
+
+<span class="hljs-comment">// 正确</span>
+<span class="hljs-title class_">Number</span>(<span class="hljs-string">'a2'</span>.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/[^0-9]/</span>, <span class="hljs-string">''</span>)) - <span class="hljs-number">1</span>
+</code></pre>
+<h5 id="错误码：2343">错误码：2343</h5>
+<pre><code class="lang-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">该语法需要一个名为<span class="hljs-string">'{1}'</span>的导入助手，但模块<span class="hljs-string">'{0}'</span>没有导出成员<span class="hljs-string">'{1}'</span>。</span> 
+This syntax requires an imported helper named '{1}', but module '{0}' has no exported member '{1}'.
+</code></pre>
+<pre><code class="lang-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">此语法需要名为 __spreadArray 的导入帮助器，tslib 中不存在该帮助器。请考虑升级 <span class="hljs-string">"tslib"</span> 的版本。</span>
+This syntax requires an imported helper named __spreadArray which does not exist in 'tslib'. Consider upgrading your version of 'tslib'。
+</code></pre>
+<p>这是 VS Code 的提示。因为 VS Code 是基于 tsLib 导出的。实际上，不做任何事情都不会发生任何不好的事情，只是缺少类型而已。</p>
+<p> 解决方法：升级 tslib。</p>
+<pre><code class="lang-shell">npm i tslib@latest -D
+</code></pre>
+<h5 id="错误码：1109">错误码：1109</h5>
+<pre><code class="lang-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">预期表达式</span>
+Expression expected.ts(1109)
+</code></pre>
+<pre><code class="lang-typescript"><span class="hljs-comment">// 错误。此处应该是一个表达式，即不需要换行</span>
+refForm?.<span class="hljs-property">value</span>?
+  .<span class="hljs-title function_">validate</span>()
+  .<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {})
+  .<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">error : <span class="hljs-built_in">any</span></span>) =&gt;</span> {});
+
+<span class="hljs-comment">// 正确</span>
+refForm?.<span class="hljs-property">value</span>?.<span class="hljs-title function_">validate</span>()
+  .<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {})
+  .<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">error : <span class="hljs-built_in">any</span></span>) =&gt;</span> {});
+</code></pre>
+<h5 id="错误码：1005">错误码：1005</h5>
+<pre><code class="lang-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">预期分号</span>
+':' expected.ts(1005)
+</code></pre>
+<pre><code class="lang-typescript"><span class="hljs-comment">// 错误。应该是不支持该语法</span>
+<span class="hljs-keyword">const</span> obj = {};
+<span class="hljs-keyword">const</span> key = <span class="hljs-string">'a'</span>;
+<span class="hljs-keyword">const</span> value = obj?[key];
+
+<span class="hljs-comment">// 正确</span>
+<span class="hljs-keyword">const</span> obj : <span class="hljs-built_in">any</span> = {};
+<span class="hljs-keyword">const</span> key = <span class="hljs-string">'a'</span>;
+<span class="hljs-keyword">const</span> value = obj[key];
+</code></pre>
+<h3 id="相关问题">相关问题</h3>
+<h4 id="内置对象">内置对象</h4>
+<p>内置对象是指根据标准在全局作用域上存在的对象，这里的标准是指 ECMAScript 和其他环境（比如 DOM）的标准。内置对象可以直接在 TypeScript 中当做定义好了的类型。</p>
+<p>ECMAScript 标准提供的内置对象有：Boolean、Error、Date、RegExp 等。</p>
+<p>DOM 和 BOM 提供的内置对象有：Document、HTMLElement、Event、NodeList 等。</p>
+<p>根据 TypeScript 内置的 <code>lib.dom.d.ts</code> 文件，<a href="https://microsoft.github.io/PowerBI-JavaScript/interfaces/_node_modules_typedoc_node_modules_typescript_lib_lib_dom_d_.htmlelementtagnamemap.html" target="_blank">HTMLElementTagNameMap</a> 接口定义 DOM 类型：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">HTMLElementTagNameMap</span> {
+    <span class="hljs-attr">div</span>: <span class="hljs-title class_">HTMLDivElement</span>,
+    <span class="hljs-attr">p</span>: <span class="hljs-title class_">HTMLParagraphElement</span>,
+    <span class="hljs-attr">span</span>: <span class="hljs-title class_">HTMLSpanElement</span>,
+    <span class="hljs-attr">a</span>: <span class="hljs-title class_">HTMLAnchorElement</span>,
+    <span class="hljs-attr">img</span>: <span class="hljs-title class_">HTMLImageElement</span>,
+    <span class="hljs-attr">video</span>: <span class="hljs-title class_">HTMLVideoElement</span>,
+    <span class="hljs-attr">audio</span>: <span class="hljs-title class_">HTMLAudioElement</span>,
+    <span class="hljs-attr">canvas</span>: <span class="hljs-title class_">HTMLCanvasElement</span>,
+
+    <span class="hljs-attr">html</span>: <span class="hljs-title class_">HTMLHtmlElement</span>,
+    <span class="hljs-attr">body</span>: <span class="hljs-title class_">HTMLBodyElement</span>,
+    <span class="hljs-attr">button</span>: <span class="hljs-title class_">HTMLButtonElement</span>,
+    <span class="hljs-attr">dl</span>: <span class="hljs-title class_">HTMLDListElement</span>,
+    <span class="hljs-attr">form</span>: <span class="hljs-title class_">HTMLFormElement</span>,
+    <span class="hljs-attr">input</span>: <span class="hljs-title class_">HTMLInputElement</span>,
+    <span class="hljs-attr">textarea</span>: <span class="hljs-title class_">HTMLTextAreaElement</span>,
+    <span class="hljs-attr">label</span>: <span class="hljs-title class_">HTMLLabelElement</span>,
+    <span class="hljs-attr">frame</span>: <span class="hljs-title class_">HTMLFrameElement</span>,
+    <span class="hljs-attr">iframe</span>: <span class="hljs-title class_">HTMLIFrameElement</span>,
+    <span class="hljs-attr">ol</span>: <span class="hljs-title class_">HTMLOListElement</span>,
+    <span class="hljs-attr">ul</span>: <span class="hljs-title class_">HTMLUListElement</span>,
+    <span class="hljs-attr">li</span>: <span class="hljs-title class_">HTMLLIElement</span>,
+    <span class="hljs-attr">picture</span>: <span class="hljs-title class_">HTMLPictureElement</span>,
+    <span class="hljs-attr">pre</span>: <span class="hljs-title class_">HTMLPreElement</span>,
+    <span class="hljs-attr">script</span>: <span class="hljs-title class_">HTMLScriptElement</span>,
+    <span class="hljs-attr">select</span>: <span class="hljs-title class_">HTMLSelectElement</span>,
+    ...
+}
+</code></pre>
+<p>TypeScript 核心库（node_modules/typescript/lib/**）文件中定义了所有浏览器环境需要用到的类型，并且是预置在 TypeScript 中的。</p>
+<p><strong>注意：</strong> TypeScript 核心库的定义中不包含 Node.js 部分。</p>
+<h4 id="void、never-的区别？">void、never 的区别？</h4>
+<p>void 表示没有任何类型，never 表示永远不存在的值的类型。</p>
+<p>当一个函数返回空值时，它的返回值为 void 类型，但是，当一个函数永不返回时（或者总是抛出错误），它的返回值为 never 类型。void 类型可以被赋值为 undefined|null（在 strictNullChecking 为 false 时），但是除了 never 本身以外，其他任何类型不能赋值给 never。</p>
+<h4 id="interface-和-type-有什么区别？">interface 和 type 有什么区别？</h4>
+<p>可以简单理解为：interface 描述<strong>数据结构</strong>，type 描述<strong>类型关系</strong>。</p>
+<h5 id="继承或者说扩展的方式不同">继承或者说扩展的方式不同</h5>
+<p>interface 和 type 都可以拓展，并且两者并不是相互独立的，也就是说 interface 可以继承 type，type 也可以继承 interface 。 </p>
+<p>虽然效果差不多，但是两者语法不同：</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">InterfaceName</span> {  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;  }
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">TypeName</span> = {  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;  }
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">User1</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">InterfaceName</span> { 
+    <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>; 
+}
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">User2</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">TypeName</span> { 
+    <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>; 
+}
+
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">User3</span> = <span class="hljs-title class_">InterfaceName</span> &amp; { <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;  }
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">User4</span> = <span class="hljs-title class_">TypeName</span> &amp; { <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;  }
+</code></pre>
+<h5 id="type-可以声明基本类型别名、联合类型、元组等类型">type 可以声明基本类型别名、联合类型、元组等类型</h5>
+<pre><code class="lang-typescript"><span class="hljs-comment">// 基本类型别名</span>
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">Name</span> = <span class="hljs-built_in">string</span>
+
+<span class="hljs-comment">// 联合类型</span>
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Dog</span> { <span class="hljs-title function_">wong</span>(); }
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Cat</span> { <span class="hljs-title function_">miao</span>(); }
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">Pet</span> = <span class="hljs-title class_">Dog</span> | <span class="hljs-title class_">Cat</span>
+
+<span class="hljs-comment">// 元组：定义数组每个位置的类型</span>
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">PetList</span> = [<span class="hljs-title class_">Dog</span>, <span class="hljs-title class_">Pet</span>]
+</code></pre>
+<h5 id="type-能使用-typeof-获取实例的类型进行赋值">type 能使用 typeof 获取实例的类型进行赋值</h5>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> div = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">'div'</span>);
+<span class="hljs-keyword">type</span> B = <span class="hljs-keyword">typeof</span> div
+</code></pre>
+<h5 id="interface-能合并声明，type-不行">interface 能合并声明，type 不行</h5>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">User</span> {
+    <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>
+    <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>
+}
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">User</span> {
+    <span class="hljs-attr">sex</span>: <span class="hljs-built_in">string</span>
+}
+
+<span class="hljs-comment">// 最终合并结果</span>
+<span class="hljs-comment">// User {</span>
+<span class="hljs-comment">//     name: string</span>
+<span class="hljs-comment">//     age: number</span>
+<span class="hljs-comment">//     sex: string </span>
+<span class="hljs-comment">// }</span>
+</code></pre>
+<p>一般来说，如果不清楚什么时候用 interface，什么时候用 type，就优先用 interface 实现，如果不能再用 type。 </p>
+<h3 id="参考资料">参考资料</h3>
+<p><a href="https://typescript.bootcss.com/" target="_blank">Bootcss：TypeScript 中文手册</a></p>
+<p><a href="https://www.tslang.cn/index.html" target="_blank">TypeScript中文文档</a></p>
+<p><a href="https://www.typescriptlang.org/zh/play" target="_blank">TypeScript代码演练场</a></p>
+<p><a href="https://ts.xcatliu.com/" target="_blank">TypeScript 入门教程</a></p>
+<p><a href="https://jkchao.github.io/typescript-book-chinese/" target="_blank">深入理解 TypeScript</a></p>
+<p><a href="https://drylint.com/TypeScript/TS%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6d.ts.html#%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6%E8%AF%AD%E6%B3%95%E5%88%97%E8%A1%A8" target="_blank">TS 声明文件 .d.ts</a></p>
+<p><a href="https://juejin.cn/post/6844903749501059085" target="_blank">Typescript 中的 interface 和 type 到底有什么区别</a></p>
+<p></p><footer class="page-footer"><span class="copyright">© lizhao all right reserved，powered by Gitbook</span><span class="footer-modification">文件修订时间：
+2022-11-14 21:28:28
+</span></footer><p></p>
+<div id="gitalk-container"></div> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"></link> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="12-webpack构建优化篇.html" class="navigation navigation-prev " aria-label="Previous page: Webpack构建优化篇">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="14-Web中图片的使用.html" class="navigation navigation-next " aria-label="Next page: Web中图片的使用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"TypeScript使用指南","level":"4.38","depth":1,"next":{"title":"Web中图片的使用","level":"4.39","depth":1,"path":"frontend/14-Web中图片的使用.md","ref":"frontend/14-Web中图片的使用.md","articles":[]},"previous":{"title":"Webpack构建优化篇","level":"4.37","depth":1,"path":"frontend/12-webpack构建优化篇.md","ref":"frontend/12-webpack构建优化篇.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","summary","sandpack","theme-default","theme-comscore","tbfed-pagefooter","pageview-count","accordion","sharing-plus","back-to-top-button","chapter-fold","klipse","mygitalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"summary":{"exclude":["docs/**"]},"search-pro":{"maxSearchIndexSize":10000000},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"mygitalk":{"flipMoveOptions":{},"clientID":"35175582adb321d85634","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["lizh"],"createIssueManually":false,"distractionFreeMode":false,"repo":"https://github.com/1927344728/fed-knowledge","owner":"lizh","enableHotKey":true,"clientSecret":"2e60c4d61474ec23e752f127e838aa2039e0433e","pagerDirection":"last","labels":["Gitalk"]},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":true,"qzone":true},"sandpack":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"lizhao","honkit":"^6.0.2","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术驿站•LIZHAO","language":"zh","gitbook":"*","description":"这是开发者的技术文档"},"file":{"path":"frontend/13-TypeScript使用指南.md","mtime":"2022-11-14T13:28:28.100Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2026-06-29T12:14:32.945Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-sandpack/honkit-plugin-sandpack.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,3880 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>进阶 05 Web离线应用 · 技术驿站•LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 6.0.2">
+        <meta name="author" content="lizhao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02-进阶-06-WebSocket.html" />
+    
+    
+    <link rel="prev" href="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/00-前端调试随笔.html">
+            
+                <a href="../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/05-JS常见问题概览.html">
+            
+                <a href="../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/07-微信小程序开发.html">
+            
+                <a href="../bugs/07-微信小程序开发.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    微信小程序开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bugs/08-NodeJs常见问题概览.html">
+            
+                <a href="../bugs/08-NodeJs常见问题概览.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    NodeJs常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../bugs/09-Mac常见问题概览.html">
+            
+                <a href="../bugs/09-Mac常见问题概览.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Mac常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../bugs/10-微信环境前端开发指南.html">
+            
+                <a href="../bugs/10-微信环境前端开发指南.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    微信环境前端开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../bugs/99-其他问题汇总.html">
+            
+                <a href="../bugs/99-其他问题汇总.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    其他问题汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../css系列/00-CSS基础知识.html">
+            
+                <a href="../css系列/00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../css系列/00-CSS常见问答.html">
+            
+                <a href="../css系列/00-CSS常见问答.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../css系列/00-CSS常见问答02.html">
+            
+                <a href="../css系列/00-CSS常见问答02.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    CSS常见问答02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../css系列/00-CSS应用示例.html">
+            
+                <a href="../css系列/00-CSS应用示例.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    CSS应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../css系列/00-CSS应用示例02.html">
+            
+                <a href="../css系列/00-CSS应用示例02.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS应用示例02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../css系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../css系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../css系列/04-CSS探索系列-margin.html">
+            
+                <a href="../css系列/04-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                <a href="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    CSS探索系列 Auto关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../css系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../css系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../css系列/05-CSS探索系列-line-height.html">
+            
+                <a href="../css系列/05-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../css系列/05-CSS探索系列-元素居中.html">
+            
+                <a href="../css系列/05-CSS探索系列-元素居中.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    CSS探索系列 元素居中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../css系列/05-CSS探索系列-动画.html">
+            
+                <a href="../css系列/05-CSS探索系列-动画.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    CSS探索系列 动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../css系列/08-重新认识伪类与伪元素.html">
+            
+                <a href="../css系列/08-重新认识伪类与伪元素.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    重新认识伪类与伪元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../css系列/09-自定义表单伪元素样式.html">
+            
+                <a href="../css系列/09-自定义表单伪元素样式.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    自定义表单伪元素样式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../css系列/10-如何理解css中的display属性.html">
+            
+                <a href="../css系列/10-如何理解css中的display属性.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    如何理解Css中的Display属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                <a href="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                <a href="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    一文彻底弄懂CSS中的长度单位
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                <a href="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                    
+                        <b>2.21.</b>
+                    
+                    CSS中一些有特性的属性或属性值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../css系列/14-Web中如何实现长宽比.html">
+            
+                <a href="../css系列/14-Web中如何实现长宽比.html">
+            
+                    
+                        <b>2.22.</b>
+                    
+                    Web中如何实现长宽比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../css系列/15-@规则：@font-face.html">
+            
+                <a href="../css系列/15-@规则：@font-face.html">
+            
+                    
+                        <b>2.23.</b>
+                    
+                    @规则：@Font Face
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                <a href="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                    
+                        <b>2.24.</b>
+                    
+                    @规则：@Media（媒体查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../css系列/15-@规则：其他.html">
+            
+                <a href="../css系列/15-@规则：其他.html">
+            
+                    
+                        <b>2.25.</b>
+                    
+                    @规则：其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../css系列/_关于css.html">
+            
+                <a href="../css系列/_关于css.html">
+            
+                    
+                        <b>2.26.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="00-00-关于Web前端.html">
+            
+                <a href="00-00-关于Web前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    00 关于Web前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="00-01-前端知识概览.html">
+            
+                <a href="00-01-前端知识概览.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    01 前端知识概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="00-02-常用前端库概览.html">
+            
+                <a href="00-02-常用前端库概览.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    02 常用前端库概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="01-基础-00-前端常见问题01.html">
+            
+                <a href="01-基础-00-前端常见问题01.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    基础 00 前端常见问题01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="01-基础-01-浏览器缓存.html">
+            
+                <a href="01-基础-01-浏览器缓存.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    基础 01 浏览器缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="01-基础-02-浏览器工作原理.html">
+            
+                <a href="01-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                <a href="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    基础 03 谈谈前端跨域问题及解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="02-进阶-01-Web性能优化.html">
+            
+                <a href="02-进阶-01-Web性能优化.html">
+            
+                    
+                        <b>4.8.</b>
+                    
+                    进阶 01 Web性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                <a href="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                    
+                        <b>4.9.</b>
+                    
+                    进阶 02 搜索引擎优化（SEO）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                <a href="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                    
+                        <b>4.10.</b>
+                    
+                    进阶 03 前端模块化编程：CommonJS、AMD、CMD、UMD、ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                <a href="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                    
+                        <b>4.11.</b>
+                    
+                    进阶 04 规范代码：Linter、Prettier、EditorConfig
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.12" data-path="02-进阶-05-Web离线应用.html">
+            
+                <a href="02-进阶-05-Web离线应用.html">
+            
+                    
+                        <b>4.12.</b>
+                    
+                    进阶 05 Web离线应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="02-进阶-06-WebSocket.html">
+            
+                <a href="02-进阶-06-WebSocket.html">
+            
+                    
+                        <b>4.13.</b>
+                    
+                    进阶 06 WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="02-进阶-07-Web跨页面通信.html">
+            
+                <a href="02-进阶-07-Web跨页面通信.html">
+            
+                    
+                        <b>4.14.</b>
+                    
+                    进阶 07 Web跨页面通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="02-进阶-08-页面可见性和生命周期.html">
+            
+                <a href="02-进阶-08-页面可见性和生命周期.html">
+            
+                    
+                        <b>4.15.</b>
+                    
+                    进阶 08 页面可见性和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                <a href="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                    
+                        <b>4.16.</b>
+                    
+                    进阶 09 事件循环、宏任务、微任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="02-进阶-10-内存泄漏.html">
+            
+                <a href="02-进阶-10-内存泄漏.html">
+            
+                    
+                        <b>4.17.</b>
+                    
+                    进阶 10 内存泄漏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="02-进阶-11-前端自动化测试.html">
+            
+                <a href="02-进阶-11-前端自动化测试.html">
+            
+                    
+                        <b>4.18.</b>
+                    
+                    进阶 11 前端自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                <a href="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                    
+                        <b>4.19.</b>
+                    
+                    进阶 12 前端也玩多线程？WebWorker其实很简单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="03-高级-01-前端安全深度解析.html">
+            
+                <a href="03-高级-01-前端安全深度解析.html">
+            
+                    
+                        <b>4.20.</b>
+                    
+                    高级 01 前端安全深度解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.21" data-path="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                <a href="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                    
+                        <b>4.21.</b>
+                    
+                    高级 02 CI、CD（Docker+Jenkins+Nginx）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.22" data-path="04-Vue2.x原理篇.html">
+            
+                <a href="04-Vue2.x原理篇.html">
+            
+                    
+                        <b>4.22.</b>
+                    
+                    Vue2.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.23" data-path="04-Vue3初步了解及迁移指南.html">
+            
+                <a href="04-Vue3初步了解及迁移指南.html">
+            
+                    
+                        <b>4.23.</b>
+                    
+                    Vue3初步了解及迁移指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.24" data-path="04-重读Vue教程.html">
+            
+                <a href="04-重读Vue教程.html">
+            
+                    
+                        <b>4.24.</b>
+                    
+                    重读Vue教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.25" data-path="05-React17.x原理篇.html">
+            
+                <a href="05-React17.x原理篇.html">
+            
+                    
+                        <b>4.25.</b>
+                    
+                    React17.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.26" data-path="05-你必须知道的React问题.html">
+            
+                <a href="05-你必须知道的React问题.html">
+            
+                    
+                        <b>4.26.</b>
+                    
+                    你必须知道的React问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.27" data-path="05-重读React教程.html">
+            
+                <a href="05-重读React教程.html">
+            
+                    
+                        <b>4.27.</b>
+                    
+                    重读React教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.28" data-path="06-聊一聊Cookie的一些问题.html">
+            
+                <a href="06-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.28.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.29" data-path="07-SSL证书简介及其生成、使用.md">
+            
+                <span>
+            
+                    
+                        <b>4.29.</b>
+                    
+                    SSL证书简介及其生成、使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.30" data-path="07-如何启动本地HTTPS服务.html">
+            
+                <a href="07-如何启动本地HTTPS服务.html">
+            
+                    
+                        <b>4.30.</b>
+                    
+                    如何启动本地HTTPS服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.31" data-path="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                <a href="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                    
+                        <b>4.31.</b>
+                    
+                    0.0.0.0、127.0.0.1和Localhost的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.32" data-path="09-如何理解HTTP响应的状态码.html">
+            
+                <a href="09-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.32.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.33" data-path="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                <a href="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                    
+                        <b>4.33.</b>
+                    
+                    字符编码那点事：ASCII、Unicode、GBK、UTF 8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.34" data-path="11-HTTP协议的演变历史.md">
+            
+                <span>
+            
+                    
+                        <b>4.34.</b>
+                    
+                    HTTP协议的演变历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.35" data-path="12-webpack4.x原理篇.html">
+            
+                <a href="12-webpack4.x原理篇.html">
+            
+                    
+                        <b>4.35.</b>
+                    
+                    Webpack4.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.36" data-path="12-webpack基础入门篇.html">
+            
+                <a href="12-webpack基础入门篇.html">
+            
+                    
+                        <b>4.36.</b>
+                    
+                    Webpack基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.37" data-path="12-webpack构建优化篇.html">
+            
+                <a href="12-webpack构建优化篇.html">
+            
+                    
+                        <b>4.37.</b>
+                    
+                    Webpack构建优化篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.38" data-path="13-TypeScript使用指南.html">
+            
+                <a href="13-TypeScript使用指南.html">
+            
+                    
+                        <b>4.38.</b>
+                    
+                    TypeScript使用指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.39" data-path="14-Web中图片的使用.html">
+            
+                <a href="14-Web中图片的使用.html">
+            
+                    
+                        <b>4.39.</b>
+                    
+                    Web中图片的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.40" data-path="15-2026年，还需要微前端吗？——三大框架对比与选型思考.md">
+            
+                <span>
+            
+                    
+                        <b>4.40.</b>
+                    
+                    2026年，还需要微前端吗？——三大框架对比与选型思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.41" data-path="16-Electron基础篇.html">
+            
+                <a href="16-Electron基础篇.html">
+            
+                    
+                        <b>4.41.</b>
+                    
+                    Electron基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.42" data-path="17-uniapp基础篇.html">
+            
+                <a href="17-uniapp基础篇.html">
+            
+                    
+                        <b>4.42.</b>
+                    
+                    Uniapp基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.43" data-path="17-uniapp离线打包（Android）篇.html">
+            
+                <a href="17-uniapp离线打包（Android）篇.html">
+            
+                    
+                        <b>4.43.</b>
+                    
+                    Uniapp离线打包（Android）篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.44" data-path="18-sentry基础篇（vue）.html">
+            
+                <a href="18-sentry基础篇（vue）.html">
+            
+                    
+                        <b>4.44.</b>
+                    
+                    Sentry基础篇（Vue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.45" data-path="19-视口和软键盘对视口的影响.html">
+            
+                <a href="19-视口和软键盘对视口的影响.html">
+            
+                    
+                        <b>4.45.</b>
+                    
+                    视口和软键盘对视口的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.46" data-path="20-WebGL从入门到实践.html">
+            
+                <a href="20-WebGL从入门到实践.html">
+            
+                    
+                        <b>4.46.</b>
+                    
+                    WebGL从入门到实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.47" data-path="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                <a href="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                    
+                        <b>4.47.</b>
+                    
+                    Three.Js基础实战：从画一个立方体开始，掌握3D世界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.48" data-path="22-ReactNative基础篇.html">
+            
+                <a href="22-ReactNative基础篇.html">
+            
+                    
+                        <b>4.48.</b>
+                    
+                    ReactNative基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49" data-path="代码规范/">
+            
+                <a href="代码规范/">
+            
+                    
+                        <b>4.49.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.49.1" data-path="代码规范/00-前端规范.html">
+            
+                <a href="代码规范/00-前端规范.html">
+            
+                    
+                        <b>4.49.1.</b>
+                    
+                    前端规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.2" data-path="代码规范/01-HTML.html">
+            
+                <a href="代码规范/01-HTML.html">
+            
+                    
+                        <b>4.49.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.3" data-path="代码规范/02-CSS.html">
+            
+                <a href="代码规范/02-CSS.html">
+            
+                    
+                        <b>4.49.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.4" data-path="代码规范/03-JS.html">
+            
+                <a href="代码规范/03-JS.html">
+            
+                    
+                        <b>4.49.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../html系列/00-HTML基础知识.html">
+            
+                <a href="../html系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../html系列/00-HTML基础知识02.html">
+            
+                <a href="../html系列/00-HTML基础知识02.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML基础知识02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../html系列/00-HTML常见问答.html">
+            
+                <a href="../html系列/00-HTML常见问答.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    HTML常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../html系列/00-HTML经典实践用例.html">
+            
+                <a href="../html系列/00-HTML经典实践用例.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    HTML经典实践用例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../html系列/03-html探索系列-meta标签.md">
+            
+                <span>
+            
+                    
+                        <b>5.7.</b>
+                    
+                    Html探索系列 Meta标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                <a href="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                    
+                        <b>5.8.</b>
+                    
+                    DOCTYPE：文档类型与浏览器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="../html系列/05-DHTML（动态网页）简介.html">
+            
+                <a href="../html系列/05-DHTML（动态网页）简介.html">
+            
+                    
+                        <b>5.9.</b>
+                    
+                    DHTML（动态网页）简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="../html系列/06-HTML标签详解.md">
+            
+                <span>
+            
+                    
+                        <b>5.10.</b>
+                    
+                    HTML标签详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="../html系列/07-HTML布局的几种方式.html">
+            
+                <a href="../html系列/07-HTML布局的几种方式.html">
+            
+                    
+                        <b>5.11.</b>
+                    
+                    HTML布局的几种方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="../html系列/08-HTML全局属性.html">
+            
+                <a href="../html系列/08-HTML全局属性.html">
+            
+                    
+                        <b>5.12.</b>
+                    
+                    HTML全局属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                <a href="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                    
+                        <b>5.13.</b>
+                    
+                    标记语言演进：从GML到HTML动态标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.14" data-path="../html系列/_关于html.html">
+            
+                <a href="../html系列/_关于html.html">
+            
+                    
+                        <b>5.14.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Javascript系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../javascript系列/00-基础知识.html">
+            
+                <a href="../javascript系列/00-基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../javascript系列/00-常见问答.html">
+            
+                <a href="../javascript系列/00-常见问答.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../javascript系列/00-应用示例.html">
+            
+                <a href="../javascript系列/00-应用示例.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../javascript系列/00-趣味示例.html">
+            
+                <a href="../javascript系列/00-趣味示例.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    趣味示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../javascript系列/00-进阶知识.html">
+            
+                <a href="../javascript系列/00-进阶知识.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    进阶知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    基础篇 01 数据类型之基本类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    基础篇 01 数据类型之引用类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                <a href="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    基础篇 02 类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../javascript系列/01-基础篇-03-运算符.html">
+            
+                <a href="../javascript系列/01-基础篇-03-运算符.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                    基础篇 03 运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                <a href="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    基础篇 04 正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                <a href="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                    
+                        <b>6.11.</b>
+                    
+                    基础篇 05 AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="../javascript系列/01-基础篇-06--window对象.html">
+            
+                <a href="../javascript系列/01-基础篇-06--window对象.html">
+            
+                    
+                        <b>6.12.</b>
+                    
+                    基础篇 06  Window对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                <a href="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                    
+                        <b>6.13.</b>
+                    
+                    基础篇 07 Error、JSON、Math、Console对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                <a href="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                    
+                        <b>6.14.</b>
+                    
+                    基础篇 08 History、URL、Screen、Navigator、Location对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                    
+                        <b>6.15.</b>
+                    
+                    基础篇 09 文档对象模型（DOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                <a href="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                    
+                        <b>6.16.</b>
+                    
+                    基础篇 10 Document对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.17" data-path="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                <a href="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                    
+                        <b>6.17.</b>
+                    
+                    基础篇 11 Element对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.18" data-path="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                <a href="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                    
+                        <b>6.18.</b>
+                    
+                    基础篇 12 Event对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.19" data-path="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                <a href="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                    
+                        <b>6.19.</b>
+                    
+                    基础篇 13 键盘、鼠标、触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.20" data-path="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                <a href="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                    
+                        <b>6.20.</b>
+                    
+                    基础篇 14 MutationObserver对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.21" data-path="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                    
+                        <b>6.21.</b>
+                    
+                    基础篇 15 CSS对象模型（CSSOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.22" data-path="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                <a href="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                    
+                        <b>6.22.</b>
+                    
+                    进阶篇 01 Prototype对象和继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.23" data-path="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                    
+                        <b>6.23.</b>
+                    
+                    进阶篇 02 Promise对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.24" data-path="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                <a href="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                    
+                        <b>6.24.</b>
+                    
+                    进阶篇 03 有特性的一些事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.25" data-path="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                    
+                        <b>6.25.</b>
+                    
+                    进阶篇 04 Proxy对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.26" data-path="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                    
+                        <b>6.26.</b>
+                    
+                    进阶篇 05 Reflect对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.27" data-path="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                <a href="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                    
+                        <b>6.27.</b>
+                    
+                    进阶篇 06 Class（类）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.28" data-path="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                <a href="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                    
+                        <b>6.28.</b>
+                    
+                    进阶篇 07 迭代器（Iterator）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.29" data-path="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                <a href="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                    
+                        <b>6.29.</b>
+                    
+                    进阶篇 08 Generator和Async函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.30" data-path="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                <a href="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                    
+                        <b>6.30.</b>
+                    
+                    进阶篇 09 JavaScript异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.31" data-path="../javascript系列/04-Date对象和日期时间字符串格式.md">
+            
+                <span>
+            
+                    
+                        <b>6.31.</b>
+                    
+                    Date对象和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.32" data-path="../javascript系列/05-Canvas基础入门篇.html">
+            
+                <a href="../javascript系列/05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.32.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.33" data-path="../javascript系列/05-Canvas进阶篇.html">
+            
+                <a href="../javascript系列/05-Canvas进阶篇.html">
+            
+                    
+                        <b>6.33.</b>
+                    
+                    Canvas进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.34" data-path="../javascript系列/06-SVG基础入门篇.html">
+            
+                <a href="../javascript系列/06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.34.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.35" data-path="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.35.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.36" data-path="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.36.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.37" data-path="../javascript系列/08-谈谈JavaScript的作用域和上下文.md">
+            
+                <span>
+            
+                    
+                        <b>6.37.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.38" data-path="../javascript系列/10-复制内容到剪贴板.html">
+            
+                <a href="../javascript系列/10-复制内容到剪贴板.html">
+            
+                    
+                        <b>6.38.</b>
+                    
+                    复制内容到剪贴板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.39" data-path="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                <a href="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                    
+                        <b>6.39.</b>
+                    
+                    44道JavaScript难题，还不来考考？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.40" data-path="../javascript系列/_关于Javascript.html">
+            
+                <a href="../javascript系列/_关于Javascript.html">
+            
+                    
+                        <b>6.40.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java系列</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../java系列/01-00-Java入门篇.html">
+            
+                <a href="../java系列/01-00-Java入门篇.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    00 Java入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../java系列/01-01-Java进阶篇.html">
+            
+                <a href="../java系列/01-01-Java进阶篇.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    01 Java进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../java系列/01-02-Java高级篇.html">
+            
+                <a href="../java系列/01-02-Java高级篇.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    02 Java高级篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../java系列/02-pom.xml详解.html">
+            
+                <a href="../java系列/02-pom.xml详解.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Pom.Xml详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../java系列/03-01-SpringBoot入门篇.html">
+            
+                <a href="../java系列/03-01-SpringBoot入门篇.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    01 SpringBoot入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../java系列/05-轻量应用服务器部署指南（腾讯云）.md">
+            
+                <span>
+            
+                    
+                        <b>7.6.</b>
+                    
+                    轻量应用服务器部署指南（腾讯云）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../java系列/06-keytool命令行工具.md">
+            
+                <span>
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Keytool命令行工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">NodeJs</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../nodeJs/00-0关于Node.js.html">
+            
+                <a href="../nodeJs/00-0关于Node.js.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    0关于Node.Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../nodeJs/00-常见问题.html">
+            
+                <a href="../nodeJs/00-常见问题.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                <a href="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Node.Js：三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                <a href="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                    
+                        <b>8.4.</b>
+                    
+                    Npm包管理器简介及一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                <a href="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                    
+                        <b>8.5.</b>
+                    
+                    NPM：Package.Json详解（中文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                <a href="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                    
+                        <b>8.6.</b>
+                    
+                    NPM：从零开始，开发一个软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="../nodeJs/05-NPM：常用命令.html">
+            
+                <a href="../nodeJs/05-NPM：常用命令.html">
+            
+                    
+                        <b>8.7.</b>
+                    
+                    NPM：常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                <a href="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                    
+                        <b>8.8.</b>
+                    
+                    Node.Js：Fs（文件系统）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                <a href="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                    
+                        <b>8.9.</b>
+                    
+                    Node.Js：Global（全局变量）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="../nodeJs/08-Node.js：HTTP.html">
+            
+                <a href="../nodeJs/08-Node.js：HTTP.html">
+            
+                    
+                        <b>8.10.</b>
+                    
+                    Node.Js：HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="../nodeJs/09-Node.js：module（模块）.html">
+            
+                <a href="../nodeJs/09-Node.js：module（模块）.html">
+            
+                    
+                        <b>8.11.</b>
+                    
+                    Node.Js：Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="../nodeJs/10-Node.js：path（路径）.html">
+            
+                <a href="../nodeJs/10-Node.js：path（路径）.html">
+            
+                    
+                        <b>8.12.</b>
+                    
+                    Node.Js：Path（路径）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                <a href="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                    
+                        <b>8.13.</b>
+                    
+                    Node.Js：Readline（逐行读取）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.14" data-path="../nodeJs/12-锁定项目的Node版本.html">
+            
+                <a href="../nodeJs/12-锁定项目的Node版本.html">
+            
+                    
+                        <b>8.14.</b>
+                    
+                    锁定项目的Node版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../research/02-如何监控前端异常？.html">
+            
+                <a href="../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../research/03-H5页面跳转和刷新.html">
+            
+                <a href="../research/03-H5页面跳转和刷新.html">
+            
+                    
+                        <b>9.3.</b>
+                    
+                    H5页面跳转和刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>9.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>9.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>9.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../research/07-H5可视化编辑.html">
+            
+                <a href="../research/07-H5可视化编辑.html">
+            
+                    
+                        <b>9.7.</b>
+                    
+                    H5可视化编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="../research/08-Web常用功能.html">
+            
+                <a href="../research/08-Web常用功能.html">
+            
+                    
+                        <b>9.8.</b>
+                    
+                    Web常用功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" data-path="../research/10-H5页面生成图片方案总结.html">
+            
+                <a href="../research/10-H5页面生成图片方案总结.html">
+            
+                    
+                        <b>9.9.</b>
+                    
+                    H5页面生成图片方案总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10" data-path="../research/Javascript加密混淆.html">
+            
+                <a href="../research/Javascript加密混淆.html">
+            
+                    
+                        <b>9.10.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.11" data-path="../research/Vue如何导入TypeScript.html">
+            
+                <a href="../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>9.11.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.12" data-path="../research/移动端PDF预览.html">
+            
+                <a href="../research/移动端PDF预览.html">
+            
+                    
+                        <b>9.12.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.13" data-path="../research/纯CSS绘制箭头.html">
+            
+                <a href="../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>9.13.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.14" data-path="../research/网站性能测量和优化方法.html">
+            
+                <a href="../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>9.14.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../tech/00-编程基础知识.html">
+            
+                <a href="../tech/00-编程基础知识.html">
+            
+                    
+                        <b>10.1.</b>
+                    
+                    编程基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="../tech/00-计算机问题概览.html">
+            
+                <a href="../tech/00-计算机问题概览.html">
+            
+                    
+                        <b>10.2.</b>
+                    
+                    计算机问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>10.3.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                <a href="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                    
+                        <b>10.4.</b>
+                    
+                    GOOGLE浏览器的搜索技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="../tech/03-curl的用法指南.html">
+            
+                <a href="../tech/03-curl的用法指南.html">
+            
+                    
+                        <b>10.5.</b>
+                    
+                    Curl的用法指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="../tech/04-sublime3插件篇.html">
+            
+                <a href="../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>10.6.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="../tech/05-Charles安装及使用.html">
+            
+                <a href="../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>10.7.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                <a href="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                    
+                        <b>10.8.</b>
+                    
+                    通过.Gitlab Ci.Yml配置任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="../tech/07-MySQL的基本使用.html">
+            
+                <a href="../tech/07-MySQL的基本使用.html">
+            
+                    
+                        <b>10.9.</b>
+                    
+                    MySQL的基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="../tech/08-看懂什么是环境变量.html">
+            
+                <a href="../tech/08-看懂什么是环境变量.html">
+            
+                    
+                        <b>10.10.</b>
+                    
+                    看懂什么是环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.11" data-path="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                <a href="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                    
+                        <b>10.11.</b>
+                    
+                    为什么0.1+0.2=0.30000000000000004
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.12" data-path="../tech/10-Nginx使用手册：安装、配置、模块扩展与代理详解.md">
+            
+                <span>
+            
+                    
+                        <b>10.12.</b>
+                    
+                    Nginx使用手册：安装、配置、模块扩展与代理详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.13" data-path="../tech/11-常见智力题总结.html">
+            
+                <a href="../tech/11-常见智力题总结.html">
+            
+                    
+                        <b>10.13.</b>
+                    
+                    常见智力题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.14" data-path="../tech/12-Mac终端命令使用.html">
+            
+                <a href="../tech/12-Mac终端命令使用.html">
+            
+                    
+                        <b>10.14.</b>
+                    
+                    Mac终端命令使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.15" data-path="../tech/13-01-Shell脚本入门篇.html">
+            
+                <a href="../tech/13-01-Shell脚本入门篇.html">
+            
+                    
+                        <b>10.15.</b>
+                    
+                    01 Shell脚本入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.16" data-path="../tech/13-02-Shell脚本进阶篇.html">
+            
+                <a href="../tech/13-02-Shell脚本进阶篇.html">
+            
+                    
+                        <b>10.16.</b>
+                    
+                    02 Shell脚本进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.17" data-path="../tech/14-一篇搞定排序算法：原理+图解+JS实现+V8源码解读.md">
+            
+                <span>
+            
+                    
+                        <b>10.17.</b>
+                    
+                    一篇搞定排序算法：原理+图解+JS实现+V8源码解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.18" data-path="../tech/15-glob模式通配符.html">
+            
+                <a href="../tech/15-glob模式通配符.html">
+            
+                    
+                        <b>10.18.</b>
+                    
+                    Glob模式通配符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.19" data-path="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                <a href="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                    
+                        <b>10.19.</b>
+                    
+                    代码整洁之道（摘录笔记）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.20" data-path="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                <a href="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                    
+                        <b>10.20.</b>
+                    
+                    Java的24种设计模式与7大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.21" data-path="../tech/18-观察者和发布订阅模式.html">
+            
+                <a href="../tech/18-观察者和发布订阅模式.html">
+            
+                    
+                        <b>10.21.</b>
+                    
+                    观察者和发布订阅模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.22" data-path="../tech/19-AI模型基础应用篇.html">
+            
+                <a href="../tech/19-AI模型基础应用篇.html">
+            
+                    
+                        <b>10.22.</b>
+                    
+                    AI模型基础应用篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../tools/01-01-Git基础教程.html">
+            
+                <a href="../tools/01-01-Git基础教程.html">
+            
+                    
+                        <b>11.1.</b>
+                    
+                    01 Git基础教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../tools/01-02-Git常见问题.html">
+            
+                <a href="../tools/01-02-Git常见问题.html">
+            
+                    
+                        <b>11.2.</b>
+                    
+                    02 Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../tools/02-01-gitbook入门篇.html">
+            
+                <a href="../tools/02-01-gitbook入门篇.html">
+            
+                    
+                        <b>11.3.</b>
+                    
+                    01 Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="../tools/02-02-gitbook插件篇.html">
+            
+                <a href="../tools/02-02-gitbook插件篇.html">
+            
+                    
+                        <b>11.4.</b>
+                    
+                    02 Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="../tools/02-03-gitbook进阶篇.html">
+            
+                <a href="../tools/02-03-gitbook进阶篇.html">
+            
+                    
+                        <b>11.5.</b>
+                    
+                    03 Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">整理中</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >进阶 05 Web离线应用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="进阶篇：web离线应用">进阶篇：Web离线应用</h2>
+<p>丢失网络连接是一个困扰 Web 用户多年的难题，即使是世界上最好的 Web App，如果因为网络原因访问不了它，那体验也是非常糟糕的。所谓 Web 离线应用，就是指在设备没有网络的情况下，Web App 依然可以运行。</p>
+<p>离线应用的核心是<strong>离线缓存技术</strong>。用户第一次访问 Web App 后，将所需资源缓存在本地，以后的访问可以直读取缓存资源，就算没有网络连接也不防碍用户使用。</p>
+<p>使用离线缓存技术带来三个优势：</p>
+<ul>
+<li>离线浏览 - 用户离线时可以访问 Web App；</li>
+<li>速度 - 资源直接来自磁盘，无需网络访问；</li>
+<li>减少服务器负载 - 浏览器将只从服务器下载更新过或更改过的资源。</li>
+</ul>
+<p>前端有两种离线缓存技术：</p>
+<ul>
+<li><strong>AppCache：</strong> 也称 Application Cache。目前已经从 Web 标准中删除，请尽量避免使用。</li>
+<li><strong>Service Workers：</strong> 目前最新的离线缓存技术，是 Web Worker 的一部分。它比 AppCache 更加灵活，因为它可以通过 JavaScript 代码去控制缓存的逻辑。它也是构建 PWA 应用的关键技术之一。</li>
+</ul>
+<h3 id="如何判断是否离线？">如何判断是否离线？</h3>
+<p>要开发离线应用，首先应该知道<strong>设备是否处于离线状态</strong>下：</p>
+<pre><code class="lang-js"><span class="hljs-keyword">if</span> (navigator.<span class="hljs-property">onLine</span>){
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">'联网中'</span>)
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">'离线中'</span>)
+}
+</code></pre>
+<p>同时，我们还可以<strong>监视网络状态改变</strong>，当网络状态在 <strong>联网/离线</strong> 状态变化时，指定执行相应处理。</p>
+<pre><code class="lang-js"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'online'</span>,<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">"网络重新连接了！！"</span>)
+})
+<span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'offline'</span>,<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">"网络断开了。。。"</span>)
+})
+</code></pre>
+<h3 id="application-cache">Application Cache</h3>
+<p>HTML5 提供了一套可以让 Web App 离线运行的机制，开发者可以使用 Application Cache（AppCache）接口定义浏览器需要缓存的供离线用户使用的资源。即便是用户在离线的情况下刷新页面，被缓存的应用都应该被正确的加载和运行。</p>
+<p>AppCache 就是从浏览器的缓存中分出来的一块缓存区。要想在这个缓存区保存数据，需要使用一个缓存清单文件（manifest file），列出要下载和缓存的资源。</p>
+<h4 id="兼容性">兼容性</h4>
+<p>目前（2021.12） Chrome、Firefox、Edge 都已不支持该功能，Safari、IE10~11 还支持。</p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20211214222323886.png" alt="image-20211214222323886"></img></p>
+<p>查看浏览器是否支持 Application Cache：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-property">applicationCache</span>) {
+    <span class="hljs-comment">// 支持 Application Cache</span>
+}
+</code></pre>
+<h4 id="引用清单文件">引用清单文件</h4>
+<p>想要在应用中使用 AppCache，需要在应用页面的 html 节点上增加 <code>manifest</code> 属性：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">manifest</span>=<span class="hljs-string">"example.appcache"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p><code>manifest</code> 属性链接到一个缓存清单文件，文件中列出了应用中需要缓存的资源列表。
+<code>manifest</code> 属性需要包含在每一个需要缓存的页面上，浏览器不会缓存没有 <code>manifest</code> 属性的页面。在 <code>manifest</code> 文件中不需要列出所有希望缓存的页面，对于<strong>包含了 <code>manifest</code> 属性的页面，浏览器会隐式的将其缓存到 AppCache 中</strong>。</p>
+<h4 id="缓存使用流程">缓存使用流程</h4>
+<p>使用 AppCache 会影响加载 Document 的流程：</p>
+<ul>
+<li>当浏览器访问一个包含了 <code>manifest</code> 属性的页面时，如果 AppCache 不存在，浏览器会加载主文档，然后获取所有在 <code>manifest</code> 文件中列出的需要加载的资源，创建 AppCache 的第一个版本。</li>
+<li>此后访问页面，浏览器会从 AppCache（浏览器缓存区） 加载主文档以及 <code>manifest</code> 文件中定义的的缓存资源。此外，浏览器会向 <code>window.applicationCache</code> 对象发送一个 <code>checking</code> 事件，通过 HTTP 请求获取 <code>manifest</code> 文件。</li>
+<li>如果当前的 <code>manifest</code> 文件是最新的，浏览器发送一个 <code>noupdate</code> 事件给 <code>window.applicationCache</code> 对象，更新结束。需要强调的是，如果在服务器端更新了任何缓存中的资源文件，必须同时更新 <code>manifest</code> 文件，以保证浏览器知道需要重新获取所有资源。</li>
+<li>如果 <code>manifest</code> 文件有更新，所有 <code>manifest</code> 文件中列出的需要缓存的文件（包括通过 <code>applicationCache.add()</code> 添加的资源）都会遵循基础的 HTTP 缓存规则，被加载到一个临时缓存中。对于每一个加载到临时缓存区的文件，浏览器会发送一个 <code>progress</code> 事件给 <code>window.applicationCache</code> 对象，如果过程中出现了任何错误，浏览器会发送一个 <code>error</code> 事件，停止更新的过程。</li>
+<li>当浏览器收到所有的文件之后，他们自动会被移动到一个实际的离线缓存区，同时 <code>cahced</code>  事件被发送给 <code>window.applicationCache</code> 对象。由于主文档已经缓存到浏览器中，已经更新的文档除非重新加载（包括人工或者程序内部），否则都不会被重新渲染。</li>
+</ul>
+<h4 id="缓存清单文件">缓存清单文件</h4>
+<p>Web App 中的 <code>manifest</code> 属性，可以通过相对路径和绝对路径（需要和 Web 应用在同一个域下）两种方式进行。<code>manifest</code> 文件的建议的文件扩展名是：<code>.appcache</code>，也可以使用任意的后缀，但是 MIME type 必须是 <code>text/cache-manifest</code>。</p>
+<p>比如，在 Apache 中提供此 MIME 类型，请将以下行添加到您的配置文件中：</p>
+<pre><code class="lang-shell">AddType text/cache-manifest .appcache
+</code></pre>
+<p>或者，在 Google App Engine 的 <code>app.yaml</code> 文件中：</p>
+<pre><code class="lang-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">url:</span> <span class="hljs-string">/mystaticdir/(.*\.appcache)</span>
+  <span class="hljs-attr">static_files:</span> <span class="hljs-string">mystaticdir/\1</span>
+  <span class="hljs-attr">mime_type:</span> <span class="hljs-string">text/cache-manifest</span>
+  <span class="hljs-attr">upload:</span> <span class="hljs-string">mystaticdir/(.*\.appcache)</span>
+</code></pre>
+<p><code>manifest</code> 文件是一个列出了浏览器需要缓存（以及不需要缓存）的文件的简单文本文件，资源通过 URI 进行识别。</p>
+<p>一个 <code>manifest</code> 文件看起来像这样：</p>
+<pre><code class="lang-shell">CACHE MANIFEST
+<span class="hljs-meta prompt_">
+# </span><span class="language-bash">指定缓存的资源</span>
+/favicon.ico
+index.html
+
+CACHE:
+stylesheet.css
+images/logo.png
+scripts/main.js
+<span class="hljs-meta prompt_">
+# </span><span class="language-bash">需要用户联网请求的资源</span>
+NETWORK:
+*
+
+FALLBACK:
+<span class="hljs-meta prompt_"># </span><span class="language-bash">如果main.py不可访问，则会提供Static.html</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">offline.jpg将代替images/large/目录下的所有图片</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">offline.html将代替所有其他无法访问的.html文件</span> 
+/main.py /static.html
+images/large/ images/offline.jpg
+</code></pre>
+<p>清单可以有三个不同的部分：</p>
+<ul>
+<li><code>CACHE:</code>  在此标题下或紧接在 <code>CACHE MANIFEST</code> 之后列出的文件，在第一次下载后将被缓存。</li>
+<li><code>NETWORK:</code> 在此标题下列出的文件永远不会被缓存，且离线时是不可用的。但是，如果 <code>CACHE</code> 也指定了同一文件，则该文件直接使用缓存。通常可以使用 <code>*</code> 来指示所有其他文件都需要因特网连接。</li>
+<li><code>FALLBACK:</code> 在此标题下列出的文件，如果无法建立网络连接，则使用指定的文件替代。第一个 URI 是资源，第二个 URI 是网络请求失败或错误时使用的替代文件，这两个 URI 必须与清单文件来自同一来源。</li>
+</ul>
+<p><strong>有几点要注意：</strong></p>
+<ul>
+<li><p><code>CACHE MANIFEST</code> 字符串是第一行并且是必需的。</p>
+</li>
+<li><p>CACHE，NETWORk 和 FALLBACK 三个段在 <code>manifest</code> 文件中出现的顺序是随意的，并且每个段在文件中出现的次数没有限制。</p>
+</li>
+<li><p>以 <code>#</code> 开头的是注释行，但也可满足其他用途。比如：更新注释行中的日期和版本号是一种使浏览器重新缓存文件的办法。</p>
+</li>
+<li><p>如果有 <code>manifest</code> 属性的 html 文件没有在 <code>manifest</code> 文件中列出来，会将其自身作为需要缓存的资源，加入到 AppCache 中。</p>
+</li>
+<li><p>如果清单或其中指定的资源无法下载，则整个缓存更新过程将失败。如果出现故障，浏览器将继续使用旧的应用程序缓存。</p>
+</li>
+<li><p>不要在 <code>manifest</code> 文件中缓存自身，否则想要通知浏览器更新 <code>manifest</code> 是几乎不可能的。</p>
+</li>
+<li><p><code>/cached-page</code>、<code>/cached-page?value=1</code>、<code>/cached-page?value=2</code> 被认为是单独的页面，它们的 AppCahe 是无法共享的。</p>
+<p>如果需要链接到有参数传递的资源，在 hash 上增加参数，例如：<code>/cached-page#whatever?</code>。</p>
+</li>
+</ul>
+<h4 id="applicationcache对象">applicationCache对象</h4>
+<p>JavaScript 提供了相应的 API 让我们去监控描述文件的状态，这个 API 的核心是 <code>applicationCache</code> 对象，这个对象有一个 <code>status</code> 属性用来标示缓存的当前状态，属性的值是常量，可能值如下：</p>
+<ul>
+<li>0： UNCACHE，无缓存，即没有与页面相关的应用缓存；</li>
+<li>1： IDLE，闲置，即应用缓存不在被更新的过程中；</li>
+<li>2： CHECKING，检查中，即正在加载 <code>manifest</code> 文件或者检查是否已更新；</li>
+<li>3： DOWNLOADING，下载中，即资源正在被下载到缓存中；</li>
+<li>4： UPDATEREADY，更新完成，即应用缓存已经更新了资源，而且所有资源都已下载完毕。但是没有使用 <code>swapCache()</code> 来更新，该状态会触发 <code>updateready</code> 事件；</li>
+<li>5： OBSOLETE，缓存废弃，即 AppCache 已经过时（<code>manifest</code> 文件已删除）。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> appCache = <span class="hljs-variable language_">window</span>.<span class="hljs-property">applicationCache</span>
+<span class="hljs-keyword">switch</span> (appCache.<span class="hljs-property">status</span>) {
+    <span class="hljs-keyword">case</span> appCache.<span class="hljs-property">UNCACHED</span>: <span class="hljs-comment">// appCache.UNCACHED === 0</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'UNCACHED'</span>
+        <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">case</span> appCache.<span class="hljs-property">IDLE</span>: <span class="hljs-comment">// appCache.IDLE === 1</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'IDLE'</span>
+        <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">case</span> appCache.<span class="hljs-property">CHECKING</span>: <span class="hljs-comment">// appCache.CHECKING === 2</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'CHECKING'</span>
+        <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">case</span> appCache.<span class="hljs-property">DOWNLOADING</span>: <span class="hljs-comment">// appCache.DOWNLOADING === 3</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'DOWNLOADING'</span>
+        <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">case</span> appCache.<span class="hljs-property">UPDATEREADY</span>:  <span class="hljs-comment">// appCache.UPDATEREADY === 4</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'UPDATEREADY'</span>
+        <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">case</span> appCache.<span class="hljs-property">OBSOLETE</span>: <span class="hljs-comment">// appCache.OBSOLETE === 5</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'OBSOLETE'</span>
+        <span class="hljs-keyword">break</span>
+    <span class="hljs-attr">default</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'UKNOWN CACHE STATUS'</span>
+        <span class="hljs-keyword">break</span>
+}
+</code></pre>
+<p>正如您所料， <code>applicationCache</code> 对象会提供事件来监视缓存的状态。浏览器会针对下载进度、更新应用程序缓存和错误条件等事件触发事件。缓存状态的改变会相应触发以下事件：</p>
+<ul>
+<li><code>checking</code>：在浏览器为应用缓存查找更新时触发；</li>
+<li><code>error</code>：在检测更新或下载资源期间发生错误时触发；</li>
+<li><code>noupdate</code>：在检查 <code>manifest</code> 文件无变化时触发；</li>
+<li><code>downloading</code>：在开始下载应用缓存资源时触发；</li>
+<li><code>progress</code>：在文件下载应用缓存的过程中持续不断的触发；</li>
+<li><code>updateready</code>：在页面新的应用缓存下载完毕且通过 <code>swapCache()</code> 方法替换旧缓存时触发；</li>
+<li><code>cached</code>：在清单的第一个缓存之后触发。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 在清单的第一个缓存之后触发。</span>
+appCache.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'cached'</span>, <span class="hljs-function">() =&gt;</span> {}, <span class="hljs-literal">false</span>)
+
+<span class="hljs-comment">// 在浏览器为应用缓存查找更新时触发。</span>
+appCache.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'checking'</span>, <span class="hljs-function">() =&gt;</span> {}, <span class="hljs-literal">false</span>)
+
+<span class="hljs-comment">// 在开始下载应用缓存资源时触发。</span>
+appCache.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'downloading'</span>, <span class="hljs-function">() =&gt;</span> {}, <span class="hljs-literal">false</span>)
+
+<span class="hljs-comment">// 在检测更新或下载资源期间发生错误时触发。</span>
+appCache.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'error'</span>, <span class="hljs-function">() =&gt;</span> {}, <span class="hljs-literal">false</span>)
+
+<span class="hljs-comment">// 在检查 manifest 文件无变化时触发。</span>
+appCache.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'noupdate'</span>, <span class="hljs-function">() =&gt;</span> {}, <span class="hljs-literal">false</span>)
+
+<span class="hljs-comment">// manifest 文件返回 404 或 410 时触发，这会导致 AppCache 被删除。</span>
+appCache.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'obsolete'</span>, <span class="hljs-function">() =&gt;</span> {}, <span class="hljs-literal">false</span>)
+
+<span class="hljs-comment">// 在文件下载应用缓存的过程中持续不断的触发。</span>
+appCache.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'progress'</span>, <span class="hljs-function">() =&gt;</span> {}, <span class="hljs-literal">false</span>)
+
+<span class="hljs-comment">// 当清单资源重新下载完成时触发。</span>
+appCache.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'updateready'</span>, <span class="hljs-function">() =&gt;</span> {}, <span class="hljs-literal">false</span>)
+</code></pre>
+<p>需要手动检查清单更新，首先调用 <code>applicationCache.update()</code> 更新用户的缓存（这需要更改清单文件）；然后，当<code>applicationCache.status</code> 处于其 <code>UPDATEREADY</code> 状态时，调用 <code>applicationCache.swapCache()</code> 会将旧缓存交换为新缓存。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> appCache = <span class="hljs-variable language_">window</span>.<span class="hljs-property">applicationCache</span>
+appCache.<span class="hljs-title function_">update</span>()
+<span class="hljs-keyword">if</span> (appCache.<span class="hljs-property">status</span> === <span class="hljs-variable language_">window</span>.<span class="hljs-property">applicationCache</span>.<span class="hljs-property">UPDATEREADY</span>) {
+    appCache.<span class="hljs-title function_">swapCache</span>()
+}
+</code></pre>
+<p>使用 <code>update()</code> 和 <code>swapCache()</code>  方法更新了缓存，此时用户已经下载了页面和所有资源，但这些文件不会自动重新加载。所有，最后还需要再次刷新页面以获取最新版本的页面和资源，也可以 <code>updateready</code> 事件中定义一个刷新页面的操作：</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">window</span>.<span class="hljs-property">applicationCache</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'updateready'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-property">applicationCache</span>.<span class="hljs-property">status</span> === <span class="hljs-variable language_">window</span>.<span class="hljs-property">applicationCache</span>.<span class="hljs-property">UPDATEREADY</span>) {
+        <span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-title function_">reload</span>()
+    }
+}, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="更新缓存">更新缓存</h4>
+<p>一旦应用被缓存，它就会保持缓存直到发生下列情况：</p>
+<ul>
+<li>用户清除浏览器的数据存储；</li>
+<li>缓存清单文件已修改。注意：更新清单中列出的文件并不意味着浏览器将重新缓存该资源，清单文件本身必须更改。比如：编辑图片资源或更改 JavaScript 函数，<strong>您必须修改 <code>manifest</code> 文件本身（如：修改注释中的日期或版本）以通知浏览器刷新缓存文件</strong>。</li>
+</ul>
+<h4 id="缓存存储位置以及-appcache-的清除">缓存存储位置以及 AppCache 的清除</h4>
+<p>在 Chrome 中，可以通过点击 <code>preferences -&gt; Clear browsing data…</code> 或者访问 <code>chrome://appcache-internals/</code> 来清除离线缓存。Safari 在 <code>preferences</code> 中有一个类似的 <code>Empty cache</code> 设置项，但是设置之后需要重启浏览器。</p>
+<p>AppCache 也会过时，如果应用的 <code>manifest</code> 文件被从服务器端删除，浏览器会删除使用 <code>manifest</code> 的所有应用缓存，同时发送 <code>obsoleted</code> 事件给 <code>window.applicationCache</code> 对象。AppCache 的状态被设置为 <code>OBSOLETE</code>。</p>
+<p><strong>注意： Application Cache 被标准废弃了</strong>，这个接口设计很不合理，最明显的是它一直无法有效的解决离线资源精细化控制。因此，推荐使用更强大的 Service Worker。</p>
+<h3 id="service-worker">Service Worker</h3>
+<p>Service Worker 本质上充当 Web 应用程序、浏览器与网络（可用时）之间的代理服务器。这个 API 旨在创建有效的离线体验，它会拦截网络请求并根据网络是否可用来采取适当的动作、更新来自服务器的的资源。它还提供入口以推送通知和访问后台同步 API。</p>
+<p>Service Worker 是一个注册在指定源和路径下的事件驱动 worker。它采用 JavaScript 控制关联的页面或者网站，拦截并修改访问和资源请求，细粒度地缓存资源。你可以完全控制应用在特定情形（最常见的情形是网络不可用）下的表现。</p>
+<p>Service Worker 有以下特性：</p>
+<ul>
+<li>Service Worker 线程有自己完全独立的执行上下文。一旦被安装成功就永远存在，除非线程被程序主动解除，而且 Service Worker 在访问页面的时候可以直接被激活，如果关闭浏览器或者浏览器标签的时候会自动睡眠，以减少资源损耗。</li>
+<li>Service Worker 是完全异步实现的，内部的接口的异步化都是通过 Promise 实现，并且在 Service Worker 中不能直接操作 DOM，出于安全和体验的考虑，UI 的渲染工作必须只能在主线程完成。</li>
+<li>出于安全的考虑 Service Worker <strong>必须运行在 HTTPS 协议下</strong>，为了便于本地开发，<code>localhost</code>、<code>127.0.0.1</code> 这种非 HTTPS 协议也被浏览器认为是安全源。（IP 地址：<code>192.168.x.x</code>，不行）。</li>
+<li>Service Worker 可以拦截并代理请求，可以处理请求的返回内容，可以持久化缓存静态资源达到离线访问的效果，和 ApplicationCache 不同，Service Worker 的所有的离线内容开发者完全可控，甚至是可以控制动态请求，第三方静态资源等。</li>
+<li>由于 Service Worker 可以离线并且在后台工作，所以可以进行 <strong>推送消息</strong>（第六章会详细说明）、<strong>后台同步</strong>资源等功能，在不久的将来，利用 Service Worker 的这一特性，甚至可以衍生出更多的 Web App 原生化的功能。</li>
+</ul>
+<h4 id="兼容性">兼容性</h4>
+<p>目前（2021.12） Chrome、Firefox、Safari、Edge、Opera 都已经全面支持 Service Workers，但 IE 6~11 都不支持。 由于 Service Workers 无法通过注入 polyfill 去实现兼容，所以在你打算使用它前请先调查清楚你的网页的运行场景。</p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20211214222854699.png" alt="image-20211214222854699"></img></p>
+<p>查看浏览器是否支持 Service Workers：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (navigator.<span class="hljs-property">serviceWorker</span>) {
+    <span class="hljs-comment">// 支持 serviceWorker</span>
+}
+</code></pre>
+<h4 id="service-worker-生命周期">Service Worker 生命周期</h4>
+<p>Service Worker 的工作原理主要体现在它的生命周期上，一个 Service Worker 从被注册开始，就会经历自身的一些生命周期的节点，而在这些节点都可以去做一些特定的事情，比如一些复杂的计算、缓存的写入、缓存的读取等操作。通过这些生命周期节点的联合调度，Service Worker 才能完成复杂的资源离线缓存的工作。</p>
+<p>每个 Service Worker 都有一个独立于 Web 页面的生命周期：</p>
+<ul>
+<li>在主线程成功注册 Service Worker 之后，开始下载并解析执行 Service Worker 文件，执行过程中开始安装 Service Worker，在此过程中会触发 worker 线程的 install 事件。</li>
+<li>如果 install 事件回调成功执行（在 install 回调中通常会做一些缓存读写的工作，可能会存在失败的情况），则开始激活 Service Worker，在此过程中会触发 worker 线程的 activate 事件，如果 install 事件回调执行失败，则生命周期进入 Error 终结状态，终止生命周期。 如果发生这种情况，不必担心，它下次会再试一次。 </li>
+<li>完成激活之后，Service Worker 就能够控制作用域下的页面的资源请求，可以监听 fetch 事件。不过，激活之后，页面需要再次加载才会受其控制。因为注册是一个异步的过程，在激活完成后，当前页面要发的请求都已经发送完了。</li>
+<li>如果在激活后 Service Worker 被 unregister 或者有新的 Service Worker 版本更新，则当前 Service Worker 生命周期完结，进入 Terminated 终结状态。</li>
+</ul>
+<p>简单来说，Service Worker 生命周期分为三个阶段：注册、安装、激活，还有最重要的一个拦截事件 fetch。</p>
+<p>需要注意以下几点：</p>
+<ul>
+<li>Service Worker 文件只在首次注册的时候执行了一次。</li>
+<li>安装、激活流程也只是在首次执行 Service Worker 文件的时候进行了一次。</li>
+<li>首次注册成功的 Service Worker 没能拦截当前页面的请求。</li>
+<li>非首次注册的 Service Worker 可以控制当前的页面并能拦截请求。</li>
+</ul>
+<h4 id="注册-service-workers">注册 Service Workers</h4>
+<p>若要安装 Service Worker，您需要通过在页面中对其进行<strong>注册</strong>来启动安装，其中最重要的是告诉浏览器 Service Worker 脚本文件的位置。如果注册成功，Service Worker 就会被下载到客户端并尝试安装或激活。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (<span class="hljs-string">'serviceWorker'</span> <span class="hljs-keyword">in</span> navigator) {
+    <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'DOMContentLoaded'</span>,<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-comment">// sw.js 为 Service Workers 脚本文件，在其中加入 Service Workers 安装、激活以及 fetch事件的逻辑。</span>
+        <span class="hljs-comment">// scope 表示定义 Service Worker 注册范围的 URL</span>
+        navigator.<span class="hljs-property">serviceWorker</span>.<span class="hljs-title function_">register</span>(<span class="hljs-string">'/sw.js'</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">registration</span>) =&gt;</span> {
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(registration.<span class="hljs-property">scope</span>)
+        }).<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'注册失败！'</span>, err)
+        })
+    })
+}
+</code></pre>
+<p>Service Worker 注册的默认作用域是与 Service Worker 脚本文件路径相对的 <code>./</code>。如果 Service Worker 脚本文件位于根网域， 就意味着 Service Worker 的作用域将是整个域名。如果位于 <code>/example/</code> ，则它的默认作用域为 <code>/example/</code>，即只能管控 URI 以 <code>/example/</code> 开头（ <code>/example/page1/</code>、<code>/example/page2/</code>）的页面。</p>
+<p>可以通过打开 <code>chrome://inspect/#service-workers</code> 检查 Service Worker 是否已启用，并查看所有注册了的 Service Workers。</p>
+<p>另外，还可以通过 <code>chrome://serviceworker-internals</code> 来查看 Service Worker 详情。</p>
+<p><strong>注意：</strong> Service Worker 脚本文件只在首次注册的时候执行了一次；安装、激活流程也只是在<strong>首次</strong>执行该文件的时候进行了一次。</p>
+<p>用户首次访问 Service Worker 控制的网站或页面时，Service Worker 注册后，会立刻被下载。</p>
+<h4 id="安装-service-worker">安装 Service Worker</h4>
+<p>Service Workers 在注册成功后会在其生命周期中派发出一些事件，通过监听对应的事件在特点的时间节点上做一些事情。在 Service Worker 脚本文件中，引入了新的关键字 self 代表当前的 Service Workers 实例。</p>
+<p>在 Service Workers 安装成功后会派发出 <code>install</code> 事件，在这个事件中可以执行缓存资源的逻辑，实现代码如下：</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// sw.js</span>
+<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">CACHE_VERSION</span> = <span class="hljs-string">'v1.0.0'</span>
+<span class="hljs-keyword">const</span> urlsToCache = [
+    <span class="hljs-string">'/others_01.html?type=8'</span>,
+    <span class="hljs-string">'/assets/third/utils.js'</span>,
+    <span class="hljs-string">'/assets/js/others_01_03.js'</span>,
+]
+
+self.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'install'</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
+    event.<span class="hljs-title function_">waitUntil</span>(
+        caches.<span class="hljs-title function_">open</span>(<span class="hljs-variable constant_">CACHE_VERSION</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">cache</span>) =&gt;</span> {
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'安装成功：'</span>, cacheAllowlist)
+            <span class="hljs-keyword">return</span> cache.<span class="hljs-title function_">addAll</span>(urlsToCache)
+        })
+    )
+})
+</code></pre>
+<p>我们以所需的缓存名称调用 <code>caches.open()</code>，之后再调用 <code>cache.addAll()</code> 并传入文件数组。 这是一个 promise 链（<code>caches.open()</code> 和 <code>cache.addAll()</code>）。 <code>event.waitUntil()</code> 方法带有 promise 参数并使用它来判断安装所花费的时间，以及安装是否成功。</p>
+<p>如果所有文件都成功缓存，则将安装 Service Worker。 如有<strong>任何</strong>文件无法下载，则安装步骤将失败。 这可让您依赖于所定义的所有资源，但也意味着需要对您决定在安装步骤缓存的文件列表格外留意。 定义一个过长的文件列表将会增加文件缓存失败的几率，从而导致服务工作线程未能安装。</p>
+<p><code>install</code> 事件在安装成功后立即触发，并且它只能被每个 Service Worker 调用一次。如果 Service Worker 文件有更新，则浏览器将其视为一个不同的 Service Worker，并且它将获得自己的 install 事件。</p>
+<h4 id="使用-service-worker（fetch）">使用 Service Worker（fetch）</h4>
+<p>在安装 Service Worker 且用户转至其他页面或刷新当前页面后，Service Worker 将开始接收 fetch 事件。</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// sw.js</span>
+self.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'fetch'</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
+    event.<span class="hljs-title function_">respondWith</span>(
+        caches.<span class="hljs-title function_">match</span>(event.<span class="hljs-property">request</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">response</span>) =&gt;</span> {
+            <span class="hljs-keyword">if</span> (response) {
+                <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'存在缓存：'</span>, event.<span class="hljs-property">request</span>.<span class="hljs-property">url</span>)
+                <span class="hljs-keyword">return</span> response
+            }
+            <span class="hljs-keyword">return</span> <span class="hljs-title function_">fetch</span>(event.<span class="hljs-property">request</span>)
+        })
+    )
+})
+</code></pre>
+<p>这里定义了 <code>fetch</code> 事件，并且在 <code>event.respondWith()</code> 中，传入来自 <code>caches.match()</code> 的一个 promise。 此方法拦截请求，并从 Service Worker 所创建的缓存中查找该请求缓存的结果。</p>
+<p>如果发现匹配的响应，则返回缓存的值，否则，将调用 <code>fetch</code> 以发出网络请求，并将从网络检索到的任何数据作为结果返回。 </p>
+<p>你也可以通过 <code>fetch</code> 事件，向 Service Worker 添加新的缓存：</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// sw.js</span>
+self.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'fetch'</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
+    event.<span class="hljs-title function_">respondWith</span>(
+        caches.<span class="hljs-title function_">match</span>(event.<span class="hljs-property">request</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">response</span>) =&gt;</span> {
+            <span class="hljs-keyword">if</span> (response) {
+                <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'存在缓存：'</span>, event.<span class="hljs-property">request</span>.<span class="hljs-property">url</span>)
+                <span class="hljs-keyword">return</span> response
+            }
+            <span class="hljs-keyword">return</span> <span class="hljs-title function_">fetch</span>(event.<span class="hljs-property">request</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">response</span>) =&gt;</span> {
+                <span class="hljs-comment">// 注意：必需先复制 response。</span>
+                <span class="hljs-comment">// 因为 response 是数据流，主体只能使用一次。 </span>
+                <span class="hljs-comment">// 由于我们想要 response 能被浏览器使用，并将其传递到缓存以供使用，因此需要复制一份副本：一份发送给浏览器，另一份则保留在缓存。</span>
+                <span class="hljs-keyword">const</span> responseToCache = response.<span class="hljs-title function_">clone</span>()
+                <span class="hljs-keyword">if</span>(responseToCache &amp;&amp; responseToCache.<span class="hljs-property">status</span> === <span class="hljs-number">200</span> &amp;&amp; responseToCache.<span class="hljs-property">url</span>.<span class="hljs-title function_">match</span>(<span class="hljs-string">'others_01_02.js'</span>)) {
+                    caches.<span class="hljs-title function_">open</span>(<span class="hljs-variable constant_">CACHE_VERSION</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">cache</span>) =&gt;</span> {
+                        cache.<span class="hljs-title function_">put</span>(event.<span class="hljs-property">request</span>, responseToCache)
+                        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'新增缓存：'</span>, responseToCache.<span class="hljs-property">url</span>)
+                    })
+                }
+                <span class="hljs-keyword">return</span> response
+            })
+        })
+    )
+})
+</code></pre>
+<p><strong>注意：</strong> 必需先复制 response。因为 response 是数据流，主体只能使用一次。 由于我们想要 response 能被浏览器使用，并将其传递到缓存以供使用，因此需要备份一份副本，一份发送给浏览器，另一份则保留在缓存。</p>
+<p><strong>注意：</strong> Chrome 开发者工具， <code>Application -&gt; Cache -&gt; Cache Storage</code>  可查看缓存的资源。</p>
+<h4 id="更新-service-worker（activate）">更新 Service Worker（activate）</h4>
+<p>浏览器会在以下情况，重新触发注册、安装、激活流程：</p>
+<ul>
+<li>一个前往作用域内页面的导航；</li>
+<li><p>更新 push 和 sync 等功能事件，没有 24 小时内进行更新检查；</p>
+</li>
+<li><p>Service Worker 脚本文件的 URI 或者内容更新；</p>
+</li>
+</ul>
+<p>Service Worker 脚本文件更新， 会触发以下流程：</p>
+<ul>
+<li>Service Worker  脚本文件更新后， 用户打开页面时，浏览器会尝试在后台加载定义该文件。 如果该文件与其当前所用 Service Worker  脚本文件存在字节差异，则将其视为新 Service Worker。</li>
+<li>新 Service Worker 将会启动，且将会触发 <code>install</code> 事件。</li>
+<li>此时，旧 Service Worker 仍控制着当前页面，因此新 Service Worker 将进入 <code>waiting</code> 状态。</li>
+<li>直到旧 Service Worker 对<strong>所有</strong>终端失去控制（Service Worker 管控的所有页面都关闭）时，旧 Service Worker 才会被终止，新 Service Worker 取得控制权。</li>
+<li>新 Service Worker 取得控制权后，将会触发其 <code>activate</code> 事件。</li>
+</ul>
+<p><code>activate</code> 事件常用于管理缓存（比如：删除旧版本的缓存）。因为，如果您在安装事件中清除了旧缓存，则当前页面的旧 Service Worker 可能突然无法从缓存中提供文件。</p>
+<p><code>activate</code> 事件管理缓存的具体做法为：遍历 Service Worker 中的所有缓存版本，并删除未在白名单中定义的任何缓存版本。</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// sw.js</span>
+self.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'activate'</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'update06'</span>)
+    event.<span class="hljs-title function_">waitUntil</span>(
+        caches.<span class="hljs-title function_">keys</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">cacheNames</span>) =&gt;</span> {
+            <span class="hljs-keyword">const</span> cacheAllowVersions = [<span class="hljs-variable constant_">CACHE_VERSION</span>]
+            <span class="hljs-keyword">return</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">all</span>(
+                cacheNames.<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">name</span>) =&gt;</span> {
+                    <span class="hljs-keyword">if</span> (cacheAllowVersions.<span class="hljs-title function_">indexOf</span>(name) === -<span class="hljs-number">1</span>) {
+                        <span class="hljs-keyword">return</span> caches.<span class="hljs-title function_">delete</span>(name)
+                    }
+                })
+            )
+        })
+    )
+})
+</code></pre>
+<p>Service Worker 一旦更新，需要等所有的终端都关闭之后，再重新打开页面才能激活新的 Service Worker，这个过程太复杂了。如果不想等所有的终端都关闭再打开的话，可采用以下方法：</p>
+<ul>
+<li><p><strong>skipWaiting：</strong> Service Worker 在全局提供了一个 skipWaiting() 方法来跳过 waiting 状态，直接激活新的 Service Worker。</p>
+<p><strong>注意：</strong> 可能会出现其他终端还没有受当前终端激活的 Service Worker 控制的情况，切回其他终端之后，Service Worker 控制页面的效果可能不符合预期。</p>
+<pre><code class="lang-javascript">self.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'install'</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
+    self.<span class="hljs-title function_">skipWaiting</span>()
+    event.<span class="hljs-title function_">waitUntil</span>(
+        caches.<span class="hljs-title function_">open</span>(<span class="hljs-variable constant_">CACHE_VERSION</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">cache</span>) =&gt;</span> {
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'安装成功：'</span>, cacheAllowlist)
+            <span class="hljs-keyword">return</span> cache.<span class="hljs-title function_">addAll</span>(urlsToCache)
+        })
+    )
+})
+</code></pre>
+</li>
+<li><p><strong>注销 Service Worker：</strong> </p>
+<pre><code class="lang-javascript">navigator.<span class="hljs-property">serviceWorker</span>.<span class="hljs-title function_">getRegistrations</span>().<span class="hljs-title function_">then</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">registrations</span>) {
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> registration <span class="hljs-keyword">of</span> registrations) {
+        registration.<span class="hljs-title function_">unregister</span>()
+    }
+})
+</code></pre>
+</li>
+<li><p><strong>通过浏览器管理：</strong> 在 Chrome 浏览器的 <code>chrome://serviceworker-internals/</code> ，或者在 Chrome 开发者工具 <code>Application -&gt; Service Workers</code> 注销 Service Worker。</p>
+</li>
+</ul>
+<h3 id="参考资料">参考资料</h3>
+<p><a href="http://zoomzhao.github.io/2012/11/08/using-the-application-cache/" target="_blank">使用 Application Cache</a></p>
+<p><a href="https://www.html5rocks.com/en/tutorials/appcache/beginner/" target="_blank">A Beginner's Guide to Using the Application Cache</a></p>
+<p><a href="https://developers.google.cn/web/fundamentals/primers/service-workers?hl=zh-cn" target="_blank">Service Worker: 简介</a></p>
+<p><a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle?hl=zh-cn" target="_blank">Service Worker 生命周期</a></p>
+<p><a href="https://lavas-project.github.io/pwa-book/chapter04.html" target="_blank">Service Worker</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API" target="_blank">MDN Service_Worker_API</a> </p>
+<p></p><footer class="page-footer"><span class="copyright">© lizhao all right reserved，powered by Gitbook</span><span class="footer-modification">文件修订时间：
+2026-06-01 22:49:44
+</span></footer><p></p>
+<div id="gitalk-container"></div> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"></link> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html" class="navigation navigation-prev " aria-label="Previous page: 进阶 04 规范代码：Linter、Prettier、EditorConfig">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02-进阶-06-WebSocket.html" class="navigation navigation-next " aria-label="Next page: 进阶 06 WebSocket">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"进阶 05 Web离线应用","level":"4.12","depth":1,"next":{"title":"进阶 06 WebSocket","level":"4.13","depth":1,"path":"frontend/02-进阶-06-WebSocket.md","ref":"frontend/02-进阶-06-WebSocket.md","articles":[]},"previous":{"title":"进阶 04 规范代码：Linter、Prettier、EditorConfig","level":"4.11","depth":1,"path":"frontend/02-进阶-04-规范代码：Linter、Prettier、EditorConfig.md","ref":"frontend/02-进阶-04-规范代码：Linter、Prettier、EditorConfig.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","summary","sandpack","theme-default","theme-comscore","tbfed-pagefooter","pageview-count","accordion","sharing-plus","back-to-top-button","chapter-fold","klipse","mygitalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"summary":{"exclude":["docs/**"]},"search-pro":{"maxSearchIndexSize":10000000},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"mygitalk":{"flipMoveOptions":{},"clientID":"35175582adb321d85634","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["lizh"],"createIssueManually":false,"distractionFreeMode":false,"repo":"https://github.com/1927344728/fed-knowledge","owner":"lizh","enableHotKey":true,"clientSecret":"2e60c4d61474ec23e752f127e838aa2039e0433e","pagerDirection":"last","labels":["Gitalk"]},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":true,"qzone":true},"sandpack":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"lizhao","honkit":"^6.0.2","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术驿站•LIZHAO","language":"zh","gitbook":"*","description":"这是开发者的技术文档"},"file":{"path":"frontend/02-进阶-05-Web离线应用.md","mtime":"2026-06-01T14:49:44.580Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2026-06-29T12:14:32.945Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-sandpack/honkit-plugin-sandpack.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

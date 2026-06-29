@@ -1,0 +1,4509 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>进阶 04 规范代码：Linter、Prettier、EditorConfig · 技术驿站•LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 6.0.2">
+        <meta name="author" content="lizhao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02-进阶-05-Web离线应用.html" />
+    
+    
+    <link rel="prev" href="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/00-前端调试随笔.html">
+            
+                <a href="../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/05-JS常见问题概览.html">
+            
+                <a href="../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/07-微信小程序开发.html">
+            
+                <a href="../bugs/07-微信小程序开发.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    微信小程序开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bugs/08-NodeJs常见问题概览.html">
+            
+                <a href="../bugs/08-NodeJs常见问题概览.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    NodeJs常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../bugs/09-Mac常见问题概览.html">
+            
+                <a href="../bugs/09-Mac常见问题概览.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Mac常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../bugs/10-微信环境前端开发指南.html">
+            
+                <a href="../bugs/10-微信环境前端开发指南.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    微信环境前端开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../bugs/99-其他问题汇总.html">
+            
+                <a href="../bugs/99-其他问题汇总.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    其他问题汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../css系列/00-CSS基础知识.html">
+            
+                <a href="../css系列/00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../css系列/00-CSS常见问答.html">
+            
+                <a href="../css系列/00-CSS常见问答.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../css系列/00-CSS常见问答02.html">
+            
+                <a href="../css系列/00-CSS常见问答02.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    CSS常见问答02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../css系列/00-CSS应用示例.html">
+            
+                <a href="../css系列/00-CSS应用示例.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    CSS应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../css系列/00-CSS应用示例02.html">
+            
+                <a href="../css系列/00-CSS应用示例02.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS应用示例02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../css系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../css系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../css系列/04-CSS探索系列-margin.html">
+            
+                <a href="../css系列/04-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                <a href="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    CSS探索系列 Auto关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../css系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../css系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../css系列/05-CSS探索系列-line-height.html">
+            
+                <a href="../css系列/05-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../css系列/05-CSS探索系列-元素居中.html">
+            
+                <a href="../css系列/05-CSS探索系列-元素居中.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    CSS探索系列 元素居中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../css系列/05-CSS探索系列-动画.html">
+            
+                <a href="../css系列/05-CSS探索系列-动画.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    CSS探索系列 动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../css系列/08-重新认识伪类与伪元素.html">
+            
+                <a href="../css系列/08-重新认识伪类与伪元素.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    重新认识伪类与伪元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../css系列/09-自定义表单伪元素样式.html">
+            
+                <a href="../css系列/09-自定义表单伪元素样式.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    自定义表单伪元素样式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../css系列/10-如何理解css中的display属性.html">
+            
+                <a href="../css系列/10-如何理解css中的display属性.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    如何理解Css中的Display属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                <a href="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                <a href="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    一文彻底弄懂CSS中的长度单位
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                <a href="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                    
+                        <b>2.21.</b>
+                    
+                    CSS中一些有特性的属性或属性值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../css系列/14-Web中如何实现长宽比.html">
+            
+                <a href="../css系列/14-Web中如何实现长宽比.html">
+            
+                    
+                        <b>2.22.</b>
+                    
+                    Web中如何实现长宽比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../css系列/15-@规则：@font-face.html">
+            
+                <a href="../css系列/15-@规则：@font-face.html">
+            
+                    
+                        <b>2.23.</b>
+                    
+                    @规则：@Font Face
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                <a href="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                    
+                        <b>2.24.</b>
+                    
+                    @规则：@Media（媒体查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../css系列/15-@规则：其他.html">
+            
+                <a href="../css系列/15-@规则：其他.html">
+            
+                    
+                        <b>2.25.</b>
+                    
+                    @规则：其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../css系列/_关于css.html">
+            
+                <a href="../css系列/_关于css.html">
+            
+                    
+                        <b>2.26.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="00-00-关于Web前端.html">
+            
+                <a href="00-00-关于Web前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    00 关于Web前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="00-01-前端知识概览.html">
+            
+                <a href="00-01-前端知识概览.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    01 前端知识概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="00-02-常用前端库概览.html">
+            
+                <a href="00-02-常用前端库概览.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    02 常用前端库概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="01-基础-00-前端常见问题01.html">
+            
+                <a href="01-基础-00-前端常见问题01.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    基础 00 前端常见问题01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="01-基础-01-浏览器缓存.html">
+            
+                <a href="01-基础-01-浏览器缓存.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    基础 01 浏览器缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="01-基础-02-浏览器工作原理.html">
+            
+                <a href="01-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                <a href="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    基础 03 谈谈前端跨域问题及解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="02-进阶-01-Web性能优化.html">
+            
+                <a href="02-进阶-01-Web性能优化.html">
+            
+                    
+                        <b>4.8.</b>
+                    
+                    进阶 01 Web性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                <a href="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                    
+                        <b>4.9.</b>
+                    
+                    进阶 02 搜索引擎优化（SEO）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                <a href="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                    
+                        <b>4.10.</b>
+                    
+                    进阶 03 前端模块化编程：CommonJS、AMD、CMD、UMD、ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.11" data-path="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                <a href="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                    
+                        <b>4.11.</b>
+                    
+                    进阶 04 规范代码：Linter、Prettier、EditorConfig
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="02-进阶-05-Web离线应用.html">
+            
+                <a href="02-进阶-05-Web离线应用.html">
+            
+                    
+                        <b>4.12.</b>
+                    
+                    进阶 05 Web离线应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="02-进阶-06-WebSocket.html">
+            
+                <a href="02-进阶-06-WebSocket.html">
+            
+                    
+                        <b>4.13.</b>
+                    
+                    进阶 06 WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="02-进阶-07-Web跨页面通信.html">
+            
+                <a href="02-进阶-07-Web跨页面通信.html">
+            
+                    
+                        <b>4.14.</b>
+                    
+                    进阶 07 Web跨页面通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="02-进阶-08-页面可见性和生命周期.html">
+            
+                <a href="02-进阶-08-页面可见性和生命周期.html">
+            
+                    
+                        <b>4.15.</b>
+                    
+                    进阶 08 页面可见性和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                <a href="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                    
+                        <b>4.16.</b>
+                    
+                    进阶 09 事件循环、宏任务、微任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="02-进阶-10-内存泄漏.html">
+            
+                <a href="02-进阶-10-内存泄漏.html">
+            
+                    
+                        <b>4.17.</b>
+                    
+                    进阶 10 内存泄漏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="02-进阶-11-前端自动化测试.html">
+            
+                <a href="02-进阶-11-前端自动化测试.html">
+            
+                    
+                        <b>4.18.</b>
+                    
+                    进阶 11 前端自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                <a href="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                    
+                        <b>4.19.</b>
+                    
+                    进阶 12 前端也玩多线程？WebWorker其实很简单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="03-高级-01-前端安全深度解析.html">
+            
+                <a href="03-高级-01-前端安全深度解析.html">
+            
+                    
+                        <b>4.20.</b>
+                    
+                    高级 01 前端安全深度解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.21" data-path="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                <a href="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                    
+                        <b>4.21.</b>
+                    
+                    高级 02 CI、CD（Docker+Jenkins+Nginx）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.22" data-path="04-Vue2.x原理篇.html">
+            
+                <a href="04-Vue2.x原理篇.html">
+            
+                    
+                        <b>4.22.</b>
+                    
+                    Vue2.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.23" data-path="04-Vue3初步了解及迁移指南.html">
+            
+                <a href="04-Vue3初步了解及迁移指南.html">
+            
+                    
+                        <b>4.23.</b>
+                    
+                    Vue3初步了解及迁移指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.24" data-path="04-重读Vue教程.html">
+            
+                <a href="04-重读Vue教程.html">
+            
+                    
+                        <b>4.24.</b>
+                    
+                    重读Vue教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.25" data-path="05-React17.x原理篇.html">
+            
+                <a href="05-React17.x原理篇.html">
+            
+                    
+                        <b>4.25.</b>
+                    
+                    React17.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.26" data-path="05-你必须知道的React问题.html">
+            
+                <a href="05-你必须知道的React问题.html">
+            
+                    
+                        <b>4.26.</b>
+                    
+                    你必须知道的React问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.27" data-path="05-重读React教程.html">
+            
+                <a href="05-重读React教程.html">
+            
+                    
+                        <b>4.27.</b>
+                    
+                    重读React教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.28" data-path="06-聊一聊Cookie的一些问题.html">
+            
+                <a href="06-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.28.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.29" data-path="07-SSL证书简介及其生成、使用.md">
+            
+                <span>
+            
+                    
+                        <b>4.29.</b>
+                    
+                    SSL证书简介及其生成、使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.30" data-path="07-如何启动本地HTTPS服务.html">
+            
+                <a href="07-如何启动本地HTTPS服务.html">
+            
+                    
+                        <b>4.30.</b>
+                    
+                    如何启动本地HTTPS服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.31" data-path="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                <a href="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                    
+                        <b>4.31.</b>
+                    
+                    0.0.0.0、127.0.0.1和Localhost的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.32" data-path="09-如何理解HTTP响应的状态码.html">
+            
+                <a href="09-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.32.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.33" data-path="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                <a href="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                    
+                        <b>4.33.</b>
+                    
+                    字符编码那点事：ASCII、Unicode、GBK、UTF 8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.34" data-path="11-HTTP协议的演变历史.md">
+            
+                <span>
+            
+                    
+                        <b>4.34.</b>
+                    
+                    HTTP协议的演变历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.35" data-path="12-webpack4.x原理篇.html">
+            
+                <a href="12-webpack4.x原理篇.html">
+            
+                    
+                        <b>4.35.</b>
+                    
+                    Webpack4.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.36" data-path="12-webpack基础入门篇.html">
+            
+                <a href="12-webpack基础入门篇.html">
+            
+                    
+                        <b>4.36.</b>
+                    
+                    Webpack基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.37" data-path="12-webpack构建优化篇.html">
+            
+                <a href="12-webpack构建优化篇.html">
+            
+                    
+                        <b>4.37.</b>
+                    
+                    Webpack构建优化篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.38" data-path="13-TypeScript使用指南.html">
+            
+                <a href="13-TypeScript使用指南.html">
+            
+                    
+                        <b>4.38.</b>
+                    
+                    TypeScript使用指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.39" data-path="14-Web中图片的使用.html">
+            
+                <a href="14-Web中图片的使用.html">
+            
+                    
+                        <b>4.39.</b>
+                    
+                    Web中图片的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.40" data-path="15-2026年，还需要微前端吗？——三大框架对比与选型思考.md">
+            
+                <span>
+            
+                    
+                        <b>4.40.</b>
+                    
+                    2026年，还需要微前端吗？——三大框架对比与选型思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.41" data-path="16-Electron基础篇.html">
+            
+                <a href="16-Electron基础篇.html">
+            
+                    
+                        <b>4.41.</b>
+                    
+                    Electron基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.42" data-path="17-uniapp基础篇.html">
+            
+                <a href="17-uniapp基础篇.html">
+            
+                    
+                        <b>4.42.</b>
+                    
+                    Uniapp基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.43" data-path="17-uniapp离线打包（Android）篇.html">
+            
+                <a href="17-uniapp离线打包（Android）篇.html">
+            
+                    
+                        <b>4.43.</b>
+                    
+                    Uniapp离线打包（Android）篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.44" data-path="18-sentry基础篇（vue）.html">
+            
+                <a href="18-sentry基础篇（vue）.html">
+            
+                    
+                        <b>4.44.</b>
+                    
+                    Sentry基础篇（Vue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.45" data-path="19-视口和软键盘对视口的影响.html">
+            
+                <a href="19-视口和软键盘对视口的影响.html">
+            
+                    
+                        <b>4.45.</b>
+                    
+                    视口和软键盘对视口的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.46" data-path="20-WebGL从入门到实践.html">
+            
+                <a href="20-WebGL从入门到实践.html">
+            
+                    
+                        <b>4.46.</b>
+                    
+                    WebGL从入门到实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.47" data-path="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                <a href="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                    
+                        <b>4.47.</b>
+                    
+                    Three.Js基础实战：从画一个立方体开始，掌握3D世界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.48" data-path="22-ReactNative基础篇.html">
+            
+                <a href="22-ReactNative基础篇.html">
+            
+                    
+                        <b>4.48.</b>
+                    
+                    ReactNative基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49" data-path="代码规范/">
+            
+                <a href="代码规范/">
+            
+                    
+                        <b>4.49.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.49.1" data-path="代码规范/00-前端规范.html">
+            
+                <a href="代码规范/00-前端规范.html">
+            
+                    
+                        <b>4.49.1.</b>
+                    
+                    前端规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.2" data-path="代码规范/01-HTML.html">
+            
+                <a href="代码规范/01-HTML.html">
+            
+                    
+                        <b>4.49.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.3" data-path="代码规范/02-CSS.html">
+            
+                <a href="代码规范/02-CSS.html">
+            
+                    
+                        <b>4.49.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.4" data-path="代码规范/03-JS.html">
+            
+                <a href="代码规范/03-JS.html">
+            
+                    
+                        <b>4.49.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../html系列/00-HTML基础知识.html">
+            
+                <a href="../html系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../html系列/00-HTML基础知识02.html">
+            
+                <a href="../html系列/00-HTML基础知识02.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML基础知识02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../html系列/00-HTML常见问答.html">
+            
+                <a href="../html系列/00-HTML常见问答.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    HTML常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../html系列/00-HTML经典实践用例.html">
+            
+                <a href="../html系列/00-HTML经典实践用例.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    HTML经典实践用例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../html系列/03-html探索系列-meta标签.md">
+            
+                <span>
+            
+                    
+                        <b>5.7.</b>
+                    
+                    Html探索系列 Meta标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                <a href="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                    
+                        <b>5.8.</b>
+                    
+                    DOCTYPE：文档类型与浏览器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="../html系列/05-DHTML（动态网页）简介.html">
+            
+                <a href="../html系列/05-DHTML（动态网页）简介.html">
+            
+                    
+                        <b>5.9.</b>
+                    
+                    DHTML（动态网页）简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="../html系列/06-HTML标签详解.md">
+            
+                <span>
+            
+                    
+                        <b>5.10.</b>
+                    
+                    HTML标签详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="../html系列/07-HTML布局的几种方式.html">
+            
+                <a href="../html系列/07-HTML布局的几种方式.html">
+            
+                    
+                        <b>5.11.</b>
+                    
+                    HTML布局的几种方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="../html系列/08-HTML全局属性.html">
+            
+                <a href="../html系列/08-HTML全局属性.html">
+            
+                    
+                        <b>5.12.</b>
+                    
+                    HTML全局属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                <a href="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                    
+                        <b>5.13.</b>
+                    
+                    标记语言演进：从GML到HTML动态标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.14" data-path="../html系列/_关于html.html">
+            
+                <a href="../html系列/_关于html.html">
+            
+                    
+                        <b>5.14.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Javascript系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../javascript系列/00-基础知识.html">
+            
+                <a href="../javascript系列/00-基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../javascript系列/00-常见问答.html">
+            
+                <a href="../javascript系列/00-常见问答.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../javascript系列/00-应用示例.html">
+            
+                <a href="../javascript系列/00-应用示例.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../javascript系列/00-趣味示例.html">
+            
+                <a href="../javascript系列/00-趣味示例.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    趣味示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../javascript系列/00-进阶知识.html">
+            
+                <a href="../javascript系列/00-进阶知识.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    进阶知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    基础篇 01 数据类型之基本类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    基础篇 01 数据类型之引用类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                <a href="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    基础篇 02 类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../javascript系列/01-基础篇-03-运算符.html">
+            
+                <a href="../javascript系列/01-基础篇-03-运算符.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                    基础篇 03 运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                <a href="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    基础篇 04 正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                <a href="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                    
+                        <b>6.11.</b>
+                    
+                    基础篇 05 AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="../javascript系列/01-基础篇-06--window对象.html">
+            
+                <a href="../javascript系列/01-基础篇-06--window对象.html">
+            
+                    
+                        <b>6.12.</b>
+                    
+                    基础篇 06  Window对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                <a href="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                    
+                        <b>6.13.</b>
+                    
+                    基础篇 07 Error、JSON、Math、Console对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                <a href="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                    
+                        <b>6.14.</b>
+                    
+                    基础篇 08 History、URL、Screen、Navigator、Location对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                    
+                        <b>6.15.</b>
+                    
+                    基础篇 09 文档对象模型（DOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                <a href="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                    
+                        <b>6.16.</b>
+                    
+                    基础篇 10 Document对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.17" data-path="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                <a href="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                    
+                        <b>6.17.</b>
+                    
+                    基础篇 11 Element对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.18" data-path="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                <a href="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                    
+                        <b>6.18.</b>
+                    
+                    基础篇 12 Event对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.19" data-path="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                <a href="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                    
+                        <b>6.19.</b>
+                    
+                    基础篇 13 键盘、鼠标、触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.20" data-path="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                <a href="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                    
+                        <b>6.20.</b>
+                    
+                    基础篇 14 MutationObserver对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.21" data-path="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                    
+                        <b>6.21.</b>
+                    
+                    基础篇 15 CSS对象模型（CSSOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.22" data-path="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                <a href="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                    
+                        <b>6.22.</b>
+                    
+                    进阶篇 01 Prototype对象和继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.23" data-path="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                    
+                        <b>6.23.</b>
+                    
+                    进阶篇 02 Promise对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.24" data-path="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                <a href="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                    
+                        <b>6.24.</b>
+                    
+                    进阶篇 03 有特性的一些事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.25" data-path="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                    
+                        <b>6.25.</b>
+                    
+                    进阶篇 04 Proxy对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.26" data-path="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                    
+                        <b>6.26.</b>
+                    
+                    进阶篇 05 Reflect对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.27" data-path="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                <a href="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                    
+                        <b>6.27.</b>
+                    
+                    进阶篇 06 Class（类）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.28" data-path="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                <a href="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                    
+                        <b>6.28.</b>
+                    
+                    进阶篇 07 迭代器（Iterator）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.29" data-path="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                <a href="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                    
+                        <b>6.29.</b>
+                    
+                    进阶篇 08 Generator和Async函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.30" data-path="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                <a href="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                    
+                        <b>6.30.</b>
+                    
+                    进阶篇 09 JavaScript异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.31" data-path="../javascript系列/04-Date对象和日期时间字符串格式.md">
+            
+                <span>
+            
+                    
+                        <b>6.31.</b>
+                    
+                    Date对象和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.32" data-path="../javascript系列/05-Canvas基础入门篇.html">
+            
+                <a href="../javascript系列/05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.32.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.33" data-path="../javascript系列/05-Canvas进阶篇.html">
+            
+                <a href="../javascript系列/05-Canvas进阶篇.html">
+            
+                    
+                        <b>6.33.</b>
+                    
+                    Canvas进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.34" data-path="../javascript系列/06-SVG基础入门篇.html">
+            
+                <a href="../javascript系列/06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.34.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.35" data-path="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.35.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.36" data-path="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.36.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.37" data-path="../javascript系列/08-谈谈JavaScript的作用域和上下文.md">
+            
+                <span>
+            
+                    
+                        <b>6.37.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.38" data-path="../javascript系列/10-复制内容到剪贴板.html">
+            
+                <a href="../javascript系列/10-复制内容到剪贴板.html">
+            
+                    
+                        <b>6.38.</b>
+                    
+                    复制内容到剪贴板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.39" data-path="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                <a href="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                    
+                        <b>6.39.</b>
+                    
+                    44道JavaScript难题，还不来考考？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.40" data-path="../javascript系列/_关于Javascript.html">
+            
+                <a href="../javascript系列/_关于Javascript.html">
+            
+                    
+                        <b>6.40.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java系列</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../java系列/01-00-Java入门篇.html">
+            
+                <a href="../java系列/01-00-Java入门篇.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    00 Java入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../java系列/01-01-Java进阶篇.html">
+            
+                <a href="../java系列/01-01-Java进阶篇.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    01 Java进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../java系列/01-02-Java高级篇.html">
+            
+                <a href="../java系列/01-02-Java高级篇.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    02 Java高级篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../java系列/02-pom.xml详解.html">
+            
+                <a href="../java系列/02-pom.xml详解.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Pom.Xml详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../java系列/03-01-SpringBoot入门篇.html">
+            
+                <a href="../java系列/03-01-SpringBoot入门篇.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    01 SpringBoot入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../java系列/05-轻量应用服务器部署指南（腾讯云）.md">
+            
+                <span>
+            
+                    
+                        <b>7.6.</b>
+                    
+                    轻量应用服务器部署指南（腾讯云）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../java系列/06-keytool命令行工具.md">
+            
+                <span>
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Keytool命令行工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">NodeJs</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../nodeJs/00-0关于Node.js.html">
+            
+                <a href="../nodeJs/00-0关于Node.js.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    0关于Node.Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../nodeJs/00-常见问题.html">
+            
+                <a href="../nodeJs/00-常见问题.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                <a href="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Node.Js：三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                <a href="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                    
+                        <b>8.4.</b>
+                    
+                    Npm包管理器简介及一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                <a href="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                    
+                        <b>8.5.</b>
+                    
+                    NPM：Package.Json详解（中文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                <a href="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                    
+                        <b>8.6.</b>
+                    
+                    NPM：从零开始，开发一个软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="../nodeJs/05-NPM：常用命令.html">
+            
+                <a href="../nodeJs/05-NPM：常用命令.html">
+            
+                    
+                        <b>8.7.</b>
+                    
+                    NPM：常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                <a href="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                    
+                        <b>8.8.</b>
+                    
+                    Node.Js：Fs（文件系统）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                <a href="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                    
+                        <b>8.9.</b>
+                    
+                    Node.Js：Global（全局变量）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="../nodeJs/08-Node.js：HTTP.html">
+            
+                <a href="../nodeJs/08-Node.js：HTTP.html">
+            
+                    
+                        <b>8.10.</b>
+                    
+                    Node.Js：HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="../nodeJs/09-Node.js：module（模块）.html">
+            
+                <a href="../nodeJs/09-Node.js：module（模块）.html">
+            
+                    
+                        <b>8.11.</b>
+                    
+                    Node.Js：Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="../nodeJs/10-Node.js：path（路径）.html">
+            
+                <a href="../nodeJs/10-Node.js：path（路径）.html">
+            
+                    
+                        <b>8.12.</b>
+                    
+                    Node.Js：Path（路径）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                <a href="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                    
+                        <b>8.13.</b>
+                    
+                    Node.Js：Readline（逐行读取）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.14" data-path="../nodeJs/12-锁定项目的Node版本.html">
+            
+                <a href="../nodeJs/12-锁定项目的Node版本.html">
+            
+                    
+                        <b>8.14.</b>
+                    
+                    锁定项目的Node版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../research/02-如何监控前端异常？.html">
+            
+                <a href="../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../research/03-H5页面跳转和刷新.html">
+            
+                <a href="../research/03-H5页面跳转和刷新.html">
+            
+                    
+                        <b>9.3.</b>
+                    
+                    H5页面跳转和刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>9.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>9.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>9.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../research/07-H5可视化编辑.html">
+            
+                <a href="../research/07-H5可视化编辑.html">
+            
+                    
+                        <b>9.7.</b>
+                    
+                    H5可视化编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="../research/08-Web常用功能.html">
+            
+                <a href="../research/08-Web常用功能.html">
+            
+                    
+                        <b>9.8.</b>
+                    
+                    Web常用功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" data-path="../research/10-H5页面生成图片方案总结.html">
+            
+                <a href="../research/10-H5页面生成图片方案总结.html">
+            
+                    
+                        <b>9.9.</b>
+                    
+                    H5页面生成图片方案总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10" data-path="../research/Javascript加密混淆.html">
+            
+                <a href="../research/Javascript加密混淆.html">
+            
+                    
+                        <b>9.10.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.11" data-path="../research/Vue如何导入TypeScript.html">
+            
+                <a href="../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>9.11.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.12" data-path="../research/移动端PDF预览.html">
+            
+                <a href="../research/移动端PDF预览.html">
+            
+                    
+                        <b>9.12.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.13" data-path="../research/纯CSS绘制箭头.html">
+            
+                <a href="../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>9.13.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.14" data-path="../research/网站性能测量和优化方法.html">
+            
+                <a href="../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>9.14.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../tech/00-编程基础知识.html">
+            
+                <a href="../tech/00-编程基础知识.html">
+            
+                    
+                        <b>10.1.</b>
+                    
+                    编程基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="../tech/00-计算机问题概览.html">
+            
+                <a href="../tech/00-计算机问题概览.html">
+            
+                    
+                        <b>10.2.</b>
+                    
+                    计算机问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>10.3.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                <a href="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                    
+                        <b>10.4.</b>
+                    
+                    GOOGLE浏览器的搜索技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="../tech/03-curl的用法指南.html">
+            
+                <a href="../tech/03-curl的用法指南.html">
+            
+                    
+                        <b>10.5.</b>
+                    
+                    Curl的用法指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="../tech/04-sublime3插件篇.html">
+            
+                <a href="../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>10.6.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="../tech/05-Charles安装及使用.html">
+            
+                <a href="../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>10.7.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                <a href="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                    
+                        <b>10.8.</b>
+                    
+                    通过.Gitlab Ci.Yml配置任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="../tech/07-MySQL的基本使用.html">
+            
+                <a href="../tech/07-MySQL的基本使用.html">
+            
+                    
+                        <b>10.9.</b>
+                    
+                    MySQL的基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="../tech/08-看懂什么是环境变量.html">
+            
+                <a href="../tech/08-看懂什么是环境变量.html">
+            
+                    
+                        <b>10.10.</b>
+                    
+                    看懂什么是环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.11" data-path="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                <a href="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                    
+                        <b>10.11.</b>
+                    
+                    为什么0.1+0.2=0.30000000000000004
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.12" data-path="../tech/10-Nginx使用手册：安装、配置、模块扩展与代理详解.md">
+            
+                <span>
+            
+                    
+                        <b>10.12.</b>
+                    
+                    Nginx使用手册：安装、配置、模块扩展与代理详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.13" data-path="../tech/11-常见智力题总结.html">
+            
+                <a href="../tech/11-常见智力题总结.html">
+            
+                    
+                        <b>10.13.</b>
+                    
+                    常见智力题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.14" data-path="../tech/12-Mac终端命令使用.html">
+            
+                <a href="../tech/12-Mac终端命令使用.html">
+            
+                    
+                        <b>10.14.</b>
+                    
+                    Mac终端命令使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.15" data-path="../tech/13-01-Shell脚本入门篇.html">
+            
+                <a href="../tech/13-01-Shell脚本入门篇.html">
+            
+                    
+                        <b>10.15.</b>
+                    
+                    01 Shell脚本入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.16" data-path="../tech/13-02-Shell脚本进阶篇.html">
+            
+                <a href="../tech/13-02-Shell脚本进阶篇.html">
+            
+                    
+                        <b>10.16.</b>
+                    
+                    02 Shell脚本进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.17" data-path="../tech/14-一篇搞定排序算法：原理+图解+JS实现+V8源码解读.md">
+            
+                <span>
+            
+                    
+                        <b>10.17.</b>
+                    
+                    一篇搞定排序算法：原理+图解+JS实现+V8源码解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.18" data-path="../tech/15-glob模式通配符.html">
+            
+                <a href="../tech/15-glob模式通配符.html">
+            
+                    
+                        <b>10.18.</b>
+                    
+                    Glob模式通配符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.19" data-path="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                <a href="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                    
+                        <b>10.19.</b>
+                    
+                    代码整洁之道（摘录笔记）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.20" data-path="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                <a href="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                    
+                        <b>10.20.</b>
+                    
+                    Java的24种设计模式与7大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.21" data-path="../tech/18-观察者和发布订阅模式.html">
+            
+                <a href="../tech/18-观察者和发布订阅模式.html">
+            
+                    
+                        <b>10.21.</b>
+                    
+                    观察者和发布订阅模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.22" data-path="../tech/19-AI模型基础应用篇.html">
+            
+                <a href="../tech/19-AI模型基础应用篇.html">
+            
+                    
+                        <b>10.22.</b>
+                    
+                    AI模型基础应用篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../tools/01-01-Git基础教程.html">
+            
+                <a href="../tools/01-01-Git基础教程.html">
+            
+                    
+                        <b>11.1.</b>
+                    
+                    01 Git基础教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../tools/01-02-Git常见问题.html">
+            
+                <a href="../tools/01-02-Git常见问题.html">
+            
+                    
+                        <b>11.2.</b>
+                    
+                    02 Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../tools/02-01-gitbook入门篇.html">
+            
+                <a href="../tools/02-01-gitbook入门篇.html">
+            
+                    
+                        <b>11.3.</b>
+                    
+                    01 Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="../tools/02-02-gitbook插件篇.html">
+            
+                <a href="../tools/02-02-gitbook插件篇.html">
+            
+                    
+                        <b>11.4.</b>
+                    
+                    02 Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="../tools/02-03-gitbook进阶篇.html">
+            
+                <a href="../tools/02-03-gitbook进阶篇.html">
+            
+                    
+                        <b>11.5.</b>
+                    
+                    03 Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">整理中</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >进阶 04 规范代码：Linter、Prettier、EditorConfig</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="规范代码：linter、prettier、editorconfig">规范代码：Linter、Prettier、EditorConfig</h1>
+<p>任何语言都需要强调编码风格的一致性。以相同的风格编写代码在团队开发中是至关重要的，这样才能更利于其他人阅读和维护。</p>
+<p>团队多人协同开发项目的一个很大的问题是：无可避免地会出现每个开发者编码习惯不同、代码风格迥异，为了代码高可用、可维护性， 如何从项目管理上尽量统一和规范代码呢？</p>
+<p>不要花费过多时间和精力讨论怎么样的风格是最好的——这通常也不会有结果。统一和规范代码的关键是怎么将规范落实。文档约定，靠开发者自我修养，这种方法是无法确保整个项目代码的规范化。在如今工程化开发的环境下，我们完全可以借助一些工具实现自动检查，规范代码的输出，确保提交到仓库的是高质量代码。</p>
+<p>本文主要讲述规范代码的几个工具：<strong>ESlint、StyleLint、Prettier、EditorConfig</strong>，以及它们之间的冲突问题 。文章最后是一个 Git Hook 集成这些工具的示例，讲述了 <strong>husky（新版本） + lint-staged</strong> 用法 。</p>
+<h3 id="eslint"><a href="http://eslint.cn" target="_blank">ESlint</a></h3>
+<p>ESLint 是一个开源的 JavaScript 代码检查工具，由 Nicholas C. Zakas 于2013年6月创建。代码检查是一种静态的分析，常用于寻找有问题的模式或者代码，并且不依赖于具体的编码风格。对大多数编程语言来说都会有代码检查，一般来说编译程序会内置检查工具。</p>
+<p>ESLint 的初衷是为了让程序员可以创建自己的检测规则。ESLint 的所有规则都被设计成可插入的。ESLint 的默认规则与其他的插件并没有什么区别，规则本身和测试可以依赖于同样的模式。为了便于人们使用，ESLint 内置了一些规则，当然，你可以在使用过程中自定义规则。</p>
+<p>ESLint 的目标是<strong>保证代码的一致性和避免错误</strong>，是使用 Node.js 编写。</p>
+<h4 id="安装及配置">安装及配置</h4>
+<p><strong>安装：</strong><code>npm i eslint -D</code>。</p>
+<p><strong>配置：</strong> 命令行运行 <code>eslint --init</code> ，在当前目录下生成一个<code>.eslintrc.*</code>文件。</p>
+<p>Eslint 使用 JavaScript、JSON 或者 YAML 文件为整个目录（处理你的主目录）和它的子目录指定配置信息。如果同一个目录下有多个配置文件，ESLint 只会使用一个，会按照以下优先级（从高到低）。</p>
+<ul>
+<li><strong>.eslintrc.js：</strong> JavaScript 文件；</li>
+<li><strong>.eslintrc.yaml &gt; .eslintrc.yml：</strong> YAML 是专门用来写配置文件的语言，非常简洁和强大，远比 JSON 方便；</li>
+<li><strong>.eslintrc.json：</strong> 允许 JavaScript 风格的注释；</li>
+<li><strong>.eslintrc（已弃用）：</strong> 可以是 JSON ，也可以是 YAML；</li>
+<li><strong>package.json：</strong>  在 <code>package.json</code> 文件的 <code>eslintConfig</code> 属性定义配置。</li>
+</ul>
+<p>默认情况下，ESLint 会在所有父级目录里寻找配置文件，一直到根目录。如果想要将 ESLint 限制到一个特定的项目，在你项目根目录下的 <code>package.json</code> 文件的 <code>eslintConfig</code> 字段或者 <code>.eslintrc.*</code> 配置文件中设置 <code>"root": true</code>。ESLint 一旦发现配置文件中有 <code>"root": true</code>，它会直接去根目录寻找配置文件，不会再在各级父目录中寻找。</p>
+<p>完整的配置层次结构，从最高优先级到最低的优先级，如下：</p>
+<ul>
+<li><p>行内配置：<code>/*eslint-disable*/</code> 和 <code>/*eslint-enable*/</code> &gt; <code>/*global*/</code> &gt; <code>/*eslint*/</code> &gt; <code>/*eslint-env*/</code></p>
+</li>
+<li><p>命令行选项（或 CLIEngine 等价物）：<code>--global</code> &gt; <code>--rule</code> &gt; <code>--env</code> &gt; <code>-c</code>、<code>--config</code></p>
+</li>
+<li><p>项目级配置：与要检测的文件在同一目录下的 <code>.eslintrc.*</code> 或 <code>package.json</code> 文件；如果没有，再继续在父级目录寻找 <code>.eslintrc</code> 或 <code>package.json</code>文件，直到根目录（包括根目录）或直到发现一个有<code>"root": true</code> 的配置。</p>
+</li>
+<li><p>如果不是（1）到（3）中的任何一种情况，退回到 <code>~/.eslintrc</code> 中自定义的默认配置。</p>
+</li>
+</ul>
+<h4 id="使用方式">使用方式</h4>
+<p><strong><a href="https://cn.eslint.org/docs/user-guide/command-line-interface" target="_blank">命令行</a>：</strong> <code>eslint [options] [file|dir|glob]*</code>。</p>
+<pre><code class="lang-shell">eslint --fix '{src,packages}/**/*.{js,vue,ts}'
+
+eslint --ext .js -c ~/my-eslint.js --rulesdir my-rules/ --ignore-path tmp/.eslintignore --quiet -o ./test/test.html -f compact --fix lib/
+</code></pre>
+<ul>
+<li><strong>--ext：</strong> 查找指定的文件扩展名。默认以 <code>.js</code>  作为唯一性文件扩展名。</li>
+<li><strong>-c, --config：</strong> 指定一个额外的配置文件。</li>
+<li><strong>--rulesdir</strong>： 指定另一个加载规则文件的目录。</li>
+<li><strong>--ignore-path：</strong> 指定一个文件作为 <code>.eslintignore</code>。默认情况下，ESLint 在当前工作目录下查找 <code>.eslintignore</code>。</li>
+<li><strong>--quiet：</strong> 禁止报告警告。</li>
+<li><strong>-o, --output-file：</strong> 将报告写到一个文件。</li>
+<li><strong>-f, --format：</strong> 指定了控制台的输出格式。默认 <code>stylish</code>。</li>
+<li><strong>--fix</strong>： 指示 ESLint 试图修复尽可能多的问题。修复只针对实际文件本身，而且剩下的未修复的问题才会输出。不是所有的问题都能使用这个选项进行修复。</li>
+</ul>
+<p><a href="https://cn.eslint.org/docs/user-guide/integrations#editors" target="_blank"><strong>集成编辑器</strong></a>：集成 Visual Studio Code、Sublime Text 3、Atom 等编辑器使用。</p>
+<p><a href="https://cn.eslint.org/docs/user-guide/integrations#build-tools" target="_blank"><strong>构建工具</strong></a>：Webpack、Gulp、Grunt、Rollup 等构建工具中使用。</p>
+<pre><code class="lang-js"><span class="hljs-comment">// webpack.config.js</span>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+    <span class="hljs-attr">module</span>: {
+        <span class="hljs-attr">rules</span>: [
+            {
+                <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.(js|vue)$/</span>,
+                <span class="hljs-attr">loader</span>: <span class="hljs-string">'eslint-loader'</span>,
+                <span class="hljs-attr">enforce</span>: <span class="hljs-string">"pre"</span>,
+                <span class="hljs-attr">include</span>: [<span class="hljs-title function_">resolve</span>(<span class="hljs-string">'src'</span>), <span class="hljs-title function_">resolve</span>(<span class="hljs-string">'packages'</span>)],
+                <span class="hljs-attr">options</span>: {
+                    <span class="hljs-attr">formatter</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">'eslint-friendly-formatter'</span>),
+                    <span class="hljs-attr">fix</span>: <span class="hljs-literal">true</span>
+                }
+            }
+        ]
+    }
+}
+</code></pre>
+<p><a href="https://cn.eslint.org/docs/user-guide/integrations#source-control" target="_blank"><strong>Git Hooks</strong></a>： 比如，git 的钩子函数 Precommit、pre-commit。</p>
+<h4 id="配置说明"><a href="https://cn.eslint.org/docs/user-guide/configuring" target="_blank">配置说明</a></h4>
+<pre><code class="lang-js"><span class="hljs-comment">// .eslintrc.js</span>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+    <span class="hljs-attr">root</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">parser</span>: <span class="hljs-string">"vue-eslint-parser"</span>,
+    <span class="hljs-attr">parserOptions</span>: {
+        <span class="hljs-attr">parser</span>: <span class="hljs-string">'babel-eslint'</span>
+    },
+    <span class="hljs-attr">env</span>: {
+        <span class="hljs-attr">node</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">browser</span>: <span class="hljs-literal">true</span>,
+    },
+    <span class="hljs-attr">globals</span>: {},
+    <span class="hljs-attr">plugins</span>: [],
+    <span class="hljs-attr">extends</span>: [<span class="hljs-string">'plugin:vue/recommended'</span>, <span class="hljs-string">'eslint:recommended'</span>],
+    <span class="hljs-attr">rules</span>: {
+        <span class="hljs-string">"no-unused-vars"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">"quotes"</span>: [<span class="hljs-string">"error"</span>, <span class="hljs-string">"double"</span>],
+        <span class="hljs-string">"vue/max-attributes-per-line"</span>: <span class="hljs-number">2</span>
+    }
+}
+</code></pre>
+<p><a href="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/js/.eslintrc.js" target="_blank">本人在用的一份 Vue 项目的 .eslintrc.js 配置</a></p>
+<ul>
+<li><p><strong>root：</strong> 为 <code>true</code> 表示停止寻找配置文件，从根目录下查找 <code>package.json</code> 文件的配置或者 <code>.eslintrc.*</code> 配置文件。</p>
+</li>
+<li><p><strong>parser：</strong> 指定解析器，即将 Js 语句解析成语法树的插件。ESLint 默认使用 Espree （查看 <a href="https://cn.eslint.org/parser/" target="_blank">Espree DEMO</a>）作为其解析器，你可以在配置文件中指定一个不同的解析器，但该解析器需要符合一些<a href="https://cn.eslint.org/docs/user-guide/configuring#specifying-parser" target="_blank">要求</a>，并且 ESLint 不会修复与其它解析器不兼容的相关 bug。</p>
+<p>可以与 ESLint 兼容的解析器有：<strong>Esprima、Babel-ESLint、@typescript-eslint/parser</strong>。</p>
+</li>
+<li><p><strong>parserOptions：</strong> 指定解析器选项。</p>
+<p><strong>注意：</strong> Vue 项目中，如果想为 <code>.vue</code> 文件的 script 使用单独的 parser 可以将 <code>parserOptions.parser</code> 指定为想使用的 parser。</p>
+<pre><code class="lang-js"><span class="hljs-attr">parserOptions</span>: {
+    <span class="hljs-attr">ecmaVersion</span>: <span class="hljs-number">6</span>,
+    <span class="hljs-attr">sourceType</span>: <span class="hljs-string">"script"</span>,
+    <span class="hljs-attr">ecmaFeatures</span>: {
+        <span class="hljs-attr">impliedStrict</span>: <span class="hljs-literal">true</span>
+    }
+}
+</code></pre>
+<ul>
+<li><p><strong>ecmaVersion：</strong> 指定要使用的 ECMAScript 版本，默认设置为 3，5（默认）。可选版本号： 6（同2015）、7（同2016）、 8（同 2017）、9（同2018）、10 （同2019）。</p>
+</li>
+<li><p><strong>sourceType：</strong>生成的 Js 的类型，默认 script，可先：module（如果你的代码是 ECMAScript 模块)。</p>
+</li>
+<li><p><strong>ecmaFeatures：</strong> 表示你想使用的额外的语言特性。globalReturn 允许在全局作用域下使用 return 语句；impliedStrict 启用全局 strict mode (如果 ecmaVersion 是 5 或更高)；jsx - 启用 JSX；experimentalObjectRestSpread - 启用实验性的属性。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>processor：</strong> 指定处理器，从另一种文件中提取 JavaScript 代码，或者在预处理中转换 JavaScript 代码，然后让 ESLint 检测 JavaScript 代码。</p>
+<pre><code class="lang-js">{
+    <span class="hljs-string">"plugins"</span>: [<span class="hljs-string">"a-plugin"</span>],
+    <span class="hljs-string">"processor"</span>: <span class="hljs-string">"a-plugin/a-processor"</span>
+}
+
+<span class="hljs-comment">// 为特定类型的文件指定处理器</span>
+{
+    <span class="hljs-string">"plugins"</span>: [<span class="hljs-string">"a-plugin"</span>],
+    <span class="hljs-string">"overrides"</span>: [
+        {
+            <span class="hljs-string">"files"</span>: [<span class="hljs-string">"*.md"</span>],
+            <span class="hljs-string">"processor"</span>: <span class="hljs-string">"a-plugin/markdown"</span>
+        }
+    ]
+}
+</code></pre>
+</li>
+<li><p><strong>env：</strong> 指定环境。一个环境定义了一组预定义的全局变量，可定义多个。点击查看 <a href="https://cn.eslint.org/docs/user-guide/configuring#specifying-environments" target="_blank">所有可用环境</a>，一般常用的环境有：</p>
+<ul>
+<li><strong>browser：</strong> 浏览器环境中的全局变量；</li>
+<li><strong>node：</strong> Node.js 全局变量和 Node.js 作用域；</li>
+<li><strong>commonjs：</strong> CommonJS 全局变量和 CommonJS 作用域 (用于 Browserify/WebPack 打包的只在浏览器中运行的代码)；</li>
+<li><strong>shared-node-browser：</strong> Node.js 和 Browser 通用全局变量。</li>
+<li><strong>es6：</strong> 启用除了 modules 以外的所有 ECMAScript 6 特性（该选项会自动设置 <code>ecmaVersion</code> 解析器选项为 6）。</li>
+<li><strong>amd：</strong> 将 <code>require()</code> 和 <code>define()</code> 定义为像 amd 一样的全局变量。</li>
+</ul>
+<p>可以为特定的插件，指定环境：</p>
+<pre><code class="lang-js">{
+    <span class="hljs-string">"plugins"</span>: [<span class="hljs-string">"example"</span>],
+    <span class="hljs-string">"env"</span>: {
+        <span class="hljs-string">"example/[envName]"</span>: <span class="hljs-literal">true</span>
+    }
+}
+</code></pre>
+</li>
+<li><p><strong>globals：</strong> 指定自定义的全局变量。</p>
+<pre><code class="lang-js">{
+    <span class="hljs-string">"globals"</span>: {
+        <span class="hljs-string">"globalVar1"</span>: <span class="hljs-string">"writable"</span>,
+        <span class="hljs-string">"globalVar2"</span>: <span class="hljs-string">"readonly"</span>,
+        <span class="hljs-string">"globalVar3"</span>: <span class="hljs-string">"off"</span>
+    }
+}
+</code></pre>
+<p><code>writable</code> 表示允许重写变量；<code>readonly</code> 表示不允许重写变量；<code>off</code> 表示禁用全局变量。</p>
+<p>由于历史原因，布尔值 false 和字符串值 <code>readable</code>等价于 <code>readonly</code>。类似地，布尔值 true 和字符串值 <code>writeable</code> 等价于 <code>writable</code>。但是，不建议使用旧值。</p>
+</li>
+<li><p><strong>plugins：</strong> 指定第三方插件。插件名称可以省略 eslint-plugin- 前缀。</p>
+<pre><code class="lang-js">{
+    <span class="hljs-string">"plugins"</span>: [
+        <span class="hljs-string">"plugin1"</span>,
+        <span class="hljs-string">"eslint-plugin-plugin2"</span>
+    ]
+}
+</code></pre>
+</li>
+<li><p><strong>rules：</strong> 添加检验规则（<a href="https://cn.eslint.org/docs/rules/" target="_blank">Eslint 规则列表</a>）。如上：<code>no-unused-vars</code> 规则的名称。值是错误级别，可以是字符串或数字：</p>
+<ul>
+<li><strong>off | 0：</strong> 关闭规则；</li>
+<li><strong>warn | 1：</strong>开启规则，使用警告级别的错误（不会导致程序退出）；</li>
+<li><strong>error | 2：</strong>开启规则，使用错误级别的错误（当被触发的时候，程序会退出）。</li>
+</ul>
+<pre><code class="lang-javascript">{
+    <span class="hljs-attr">rules</span>: {
+        <span class="hljs-comment">// 可以是字符串或数字</span>
+        <span class="hljs-string">'no-debugger'</span>: <span class="hljs-string">'off'</span>,
+        <span class="hljs-comment">// 可以是数组，数组的第一个值是错误级别，第二个值是规则的参数。</span>
+        <span class="hljs-string">"quotes"</span>: [<span class="hljs-string">"error"</span>, <span class="hljs-string">"double"</span>]
+    }
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 可以为指定插件定义规则</span>
+{
+    <span class="hljs-string">"plugins"</span>: [
+        <span class="hljs-string">"plugin1"</span>
+    ],
+    <span class="hljs-string">"rules"</span>: {
+        <span class="hljs-string">"plugin1/rule1"</span>: <span class="hljs-string">"error"</span>
+    }
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 可以为一组文件配置规则</span>
+{
+  <span class="hljs-string">"overrides"</span>: [
+    {
+      <span class="hljs-string">"files"</span>: [<span class="hljs-string">"*-test.js"</span>,<span class="hljs-string">"*.spec.js"</span>],
+      <span class="hljs-string">"rules"</span>: {
+        <span class="hljs-string">"no-unused-expressions"</span>: <span class="hljs-string">"off"</span>
+      }
+    }
+  ]
+}
+</code></pre>
+</li>
+<li><p><strong>settings：</strong> 添加共享设置。它将值提供给每一个将被执行的规则。如果你想添加的自定义规则而且使它们可以访问到相同的信息，这将会很有用，并且很容易配置。</p>
+<pre><code class="lang-js">{
+    <span class="hljs-string">"settings"</span>: {
+        <span class="hljs-string">"sharedData"</span>: <span class="hljs-string">"Hello"</span>
+    }
+}
+</code></pre>
+</li>
+<li><p><strong>extends：</strong> 指定一个和多个可以继承的配置文件，值可以是一个表文件路径或配置名称的字符串，也可以是字符串数组（数组中的每个配置继承它前面的配置）。这些配置文件的规则可以被 rules 属性中的配置覆盖。</p>
+<pre><code class="lang-js">{
+    <span class="hljs-attr">extends</span>: [
+        <span class="hljs-string">"plugin:vue/recommended"</span>,
+        <span class="hljs-string">"eslint:recommended"</span>,
+        <span class="hljs-string">"eslint-config-standard"</span>,
+        <span class="hljs-string">"absolute_or_relative_path/.eslintrc.js"</span>
+    ]
+}
+</code></pre>
+<ul>
+<li><p><strong>配置名称：</strong> <code>eslint:recommended</code> 是 Eslint 推荐的配置名称，启用一系列<a href="https://cn.eslint.org/docs/rules/" target="_blank">核心规则</a> 。这个推荐的规则只能在 ESLint 主要版本进行更新。</p>
+<p>还有一个 <code>eslint:all</code>，启用当前安装的 ESLint 中所有的核心规则。<strong>不推荐使用</strong>，因为它可能在 ESLint 的任何版本进行更改。</p>
+</li>
+<li><p><strong>配置对象npm包</strong>： <code>eslint-config-standard</code> 是一个可共享的配置，是一个 npm 包，它输出一个配置对象。可以省略包名的前缀 <code>eslint-config-</code>。</p>
+</li>
+<li><p><strong>插件配置：</strong> 一些插件也可以输出一个或多个命名的 配置，plugins 属性值 可以省略包名的前缀 <code>eslint-plugin-</code>。<code>plugin:vue/recommended</code> 等同 <code>plugin:eslint-plugin-vue/recommended</code>。</p>
+</li>
+<li><p><strong>指定配置文件</strong>： 可以是到<strong>基本配置文件</strong>的绝对路径，也可以是相对路径。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>overrides：</strong> 添加一些更精细的配置。比如： 如果同一个目录下的文件需要有不同的配置。</p>
+<p>同一配置文件中，overrides 配置比其他常规配置具有更高的优先级。overrides 的配置几乎与 ESLint 的其他配置相同，除了 root。</p>
+<pre><code class="lang-js">{
+  <span class="hljs-string">"overrides"</span>: [
+    {
+      <span class="hljs-string">"files"</span>: [<span class="hljs-string">"bin/*.js"</span>, <span class="hljs-string">"lib/*.js"</span>],
+      <span class="hljs-string">"excludedFiles"</span>: <span class="hljs-string">"*.test.js"</span>,
+      <span class="hljs-string">"rules"</span>: {
+        <span class="hljs-string">"quotes"</span>: [<span class="hljs-string">"error"</span>, <span class="hljs-string">"single"</span>]
+      }
+    }
+  ]
+}
+</code></pre>
+</li>
+</ul>
+<h4 id="eslint-config--和-eslint-plugin--的区别">eslint-config-<em> 和 eslint-plugin-</em> 的区别</h4>
+<ul>
+<li><p><strong>eslint-config-*：</strong> <code>eslint-config-*</code> 其实就是一个 常规的 <code>.eslintrc</code> 文件。最终被 eslint 所识别的配置文件就是所有继承文件的属性合并，并且子类覆盖父类。</p>
+</li>
+<li><p><strong>eslint-plugin-*：</strong> <code>eslint-plugin-*</code> 可以理解为只是一个定义规则的包。<code>extends</code>  引入的 plugins 在没有对应 config 文件的情况下，如果没有指定 <code>rules</code>，它的规则其实是不会发生校验的。</p>
+<pre><code class="lang-js"><span class="hljs-comment">// eslint-plugin-vue</span>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+    <span class="hljs-attr">rules</span>: {
+        <span class="hljs-comment">// 引入一系列的规则</span>
+        <span class="hljs-string">'array-bracket-spacing'</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./rules/array-bracket-spacing'</span>)
+    },
+    <span class="hljs-attr">configs</span>: {
+        <span class="hljs-comment">// 引入一系列配置文件</span>
+        <span class="hljs-string">'recommended'</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./configs/recommended'</span>)
+    },
+    ...
+}
+</code></pre>
+</li>
+</ul>
+<h4 id="忽略代码">忽略代码</h4>
+<p>在文件中以注释形式，指定忽略的代码。</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// eslint-disable-next-line</span>
+<span class="hljs-title function_">alert</span>(<span class="hljs-string">'foo'</span>);
+
+<span class="hljs-title function_">alert</span>(<span class="hljs-string">'foo'</span>); <span class="hljs-comment">// eslint-disable-line</span>
+
+<span class="hljs-comment">/* eslint-disable no-alert, no-console */</span>
+<span class="hljs-title function_">alert</span>(<span class="hljs-string">'foo'</span>)
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'bar'</span>)
+<span class="hljs-comment">/* eslint-enable no-alert, no-console */</span>
+</code></pre>
+<h4 id="eslintignore">.eslintignore</h4>
+<p>创建一个 <code>.eslintignore</code> 文件告诉 ESLint 去忽略特定的文件和目录。<code>.eslintignore</code> 文件是一个纯文本文件，其中的每一行都是一个 glob 模式表明哪些路径应该忽略检测。</p>
+<pre><code class="lang-shell">.DS_Store
+node_modules
+/dist
+
+.env.local
+.env.*.local
+</code></pre>
+<p>除了 <code>.eslintignore</code> 文件中的模式，ESLint 总是忽略 <code>/node_modules/*</code> 和 <code>/bower_components/*</code> 中的文件。</p>
+<p>如果没有发现 <code>.eslintignore</code> 文件，也没有指定替代文件，ESLint 将在 <code>package.json</code> 文件中查找 <code>eslintIgnore</code> 属性，来检查要忽略的文件。</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">"eslintIgnore"</span>: [<span class="hljs-string">"hello.js"</span>, <span class="hljs-string">"world.js"</span>]
+}
+</code></pre>
+<h4 id="自定义规则"><a href="https://cn.eslint.org/docs/developer-guide/working-with-rules" target="_blank">自定义规则</a></h4>
+<p>自定义规则的方式有两种：</p>
+<ul>
+<li>创建一个 <code>eslint-plugin-*</code> 插件，在配置文件的 <code>extends</code> 中引用。创建插件最简单的方式是使用 <a href="https://www.npmjs.com/package/generator-eslint" target="_blank">Yeoman generator</a>。</li>
+<li>创建单个或多个规则，放在一个目录下，用命令行的 <code>--rulesdir</code> 参数指定规则目录。</li>
+</ul>
+<p>以创建规则为例，按照以下步骤：</p>
+<ul>
+<li><p>自定义规则，把所有的规则放在同一个目录下，如：<code>rules/lib</code>；</p>
+<pre><code class="lang-js"><span class="hljs-comment">// no-hello-in-identifier.js</span>
+<span class="hljs-comment">// 定义规则：禁止标识符中出现 hello</span>
+<span class="hljs-comment">// JavaScript 标识符包括变量名、函数名、参数名和属性名</span>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+    <span class="hljs-attr">meta</span>: {
+        <span class="hljs-attr">type</span>: <span class="hljs-string">"suggestion"</span>,
+        <span class="hljs-attr">messages</span>: {
+            <span class="hljs-attr">invalidName</span>: <span class="hljs-string">"避免标识符出现 'hello' "</span>
+        }
+    },
+    <span class="hljs-attr">create</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">context</span>) {
+        <span class="hljs-keyword">return</span> {
+            <span class="hljs-title class_">Identifier</span>(node) {
+                <span class="hljs-keyword">if</span> (node.<span class="hljs-property">name</span>.<span class="hljs-title function_">toLowerCase</span>().<span class="hljs-title function_">includes</span>(<span class="hljs-string">'hello'</span>)) {
+                    context.<span class="hljs-title function_">report</span>({
+                        node,
+                        <span class="hljs-attr">messageId</span>: <span class="hljs-string">'invalidName'</span>
+                    })
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<p>一个规则的源文件输出一个对象，包含以下属性。</p>
+<ul>
+<li><strong>meta：</strong> 规则的元数据。type 表规则的类型、docs 表对规则的描述（在自定义的规则或插件中，可省略或包含部分属性）、messages 定义一些报错信息。</li>
+<li><strong>create：</strong> 返回一个对象。其中包含了 <strong>ESLint 在遍历 JavaScript 代码的抽象语法树 AST (ESTree 定义的 AST) 时，用来访问节点的方法</strong>。create 函数的参数 context 对象包含额外的功能，有利于规则完成他们的工作。顾名思义，context 对象包含与规则上下文相关的信息。</li>
+</ul>
+</li>
+<li><p>创建一个配置文件：在 rules 属性下指定你的规则 ID、错误级别，否则，规则将不会运行；</p>
+<pre><code class="lang-js"><span class="hljs-comment">// .eslintrc.js</span>
+<span class="hljs-comment">// 启动规则</span>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+    ...
+    <span class="hljs-attr">rules</span>: {
+        <span class="hljs-string">'no-hello-in-identifier'</span>: <span class="hljs-number">1</span>
+    },
+    ...
+}
+</code></pre>
+</li>
+<li><p>运行命令行：使用 <code>--rulesdir</code> 选项指定规则的目录。</p>
+<pre><code class="lang-shell">eslint --rulesdir rules/lib/ --config .eslintrc.js demo.js
+</code></pre>
+</li>
+</ul>
+<h3 id="stylelint"><a href="https://stylelint.docschina.org/" target="_blank">Stylelint</a></h3>
+<p>一款与 Eslint 类型的插件，不过，是用于校验 Css 的，可以帮助你避免错误和强制约定一些代码风格。</p>
+<h4 id="安装及配置">安装及配置</h4>
+<p><strong>安装：</strong><code>npm install stylelint stylelint-config-standard -D</code>。</p>
+<p><strong>配置：</strong> 在项目中加配置文件，查找和加载配置对象从当前工作目录开始，它将按以下顺序查找以下可能的源：</p>
+<ul>
+<li><code>package.json</code> 中的 <code>stylelint</code> 属性；</li>
+<li><code>.stylelintrc</code>： 没有扩展名，可以是 JSON 或 YAML 格式。也可以添加文件扩展名以指定格式：<code>.stylelintrc.json</code>、 <code>.stylelintrc.yaml</code>、 <code>.stylelintrc.yml</code>、 <code>.stylelintrc.js</code>。；</li>
+<li><code>stylelint.config.js</code> 文件。</li>
+</ul>
+<p>找到并解析其中一个后，搜索将停止并将使用该对象。可以使用 <code>config</code> 或 <code>configFile</code> 选项指定配置文件。</p>
+<h4 id="使用方式">使用方式</h4>
+<ul>
+<li><p><strong><a href="https://stylelint.docschina.org/user-guide/cli/" target="_blank">命令行</a>：</strong>  <code>stylelint [options] [file|dir|glob]*</code>。</p>
+<pre><code class="lang-shell">stylelint test.css
+<span class="hljs-meta prompt_">
+# </span><span class="language-bash">检查目录中的所有.css|.html(文件中style块) 文件</span>
+stylelint src/*.css
+stylelint src/*.html
+
+stylelint  --config stylelint.config.js --fix test.css &gt; report.txt
+</code></pre>
+</li>
+<li><p><strong><a href="https://stylelint.docschina.org/user-guide/node-api/" target="_blank">Node 应用程序接口</a>：</strong> 通过 Node 应用程序接口使用 stylelint 的一些示例和选项。</p>
+</li>
+<li><p><strong><a href="https://stylelint.docschina.org/user-guide/postcss-plugin/" target="_blank">PostCSS 插件</a>：</strong> 使用 PostCSS 插件的一些示例及选项。</p>
+</li>
+<li><p><strong><a href="https://stylelint.docschina.org/user-guide/complementary-tools/" target="_blank">辅助工具</a>：</strong> 社区提供的编辑器（Sublime Text、Atom、Visual Studio Code 等）插件、构建工具（Gulp、Webpack 等）插件、以及其他工具（Git 中的构子）的汇总。</p>
+</li>
+</ul>
+<h4 id="配置说明"><a href="https://stylelint.docschina.org/user-guide/configuration/" target="_blank">配置说明</a></h4>
+<pre><code class="lang-js"><span class="hljs-comment">// stylelint.config.js</span>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+    <span class="hljs-string">"plugins"</span>: [],
+    <span class="hljs-string">"extends"</span>: [
+        <span class="hljs-string">"stylelint-config-standard"</span>
+    ],
+    <span class="hljs-string">"rules"</span>: {
+        <span class="hljs-string">"color-no-invalid-hex"</span>: <span class="hljs-literal">true</span>
+    }
+}
+</code></pre>
+<ul>
+<li><p><strong>extends：</strong> 继承现有配置（无论您自己的配置还是第三方配置）。当一个配置继承另一个配置时，它从另一个配置的属性开始，然后添加并覆盖其中的内容。</p>
+<p>extends 可以是数组，数组中的每个项都优先于前一项，而当前文件配置的优于所有数组中的配置文件。</p>
+<p>extends 的值是一个 <strong>定位符（或者是一个定位符数组）</strong>，最终通过 <code>require()</code> 加载，所以可以是任何适用于 Node 的 <code>require.resolve()</code> 算法的格式。这意味着 <strong>定位符</strong> 可以是：</p>
+<ul>
+<li>node_modules 中模块的名称（如：stylelint-config-standard，从该模块导入的文件必须是有效的 JSON 配置）；</li>
+<li>使用 .js 或 .json 扩展名的文件绝对路径；</li>
+<li>相对于引用配置的使用 .js 或 .json 扩展名的文件相对路径。</li>
+</ul>
+</li>
+<li><p><strong>plugins：</strong> 插件是社区构建的支持方法、工具集、非标准 CSS 功能或非常具体的用例的规则或规则集。</p>
+<p>plugins 用于配置一组插件。其值是一个<strong>定位符数组</strong>。与上面的 extends 一样，定位符可以是 npm 模块名称、绝对路径或相对于调用配置文件的路径。</p>
+<p>一旦声明了插件，在您的 "rules" 对象中，您需要为插件的规则添加选项，就像任何标准规则一样。您需要查看插件的文档才能知道规则名称应该是什么。</p>
+<p>如：<code>stylelint-selector-bem-pattern</code> 是一款 stylelint 扩展插件，用于为 Css 选择器指定正则匹配。</p>
+<pre><code class="lang-js"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+    <span class="hljs-string">"plugins"</span>: [
+        <span class="hljs-string">"stylelint-selector-bem-pattern"</span>
+    ],
+    <span class="hljs-string">"rules"</span>: {
+        <span class="hljs-string">"plugin/selector-bem-pattern"</span>: {
+            <span class="hljs-string">"preset"</span>: <span class="hljs-string">"suit"</span>,
+            <span class="hljs-comment">// 组件名称检查规则，如：div、span等</span>
+            <span class="hljs-string">"componentName"</span>: <span class="hljs-regexp">/^[-_a-zA-Z0-9]+$/</span>,
+            <span class="hljs-comment">// 选择器检查规则</span>
+            <span class="hljs-string">"componentSelectors"</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">componentName</span>) {
+                <span class="hljs-keyword">const</span> prefix = <span class="hljs-string">"[a-z0-9]+"</span> <span class="hljs-comment">// 定义统一的选择器前缀</span>
+                <span class="hljs-keyword">const</span> block = <span class="hljs-string">"(?:-[a-z0-9]+)+"</span> <span class="hljs-comment">// 中划线连接，且只允许小写字母和数字</span>
+                <span class="hljs-keyword">const</span> modifier = <span class="hljs-string">"(?:-|--[a-z0-9]+)*"</span> <span class="hljs-comment">// 中划线或下划线连接，且只允许小写字母和数字</span>
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RegExp</span>(<span class="hljs-string">`^\\.<span class="hljs-subst">${prefix}</span><span class="hljs-subst">${block}</span><span class="hljs-subst">${modifier}</span>`</span>)
+            },
+            <span class="hljs-comment">// 通用选择器检查规则：在CSS文件在，用 /** @define utilities */ 注释表示是通用选择器。</span>
+            <span class="hljs-string">"utilitySelectors"</span>: <span class="hljs-regexp">/^\.util-[-_a-z0-9]+$/</span>,
+            <span class="hljs-string">"implicitComponents"</span>: [<span class="hljs-string">"components/**/*.css"</span>, <span class="hljs-string">"others/**/*.css"</span>],
+            <span class="hljs-string">"ignoreSelectors"</span>: [
+                <span class="hljs-string">"\.no-.+$"</span>
+            ]
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p><strong>rules：</strong> 指定 Stylelint 要启用的校验规则。默认情况下没有打开任何规则。</p>
+<p>rules 属性是一个键作为规则名称，值作为规则配置的对象。每条规则配置都符合以下格式之一：</p>
+<ul>
+<li><strong>单个值：</strong> 主选项；</li>
+<li><strong>包含两个值的数组：</strong> [主选项, 辅助选项]；</li>
+<li><strong>null：</strong> 关闭规则。</li>
+</ul>
+<p>点击查看 <a href="https://stylelint.docschina.org/user-guide/rules/" target="_blank">stylelint 所有内置规则</a>，或者在 <a href="https://stylelint.docschina.org/user-guide/example-config/" target="_blank">示例配置</a> 中找到主要规则选项的完整列表。</p>
+<p>默认情况下，所有规则都是 "error" 级别的严重性。您可以通过在配置中添加 defaultSeverity 属性来更改此默认值，或者使用辅助选项 <code>severity</code> 调整任何特定规则的严重性。severity 的可用值是：warning|error。</p>
+<p>所有规则都接受一个 <code>message</code> 辅助选项，如果指定该选项，任何标准消息都将被替为换指定的内容。</p>
+</li>
+<li><p><strong>processors：</strong> 处理器是一些社区包，使 stylelint 能够从非样式表文件中提取样式。它只能与命令行 和 Node.js API 一起使用，不能与 PostCSS 插件一起使用。</p>
+<p>处理器可以启用 stylelint 校验，但不会自动修复，且不支持对非样式文件中的 CSS 进行校验。</p>
+<p>processors 的值是一个<strong>定位符的数组</strong>。与 extends 上面一样，定位器可以是 npm 模块名称、绝对路径或相对于调用配置文件的路径。</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">"processors"</span>: [
+      <span class="hljs-string">"stylelint-my-processor"</span>,
+      [
+          <span class="hljs-string">"some-other-processor"</span>,
+          {
+              <span class="hljs-string">"optionOne"</span>: <span class="hljs-literal">true</span>,
+              <span class="hljs-string">"optionTwo"</span>: <span class="hljs-literal">false</span>
+          }
+      ]
+  ],
+  <span class="hljs-string">"rules"</span>: {..}
+}
+</code></pre>
+</li>
+<li><p><strong>ignoreFiles：</strong> 提供 glob 或 glob 数组以忽略特定文件。</p>
+<p>glob 是用于匹配符合指定模式的文件集合的一种语言， 类似于正则表达式， 但更加简单。</p>
+<p><strong>请注意，这不是忽略大量文件的有效方法。 如果要有效地忽略大量文件，请使用 .stylelintignore 或调整文件 glob。</strong></p>
+<p>如果 globs 是绝对路径，则它们按原样使用。如果它们是相对路径，则相对于它们进行分析：</p>
+<ul>
+<li><code>configBasedir</code> （Node.js API 传参中）；</li>
+<li>配置的文件路径，如果配置是 stylelint 查找加载的文件的话；</li>
+<li>或 <code>process.cwd()</code>。</li>
+</ul>
+<p>默认情况下，忽略所有 <code>node_modules</code> 和 <code>bower_components</code>。如果设置了 <code>ignoreFiles</code>，则将覆盖默认值。</p>
+<p><code>ignoreFiles</code> 属性从继承配置中删除：只有根级配置可以忽略文件。</p>
+</li>
+<li><p><strong>defaultSeverity：</strong>未指定严重性的所有规则的默认严重性级别，可用值是：warning|error。</p>
+</li>
+</ul>
+<h4 id="忽略代码">忽略代码</h4>
+<p>在文件中以注释形式，指定忽略的代码：</p>
+<pre><code class="lang-css"><span class="hljs-comment">/* stylelint-disable */</span>
+<span class="hljs-selector-tag">a</span> {}
+<span class="hljs-comment">/* stylelint-enable */</span>
+
+<span class="hljs-comment">/* stylelint-disable selector-no-id, declaration-no-important  */</span>
+<span class="hljs-selector-id">#id</span> {
+    <span class="hljs-attribute">color</span>: pink <span class="hljs-meta">!important</span>;
+}
+<span class="hljs-comment">/* stylelint-enable */</span>
+
+<span class="hljs-selector-id">#id</span> { <span class="hljs-comment">/* stylelint-disable-line */</span>
+    <span class="hljs-attribute">color</span>: pink <span class="hljs-meta">!important</span>; <span class="hljs-comment">/* stylelint-disable-line declaration-no-important */</span>
+}
+<span class="hljs-selector-id">#id</span> {
+    <span class="hljs-comment">/* stylelint-disable-next-line declaration-no-important */</span>
+    <span class="hljs-attribute">color</span>: pink <span class="hljs-meta">!important</span>;
+}
+</code></pre>
+<h4 id="stylelintignore">.stylelintignore</h4>
+<p>您可以使用 <code>.stylelintignore</code> 文件（或指向另一个忽略模式文件）来忽略特定文件。在检查文件系统之前，这些文件将从文件 glob 中排除，因此它是忽略大量文件的有效方法。</p>
+<p><code>.stylelintignore</code> 文件中的模式必须与 <code>.gitignore</code> 语法匹配。（在幕后，<code>node-ignore</code> 解析您的模式）这意味着您的 <code>.stylelintignore</code> 中的模式总是相对于 <code>process.cwd()</code> 进行分析。</p>
+<p>stylelint 将在 <code>process.cwd()</code> 中查找<code>.stylelintignore</code>文件。您还可以使用<code>--ignore-path</code>（在CLI中）和 <code>ignorePath</code>（在JS中）选项指定忽略模式文件的路径（绝对或相对于<code>process.cwd()</code>）。</p>
+<h3 id="prettier"><a href="https://www.prettier.cn/" target="_blank">Prettier</a></h3>
+<p>Prettier 的中文意思是“漂亮的、机灵的”，也是一个流行的代码格式化工具的名称。它在整个代码库中强制执行一致的代码风格（不会影响 AST），它能够解析代码，并使用你自己设定的规则来重新输出规范的代码。</p>
+<p>Prettier 具有以下几个有优点：</p>
+<ul>
+<li>可配置化；</li>
+<li>支持多种语言；</li>
+<li>集成多数的编辑器；</li>
+<li>简洁的配置项。</li>
+</ul>
+<p>到目前为止，采用 Prettier 的最大原因是<strong>停止所有正在进行的关于风格的争论</strong>。</p>
+<h4 id="prettier-和-linters-的区别："><strong>Prettier 和 Linters 的区别：</strong></h4>
+<p>Linter （如：ESLint/stylelint） 有两类规则：</p>
+<p><strong>格式规则： </strong> 例如：max-len、no-mixed-spaces-and-tabs、keyword-spacing、comma-style ...</p>
+<p>Prettier 减轻了 Linters 对这类规则的检查！Prettier 将以一致的风格从头开始重新输出整个项目的代码。</p>
+<p><strong>代码质量规则：</strong> 例如：no-unused-vars、no-extra-bind、no-implicit-globals、prefer-promise-reject-errors ...</p>
+<p>Prettier 不会为这些规则做任何事。这些规则是 Linter 提供的最重要的功能，因为它们很可能会捕获您代码中的真正错误！</p>
+<p><strong>换句话说：使用 Prettier 格式化代码；使用 Linter 来捕获代码中的错误！</strong></p>
+<h4 id="安装及配置">安装及配置</h4>
+<p><strong>安装：</strong><code>npm i prettier -D</code></p>
+<p><strong>配置：</strong> 可以通过以下格式的文件（按优先顺序）配置 Prettier：</p>
+<ul>
+<li><code>package.json</code> 文件中的 <code>prettier</code> 字段；</li>
+<li><strong>.prettierrc：</strong> 用 JSON 或 YAML 编写的文件；</li>
+<li><code>.prettierrc.json、.prettierrc.yml、.prettierrc.yaml、.prettierrc.json5</code> 文件；</li>
+<li><code>.prettierrc.js、.prettierrc.cjs、prettier.config.js、prettier.config.cjs</code> 导出 <code>module.exports</code>；</li>
+<li><code>.prettierrc.toml</code> 文件。</li>
+</ul>
+<p>配置文件将从被格式化的文件位置开始解析，并在文件树中搜索，直到找到（或未找到）配置文件。</p>
+<p>Prettier 故意不支持任何类型的全局配置。这是为了确保当一个项目被复制到另一台计算机时，Prettier 的行为保持不变。否则，Prettier 将无法保证团队中的每个人都获得相同的一致结果。</p>
+<h4 id="使用方式">使用方式</h4>
+<p><strong>命令行：</strong> 在命令行使用 <code>prettier</code> 命令：</p>
+<pre><code class="lang-shell">prettier rules/prettier.test.js
+prettier --write rules/prettier.test.js
+</code></pre>
+<ul>
+<li><p><strong>--write|-w：</strong> prettier 默认是在终端输出格式化后的文件。使用 <code>--write</code> 参数，将重写所有已处理的文件。 （注意：这会覆盖您的文件！）</p>
+</li>
+<li><p><strong>--check|-c：</strong> 检查文件是否已格式化。（注意：只检查，并不会对文件格式化！）</p>
+</li>
+<li><p><strong>--find-config-path：</strong> 返回上次格式化该文件使用的配置文件的路径。</p>
+<pre><code class="lang-shell">prettier --find-config-path rules/prettier.test.js
+<span class="hljs-meta prompt_"># </span><span class="language-bash">&gt; prettier.config.js</span>
+</code></pre>
+</li>
+<li><p><strong>--config：</strong> 指定配置文件。</p>
+</li>
+<li><p><strong>--ignore-path：</strong> 指定要忽略文件的配置文件。</p>
+</li>
+<li><p><strong>--list-different|-l</strong>： 返回格式化文件会改动的文件名列表。</p>
+<pre><code class="lang-shell">prettier -l rules/**.test.js
+</code></pre>
+</li>
+<li><p><strong>--no-config：</strong> 不要寻找配置文件。将使用默认设置。</p>
+</li>
+<li><strong>--config-precedence：</strong> 枚举值，默认 cli。指定 cli 配置选项的优先级。<ul>
+<li>cli-override：CLI 选项优先于配置文件。</li>
+<li>file-override： 配置文件优先于 CLI 选项。</li>
+<li>prefer-file： 有配置文件，将忽略其他 CLI 选项；未找到配置文件，CLI 选项将正常使用。此选项增加了对编辑器集成的支持，当用户定义其配置，希望尊重项目特定配置。</li>
+</ul>
+</li>
+<li><strong>--no-editorconfig：</strong> 解析配置文件时，忽略 <code>.editorconfig</code> 文件。</li>
+<li><strong>--with-node-modules：</strong> Prettier 默认是忽略 <code>node_modules</code>目录中的文件。该参数表示退出此行为。</li>
+<li><strong>--loglevel：</strong> 枚举值，默认 log 。更改 CLI 的日志记录级别。值：error、warn、log （默认）、debug、silent。</li>
+</ul>
+<p><strong>Node应用程序接口：</strong> Prettier 提供了 APIS，允许你以编程方式运行 Prettier。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> prettier = <span class="hljs-built_in">require</span>(<span class="hljs-string">"prettier"</span>)
+prettier.<span class="hljs-title function_">format</span>(<span class="hljs-string">"foo ( );"</span>, {
+    <span class="hljs-attr">semi</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">parser</span>: <span class="hljs-string">"babel"</span>
+})
+<span class="hljs-comment">// -&gt; "foo()"</span>
+</code></pre>
+<p><strong>浏览器：</strong> 在 HTML 中引入 <code>prettier.js</code>，在浏览器中调用 API。 此版本不依赖于 Node.js。它只格式化代码，不支持配置文件、忽略文件、CLI 使用或插件的自动加载。</p>
+<pre><code class="lang-javascript">&lt;script src=<span class="hljs-string">"https://unpkg.com/prettier@2.4.1/standalone.js"</span>&gt;&lt;/script&gt;
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/prettier@2.4.1/parser-graphql.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    prettier.<span class="hljs-title function_">format</span>(<span class="hljs-string">"type Query { hello: String }"</span>, {
+        <span class="hljs-attr">parser</span>: <span class="hljs-string">"graphql"</span>,
+        <span class="hljs-attr">plugins</span>: prettierPlugins,
+    })
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+</code></pre>
+<p><strong>Git Hooks</strong>： 可以将 Prettier 与预提交工具一起使用，即在 <code>git add</code> 提交之前重新格式化并标记为 “暂存” 文件。（详见下文）</p>
+<p><strong>与编辑器集成：</strong> Prettier 可以在多个编辑器中以插件的形式使用。如：VS Code、Vim、Sublime Text、WebStorm、Atom等。</p>
+<p>以 VS code 为例，配置文件在保存时自动格式化文件：</p>
+<ul>
+<li>安装 <code>Prettier - Code formatter</code> ；</li>
+<li>添加配置文件 <code>prettier.config.js</code>；</li>
+<li>在 <code>文件 -&gt; 首选项 -&gt; 设置 -&gt; 文本编辑器 -&gt; 格式化</code> 中勾选 <code>Format On Save</code> ；</li>
+<li>重启 VS code 。之后，在你每次保存文件时，prettier 会自动格式化文件。</li>
+</ul>
+<h4 id="配置说明"><a href="https://www.prettier.cn/docs/options.html" target="_blank">配置说明</a></h4>
+<pre><code class="lang-js"><span class="hljs-comment">//prettier.config.js</span>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+    <span class="hljs-attr">printWidth</span>: <span class="hljs-number">80</span>,
+    <span class="hljs-attr">tabWidth</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-attr">useTabs</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">semi</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">singleQuote</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">quoteProps</span>: <span class="hljs-string">"as-needed"</span>,
+    <span class="hljs-attr">trailingComma</span>: <span class="hljs-string">"es5"</span>,
+    <span class="hljs-attr">bracketSpacing</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">bracketSameLine</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">arrowParens</span>: <span class="hljs-string">"always"</span>
+}
+</code></pre>
+<ul>
+<li><p><strong>printWidth：</strong> 数值，默认80。每行的最大字符长度。注意：printWidth 不是硬性的允许行长度上限，它只是说明您希望的每行的字符长度，与 Eslint 中的 max-len 不一样。比如：行中语句是一个长字符，printWidth 不会强制它换行</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> strA = <span class="hljs-string">'The future belongs to those who believe in the beauty of their dreams.'</span>
+<span class="hljs-keyword">var</span> strAA = <span class="hljs-string">'The future belongs to those '</span> + <span class="hljs-string">'who believe in the beauty of their dreams.'</span>
+
+<span class="hljs-comment">/** 格式化后：
+var strA =
+    "The future belongs to those who believe in the beauty of their dreams.";
+var strAA =
+    "The future belongs to those " +
+    "who believe in the beauty of their dreams.";
+**/</span>
+</code></pre>
+</li>
+<li><p><strong>tabWidth：</strong> 数值，默认2。指定每个缩进符的空格数。</p>
+</li>
+<li><p><strong>useTabs：</strong> 布尔值，默认值 false。指定缩进是否用 tab 符。</p>
+</li>
+<li><p><strong>semi：</strong> 布尔值，默认值 true。在语句末尾输出分号。</p>
+</li>
+<li><p><strong>singleQuote | jsxSingleQuote：</strong> 布尔值，默认值 false。指定是否使用单引号代替双引号。</p>
+<p>JSX 会忽略 <code>singleQuote</code> 选项，指定要 JSX 中是否使用单引号代替双引号请使用 <code>jsxSingleQuote</code> 选项。 </p>
+<p>如果引号的数量超过另一个引号，则较少使用的引号将用于格式化字符串。示例：</p>
+<pre><code class="lang-js"><span class="hljs-string">"I'm double quoted"</span> =&gt; <span class="hljs-string">"I'm double quoted"</span>
+<span class="hljs-string">"This \"example\" is single quoted"</span> =&gt; <span class="hljs-string">'This "example" is single quoted'</span>
+</code></pre>
+</li>
+<li><p><strong>quoteProps | jsxSingleQuote：</strong> 枚举值，默认值 <code>as-needed</code>。指定对象中的属性的引号如何改动。</p>
+<ul>
+<li>as-needed：仅在需要时在对象属性周围添加引号。</li>
+<li>consistent：如果对象中至少有一个属性需要引用，请引用所有属性。</li>
+<li>preserve：尊重对象属性中引号的输入使用，即不改动属性的引号。</li>
+</ul>
+</li>
+<li><p><strong>trailingComma：</strong>  枚举值，默认值 <code>es5</code>。指定在多行逗号分隔的句法结构中如何输出尾随逗号。</p>
+<ul>
+<li>es5：在 ES5 中有效的尾随逗号（对象、数组等），TypeScript 中的类型参数中没有尾随逗号。</li>
+<li>none：没有尾随逗号。</li>
+<li>all：尽可能尾随逗号（包括函数参数和调用）。</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">// trailingComma: "all"</span>
+<span class="hljs-keyword">const</span> objA = {
+    <span class="hljs-attr">propA</span>: <span class="hljs-string">"1111"</span>,
+    <span class="hljs-attr">propB</span>: <span class="hljs-string">"2222"</span>,
+    <span class="hljs-attr">propC</span>: <span class="hljs-string">"3333"</span>
+}
+<span class="hljs-comment">/** 格式化后：
+const objA = {
+    propA: "1111",
+    propB: "2222",
+    propC: "3333",
+}
+*/</span>
+</code></pre>
+</li>
+<li><p><strong>bracketSpacing：</strong> 布尔值，默认值 true。表示对象的括号之间是否留空格。</p>
+<pre><code class="lang-js"><span class="hljs-comment">// bracketSpacing: true</span>
+<span class="hljs-keyword">const</span> objb = {<span class="hljs-attr">propA</span>: <span class="hljs-string">"1111"</span>}
+
+<span class="hljs-comment">/** 格式化后：
+const objb = { propA: "1111" }
+*/</span>
+</code></pre>
+</li>
+<li><p><strong>bracketSameLine：</strong> 布尔值，默认值 false。指定是否将 HTML（HTML、JSX、Vue、Angular）多行的元素的结束符 <code>&gt;</code>放在同一行（不适用于自动关闭元素）。</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- bracketSameLine: true **--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span>
+    <span class="hljs-attr">className</span>=<span class="hljs-string">"prettier-class"</span>
+    <span class="hljs-attr">id</span>=<span class="hljs-string">"prettier-id"</span>
+    <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.handleClick}</span>&gt;</span>
+    Click Here
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- bracketSameLine: false **--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span>
+    <span class="hljs-attr">className</span>=<span class="hljs-string">"prettier-class"</span>
+    <span class="hljs-attr">id</span>=<span class="hljs-string">"prettier-id"</span>
+    <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.handleClick}</span>
+&gt;</span>
+    Click Here
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+</li>
+<li><p><strong>arrowParens：</strong> 枚举值，默认值 <code>always</code>。指定箭头函数只有一个参数时，是否包含括号。</p>
+<ul>
+<li>always：始终包括括号。例子：<code>(x) =&gt; x</code>。</li>
+<li>avoid：尽可能省略括号。例子：<code>x =&gt; x</code>。</li>
+</ul>
+</li>
+<li><p><strong>rangeStart | rangeEnd</strong>： 数值，<code>rangeStart</code>  默认值 0，<code>rangeEnd</code> 默认值一 <code>Infinity</code>。这两个选项用来表示仅格式化文件的一部分，<code>rangeStart</code> 表示字符开始的位置，<code>rangeEnd</code> 表示字符结束的位置。</p>
+</li>
+<li><p><strong>parser：</strong> 指定要使用的解析器。没有默认值，Prettier 会自动从输入文件路径推断解析器，因此您不必更改此设置。点击查看 <a href="https://www.prettier.cn/docs/options.html#parser" target="_blank">所有有效的解析器</a>。</p>
+</li>
+<li><p><strong>filepath：</strong> 字符串。指定要格式化的文件。此选项仅在 CLI 和 API 中有用，在配置文件中使用它没有意义。</p>
+</li>
+<li><p><strong>requirePragma：</strong> 布尔值，默认 false。仅格式化文件顶部包含特殊注释的文件，即 执行 prettier 命令格式化多个文件时，只格式化顶部带以下注释的文件。</p>
+<pre><code class="lang-js"><span class="hljs-comment">/** <span class="hljs-doctag">@prettier</span> */</span>
+</code></pre>
+<p>或者</p>
+<pre><code class="lang-js"><span class="hljs-comment">/** <span class="hljs-doctag">@format</span> */</span>
+</code></pre>
+</li>
+<li><p><strong>insertPragma：</strong> 布尔值，默认 false。 指定是否对已使用 Prettier 命令格式化的文件，在顶部插入一个特殊 <code>@format</code> 标记。与 <code>requirePragma</code> 同时使用时，<code>require-pragma</code> 具有优先权，<code>insert-pragma</code> 会被忽略。</p>
+<pre><code class="lang-js"><span class="hljs-comment">/** <span class="hljs-doctag">@format</span> */</span>
+</code></pre>
+</li>
+<li><p><strong>proseWrap：</strong> 枚举值，默认值 <code>preserve</code>。默认情况下，Prettier 将按 markdown 文本原来的样子进行换行，因为某些服务的渲染器对换行符比较敏感。在某些情况下，您可能希望改用编辑器自己的换行，您可以选择 <code>never</code>。</p>
+<ul>
+<li>always：如果文本超过 printWidth，则将其换行。</li>
+<li>never：不换行。</li>
+<li>preserve：按原样换行。</li>
+</ul>
+</li>
+<li><p><strong>htmlWhitespaceSensitivity：</strong>  枚举值，默认值 <code>css</code>。为 HTML、Vue、Angular 和 Handlebars 指定全局空白敏感度。</p>
+<ul>
+<li>css：尊重 CSS <code>display</code>属性的默认值。在 Handlebars 使用 <code>strict</code>。</li>
+<li>strict：所有标签周围的空白（或没有空白）被认为是重要的。</li>
+<li>ignore：所有标签周围的空白（或没有空白）被认为是无关紧要的。</li>
+</ul>
+</li>
+<li><p><strong>vueIndentScriptAndStyle：</strong> 布尔值，默认值 false。是否缩进Vue 文件中的代码 <code>&lt;script&gt;</code> 和 <code>&lt;style&gt;</code> 标签。</p>
+</li>
+<li><p><strong>endOfLine：</strong>  枚举值，默认值 <code>lf</code>。指定换行符。</p>
+<p>由于历史原因，文本文件中存在两种常见的行尾形式，即 <code>\n</code>（<code>LF</code>）和 <code>\r\n</code>（回车+<code>CRLF</code>）。前者在 Linux 和 macOS 上很常见，而后者在 Windows 上很普遍。</p>
+<ul>
+<li>lf：仅<code>\n</code>换行 ( )，常见于 Linux 和 macOS 以及 git 存储库内。</li>
+<li>crlf：回车符 + 换行符 ( <code>\r\n</code>)，在 Windows 上很常见。</li>
+<li>cr：仅回车符 ( <code>\r</code>)，很少使用。</li>
+<li>auto：维护现有的换行符。</li>
+</ul>
+</li>
+<li><p><strong>embeddedLanguageFormatting：</strong>枚举值，默认值 <code>auto</code>。控制 Prettier 是否格式化文件中嵌入的引用代码。</p>
+<ul>
+<li>auto：如果 Prettier 可以自动识别嵌入代码，请对其进行格式化。</li>
+<li>off：永远不要自动格式化嵌入的代码。</li>
+</ul>
+</li>
+<li><p><strong>overrides：</strong> 重写对某些文件扩展名、文件夹和特定文件的 prettier 配置。</p>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">"overrides"</span>: [
+        {
+            <span class="hljs-string">"files"</span>: <span class="hljs-string">"*.overrides-example.js"</span>,
+            <span class="hljs-string">"options"</span>: {
+                <span class="hljs-string">"semi"</span>: <span class="hljs-literal">true</span>
+            }
+        }
+    ]
+}
+</code></pre>
+</li>
+<li><p><strong>共享配置：</strong> 共享 Prettier 配置很简单，只需发布一个导出配置对象的模块，然后在 <code>package.json</code> 或者配置文件中导入即可。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+    ...<span class="hljs-built_in">require</span>(<span class="hljs-string">"@company/prettier-config"</span>),
+    <span class="hljs-attr">semi</span>: <span class="hljs-literal">false</span>,
+}
+</code></pre>
+</li>
+</ul>
+<h4 id="忽略代码"><a href="https://www.prettier.cn/docs/ignore.html" target="_blank">忽略代码</a></h4>
+<p>在文件中以注释形式，忽略代码：</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// prettier-ignore</span>
+</code></pre>
+<h4 id="prettierignore"><a href="https://www.prettier.cn/docs/ignore.html#ignoring-files-prettierignore" target="_blank">.prettierignore</a></h4>
+<p>新创建 <code>.prettierignore</code> 文件，去忽略某些文件和文件夹。</p>
+<pre><code class="lang-shell">build
+coverage
+*.html
+</code></pre>
+<h3 id="editorconfig-"><a href="https://editorconfig.org/" target="_blank">EditorConfig </a></h3>
+<p>EditorConfig 帮助<strong>跨不同编辑器和 IDE</strong> 从事同一项目的多个开发人员维护一致的编码风格。 EditorConfig 项目包括一个用于定义编码样式的文件格式（.editorconfig）和一组文本编辑器插件，这些插件使编辑器能够读取文件格式并遵循所定义的样式。 </p>
+<p>有些编辑器默认支持 editorConfig，如 webstorm；而有些编辑器则需要安装 editorConfig 插件，如ATOM、Sublime、VS Code等。</p>
+<p>当打开一个文件时，EditorConfig 插件会在打开文件的目录和其每一级父目录查找 <code>.editorconfig</code> 文件，直到有一个配置文件 root=true。</p>
+<p>EditorConfig 的配置文件是从上往下读取的，并且最近的 EditorConfig 配置文件会被最先读取。匹配  EditorConfig 配置文件中的配置项会按照读取顺序被应用，所以最近的配置文件中的配置项拥有优先权。</p>
+<p>如果 <code>.editorconfig</code> 文件没有进行某些配置，则使用编辑器默认的设置。</p>
+<h4 id="配置说明">配置说明</h4>
+<p><code>.editorconfig</code> 需要是 UTF-8 字符集编码的，以 CRLF 或 LF 行分隔符，斜杆（/）被用作为一个路径分隔符，井号（#）或分号（;）被用作于注释，注释需要与注释符号写在同一行。</p>
+<p><code>.editorconfig</code> 文件中，所有的属性和值都是忽略大小写的，解析时它们都是小写的。注意：部分名称是文件路径的，是区分大小写。</p>
+<p>示例：</p>
+<pre><code class="lang-shell">root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+[*.{js,py}]
+charset = utf-8
+
+[*.py]
+indent_style = space
+indent_size = 4
+
+[**.js]
+indent_style = space
+indent_size = 2
+</code></pre>
+<p><strong>请注意，并非每个插件都支持所有属性。</strong></p>
+<ul>
+<li><strong>indent_style：</strong> 指定以 tab 符，还是空格缩进。值：tab | space。</li>
+<li><strong>indent_size：</strong> 指定缩进 tab 符的列数或者空格的宽度。当设置为 tab 时，<code>tab_width</code> 将使用（如果指定）的值。</li>
+<li><strong>tab_width：</strong> 指定 tab 符的列数的整数。这个默认为 <code>indent_size</code> 的值，<code>indent_size</code> 通常不需要指定。</li>
+<li><strong>end_of_line：</strong> 指定换行符。值：lf | cr | crlf。</li>
+<li><strong>charset：</strong> 指定编码字符集。值：latin1 | utf-8 | utf-8-bom | utf-16be | utf-16le。</li>
+<li><strong>trim_trailing_whitespace：</strong> 指定是否删除换行符之前的任何空白字符。值：true | false。</li>
+<li><strong>insert_final_newline：</strong> 指定是否在文件保存时以换行符结尾。值：true | false。</li>
+<li><strong>root：</strong> 指定是否停止对 <code>.editorconfig</code> 文件的搜索。该属性应置于文件顶部，在任何其他属性之上。值：true。</li>
+</ul>
+<p>一般情况下，如果没有指定属性，将使用编辑器默认设置的值。对于任何属性，值为 <code>unset</code> 是为了移除该属性的影响，即使它之前已经设置过。</p>
+<h4 id="与编辑器集成">与编辑器集成</h4>
+<p>要将 EditorConfig 与编辑器或 IDE一起使用， 必需安装对应的 EditorConfig 插件或扩展。。</p>
+<p>以 VS code 为例：安装 <code>EditorConfig for VS Code</code> 插件，再配置 <code>.editorconfig</code> 文件。</p>
+<p><strong>注意：</strong> 需要先安装 <code>EditorConfig</code> 包。如：<code>npm install editorconfig -g</code>。</p>
+<p><strong>注意：</strong> VS code 的 Prettier 和 EditorConfig  插件有冲突。如果你安装过 Prettier 插件，后面又安装了 EditorConfig。这时，你调用 <code>Format Document</code> 命令或者保存文件，EditorConfig  可能不会自动格式化文件。</p>
+<p><strong>EditorConfig  格式化无效，有两个可能的原因：</strong></p>
+<ul>
+<li><p>编辑器指定的默认格式化程序是 Prettier（或其他程序）。我们可以修改默认的格式化程序： <code>Ctrl + Shift + p</code> 打开命令面板，输入 <code>setting</code>，点击 <code>Perferences: Open Settings(JSON)</code> ，打开 <code>setting</code> 文件，设置 <code>"editor.defaultFormatter": "EditorConfig.EditorConfig"</code> 。</p>
+</li>
+<li><p>格式化程序不能格式化当前文件。<strong>报错：</strong> 扩展 ”EditorConfig for VS Code“ 配置为格式化程序，但不能格式化 'JavaScript' -文件。</p>
+<p>解决方法一：为特定的格式指定更改格式化文档方式，方法如上，参数如下方。</p>
+<p>解决方法二：在文档中 <code>右键 -&gt; 使用...格式化文档</code>，可以点击【格式化程序】格式化当前文件，也可以选择 【配置默认格式化程序...】为当前格式指定默认格式化程序。</p>
+</li>
+</ul>
+<p>以上两种方法，本质上都是修改 <code>setting</code> 文件，配置参数如下：</p>
+<pre><code class="lang-shell">{
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "EditorConfig.EditorConfig",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    }
+}
+</code></pre>
+<h3 id="如何避免-linters、prettier、editorconfig-冲突？">如何避免 Linters、Prettier、EditorConfig 冲突？</h3>
+<p>Linters、Prettier、EditorConfig 通过在项目中统一约定配置，可以在代码开发过程中就检查、约束、美化代码，统一编码风格；这样可以省去很多的沟通成本，提前暴露代码缺陷，减少后期二次维护代码的风险。</p>
+<p>这三者可以一起在项目中使用，它们的关注点各有不同：</p>
+<ul>
+<li><p><strong>EditorConfig：</strong> 跨编辑器和 IDE 编写代码，保持一致的简单编码风格；</p>
+</li>
+<li><p><strong>Prettier：</strong> 只专注于代码格式化，并不具备检查语法等功能；</p>
+</li>
+<li><p><strong>Linters：</strong> 代码质量检测、编码风格约束等，并且会提示或自动修复（部分）不符合风格规范的代码。</p>
+</li>
+</ul>
+<p>三者有部分规范属性是重复的，比如：代码缩进风格，EditorConfig 配置中指定 <code>indent_style = space, indent_size = 4</code> ，Prettier 配置中指定 <code>tabWidth: 2, useTabs: false</code>， Eslinte 配置中指定 rules 字段中 <code>"indent": ["error", 4]</code>。这三种配置都是指定代码缩进的规范，其指定值不一样时，不可避免的会发生冲突。</p>
+<p>在这之前，我一直有个疑问：即然 Linters 可以约束和规范代码，为什么还要用 Prettier 和 EditorConfig 呢？</p>
+<p>目前我总结，可能是以下原因：</p>
+<ul>
+<li>Prettier 可以针对各种流行语言，Linters 是针对特定的某种语言，比如：Eslint 是针对 JavaScript。</li>
+<li>Prettier、EditorConfig  安装、配置比较简单，运行速度也较快，并且能较好的与编辑器或 IDE 集成。</li>
+<li>Prettier、EditorConfig 可以提供一些 Liners 没有的规范。比如：EditorConfig  的<code>charset</code> 属性。</li>
+</ul>
+<p>那么我们该如何避免冲突？</p>
+<h4 id="方法一：专事专办、各司其职">方法一：专事专办、各司其职</h4>
+<p>让不同的插件做自己专注的事，避免重复配置同一规范。</p>
+<ul>
+<li>与编辑器或 IDE 相关的所有配置（结尾行、缩进风格、缩进大小等等）应该由 EditorConfig 来处理；</li>
+<li>和代码格式相关的一切事物应该由 Prettier 处理；</li>
+<li>剩下的，代码质量相关的，则由 Linters 负责。</li>
+</ul>
+<p>这样，Linters 做为我们的代码质量检测器，Prettier 充当代码格式化工具，而 EditorConfig 将为每个人提供正确的编辑器配置。</p>
+<h4 id="方法二：目标一致、同进同退">方法二：目标一致、同进同退</h4>
+<p>将这三个插件的指定同一规范的配置的值设置为等价的。比如：缩进风格，统一2个空格：</p>
+<pre><code class="lang-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">.editorconfig</span>
+indent_style = space
+indent_size = 2
+<span class="hljs-meta prompt_">
+# </span><span class="language-bash">prettier.config.js</span>
+module.exports = {
+    tabWidth: 2,
+    useTabs: false
+}
+<span class="hljs-meta prompt_">
+
+# </span><span class="language-bash">.eslintrc.js</span>
+module.exports = {
+    rules: {
+        "indent": ["warn", 2]
+    }
+}
+</code></pre>
+<h4 id="方法三：协商合作、互谦互让">方法三：协商合作、互谦互让</h4>
+<p>为插件的配置约定不同优先级，或者约定覆盖规则。</p>
+<ul>
+<li><p>Prettier 的最新版本通过解析 <code>.editorconfig</code> 文件来确定要使用的配置选项。也就是说，Prettier 会解析 EditorConfig  的配置。如果 Prettier 没有该配置，将采用 EditorConfig  的配置；如果有，则采用 Prettier 的配置。<strong>Prettier 配置优先于 EditorConfig。</strong></p>
+</li>
+<li><p>Linters 集成 Prettier，禁用冲突的规则。</p>
+<p>比如：Eslint 提供插件将 Prettier 作为 Eslint 规则来运行，如： <code>eslint-plugin-prettier</code>。我们通过 <code>extends</code> 字段来扩展该插件，然后在 <code>rules</code> 字段中指定关闭或启用某个 Prettier 规则。 </p>
+<p>再比如：Eslint 提一个 <code>eslint-plugin-prettier</code> 扩展，禁用所有与格式化相关的 ESLint 规则。</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// .eslintrc.js</span>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+    <span class="hljs-string">"plugins"</span>: [<span class="hljs-string">"prettier"</span>],
+    <span class="hljs-string">"extends"</span>: [
+        <span class="hljs-string">"eslint:recommended"</span>,
+        <span class="hljs-string">"prettier"</span>
+    ],
+    <span class="hljs-string">"rules"</span>: {
+        <span class="hljs-string">"prettier/prettier"</span>: <span class="hljs-string">"error"</span>
+    }
+}
+</code></pre>
+<ul>
+<li><strong>"plugins": ["prettier"]：</strong> 注册插件；</li>
+<li><strong>"extends": ["prettier"]</strong>： 启用 <code>eslint-config-prettier</code> 配置，关闭与 ESLint 冲突的规则；</li>
+<li><strong>"prettier/prettier": "error"</strong>： 启用 <code>eslint-plugin-prettier</code> 提供的规则。</li>
+</ul>
+<p><strong>注意：</strong> <code>extends</code> 字段中，后面引入的插件会覆盖前面的插件。 </p>
+</li>
+</ul>
+<h3 id="git-hook-集成格式化工具">Git Hook 集成格式化工具</h3>
+<p>在我们提交代码时，使用格式化程序，帮助我们检查代码并自动修复错误，在修复不了的时候，报错给我们。这样，可以确保提交到仓库的代码是风格一致的。</p>
+<h4 id="git-hook">Git Hook</h4>
+<p>Git 能在特定的重要动作发生时触发自定义脚本。 有两组这样的钩子：客户端的和服务器端的。 客户端钩子由诸如提交和合并这样的操作所调用，而服务器端钩子作用于诸如接收被推送的提交这样的联网操作。 </p>
+<p>钩子都被存储在 Git 目录下的 hooks 子目录中。 也即绝大部分项目中的 .git/hooks 。 当你用 git init 初始化一个新版本库时，Git 默认会在这个目录中放置一些示例脚本。这些脚本除了本身可以被调用外，它们还透露了被触发时所传入的参数。 所有的示例都是 shell 脚本，其中一些还混杂了 Perl 代码，不过，任何正确命名的可执行脚本都可以正常使用 —— 你可以用 Ruby 或 Python，或任何你熟悉的语言编写它们。 这些示例的名字都是以 .sample 结尾，如果你想启用它们，得先移除这个后缀。</p>
+<p>把一个正确命名（不带扩展名）且可执行的文件放入 .git 目录下的 hooks 子目录中，即可激活该钩子脚本。 这样一来，它就能被 Git 调用。</p>
+<p>客户端钩子分为很多种：提交工作流钩子、电子邮件工作流钩子和其它钩子。</p>
+<p><strong>提交工作流钩子：</strong> </p>
+<ul>
+<li><p><strong>pre-commit：</strong> 钩子在 <code>git commit</code> 前运行。 它用于检查即将提交的快照：检查是否有所遗漏、核查代码。 如果该钩子以非零值退出，Git 将放弃此次提交，不过你可以用 git commit --no-verify 来绕过这个环节。 你可以利用该钩子，来检查代码风格是否一致（运行类似 lint 的程序）、尾随空白字符是否存在（自带的钩子就是这么做的），或新方法的文档是否适当。</p>
+</li>
+<li><p><strong>prepare-commit-msg：</strong> 钩子在启动提交信息编辑器之前，默认信息被创建之后运行。</p>
+</li>
+<li><strong>commit-msg：</strong> 钩子接收一个参数，此参数即上文提到的，存有当前提交信息的临时文件的路径。 如果该钩子脚本以非零值退出，Git 将放弃提交，因此，可以用来在提交通过前验证项目状态或提交信息。 </li>
+<li><strong>post-commit：</strong> 钩子在整个提交过程完成后运行。 它不接收任何参数，但你可以很容易地通过运行 git log -1 HEAD 来获得最后一次的提交信息。 </li>
+</ul>
+<p>除了客户端钩子，作为系统管理员，你还可以使用若干服务器端的钩子对项目强制执行各种类型的策略。 这些钩子脚本在推送到服务器之前和之后运行。 推送到服务器前运行的钩子可以在任何时候以非零值退出，拒绝推送并给客户端返回错误消息，还可以依你所想设置足够复杂的推送策略。</p>
+<ul>
+<li><strong>pre-receive：</strong> 处理来自客户端的推送操作时，最先被调用的脚本是 pre-receive。 它从标准输入获取一系列被推送的引用。如果它以非零值退出，所有的推送内容都不会被接受。 你可以用这个钩子阻止对引用进行非快进（non-fast-forward）的更新，或者对该推送所修改的所有引用和文件进行访问控制。</li>
+<li><p><strong>update：</strong> update 脚本和 pre-receive 脚本十分类似，不同之处在于它会为每一个准备更新的分支各运行一次。 假如推送者同时向多个分支推送内容，pre-receive 只运行一次，相比之下 update 则会为每一个被推送的分支各运行一次。 它不会从标准输入读取内容，而是接受三个参数：引用的名字（分支），推送前的引用指向的内容的 SHA-1 值，以及用户准备推送的内容的 SHA-1 值。 如果 update 脚本以非零值退出，只有相应的那一个引用会被拒绝；其余的依然会被更新。</p>
+</li>
+<li><p><strong>post-receive：</strong> post-receive 挂钩在整个过程完结以后运行，可以用来更新其他系统服务或者通知用户。 </p>
+</li>
+</ul>
+<h4 id="husky"><a href="https://www.npmjs.com/package/husky" target="_blank">Husky</a></h4>
+<p>在项目的 <code>.git/hooks</code> 目录中，有一些 <code>.sample</code> 结尾的钩子示例脚本，如果想启用对应的钩子，只需手动删除后缀，即可。</p>
+<p><strong>注：</strong> 删除某一个 hook 的后缀 <code>.sample</code> 即可启用该 hook 脚本，默认是不启用的。</p>
+<p>但是，我们一般不去改动 <code>.git/hooks</code> 里面的文件，因为我们使用 husky 插件。husky 在安装过程中会在 <code>.git/hooks</code> 文件夹中生成一系列的 git hook 脚本。</p>
+<p><strong>安装：</strong> <code>npm i husky -D</code></p>
+<p><strong>注意 Husky 版本问题：</strong> husky@6.0.0 做了破坏性的变更，之前版本的设置方式已经失效。</p>
+<p>根据官方说法，之前 husky 的工作方式是：安装时，创建所有类型的 Git hooks。这样做的好处是，无论用户设置什么类型的 hook，husky 都能确保其正常运行，其缺点也明显，即使用户没有设置任何 hook，husky 也向 Git 中添加了所有类型的 Git hook。</p>
+<p>那有没有可能让 husky 只添加某一个 hook呢？husky 的作者尝试过解决这个问题，但是失败了。其根本原因是：husky 需要在两个地方进行配置才能完成一个完整的 hook 功能。一是 <code>package.json</code> 配置 git hook 所要执行的真正命令，一是在 <code>.git/hooks</code> 目录下，配置相对应的 hook。作者没有找到一个可靠的方法，同步这两个地方的配置。</p>
+<p><strong>新版本的工作原理：</strong> 新版的 husky 使用了从 git 2.9 开始引入的一个新功能 <code>core.hooksPath</code>。<code>core.hooksPath</code> 可以让你指定 git hooks 所在的目录而不是使用默认的 <code>.git/hooks/</code>。这样 husky 可以使用 <code>husky install</code> 将 <code>git hooks</code> 的目录指定为 <code>.husky/</code>，然后使用 <code>husky add</code> 命令向 <code>.husky/</code> 中添加 hook。通过这种方式我们就可以只添加我们需要的 <code>git hook</code>，而且所有的脚本都保存在了一个地方（<code>.husky/</code> 目录下）因此也就不存在同步文件的问题了。</p>
+<p><strong>新版本（6.0.0后）实践：</strong></p>
+<ul>
+<li><p><strong>安装：</strong> <code>npm i husky -D</code></p>
+</li>
+<li><p>在 <code>package.json</code> 中添加 prepare 脚本：</p>
+<pre><code class="lang-json"><span class="hljs-comment">// package.json</span>
+{
+    <span class="hljs-string">"scripts"</span>: {
+        <span class="hljs-string">"prepare"</span>: <span class="hljs-string">"husky install"</span>
+    }
+}
+</code></pre>
+<p>prepare 脚本会在 <code>npm install</code>（不带参数）之后自动执行。也就是，执行 <code>npm install</code> 安装完项目依赖后，会执行 <code>husky install</code>命令该。命令会创建在根目录下创建 <code>.husky/</code> 目录并指定该目录为 git hooks 所在的目录。</p>
+<p>当然，也可以直接在命令行中执行 <code>husky install</code>，创建 <code>.husky</code> 目录。</p>
+</li>
+<li><p>添加 Git hooks：</p>
+<pre><code class="lang-shell">npx husky add .husky/pre-commit "echo 'Create Git Hooks Success!'"
+</code></pre>
+<p>在 <code>./husky</code> 目录下，打开 <code>pre-commit</code> 文件，可查看其中配置：</p>
+<pre><code class="lang-shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/sh</span>
+. "$(dirname "$0")/_/husky.sh"
+
+echo 'Create Git Hook Success!'
+</code></pre>
+</li>
+</ul>
+<p>之后，执行 <code>git commit</code> 命令的，会调用钩子执行 <code>"echo 'Create Git Hooks Success!'"</code>。</p>
+<p>husky 的配置可以使用 <code>.huskyrc、.huskyrc.json、.huskyrc.js、husky.config.js</code> 文件。</p>
+<h4 id="lint-staged"><a href="https://github.com/okonet/lint-staged" target="_blank">Lint-staged</a></h4>
+<p>lint-staged 是一个在 git 暂存文件上（也就是被 git add 的文件）运行已配置的 linter（或其他）任务。lint-staged 总是将所有暂存文件的列表传递给任务。简单来说，就是当我们运行 <code>eslint</code> 或 <code>stylelint</code> 命令时，只会检查我们通过 <code>git add</code> 添加到暂存区的文件，可以避免我们每次检查都把整个项目的代码都检查一遍。</p>
+<p><strong>安装：</strong> <code>npm i lint-staged -D</code></p>
+<p><strong>配置：</strong> 在 <code>package.json</code> 文件中配置：</p>
+<pre><code class="lang-json"><span class="hljs-comment">//package.json</span>
+{
+    <span class="hljs-string">"lint-staged"</span>: {
+        <span class="hljs-string">"{src,packages}/**/*.{js,vue}"</span>: [
+            <span class="hljs-string">"eslint --fix"</span>,
+            <span class="hljs-string">"prettier --write"</span>,
+            <span class="hljs-string">"git add"</span>
+        ],
+        <span class="hljs-string">"{src,packages}/**/*.{css,vue}"</span>: [
+            <span class="hljs-string">"stylelint --fix"</span>,
+            <span class="hljs-string">"git add"</span>
+        ]
+    }
+}
+</code></pre>
+<p>这里 lint-staged 的配置，前面一条是：在 git 的待提交的文件中，在 src、package 目录下的所有 <code>.js</code> <code>.vue</code> 都要执行三条命令。前两条是 eslint 命令和 prettier 命令，后一条是将处理过的代码重新 add 到 git 中。</p>
+<p>配置完成后，执行 <code>git add .</code> 向暂存区提交文件，再在命令行中执行 <code>lint-staged</code>，即可执行以上配置的命令。</p>
+<p>其他 lint-staged 配置方式：</p>
+<ul>
+<li><code>package.json</code> 的 lint-staged 字段；</li>
+<li><strong>.lintstagedrc：</strong> JSON 或 YML 格式的文件；</li>
+<li><strong>lint-staged.config.js：</strong> JS 格式的文件。</li>
+</ul>
+<p>使用 <code>–config</code> 或 <code>-c</code> 标识传递配置文件。</p>
+<h4 id="husky--lint-staged">husky + lint-staged</h4>
+<p>执行 <code>husky add</code> 命令，添加 <code>pre-commit</code> 钩子，执行 <code>"lint-staged"</code>，形成一个自动化工具链：</p>
+<pre><code class="lang-shell">npx husky add .husky/pre-commit "lint-staged"
+</code></pre>
+<p>如此，在 commit 之前，将暂存区的内容做一次代码检查和代码美化，然后再添加到暂存区；然后再 commit，完美！！</p>
+<h3 id="参考链接">参考链接</h3>
+<p><a href="https://cn.eslint.org/" target="_blank">ESLint 官方文档</a></p>
+<p><a href="https://stylelint.docschina.org/" target="_blank">stylelint 官方文档</a></p>
+<p><a href="https://www.prettier.cn/" target="_blank">Prettier 中文网</a></p>
+<p><a href="https://editorconfig.org/" target="_blank">EditorConfig 官方文档</a></p>
+<p><a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks" target="_blank">Git 文档 - Hooks</a></p>
+<p><a href="https://neveryu.github.io/2020/06/10/husky-lint-staged/" target="_blank">husky+lint-staged助力团队编码规范</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/366786798" target="_blank">husky使用总结</a></p>
+<p></p><footer class="page-footer"><span class="copyright">© lizhao all right reserved，powered by Gitbook</span><span class="footer-modification">文件修订时间：
+2022-11-05 15:34:01
+</span></footer><p></p>
+<div id="gitalk-container"></div> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"></link> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html" class="navigation navigation-prev " aria-label="Previous page: 进阶 03 前端模块化编程：CommonJS、AMD、CMD、UMD、ES6">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02-进阶-05-Web离线应用.html" class="navigation navigation-next " aria-label="Next page: 进阶 05 Web离线应用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"进阶 04 规范代码：Linter、Prettier、EditorConfig","level":"4.11","depth":1,"next":{"title":"进阶 05 Web离线应用","level":"4.12","depth":1,"path":"frontend/02-进阶-05-Web离线应用.md","ref":"frontend/02-进阶-05-Web离线应用.md","articles":[]},"previous":{"title":"进阶 03 前端模块化编程：CommonJS、AMD、CMD、UMD、ES6","level":"4.10","depth":1,"path":"frontend/02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.md","ref":"frontend/02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","summary","sandpack","theme-default","theme-comscore","tbfed-pagefooter","pageview-count","accordion","sharing-plus","back-to-top-button","chapter-fold","klipse","mygitalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"summary":{"exclude":["docs/**"]},"search-pro":{"maxSearchIndexSize":10000000},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"mygitalk":{"flipMoveOptions":{},"clientID":"35175582adb321d85634","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["lizh"],"createIssueManually":false,"distractionFreeMode":false,"repo":"https://github.com/1927344728/fed-knowledge","owner":"lizh","enableHotKey":true,"clientSecret":"2e60c4d61474ec23e752f127e838aa2039e0433e","pagerDirection":"last","labels":["Gitalk"]},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":true,"qzone":true},"sandpack":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"lizhao","honkit":"^6.0.2","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术驿站•LIZHAO","language":"zh","gitbook":"*","description":"这是开发者的技术文档"},"file":{"path":"frontend/02-进阶-04-规范代码：Linter、Prettier、EditorConfig.md","mtime":"2022-11-05T07:34:01.670Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2026-06-29T12:14:32.945Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-sandpack/honkit-plugin-sandpack.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

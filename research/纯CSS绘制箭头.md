@@ -126,41 +126,88 @@
 
 [查看DEMO](https://1927344728.github.io/demo-lizh/html/09-arrow.html?type=4)
 
+### transform: matrix() 用法详解
 
+`transform: matrix()` 是CSS中最强大但也最复杂的变换函数，它允许你通过一个 6 值矩阵执行2D变换。
 
-### 终极实现方法
+#### 核心概念
 
-`transform: matrix`实现任意大小，任意方向， 任意角度的箭头 。
-
-先把div 旋转45度， 让它成为一个 菱形 然后再伸缩，达到任意的角度， 这样就可以得到一个 任意角度的箭头。由于用到了旋转和伸缩两种变换，所以需要使用 `transform: matrix(a,b,c,d,e,f)` 这个变换矩阵。
-
-![image-20200802025353693](https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200802025353693.png)
-
-```html
-<style>
-    .box_01 .item_05 {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        margin-top: 20px;
-        border-top: 2px solid #f50;
-        border-right: 2px solid #f50;
-        transform: matrix(0.7071067811865475, 0.7071067811865476, -0.7071067811865476, 0.7071067811865475, 0, 0);
-    }
-</style>
-<section class="box_01">
-    <em class="item_05"></em>
-</section>
+```shell
+matrix(a, b, c, d, tx, ty)
 ```
 
-[查看DEMO](https://1927344728.github.io/demo-lizh/html/09-arrow.html?type=5)
+参数对应以下变换：
 
-<p style="color: #f50">(没看懂。感兴趣的可以点击下方链接查看。lizh)</p>
+- `a` 和 `d`：控制缩放（x轴和y轴）
+- `b` 和 `c`：控制倾斜
+- `tx` 和 `ty`：控制平移（x轴和y轴）
+
+即，对应以下值：
+
+```shell
+matrix(scaleX, skewY, skewX, scaleY, translateX, translateY)
+```
+
+#### 角度和弧度
+
+**角度 (Degrees)：**源于古巴比伦文明的60进制计数系统。将一个圆等分为360份的单位，即，完整的圆 = 360°，平角 = 180°，直角 = 90°。
+
+**弧度 (Radians)：**国际单位制中的标准角度单位。基于圆的半径的单位，1弧度 = 半径长度的弧所对的圆心角，一个完整的圆 = 2π弧度 (约6.283弧度)。
+
+弧度 = 角度 × (π/180)
+
+角度 = 弧度 × (180/π)
+
+> 角度在日常生活中更常见，弧度在高等数学和物理学中更常用。弧度使许多数学公式更加简洁，特别是在微积分中
+
+#### 变换函数的等价关系
+
+##### 未变换
+
+```shell
+matrix(1, 0, 0, 1, 0, 0)
+```
+
+##### 平移：translate() 转 matrix()
+
+```shell
+translate(tx, ty)
+matrix(1, 0, 0, 1, tx, ty)
+```
+
+##### 缩放：scale() 转 matrix()
+
+```shell
+scale(sx, sy)
+matrix(sx, 0, 0, sy, 0, 0)
+```
+
+##### 倾斜：skew() 转 matrix()
+
+```shell
+skew(θx, θy)
+matrix(1, tan(θy), tan(θx), 1, 0, 0)
+```
+
+##### 旋转：rotate() 转 matrix()
+
+```shell
+rotate(θ)
+matrix(cosθ, sinθ, -sinθ, cosθ, 0, 0)
+```
+
+```shell
+const angle = 60;
+const rad = angle * Math.PI / 180;
+const sin = Math.sin(rad);
+const cos = Math.cos(rad);
+
+transform: matrix(cosθ, sinθ, -sinθ, cosθ, 0, 0);
+transform: matrix(0.5000000000000001, 0.8660254037844386, -0.8660254037844386, 0.5000000000000001, 0, 0);
+```
 
 
 ### 参考链接
-
-[css箭头](http://www.php-master.com/post/44097.html) 
 
 [使用css实现任意大小，任意方向， 任意角度的箭头](https://juejin.im/post/5a9c99c4f265da23906b7c98)
 

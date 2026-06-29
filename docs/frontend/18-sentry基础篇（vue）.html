@@ -1,0 +1,4072 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Sentry基础篇（Vue） · 技术驿站•LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 6.0.2">
+        <meta name="author" content="lizhao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="19-视口和软键盘对视口的影响.html" />
+    
+    
+    <link rel="prev" href="17-uniapp离线打包（Android）篇.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/00-前端调试随笔.html">
+            
+                <a href="../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/05-JS常见问题概览.html">
+            
+                <a href="../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/07-微信小程序开发.html">
+            
+                <a href="../bugs/07-微信小程序开发.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    微信小程序开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bugs/08-NodeJs常见问题概览.html">
+            
+                <a href="../bugs/08-NodeJs常见问题概览.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    NodeJs常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../bugs/09-Mac常见问题概览.html">
+            
+                <a href="../bugs/09-Mac常见问题概览.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Mac常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../bugs/10-微信环境前端开发指南.html">
+            
+                <a href="../bugs/10-微信环境前端开发指南.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    微信环境前端开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../bugs/99-其他问题汇总.html">
+            
+                <a href="../bugs/99-其他问题汇总.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    其他问题汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../css系列/00-CSS基础知识.html">
+            
+                <a href="../css系列/00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../css系列/00-CSS常见问答.html">
+            
+                <a href="../css系列/00-CSS常见问答.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../css系列/00-CSS常见问答02.html">
+            
+                <a href="../css系列/00-CSS常见问答02.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    CSS常见问答02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../css系列/00-CSS应用示例.html">
+            
+                <a href="../css系列/00-CSS应用示例.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    CSS应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../css系列/00-CSS应用示例02.html">
+            
+                <a href="../css系列/00-CSS应用示例02.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS应用示例02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../css系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../css系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../css系列/04-CSS探索系列-margin.html">
+            
+                <a href="../css系列/04-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                <a href="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    CSS探索系列 Auto关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../css系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../css系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../css系列/05-CSS探索系列-line-height.html">
+            
+                <a href="../css系列/05-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../css系列/05-CSS探索系列-元素居中.html">
+            
+                <a href="../css系列/05-CSS探索系列-元素居中.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    CSS探索系列 元素居中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../css系列/05-CSS探索系列-动画.html">
+            
+                <a href="../css系列/05-CSS探索系列-动画.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    CSS探索系列 动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../css系列/08-重新认识伪类与伪元素.html">
+            
+                <a href="../css系列/08-重新认识伪类与伪元素.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    重新认识伪类与伪元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../css系列/09-自定义表单伪元素样式.html">
+            
+                <a href="../css系列/09-自定义表单伪元素样式.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    自定义表单伪元素样式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../css系列/10-如何理解css中的display属性.html">
+            
+                <a href="../css系列/10-如何理解css中的display属性.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    如何理解Css中的Display属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                <a href="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                <a href="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    一文彻底弄懂CSS中的长度单位
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                <a href="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                    
+                        <b>2.21.</b>
+                    
+                    CSS中一些有特性的属性或属性值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../css系列/14-Web中如何实现长宽比.html">
+            
+                <a href="../css系列/14-Web中如何实现长宽比.html">
+            
+                    
+                        <b>2.22.</b>
+                    
+                    Web中如何实现长宽比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../css系列/15-@规则：@font-face.html">
+            
+                <a href="../css系列/15-@规则：@font-face.html">
+            
+                    
+                        <b>2.23.</b>
+                    
+                    @规则：@Font Face
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                <a href="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                    
+                        <b>2.24.</b>
+                    
+                    @规则：@Media（媒体查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../css系列/15-@规则：其他.html">
+            
+                <a href="../css系列/15-@规则：其他.html">
+            
+                    
+                        <b>2.25.</b>
+                    
+                    @规则：其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../css系列/_关于css.html">
+            
+                <a href="../css系列/_关于css.html">
+            
+                    
+                        <b>2.26.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="00-00-关于Web前端.html">
+            
+                <a href="00-00-关于Web前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    00 关于Web前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="00-01-前端知识概览.html">
+            
+                <a href="00-01-前端知识概览.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    01 前端知识概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="00-02-常用前端库概览.html">
+            
+                <a href="00-02-常用前端库概览.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    02 常用前端库概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="01-基础-00-前端常见问题01.html">
+            
+                <a href="01-基础-00-前端常见问题01.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    基础 00 前端常见问题01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="01-基础-01-浏览器缓存.html">
+            
+                <a href="01-基础-01-浏览器缓存.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    基础 01 浏览器缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="01-基础-02-浏览器工作原理.html">
+            
+                <a href="01-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                <a href="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    基础 03 谈谈前端跨域问题及解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="02-进阶-01-Web性能优化.html">
+            
+                <a href="02-进阶-01-Web性能优化.html">
+            
+                    
+                        <b>4.8.</b>
+                    
+                    进阶 01 Web性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                <a href="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                    
+                        <b>4.9.</b>
+                    
+                    进阶 02 搜索引擎优化（SEO）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                <a href="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                    
+                        <b>4.10.</b>
+                    
+                    进阶 03 前端模块化编程：CommonJS、AMD、CMD、UMD、ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                <a href="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                    
+                        <b>4.11.</b>
+                    
+                    进阶 04 规范代码：Linter、Prettier、EditorConfig
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="02-进阶-05-Web离线应用.html">
+            
+                <a href="02-进阶-05-Web离线应用.html">
+            
+                    
+                        <b>4.12.</b>
+                    
+                    进阶 05 Web离线应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="02-进阶-06-WebSocket.html">
+            
+                <a href="02-进阶-06-WebSocket.html">
+            
+                    
+                        <b>4.13.</b>
+                    
+                    进阶 06 WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="02-进阶-07-Web跨页面通信.html">
+            
+                <a href="02-进阶-07-Web跨页面通信.html">
+            
+                    
+                        <b>4.14.</b>
+                    
+                    进阶 07 Web跨页面通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="02-进阶-08-页面可见性和生命周期.html">
+            
+                <a href="02-进阶-08-页面可见性和生命周期.html">
+            
+                    
+                        <b>4.15.</b>
+                    
+                    进阶 08 页面可见性和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                <a href="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                    
+                        <b>4.16.</b>
+                    
+                    进阶 09 事件循环、宏任务、微任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="02-进阶-10-内存泄漏.html">
+            
+                <a href="02-进阶-10-内存泄漏.html">
+            
+                    
+                        <b>4.17.</b>
+                    
+                    进阶 10 内存泄漏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="02-进阶-11-前端自动化测试.html">
+            
+                <a href="02-进阶-11-前端自动化测试.html">
+            
+                    
+                        <b>4.18.</b>
+                    
+                    进阶 11 前端自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                <a href="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                    
+                        <b>4.19.</b>
+                    
+                    进阶 12 前端也玩多线程？WebWorker其实很简单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="03-高级-01-前端安全深度解析.html">
+            
+                <a href="03-高级-01-前端安全深度解析.html">
+            
+                    
+                        <b>4.20.</b>
+                    
+                    高级 01 前端安全深度解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.21" data-path="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                <a href="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                    
+                        <b>4.21.</b>
+                    
+                    高级 02 CI、CD（Docker+Jenkins+Nginx）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.22" data-path="04-Vue2.x原理篇.html">
+            
+                <a href="04-Vue2.x原理篇.html">
+            
+                    
+                        <b>4.22.</b>
+                    
+                    Vue2.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.23" data-path="04-Vue3初步了解及迁移指南.html">
+            
+                <a href="04-Vue3初步了解及迁移指南.html">
+            
+                    
+                        <b>4.23.</b>
+                    
+                    Vue3初步了解及迁移指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.24" data-path="04-重读Vue教程.html">
+            
+                <a href="04-重读Vue教程.html">
+            
+                    
+                        <b>4.24.</b>
+                    
+                    重读Vue教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.25" data-path="05-React17.x原理篇.html">
+            
+                <a href="05-React17.x原理篇.html">
+            
+                    
+                        <b>4.25.</b>
+                    
+                    React17.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.26" data-path="05-你必须知道的React问题.html">
+            
+                <a href="05-你必须知道的React问题.html">
+            
+                    
+                        <b>4.26.</b>
+                    
+                    你必须知道的React问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.27" data-path="05-重读React教程.html">
+            
+                <a href="05-重读React教程.html">
+            
+                    
+                        <b>4.27.</b>
+                    
+                    重读React教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.28" data-path="06-聊一聊Cookie的一些问题.html">
+            
+                <a href="06-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.28.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.29" data-path="07-SSL证书简介及其生成、使用.md">
+            
+                <span>
+            
+                    
+                        <b>4.29.</b>
+                    
+                    SSL证书简介及其生成、使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.30" data-path="07-如何启动本地HTTPS服务.html">
+            
+                <a href="07-如何启动本地HTTPS服务.html">
+            
+                    
+                        <b>4.30.</b>
+                    
+                    如何启动本地HTTPS服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.31" data-path="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                <a href="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                    
+                        <b>4.31.</b>
+                    
+                    0.0.0.0、127.0.0.1和Localhost的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.32" data-path="09-如何理解HTTP响应的状态码.html">
+            
+                <a href="09-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.32.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.33" data-path="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                <a href="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                    
+                        <b>4.33.</b>
+                    
+                    字符编码那点事：ASCII、Unicode、GBK、UTF 8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.34" data-path="11-HTTP协议的演变历史.md">
+            
+                <span>
+            
+                    
+                        <b>4.34.</b>
+                    
+                    HTTP协议的演变历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.35" data-path="12-webpack4.x原理篇.html">
+            
+                <a href="12-webpack4.x原理篇.html">
+            
+                    
+                        <b>4.35.</b>
+                    
+                    Webpack4.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.36" data-path="12-webpack基础入门篇.html">
+            
+                <a href="12-webpack基础入门篇.html">
+            
+                    
+                        <b>4.36.</b>
+                    
+                    Webpack基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.37" data-path="12-webpack构建优化篇.html">
+            
+                <a href="12-webpack构建优化篇.html">
+            
+                    
+                        <b>4.37.</b>
+                    
+                    Webpack构建优化篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.38" data-path="13-TypeScript使用指南.html">
+            
+                <a href="13-TypeScript使用指南.html">
+            
+                    
+                        <b>4.38.</b>
+                    
+                    TypeScript使用指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.39" data-path="14-Web中图片的使用.html">
+            
+                <a href="14-Web中图片的使用.html">
+            
+                    
+                        <b>4.39.</b>
+                    
+                    Web中图片的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.40" data-path="15-2026年，还需要微前端吗？——三大框架对比与选型思考.md">
+            
+                <span>
+            
+                    
+                        <b>4.40.</b>
+                    
+                    2026年，还需要微前端吗？——三大框架对比与选型思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.41" data-path="16-Electron基础篇.html">
+            
+                <a href="16-Electron基础篇.html">
+            
+                    
+                        <b>4.41.</b>
+                    
+                    Electron基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.42" data-path="17-uniapp基础篇.html">
+            
+                <a href="17-uniapp基础篇.html">
+            
+                    
+                        <b>4.42.</b>
+                    
+                    Uniapp基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.43" data-path="17-uniapp离线打包（Android）篇.html">
+            
+                <a href="17-uniapp离线打包（Android）篇.html">
+            
+                    
+                        <b>4.43.</b>
+                    
+                    Uniapp离线打包（Android）篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.44" data-path="18-sentry基础篇（vue）.html">
+            
+                <a href="18-sentry基础篇（vue）.html">
+            
+                    
+                        <b>4.44.</b>
+                    
+                    Sentry基础篇（Vue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.45" data-path="19-视口和软键盘对视口的影响.html">
+            
+                <a href="19-视口和软键盘对视口的影响.html">
+            
+                    
+                        <b>4.45.</b>
+                    
+                    视口和软键盘对视口的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.46" data-path="20-WebGL从入门到实践.html">
+            
+                <a href="20-WebGL从入门到实践.html">
+            
+                    
+                        <b>4.46.</b>
+                    
+                    WebGL从入门到实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.47" data-path="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                <a href="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                    
+                        <b>4.47.</b>
+                    
+                    Three.Js基础实战：从画一个立方体开始，掌握3D世界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.48" data-path="22-ReactNative基础篇.html">
+            
+                <a href="22-ReactNative基础篇.html">
+            
+                    
+                        <b>4.48.</b>
+                    
+                    ReactNative基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49" data-path="代码规范/">
+            
+                <a href="代码规范/">
+            
+                    
+                        <b>4.49.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.49.1" data-path="代码规范/00-前端规范.html">
+            
+                <a href="代码规范/00-前端规范.html">
+            
+                    
+                        <b>4.49.1.</b>
+                    
+                    前端规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.2" data-path="代码规范/01-HTML.html">
+            
+                <a href="代码规范/01-HTML.html">
+            
+                    
+                        <b>4.49.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.3" data-path="代码规范/02-CSS.html">
+            
+                <a href="代码规范/02-CSS.html">
+            
+                    
+                        <b>4.49.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.4" data-path="代码规范/03-JS.html">
+            
+                <a href="代码规范/03-JS.html">
+            
+                    
+                        <b>4.49.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../html系列/00-HTML基础知识.html">
+            
+                <a href="../html系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../html系列/00-HTML基础知识02.html">
+            
+                <a href="../html系列/00-HTML基础知识02.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML基础知识02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../html系列/00-HTML常见问答.html">
+            
+                <a href="../html系列/00-HTML常见问答.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    HTML常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../html系列/00-HTML经典实践用例.html">
+            
+                <a href="../html系列/00-HTML经典实践用例.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    HTML经典实践用例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../html系列/03-html探索系列-meta标签.md">
+            
+                <span>
+            
+                    
+                        <b>5.7.</b>
+                    
+                    Html探索系列 Meta标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                <a href="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                    
+                        <b>5.8.</b>
+                    
+                    DOCTYPE：文档类型与浏览器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="../html系列/05-DHTML（动态网页）简介.html">
+            
+                <a href="../html系列/05-DHTML（动态网页）简介.html">
+            
+                    
+                        <b>5.9.</b>
+                    
+                    DHTML（动态网页）简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="../html系列/06-HTML标签详解.md">
+            
+                <span>
+            
+                    
+                        <b>5.10.</b>
+                    
+                    HTML标签详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="../html系列/07-HTML布局的几种方式.html">
+            
+                <a href="../html系列/07-HTML布局的几种方式.html">
+            
+                    
+                        <b>5.11.</b>
+                    
+                    HTML布局的几种方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="../html系列/08-HTML全局属性.html">
+            
+                <a href="../html系列/08-HTML全局属性.html">
+            
+                    
+                        <b>5.12.</b>
+                    
+                    HTML全局属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                <a href="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                    
+                        <b>5.13.</b>
+                    
+                    标记语言演进：从GML到HTML动态标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.14" data-path="../html系列/_关于html.html">
+            
+                <a href="../html系列/_关于html.html">
+            
+                    
+                        <b>5.14.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Javascript系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../javascript系列/00-基础知识.html">
+            
+                <a href="../javascript系列/00-基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../javascript系列/00-常见问答.html">
+            
+                <a href="../javascript系列/00-常见问答.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../javascript系列/00-应用示例.html">
+            
+                <a href="../javascript系列/00-应用示例.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../javascript系列/00-趣味示例.html">
+            
+                <a href="../javascript系列/00-趣味示例.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    趣味示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../javascript系列/00-进阶知识.html">
+            
+                <a href="../javascript系列/00-进阶知识.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    进阶知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    基础篇 01 数据类型之基本类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    基础篇 01 数据类型之引用类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                <a href="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    基础篇 02 类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../javascript系列/01-基础篇-03-运算符.html">
+            
+                <a href="../javascript系列/01-基础篇-03-运算符.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                    基础篇 03 运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                <a href="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    基础篇 04 正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                <a href="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                    
+                        <b>6.11.</b>
+                    
+                    基础篇 05 AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="../javascript系列/01-基础篇-06--window对象.html">
+            
+                <a href="../javascript系列/01-基础篇-06--window对象.html">
+            
+                    
+                        <b>6.12.</b>
+                    
+                    基础篇 06  Window对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                <a href="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                    
+                        <b>6.13.</b>
+                    
+                    基础篇 07 Error、JSON、Math、Console对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                <a href="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                    
+                        <b>6.14.</b>
+                    
+                    基础篇 08 History、URL、Screen、Navigator、Location对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                    
+                        <b>6.15.</b>
+                    
+                    基础篇 09 文档对象模型（DOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                <a href="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                    
+                        <b>6.16.</b>
+                    
+                    基础篇 10 Document对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.17" data-path="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                <a href="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                    
+                        <b>6.17.</b>
+                    
+                    基础篇 11 Element对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.18" data-path="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                <a href="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                    
+                        <b>6.18.</b>
+                    
+                    基础篇 12 Event对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.19" data-path="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                <a href="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                    
+                        <b>6.19.</b>
+                    
+                    基础篇 13 键盘、鼠标、触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.20" data-path="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                <a href="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                    
+                        <b>6.20.</b>
+                    
+                    基础篇 14 MutationObserver对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.21" data-path="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                    
+                        <b>6.21.</b>
+                    
+                    基础篇 15 CSS对象模型（CSSOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.22" data-path="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                <a href="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                    
+                        <b>6.22.</b>
+                    
+                    进阶篇 01 Prototype对象和继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.23" data-path="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                    
+                        <b>6.23.</b>
+                    
+                    进阶篇 02 Promise对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.24" data-path="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                <a href="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                    
+                        <b>6.24.</b>
+                    
+                    进阶篇 03 有特性的一些事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.25" data-path="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                    
+                        <b>6.25.</b>
+                    
+                    进阶篇 04 Proxy对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.26" data-path="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                    
+                        <b>6.26.</b>
+                    
+                    进阶篇 05 Reflect对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.27" data-path="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                <a href="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                    
+                        <b>6.27.</b>
+                    
+                    进阶篇 06 Class（类）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.28" data-path="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                <a href="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                    
+                        <b>6.28.</b>
+                    
+                    进阶篇 07 迭代器（Iterator）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.29" data-path="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                <a href="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                    
+                        <b>6.29.</b>
+                    
+                    进阶篇 08 Generator和Async函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.30" data-path="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                <a href="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                    
+                        <b>6.30.</b>
+                    
+                    进阶篇 09 JavaScript异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.31" data-path="../javascript系列/04-Date对象和日期时间字符串格式.md">
+            
+                <span>
+            
+                    
+                        <b>6.31.</b>
+                    
+                    Date对象和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.32" data-path="../javascript系列/05-Canvas基础入门篇.html">
+            
+                <a href="../javascript系列/05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.32.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.33" data-path="../javascript系列/05-Canvas进阶篇.html">
+            
+                <a href="../javascript系列/05-Canvas进阶篇.html">
+            
+                    
+                        <b>6.33.</b>
+                    
+                    Canvas进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.34" data-path="../javascript系列/06-SVG基础入门篇.html">
+            
+                <a href="../javascript系列/06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.34.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.35" data-path="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.35.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.36" data-path="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.36.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.37" data-path="../javascript系列/08-谈谈JavaScript的作用域和上下文.md">
+            
+                <span>
+            
+                    
+                        <b>6.37.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.38" data-path="../javascript系列/10-复制内容到剪贴板.html">
+            
+                <a href="../javascript系列/10-复制内容到剪贴板.html">
+            
+                    
+                        <b>6.38.</b>
+                    
+                    复制内容到剪贴板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.39" data-path="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                <a href="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                    
+                        <b>6.39.</b>
+                    
+                    44道JavaScript难题，还不来考考？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.40" data-path="../javascript系列/_关于Javascript.html">
+            
+                <a href="../javascript系列/_关于Javascript.html">
+            
+                    
+                        <b>6.40.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java系列</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../java系列/01-00-Java入门篇.html">
+            
+                <a href="../java系列/01-00-Java入门篇.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    00 Java入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../java系列/01-01-Java进阶篇.html">
+            
+                <a href="../java系列/01-01-Java进阶篇.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    01 Java进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../java系列/01-02-Java高级篇.html">
+            
+                <a href="../java系列/01-02-Java高级篇.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    02 Java高级篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../java系列/02-pom.xml详解.html">
+            
+                <a href="../java系列/02-pom.xml详解.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Pom.Xml详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../java系列/03-01-SpringBoot入门篇.html">
+            
+                <a href="../java系列/03-01-SpringBoot入门篇.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    01 SpringBoot入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../java系列/05-轻量应用服务器部署指南（腾讯云）.md">
+            
+                <span>
+            
+                    
+                        <b>7.6.</b>
+                    
+                    轻量应用服务器部署指南（腾讯云）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../java系列/06-keytool命令行工具.md">
+            
+                <span>
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Keytool命令行工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">NodeJs</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../nodeJs/00-0关于Node.js.html">
+            
+                <a href="../nodeJs/00-0关于Node.js.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    0关于Node.Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../nodeJs/00-常见问题.html">
+            
+                <a href="../nodeJs/00-常见问题.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                <a href="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Node.Js：三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                <a href="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                    
+                        <b>8.4.</b>
+                    
+                    Npm包管理器简介及一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                <a href="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                    
+                        <b>8.5.</b>
+                    
+                    NPM：Package.Json详解（中文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                <a href="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                    
+                        <b>8.6.</b>
+                    
+                    NPM：从零开始，开发一个软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="../nodeJs/05-NPM：常用命令.html">
+            
+                <a href="../nodeJs/05-NPM：常用命令.html">
+            
+                    
+                        <b>8.7.</b>
+                    
+                    NPM：常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                <a href="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                    
+                        <b>8.8.</b>
+                    
+                    Node.Js：Fs（文件系统）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                <a href="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                    
+                        <b>8.9.</b>
+                    
+                    Node.Js：Global（全局变量）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="../nodeJs/08-Node.js：HTTP.html">
+            
+                <a href="../nodeJs/08-Node.js：HTTP.html">
+            
+                    
+                        <b>8.10.</b>
+                    
+                    Node.Js：HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="../nodeJs/09-Node.js：module（模块）.html">
+            
+                <a href="../nodeJs/09-Node.js：module（模块）.html">
+            
+                    
+                        <b>8.11.</b>
+                    
+                    Node.Js：Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="../nodeJs/10-Node.js：path（路径）.html">
+            
+                <a href="../nodeJs/10-Node.js：path（路径）.html">
+            
+                    
+                        <b>8.12.</b>
+                    
+                    Node.Js：Path（路径）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                <a href="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                    
+                        <b>8.13.</b>
+                    
+                    Node.Js：Readline（逐行读取）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.14" data-path="../nodeJs/12-锁定项目的Node版本.html">
+            
+                <a href="../nodeJs/12-锁定项目的Node版本.html">
+            
+                    
+                        <b>8.14.</b>
+                    
+                    锁定项目的Node版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../research/02-如何监控前端异常？.html">
+            
+                <a href="../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../research/03-H5页面跳转和刷新.html">
+            
+                <a href="../research/03-H5页面跳转和刷新.html">
+            
+                    
+                        <b>9.3.</b>
+                    
+                    H5页面跳转和刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>9.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>9.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>9.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../research/07-H5可视化编辑.html">
+            
+                <a href="../research/07-H5可视化编辑.html">
+            
+                    
+                        <b>9.7.</b>
+                    
+                    H5可视化编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="../research/08-Web常用功能.html">
+            
+                <a href="../research/08-Web常用功能.html">
+            
+                    
+                        <b>9.8.</b>
+                    
+                    Web常用功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" data-path="../research/10-H5页面生成图片方案总结.html">
+            
+                <a href="../research/10-H5页面生成图片方案总结.html">
+            
+                    
+                        <b>9.9.</b>
+                    
+                    H5页面生成图片方案总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10" data-path="../research/Javascript加密混淆.html">
+            
+                <a href="../research/Javascript加密混淆.html">
+            
+                    
+                        <b>9.10.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.11" data-path="../research/Vue如何导入TypeScript.html">
+            
+                <a href="../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>9.11.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.12" data-path="../research/移动端PDF预览.html">
+            
+                <a href="../research/移动端PDF预览.html">
+            
+                    
+                        <b>9.12.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.13" data-path="../research/纯CSS绘制箭头.html">
+            
+                <a href="../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>9.13.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.14" data-path="../research/网站性能测量和优化方法.html">
+            
+                <a href="../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>9.14.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../tech/00-编程基础知识.html">
+            
+                <a href="../tech/00-编程基础知识.html">
+            
+                    
+                        <b>10.1.</b>
+                    
+                    编程基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="../tech/00-计算机问题概览.html">
+            
+                <a href="../tech/00-计算机问题概览.html">
+            
+                    
+                        <b>10.2.</b>
+                    
+                    计算机问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>10.3.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                <a href="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                    
+                        <b>10.4.</b>
+                    
+                    GOOGLE浏览器的搜索技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="../tech/03-curl的用法指南.html">
+            
+                <a href="../tech/03-curl的用法指南.html">
+            
+                    
+                        <b>10.5.</b>
+                    
+                    Curl的用法指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="../tech/04-sublime3插件篇.html">
+            
+                <a href="../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>10.6.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="../tech/05-Charles安装及使用.html">
+            
+                <a href="../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>10.7.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                <a href="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                    
+                        <b>10.8.</b>
+                    
+                    通过.Gitlab Ci.Yml配置任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="../tech/07-MySQL的基本使用.html">
+            
+                <a href="../tech/07-MySQL的基本使用.html">
+            
+                    
+                        <b>10.9.</b>
+                    
+                    MySQL的基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="../tech/08-看懂什么是环境变量.html">
+            
+                <a href="../tech/08-看懂什么是环境变量.html">
+            
+                    
+                        <b>10.10.</b>
+                    
+                    看懂什么是环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.11" data-path="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                <a href="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                    
+                        <b>10.11.</b>
+                    
+                    为什么0.1+0.2=0.30000000000000004
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.12" data-path="../tech/10-Nginx使用手册：安装、配置、模块扩展与代理详解.md">
+            
+                <span>
+            
+                    
+                        <b>10.12.</b>
+                    
+                    Nginx使用手册：安装、配置、模块扩展与代理详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.13" data-path="../tech/11-常见智力题总结.html">
+            
+                <a href="../tech/11-常见智力题总结.html">
+            
+                    
+                        <b>10.13.</b>
+                    
+                    常见智力题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.14" data-path="../tech/12-Mac终端命令使用.html">
+            
+                <a href="../tech/12-Mac终端命令使用.html">
+            
+                    
+                        <b>10.14.</b>
+                    
+                    Mac终端命令使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.15" data-path="../tech/13-01-Shell脚本入门篇.html">
+            
+                <a href="../tech/13-01-Shell脚本入门篇.html">
+            
+                    
+                        <b>10.15.</b>
+                    
+                    01 Shell脚本入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.16" data-path="../tech/13-02-Shell脚本进阶篇.html">
+            
+                <a href="../tech/13-02-Shell脚本进阶篇.html">
+            
+                    
+                        <b>10.16.</b>
+                    
+                    02 Shell脚本进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.17" data-path="../tech/14-一篇搞定排序算法：原理+图解+JS实现+V8源码解读.md">
+            
+                <span>
+            
+                    
+                        <b>10.17.</b>
+                    
+                    一篇搞定排序算法：原理+图解+JS实现+V8源码解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.18" data-path="../tech/15-glob模式通配符.html">
+            
+                <a href="../tech/15-glob模式通配符.html">
+            
+                    
+                        <b>10.18.</b>
+                    
+                    Glob模式通配符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.19" data-path="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                <a href="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                    
+                        <b>10.19.</b>
+                    
+                    代码整洁之道（摘录笔记）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.20" data-path="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                <a href="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                    
+                        <b>10.20.</b>
+                    
+                    Java的24种设计模式与7大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.21" data-path="../tech/18-观察者和发布订阅模式.html">
+            
+                <a href="../tech/18-观察者和发布订阅模式.html">
+            
+                    
+                        <b>10.21.</b>
+                    
+                    观察者和发布订阅模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.22" data-path="../tech/19-AI模型基础应用篇.html">
+            
+                <a href="../tech/19-AI模型基础应用篇.html">
+            
+                    
+                        <b>10.22.</b>
+                    
+                    AI模型基础应用篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../tools/01-01-Git基础教程.html">
+            
+                <a href="../tools/01-01-Git基础教程.html">
+            
+                    
+                        <b>11.1.</b>
+                    
+                    01 Git基础教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../tools/01-02-Git常见问题.html">
+            
+                <a href="../tools/01-02-Git常见问题.html">
+            
+                    
+                        <b>11.2.</b>
+                    
+                    02 Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../tools/02-01-gitbook入门篇.html">
+            
+                <a href="../tools/02-01-gitbook入门篇.html">
+            
+                    
+                        <b>11.3.</b>
+                    
+                    01 Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="../tools/02-02-gitbook插件篇.html">
+            
+                <a href="../tools/02-02-gitbook插件篇.html">
+            
+                    
+                        <b>11.4.</b>
+                    
+                    02 Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="../tools/02-03-gitbook进阶篇.html">
+            
+                <a href="../tools/02-03-gitbook进阶篇.html">
+            
+                    
+                        <b>11.5.</b>
+                    
+                    03 Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">整理中</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Sentry基础篇（Vue）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="sentry基础篇（vue）">sentry基础篇（vue）</h2>
+<p><strong>Sentry</strong>  是一个开源的错误追踪工具，提供端到端的分布式跟踪，使开发人员能够实时监控和调试系统和服务的性能问题和错误。其专注于错误监控以及提取所有调试所需的信息。它支持几乎所有主流开发语言 JS、Java、Python、php 和平台，并提供了网页来展示输出错误。</p>
+<h3 id="sentry-配置">Sentry 配置</h3>
+<p><strong>注册账号：</strong> 在 <a href="https://sentry.io/signup/" target="_blank">https://sentry.io/signup/</a> 注册一个账号。</p>
+<p><strong>安装：</strong></p>
+<pre><code class="lang-shell">npm install @sentry/vue --save
+</code></pre>
+<p><strong>创建项目（vue3）：</strong> 在 Sentry -&gt; insights 页面，创建一个项目。选中新创建的项目，可以查看 dsn 等信息。</p>
+<h3 id="使用（vue3）">使用（vue3）</h3>
+<p><strong>初始化 Sentry：</strong></p>
+<pre><code class="lang-shell">Sentry.init({
+  dsn: "https://xxxxxxxxxxxxxxx@xxxx.ingest.us.sentry.io/xxxx",
+  sendDefaultPii: true,
+  integrations: [],
+});
+</code></pre>
+<p><strong>验证 Sentry：</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-title function_">onMounted</span>(<span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">'Sentry Error：Lizhao!'</span>);
+})
+</code></pre>
+<p><strong>查看 Sentry：</strong></p>
+<p>在 Sentry -&gt; issues 页面，可以查看项目的报错信息。</p>
+<h3 id="sentry-选项">Sentry 选项</h3>
+<h4 id="核心选项">核心选项</h4>
+<h5 id="dsn">dsn</h5>
+<p>字符串，必传。</p>
+<p>dsn 会告知 SDK 应将事件发送至何处。若未进行此设置，SDK 将不会发送任何事件。</p>
+<blockquote>
+<p>dsn 信息，可以 sentry.io -&gt; insights -&gt; Projects，选中具体项目查看。</p>
+</blockquote>
+<h5 id="debug">debug</h5>
+<p>布尔值，可选。</p>
+<p>开启或关闭调试模式。若调试功能已启用，SDK 将尝试输出有关其执行情况的有用调试信息。</p>
+<h5 id="release">release</h5>
+<p>字符串，可选。</p>
+<p>设置发布版本。某些格式会由 Sentry 检测到并以不同的方式呈现。</p>
+<p>在浏览器中，SDK 将尝试从 window.SENTRY_RELEASE.id 中读取此值（如果该值存在的话）。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">release</span>: <span class="hljs-string">"my-project-name@2.3.12"</span>,
+});
+</code></pre>
+<h5 id="environment">environment</h5>
+<p>字符串，默认值 production，可选。</p>
+<p>默认情况下，会根据应用程序是否被打包来选择“开发”或“生产”模式。当发送器接收到带有环境参数设置的事件时，它会自动创建一个环境（创建后，不能删除，但可以将其隐藏。）。</p>
+<p>environment 的值是区分大小写的，名称不能包含换行符、空格或斜杠，不能是字符串 “None”，且不能超过 64 个字符。</p>
+<h5 id="tunnel">tunnel</h5>
+<p>字符串，可选。</p>
+<p>设置用于传输捕获事件的 URL。此设置可用于绕过广告拦截器，或者对发送至 Sentry 的事件进行更精细的控制。使用此选项时，仍需添加您的 DSN（数据传输标识符），以便在生成的 Sentry 数据中设置必要的属性。</p>
+<p>此选项需要实现自定义服务器端点。</p>
+<h5 id="senddefaultpii">sendDefaultPii</h5>
+<p>布尔值，默认 false，可选。</p>
+<p>设置为 true，可将默认的个人身份信息数据发送至 Sentry。除此之外，还将使在事件中自动收集 IP 地址成为可能。</p>
+<h5 id="maxbreadcrumbs">maxBreadcrumbs</h5>
+<p>数值，默认 100，可选。</p>
+<p>用于控制应捕获的面包屑条目的总数。Sentry 设有最大数据包大小限制，任何超出该大小限制的事件都将被丢弃。</p>
+<h5 id="attachstacktrace">attachStacktrace</h5>
+<p>布尔值，默认 false，可选。</p>
+<p>启用后，所有的日志消息都会自动附带堆栈跟踪信息。</p>
+<p>堆栈跟踪信息总是会附在异常中；但当此选项被设置时，它还会与消息一同发送。例如，此选项意味着堆栈跟踪信息会出现在使用 Sentry.captureMessage() 方法捕获的所有消息旁边。</p>
+<p>在 Sentry 中对事件进行分组的方式对于带有堆栈跟踪的事件和没有堆栈跟踪的事件是不同的。因此，某些事件启用或禁用此标志时，会看到新的分组。</p>
+<h5 id="initialscope">initialScope</h5>
+<p>CaptureContext 对象或者返回 CaptureContext 对象的函数 ，可选。</p>
+<p>设置数据的初始范围。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+    <span class="hljs-attr">dsn</span>: <span class="hljs-string">'xxx'</span>,
+  <span class="hljs-attr">initialScope</span>: {
+    <span class="hljs-attr">tags</span>: { <span class="hljs-string">'my-tag'</span>: <span class="hljs-string">'my value'</span> },
+    <span class="hljs-attr">user</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">42</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">'john.doe@example.com'</span> },
+  },
+});
+</code></pre>
+<h5 id="maxvaluelength">maxValueLength</h5>
+<p>数值，默认 250，可选。</p>
+<p>发送至 Sentry 的事件中，每个字符串属性的最大字符数（超过此数量后将被截断）。</p>
+<h5 id="normalizedepth">normalizeDepth</h5>
+<p>数值，默认 3，可选。</p>
+<p>Sentry SDKs 会将任何上下文数据规范化至指定的深度。超过此深度的数据将被修剪并用其类型（[对象] 或 [数组]）进行标记，而不会进一步遍历树结构。</p>
+<h5 id="normalizemaxbreadth">normalizeMaxBreadth</h5>
+<p>数值，默认 1000，可选。</p>
+<p>在使用 SDK 对上下文数据进行规范化处理时，任何给定对象或数组中所能包含的最大属性或条目数量。超出此深度的数据将被删除。</p>
+<h5 id="enabled">enabled</h5>
+<p>布尔值，默认 true，可选。</p>
+<p>指定是否应向 Sentry 发送事件。</p>
+<p><strong>注意：</strong> 若设置为 false，并不会完全避免 Sentry 代码中的所有开销。若要完全禁用 Sentry，则需根据环境情况有条件地调用 Sentry.init。</p>
+<h5 id="sendclientreports">sendClientReports</h5>
+<p>布尔值，默认 true，可选。</p>
+<p>设置为 false，可禁用客户端报告的发送功能。</p>
+<p>客户端报告是协议中的一个特性，它允许客户端向 Sentry 发送关于自身的状态报告。</p>
+<p>目前，它们主要用于为那些从未发送出去的事件发出结果报告。</p>
+<h5 id="integrations"><a href="https://docs.sentry.io/platforms/javascript/guides/vue/configuration/integrations/" target="_blank">integrations</a></h5>
+<p>Integration 数组或者返回 Integration 数组的函数，默认空数组，可选。</p>
+<p>进行一些需要与 SDK 一同初始化的额外<strong>集成操作</strong>。集成是指一些可使用的代码片段，用于扩展 SDK 的功能。它们可用于添加自定义事件处理器、上下文提供程序，或者与 SDK 的生命周期进行关联。</p>
+<h5 id="defaultintegrations"><a href="https://docs.sentry.io/platforms/javascript/guides/vue/configuration/integrations/#modifying-default-integrations" target="_blank">defaultIntegrations</a></h5>
+<p>undefined 或 false，可选。</p>
+<p>禁用默认添加的集成。设置设为 false，将不会添加任何默认集成。</p>
+<h5 id="beforebreadcrumb">beforeBreadcrumb</h5>
+<p>返回 Breadcrumb 对象的函数或者 null，可选。</p>
+<p>在将面包屑添加到作用域之前，先调用此函数并传入一个面包屑对象。</p>
+<p>如果该函数无返回值，则会丢弃该面包屑。若要传递面包屑，则需返回第一个参数（其中包含面包屑对象）。回调函数会收到第二个参数（称为“提示”），该参数包含创建面包屑时所使用的原始对象，以便进一步自定义面包屑的外观。</p>
+<pre><code class="lang-javascript">(<span class="hljs-attr">breadcrumb</span>: <span class="hljs-title class_">Breadcrumb</span>, hint?: <span class="hljs-title class_">BreadcrumbHint</span>) =&gt; <span class="hljs-title class_">Breadcrumb</span> | <span class="hljs-literal">null</span>
+</code></pre>
+<h5 id="transport">transport</h5>
+<p>返回 Transport 对象的函数，可选。</p>
+<p>JavaScript SDK 使用传输机制将事件发送至 Sentry。在现代浏览器中，大多数传输机制都使用浏览器的 fetch API 来发送事件。如果由于网络连接问题导致无法发送事件，传输机制将会丢弃该事件。</p>
+<p>在浏览器中，默认情况下会使用基于 “fetch” 的传输方式。</p>
+<pre><code class="lang-javascript">(<span class="hljs-attr">transportOptions</span>: <span class="hljs-title class_">TransportOptions</span>) =&gt; <span class="hljs-title class_">Transport</span>
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { createTransport } <span class="hljs-keyword">from</span> <span class="hljs-string">'@sentry/core'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">from</span> <span class="hljs-string">'@sentry/browser'</span>;
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">makeFetchTransport</span>(<span class="hljs-params">options</span>) {
+  <span class="hljs-keyword">function</span> <span class="hljs-title function_">makeRequest</span>(<span class="hljs-params">request</span>) {
+    <span class="hljs-keyword">const</span> requestOptions = {
+      <span class="hljs-attr">body</span>: request.<span class="hljs-property">body</span>,
+      <span class="hljs-attr">method</span>: <span class="hljs-string">'POST'</span>,
+      <span class="hljs-attr">referrerPolicy</span>: <span class="hljs-string">'origin'</span>,
+      <span class="hljs-attr">headers</span>: options.<span class="hljs-property">headers</span>,
+      ...options.<span class="hljs-property">fetchOptions</span>,
+    };
+
+    <span class="hljs-keyword">return</span> <span class="hljs-title function_">fetch</span>(options.<span class="hljs-property">url</span>, requestOptions).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+      <span class="hljs-keyword">return</span> {
+        <span class="hljs-attr">statusCode</span>: response.<span class="hljs-property">status</span>,
+        <span class="hljs-attr">headers</span>: {
+          <span class="hljs-string">'x-sentry-rate-limits'</span>: response.<span class="hljs-property">headers</span>.<span class="hljs-title function_">get</span>(<span class="hljs-string">'X-Sentry-Rate-Limits'</span>),
+          <span class="hljs-string">'retry-after'</span>: response.<span class="hljs-property">headers</span>.<span class="hljs-title function_">get</span>(<span class="hljs-string">'Retry-After'</span>),
+        },
+      };
+    });
+  }
+
+  <span class="hljs-keyword">return</span> <span class="hljs-title function_">createTransport</span>(options, makeRequest);
+}
+
+<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">transport</span>: makeFetchTransport
+});
+</code></pre>
+<h5 id="transportoptions">transportOptions</h5>
+<p>TransportOptions 对象，可选。</p>
+<p>用于配置传输方式的选项。这是一个包含以下可选键的对象：</p>
+<ul>
+<li>headers：一个包含需随每次请求一同发送的头部信息的对象。</li>
+<li>fetchOptions：一个包含需传递给 fetch 调用的选项的对象。由 SDK 的 fetch 传输机制使用。</li>
+</ul>
+<h4 id="错误监测选项">错误监测选项</h4>
+<h5 id="samplerate">sampleRate</h5>
+<p>数值，默认 1，可选。</p>
+<p>设置错误事件的采样率，范围在 0.0 到 1.0 之间。默认值为 1.0，这意味着 100% 的错误事件都会被发送。如果设置为 0.1，则只会发送 10% 的错误事件，即事件是随机选取的。</p>
+<h5 id="beforesend">beforeSend</h5>
+<p>返回 Event 对象的函数或 null，可选。</p>
+<p>用于 SDK 的消息或错误事件对象调用，并且可以返回修改后的事件对象，或者返回 null 以跳过事件的报告。</p>
+<p>在 beforeSend 被执行时，所有的作用域数据都已经应用于该事件了。对作用域的进一步修改将不会产生任何效果。</p>
+<pre><code class="lang-javascript">(<span class="hljs-attr">event</span>: <span class="hljs-title class_">Event</span>, <span class="hljs-attr">hint</span>: <span class="hljs-title class_">EventHint</span>) =&gt; <span class="hljs-title class_">Event</span> | <span class="hljs-literal">null</span>
+</code></pre>
+<h5 id="ignoreerrors">ignoreErrors</h5>
+<p>数组（字符串或正则达表式），默认值空数组，可选。</p>
+<p>与这些字符串或正则表达式匹配的消息，在发送至 Sentry 之前将被过滤掉。</p>
+<p>使用字符串时，部分匹配的也会被过滤掉，因此如果您需要按精确匹配进行筛选，请使用正则表达式。</p>
+<h5 id="denyurls">denyUrls</h5>
+<p>数组（字符串或正则达表式），默认值空数组，可选。</p>
+<p>用于匹配已产生错误的<strong>脚本的 URL</strong>。在这些 URL 上产生的错误将不会被发送至 Sentry。</p>
+<h5 id="allowurls">allowUrls</h5>
+<p>数组（字符串或正则达表式），默认值空数组，可选。</p>
+<p>用于匹配已产生错误的<strong>脚本的 URL</strong>。只有在这些 URL 上产生的错误才会被发送至 Sentry。</p>
+<h5 id="attachprops">attachProps</h5>
+<p>布尔值，默认 true，可选。</p>
+<p>启用后，抛出错误的 Vue 组件的所有属性都会附加到该事件中。</p>
+<h5 id="attacherrorhandler">attachErrorHandler</h5>
+<p>布尔值，默认 true，可选。</p>
+<p>默认情况下，SDK 会附加一个 Vue 错误处理程序，用于捕获 Vue 异常并将其报告给 Sentry。设置为 false 时，自动错误报告功能将被禁用。</p>
+<p>通常情况下，此选项应保持启用状态，除非想要自行设置 Sentry 错误报告功能。例如，Sentry 的 Nuxt SDK 并不会添加错误处理程序，因为它是通过 Nuxt 提供的错误钩子来捕获错误的。</p>
+<h4 id="追踪选项">追踪选项</h4>
+<h5 id="核心概念">核心概念</h5>
+<p><strong>Trace（追踪）</strong>，一个完整的请求生命周期，从开始到结束的所有操作。它包含一个或多个 Transaction，具有唯一的 traceId，可以跨服务、跨系统追踪。比如，一个用户从点击按钮到看到完整页面的全过程。</p>
+<p><strong>Transaction（事务）</strong>，表示一个完整的工作单元，通常是应用程序中的单个操作。它包含一个或多个 Span，有明确的开始和结束时间，通常对应一个路由切换或API调用。比如：Vue 路由切换、一个完整的 API 请求-响应周期、用户点击按钮触发的复杂操作。</p>
+<p><strong>Span（跨度）</strong>，事务中的单个操作或步骤。它代表事务中的具体操作，有明确的开始和结束时间，可以嵌套其他 Span。比如：数据库查询、外部API调用、组件渲染、函数执行。</p>
+<pre><code class="lang-text">Trace (整个请求流)
+│
+└── Transaction 1 (如: 页面加载)
+    │
+    ├── Span 1.1 (如: 路由匹配)
+    ├── Span 1.2 (如: API调用)
+    │   ├── Span 1.2.1 (如: DNS查询)
+    │   └── Span 1.2.2 (如: 网络传输)
+    └── Span 1.3 (如: 组件渲染)
+</code></pre>
+<h5 id="tracessamplerate">tracesSampleRate</h5>
+<p>数值，可选。</p>
+<p>一个介于 0 到 1 之间的数值，用于控制特定交易被发送至 Sentry 的概率百分比。（0 表示 0%，而 1 表示 100%。）该设置适用于应用程序中创建的所有事务。</p>
+<p>要么定义此选项，要么定义 traceSampler 选项，以便启用跟踪功能。</p>
+<h5 id="tracessampler">tracesSampler</h5>
+<p>返回数值或布尔值的函数，可选。</p>
+<p>用于确定被发送至 Sentry 的概率的函数。该函数会自动接收有关该事务及其创建环境的信息，并必须返回一个介于 0（发送概率为 0%）和 1（发送概率为 100%）之间的数值。还可以通过返回 0 来筛选出不需要的事务。</p>
+<p>必须定义此函数或者 traceSampleRate，以便启用跟踪功能。</p>
+<p>函数的参数，SamplingContext 对象，具有以下属性：</p>
+<ul>
+<li>parentSampled：布尔值，父事务的采样决策。如果父事务进行了采样，则此值为真；否则为假。</li>
+<li>name：采样启动时的名称。</li>
+<li>attributes：采样的初始属性。</li>
+</ul>
+<pre><code class="lang-javascript">(<span class="hljs-attr">samplingContext</span>: <span class="hljs-title class_">SamplingContext</span>) =&gt; number | boolean
+</code></pre>
+<h5 id="tracepropagationtargets">tracePropagationTargets</h5>
+<p>数组（字符串或正则达表式），可选。</p>
+<p>用于控制哪些下游服务能够接收跟踪数据。该数据以发送记录（sentry-trace）和附加到任何发出的 HTTP 请求中的头（baggage header）的形式呈现。</p>
+<p>用于与发出的<strong>请求的 URL</strong> 进行匹配。如果列表中的某一项与发出请求的 URL 相匹配，那么将会有跟踪数据附加到该请求上。<strong>字符串项不必完全匹配</strong>，也就是说，只要请求的 URL 包含通过该选项提供的字符串，就会将其匹配成功。</p>
+<p>在浏览器中，默认情况下，所有发往相同源的请求都会被传递出去。</p>
+<p>如果想要禁用跟踪传播功能，可以将此选项设置为“[]”。</p>
+<h5 id="beforesendtransaction">beforeSendTransaction</h5>
+<p>返回 TransactionEvent 对象或 null 的函数，可选。</p>
+<p>通过一个事务事件对象调用，并且可以返回修改后的事务事件对象，或者返回 null 来跳过对该事件的事务。</p>
+<pre><code class="lang-javascript">(<span class="hljs-attr">event</span>: <span class="hljs-title class_">TransactionEvent</span>, <span class="hljs-attr">hint</span>: <span class="hljs-title class_">EventHint</span>) =&gt; <span class="hljs-title class_">TransactionEvent</span> | <span class="hljs-literal">null</span>
+</code></pre>
+<h5 id="beforesendspan">beforeSendSpan</h5>
+<p>返回 SpanJSON 对象的函数，可选。</p>
+<p>通过一个序列化对象调用，并且能够返回一个修改后的对象。此函数不仅对根跨度调用，对所有子跨度也同样适用。</p>
+<p>如果您想要删除根跨度及其所有子跨度，请使用 beforeSendTransaction 替代此函数。</p>
+<h5 id="ignoretransactions">ignoreTransactions</h5>
+<p>数组（字符串或正则达表式），默认空数组，可选。</p>
+<p>用于匹配不应发送至 Sentry 的事务名称。与这些字符串或正则表达式匹配的事务在发送至 Sentry 之前将被过滤掉。使用字符串时，部分匹配的交易将被过滤掉。</p>
+<p>默认情况下，典型 API 健康检查请求的事务会被过滤掉。</p>
+<h5 id="ignorespans">ignoreSpans</h5>
+<p>数组（字符串或正则表达式或对象），默认空数组，可选。</p>
+<p>用于匹配不应发送至 Sentry 的跨度名称。使用字符串时，部分匹配将被过滤掉。</p>
+<p>如果根跨度与任何指定的模式相匹配，那么整个本地跟踪将会被删除。如果子跨度匹配，其子跨度将被重新归入被删除跨度的父跨度之下。</p>
+<p>默认情况下，不会忽略任何跨度。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Array</span>&lt;string | <span class="hljs-title class_">RegExp</span> | {name?: string | <span class="hljs-title class_">RegExp</span>, op?: string | <span class="hljs-title class_">RegExp</span>}&gt;
+</code></pre>
+<h4 id="会话回放选项">会话回放选项</h4>
+<h5 id="核心概念">核心概念</h5>
+<p>Session Replay（会话回放）是 Sentry 提供的一项功能，它通过记录用户在应用程序中的实际交互过程，帮助开发者更全面地理解错误发生的上下文环境。</p>
+<p><strong>Session Replay</strong> 是一种记录和回放用户与应用程序交互过程的技术，它创建用户会话的视频式重现（非真实视频，而是基于DOM的复现），与错误监控和性能追踪数据关联，提供完整的上下文。</p>
+<p><strong>Session Replay 工作原理：</strong></p>
+<ul>
+<li>捕获 DOM 变化（通过 MutationObserver）</li>
+<li>记录用户交互（点击、滚动、输入等）</li>
+<li>收集网络请求和 console 日志</li>
+<li>压缩并分段发送数据到 Sentry</li>
+</ul>
+<h5 id="replayssessionsamplerate">replaysSessionSampleRate</h5>
+<p>数值，可选。</p>
+<p>对于立即开始录制并持续整个用户会话的回放，其采样率设定为：1 表示收集所有回放，0 则表示不收集任何回放。</p>
+<h5 id="replaysonerrorsamplerate">replaysOnErrorSampleRate</h5>
+<p>数值，可选。</p>
+<p>当出现错误时所录制的回放的采样率。这种类型的回放会记录错误发生前最多一分钟的事件，并持续录制直至会话结束。1 会收集所有出现错误的会话，而 0 则不会收集任何会话。</p>
+<h4 id="性能选项">性能选项</h4>
+<h5 id="核心概念">核心概念</h5>
+<p>Profiling（性能剖析）是 Sentry 提供的高级性能监控功能，它通过收集和分析应用程序运行时的详细性能数据，帮助开发者深入理解代码级别的性能瓶颈。</p>
+<p><strong>基本定义</strong></p>
+<ul>
+<li><strong>Profiling</strong> 是一种细粒度的性能分析技术</li>
+<li>记录代码执行时的调用栈、函数耗时、资源使用等数据</li>
+<li>生成"火焰图"(Flame Graph)可视化性能热点</li>
+<li>与错误和事务(Transaction)关联，提供完整的性能上下文</li>
+</ul>
+<h5 id="profilessamplerate">profilesSampleRate</h5>
+<p>数值，可选。</p>
+<p>用于控制特定采样交易被分析的几率百分比。（0 表示 0%，而 1 表示 100%。）适用于应用程序中创建的所有事务。</p>
+<p>这与追踪采样率相关——例如 0.5 表示 50%的采样交易将被分析。</p>
+<h3 id="integrations选项">Integrations选项</h3>
+<h5 id="核心概念">核心概念</h5>
+<p>Integrations（集成）是 Sentry SDK 的核心扩展机制，它们通过模块化的方式为 SDK 添加特定平台或框架的监控能力。</p>
+<p><strong>基本定义：</strong></p>
+<ul>
+<li><strong>Integration</strong> 是 Sentry 的功能插件</li>
+<li>每种集成负责处理特定类型的监控场景</li>
+<li>可以单独启用/禁用，按需组合使用</li>
+<li>自动增强SDK的基础功能</li>
+</ul>
+<p>集成按钮功能分类，包括：框架集成（Vue/React/Angular）、性能监控（BrowserTracing）、上下文增强（ContextLines）、环境适配（Dedupe）、辅助工具（Debug）。</p>
+<h5 id="添加集成">添加集成</h5>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+    <span class="hljs-attr">integrations</span>: [
+    <span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">reportingObserverIntegration</span>()
+  ]
+});
+</code></pre>
+<h5 id="动态导入（推荐）">动态导入（推荐）</h5>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [],
+});
+<span class="hljs-keyword">import</span>(<span class="hljs-string">"@sentry/vue"</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">lazyLoadedSentry</span>) =&gt;</span> {
+  <span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">addIntegration</span>(lazyLoadedSentry.<span class="hljs-title function_">replayIntegration</span>());
+});
+</code></pre>
+<h5 id="删除默认集成">删除默认集成</h5>
+<p>禁用所有集成可用 <code>defaultIntegrations: false</code>。只想删除一个或一些默认集成，则可以使用以下语法来过滤掉不想要的集成。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">integrations</span>) {
+    <span class="hljs-keyword">return</span> integrations.<span class="hljs-title function_">filter</span>(<span class="hljs-function">(<span class="hljs-params">integration</span>) =&gt;</span> integration.<span class="hljs-property">name</span> !== <span class="hljs-string">"Breadcrumbs"</span>);
+  }
+});
+</code></pre>
+<h5 id="自定义集成">自定义集成</h5>
+<p>定制集成必须符合集成接口的要求。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">myAwesomeIntegration</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"MyAwesomeIntegration"</span>,
+    <span class="hljs-comment">// SDK 初始化时，会调用 setup 钩子函数</span>
+    <span class="hljs-title function_">setup</span>(<span class="hljs-params">client</span>) {
+      <span class="hljs-title function_">setupCustomSentryListener</span>(client);
+    },
+    <span class="hljs-comment">// processEvent 钩子用于在事件发送至 Sentry 之前对其进行修改</span>
+    <span class="hljs-title function_">processEvent</span>(<span class="hljs-params">event, hint, client</span>) {
+      event.<span class="hljs-property">extra</span> = {
+        ...event.<span class="hljs-property">extra</span>,
+        <span class="hljs-attr">myCustomTag</span>: <span class="hljs-string">"value"</span>,
+      };
+      <span class="hljs-keyword">return</span> event;
+    },
+    <span class="hljs-comment">// preprocessEvent 钩子与 processEvent 类似，但它会在将事件传递给任何其他 processEvent 钩子之前被调用</span>
+    <span class="hljs-title function_">preprocessEvent</span>(<span class="hljs-params">event, hint, client</span>) {
+      event.<span class="hljs-property">extra</span> = {
+        ...event.<span class="hljs-property">extra</span>,
+        <span class="hljs-attr">myCustomTag</span>: <span class="hljs-string">"value"</span>,
+      };
+    },
+    <span class="hljs-comment">// setupOnce 钩子与 setup 类似，但它只会运行一次，即便 SDK 重新初始化也是如此。</span>
+    <span class="hljs-comment">// 使用 setupOnce 的唯一原因可能是，当多次调用 Sentry.init() 时，希望确保某段代码仅运行一次。</span>
+    <span class="hljs-title function_">setupOnce</span>(<span class="hljs-params"></span>) {
+      <span class="hljs-title function_">wrapLibrary</span>();
+    },
+    <span class="hljs-comment">// 在对所有集成进行 setupOnce() 和 setup() 调用之后，afterAllSetup 钩子会触发</span>
+    <span class="hljs-title function_">afterAllSetup</span>(<span class="hljs-params">client</span>) {
+      <span class="hljs-title function_">startSomeThing</span>(client);
+    },
+  };
+}
+
+<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [<span class="hljs-title function_">myAwesomeIntegration</span>()],
+});
+</code></pre>
+<h5 id="breadcrumbs（默认集成，仅浏览器能运行）">Breadcrumbs（默认集成，仅浏览器能运行）</h5>
+<p>Breadcrumbs（面包屑）是 Sentry 错误监控系统中的关键诊断工具，它记录了导致错误发生前的一系列系统事件和用户操作，形成可追溯的事件轨迹。</p>
+<p><strong>Breadcrumbs</strong> 是按时间顺序记录的应用事件流，每个记录称为一个"面包屑"（Breadcrumb），自动附加到错误报告中提供上下文。</p>
+<p>Breadcrumbs 会封装原生 API 来捕获面包屑信息。默认情况下，Sentry SDK 会对浏览器的 <strong>console、dom、fetch、history 和 xhr</strong> 等 API 进行封装，以添加跟踪记录。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [
+    <span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">breadcrumbsIntegration</span>({
+      <span class="hljs-attr">console</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">dom</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">fetch</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">history</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">xhr</span>: <span class="hljs-literal">true</span>,
+    }),
+  ],
+});
+</code></pre>
+<h5 id="browserapierrors（默认集成，仅浏览器能运行）">BrowserApiErrors（默认集成，仅浏览器能运行）</h5>
+<p>将原生的时间和事件 API（如 <strong>setTimeout、setInterval、requestAnimationFrame、addEventListener/removeEventListener</strong>）封装在 <code>try/catch</code> 块中，以处理异步异常。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [
+    <span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">browserApiErrorsIntegration</span>({
+      <span class="hljs-attr">setTimeout</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">setInterval</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">requestAnimationFrame</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-title class_">XMLHttpRequest</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">eventTarget</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">unregisterOriginalCallbacks</span>: <span class="hljs-literal">true</span>,
+    }),
+  ],
+});
+</code></pre>
+<h5 id="browserprofiling（仅浏览器能运行）">BrowserProfiling（仅浏览器能运行）</h5>
+<p>捕获浏览器的性能分析数据。</p>
+<p>它通过浏览器的 JS 自动分析 API 来捕获分析数据，并将其发送至 Sentry。要使用此集成，还需要启用浏览器跟踪集成。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">browserProfilingIntegration</span>()],
+});
+</code></pre>
+<h5 id="browsersession（仅浏览器能运行）">BrowserSession（仅浏览器能运行）</h5>
+<p>在浏览器中跟踪会话情况，跟踪用户的使用情况以及应用程序的无崩溃率。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">browserSessionIntegration</span>()],
+});
+</code></pre>
+<h5 id="browsertracing（仅浏览器能运行）">BrowserTracing（仅浏览器能运行）</h5>
+<p>捕获浏览器的性能数据。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">browserTracingIntegration</span>()],
+});
+</code></pre>
+<h5 id="captureconsole">CaptureConsole</h5>
+<p>捕获所有 console API 调用。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">captureConsoleIntegration</span>({
+    <span class="hljs-attr">levels</span>: [<span class="hljs-string">'log'</span>, <span class="hljs-string">'info'</span>, <span class="hljs-string">'warn'</span>, <span class="hljs-string">'error'</span>, <span class="hljs-string">'debug'</span>, <span class="hljs-string">'assert'</span>]
+    })],
+})
+</code></pre>
+<h5 id="contextlines">ContextLines</h5>
+<p>从当前页面 HTML 的内联 JavaScript 中添加源代码。</p>
+<p>此集成会将当前页面 HTML 中内联 JavaScript 的源代码（如，script 标签中的 JavaScript 代码），添加到捕获的错误的堆栈跟踪中。</p>
+<p>但它无法收集由 HTML 引用的资源（如 <code>&lt;script src="..."</code> ）中的源代码。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">contextLinesIntegration</span>({
+    <span class="hljs-comment">// 每个堆栈帧行号周围要收集的行数。默认值为 7 。</span>
+    <span class="hljs-attr">frameContextLines</span>: <span class="hljs-number">7</span>
+    })]
+});
+</code></pre>
+<h5 id="dedupe（默认集成）">Dedupe（默认集成）</h5>
+<p>对某些事件进行去重处理，以避免收到重复错误信息。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">dedupeIntegration</span>()],
+});
+</code></pre>
+<h5 id="extraerrordata">ExtraErrorData</h5>
+<p>从错误对象中提取所有非本地属性，并将这些属性作为附加数据附加到事件中。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">extraErrorDataIntegration</span>({
+    <span class="hljs-attr">depth</span>: <span class="hljs-number">3</span>,
+    <span class="hljs-attr">captureErrorCause</span>: <span class="hljs-literal">true</span>
+    })],
+});
+</code></pre>
+<h5 id="functiontostring（默认集成）">FunctionToString（默认集成）</h5>
+<p>允许保留原始的功能名称和方法名称，即便这些功能或方法已被错误处理或导航条目处理程序所封装。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">functionToStringIntegration</span>()],
+});
+</code></pre>
+<h5 id="globalhandlers（默认集成）">GlobalHandlers（默认集成）</h5>
+<p>附加全局处理程序以捕获未捕获的异常和未处理的拒绝情况。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">globalHandlersIntegration</span>({
+    <span class="hljs-attr">onerror</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">onunhandledrejection</span>: <span class="hljs-literal">true</span>
+  })],
+});
+</code></pre>
+<h5 id="httpclient（仅浏览器能运行）">HttpClient（仅浏览器能运行）</h5>
+<p>捕获来自“Fetch”和“XHR”的失败请求中的错误，并附上请求和响应信息。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">httpClientIntegration</span>()]
+});
+</code></pre>
+<h5 id="httpcontext（默认集成，仅浏览器能运行）">HttpContext（默认集成，仅浏览器能运行）</h5>
+<p>将 HTTP 请求信息（如 URL、用户代理、引用信息以及其他头部信息）附加到事件中。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">httpContextIntegration</span>()],
+});
+</code></pre>
+<h5 id="inboundfilters（默认集成）">InboundFilters（默认集成）</h5>
+<p>允许根据异常的类型、消息或 URL 来忽略特定的错误。</p>
+<p>通过 ignoreErrors、ignoreTransactions、denyUrls、allowUrls 等错误监测选项来指定，如：</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">ignoreErrors</span>: [<span class="hljs-string">"ignore-this-error"</span>]
+});
+</code></pre>
+<h5 id="linkederrors（默认集成）">LinkedErrors（默认集成）</h5>
+<p>允许配置 link 错误。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">linkedErrorsIntegration</span>()],
+});
+</code></pre>
+<h5 id="vue（默认集成）">Vue（默认集成）</h5>
+<p>为 Vue 应用程序添加错误和跨度监测功能。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">vueIntegration</span>()],
+});
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: <span class="hljs-function">(<span class="hljs-params">integrations</span>) =&gt;</span>
+    integrations.<span class="hljs-title function_">filter</span>(<span class="hljs-function">(<span class="hljs-params">integration</span>) =&gt;</span> integration.<span class="hljs-property">name</span> !== <span class="hljs-string">"Vue"</span>),
+});
+
+<span class="hljs-keyword">const</span> app = <span class="hljs-title function_">createApp</span>({
+  <span class="hljs-attr">template</span>: <span class="hljs-string">"&lt;div&gt;hello&lt;/div&gt;"</span>,
+});
+
+<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">addIntegration</span>(<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">vueIntegration</span>({ app }));
+</code></pre>
+<h3 id="sentry-apis">Sentry APIs</h3>
+<h5 id="init">init</h5>
+<p>使用给定的选项初始化 SDK 。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">dsn</span>: <span class="hljs-string">"xxxxxx"</span>,
+  <span class="hljs-attr">sendDefaultPii</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">integrations</span>: [],
+});
+</code></pre>
+<h5 id="addintegration">addIntegration</h5>
+<p>在 SDK 中添加了一项集成功能。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">addIntegration</span>(<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">vueIntegration</span>());
+</code></pre>
+<h5 id="captureexception">captureException</h5>
+<p>捕获异常事件并将其发送至 Sentry。</p>
+<pre><code class="lang-javascript">  <span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">captureException</span>(<span class="hljs-string">'captureException'</span>, {
+    <span class="hljs-attr">user</span>:  {
+      <span class="hljs-attr">id</span>: <span class="hljs-string">'1111'</span>,
+      <span class="hljs-attr">email</span>: <span class="hljs-string">'2222'</span>,
+      <span class="hljs-attr">ip_address</span>: <span class="hljs-string">''</span>,
+      <span class="hljs-attr">username</span>: <span class="hljs-string">'3333'</span>,
+    },
+    <span class="hljs-attr">level</span>: <span class="hljs-string">'error'</span>, <span class="hljs-comment">// fatal | error | warning | log | info | debug</span>
+    <span class="hljs-attr">extra</span>: {},
+    <span class="hljs-attr">tags</span>: {},
+    <span class="hljs-attr">contexts</span>: {},
+    <span class="hljs-attr">fingerprint</span>: [<span class="hljs-string">''</span>],
+  })
+</code></pre>
+<h5 id="capturemessage">captureMessage</h5>
+<p>捕获原始消息。消息是指需要发送至 Sentry 的文本信息。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">captureMessage</span>(<span class="hljs-string">"Something went wrong"</span>);
+<span class="hljs-comment">// 指定严重程度级别(可选)：fatal error warning log debug info（efault）</span>
+<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">captureMessage</span>(<span class="hljs-string">"Something went wrong"</span>, <span class="hljs-string">"warning"</span>);
+</code></pre>
+<h3 id="vue-特性">Vue 特性</h3>
+<h4 id="pinia">Pinia</h4>
+<p>获取 Pinia 状态数据。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { createPinia } <span class="hljs-keyword">from</span> <span class="hljs-string">"pinia"</span>;
+<span class="hljs-keyword">import</span> { createSentryPiniaPlugin } <span class="hljs-keyword">from</span> <span class="hljs-string">"@sentry/vue"</span>;
+<span class="hljs-keyword">const</span> pinia = <span class="hljs-title function_">createPinia</span>();
+pinia.<span class="hljs-title function_">use</span>(<span class="hljs-title function_">createSentryPiniaPlugin</span>());
+</code></pre>
+<h5 id="attachpiniastate">attachPiniaState</h5>
+<p>布尔值，默认 true</p>
+<p>将 Pinia 状态附加到 Sentry 事件中。</p>
+<h5 id="addbreadcrumbs">addBreadcrumbs</h5>
+<p>布尔值，默认 true</p>
+<p>在 Sentry 事件中添加面包屑信息。</p>
+<h5 id="actiontransformer">actionTransformer</h5>
+<p>函数</p>
+<p>用于从 Pinia 操作中删除敏感信息。</p>
+<p>传递给该函数的第一个参数是 Pinia 操作的名称。默认情况下，会发送所有操作，如果不想将操作名称发送至 Sentry，返回 null。</p>
+<h5 id="statetransformer">stateTransformer</h5>
+<p>函数</p>
+<p>用于从 Pinia 状态中删除敏感信息。</p>
+<p>传递给该函数的第一个参数是 Pinia 状态。默认情况下，会记录所有状态的变化。如果不想将状态变化附加到发送到 Sentry 的事件中，返回 null。</p>
+<h4 id="track-vue-components">Track Vue Components</h4>
+<p>Sentry 的 Vue SDK 提供了一项用于监控 Vue 组件性能的功能：组件跟踪。启用此功能后，将在事务中获得表示组件生命周期事件及其持续时间的跨度。</p>
+<p>可将 Vue Integration 添加到 <code>Sentry.init()</code> 调用中并设置 <code>tracingOptions.trackComponents</code> 选项。传递 <code>true</code> 以跟踪所有子组件，或指定要跟踪的单个组件的列表。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> <span class="hljs-title class_">Sentry</span> <span class="hljs-keyword">from</span> <span class="hljs-string">"@sentry/vue"</span>;
+<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">integrations</span>: [
+    <span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">vueIntegration</span>({
+      <span class="hljs-attr">tracingOptions</span>: {
+        <span class="hljs-comment">// 默认是 false。设置为 true，表示跟踪所有子组件</span>
+        <span class="hljs-attr">trackComponents</span>: [<span class="hljs-string">"App"</span>, <span class="hljs-string">"RwvHeader"</span>, <span class="hljs-string">"RwvFooter"</span>, <span class="hljs-string">"RwvArticleList"</span>, <span class="hljs-string">"Pagination"</span>], 
+        <span class="hljs-comment">// 默认是 ['activate', 'mount', 'update']</span>
+        <span class="hljs-attr">hooks</span>: [<span class="hljs-string">'activate'</span>, <span class="hljs-string">'create'</span>, <span class="hljs-string">'unmount'</span>, <span class="hljs-string">'mount'</span>, <span class="hljs-string">'update'</span>],
+      },
+    }),
+  ],
+});
+</code></pre>
+<h4 id="vue-router">Vue Router</h4>
+<p>路由检测工具，可获得更具参数化的事务名称。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> <span class="hljs-title class_">Vue</span> <span class="hljs-keyword">from</span> <span class="hljs-string">"vue"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> <span class="hljs-title class_">Sentry</span> <span class="hljs-keyword">from</span> <span class="hljs-string">"@sentry/vue"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">Router</span> <span class="hljs-keyword">from</span> <span class="hljs-string">"vue-router"</span>;
+
+<span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">Router</span>);
+
+<span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Router</span>({);
+<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-title class_">Vue</span>,
+  <span class="hljs-attr">integrations</span>: [
+    <span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">browserTracingIntegration</span>({
+      router,
+            <span class="hljs-comment">// 可选值 name | path。name：将使用 route.name （如果已设置），否则将使用路由的路径；path：始终使用路径。</span>
+      <span class="hljs-attr">routeLabel</span>: <span class="hljs-string">"path"</span>, 
+    })
+  ]
+});
+</code></pre>
+<h4 id="multiple-vue-apps">Multiple Vue Apps</h4>
+<p>Vue 3 允许使用同一个 Sentry SDK 实例来运行多个应用程序，并且在 SDK 已经初始化完成之后，还可以动态添加更多应用程序。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> appOne = <span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>);
+<span class="hljs-keyword">const</span> appTwo = <span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>);
+<span class="hljs-keyword">const</span> appThree = <span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>);
+<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">init</span>({
+  <span class="hljs-attr">app</span>: [
+    appOne,
+    appTwo,
+    appThree
+  ],
+});
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> myLazyApp = <span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">MiscApp</span>);
+
+myLazyApp.<span class="hljs-title function_">mixin</span>(<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">createTracingMixins</span>({
+  <span class="hljs-attr">trackComponents</span>: <span class="hljs-literal">true</span>
+}));
+<span class="hljs-title class_">Sentry</span>.<span class="hljs-title function_">attachErrorHandler</span>(myLazyApp);
+</code></pre>
+<h3 id="参考资料">参考资料</h3>
+<p><a href="https://docs.sentry.io/" target="_blank">sentry官网</a></p>
+<p></p><footer class="page-footer"><span class="copyright">© lizhao all right reserved，powered by Gitbook</span><span class="footer-modification">文件修订时间：
+2025-09-08 22:36:34
+</span></footer><p></p>
+<div id="gitalk-container"></div> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"></link> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="17-uniapp离线打包（Android）篇.html" class="navigation navigation-prev " aria-label="Previous page: Uniapp离线打包（Android）篇">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="19-视口和软键盘对视口的影响.html" class="navigation navigation-next " aria-label="Next page: 视口和软键盘对视口的影响">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Sentry基础篇（Vue）","level":"4.44","depth":1,"next":{"title":"视口和软键盘对视口的影响","level":"4.45","depth":1,"path":"frontend/19-视口和软键盘对视口的影响.md","ref":"frontend/19-视口和软键盘对视口的影响.md","articles":[]},"previous":{"title":"Uniapp离线打包（Android）篇","level":"4.43","depth":1,"path":"frontend/17-uniapp离线打包（Android）篇.md","ref":"frontend/17-uniapp离线打包（Android）篇.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","summary","sandpack","theme-default","theme-comscore","tbfed-pagefooter","pageview-count","accordion","sharing-plus","back-to-top-button","chapter-fold","klipse","mygitalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"summary":{"exclude":["docs/**"]},"search-pro":{"maxSearchIndexSize":10000000},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"mygitalk":{"flipMoveOptions":{},"clientID":"35175582adb321d85634","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["lizh"],"createIssueManually":false,"distractionFreeMode":false,"repo":"https://github.com/1927344728/fed-knowledge","owner":"lizh","enableHotKey":true,"clientSecret":"2e60c4d61474ec23e752f127e838aa2039e0433e","pagerDirection":"last","labels":["Gitalk"]},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":true,"qzone":true},"sandpack":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"lizhao","honkit":"^6.0.2","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术驿站•LIZHAO","language":"zh","gitbook":"*","description":"这是开发者的技术文档"},"file":{"path":"frontend/18-sentry基础篇（vue）.md","mtime":"2025-09-08T14:36:34.478Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2026-06-29T12:14:32.945Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-sandpack/honkit-plugin-sandpack.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

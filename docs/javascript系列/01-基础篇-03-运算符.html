@@ -1,0 +1,4088 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>基础篇 03 运算符 · 技术驿站•LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 6.0.2">
+        <meta name="author" content="lizhao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="01-基础篇-04-正则表达式.html" />
+    
+    
+    <link rel="prev" href="01-基础篇-02-类型转换.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/00-前端调试随笔.html">
+            
+                <a href="../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/05-JS常见问题概览.html">
+            
+                <a href="../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/07-微信小程序开发.html">
+            
+                <a href="../bugs/07-微信小程序开发.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    微信小程序开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bugs/08-NodeJs常见问题概览.html">
+            
+                <a href="../bugs/08-NodeJs常见问题概览.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    NodeJs常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../bugs/09-Mac常见问题概览.html">
+            
+                <a href="../bugs/09-Mac常见问题概览.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Mac常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../bugs/10-微信环境前端开发指南.html">
+            
+                <a href="../bugs/10-微信环境前端开发指南.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    微信环境前端开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../bugs/99-其他问题汇总.html">
+            
+                <a href="../bugs/99-其他问题汇总.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    其他问题汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../css系列/00-CSS基础知识.html">
+            
+                <a href="../css系列/00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../css系列/00-CSS常见问答.html">
+            
+                <a href="../css系列/00-CSS常见问答.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../css系列/00-CSS常见问答02.html">
+            
+                <a href="../css系列/00-CSS常见问答02.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    CSS常见问答02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../css系列/00-CSS应用示例.html">
+            
+                <a href="../css系列/00-CSS应用示例.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    CSS应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../css系列/00-CSS应用示例02.html">
+            
+                <a href="../css系列/00-CSS应用示例02.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS应用示例02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../css系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../css系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../css系列/04-CSS探索系列-margin.html">
+            
+                <a href="../css系列/04-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                <a href="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    CSS探索系列 Auto关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../css系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../css系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../css系列/05-CSS探索系列-line-height.html">
+            
+                <a href="../css系列/05-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../css系列/05-CSS探索系列-元素居中.html">
+            
+                <a href="../css系列/05-CSS探索系列-元素居中.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    CSS探索系列 元素居中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../css系列/05-CSS探索系列-动画.html">
+            
+                <a href="../css系列/05-CSS探索系列-动画.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    CSS探索系列 动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../css系列/08-重新认识伪类与伪元素.html">
+            
+                <a href="../css系列/08-重新认识伪类与伪元素.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    重新认识伪类与伪元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../css系列/09-自定义表单伪元素样式.html">
+            
+                <a href="../css系列/09-自定义表单伪元素样式.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    自定义表单伪元素样式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../css系列/10-如何理解css中的display属性.html">
+            
+                <a href="../css系列/10-如何理解css中的display属性.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    如何理解Css中的Display属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                <a href="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                <a href="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    一文彻底弄懂CSS中的长度单位
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                <a href="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                    
+                        <b>2.21.</b>
+                    
+                    CSS中一些有特性的属性或属性值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../css系列/14-Web中如何实现长宽比.html">
+            
+                <a href="../css系列/14-Web中如何实现长宽比.html">
+            
+                    
+                        <b>2.22.</b>
+                    
+                    Web中如何实现长宽比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../css系列/15-@规则：@font-face.html">
+            
+                <a href="../css系列/15-@规则：@font-face.html">
+            
+                    
+                        <b>2.23.</b>
+                    
+                    @规则：@Font Face
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                <a href="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                    
+                        <b>2.24.</b>
+                    
+                    @规则：@Media（媒体查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../css系列/15-@规则：其他.html">
+            
+                <a href="../css系列/15-@规则：其他.html">
+            
+                    
+                        <b>2.25.</b>
+                    
+                    @规则：其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../css系列/_关于css.html">
+            
+                <a href="../css系列/_关于css.html">
+            
+                    
+                        <b>2.26.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../frontend/00-00-关于Web前端.html">
+            
+                <a href="../frontend/00-00-关于Web前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    00 关于Web前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../frontend/00-01-前端知识概览.html">
+            
+                <a href="../frontend/00-01-前端知识概览.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    01 前端知识概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../frontend/00-02-常用前端库概览.html">
+            
+                <a href="../frontend/00-02-常用前端库概览.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    02 常用前端库概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../frontend/01-基础-00-前端常见问题01.html">
+            
+                <a href="../frontend/01-基础-00-前端常见问题01.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    基础 00 前端常见问题01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../frontend/01-基础-01-浏览器缓存.html">
+            
+                <a href="../frontend/01-基础-01-浏览器缓存.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    基础 01 浏览器缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../frontend/01-基础-02-浏览器工作原理.html">
+            
+                <a href="../frontend/01-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../frontend/01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                <a href="../frontend/01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    基础 03 谈谈前端跨域问题及解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../frontend/02-进阶-01-Web性能优化.html">
+            
+                <a href="../frontend/02-进阶-01-Web性能优化.html">
+            
+                    
+                        <b>4.8.</b>
+                    
+                    进阶 01 Web性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../frontend/02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                <a href="../frontend/02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                    
+                        <b>4.9.</b>
+                    
+                    进阶 02 搜索引擎优化（SEO）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="../frontend/02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                <a href="../frontend/02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                    
+                        <b>4.10.</b>
+                    
+                    进阶 03 前端模块化编程：CommonJS、AMD、CMD、UMD、ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="../frontend/02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                <a href="../frontend/02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                    
+                        <b>4.11.</b>
+                    
+                    进阶 04 规范代码：Linter、Prettier、EditorConfig
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="../frontend/02-进阶-05-Web离线应用.html">
+            
+                <a href="../frontend/02-进阶-05-Web离线应用.html">
+            
+                    
+                        <b>4.12.</b>
+                    
+                    进阶 05 Web离线应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="../frontend/02-进阶-06-WebSocket.html">
+            
+                <a href="../frontend/02-进阶-06-WebSocket.html">
+            
+                    
+                        <b>4.13.</b>
+                    
+                    进阶 06 WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="../frontend/02-进阶-07-Web跨页面通信.html">
+            
+                <a href="../frontend/02-进阶-07-Web跨页面通信.html">
+            
+                    
+                        <b>4.14.</b>
+                    
+                    进阶 07 Web跨页面通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="../frontend/02-进阶-08-页面可见性和生命周期.html">
+            
+                <a href="../frontend/02-进阶-08-页面可见性和生命周期.html">
+            
+                    
+                        <b>4.15.</b>
+                    
+                    进阶 08 页面可见性和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="../frontend/02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                <a href="../frontend/02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                    
+                        <b>4.16.</b>
+                    
+                    进阶 09 事件循环、宏任务、微任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="../frontend/02-进阶-10-内存泄漏.html">
+            
+                <a href="../frontend/02-进阶-10-内存泄漏.html">
+            
+                    
+                        <b>4.17.</b>
+                    
+                    进阶 10 内存泄漏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="../frontend/02-进阶-11-前端自动化测试.html">
+            
+                <a href="../frontend/02-进阶-11-前端自动化测试.html">
+            
+                    
+                        <b>4.18.</b>
+                    
+                    进阶 11 前端自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="../frontend/02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                <a href="../frontend/02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                    
+                        <b>4.19.</b>
+                    
+                    进阶 12 前端也玩多线程？WebWorker其实很简单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="../frontend/03-高级-01-前端安全深度解析.html">
+            
+                <a href="../frontend/03-高级-01-前端安全深度解析.html">
+            
+                    
+                        <b>4.20.</b>
+                    
+                    高级 01 前端安全深度解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.21" data-path="../frontend/03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                <a href="../frontend/03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                    
+                        <b>4.21.</b>
+                    
+                    高级 02 CI、CD（Docker+Jenkins+Nginx）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.22" data-path="../frontend/04-Vue2.x原理篇.html">
+            
+                <a href="../frontend/04-Vue2.x原理篇.html">
+            
+                    
+                        <b>4.22.</b>
+                    
+                    Vue2.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.23" data-path="../frontend/04-Vue3初步了解及迁移指南.html">
+            
+                <a href="../frontend/04-Vue3初步了解及迁移指南.html">
+            
+                    
+                        <b>4.23.</b>
+                    
+                    Vue3初步了解及迁移指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.24" data-path="../frontend/04-重读Vue教程.html">
+            
+                <a href="../frontend/04-重读Vue教程.html">
+            
+                    
+                        <b>4.24.</b>
+                    
+                    重读Vue教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.25" data-path="../frontend/05-React17.x原理篇.html">
+            
+                <a href="../frontend/05-React17.x原理篇.html">
+            
+                    
+                        <b>4.25.</b>
+                    
+                    React17.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.26" data-path="../frontend/05-你必须知道的React问题.html">
+            
+                <a href="../frontend/05-你必须知道的React问题.html">
+            
+                    
+                        <b>4.26.</b>
+                    
+                    你必须知道的React问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.27" data-path="../frontend/05-重读React教程.html">
+            
+                <a href="../frontend/05-重读React教程.html">
+            
+                    
+                        <b>4.27.</b>
+                    
+                    重读React教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.28" data-path="../frontend/06-聊一聊Cookie的一些问题.html">
+            
+                <a href="../frontend/06-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.28.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.29" data-path="../frontend/07-SSL证书简介及其生成、使用.md">
+            
+                <span>
+            
+                    
+                        <b>4.29.</b>
+                    
+                    SSL证书简介及其生成、使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.30" data-path="../frontend/07-如何启动本地HTTPS服务.html">
+            
+                <a href="../frontend/07-如何启动本地HTTPS服务.html">
+            
+                    
+                        <b>4.30.</b>
+                    
+                    如何启动本地HTTPS服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.31" data-path="../frontend/08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                <a href="../frontend/08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                    
+                        <b>4.31.</b>
+                    
+                    0.0.0.0、127.0.0.1和Localhost的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.32" data-path="../frontend/09-如何理解HTTP响应的状态码.html">
+            
+                <a href="../frontend/09-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.32.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.33" data-path="../frontend/10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                <a href="../frontend/10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                    
+                        <b>4.33.</b>
+                    
+                    字符编码那点事：ASCII、Unicode、GBK、UTF 8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.34" data-path="../frontend/11-HTTP协议的演变历史.md">
+            
+                <span>
+            
+                    
+                        <b>4.34.</b>
+                    
+                    HTTP协议的演变历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.35" data-path="../frontend/12-webpack4.x原理篇.html">
+            
+                <a href="../frontend/12-webpack4.x原理篇.html">
+            
+                    
+                        <b>4.35.</b>
+                    
+                    Webpack4.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.36" data-path="../frontend/12-webpack基础入门篇.html">
+            
+                <a href="../frontend/12-webpack基础入门篇.html">
+            
+                    
+                        <b>4.36.</b>
+                    
+                    Webpack基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.37" data-path="../frontend/12-webpack构建优化篇.html">
+            
+                <a href="../frontend/12-webpack构建优化篇.html">
+            
+                    
+                        <b>4.37.</b>
+                    
+                    Webpack构建优化篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.38" data-path="../frontend/13-TypeScript使用指南.html">
+            
+                <a href="../frontend/13-TypeScript使用指南.html">
+            
+                    
+                        <b>4.38.</b>
+                    
+                    TypeScript使用指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.39" data-path="../frontend/14-Web中图片的使用.html">
+            
+                <a href="../frontend/14-Web中图片的使用.html">
+            
+                    
+                        <b>4.39.</b>
+                    
+                    Web中图片的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.40" data-path="../frontend/15-2026年，还需要微前端吗？——三大框架对比与选型思考.md">
+            
+                <span>
+            
+                    
+                        <b>4.40.</b>
+                    
+                    2026年，还需要微前端吗？——三大框架对比与选型思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.41" data-path="../frontend/16-Electron基础篇.html">
+            
+                <a href="../frontend/16-Electron基础篇.html">
+            
+                    
+                        <b>4.41.</b>
+                    
+                    Electron基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.42" data-path="../frontend/17-uniapp基础篇.html">
+            
+                <a href="../frontend/17-uniapp基础篇.html">
+            
+                    
+                        <b>4.42.</b>
+                    
+                    Uniapp基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.43" data-path="../frontend/17-uniapp离线打包（Android）篇.html">
+            
+                <a href="../frontend/17-uniapp离线打包（Android）篇.html">
+            
+                    
+                        <b>4.43.</b>
+                    
+                    Uniapp离线打包（Android）篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.44" data-path="../frontend/18-sentry基础篇（vue）.html">
+            
+                <a href="../frontend/18-sentry基础篇（vue）.html">
+            
+                    
+                        <b>4.44.</b>
+                    
+                    Sentry基础篇（Vue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.45" data-path="../frontend/19-视口和软键盘对视口的影响.html">
+            
+                <a href="../frontend/19-视口和软键盘对视口的影响.html">
+            
+                    
+                        <b>4.45.</b>
+                    
+                    视口和软键盘对视口的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.46" data-path="../frontend/20-WebGL从入门到实践.html">
+            
+                <a href="../frontend/20-WebGL从入门到实践.html">
+            
+                    
+                        <b>4.46.</b>
+                    
+                    WebGL从入门到实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.47" data-path="../frontend/21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                <a href="../frontend/21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                    
+                        <b>4.47.</b>
+                    
+                    Three.Js基础实战：从画一个立方体开始，掌握3D世界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.48" data-path="../frontend/22-ReactNative基础篇.html">
+            
+                <a href="../frontend/22-ReactNative基础篇.html">
+            
+                    
+                        <b>4.48.</b>
+                    
+                    ReactNative基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49" data-path="../frontend/代码规范/">
+            
+                <a href="../frontend/代码规范/">
+            
+                    
+                        <b>4.49.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.49.1" data-path="../frontend/代码规范/00-前端规范.html">
+            
+                <a href="../frontend/代码规范/00-前端规范.html">
+            
+                    
+                        <b>4.49.1.</b>
+                    
+                    前端规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.2" data-path="../frontend/代码规范/01-HTML.html">
+            
+                <a href="../frontend/代码规范/01-HTML.html">
+            
+                    
+                        <b>4.49.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.3" data-path="../frontend/代码规范/02-CSS.html">
+            
+                <a href="../frontend/代码规范/02-CSS.html">
+            
+                    
+                        <b>4.49.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.4" data-path="../frontend/代码规范/03-JS.html">
+            
+                <a href="../frontend/代码规范/03-JS.html">
+            
+                    
+                        <b>4.49.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../html系列/00-HTML基础知识.html">
+            
+                <a href="../html系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../html系列/00-HTML基础知识02.html">
+            
+                <a href="../html系列/00-HTML基础知识02.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML基础知识02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../html系列/00-HTML常见问答.html">
+            
+                <a href="../html系列/00-HTML常见问答.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    HTML常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../html系列/00-HTML经典实践用例.html">
+            
+                <a href="../html系列/00-HTML经典实践用例.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    HTML经典实践用例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../html系列/03-html探索系列-meta标签.md">
+            
+                <span>
+            
+                    
+                        <b>5.7.</b>
+                    
+                    Html探索系列 Meta标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                <a href="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                    
+                        <b>5.8.</b>
+                    
+                    DOCTYPE：文档类型与浏览器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="../html系列/05-DHTML（动态网页）简介.html">
+            
+                <a href="../html系列/05-DHTML（动态网页）简介.html">
+            
+                    
+                        <b>5.9.</b>
+                    
+                    DHTML（动态网页）简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="../html系列/06-HTML标签详解.md">
+            
+                <span>
+            
+                    
+                        <b>5.10.</b>
+                    
+                    HTML标签详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="../html系列/07-HTML布局的几种方式.html">
+            
+                <a href="../html系列/07-HTML布局的几种方式.html">
+            
+                    
+                        <b>5.11.</b>
+                    
+                    HTML布局的几种方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="../html系列/08-HTML全局属性.html">
+            
+                <a href="../html系列/08-HTML全局属性.html">
+            
+                    
+                        <b>5.12.</b>
+                    
+                    HTML全局属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                <a href="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                    
+                        <b>5.13.</b>
+                    
+                    标记语言演进：从GML到HTML动态标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.14" data-path="../html系列/_关于html.html">
+            
+                <a href="../html系列/_关于html.html">
+            
+                    
+                        <b>5.14.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Javascript系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="00-基础知识.html">
+            
+                <a href="00-基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="00-常见问答.html">
+            
+                <a href="00-常见问答.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="00-应用示例.html">
+            
+                <a href="00-应用示例.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="00-趣味示例.html">
+            
+                <a href="00-趣味示例.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    趣味示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="00-进阶知识.html">
+            
+                <a href="00-进阶知识.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    进阶知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="01-基础篇-01-数据类型之基本类型.html">
+            
+                <a href="01-基础篇-01-数据类型之基本类型.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    基础篇 01 数据类型之基本类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="01-基础篇-01-数据类型之引用类型.html">
+            
+                <a href="01-基础篇-01-数据类型之引用类型.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    基础篇 01 数据类型之引用类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="01-基础篇-02-类型转换.html">
+            
+                <a href="01-基础篇-02-类型转换.html">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    基础篇 02 类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.9" data-path="01-基础篇-03-运算符.html">
+            
+                <a href="01-基础篇-03-运算符.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                    基础篇 03 运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="01-基础篇-04-正则表达式.html">
+            
+                <a href="01-基础篇-04-正则表达式.html">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    基础篇 04 正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="01-基础篇-05-AJAX.html">
+            
+                <a href="01-基础篇-05-AJAX.html">
+            
+                    
+                        <b>6.11.</b>
+                    
+                    基础篇 05 AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="01-基础篇-06--window对象.html">
+            
+                <a href="01-基础篇-06--window对象.html">
+            
+                    
+                        <b>6.12.</b>
+                    
+                    基础篇 06  Window对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                <a href="01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                    
+                        <b>6.13.</b>
+                    
+                    基础篇 07 Error、JSON、Math、Console对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                <a href="01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                    
+                        <b>6.14.</b>
+                    
+                    基础篇 08 History、URL、Screen、Navigator、Location对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="01-基础篇-09-文档对象模型（DOM）.html">
+            
+                <a href="01-基础篇-09-文档对象模型（DOM）.html">
+            
+                    
+                        <b>6.15.</b>
+                    
+                    基础篇 09 文档对象模型（DOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="01-基础篇-10-Document对象.html">
+            
+                <a href="01-基础篇-10-Document对象.html">
+            
+                    
+                        <b>6.16.</b>
+                    
+                    基础篇 10 Document对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.17" data-path="01-基础篇-11-Element对象.html">
+            
+                <a href="01-基础篇-11-Element对象.html">
+            
+                    
+                        <b>6.17.</b>
+                    
+                    基础篇 11 Element对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.18" data-path="01-基础篇-12-Event对象.html">
+            
+                <a href="01-基础篇-12-Event对象.html">
+            
+                    
+                        <b>6.18.</b>
+                    
+                    基础篇 12 Event对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.19" data-path="01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                <a href="01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                    
+                        <b>6.19.</b>
+                    
+                    基础篇 13 键盘、鼠标、触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.20" data-path="01-基础篇-14-MutationObserver对象.html">
+            
+                <a href="01-基础篇-14-MutationObserver对象.html">
+            
+                    
+                        <b>6.20.</b>
+                    
+                    基础篇 14 MutationObserver对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.21" data-path="01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                <a href="01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                    
+                        <b>6.21.</b>
+                    
+                    基础篇 15 CSS对象模型（CSSOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.22" data-path="02-进阶篇-01-prototype对象和继承.html">
+            
+                <a href="02-进阶篇-01-prototype对象和继承.html">
+            
+                    
+                        <b>6.22.</b>
+                    
+                    进阶篇 01 Prototype对象和继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.23" data-path="02-进阶篇-02-Promise对象.html">
+            
+                <a href="02-进阶篇-02-Promise对象.html">
+            
+                    
+                        <b>6.23.</b>
+                    
+                    进阶篇 02 Promise对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.24" data-path="02-进阶篇-03-有特性的一些事件.html">
+            
+                <a href="02-进阶篇-03-有特性的一些事件.html">
+            
+                    
+                        <b>6.24.</b>
+                    
+                    进阶篇 03 有特性的一些事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.25" data-path="02-进阶篇-04-Proxy对象.html">
+            
+                <a href="02-进阶篇-04-Proxy对象.html">
+            
+                    
+                        <b>6.25.</b>
+                    
+                    进阶篇 04 Proxy对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.26" data-path="02-进阶篇-05-Reflect对象.html">
+            
+                <a href="02-进阶篇-05-Reflect对象.html">
+            
+                    
+                        <b>6.26.</b>
+                    
+                    进阶篇 05 Reflect对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.27" data-path="02-进阶篇-06-Class（类）.html">
+            
+                <a href="02-进阶篇-06-Class（类）.html">
+            
+                    
+                        <b>6.27.</b>
+                    
+                    进阶篇 06 Class（类）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.28" data-path="02-进阶篇-07-迭代器（Iterator）.html">
+            
+                <a href="02-进阶篇-07-迭代器（Iterator）.html">
+            
+                    
+                        <b>6.28.</b>
+                    
+                    进阶篇 07 迭代器（Iterator）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.29" data-path="02-进阶篇-08-Generator和Async函数.html">
+            
+                <a href="02-进阶篇-08-Generator和Async函数.html">
+            
+                    
+                        <b>6.29.</b>
+                    
+                    进阶篇 08 Generator和Async函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.30" data-path="02-进阶篇-09-JavaScript异步编程.html">
+            
+                <a href="02-进阶篇-09-JavaScript异步编程.html">
+            
+                    
+                        <b>6.30.</b>
+                    
+                    进阶篇 09 JavaScript异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.31" data-path="04-Date对象和日期时间字符串格式.md">
+            
+                <span>
+            
+                    
+                        <b>6.31.</b>
+                    
+                    Date对象和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.32" data-path="05-Canvas基础入门篇.html">
+            
+                <a href="05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.32.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.33" data-path="05-Canvas进阶篇.html">
+            
+                <a href="05-Canvas进阶篇.html">
+            
+                    
+                        <b>6.33.</b>
+                    
+                    Canvas进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.34" data-path="06-SVG基础入门篇.html">
+            
+                <a href="06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.34.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.35" data-path="06-四种判断数据类型方法的优缺点.html">
+            
+                <a href="06-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.35.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.36" data-path="07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.36.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.37" data-path="08-谈谈JavaScript的作用域和上下文.md">
+            
+                <span>
+            
+                    
+                        <b>6.37.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.38" data-path="10-复制内容到剪贴板.html">
+            
+                <a href="10-复制内容到剪贴板.html">
+            
+                    
+                        <b>6.38.</b>
+                    
+                    复制内容到剪贴板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.39" data-path="11-44道JavaScript难题，还不来考考？.html">
+            
+                <a href="11-44道JavaScript难题，还不来考考？.html">
+            
+                    
+                        <b>6.39.</b>
+                    
+                    44道JavaScript难题，还不来考考？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.40" data-path="_关于Javascript.html">
+            
+                <a href="_关于Javascript.html">
+            
+                    
+                        <b>6.40.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java系列</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../java系列/01-00-Java入门篇.html">
+            
+                <a href="../java系列/01-00-Java入门篇.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    00 Java入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../java系列/01-01-Java进阶篇.html">
+            
+                <a href="../java系列/01-01-Java进阶篇.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    01 Java进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../java系列/01-02-Java高级篇.html">
+            
+                <a href="../java系列/01-02-Java高级篇.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    02 Java高级篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../java系列/02-pom.xml详解.html">
+            
+                <a href="../java系列/02-pom.xml详解.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Pom.Xml详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../java系列/03-01-SpringBoot入门篇.html">
+            
+                <a href="../java系列/03-01-SpringBoot入门篇.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    01 SpringBoot入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../java系列/05-轻量应用服务器部署指南（腾讯云）.md">
+            
+                <span>
+            
+                    
+                        <b>7.6.</b>
+                    
+                    轻量应用服务器部署指南（腾讯云）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../java系列/06-keytool命令行工具.md">
+            
+                <span>
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Keytool命令行工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">NodeJs</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../nodeJs/00-0关于Node.js.html">
+            
+                <a href="../nodeJs/00-0关于Node.js.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    0关于Node.Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../nodeJs/00-常见问题.html">
+            
+                <a href="../nodeJs/00-常见问题.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                <a href="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Node.Js：三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                <a href="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                    
+                        <b>8.4.</b>
+                    
+                    Npm包管理器简介及一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                <a href="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                    
+                        <b>8.5.</b>
+                    
+                    NPM：Package.Json详解（中文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                <a href="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                    
+                        <b>8.6.</b>
+                    
+                    NPM：从零开始，开发一个软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="../nodeJs/05-NPM：常用命令.html">
+            
+                <a href="../nodeJs/05-NPM：常用命令.html">
+            
+                    
+                        <b>8.7.</b>
+                    
+                    NPM：常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                <a href="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                    
+                        <b>8.8.</b>
+                    
+                    Node.Js：Fs（文件系统）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                <a href="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                    
+                        <b>8.9.</b>
+                    
+                    Node.Js：Global（全局变量）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="../nodeJs/08-Node.js：HTTP.html">
+            
+                <a href="../nodeJs/08-Node.js：HTTP.html">
+            
+                    
+                        <b>8.10.</b>
+                    
+                    Node.Js：HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="../nodeJs/09-Node.js：module（模块）.html">
+            
+                <a href="../nodeJs/09-Node.js：module（模块）.html">
+            
+                    
+                        <b>8.11.</b>
+                    
+                    Node.Js：Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="../nodeJs/10-Node.js：path（路径）.html">
+            
+                <a href="../nodeJs/10-Node.js：path（路径）.html">
+            
+                    
+                        <b>8.12.</b>
+                    
+                    Node.Js：Path（路径）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                <a href="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                    
+                        <b>8.13.</b>
+                    
+                    Node.Js：Readline（逐行读取）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.14" data-path="../nodeJs/12-锁定项目的Node版本.html">
+            
+                <a href="../nodeJs/12-锁定项目的Node版本.html">
+            
+                    
+                        <b>8.14.</b>
+                    
+                    锁定项目的Node版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../research/02-如何监控前端异常？.html">
+            
+                <a href="../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../research/03-H5页面跳转和刷新.html">
+            
+                <a href="../research/03-H5页面跳转和刷新.html">
+            
+                    
+                        <b>9.3.</b>
+                    
+                    H5页面跳转和刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>9.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>9.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>9.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../research/07-H5可视化编辑.html">
+            
+                <a href="../research/07-H5可视化编辑.html">
+            
+                    
+                        <b>9.7.</b>
+                    
+                    H5可视化编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="../research/08-Web常用功能.html">
+            
+                <a href="../research/08-Web常用功能.html">
+            
+                    
+                        <b>9.8.</b>
+                    
+                    Web常用功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" data-path="../research/10-H5页面生成图片方案总结.html">
+            
+                <a href="../research/10-H5页面生成图片方案总结.html">
+            
+                    
+                        <b>9.9.</b>
+                    
+                    H5页面生成图片方案总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10" data-path="../research/Javascript加密混淆.html">
+            
+                <a href="../research/Javascript加密混淆.html">
+            
+                    
+                        <b>9.10.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.11" data-path="../research/Vue如何导入TypeScript.html">
+            
+                <a href="../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>9.11.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.12" data-path="../research/移动端PDF预览.html">
+            
+                <a href="../research/移动端PDF预览.html">
+            
+                    
+                        <b>9.12.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.13" data-path="../research/纯CSS绘制箭头.html">
+            
+                <a href="../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>9.13.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.14" data-path="../research/网站性能测量和优化方法.html">
+            
+                <a href="../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>9.14.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../tech/00-编程基础知识.html">
+            
+                <a href="../tech/00-编程基础知识.html">
+            
+                    
+                        <b>10.1.</b>
+                    
+                    编程基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="../tech/00-计算机问题概览.html">
+            
+                <a href="../tech/00-计算机问题概览.html">
+            
+                    
+                        <b>10.2.</b>
+                    
+                    计算机问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>10.3.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                <a href="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                    
+                        <b>10.4.</b>
+                    
+                    GOOGLE浏览器的搜索技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="../tech/03-curl的用法指南.html">
+            
+                <a href="../tech/03-curl的用法指南.html">
+            
+                    
+                        <b>10.5.</b>
+                    
+                    Curl的用法指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="../tech/04-sublime3插件篇.html">
+            
+                <a href="../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>10.6.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="../tech/05-Charles安装及使用.html">
+            
+                <a href="../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>10.7.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                <a href="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                    
+                        <b>10.8.</b>
+                    
+                    通过.Gitlab Ci.Yml配置任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="../tech/07-MySQL的基本使用.html">
+            
+                <a href="../tech/07-MySQL的基本使用.html">
+            
+                    
+                        <b>10.9.</b>
+                    
+                    MySQL的基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="../tech/08-看懂什么是环境变量.html">
+            
+                <a href="../tech/08-看懂什么是环境变量.html">
+            
+                    
+                        <b>10.10.</b>
+                    
+                    看懂什么是环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.11" data-path="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                <a href="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                    
+                        <b>10.11.</b>
+                    
+                    为什么0.1+0.2=0.30000000000000004
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.12" data-path="../tech/10-Nginx使用手册：安装、配置、模块扩展与代理详解.md">
+            
+                <span>
+            
+                    
+                        <b>10.12.</b>
+                    
+                    Nginx使用手册：安装、配置、模块扩展与代理详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.13" data-path="../tech/11-常见智力题总结.html">
+            
+                <a href="../tech/11-常见智力题总结.html">
+            
+                    
+                        <b>10.13.</b>
+                    
+                    常见智力题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.14" data-path="../tech/12-Mac终端命令使用.html">
+            
+                <a href="../tech/12-Mac终端命令使用.html">
+            
+                    
+                        <b>10.14.</b>
+                    
+                    Mac终端命令使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.15" data-path="../tech/13-01-Shell脚本入门篇.html">
+            
+                <a href="../tech/13-01-Shell脚本入门篇.html">
+            
+                    
+                        <b>10.15.</b>
+                    
+                    01 Shell脚本入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.16" data-path="../tech/13-02-Shell脚本进阶篇.html">
+            
+                <a href="../tech/13-02-Shell脚本进阶篇.html">
+            
+                    
+                        <b>10.16.</b>
+                    
+                    02 Shell脚本进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.17" data-path="../tech/14-一篇搞定排序算法：原理+图解+JS实现+V8源码解读.md">
+            
+                <span>
+            
+                    
+                        <b>10.17.</b>
+                    
+                    一篇搞定排序算法：原理+图解+JS实现+V8源码解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.18" data-path="../tech/15-glob模式通配符.html">
+            
+                <a href="../tech/15-glob模式通配符.html">
+            
+                    
+                        <b>10.18.</b>
+                    
+                    Glob模式通配符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.19" data-path="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                <a href="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                    
+                        <b>10.19.</b>
+                    
+                    代码整洁之道（摘录笔记）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.20" data-path="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                <a href="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                    
+                        <b>10.20.</b>
+                    
+                    Java的24种设计模式与7大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.21" data-path="../tech/18-观察者和发布订阅模式.html">
+            
+                <a href="../tech/18-观察者和发布订阅模式.html">
+            
+                    
+                        <b>10.21.</b>
+                    
+                    观察者和发布订阅模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.22" data-path="../tech/19-AI模型基础应用篇.html">
+            
+                <a href="../tech/19-AI模型基础应用篇.html">
+            
+                    
+                        <b>10.22.</b>
+                    
+                    AI模型基础应用篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../tools/01-01-Git基础教程.html">
+            
+                <a href="../tools/01-01-Git基础教程.html">
+            
+                    
+                        <b>11.1.</b>
+                    
+                    01 Git基础教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../tools/01-02-Git常见问题.html">
+            
+                <a href="../tools/01-02-Git常见问题.html">
+            
+                    
+                        <b>11.2.</b>
+                    
+                    02 Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../tools/02-01-gitbook入门篇.html">
+            
+                <a href="../tools/02-01-gitbook入门篇.html">
+            
+                    
+                        <b>11.3.</b>
+                    
+                    01 Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="../tools/02-02-gitbook插件篇.html">
+            
+                <a href="../tools/02-02-gitbook插件篇.html">
+            
+                    
+                        <b>11.4.</b>
+                    
+                    02 Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="../tools/02-03-gitbook进阶篇.html">
+            
+                <a href="../tools/02-03-gitbook进阶篇.html">
+            
+                    
+                        <b>11.5.</b>
+                    
+                    03 Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">整理中</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >基础篇 03 运算符</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="基础篇：运算符">基础篇：运算符</h2>
+<p>运算符是指定要在表达式中执行的计算类型的标志或符号，有数学、比较、逻辑和引用运算符。 </p>
+<p>JavaScript 的运算符类型：</p>
+<ul>
+<li>赋值运算符</li>
+<li>比较运算符</li>
+<li>算数运算符</li>
+<li>位运算符</li>
+<li>逻辑运算符</li>
+<li>条件（三元）运算符</li>
+<li>一元运算符</li>
+<li>关系运算符</li>
+</ul>
+<h3 id="赋值运算符">赋值运算符</h3>
+<p>一个赋值运算符将它右边操作数的值赋给它左边的操作数。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">表达式</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">赋值（=）</td>
+<td style="text-align:left"><code>x = y</code></td>
+<td style="text-align:left"><code>x = y</code></td>
+</tr>
+<tr>
+<td style="text-align:left">加法赋值（+=）</td>
+<td style="text-align:left"><code>x += y</code></td>
+<td style="text-align:left"><code>x = x + y</code></td>
+</tr>
+<tr>
+<td style="text-align:left">减法赋值（-=）</td>
+<td style="text-align:left"><code>x -= y</code></td>
+<td style="text-align:left"><code>x = x - y</code></td>
+</tr>
+<tr>
+<td style="text-align:left">乘法赋值（*=）</td>
+<td style="text-align:left"><code>x *= y</code></td>
+<td style="text-align:left"><code>x = x * y</code></td>
+</tr>
+<tr>
+<td style="text-align:left">除法赋值（/=）</td>
+<td style="text-align:left"><code>x /= y</code></td>
+<td style="text-align:left"><code>x = x / y</code></td>
+</tr>
+<tr>
+<td style="text-align:left">求余赋值（%=）</td>
+<td style="text-align:left"><code>x %= y</code></td>
+<td style="text-align:left"><code>x = x % y</code></td>
+</tr>
+<tr>
+<td style="text-align:left">求幂赋值（**=）</td>
+<td style="text-align:left"><code>x **= y</code></td>
+<td style="text-align:left"><code>x = x ** y</code></td>
+</tr>
+<tr>
+<td style="text-align:left">左移位赋值（&lt;&lt;=）</td>
+<td style="text-align:left"><code>x &lt;&lt;= y</code></td>
+<td style="text-align:left"><code>x = x &lt;&lt; y</code></td>
+</tr>
+<tr>
+<td style="text-align:left">右移位赋值（&gt;&gt;=）</td>
+<td style="text-align:left"><code>x &gt;&gt;= y</code></td>
+<td style="text-align:left"><code>x = x &gt;&gt; y</code></td>
+</tr>
+<tr>
+<td style="text-align:left">无符号右移位赋值（&gt;&gt;&gt;=）</td>
+<td style="text-align:left"><code>x &gt;&gt;&gt;= y</code></td>
+<td style="text-align:left"><code>x = x &gt;&gt;&gt; y</code></td>
+</tr>
+<tr>
+<td style="text-align:left">按位与赋值（&amp;=）</td>
+<td style="text-align:left"><code>x &amp;= y</code></td>
+<td style="text-align:left"><code>x = x &amp; y</code></td>
+</tr>
+<tr>
+<td style="text-align:left">按位异或赋值（^=）</td>
+<td style="text-align:left"><code>x ^= y</code></td>
+<td style="text-align:left"><code>x = x ^ y</code></td>
+</tr>
+<tr>
+<td style="text-align:left">按位或赋值（\</td>
+<td style="text-align:left">=）</td>
+<td style="text-align:left">`x</td>
+<td>= y`</td>
+<td>`x = x</td>
+<td>y`</td>
+</tr>
+</tbody>
+</table>
+<h3 id="比较运算符">比较运算符</h3>
+<p>比较运算符比较它的操作数（数字、字符串、逻辑、对象值）并返回一个基于表达式是否为真的逻辑值。</p>
+<p>字符串比较是基于标准的字典顺序，使用 Unicode 值。在多数情况下，如果两个操作数不是相同的类型，JavaScript 会尝试转换它们为恰当的类型来比较。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">等于（==）</td>
+<td style="text-align:left">两边操作数<strong>相等</strong>时返回 true</td>
+</tr>
+<tr>
+<td style="text-align:left">不等于（!=）</td>
+<td style="text-align:left">两边操作数<strong>不相等</strong>时返回 true</td>
+</tr>
+<tr>
+<td style="text-align:left">全等（===）</td>
+<td style="text-align:left">两边操作数相等且类型相同时返回 true</td>
+</tr>
+<tr>
+<td style="text-align:left">不全等（!==）</td>
+<td style="text-align:left">两边操作数不相等或类型不同时返回 true</td>
+</tr>
+<tr>
+<td style="text-align:left">大于（&gt;）</td>
+<td style="text-align:left">左边的操作数<strong>大于</strong>右边的操作数返回 true</td>
+</tr>
+<tr>
+<td style="text-align:left">大于等于（&gt;=）</td>
+<td style="text-align:left">左边的操作数<strong>大于或等于</strong>右边的操作数返回 true</td>
+</tr>
+<tr>
+<td style="text-align:left">小于（&lt;）</td>
+<td style="text-align:left">左边的操作数<strong>小于</strong>右边的操作数返回 true</td>
+</tr>
+<tr>
+<td style="text-align:left">小于等于 （&lt;=）</td>
+<td style="text-align:left">左边的操作数<strong>小于或等于</strong>右边的操作数返回 true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="算术运算符">算术运算符</h3>
+<p>算术运算符使用数值作为操作数并返回一个数值，标准的算术运算符就是加减乘除（+ - * /）。</p>
+<p>除标准的算术运算符外，JavaScript 还有以下算术运算符：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">求余（%）</td>
+<td style="text-align:left">相除之后的余数</td>
+</tr>
+<tr>
+<td style="text-align:left">自增（++)</td>
+<td style="text-align:left">将操作数的值加一</td>
+</tr>
+<tr>
+<td style="text-align:left">自减（--）</td>
+<td style="text-align:left">将操作数的值减一</td>
+</tr>
+<tr>
+<td style="text-align:left">负值符（-）</td>
+<td style="text-align:left">操作数的负值</td>
+</tr>
+<tr>
+<td style="text-align:left">正值符（+）</td>
+<td style="text-align:left">将操作数转为 Number</td>
+</tr>
+<tr>
+<td style="text-align:left">指数运算符（**）</td>
+<td style="text-align:left">次方运算，2**3 表示 2 的 3 次方</td>
+</tr>
+</tbody>
+</table>
+<p>算术运算符运算时，如果不是数值，则一律转为数值，再进行运算。</p>
+<p>加法运算符在操作数是字符串的情况下，有些特殊：</p>
+<ul>
+<li>操作数是两个字符串时，加法运算符会变成连接运算符，返回两个字符串连接的新字符串。</li>
+<li>操作数一个是字符串，另一个是非字符串的原始值时，将原始值转成字符串，再连接在一起。</li>
+<li>操作数一个是字符串，另一个是对象时，先转成原始值（valueOf() 方法），然后转成字符串（toString() 方法），再连接在一起。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-string">'a'</span> + <span class="hljs-string">'b'</span>       <span class="hljs-comment">// 'ab'</span>
+<span class="hljs-string">'a'</span> + <span class="hljs-number">1</span>         <span class="hljs-comment">// 'a1'</span>
+<span class="hljs-string">'a'</span> + <span class="hljs-literal">true</span>      <span class="hljs-comment">// 'atrue'</span>
+<span class="hljs-string">'a'</span> + <span class="hljs-literal">null</span>      <span class="hljs-comment">// 'anull'</span>
+<span class="hljs-string">'a'</span> + <span class="hljs-literal">undefined</span> <span class="hljs-comment">// 'aundefined'</span>
+<span class="hljs-string">'a'</span> + [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>, <span class="hljs-number">3</span>]  <span class="hljs-comment">// 'a1,2,3'</span>
+<span class="hljs-string">'a'</span> + { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>}   <span class="hljs-comment">// 'a[object Object]'</span>
+</code></pre>
+<p>余数运算符运算结果的正负号由第一个操作数的正负号决定。它还可以用于浮点数的运算，但是，由于浮点数不是精确的值，无法得到完全准确的结果。</p>
+<pre><code class="lang-javascript"><span class="hljs-number">5</span> % <span class="hljs-number">2</span>  <span class="hljs-comment">// 1</span>
+-<span class="hljs-number">5</span> % <span class="hljs-number">2</span> <span class="hljs-comment">// -1</span>
+<span class="hljs-number">5</span> % -<span class="hljs-number">2</span> <span class="hljs-comment">// 1</span>
+
+<span class="hljs-number">5.1</span> % <span class="hljs-number">2</span> <span class="hljs-comment">// 1.0999999999999996</span>
+<span class="hljs-number">5.2</span> % <span class="hljs-number">2</span> <span class="hljs-comment">// 1.2000000000000002</span>
+<span class="hljs-number">5.3</span> % <span class="hljs-number">2</span> <span class="hljs-comment">// 1.2999999999999998</span>
+</code></pre>
+<p><code>++a</code> 和 <code>a++</code> 的区别：<code>++a</code>  返回加一后的值，而 <code>a++</code> 返回操作数原值，然后再将操作数加一。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>
+<span class="hljs-keyword">let</span> b = <span class="hljs-number">1</span>
+<span class="hljs-keyword">const</span> c = ++a  <span class="hljs-comment">// 相当于 a = a + 1; const c = a; </span>
+<span class="hljs-keyword">const</span> d = b++  <span class="hljs-comment">// 相当于 const d = b; b = b + 1</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a) <span class="hljs-comment">// 2</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(b) <span class="hljs-comment">// 2</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(c) <span class="hljs-comment">// 2</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(d) <span class="hljs-comment">// 1</span>
+</code></pre>
+<h3 id="位运算符">位运算符</h3>
+<p>位运算符将操作数当作 32 位的二进制而非十进制、八进制或十六进制数，在二进制上执行运算，但是返回结果是十进制数值。</p>
+<p><strong>注意：</strong> 另外，虽然在 JavaScript 内部，数值都是以 64 位浮点数的形式储存，但是做位运算的时候，是以 32 位带符号的整数进行运算的，并且返回值也是一个 32 位带符号的整数。</p>
+<p><strong>注意：</strong> 位运算只对整数有效，遇到小数时，会将小数部分舍去，只保留整数部分。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">按位与（&amp;）</td>
+<td style="text-align:left">操作数二进制串中，每一个对应的位都为 1 则返回 1，否则返回 0</td>
+</tr>
+<tr>
+<td style="text-align:left">按位或（\</td>
+<td style="text-align:left">）</td>
+<td>操作数二进制串中，每一个对应的位只要有一个为 1 则返回 1，否则返回 0</td>
+</tr>
+<tr>
+<td style="text-align:left">按位异或（^）</td>
+<td style="text-align:left">操作数二进制串中，每一个对应的位不相同则返回 1，否则返回 0</td>
+</tr>
+<tr>
+<td style="text-align:left">按位非（~）</td>
+<td style="text-align:left">反转操作数的二进制串</td>
+</tr>
+<tr>
+<td style="text-align:left">左移（&lt;&lt;）</td>
+<td style="text-align:left">将左侧操作数的二进制串，向左移动 [右侧操作数] 位，右边填充 0</td>
+</tr>
+<tr>
+<td style="text-align:left">右移（&gt;&gt;）</td>
+<td style="text-align:left">也称算术右移、带符号右移。将左侧操作数的二进制串，向右移动 [右侧操作数] 位，左边填充原二进制串最高位，即符号位。</td>
+</tr>
+<tr>
+<td style="text-align:left">无符号右移（&gt;&gt;&gt;）</td>
+<td style="text-align:left">将左侧操作数的二进制串，向右移动 [右侧操作数] 位，左边填充 0</td>
+</tr>
+</tbody>
+</table>
+<h5 id="位逻辑运算符">位逻辑运算符</h5>
+<p>概念上来讲，位逻辑运算符（与、或、异或、非）工作流程：</p>
+<ul>
+<li>操作数转换为 32 二进制整数。若超过 32 位，则取低位 32 位。</li>
+<li>第一个操作数的每一位都与第二个操作数的对应位组对。</li>
+<li>运算符被应用到每一对位上，最终的运算结果由每一对位上的运算结果组合起来。</li>
+</ul>
+<p>按位与运算，以 <code>205 &amp; 119</code> 为例：</p>
+<pre><code class="lang-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">以 205 &amp; 119 为例：</span>
+205的二进制表示：205..toString(2) = '11001101'
+119的二进制表示：119..toString(2) = '01110111'
+
+205的32位：00000000 00000000 00000000 11001101
+119的32位：00000000 00000000 00000000 01110111
+按位与运算：00000000 00000000 00000000 01000101
+
+(0b00000000000000000000000001000101).toString(10) = '69'
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>((<span class="hljs-number">205</span> * <span class="hljs-number">119</span>) === <span class="hljs-number">69</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p>按位非运算，这个运算逻辑有点难以理解，以 <code>~15</code> 为例：</p>
+<pre><code class="lang-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">以 ~15 为例：</span>
+15的二进制表示：15..toString(2) = '1111'
+15的32位： 00000000 00000000 00000000 00001111
+按位非运算：11111111 11111111 11111111 11110000
+</code></pre>
+<p>以上运算结果是二进制，必须转为十进制数值才是最终的计算结果。</p>
+<p>负数二进制转十进制采用的是如下规则：</p>
+<ul>
+<li>先把二进制的值按位取反，然后加 1。</li>
+<li>将二进制转为十进制</li>
+<li>再加上负号。</li>
+</ul>
+<p>转换为十进制过程如下：</p>
+<pre><code class="lang-shell">二进制取反：00000000 00000000 00000000 00001111
+加1：      00000000 00000000 00000000 00010000
+转十进制，再加负号：-(0b00010000).toString(10) = -16
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(~<span class="hljs-number">15</span> === -<span class="hljs-number">16</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<blockquote>
+<p>计算机中，数值以二进制的形式存在，以补码形式存储。如，-16 的源码为 10000000 00000000 00000000 00010000），补码为 11111111 11111111 11111111 11110000）。</p>
+<p>补码：正数的补码是其本身；负数的补码是在其原码的基础上，符号位不变，其余各位取反，最后 +1。</p>
+</blockquote>
+<p>从上述整个转换流程可以看出，整数的按位非运算可以简化为：<strong>整数值 + 1，再取相反数。</strong></p>
+<pre><code class="lang-javascript">~<span class="hljs-number">15</span>       <span class="hljs-comment">// -16</span>
+-(<span class="hljs-number">15</span> + <span class="hljs-number">1</span>) <span class="hljs-comment">// 16</span>
+</code></pre>
+<h5 id="移位运算符">移位运算符</h5>
+<p>移位运算符（左移、右移、无符号右移）带两个操作数：待移位的数、指定第一个数要被移多少位的数。</p>
+<p>以 15 为例：</p>
+<pre><code class="lang-shell">15的二进制表示：15..toString(2) = '1111'
+15的32位： 00000000 00000000 00000000 00001111
+<span class="hljs-meta prompt_">
+# </span><span class="language-bash">左移（&lt;&lt;）：15 &lt;&lt; <span class="hljs-string">2</span></span>
+左移2位，右侧补0： 000000 00000000 00000000 00001111 00
+<span class="hljs-meta prompt_">
+# </span><span class="language-bash"><span class="hljs-string">带符号右移（&gt;&gt;）：15 &gt;&gt; 2</span></span>
+右移2位，左侧补原二进制最高位，即0： 00 00000000 00000000 00000000 000011
+<span class="hljs-meta prompt_">
+# </span><span class="language-bash">无符号右移（&gt;&gt;&gt;）：15 &gt;&gt;&gt; 2</span>
+右移2位，左侧补0： 00 00000000 00000000 00000000 000011
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-number">15</span> &lt;&lt; <span class="hljs-number">2</span>  <span class="hljs-comment">// 60</span>
+<span class="hljs-number">15</span> &gt;&gt; <span class="hljs-number">2</span>  <span class="hljs-comment">// 3</span>
+<span class="hljs-number">15</span> &gt;&gt;&gt; <span class="hljs-number">2</span> <span class="hljs-comment">// 3</span>
+</code></pre>
+<p><strong>注意：</strong> 对于非负整来而言，带符号右移（&gt;&gt;）和无符号右移（&gt;&gt;&gt;）的运算结果是相同的。</p>
+<h5 id="应用场景">应用场景</h5>
+<ul>
+<li>去除小数部分，即取整数位：将一小数与 0 进行<strong>按位或运算</strong>；将一小数与 0 进行<strong>按位异或运算</strong>；连续两次按位非运算；左移或右移运算 0 位。</li>
+<li>对一个整数连续两次按位非运算，得到它自身。</li>
+<li>对两个整数进行三次按位异或运算，可以互换它们的值。</li>
+<li>左移运算符，每移 1 位，相当于<strong>乘</strong>以 2。</li>
+<li>右移运算符，每移 1 位，相当于<strong>除</strong>以 2。</li>
+<li>无符号右移可用于查看一个负整数在计算机内部的储存形式。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-number">1.0001</span> | <span class="hljs-number">0</span>  <span class="hljs-comment">// 1</span>
+<span class="hljs-number">1.0001</span> ^ <span class="hljs-number">0</span>  <span class="hljs-comment">// 1</span>
+~~<span class="hljs-number">1.0001</span>    <span class="hljs-comment">// 1</span>
+<span class="hljs-number">1.0001</span> &lt;&lt; <span class="hljs-number">0</span> <span class="hljs-comment">// 1</span>
+<span class="hljs-number">1.0001</span> &gt;&gt; <span class="hljs-number">0</span> <span class="hljs-comment">// 1</span>
+
+<span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">let</span> b = <span class="hljs-number">2</span>;
+a = a ^ b
+b = b ^ a
+a = a ^ b
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a) <span class="hljs-comment">// 2</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(b) <span class="hljs-comment">// 1</span>
+
+<span class="hljs-number">3</span> &lt;&lt; <span class="hljs-number">1</span> <span class="hljs-comment">// 6。 相当于 3 * Math.pow(2, 1)</span>
+<span class="hljs-number">3</span> &lt;&lt; <span class="hljs-number">2</span> <span class="hljs-comment">// 12。相当于 3 * Math.pow(2, 2)</span>
+<span class="hljs-number">3</span> &lt;&lt; <span class="hljs-number">3</span> <span class="hljs-comment">// 24。相当于 3 * Math.pow(2, 3)</span>
+
+<span class="hljs-number">16</span> &gt;&gt; <span class="hljs-number">1</span> <span class="hljs-comment">// 8。相当于 16 / Math.pow(2, 1)</span>
+<span class="hljs-number">16</span> &gt;&gt; <span class="hljs-number">2</span> <span class="hljs-comment">// 4。相当于 16 / Math.pow(2, 2)</span>
+<span class="hljs-number">16</span> &gt;&gt; <span class="hljs-number">3</span> <span class="hljs-comment">// 2。相当于 16 / Math.pow(2, 3)</span>
+
+<span class="hljs-comment">// 负整数在计算机内部的储存形式</span>
+(-<span class="hljs-number">16</span> &gt;&gt;&gt; <span class="hljs-number">0</span>).<span class="hljs-title function_">toString</span>(<span class="hljs-number">2</span>) <span class="hljs-comment">// '11111111111111111111111111110000'。</span>
+</code></pre>
+<h3 id="逻辑运算符">逻辑运算符</h3>
+<p>逻辑运算符常用于布尔（逻辑）值之间。</p>
+<p>当操作数都是布尔值时，返回值也是布尔值。 不过实际上 <code>&amp;&amp;</code> 和 <code>||</code> 返回的是一个特定的操作数的值，所以当它用于非布尔值的时候，返回值就可能是非布尔值。 </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">逻辑与（&amp;&amp;）</td>
+<td style="text-align:left">如果左侧操作数能被转换为 true，那么返回<strong>右</strong>侧操作数；否则，返回左侧操作数</td>
+</tr>
+<tr>
+<td style="text-align:left">逻辑或（\</td>
+<td style="text-align:left">\</td>
+<td>）</td>
+<td>如果左侧操作数能被转换为 true，那么返回<strong>左</strong>侧操作数；否则，返回右侧操作数</td>
+</tr>
+<tr>
+<td style="text-align:left">逻辑非（!）</td>
+<td style="text-align:left">如果操作数能被转换为 true，则返回 false；否则，返回 true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意：</strong> 逻辑表达式进行求值是从左到右，且 &amp;&amp; 运算符的优化级高于 || 运算符。</p>
+<p>为了避免表达式中一些不必要计算，逻辑运算遵循如下短路求值规则。</p>
+<ul>
+<li>false &amp;&amp; anything：被求值为 false，anything 部分不会被求值。</li>
+<li>true || anything：被求值为 true，anything 部分不会被求值。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params">n</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(n)
+    <span class="hljs-keyword">return</span> n
+}
+
+<span class="hljs-number">0</span> &amp;&amp; <span class="hljs-title function_">f</span>(<span class="hljs-number">1</span>) <span class="hljs-comment">// f(1)不会被调用</span>
+<span class="hljs-number">1</span> &amp;&amp; <span class="hljs-title function_">f</span>(<span class="hljs-number">1</span>) <span class="hljs-comment">// f(1)会被调用</span>
+<span class="hljs-number">0</span> || <span class="hljs-title function_">f</span>(<span class="hljs-number">1</span>) <span class="hljs-comment">// f(1)会被调用</span>
+<span class="hljs-number">1</span> || <span class="hljs-title function_">f</span>(<span class="hljs-number">1</span>) <span class="hljs-comment">// f(1)不会被调用</span>
+
+<span class="hljs-title function_">f</span>(<span class="hljs-number">1</span>) &amp;&amp; <span class="hljs-title function_">f</span>(<span class="hljs-number">2</span>) || <span class="hljs-title function_">f</span>(<span class="hljs-number">3</span>) &amp;&amp; <span class="hljs-title function_">f</span>(<span class="hljs-number">0</span>) || <span class="hljs-title function_">f</span>(<span class="hljs-number">4</span>) &amp;&amp; <span class="hljs-title function_">f</span>(<span class="hljs-number">5</span>) <span class="hljs-comment">// 依次打印：1 2。最终返回值：2。</span>
+<span class="hljs-number">1</span> &amp;&amp; <span class="hljs-number">2</span> || <span class="hljs-number">3</span> &amp;&amp; <span class="hljs-number">0</span> || <span class="hljs-number">4</span> &amp;&amp; <span class="hljs-number">5</span> <span class="hljs-comment">// 2。相当于 (1 &amp;&amp; 2) || (3 &amp;&amp; 0) || (4 &amp;&amp; 5)。</span>
+
+<span class="hljs-title function_">f</span>(<span class="hljs-number">0</span>) || <span class="hljs-title function_">f</span>(<span class="hljs-number">1</span>) &amp;&amp; <span class="hljs-title function_">f</span>(<span class="hljs-number">2</span>) &amp;&amp; <span class="hljs-title function_">f</span>(<span class="hljs-number">3</span>) &amp;&amp; <span class="hljs-title function_">f</span>(<span class="hljs-number">4</span>) || <span class="hljs-title function_">f</span>(<span class="hljs-number">5</span>) <span class="hljs-comment">// 依次打印：0 1 2 3 4。最终返回值：4。</span>
+<span class="hljs-number">0</span> || <span class="hljs-number">1</span> &amp;&amp; <span class="hljs-number">2</span> &amp;&amp; <span class="hljs-number">3</span> &amp;&amp; <span class="hljs-number">4</span> || <span class="hljs-number">5</span> <span class="hljs-comment">// 4。相当于 0 || (1 &amp;&amp; 2 &amp;&amp; 3 &amp;&amp; 4) || 5。</span>
+
+<span class="hljs-title function_">f</span>(<span class="hljs-number">0</span>) || <span class="hljs-title function_">f</span>(<span class="hljs-number">1</span>) &amp;&amp; <span class="hljs-title function_">f</span>(<span class="hljs-number">0</span>) &amp;&amp; <span class="hljs-title function_">f</span>(<span class="hljs-number">2</span>) &amp;&amp; <span class="hljs-title function_">f</span>(<span class="hljs-number">3</span>) || <span class="hljs-title function_">f</span>(<span class="hljs-number">4</span>) <span class="hljs-comment">// 依次打印：0 1 0 4。最终返回值：4。</span>
+<span class="hljs-number">0</span> || <span class="hljs-number">1</span> &amp;&amp; <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-number">2</span> &amp;&amp; <span class="hljs-number">3</span> || <span class="hljs-number">4</span> <span class="hljs-comment">// 4。0 || (1 &amp;&amp; 0 &amp;&amp; 2 &amp;&amp; 3) || 4。</span>
+</code></pre>
+<h3 id="条件（三元）运算符">条件（三元）运算符</h3>
+<p>条件（三元）运算符是 JavaScript 仅有的使用三个操作数的运算符。一个条件后面会跟一个问号（<code>?</code>），如果条件为 truthy ，则问号后面的表达式 A 将会执行；表达式 A 后面跟着一个冒号（<code>:</code>），如果条件为 falsy ，则冒号后面的表达式 B 将会执行。</p>
+<p><strong>注意：</strong> 除了 false，可能的假值表达式还有：null 、NaN 、0 、空字符串（''）、和 undefined。</p>
+<pre><code class="lang-javascript">condition ? exprIfTrue : exprIfFalse
+</code></pre>
+<h3 id="一元操作符">一元操作符</h3>
+<p>一元操作符仅对应一个操作数。</p>
+<h4 id="delete">delete</h4>
+<p>delete 操作符删除一个对象的属性或者一个数组中某一个键值。如果操作成功，属性或者元素会变成 undefined，且会返回 true；如果不成功，则返回 false。</p>
+<p>使用 delete 删除各种各样的隐式声明， 但是被 var 声明的除外。</p>
+<pre><code class="lang-javascript">x = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">var</span> y = <span class="hljs-number">2</span>;
+obj = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Number</span>();
+obj.<span class="hljs-property">h</span> = <span class="hljs-number">3</span>;
+
+<span class="hljs-keyword">delete</span> x       <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">delete</span> y       <span class="hljs-comment">// false</span>
+<span class="hljs-keyword">delete</span> <span class="hljs-title class_">Math</span>.<span class="hljs-property">PI</span> <span class="hljs-comment">// false</span>
+<span class="hljs-keyword">delete</span> obj.<span class="hljs-property">h</span>   <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">delete</span> obj     <span class="hljs-comment">// true</span>
+</code></pre>
+<p>删除数组中的元素时，数组的长度是不变的，被删除的元素所在的位置变成了<strong>空位</strong>（值为 undefined，但遍历时会忽略）。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]
+<span class="hljs-keyword">delete</span> arr[<span class="hljs-number">1</span>]
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr[<span class="hljs-number">1</span>]) <span class="hljs-comment">// undefined</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> k <span class="hljs-keyword">in</span> arr) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(k)
+}
+<span class="hljs-comment">// 0 2 3。即，跳过索引为 1 的元素</span>
+</code></pre>
+<h4 id="typeof">typeof</h4>
+<p>typeof 操作符返回一个字符串，表示未经计算的操作数的类型。</p>
+<h4 id="void">void</h4>
+<p>void 运算符,表明一个运算没有返回值。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">void</span> expression
+</code></pre>
+<p>expression 是 JavaScript 表达式，括号中的表达式是一个可选项，当然使用该方式是一种好的形式。</p>
+<p>可以使用 void 运算符指明一个超文本链接，可以避免页面跳转或者刷新。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:void(0);"</span>&gt;</span>点击无效<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+<h3 id="关系操作符">关系操作符</h3>
+<p>关系操作符对操作数进行比较，根据比较结果真或假，返回相应的布尔值。</p>
+<h4 id="in">in</h4>
+<p>in 操作符根据所指定的属性是否确实存在于所指定的对象中，存在则反回 true，不存在则返回 false。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> arry = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-keyword">const</span> str = <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<span class="hljs-string">"abcd"</span>);
+<span class="hljs-keyword">const</span> obj = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">2</span> };
+<span class="hljs-keyword">const</span> str1 = <span class="hljs-string">'abcd'</span>
+
+<span class="hljs-number">0</span> <span class="hljs-keyword">in</span> arry;        <span class="hljs-comment">// true</span>
+<span class="hljs-number">6</span> <span class="hljs-keyword">in</span> arry;        <span class="hljs-comment">// false</span>
+<span class="hljs-string">"length"</span> <span class="hljs-keyword">in</span> arry; <span class="hljs-comment">// true</span>
+<span class="hljs-string">"PI"</span> <span class="hljs-keyword">in</span> <span class="hljs-title class_">Math</span>;     <span class="hljs-comment">// true</span>
+<span class="hljs-number">0</span> <span class="hljs-keyword">in</span> str;         <span class="hljs-comment">// true</span>
+<span class="hljs-string">"length"</span> <span class="hljs-keyword">in</span> str;  <span class="hljs-comment">// true</span>
+<span class="hljs-string">"a"</span> <span class="hljs-keyword">in</span> obj;       <span class="hljs-comment">// true</span>
+
+<span class="hljs-number">0</span> <span class="hljs-keyword">in</span> str1;        <span class="hljs-comment">// Uncaught ReferenceError: str1 is not defined</span>
+<span class="hljs-string">"length"</span> <span class="hljs-keyword">in</span> str1; <span class="hljs-comment">// Uncaught ReferenceError: str1 is not defined</span>
+</code></pre>
+<h4 id="instanceof">instanceof</h4>
+<p>instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> d1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>()
+d1 <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">Date</span> <span class="hljs-comment">// true</span>
+</code></pre>
+<h3 id="运算符优先级">运算符优先级</h3>
+<p>运算符的优先级决定了表达式中运算执行的过程，优先级高的运算符返结果会作为优先级低的运算符的操作数。</p>
+<p>下面的表格将运算符按照优先级的不同（从高到低）排列：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算符类型</th>
+<th style="text-align:left">运算符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">分组</td>
+<td style="text-align:left">()</td>
+</tr>
+<tr>
+<td style="text-align:left">成员符</td>
+<td style="text-align:left">. []</td>
+</tr>
+<tr>
+<td style="text-align:left">调用命令</td>
+<td style="text-align:left">() new</td>
+</tr>
+<tr>
+<td style="text-align:left">一元运算</td>
+<td style="text-align:left">! ~ - + ++ -- typeof void delete</td>
+</tr>
+<tr>
+<td style="text-align:left">乘除余</td>
+<td style="text-align:left">* / %</td>
+</tr>
+<tr>
+<td style="text-align:left">加减</td>
+<td style="text-align:left">+ -</td>
+</tr>
+<tr>
+<td style="text-align:left">按位移位</td>
+<td style="text-align:left">&lt;&lt; &gt;&gt; &gt;&gt;&gt;</td>
+</tr>
+<tr>
+<td style="text-align:left">关系</td>
+<td style="text-align:left">&lt; &lt;= &gt; &gt;= in instanceof</td>
+</tr>
+<tr>
+<td style="text-align:left">相等</td>
+<td style="text-align:left">== != === !==</td>
+</tr>
+<tr>
+<td style="text-align:left">按位与</td>
+<td style="text-align:left">&amp;</td>
+</tr>
+<tr>
+<td style="text-align:left">按位异或</td>
+<td style="text-align:left">^</td>
+</tr>
+<tr>
+<td style="text-align:left">按位或</td>
+<td style="text-align:left">\</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">逻辑与</td>
+<td style="text-align:left">&amp;&amp;</td>
+</tr>
+<tr>
+<td style="text-align:left">逻辑或</td>
+<td style="text-align:left">\</td>
+<td>\</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">三元运算</td>
+<td style="text-align:left">?:</td>
+</tr>
+<tr>
+<td style="text-align:left">赋值运算</td>
+<td style="text-align:left">= += -= *= /= %= &lt;&lt;= &gt;&gt;= &gt;&gt;&gt;= &amp;= ^= \</td>
+<td>=</td>
+</tr>
+</tbody>
+</table>
+<h4 id="小括号">小括号</h4>
+<p>小括号（<code>()</code>）有两种用法：一是用作<strong>分组操作符</strong>（<code>()</code>），用来提高运算的优先级；二是跟在函数的后面，作用是调用函数。</p>
+<pre><code class="lang-javascript"><span class="hljs-number">1</span> + <span class="hljs-number">4</span> * <span class="hljs-number">5</span>   <span class="hljs-comment">// 21</span>
+(<span class="hljs-number">1</span> + <span class="hljs-number">4</span>) * <span class="hljs-number">5</span> <span class="hljs-comment">// 25</span>
+</code></pre>
+<h4 id="结合性">结合性</h4>
+<p>对于优先级别相同的运算符，大多数情况，计算顺序总是从左到右，这叫做运算符的 <strong>左结合</strong>，即从左边开始计算。相当于把<strong>左</strong>边的子表达式加上小括号。</p>
+<pre><code class="lang-javascript"><span class="hljs-number">1</span> + <span class="hljs-number">2</span> + <span class="hljs-number">3</span> <span class="hljs-comment">// 6</span>
+</code></pre>
+<p>也有少数运算符的计算顺序是从右到左，即从右边开始计算，这叫做运算符的 <strong>右结合</strong>。相当于把<strong>右</strong>边的子表达式加上小括号。</p>
+<p>其中，最主要的右结合运算符是赋值运算符（=）、三元运算符（?:）、指数运算符。</p>
+<pre><code class="lang-javascript">a = b = c = <span class="hljs-number">1</span> <span class="hljs-comment">// 1。相当于 a = (b = (c = 1))</span>
+<span class="hljs-number">1</span> ** <span class="hljs-number">2</span> ** <span class="hljs-number">3</span>   <span class="hljs-comment">// 1。相当于 1 ** (2 ** 3)</span>
+</code></pre>
+<p>三元运算符右结合的理解：从最右边开始解析，先取第一个 <code>:</code>，然后看它左边最近的符号，如果是 <code>?</code>，那么它和这个 <code>?</code> 结合起来；如果不是，那么它和最左边第一个 <code>?</code> 结合，然后继续解析下一个 <code>:</code> ...</p>
+<pre><code class="lang-javascript">?:?:?:?:?: <span class="hljs-comment">// 相当于 ?:(?:(?:(?:(?:))))</span>
+???:::     <span class="hljs-comment">// 相当于 ?(?(?:):):</span>
+</code></pre>
+<p><strong>注意：</strong> 无论结合性和优先级如何，求值时，运算顺序总是从左到右。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params">n</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(n)
+    <span class="hljs-keyword">return</span> n
+}
+<span class="hljs-title function_">f</span>(<span class="hljs-number">1</span>) + <span class="hljs-title function_">f</span>(<span class="hljs-number">2</span>) * <span class="hljs-title function_">f</span>(<span class="hljs-number">3</span>) - <span class="hljs-title function_">f</span>(<span class="hljs-number">8</span>) / <span class="hljs-title function_">f</span>(<span class="hljs-number">4</span>) <span class="hljs-comment">// 依次打印：1 2 3 8 4。</span>
+<span class="hljs-comment">// 注意，并不是先运算 f(2) * f(3) 和 f(8) / f(4)，再来加减</span>
+</code></pre>
+<h4 id="短路求值">短路求值</h4>
+<p>一般来说，<strong>分组操作符</strong>具有最高优先级。然而，这并不意味着总是优先对分组操作符内的表达式进行求值，尤其是涉及短路求值时。</p>
+<p>短路求值是条件求值的术语。例如，在表达式 <code>a &amp;&amp; (b + c)</code> 中，如果 a 为假值（falsy），那么即使（b + c）在圆括号中，也不会被求值。也就可以说，这个逻辑与运算符是 <strong>短路求值</strong>的。</p>
+<p>除了逻辑与运算符外，其他短路运算符还包括逻辑域、空值合并、可选链和条件（三元）运算符。</p>
+<pre><code class="lang-javascript">a || (b * c);  <span class="hljs-comment">// 首先对 a 求值，如果 a 为真值，则直接返回 a</span>
+a &amp;&amp; (b &lt; c);  <span class="hljs-comment">// 首先对 a 求值，如果 a 为假值，则直接返回 a</span>
+a ?? (b || c); <span class="hljs-comment">// 首先对 a 求值，如果 a 不是 null 或 undefined 则直接返回 a</span>
+a?.<span class="hljs-property">b</span>.<span class="hljs-property">c</span>;        <span class="hljs-comment">// 首先对 a 求值，如果 a 是 null 或 undefined 则直接返回 undefined</span>
+</code></pre>
+<h3 id="相关问题">相关问题</h3>
+<h4 id="加法操作符（）什么时候用于字符串拼接？">加法操作符（+）什么时候用于字符串拼接？</h4>
+<p>根据 ES5 规范，如果加法操作符的某个操作数是字符串或者是能够转换为字符串的值，则进行拼接操作。</p>
+<p>当加法操作符其中一个操作数是对象（包括数组），首先对其调用 valueOf() 操作，再调用 toString() 操作。如果能转换为字符串，则进行拼接操作；如果不能，则将其转换为数值，进行数字加法操作。</p>
+<pre><code class="lang-javascript"><span class="hljs-string">'a'</span> + <span class="hljs-number">1</span>    <span class="hljs-comment">// 'a1'</span>
+<span class="hljs-string">'a'</span> + <span class="hljs-literal">true</span> <span class="hljs-comment">// 'atrue'</span>
+<span class="hljs-string">'a'</span> + {}   <span class="hljs-comment">// 'a[object Object]'。({}).valueOf().toString() = '[object Object]'</span>
+<span class="hljs-string">'a'</span> + []   <span class="hljs-comment">// 'a'。([]).valueOf().toString() = ''</span>
+<span class="hljs-string">'1'</span> + <span class="hljs-title class_">NaN</span>  <span class="hljs-comment">// '1NaN'</span>
+</code></pre>
+<h4 id="什么是二进制源码、补码、反码？">什么是二进制源码、补码、反码？</h4>
+<ul>
+<li><strong>原码：</strong> 计算机中，一个数值是以二进制的形式存在的，其中第一位存放符号（正数为 0，负数为 1）。原码就是第一位存放符号的二进制数值。如，2 的二进制表示是 10，2 的原码为 00...10，-2 的原码为 10...10。</li>
+<li><strong>反码：</strong> 正数的反码是其本身；负数的反码是在其原码的基础上，符号位不变，其余各位取反。如，2 的原码为 00...10，2 的反码为 00...10；-2 的原码为 10...10，-2 的反码为 11...01。</li>
+<li><strong>补码：</strong> 正数的补码是其本身；负数的补码是在其原码的基础上，符号位不变，其余各位取反，最后 + 1，也就是，其反码的基础上 +1。如，2 的原码为 00...10，2 的补码为 00...10；-2 的原码为 10...10，-2 的反码为 11...01，-2 的补码为 11...10。</li>
+</ul>
+<h3 id="参考资料">参考资料</h3>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Expressions_and_Operators" target="_blank">MDN - 表达式与运算符</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators" target="_blank">MDN - 表达式和运算符（例表）</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#table" target="_blank">MDN - 运算符优先级</a> </p>
+<p></p><footer class="page-footer"><span class="copyright">© lizhao all right reserved，powered by Gitbook</span><span class="footer-modification">文件修订时间：
+2022-07-20 22:42:01
+</span></footer><p></p>
+<div id="gitalk-container"></div> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"></link> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01-基础篇-02-类型转换.html" class="navigation navigation-prev " aria-label="Previous page: 基础篇 02 类型转换">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="01-基础篇-04-正则表达式.html" class="navigation navigation-next " aria-label="Next page: 基础篇 04 正则表达式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"基础篇 03 运算符","level":"6.9","depth":1,"next":{"title":"基础篇 04 正则表达式","level":"6.10","depth":1,"path":"javascript系列/01-基础篇-04-正则表达式.md","ref":"javascript系列/01-基础篇-04-正则表达式.md","articles":[]},"previous":{"title":"基础篇 02 类型转换","level":"6.8","depth":1,"path":"javascript系列/01-基础篇-02-类型转换.md","ref":"javascript系列/01-基础篇-02-类型转换.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","summary","sandpack","theme-default","theme-comscore","tbfed-pagefooter","pageview-count","accordion","sharing-plus","back-to-top-button","chapter-fold","klipse","mygitalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"summary":{"exclude":["docs/**"]},"search-pro":{"maxSearchIndexSize":10000000},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"mygitalk":{"flipMoveOptions":{},"clientID":"35175582adb321d85634","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["lizh"],"createIssueManually":false,"distractionFreeMode":false,"repo":"https://github.com/1927344728/fed-knowledge","owner":"lizh","enableHotKey":true,"clientSecret":"2e60c4d61474ec23e752f127e838aa2039e0433e","pagerDirection":"last","labels":["Gitalk"]},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":true,"qzone":true},"sandpack":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"lizhao","honkit":"^6.0.2","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术驿站•LIZHAO","language":"zh","gitbook":"*","description":"这是开发者的技术文档"},"file":{"path":"javascript系列/01-基础篇-03-运算符.md","mtime":"2022-07-20T14:42:01.446Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2026-06-29T12:14:32.945Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-sandpack/honkit-plugin-sandpack.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

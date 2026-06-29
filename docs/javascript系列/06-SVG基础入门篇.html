@@ -1,0 +1,4353 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>SVG基础入门篇 · 技术驿站•LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 6.0.2">
+        <meta name="author" content="lizhao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="06-四种判断数据类型方法的优缺点.html" />
+    
+    
+    <link rel="prev" href="05-Canvas进阶篇.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/00-前端调试随笔.html">
+            
+                <a href="../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/05-JS常见问题概览.html">
+            
+                <a href="../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/07-微信小程序开发.html">
+            
+                <a href="../bugs/07-微信小程序开发.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    微信小程序开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bugs/08-NodeJs常见问题概览.html">
+            
+                <a href="../bugs/08-NodeJs常见问题概览.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    NodeJs常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../bugs/09-Mac常见问题概览.html">
+            
+                <a href="../bugs/09-Mac常见问题概览.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Mac常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../bugs/10-微信环境前端开发指南.html">
+            
+                <a href="../bugs/10-微信环境前端开发指南.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    微信环境前端开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../bugs/99-其他问题汇总.html">
+            
+                <a href="../bugs/99-其他问题汇总.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    其他问题汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../css系列/00-CSS基础知识.html">
+            
+                <a href="../css系列/00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../css系列/00-CSS常见问答.html">
+            
+                <a href="../css系列/00-CSS常见问答.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../css系列/00-CSS常见问答02.html">
+            
+                <a href="../css系列/00-CSS常见问答02.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    CSS常见问答02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../css系列/00-CSS应用示例.html">
+            
+                <a href="../css系列/00-CSS应用示例.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    CSS应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../css系列/00-CSS应用示例02.html">
+            
+                <a href="../css系列/00-CSS应用示例02.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS应用示例02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../css系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../css系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../css系列/04-CSS探索系列-margin.html">
+            
+                <a href="../css系列/04-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                <a href="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    CSS探索系列 Auto关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../css系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../css系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../css系列/05-CSS探索系列-line-height.html">
+            
+                <a href="../css系列/05-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../css系列/05-CSS探索系列-元素居中.html">
+            
+                <a href="../css系列/05-CSS探索系列-元素居中.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    CSS探索系列 元素居中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../css系列/05-CSS探索系列-动画.html">
+            
+                <a href="../css系列/05-CSS探索系列-动画.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    CSS探索系列 动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../css系列/08-重新认识伪类与伪元素.html">
+            
+                <a href="../css系列/08-重新认识伪类与伪元素.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    重新认识伪类与伪元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../css系列/09-自定义表单伪元素样式.html">
+            
+                <a href="../css系列/09-自定义表单伪元素样式.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    自定义表单伪元素样式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../css系列/10-如何理解css中的display属性.html">
+            
+                <a href="../css系列/10-如何理解css中的display属性.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    如何理解Css中的Display属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                <a href="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                <a href="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    一文彻底弄懂CSS中的长度单位
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                <a href="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                    
+                        <b>2.21.</b>
+                    
+                    CSS中一些有特性的属性或属性值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../css系列/14-Web中如何实现长宽比.html">
+            
+                <a href="../css系列/14-Web中如何实现长宽比.html">
+            
+                    
+                        <b>2.22.</b>
+                    
+                    Web中如何实现长宽比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../css系列/15-@规则：@font-face.html">
+            
+                <a href="../css系列/15-@规则：@font-face.html">
+            
+                    
+                        <b>2.23.</b>
+                    
+                    @规则：@Font Face
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                <a href="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                    
+                        <b>2.24.</b>
+                    
+                    @规则：@Media（媒体查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../css系列/15-@规则：其他.html">
+            
+                <a href="../css系列/15-@规则：其他.html">
+            
+                    
+                        <b>2.25.</b>
+                    
+                    @规则：其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../css系列/_关于css.html">
+            
+                <a href="../css系列/_关于css.html">
+            
+                    
+                        <b>2.26.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../frontend/00-00-关于Web前端.html">
+            
+                <a href="../frontend/00-00-关于Web前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    00 关于Web前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../frontend/00-01-前端知识概览.html">
+            
+                <a href="../frontend/00-01-前端知识概览.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    01 前端知识概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../frontend/00-02-常用前端库概览.html">
+            
+                <a href="../frontend/00-02-常用前端库概览.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    02 常用前端库概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../frontend/01-基础-00-前端常见问题01.html">
+            
+                <a href="../frontend/01-基础-00-前端常见问题01.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    基础 00 前端常见问题01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../frontend/01-基础-01-浏览器缓存.html">
+            
+                <a href="../frontend/01-基础-01-浏览器缓存.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    基础 01 浏览器缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../frontend/01-基础-02-浏览器工作原理.html">
+            
+                <a href="../frontend/01-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../frontend/01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                <a href="../frontend/01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    基础 03 谈谈前端跨域问题及解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../frontend/02-进阶-01-Web性能优化.html">
+            
+                <a href="../frontend/02-进阶-01-Web性能优化.html">
+            
+                    
+                        <b>4.8.</b>
+                    
+                    进阶 01 Web性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../frontend/02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                <a href="../frontend/02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                    
+                        <b>4.9.</b>
+                    
+                    进阶 02 搜索引擎优化（SEO）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="../frontend/02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                <a href="../frontend/02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                    
+                        <b>4.10.</b>
+                    
+                    进阶 03 前端模块化编程：CommonJS、AMD、CMD、UMD、ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="../frontend/02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                <a href="../frontend/02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                    
+                        <b>4.11.</b>
+                    
+                    进阶 04 规范代码：Linter、Prettier、EditorConfig
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="../frontend/02-进阶-05-Web离线应用.html">
+            
+                <a href="../frontend/02-进阶-05-Web离线应用.html">
+            
+                    
+                        <b>4.12.</b>
+                    
+                    进阶 05 Web离线应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="../frontend/02-进阶-06-WebSocket.html">
+            
+                <a href="../frontend/02-进阶-06-WebSocket.html">
+            
+                    
+                        <b>4.13.</b>
+                    
+                    进阶 06 WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="../frontend/02-进阶-07-Web跨页面通信.html">
+            
+                <a href="../frontend/02-进阶-07-Web跨页面通信.html">
+            
+                    
+                        <b>4.14.</b>
+                    
+                    进阶 07 Web跨页面通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="../frontend/02-进阶-08-页面可见性和生命周期.html">
+            
+                <a href="../frontend/02-进阶-08-页面可见性和生命周期.html">
+            
+                    
+                        <b>4.15.</b>
+                    
+                    进阶 08 页面可见性和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="../frontend/02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                <a href="../frontend/02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                    
+                        <b>4.16.</b>
+                    
+                    进阶 09 事件循环、宏任务、微任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="../frontend/02-进阶-10-内存泄漏.html">
+            
+                <a href="../frontend/02-进阶-10-内存泄漏.html">
+            
+                    
+                        <b>4.17.</b>
+                    
+                    进阶 10 内存泄漏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="../frontend/02-进阶-11-前端自动化测试.html">
+            
+                <a href="../frontend/02-进阶-11-前端自动化测试.html">
+            
+                    
+                        <b>4.18.</b>
+                    
+                    进阶 11 前端自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="../frontend/02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                <a href="../frontend/02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                    
+                        <b>4.19.</b>
+                    
+                    进阶 12 前端也玩多线程？WebWorker其实很简单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="../frontend/03-高级-01-前端安全深度解析.html">
+            
+                <a href="../frontend/03-高级-01-前端安全深度解析.html">
+            
+                    
+                        <b>4.20.</b>
+                    
+                    高级 01 前端安全深度解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.21" data-path="../frontend/03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                <a href="../frontend/03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                    
+                        <b>4.21.</b>
+                    
+                    高级 02 CI、CD（Docker+Jenkins+Nginx）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.22" data-path="../frontend/04-Vue2.x原理篇.html">
+            
+                <a href="../frontend/04-Vue2.x原理篇.html">
+            
+                    
+                        <b>4.22.</b>
+                    
+                    Vue2.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.23" data-path="../frontend/04-Vue3初步了解及迁移指南.html">
+            
+                <a href="../frontend/04-Vue3初步了解及迁移指南.html">
+            
+                    
+                        <b>4.23.</b>
+                    
+                    Vue3初步了解及迁移指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.24" data-path="../frontend/04-重读Vue教程.html">
+            
+                <a href="../frontend/04-重读Vue教程.html">
+            
+                    
+                        <b>4.24.</b>
+                    
+                    重读Vue教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.25" data-path="../frontend/05-React17.x原理篇.html">
+            
+                <a href="../frontend/05-React17.x原理篇.html">
+            
+                    
+                        <b>4.25.</b>
+                    
+                    React17.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.26" data-path="../frontend/05-你必须知道的React问题.html">
+            
+                <a href="../frontend/05-你必须知道的React问题.html">
+            
+                    
+                        <b>4.26.</b>
+                    
+                    你必须知道的React问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.27" data-path="../frontend/05-重读React教程.html">
+            
+                <a href="../frontend/05-重读React教程.html">
+            
+                    
+                        <b>4.27.</b>
+                    
+                    重读React教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.28" data-path="../frontend/06-聊一聊Cookie的一些问题.html">
+            
+                <a href="../frontend/06-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.28.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.29" data-path="../frontend/07-SSL证书简介及其生成、使用.md">
+            
+                <span>
+            
+                    
+                        <b>4.29.</b>
+                    
+                    SSL证书简介及其生成、使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.30" data-path="../frontend/07-如何启动本地HTTPS服务.html">
+            
+                <a href="../frontend/07-如何启动本地HTTPS服务.html">
+            
+                    
+                        <b>4.30.</b>
+                    
+                    如何启动本地HTTPS服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.31" data-path="../frontend/08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                <a href="../frontend/08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                    
+                        <b>4.31.</b>
+                    
+                    0.0.0.0、127.0.0.1和Localhost的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.32" data-path="../frontend/09-如何理解HTTP响应的状态码.html">
+            
+                <a href="../frontend/09-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.32.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.33" data-path="../frontend/10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                <a href="../frontend/10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                    
+                        <b>4.33.</b>
+                    
+                    字符编码那点事：ASCII、Unicode、GBK、UTF 8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.34" data-path="../frontend/11-HTTP协议的演变历史.md">
+            
+                <span>
+            
+                    
+                        <b>4.34.</b>
+                    
+                    HTTP协议的演变历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.35" data-path="../frontend/12-webpack4.x原理篇.html">
+            
+                <a href="../frontend/12-webpack4.x原理篇.html">
+            
+                    
+                        <b>4.35.</b>
+                    
+                    Webpack4.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.36" data-path="../frontend/12-webpack基础入门篇.html">
+            
+                <a href="../frontend/12-webpack基础入门篇.html">
+            
+                    
+                        <b>4.36.</b>
+                    
+                    Webpack基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.37" data-path="../frontend/12-webpack构建优化篇.html">
+            
+                <a href="../frontend/12-webpack构建优化篇.html">
+            
+                    
+                        <b>4.37.</b>
+                    
+                    Webpack构建优化篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.38" data-path="../frontend/13-TypeScript使用指南.html">
+            
+                <a href="../frontend/13-TypeScript使用指南.html">
+            
+                    
+                        <b>4.38.</b>
+                    
+                    TypeScript使用指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.39" data-path="../frontend/14-Web中图片的使用.html">
+            
+                <a href="../frontend/14-Web中图片的使用.html">
+            
+                    
+                        <b>4.39.</b>
+                    
+                    Web中图片的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.40" data-path="../frontend/15-2026年，还需要微前端吗？——三大框架对比与选型思考.md">
+            
+                <span>
+            
+                    
+                        <b>4.40.</b>
+                    
+                    2026年，还需要微前端吗？——三大框架对比与选型思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.41" data-path="../frontend/16-Electron基础篇.html">
+            
+                <a href="../frontend/16-Electron基础篇.html">
+            
+                    
+                        <b>4.41.</b>
+                    
+                    Electron基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.42" data-path="../frontend/17-uniapp基础篇.html">
+            
+                <a href="../frontend/17-uniapp基础篇.html">
+            
+                    
+                        <b>4.42.</b>
+                    
+                    Uniapp基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.43" data-path="../frontend/17-uniapp离线打包（Android）篇.html">
+            
+                <a href="../frontend/17-uniapp离线打包（Android）篇.html">
+            
+                    
+                        <b>4.43.</b>
+                    
+                    Uniapp离线打包（Android）篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.44" data-path="../frontend/18-sentry基础篇（vue）.html">
+            
+                <a href="../frontend/18-sentry基础篇（vue）.html">
+            
+                    
+                        <b>4.44.</b>
+                    
+                    Sentry基础篇（Vue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.45" data-path="../frontend/19-视口和软键盘对视口的影响.html">
+            
+                <a href="../frontend/19-视口和软键盘对视口的影响.html">
+            
+                    
+                        <b>4.45.</b>
+                    
+                    视口和软键盘对视口的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.46" data-path="../frontend/20-WebGL从入门到实践.html">
+            
+                <a href="../frontend/20-WebGL从入门到实践.html">
+            
+                    
+                        <b>4.46.</b>
+                    
+                    WebGL从入门到实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.47" data-path="../frontend/21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                <a href="../frontend/21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                    
+                        <b>4.47.</b>
+                    
+                    Three.Js基础实战：从画一个立方体开始，掌握3D世界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.48" data-path="../frontend/22-ReactNative基础篇.html">
+            
+                <a href="../frontend/22-ReactNative基础篇.html">
+            
+                    
+                        <b>4.48.</b>
+                    
+                    ReactNative基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49" data-path="../frontend/代码规范/">
+            
+                <a href="../frontend/代码规范/">
+            
+                    
+                        <b>4.49.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.49.1" data-path="../frontend/代码规范/00-前端规范.html">
+            
+                <a href="../frontend/代码规范/00-前端规范.html">
+            
+                    
+                        <b>4.49.1.</b>
+                    
+                    前端规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.2" data-path="../frontend/代码规范/01-HTML.html">
+            
+                <a href="../frontend/代码规范/01-HTML.html">
+            
+                    
+                        <b>4.49.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.3" data-path="../frontend/代码规范/02-CSS.html">
+            
+                <a href="../frontend/代码规范/02-CSS.html">
+            
+                    
+                        <b>4.49.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.4" data-path="../frontend/代码规范/03-JS.html">
+            
+                <a href="../frontend/代码规范/03-JS.html">
+            
+                    
+                        <b>4.49.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../html系列/00-HTML基础知识.html">
+            
+                <a href="../html系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../html系列/00-HTML基础知识02.html">
+            
+                <a href="../html系列/00-HTML基础知识02.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML基础知识02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../html系列/00-HTML常见问答.html">
+            
+                <a href="../html系列/00-HTML常见问答.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    HTML常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../html系列/00-HTML经典实践用例.html">
+            
+                <a href="../html系列/00-HTML经典实践用例.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    HTML经典实践用例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../html系列/03-html探索系列-meta标签.md">
+            
+                <span>
+            
+                    
+                        <b>5.7.</b>
+                    
+                    Html探索系列 Meta标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                <a href="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                    
+                        <b>5.8.</b>
+                    
+                    DOCTYPE：文档类型与浏览器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="../html系列/05-DHTML（动态网页）简介.html">
+            
+                <a href="../html系列/05-DHTML（动态网页）简介.html">
+            
+                    
+                        <b>5.9.</b>
+                    
+                    DHTML（动态网页）简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="../html系列/06-HTML标签详解.md">
+            
+                <span>
+            
+                    
+                        <b>5.10.</b>
+                    
+                    HTML标签详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="../html系列/07-HTML布局的几种方式.html">
+            
+                <a href="../html系列/07-HTML布局的几种方式.html">
+            
+                    
+                        <b>5.11.</b>
+                    
+                    HTML布局的几种方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="../html系列/08-HTML全局属性.html">
+            
+                <a href="../html系列/08-HTML全局属性.html">
+            
+                    
+                        <b>5.12.</b>
+                    
+                    HTML全局属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                <a href="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                    
+                        <b>5.13.</b>
+                    
+                    标记语言演进：从GML到HTML动态标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.14" data-path="../html系列/_关于html.html">
+            
+                <a href="../html系列/_关于html.html">
+            
+                    
+                        <b>5.14.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Javascript系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="00-基础知识.html">
+            
+                <a href="00-基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="00-常见问答.html">
+            
+                <a href="00-常见问答.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="00-应用示例.html">
+            
+                <a href="00-应用示例.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="00-趣味示例.html">
+            
+                <a href="00-趣味示例.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    趣味示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="00-进阶知识.html">
+            
+                <a href="00-进阶知识.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    进阶知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="01-基础篇-01-数据类型之基本类型.html">
+            
+                <a href="01-基础篇-01-数据类型之基本类型.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    基础篇 01 数据类型之基本类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="01-基础篇-01-数据类型之引用类型.html">
+            
+                <a href="01-基础篇-01-数据类型之引用类型.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    基础篇 01 数据类型之引用类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="01-基础篇-02-类型转换.html">
+            
+                <a href="01-基础篇-02-类型转换.html">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    基础篇 02 类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="01-基础篇-03-运算符.html">
+            
+                <a href="01-基础篇-03-运算符.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                    基础篇 03 运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="01-基础篇-04-正则表达式.html">
+            
+                <a href="01-基础篇-04-正则表达式.html">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    基础篇 04 正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="01-基础篇-05-AJAX.html">
+            
+                <a href="01-基础篇-05-AJAX.html">
+            
+                    
+                        <b>6.11.</b>
+                    
+                    基础篇 05 AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="01-基础篇-06--window对象.html">
+            
+                <a href="01-基础篇-06--window对象.html">
+            
+                    
+                        <b>6.12.</b>
+                    
+                    基础篇 06  Window对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                <a href="01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                    
+                        <b>6.13.</b>
+                    
+                    基础篇 07 Error、JSON、Math、Console对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                <a href="01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                    
+                        <b>6.14.</b>
+                    
+                    基础篇 08 History、URL、Screen、Navigator、Location对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="01-基础篇-09-文档对象模型（DOM）.html">
+            
+                <a href="01-基础篇-09-文档对象模型（DOM）.html">
+            
+                    
+                        <b>6.15.</b>
+                    
+                    基础篇 09 文档对象模型（DOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="01-基础篇-10-Document对象.html">
+            
+                <a href="01-基础篇-10-Document对象.html">
+            
+                    
+                        <b>6.16.</b>
+                    
+                    基础篇 10 Document对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.17" data-path="01-基础篇-11-Element对象.html">
+            
+                <a href="01-基础篇-11-Element对象.html">
+            
+                    
+                        <b>6.17.</b>
+                    
+                    基础篇 11 Element对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.18" data-path="01-基础篇-12-Event对象.html">
+            
+                <a href="01-基础篇-12-Event对象.html">
+            
+                    
+                        <b>6.18.</b>
+                    
+                    基础篇 12 Event对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.19" data-path="01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                <a href="01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                    
+                        <b>6.19.</b>
+                    
+                    基础篇 13 键盘、鼠标、触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.20" data-path="01-基础篇-14-MutationObserver对象.html">
+            
+                <a href="01-基础篇-14-MutationObserver对象.html">
+            
+                    
+                        <b>6.20.</b>
+                    
+                    基础篇 14 MutationObserver对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.21" data-path="01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                <a href="01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                    
+                        <b>6.21.</b>
+                    
+                    基础篇 15 CSS对象模型（CSSOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.22" data-path="02-进阶篇-01-prototype对象和继承.html">
+            
+                <a href="02-进阶篇-01-prototype对象和继承.html">
+            
+                    
+                        <b>6.22.</b>
+                    
+                    进阶篇 01 Prototype对象和继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.23" data-path="02-进阶篇-02-Promise对象.html">
+            
+                <a href="02-进阶篇-02-Promise对象.html">
+            
+                    
+                        <b>6.23.</b>
+                    
+                    进阶篇 02 Promise对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.24" data-path="02-进阶篇-03-有特性的一些事件.html">
+            
+                <a href="02-进阶篇-03-有特性的一些事件.html">
+            
+                    
+                        <b>6.24.</b>
+                    
+                    进阶篇 03 有特性的一些事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.25" data-path="02-进阶篇-04-Proxy对象.html">
+            
+                <a href="02-进阶篇-04-Proxy对象.html">
+            
+                    
+                        <b>6.25.</b>
+                    
+                    进阶篇 04 Proxy对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.26" data-path="02-进阶篇-05-Reflect对象.html">
+            
+                <a href="02-进阶篇-05-Reflect对象.html">
+            
+                    
+                        <b>6.26.</b>
+                    
+                    进阶篇 05 Reflect对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.27" data-path="02-进阶篇-06-Class（类）.html">
+            
+                <a href="02-进阶篇-06-Class（类）.html">
+            
+                    
+                        <b>6.27.</b>
+                    
+                    进阶篇 06 Class（类）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.28" data-path="02-进阶篇-07-迭代器（Iterator）.html">
+            
+                <a href="02-进阶篇-07-迭代器（Iterator）.html">
+            
+                    
+                        <b>6.28.</b>
+                    
+                    进阶篇 07 迭代器（Iterator）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.29" data-path="02-进阶篇-08-Generator和Async函数.html">
+            
+                <a href="02-进阶篇-08-Generator和Async函数.html">
+            
+                    
+                        <b>6.29.</b>
+                    
+                    进阶篇 08 Generator和Async函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.30" data-path="02-进阶篇-09-JavaScript异步编程.html">
+            
+                <a href="02-进阶篇-09-JavaScript异步编程.html">
+            
+                    
+                        <b>6.30.</b>
+                    
+                    进阶篇 09 JavaScript异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.31" data-path="04-Date对象和日期时间字符串格式.md">
+            
+                <span>
+            
+                    
+                        <b>6.31.</b>
+                    
+                    Date对象和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.32" data-path="05-Canvas基础入门篇.html">
+            
+                <a href="05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.32.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.33" data-path="05-Canvas进阶篇.html">
+            
+                <a href="05-Canvas进阶篇.html">
+            
+                    
+                        <b>6.33.</b>
+                    
+                    Canvas进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.34" data-path="06-SVG基础入门篇.html">
+            
+                <a href="06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.34.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.35" data-path="06-四种判断数据类型方法的优缺点.html">
+            
+                <a href="06-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.35.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.36" data-path="07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.36.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.37" data-path="08-谈谈JavaScript的作用域和上下文.md">
+            
+                <span>
+            
+                    
+                        <b>6.37.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.38" data-path="10-复制内容到剪贴板.html">
+            
+                <a href="10-复制内容到剪贴板.html">
+            
+                    
+                        <b>6.38.</b>
+                    
+                    复制内容到剪贴板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.39" data-path="11-44道JavaScript难题，还不来考考？.html">
+            
+                <a href="11-44道JavaScript难题，还不来考考？.html">
+            
+                    
+                        <b>6.39.</b>
+                    
+                    44道JavaScript难题，还不来考考？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.40" data-path="_关于Javascript.html">
+            
+                <a href="_关于Javascript.html">
+            
+                    
+                        <b>6.40.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java系列</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../java系列/01-00-Java入门篇.html">
+            
+                <a href="../java系列/01-00-Java入门篇.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    00 Java入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../java系列/01-01-Java进阶篇.html">
+            
+                <a href="../java系列/01-01-Java进阶篇.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    01 Java进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../java系列/01-02-Java高级篇.html">
+            
+                <a href="../java系列/01-02-Java高级篇.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    02 Java高级篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../java系列/02-pom.xml详解.html">
+            
+                <a href="../java系列/02-pom.xml详解.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Pom.Xml详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../java系列/03-01-SpringBoot入门篇.html">
+            
+                <a href="../java系列/03-01-SpringBoot入门篇.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    01 SpringBoot入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../java系列/05-轻量应用服务器部署指南（腾讯云）.md">
+            
+                <span>
+            
+                    
+                        <b>7.6.</b>
+                    
+                    轻量应用服务器部署指南（腾讯云）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../java系列/06-keytool命令行工具.md">
+            
+                <span>
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Keytool命令行工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">NodeJs</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../nodeJs/00-0关于Node.js.html">
+            
+                <a href="../nodeJs/00-0关于Node.js.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    0关于Node.Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../nodeJs/00-常见问题.html">
+            
+                <a href="../nodeJs/00-常见问题.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                <a href="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Node.Js：三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                <a href="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                    
+                        <b>8.4.</b>
+                    
+                    Npm包管理器简介及一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                <a href="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                    
+                        <b>8.5.</b>
+                    
+                    NPM：Package.Json详解（中文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                <a href="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                    
+                        <b>8.6.</b>
+                    
+                    NPM：从零开始，开发一个软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="../nodeJs/05-NPM：常用命令.html">
+            
+                <a href="../nodeJs/05-NPM：常用命令.html">
+            
+                    
+                        <b>8.7.</b>
+                    
+                    NPM：常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                <a href="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                    
+                        <b>8.8.</b>
+                    
+                    Node.Js：Fs（文件系统）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                <a href="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                    
+                        <b>8.9.</b>
+                    
+                    Node.Js：Global（全局变量）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="../nodeJs/08-Node.js：HTTP.html">
+            
+                <a href="../nodeJs/08-Node.js：HTTP.html">
+            
+                    
+                        <b>8.10.</b>
+                    
+                    Node.Js：HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="../nodeJs/09-Node.js：module（模块）.html">
+            
+                <a href="../nodeJs/09-Node.js：module（模块）.html">
+            
+                    
+                        <b>8.11.</b>
+                    
+                    Node.Js：Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="../nodeJs/10-Node.js：path（路径）.html">
+            
+                <a href="../nodeJs/10-Node.js：path（路径）.html">
+            
+                    
+                        <b>8.12.</b>
+                    
+                    Node.Js：Path（路径）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                <a href="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                    
+                        <b>8.13.</b>
+                    
+                    Node.Js：Readline（逐行读取）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.14" data-path="../nodeJs/12-锁定项目的Node版本.html">
+            
+                <a href="../nodeJs/12-锁定项目的Node版本.html">
+            
+                    
+                        <b>8.14.</b>
+                    
+                    锁定项目的Node版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../research/02-如何监控前端异常？.html">
+            
+                <a href="../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../research/03-H5页面跳转和刷新.html">
+            
+                <a href="../research/03-H5页面跳转和刷新.html">
+            
+                    
+                        <b>9.3.</b>
+                    
+                    H5页面跳转和刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>9.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>9.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>9.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../research/07-H5可视化编辑.html">
+            
+                <a href="../research/07-H5可视化编辑.html">
+            
+                    
+                        <b>9.7.</b>
+                    
+                    H5可视化编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="../research/08-Web常用功能.html">
+            
+                <a href="../research/08-Web常用功能.html">
+            
+                    
+                        <b>9.8.</b>
+                    
+                    Web常用功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" data-path="../research/10-H5页面生成图片方案总结.html">
+            
+                <a href="../research/10-H5页面生成图片方案总结.html">
+            
+                    
+                        <b>9.9.</b>
+                    
+                    H5页面生成图片方案总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10" data-path="../research/Javascript加密混淆.html">
+            
+                <a href="../research/Javascript加密混淆.html">
+            
+                    
+                        <b>9.10.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.11" data-path="../research/Vue如何导入TypeScript.html">
+            
+                <a href="../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>9.11.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.12" data-path="../research/移动端PDF预览.html">
+            
+                <a href="../research/移动端PDF预览.html">
+            
+                    
+                        <b>9.12.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.13" data-path="../research/纯CSS绘制箭头.html">
+            
+                <a href="../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>9.13.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.14" data-path="../research/网站性能测量和优化方法.html">
+            
+                <a href="../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>9.14.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../tech/00-编程基础知识.html">
+            
+                <a href="../tech/00-编程基础知识.html">
+            
+                    
+                        <b>10.1.</b>
+                    
+                    编程基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="../tech/00-计算机问题概览.html">
+            
+                <a href="../tech/00-计算机问题概览.html">
+            
+                    
+                        <b>10.2.</b>
+                    
+                    计算机问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>10.3.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                <a href="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                    
+                        <b>10.4.</b>
+                    
+                    GOOGLE浏览器的搜索技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="../tech/03-curl的用法指南.html">
+            
+                <a href="../tech/03-curl的用法指南.html">
+            
+                    
+                        <b>10.5.</b>
+                    
+                    Curl的用法指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="../tech/04-sublime3插件篇.html">
+            
+                <a href="../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>10.6.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="../tech/05-Charles安装及使用.html">
+            
+                <a href="../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>10.7.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                <a href="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                    
+                        <b>10.8.</b>
+                    
+                    通过.Gitlab Ci.Yml配置任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="../tech/07-MySQL的基本使用.html">
+            
+                <a href="../tech/07-MySQL的基本使用.html">
+            
+                    
+                        <b>10.9.</b>
+                    
+                    MySQL的基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="../tech/08-看懂什么是环境变量.html">
+            
+                <a href="../tech/08-看懂什么是环境变量.html">
+            
+                    
+                        <b>10.10.</b>
+                    
+                    看懂什么是环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.11" data-path="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                <a href="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                    
+                        <b>10.11.</b>
+                    
+                    为什么0.1+0.2=0.30000000000000004
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.12" data-path="../tech/10-Nginx使用手册：安装、配置、模块扩展与代理详解.md">
+            
+                <span>
+            
+                    
+                        <b>10.12.</b>
+                    
+                    Nginx使用手册：安装、配置、模块扩展与代理详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.13" data-path="../tech/11-常见智力题总结.html">
+            
+                <a href="../tech/11-常见智力题总结.html">
+            
+                    
+                        <b>10.13.</b>
+                    
+                    常见智力题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.14" data-path="../tech/12-Mac终端命令使用.html">
+            
+                <a href="../tech/12-Mac终端命令使用.html">
+            
+                    
+                        <b>10.14.</b>
+                    
+                    Mac终端命令使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.15" data-path="../tech/13-01-Shell脚本入门篇.html">
+            
+                <a href="../tech/13-01-Shell脚本入门篇.html">
+            
+                    
+                        <b>10.15.</b>
+                    
+                    01 Shell脚本入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.16" data-path="../tech/13-02-Shell脚本进阶篇.html">
+            
+                <a href="../tech/13-02-Shell脚本进阶篇.html">
+            
+                    
+                        <b>10.16.</b>
+                    
+                    02 Shell脚本进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.17" data-path="../tech/14-一篇搞定排序算法：原理+图解+JS实现+V8源码解读.md">
+            
+                <span>
+            
+                    
+                        <b>10.17.</b>
+                    
+                    一篇搞定排序算法：原理+图解+JS实现+V8源码解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.18" data-path="../tech/15-glob模式通配符.html">
+            
+                <a href="../tech/15-glob模式通配符.html">
+            
+                    
+                        <b>10.18.</b>
+                    
+                    Glob模式通配符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.19" data-path="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                <a href="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                    
+                        <b>10.19.</b>
+                    
+                    代码整洁之道（摘录笔记）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.20" data-path="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                <a href="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                    
+                        <b>10.20.</b>
+                    
+                    Java的24种设计模式与7大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.21" data-path="../tech/18-观察者和发布订阅模式.html">
+            
+                <a href="../tech/18-观察者和发布订阅模式.html">
+            
+                    
+                        <b>10.21.</b>
+                    
+                    观察者和发布订阅模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.22" data-path="../tech/19-AI模型基础应用篇.html">
+            
+                <a href="../tech/19-AI模型基础应用篇.html">
+            
+                    
+                        <b>10.22.</b>
+                    
+                    AI模型基础应用篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../tools/01-01-Git基础教程.html">
+            
+                <a href="../tools/01-01-Git基础教程.html">
+            
+                    
+                        <b>11.1.</b>
+                    
+                    01 Git基础教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../tools/01-02-Git常见问题.html">
+            
+                <a href="../tools/01-02-Git常见问题.html">
+            
+                    
+                        <b>11.2.</b>
+                    
+                    02 Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../tools/02-01-gitbook入门篇.html">
+            
+                <a href="../tools/02-01-gitbook入门篇.html">
+            
+                    
+                        <b>11.3.</b>
+                    
+                    01 Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="../tools/02-02-gitbook插件篇.html">
+            
+                <a href="../tools/02-02-gitbook插件篇.html">
+            
+                    
+                        <b>11.4.</b>
+                    
+                    02 Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="../tools/02-03-gitbook进阶篇.html">
+            
+                <a href="../tools/02-03-gitbook进阶篇.html">
+            
+                    
+                        <b>11.5.</b>
+                    
+                    03 Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">整理中</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >SVG基础入门篇</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="svg基础入门篇">SVG基础入门篇</h2>
+<p>可缩放矢量图形（Scalable Vector Graphics，SVG），是一种用于描述二维的矢量图形，基于 XML 的标记语言。作为一个基于文本的开放网络标准，SVG能够优雅而简洁地渲染不同大小的图形，并和 CSS，DOM，JavaScript 和 SMIL 等其他网络标准无缝衔接。本质上，SVG 相对于图像，就好比 HTML 相对于文本。</p>
+<p>和传统的点阵图像模式，像 JPEG 和 PNG 不同，SVG 格式提供的是矢量图，这意味着它的图像能够被无限放大而不失真或降低质量，并且可以方便地修改内容。</p>
+<p>SVG 是由万维网联盟（W3C）自 1999 年开始开发的开放标准。</p>
+<ul>
+<li>SVG 是指可伸缩矢量图形</li>
+<li>SVG 用来定义用于网络的基于矢量的图形</li>
+<li>SVG 使用 XML 格式定义图形</li>
+<li>SVG 图像在放大或缩小（改变尺寸）的情况下，其图形质量不会受受损失</li>
+<li>SVG 是 W3C 的一个标准</li>
+</ul>
+<h3 id="svg-有哪些优缺点">SVG 有哪些优缺点</h3>
+<p>与其他图像格式相比，使用 SVG 的优势在于：</p>
+<ul>
+<li>SVG 是矢量格式，可呈现任何大小而不降低其质量</li>
+<li>SVG 支持静止或动态图像</li>
+<li>SVG 支持透明度</li>
+<li>SVG 可被非常多的工具读取和修改（比如：代码或文本编辑器）</li>
+<li>SVG 可以从 Adobe Illustrator 或 Sketch 等设计软件中导出</li>
+<li>SVG 是由于基于文本的格式，是可搜索的（很适合制作地图）</li>
+<li>SVG 是开放的标准。现代浏览器支持 SVG 格式，并且面向未来</li>
+<li><p>SVG 文件是纯粹的 XML</p>
+</li>
+<li><p>SVG 格式具有高度可压缩性和轻量级</p>
+</li>
+</ul>
+<p>SVG 也有一些缺点：</p>
+<ul>
+<li>设计 SVG 可能会变得复杂</li>
+<li>在某些版本过低的浏览器上无法呈现</li>
+<li>电子邮件客户端支持有限</li>
+<li>SVG 的效率可能会不如 PNG 好。因为它需要运行时的计算和对应平台的渲染绘制。</li>
+<li>渲染效果不一致。不同的浏览器乃至不同的平台的抗锯齿处理千差万别，尤其是用户关掉抗锯齿的情况下，多边形（边数较多）图标会惨不忍睹。</li>
+</ul>
+<h3 id="浏览器中如何使用svg元素">浏览器中如何使用SVG元素</h3>
+<p><strong>注意：在外部文件引入的 SVG 必须与原始文件同源 </strong></p>
+<p>要在浏览器中显示（前提是浏览器支持），可以通过几种方法来实现：</p>
+<ul>
+<li><p>HTML 元素引入 SVG 文件</p>
+<ul>
+<li><p>使用 iframe 元素来嵌入SVG图像</p>
+</li>
+<li><p>使用 img 元素来嵌入SVG图像</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905141904001.png" alt="image-20200905141904001"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./assets/img/snowman.svg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"200"</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./assets/img/snowman.svg"</span>  <span class="hljs-attr">width</span>=<span class="hljs-string">"300"</span> /&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=1" target="_blank">引入DEMO</a></p>
+<ul>
+<li><p>在 CSS 样式中使用 SVG 来对HTML内容应用图像效果</p>
+<ul>
+<li>将 SVG 图像作为背景图像嵌入</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">background</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">img/snowman.svg</span>) no-repeat center;
+    <span class="hljs-attribute">background-size</span> : <span class="hljs-number">300px</span> <span class="hljs-number">200px</span>;
+}
+</code></pre>
+<ul>
+<li><p>现代浏览器支持在 CSS 样式中使用 SVG 来对 HTML 内容应用图像效果。</p>
+<p>你可以在同一文件中使用 SVG 样式，也可以通过外部样式表引入。有三个属性可以使用： mask、clip-path、filter。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mask</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"mask-1"</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">mask</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">clipPath</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"clipping-path-1"</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">clipPath</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">filter</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"f1"</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">filter</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-css"><span class="hljs-selector-class">.target</span> { 
+    <span class="hljs-attribute">mask</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">#mask-1</span>); 
+    <span class="hljs-attribute">clip-path</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">#clipping-path-1</span>);
+    <span class="hljs-attribute">filter</span>:<span class="hljs-built_in">url</span>(<span class="hljs-string">#f1</span>);
+}
+<span class="hljs-selector-class">.target2</span> { <span class="hljs-comment">/*使用外部引用*/</span>
+    <span class="hljs-attribute">clip-path</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">resources.svg#c1</span>);
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>将 SVG 直接嵌套在 HTML 中</p>
+<ul>
+<li>直接使用 svg 元素，通过代码将SVG图像嵌入到HTML代码中。</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_02"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"447.64197"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"631.57538"</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=2" target="_blank">直接嵌套DEMO</a></p>
+<ul>
+<li>使用 embed、object 元素来嵌入SVG图像。(不推荐使用)</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">embed</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img/snowman.svg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"220"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"image/svg+xml"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">object</span> <span class="hljs-attr">data</span>=<span class="hljs-string">"img/snowman.svg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"image/svg+xml"</span>/&gt;</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="svg-文档基本结构">SVG 文档基本结构</h3>
+<p>一个独立的SVG文件，也就是平时看到的以扩展名 .svg 结尾的文件。一个简单的SVG图形例子：</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"utf-8"</span> standalone=<span class="hljs-string">"no"</span>?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span> <span class="hljs-attr">version</span>=<span class="hljs-string">"1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"black"</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"red"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">csvg</span>&gt;</span>
+</code></pre>
+<ul>
+<li><p>XML声明：和HTML文档的DTD声明是类似的。</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!---类似于HTML文档的DTD声明 &lt;!DOCTYPE html&gt; --&gt;</span>
+<span class="hljs-meta">&lt;?xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"UTF-8"</span> standalone=<span class="hljs-string">"no"</span>?&gt;</span>
+</code></pre>
+<p><code>version="1.0"</code> 和 <code>encoding="utf-8"</code> 无论如何都是默认值。</p>
+<p>standalone 属性 规定此 SVG 文件是否是"独立的"，或含有对外部文件的引用。standalone="no" 意味着 SVG 文档会引用一个外部文件。</p>
+</li>
+<li><p>svg 根元素包括一个用来描述 SVG 的 XML 声明空间。</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!---类似于HTML文档的HTML中的命名空间声明 &lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"&gt; --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span>&gt;</span>
+</code></pre>
+</li>
+</ul>
+<p>嵌入 HTML5 文档中的 SVG 不应具有独立的 XML 声明。在格式良好的XML中只允许使用一个XML声明，并且如果有，它必须位于顶部。而通过 html5 <code>img</code> 或 css <code>background-images</code> 引用的 SVG 必须有自己的 XML 声明。</p>
+<h3 id="几个重要的-svg-概念">几个重要的 SVG 概念</h3>
+<h4 id="1viewport">1.viewport</h4>
+<p>视口，表示 SVG 可见区域的大小，或者可以想象成画布大小（与 canvas 的画布概念相似）。SVG 中超出视窗边界的区域会被裁切并且隐藏。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"500"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+</code></pre>
+<h4 id="2viewbox-属性">2.viewBox 属性</h4>
+<p>viewBox 是 “视区盒子” 的意思，即，创建一个可伸展的盒子，用以承载一组图形。当 viewBox 的大小与 viewport 不一致时，盒子会自动伸缩（与 preserveAspectRatio  属性有关）。</p>
+<pre><code class="lang-html">viewBox="min-x, min-y, width and height"
+</code></pre>
+<p>viewBox 大小，默认是与 viewport 相同。不允许宽度和高度为负值，0则禁用元素的呈现。</p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905212643005.png" alt="image-20200905212643005" style="zoom:67%;"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_16"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0,0,40,30"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: 1px solid #eee;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"10"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"15"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">line</span> <span class="hljs-attr">x1</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">"15"</span> <span class="hljs-attr">x2</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">y2</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"orange"</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"2"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=16" target="_blank">viewBox属性DEMO</a></p>
+<p>如上所示，viewBox 的大小是 <code>40 * 30</code>，viewport 的大小是 <code>400 * 300</code>。实现渲染时，会将 viewBox 放大 10 倍。</p>
+<p>有 marker、pattern、svg、symbol、view 等五个 svg 元素可以有这个属性。</p>
+<h4 id="3preserveaspectratio属性">3.preserveAspectRatio属性</h4>
+<p>有时候，通常我们使用  viewBox 属性时，希望图形拉伸占据整个视口。 在其他情况下，为了保持图形的长宽比，必须使用统一的缩放比例。<strong>preserveAspectRatio 属性表示是否强制进行统一缩放。</strong></p>
+<p>对于支持该属性的所有元素，除了 image 元素之外，preserveAspectRatio 只适用于元素上 viewBox 值的元素，如果元素没有提供属性 viewBox ，则忽略了preserveAspectRatio。</p>
+<pre><code class="lang-html">preserveAspectRatio="<span class="hljs-tag">&lt;<span class="hljs-name">align</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">meetOrSlice</span>&gt;</span>"
+</code></pre>
+<ul>
+<li><p><strong>align：</strong>表示是否强制统一缩放。当 SVG 的 viewbox 属性与视图属性宽高比不一致时使用。默认值 <strong>xMidYMid</strong> ，即，居中。</p>
+<p>align 属性的值一定是下列的值之一：</p>
+<ul>
+<li><strong>none</strong>：不会进行强制统一缩放。<strong>注意：</strong> 如果 align 的值是 none ，则 meetOrSlice 属性的值将会被忽略。</li>
+<li><strong>xMinYMin</strong>： 强制统一缩放。viewbox 与 viewport  X方向左对齐、Y 方向上对齐。</li>
+<li><strong>xMidYMin</strong>：强制统一缩放。viewbox 与 viewport X方向居中、Y 方向上对齐。</li>
+<li><strong>xMaxYMin</strong>：强制统一缩放。viewbox 与 viewport X方向居右、Y 方向上对齐。</li>
+<li><strong>xMinYMid</strong>： 强制统一缩放。viewbox 与 viewport X方向左对齐、Y 方向居中。</li>
+<li><strong>xMidYMid</strong> (默认值) ：强制统一缩放。viewbox 与 viewport X方向、Y 方向都居中。</li>
+<li><strong>xMaxYMid</strong>：强制统一缩放。viewbox 与 viewport X方向右对齐、Y 方向居中。</li>
+<li><strong>xMinYMax</strong>：强制统一缩放。viewbox 与 viewport X方向左对齐、Y 方向下对齐。</li>
+<li><strong>xMidYMax</strong>：强制统一缩放。viewbox 与 viewport X方向居中、Y 方向下对齐。</li>
+<li><strong>xMaxYMax</strong>：强制统一缩放。viewbox 与 viewport X方向右对齐、Y 方向下对齐。</li>
+</ul>
+</li>
+<li><p><strong>meetOrSlice：</strong>可选。默认值 <strong>meet</strong>，即图形将缩放到。</p>
+<ul>
+<li><strong>meet：</strong>默认值。这种情况下，宽高比将会被保留，尽可能的放大 SVG 的 viewbox，但要确保整个 viewbox 在视图窗口内是可见的。</li>
+<li><strong>slice：</strong> 这种情况下，宽高比将会被保留，尽可能的放大 SVG 的 viewbox，并且要确保宽、高都覆盖整个视图窗口。</li>
+<li><strong>none：</strong>扭曲纵横比以充分适应viewport</li>
+</ul>
+</li>
+</ul>
+<h3 id="svg-中的坐标系统">SVG 中的坐标系统</h3>
+<p>SVG 的坐标系统分为三种类型：</p>
+<ul>
+<li>初始坐标系统</li>
+<li>转换坐标系统</li>
+<li>嵌套坐标系统</li>
+</ul>
+<h4 id="初始坐标系统">初始坐标系统</h4>
+<p>初始视窗坐标系是一个建立在视窗（viewport）上的坐标系。原点(0,0)在视窗的左上角，X轴正向指向右，Y轴正向指向下，初始坐标系中的一个单位等于视窗中的一个”像素”（更确切的说是一个单位）。</p>
+<p>初始用户坐标系 是通过 VIEWBOX 建立在 SVG 画布上的坐标系。这个坐标系一开始和初始视窗坐标系完全一样-它自己的原点位于视窗左上角，x 轴正向指向右，y 轴正向指向下。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+</code></pre>
+<h4 id="转换坐标系统">转换坐标系统</h4>
+<p>可以使用 transform 属性来对元素的坐标系统进行变换。<strong>transform 属性的作用对象是元素所在的坐标系统，而不是元素本身。</strong></p>
+<p>在 SVG 规范中，transform 属性的作用是 <strong>在被添加的元素上建立新用户空间坐标系（当前坐标系）</strong> (效果与 viewBox 类似)。</p>
+<p>它和 CSS 中 transform 属性的变换函数，都是基于坐标系变换的。它们的区别在于：HTML 元素的坐标系建立在元素自身上，而 SVG中，元素坐标系是基于是 <strong>初始坐标系</strong> 或 <strong>当前用户空间坐标系</strong> 创建的 。</p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200907235008085.png" alt="image-20200907235008085"></img></p>
+<blockquote>
+<p>svg 元素有多个变换时，下一个变换的坐标系是基于上一个变换完成后的坐标系创建的，并且其子元素变换的坐标系，也是基于父元素变换后的坐标系创建的。</p>
+</blockquote>
+<h4 id="嵌套坐标系统">嵌套坐标系统</h4>
+<p>在 svg 元素中可以嵌套 svg 元素。外面的 svg 创建一个 Viewport 和坐标系统，而且嵌套在里面的 svg 也可以创建一个 Viewport 和坐标系统。</p>
+<p>如果你不声明子 SVG 的 x 和 y 属性，它们默认是 0。如果你不声明 height 和 width 属性，svg 会是父 SVG 宽度和高度的 100%。</p>
+<p>除了可以通过嵌套 svg 外，也可以使用例如 use、symbol 的元素来建立新的 viewport 和用户坐标系。</p>
+<h3 id="svg-的基本组成元素">SVG 的基本组成元素</h3>
+<p>一个简单的 SVG 文档由 svg 根元素和基本的形状元素构成。另外还有一个 g 元素，它用来把若干个基本形状编成一个组。</p>
+<p>从这些开始，SVG 可以变得更加复杂。SVG 支持渐变、旋转、动画、滤镜效果、与 JavaScript 交互等等功能，但是所有这些额外的语言特性，都需要在一个定义好的图形区域内实现。</p>
+<h4 id="1line元素（直线）">1.line元素（直线）</h4>
+<p>line 元素是一个 SVG 基本形状，用来创建一条连接两个点的线。</p>
+<ul>
+<li>x1：起点x坐标</li>
+<li>y1：起点y坐标</li>
+<li>x2：终点x坐标</li>
+<li>y2：终点y坐标</li>
+</ul>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905150943301.png" alt="image-20200905150943301" style="zoom: 67%;"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_03"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300px"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: 1px solid #ccc;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">line</span> <span class="hljs-attr">x1</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">x2</span>=<span class="hljs-string">"250"</span> <span class="hljs-attr">y2</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"#0aa"</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"5"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=3" target="_blank">line元素DEMO</a></p>
+<h4 id="2rect元素（矩形）">2.rect元素（矩形）</h4>
+<p>rect 元素是 SVG 的一个基本形状，用来创建矩形，基于一个角位置以及它的宽和高。它还可以用来创建圆角矩形。</p>
+<ul>
+<li>x：左上角x坐标</li>
+<li>y：左上角y坐标</li>
+<li>width：宽度</li>
+<li>height：高度</li>
+<li>rx：x方向的圆角半径</li>
+<li>ry：y方向的圆角半径</li>
+</ul>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905151025386.png" alt="image-20200905151025386" style="zoom: 67%;"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_04"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"150px"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: 1px solid #ccc;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"250px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"125px"</span> <span class="hljs-attr">rx</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">ry</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"teal"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=4" target="_blank">rect元素DEMO</a></p>
+<h4 id="3circle元素-圆">3.circle元素 (圆)</h4>
+<p>circle 元素是一个 SVG 的基本形状，用来创建圆,基于一个圆心和一个半径。</p>
+<ul>
+<li>cx：圆心x坐标</li>
+<li>xy：圆心y坐标</li>
+<li>r：半径</li>
+</ul>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905151513091.png" alt="image-20200905151513091" style="zoom: 67%;"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_05"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300px"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: 1px solid #ccc;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">circle</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=5" target="_blank">circle元素DEMO</a></p>
+<h4 id="4ellipse元素（椭圆）">4.ellipse元素（椭圆）</h4>
+<p>ellipse 元素是一个 SVG 基本形状，用来创建一个椭圆，基于一个中心坐标以及它们的 x 半径和 y 半径。</p>
+<ul>
+<li>cx：圆心x坐标</li>
+<li>cy：圆心y坐标c</li>
+<li>rx：x方向半径</li>
+<li>ry：y方向半径</li>
+</ul>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905151925222.png" alt="image-20200905151925222" style="zoom: 67%;"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_06"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300px"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: 1px solid #ccc;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ellipse</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">rx</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">ry</span>=<span class="hljs-string">"75"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=6" target="_blank">ellipse元素DEMO</a></p>
+<h4 id="5polygon元素-闭合多边形">5.polygon元素 (闭合多边形)</h4>
+<p>polygon 元素是由连接一组点集的直线构成。<code>polygon</code> 的路径在最后一个点处自动回到第一个点。需要注意的是，矩形也是一种多边形。</p>
+<ul>
+<li>potins：定义了用来画一个 polygon 元素或 polyline 元素的点的数列。每个点用用户坐标系统中的一个 X 坐标和 Y 坐标定义。用逗号分开每个点。</li>
+</ul>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905152811262.png" alt="image-20200905152811262" style="zoom: 67%;"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_07"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300px"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: 1px solid #ccc;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">polygon</span> <span class="hljs-attr">points</span>=<span class="hljs-string">"0,50 50,0 150,0 200,50 150,100 50,100"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">polygon</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=7" target="_blank">polygon元素DEMO</a></p>
+<h4 id="6polyline元素-折线">6.polyline元素 (折线)</h4>
+<p>polyline 元素是 SVG 的一个基本形状，用来创建一系列直线连接多个点。典型的一个 polyline 是用来创建一个开放的形状，最后一点不与第一点相连。</p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905153443196.png" alt="image-20200905153443196" style="zoom: 67%;"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_08"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"180px"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: 1px solid #ccc;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">polyline</span> <span class="hljs-attr">points</span>=<span class="hljs-string">"10 10,50 50,75 175,175 150,175 50,225 75,225 150,300 150"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"none"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"#0aa"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"180px"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: 1px solid #ccc;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">polyline</span> <span class="hljs-attr">points</span>=<span class="hljs-string">"10 10,50 50,75 175,175 150,175 50,225 75,225 150,300 150"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"none"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=8" target="_blank">polyline元素DEMO</a></p>
+<h4 id="7image元素（图片）">7.image元素（图片）</h4>
+<p>允许在一个 SVG 对象内部呈现光栅图像。它表现为图像文件或者其他 SVG 文件。SVG 图像格式转换软件支持 JPEG、PNG 格式，是否支持动图 GIF 不明确。</p>
+<ul>
+<li>x：图像水平方向上到原点的距离</li>
+<li>y：图像竖直方向上到原点的距离</li>
+<li>width：图像宽度。和 HTML 的 img 不同，该属性是必须的</li>
+<li>height：图像高度。和 HTML 的 img 不同，该属性是必须的</li>
+<li>xlink:href：图像的 URL 指向</li>
+<li>preserveAspectRatio：控制图像比例</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_26"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"500"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"img/20190419141710_4735vxaqwhri_small.jpg"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg03.html?type=26" target="_blank">image元素DEMO</a></p>
+<ul>
+<li>如果你没有设置 x 属性或 y 属性，它们自动被设置为 0</li>
+<li>如果你没有设置 height 属性或 width 属性，它们自动被设置为 0</li>
+<li>如果 width 属性或 height 等于0，将不会呈现这个图像</li>
+</ul>
+<h4 id="8textpath（文本）">8.textPath（文本）</h4>
+<p>text 元素定义了一个由文字组成的图形。</p>
+<p>注意：我们可以将渐变、图案、剪切路径、遮罩或者滤镜应用到 text 上。</p>
+<ul>
+<li>x、y：在用户坐标系统中标识了一个 x 轴、y 轴坐标。</li>
+<li>dx、dy：一个元素或其内容在 x 轴、y 轴方向上的偏移，偏移量取决于设置该属性的元素。</li>
+<li>text-anchor：用来描述该文本与所给点的对齐方式 (开头、中间、末尾对齐) 。取值：start | middle | end。</li>
+<li>rotate：指定动画元素沿 animateMotion 元素中指定的路径行进时如何旋转。取值：    auto| auto-reverse| number。</li>
+<li>textLength：指定文本将绘制到的空间的宽度。</li>
+<li>lengthAdjust：控制文本如何拉伸到该 textLength 属性定义的长度。取值：spacing | spacingAndGlyphs。</li>
+</ul>
+<h4 id="9textpath元素（文本路径）">9.textPath元素（文本路径）</h4>
+<p>除了笔直地绘制一行文字以外， SVG 也可以根据 path 元素的形状来放置文字。 只要在 textPath 元素内部放置文本，并通过其 xlink:href 属性值引用 path 元素，我们就可以让文字块呈现在 path 元素给定的路径上了。</p>
+<ul>
+<li>startOffset：将路径转换为 textPath 元素的坐标系后，该属性定义了沿路径的初始当前文本位置相对于路径起点的偏移量。</li>
+<li>method：指示应沿着 textPath 元素路径呈现文本的方法。取值：align<code>|</code>stretch。</li>
+<li>spacing：指示用户代理应如何确定要沿路径呈现的印刷字符之间的间距。</li>
+<li>xlink:href：将对资源的引用定义为引用IRI。该链接的确切含义取决于使用它的每个元素的上下文。</li>
+</ul>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200912022433702.png" alt="image-20200912022433702" style="zoom:67%;"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_27"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"500"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: 1px solid #eee;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">defs</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"MyPath"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M 50 200 C 200 400 900 -200 900 100"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">defs</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#MyPath"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"none"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"orange"</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"3"</span> /&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">font-family</span>=<span class="hljs-string">"Verdana"</span> <span class="hljs-attr">font-size</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">textPath</span> <span class="hljs-attr">startOffset</span>=<span class="hljs-string">"-50"</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#MyPath"</span> <span class="hljs-attr">spacing</span>=<span class="hljs-string">"exact"</span>&gt;</span> 君子之交淡如水，茶人之交醇如茶。 <span class="hljs-tag">&lt;/<span class="hljs-name">textPath</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"120"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">dx</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">dy</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">font-weight</span>=<span class="hljs-string">"bold"</span> <span class="hljs-attr">font-size</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span> <span class="hljs-attr">text-anchor</span>=<span class="hljs-string">"middle"</span>&gt;</span>
+            君子之交淡如水，茶人之交醇如茶。 <span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">font-weight</span>=<span class="hljs-string">"bold"</span> <span class="hljs-attr">font-size</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span> <span class="hljs-attr">textLength</span>=<span class="hljs-string">"300"</span>&gt;</span> 君子之交淡如水，茶人之交醇如茶。 <span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"140"</span> <span class="hljs-attr">font-weight</span>=<span class="hljs-string">"bold"</span> <span class="hljs-attr">font-size</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span> <span class="hljs-attr">textLength</span>=<span class="hljs-string">"300"</span>
+              <span class="hljs-attr">lengthAdjust</span>=<span class="hljs-string">"spacingAndGlyphs"</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">"30"</span>&gt;</span> 君子之交淡如水，茶人之交醇如茶。 <span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg03.html?type=27" target="_blank">textPath元素DEMO</a></p>
+<h4 id="10pattern元素（图案）">10.pattern元素（图案）</h4>
+<p>使用预定义的图形对一个对象进行填充或描边，就要用到 pattern 元素。pattern 元素让预定义图形能够以固定间隔在 x 轴和 y 轴上重复（或平铺）从而覆盖要涂色的区域。先使用 pattern 元素定义图案，然后在给定的图形元素上用属性 fill 或属性 stroke 引用用来填充或描边的图案。</p>
+<ul>
+<li>patternUnits：指示将哪个坐标系用于 pattern 元素的几何属性。</li>
+<li>patternContentUnits：指示要用于 pattern 元素内容的坐标系。</li>
+<li>patternTransform：定义应用于图案的变换定义列表。</li>
+<li>x、y：在用户坐标系统中标识了一个x 轴、y 轴坐标。</li>
+<li>width、height：在用户坐标系统中标识了一个水平长度、垂直长度。</li>
+<li>xlink:href：将对资源的引用定义为引用IRI。该链接的确切含义取决于使用它的每个元素的上下文。</li>
+<li>preserveAspectRatio：表示是否强制进行统一缩放。</li>
+</ul>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200912172113635.png" alt="image-20200912172113635" style="zoom:67%;"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_28"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"400"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">defs</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">linearGradient</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Gradient7"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">stop</span> <span class="hljs-attr">offset</span>=<span class="hljs-string">"5%"</span> <span class="hljs-attr">stop-color</span>=<span class="hljs-string">"white"</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">stop</span> <span class="hljs-attr">offset</span>=<span class="hljs-string">"95%"</span> <span class="hljs-attr">stop-color</span>=<span class="hljs-string">"#0aa"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">linearGradient</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">linearGradient</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Gradient8"</span> <span class="hljs-attr">x1</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">x2</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y2</span>=<span class="hljs-string">"1"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">stop</span> <span class="hljs-attr">offset</span>=<span class="hljs-string">"5%"</span> <span class="hljs-attr">stop-color</span>=<span class="hljs-string">"white"</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">stop</span> <span class="hljs-attr">offset</span>=<span class="hljs-string">"95%"</span> <span class="hljs-attr">stop-color</span>=<span class="hljs-string">"orange"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">linearGradient</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">pattern</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Pattern"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">".25"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">".25"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">line</span> <span class="hljs-attr">x1</span>=<span class="hljs-string">"25"</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">"25"</span> <span class="hljs-attr">x2</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">y2</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"url(#Gradient8)"</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"25"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"25"</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"url(#Gradient7)"</span> <span class="hljs-attr">fill-opacity</span>=<span class="hljs-string">"0.8"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">pattern</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">defs</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"url(#Pattern)"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"200"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg03.html?type=27" target="_blank">pattern元素DEMO</a></p>
+<h3 id="svg-中的路径">SVG 中的路径</h3>
+<p> path 可能是SVG中最常见的形状。你可以用 path 元素绘制矩形（直角矩形或者圆角矩形）、圆形、椭圆、折线形、多边形，以及一些其他的形状，例如贝塞尔曲线、2次曲线等曲线。</p>
+<p>路径可以被填充、描边或者用于剪裁其他元素。</p>
+<ul>
+<li>d：一个字符串，包含了一系列路径描述。可以使用不同的指令，移动到一个新的点，然后绘制不同的直线和曲线。</li>
+</ul>
+<p>注意：<strong>指令字母大写表示坐标位置是绝对坐标，指令字母小写表示坐标位置是相对坐标。x、y坐标之间可以用空格或逗号隔开。</strong></p>
+<p>以下用 path 元素，绘制上个 polyline 元素 示例：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_09"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"180px"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: 1px solid #ccc;"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"
+        M10 10
+        L50 50
+        L75 175
+        L175 150
+        L175 50
+        L225 75
+        L225 150
+        L300 150
+      "</span>
+      <span class="hljs-attr">fill</span>=<span class="hljs-string">"none"</span>
+      <span class="hljs-attr">stroke</span>=<span class="hljs-string">"#0aa"</span>
+      <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"2px"</span>
+    /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=9" target="_blank">path元素DEMO</a></p>
+<h4 id="1直线指令">1.直线指令</h4>
+<p>这里有五种不同的直线指令，你可以使用它们来创建路径。</p>
+<ul>
+<li>moveto(M 或 m)：移动到新的位置</li>
+<li>lineto(L 或 l)：从当前坐标画一条直线到一个新坐标</li>
+<li>horizontal lineto(H 或 h)：画一条水平线到新坐标。只带一个参数，标明在 x 轴移动到的位置</li>
+<li>vertical lineto(V 或 v)：画一条垂直线到新坐标。只带一个参数，标明在 y 轴移动到的位置</li>
+<li>closepath(Z 或 z)：关闭当前路径。它是最简单的命令，而且不带有任何参数。Z 或 z，两种写法作用都一样</li>
+</ul>
+<p><strong>注意：</strong>指令的参数用空格或逗号隔开，多个指令之间不需要隔开。</p>
+<pre><code class="lang-html">d="M10 10L50 50L75 175L175 150L175 50L225 75L225 150L300 150"
+d="M10,10 L50,50 L75,175 L175,150 L175,50 L225,75 L225,150 L300,150"
+</code></pre>
+<p><strong>注意：</strong>实际应用中使用指令字母即可。<strong>指令字母大写表示坐标位置是绝对位置，指令字母小写表示坐标位置时相对位置。</strong></p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905161857928.png" alt="image-20200905161857928" style="zoom:67%;"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_10"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300px"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: 1px solid #ccc;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"none"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M 0 300 l 150 -300"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"red"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M 150 0 l 150 300"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"red"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M 50 200 h 200"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"#0aa"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M 0 300 q 150 -300 300 0 z"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"orange"</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"3px"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg01.html?type=10" target="_blank">直线指令DEMO</a></p>
+<h4 id="2曲线指令">2.曲线指令</h4>
+<p>绘制平滑曲线的命令有三个，其中两个用来绘制贝塞尔曲线，另外一个用来绘制弧形或者说是圆的一部分：</p>
+<ul>
+<li><p>Curveto: 三次贝塞尔曲线指令 (C, c, S, s)，需要一个初始点的控制点和一个结束点的控制点，还有一个结束点。</p>
+<pre><code class="lang-shell">C (or c) x1,y1 x2,y2 x,y
+S (or c) x2,y2 x,y
+</code></pre>
+<ul>
+<li>x1、y1 是曲线起点的控制点坐标</li>
+<li>x2、y2 是曲线终点的控制点坐标</li>
+<li>x、y  是曲线的终点坐标。（曲线的起点是上一条指令的终点）</li>
+</ul>
+</li>
+<li><p>Curveto：二次贝塞尔曲线指令 (Q, q, T, t)，只需要一个控制点，同时作为起点控制点和终点控制点。</p>
+<pre><code class="lang-shell">Q (or q) x1,y1 x,y
+T (or t) x1,y1 x,y
+</code></pre>
+<ul>
+<li>x1、y1 是曲线起点和终点的控制点坐标</li>
+<li>x、y 是曲线的终点坐标</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_11"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"150px"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: 1px solid #ccc;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M0 30 C 100 30 150 150 300 30"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"none"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"#0aa"</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"3px"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M0 100 Q 150 180 300 100"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"none"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"orange"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=11" target="_blank">曲线指令DEMO</a></p>
+</li>
+</ul>
+<blockquote>
+<p>为了连缀平滑的贝塞尔曲线，还可以使用 T 和 S 命令。它们的语法比别的 Curveto 命令简单。因为它假定第一个控制点是前一个控制点关于前一个点的反射（即，关于前一个点对称），或者说如果没有前一个控制点的话它实际上就是前一个点。</p>
+</blockquote>
+<ul>
+<li><p>Arcto：椭圆弧线 (A, a)，用于绘制一段椭圆片段。若 rx 和 ry 的值相同，则绘制出圆。</p>
+<pre><code class="lang-shell">A (or a) rx ry  xAxisRotate  large-arc-flag  sweep-flag  x y
+</code></pre>
+<ul>
+<li>rx、ry：弧线在 x 轴、y 轴方向的半径</li>
+<li>xAxisRotate：与 x 轴夹角的度数</li>
+<li>large-arc-flag：0 或 1，用来确定是要画小弧（0）还是画大弧（1）</li>
+<li>sweep-flag：0 或 1，用来确定弧是顺时针方向（1）还是逆时针方向（0）</li>
+<li>x、y：弧线的终点</li>
+</ul>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905170936292.png" alt="image-20200905170936292" style="zoom:67%;"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_12"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"600"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: 1px solid #eee;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M250,100 A120,80 0 0 0 250,200"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"none"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"red"</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"5"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M250,100 A120,80 0 1 1 250,200"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"none"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"#0aa"</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"3"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M250,100 A120,80 0 1 0 250,200"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"none"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"orange"</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"1"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M250,100 A120,80 0 0 1 250,200"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"none"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"#a0a"</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"3"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=12" target="_blank">椭圆弧线指令DEMO</a></p>
+</li>
+</ul>
+<h3 id="svg-中的其他元素">SVG 中的其他元素</h3>
+<h4 id="svg-中的标记（marker）">SVG 中的标记（Marker）</h4>
+<p>marker 元素定义了在特定的 path、line、polyline、polygon 元素上绘制的箭头或者多边标记图形。</p>
+<ul>
+<li>markerUnits：</li>
+<li>refX、refY：定义元素参考点的x、y坐标</li>
+<li>markerWidth、markerHeight：定义 marker元素的宽度、高度。</li>
+<li>orient：指示将标记放置在形状上的位置时如何旋转标记。</li>
+</ul>
+<blockquote>
+<p>marker-start、marker-mid、marker-end 这三个 CSS 属性会将标记分别放置在路径的开始、中间和结束位置。</p>
+<p>可以设置markerUnits=”strokeWidth” 使得标记进行缩放来适应路径描边的大小</p>
+</blockquote>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905174739391.png" alt="image-20200905174739391"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_13"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: 1px solid #eee;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">defs</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">marker</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"markerCircle"</span> <span class="hljs-attr">markerWidth</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">markerHeight</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">refX</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">refY</span>=<span class="hljs-string">"5"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"3"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"stroke: none; fill: orange;"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">marker</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">marker</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"markerCircle2"</span> <span class="hljs-attr">markerWidth</span>=<span class="hljs-string">"8"</span> <span class="hljs-attr">markerHeight</span>=<span class="hljs-string">"8"</span> <span class="hljs-attr">refX</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">refY</span>=<span class="hljs-string">"5"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"stroke: none; fill: red;"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">marker</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">marker</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"markerArrow"</span> <span class="hljs-attr">markerWidth</span>=<span class="hljs-string">"13"</span> <span class="hljs-attr">markerHeight</span>=<span class="hljs-string">"13"</span> <span class="hljs-attr">refX</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">refY</span>=<span class="hljs-string">"6"</span> <span class="hljs-attr">orient</span>=<span class="hljs-string">"auto"</span>
+                    <span class="hljs-attr">markerUnits</span>=<span class="hljs-string">"strokeWidth"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M2,2 L2,11 L10,6 L2,2"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"fill: orange;"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">marker</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">defs</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M75 25 h150 v100 l -100 -50"</span>
+              <span class="hljs-attr">style</span>=<span class="hljs-string">"stroke: #0aa; fill: none; marker-start: url(#markerCircle); marker-mid: url(#markerCircle2);  marker-end: url(#markerArrow); "</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=13" target="_blank">标记DEMO</a></p>
+<h4 id="svg-中的clippath">SVG 中的clipPath</h4>
+<p>SVG 剪裁路径是指根据指定的路径或形状来剪裁 SVG 图形。应用了剪裁路径的图形，在剪裁路径内部的图形可以被显示出来，在剪裁路径之外的图形会被隐藏。</p>
+<p>你可以使用任何图形来作为剪裁路径或者被剪裁的对象。可以是文字、圆形、椭圆、多边形或自定义路径。</p>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905180428246.png" alt="image-20200905180428246" style="zoom:67%;"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_14"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 100 100"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 300px; border: 1px solid #eee;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">clipPath</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myClip"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"35"</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"35"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">clipPath</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"heart"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M10 30 A20 20 0 0 1 50 30 A20 20 0 0 1 90 30 Q90 60 50 90 Q10 60 10 30 Z"</span>
+              <span class="hljs-attr">style</span>=<span class="hljs-string">"clip-path: url(#myClip);"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=14" target="_blank">clipPath DEMO</a></p>
+<h4 id="svg-defs元素、symbol元素和use元素">SVG DEFS元素、SYMBOL元素和USE元素</h4>
+<ul>
+<li><p>defs 元素：用于预定义一个元素使其能够在 SVG 图像中重复使用。在 defs 元素中定义的图形元素不会直接呈现。</p>
+</li>
+<li><p>symbol 元素：用于定义可重复使用的符号。</p>
+<p>symbol 能够创建自己的视窗，所以能够应用 viewBox 和 preserveAspectRatio 属性。</p>
+</li>
+<li><p>use 元素：可以在SVG图像中多次重用一个预定义的SVG图形，包括 <code>&lt;g&gt;</code> 元素和<code>&lt;symbol&gt;</code>元素。use 元素可以引入在 defs 元素中定义的图形。</p>
+<p>出于安全原因，一些浏览器可能在use元素上应用同源策略，还有可能拒绝载入xlink:href属性内的跨源URI。</p>
+</li>
+</ul>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200905201129540.png" alt="image-20200905201129540" style="zoom:67%;"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_15"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 300 300"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 300px; border: 1px solid #eee;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">defs</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"shape"</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"1"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">line</span> <span class="hljs-attr">x1</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">x2</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">y2</span>=<span class="hljs-string">"300"</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"120"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">defs</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">symbol</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"shape2"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"75"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"75"</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"75"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"fill: orange;"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">symbol</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#shape"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"stroke: #0aa; fill: none;"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#shape2"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"75"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=15" target="_blank">defs-symbol-use DEMO</a></p>
+<h3 id="svg元素的样式属性">SVG元素的样式属性</h3>
+<p>SVG 元素不同于普通的 HTML 元素，具有特殊的一些样式属性。这些属性的声明可以通过SVG元素属性的方式直接声明，也可以通过 CSS样式表中进行声明。</p>
+<p>语法和在 html 里使用 CSS 一样，只不过你要把 <code>background-color</code>、<code>border</code> 改成 <code>fill</code> 和 <code>stroke</code>。</p>
+<p>注意，不是所有的属性都能用 CSS 来设置。上色和填充的部分一般是可以用 CSS 来设置的，比如<code>fill</code>，<code>stroke</code>，<code>stroke-dasharray</code>等，但是不包括下面会提到的渐变和图案等功能。另外，<code>width</code>、<code>height</code>，以及路径的命令等等，都不能用css设置。判断它们能不能用CSS设置还是比较容易的。</p>
+<blockquote>
+<p>SVG 规范将属性区分成 properties 和其他 attributes，前者是可以用CSS设置的，后者不能。</p>
+</blockquote>
+<p>以下是一些 CSS2 规范之中未定义的，SVG 独有的部分样式属性：</p>
+<ul>
+<li>fill：元素的填充颜色</li>
+<li>fill-opacity：元素的填充颜色透明度</li>
+<li>stroke：元素的笔画颜色</li>
+<li>stroke-width：元素的笔画宽度</li>
+<li>stroke-linecap：定义元素顶点样式</li>
+<li>stroke-dasharray：虚线样式虚线长度</li>
+<li>stroke-dashoffset：虚线样式的偏移长度</li>
+<li>stroke-linejoin：定义元素之间的连接点的形状</li>
+<li>stroke-opacity：元素的笔画颜色透明度</li>
+</ul>
+<p>我们可以通过以下方法引用样式属性：</p>
+<ol>
+<li><p>使用属性来添加CSS样式。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"none"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span> /&gt;</span>
+</code></pre>
+</li>
+<li><p>使用 STYLE 属性。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"stroke: none; fill: #0aa;"</span> /&gt;</span>
+</code></pre>
+</li>
+<li><p>使用内联样式表。</p>
+<p>这种使用内联样式表的工作方式和在HTML元素上使用内联样式表是完全相同的。样式可以定义在 svg 元素外，也可以定义在 svg 元素内。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css">
+    <span class="hljs-selector-class">.class_name2</span> { <span class="hljs-attribute">stroke</span>: <span class="hljs-number">#0aa</span>; <span class="hljs-attribute">fill</span>: <span class="hljs-number">#a0a</span>; }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> &gt;</span><span class="language-xml">
+        &lt;![CDATA[
+        circle { stroke: #0aa; fill: orange; }
+        .class_name1 { stroke: #0aa; fill: red; }
+        ]]&gt;
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"25"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"class_name1"</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"120"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"25"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"class_name2"</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"25"</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>使用外部样式表来添加CSS样式。</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;?xml-stylesheet type=<span class="hljs-string">"text/css"</span> href=<span class="hljs-string">"svg-stylesheet.css"</span> ?&gt;</span>
+</code></pre>
+</li>
+</ol>
+<h3 id="svg-中的渐变效果">SVG 中的渐变效果</h3>
+<p>SVG 可以创建和并在填充和描边上应用渐变色。</p>
+<p>有两种类型的渐变：线性渐变和径向渐变。你必须给渐变内容指定一个id属性，否则文档内的其他元素就不能引用它。为了让渐变能被重复使用，渐变内容需要定义在 defs 标签内部，而不是定义在形状上面。</p>
+<h4 id="线性渐变">线性渐变</h4>
+<p>线性渐变沿着直线改变颜色，要插入一个线性渐变，你需要在 SVG 文件的 defs 元素内部，创建一个 linearGradient 元素。</p>
+<ul>
+<li>gradientUnits：定义用于在渐变元素上指定的属性的坐标系。取值：<code>userSpaceOnUse</code> 、<code>objectBoundingBox</code>，默认值为<code>objectBoundingBox</code>。<code>objectBoundingBox</code>  用百分比表示相对于当前SVG视口的值。<code>userSpaceOnUse</code> 使用绝对单元。</li>
+<li>gradientTransform：定义从渐变坐标系到目标坐标系的转换。</li>
+<li>x1、y1、x2、y2：起点的和结束点的坐标。用于定义渐变的方向和范围。</li>
+<li>spreadMethod：确定如何填充超出定义的渐变边的形状。<ul>
+<li>pad（默认值）：该值表示渐变的最终颜色填充了超出渐变边缘的形状。</li>
+<li>reflect：此值表示渐变超过其边缘反向重复。</li>
+<li>repeat：此值指定渐变以原始顺序重复其边缘。</li>
+</ul>
+</li>
+<li>xlink:href：引入其他 linearGradient  元素</li>
+</ul>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200910001740691.png" alt="image-20200910001740691" style="zoom:80%;"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_24"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"500"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">defs</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">linearGradient</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Gradient1"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">stop</span> <span class="hljs-attr">stop-color</span>=<span class="hljs-string">"orange"</span> <span class="hljs-attr">offset</span>=<span class="hljs-string">"0%"</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">stop</span> <span class="hljs-attr">stop-color</span>=<span class="hljs-string">"white"</span> <span class="hljs-attr">stop-opacity</span>=<span class="hljs-string">"0.5"</span> <span class="hljs-attr">offset</span>=<span class="hljs-string">"50%"</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">stop</span> <span class="hljs-attr">stop-color</span>=<span class="hljs-string">"#0aa"</span> <span class="hljs-attr">offset</span>=<span class="hljs-string">"100%"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">linearGradient</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">linearGradient</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Gradient2"</span> <span class="hljs-attr">x1</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">x2</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">y2</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">"http://www.w3.org/1999/xlink"</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#Gradient1"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">linearGradient</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Gradient3"</span> <span class="hljs-attr">x1</span>=<span class="hljs-string">"33%"</span> <span class="hljs-attr">x2</span>=<span class="hljs-string">"67%"</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">"33%"</span> <span class="hljs-attr">y2</span>=<span class="hljs-string">"67%"</span> <span class="hljs-attr">spreadMethod</span>=<span class="hljs-string">"reflect"</span> <span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">"http://www.w3.org/1999/xlink"</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#Gradient1"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">defs</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">rx</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">ry</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"url(#Gradient1)"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"175"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">rx</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">ry</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"url(#Gradient2)"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"350"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">rx</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">ry</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"url(#Gradient3)"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg03.html?type=24" target="_blank">线性渐变DEMO</a></p>
+<p>可以在 stop 元素中定义，<code>stop-color</code> 、<code>stop-opacity</code> 、<code>fill</code> 属性，也可以定义在 css 中：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>&gt;</span><span class="language-xml">&lt;![CDATA[
+    #rect { fill: url(#Gradient1); }
+    .stop { stop-color: black; stop-opacity: 0; }
+    ]]&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<p>linearGradient 元素还需要一些其他的属性值，它们指定了渐变的大小和出现范围。渐变的方向可以通过两个点来控制，它们分别是属性x1、x2、y1和y2，这些属性定义了渐变路线走向。</p>
+<blockquote>
+<p> 可以在渐变上使用 xlink:href 属性，使一个渐变的属性和颜色中值（stop）可以被另一个渐变包含引用。</p>
+</blockquote>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">linearGradient</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Gradient2"</span> <span class="hljs-attr">x1</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">x2</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">y2</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">"http://www.w3.org/1999/xlink"</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#Gradient1"</span>/&gt;</span>
+</code></pre>
+<h4 id="径向渐变">径向渐变</h4>
+<p>径向渐变与线性渐变相似，只是它是从一个点开始发散绘制渐变。创建径向渐变需要在文档的 defs 中添加一个 radialGradient 元素。</p>
+<ul>
+<li>cx、cy：中心点的 x、y 轴坐标。</li>
+<li>r：定义圆的半径</li>
+<li>fx、fy：定义径向渐变的焦点的 x、y 轴坐标。如果该属性没有被定义，就假定它与中心点是同一位置。</li>
+<li>fr：定义径向渐变的焦点的半径。若该属性没有被定义，默认值为 0%。</li>
+</ul>
+<p><img src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/md_images/image-20200910003119521.png" alt="image-20200910003119521" style="zoom:80%;"></img></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_25"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"500"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">defs</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">radialGradient</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Gradient4"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">stop</span> <span class="hljs-attr">stop-color</span>=<span class="hljs-string">"orange"</span> <span class="hljs-attr">offset</span>=<span class="hljs-string">"0%"</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">stop</span> <span class="hljs-attr">stop-color</span>=<span class="hljs-string">"white"</span> <span class="hljs-attr">stop-opacity</span>=<span class="hljs-string">"0.5"</span> <span class="hljs-attr">offset</span>=<span class="hljs-string">"50%"</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">stop</span> <span class="hljs-attr">stop-color</span>=<span class="hljs-string">"#0aa"</span> <span class="hljs-attr">offset</span>=<span class="hljs-string">"100%"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">radialGradient</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">radialGradient</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Gradient5"</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"0.5"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">"http://www.w3.org/1999/xlink"</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#Gradient4"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">radialGradient</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Gradient6"</span> <span class="hljs-attr">fx</span>=<span class="hljs-string">"0.5"</span> <span class="hljs-attr">fy</span>=<span class="hljs-string">"0.35"</span> <span class="hljs-attr">fr</span>=<span class="hljs-string">"0.25"</span> <span class="hljs-attr">spreadMethod</span>=<span class="hljs-string">"reflect"</span> <span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">"http://www.w3.org/1999/xlink"</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#Gradient4"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">defs</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">rx</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">ry</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"url(#Gradient4)"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"175"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">rx</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">ry</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"url(#Gradient5)"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"350"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">rx</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">ry</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"url(#Gradient6)"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg03.html?type=25" target="_blank">径向渐变DEMO</a></p>
+<h3 id="svg-中的smil动画">SVG 中的SMIL动画</h3>
+<p>SMIL 是 Synchronized Multimedia Integration Language（同步多媒体集成语言）的首字母缩写简称。SMIL 开发组和 SVG 开发组合作开发了 SMIL 动画规范，在规范中制定了一个基本的 XML 动画特征集合。SVG 吸收了 SMIL 动画规范当中的动画优点，并提供了一些 SVG 继承实现。</p>
+<p>SMIL允许你做下面这些事情：</p>
+<ul>
+<li>动画元素的数值属性（X, Y, …）</li>
+<li>动画属性变换（平移或旋转）</li>
+<li>动画颜色属性</li>
+<li>沿着运动路径运动</li>
+</ul>
+<p>不论使用 4 个动画元素中的哪一个，你都需要为它指定一个动画目标。可以使用 xlink:href 属性来指定动画目标。这个属性指向将要执行动画的元素。这个元素必须在当前的 SVG 文档中。动画元素也可以嵌套在 SVG 元素中。如果没有为动画元素指定 xlink:href 属性，那么动画的目标元素就是当前动画元素的直接父元素。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"cool_shape"</span> <span class="hljs-attr">...</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">animate</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#cool_shape"</span> <span class="hljs-attr">...</span> /&gt;</span>
+</code></pre>
+<h4 id="svg-五大动画元素">SVG 五大动画元素</h4>
+<h5 id="set元素">set元素</h5>
+<p>此元素没有动画效果。可以实现基本的延迟功能。即，可以在特定时间之后修改某个属性值（也可以是 CSS 属性值）</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_18"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"320"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"320"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">g</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">font-family</span>=<span class="hljs-string">"microsoft yahei"</span> <span class="hljs-attr">font-size</span>=<span class="hljs-string">"80"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"160"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"160"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span>&gt;</span>
+                SVG
+                <span class="hljs-tag">&lt;<span class="hljs-name">set</span> <span class="hljs-attr">attributeName</span>=<span class="hljs-string">"x"</span> <span class="hljs-attr">attributeType</span>=<span class="hljs-string">"XML"</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"60"</span> <span class="hljs-attr">begin</span>=<span class="hljs-string">"2s"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=18" target="_blank">set元素DEMO</a></p>
+<h5 id="animate元素">animate元素</h5>
+<p>基础动画元素。实现单属性的动画过渡效果。类似于 CSS3 中的 transition 属性</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_19"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"320"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"320"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">g</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">font-family</span>=<span class="hljs-string">"microsoft yahei"</span> <span class="hljs-attr">font-size</span>=<span class="hljs-string">"80"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"160"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"160"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span>&gt;</span>
+                SVG
+                <span class="hljs-tag">&lt;<span class="hljs-name">animate</span> <span class="hljs-attr">attributeName</span>=<span class="hljs-string">"x"</span> <span class="hljs-attr">from</span>=<span class="hljs-string">"160"</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"60"</span> <span class="hljs-attr">begin</span>=<span class="hljs-string">"0s"</span> <span class="hljs-attr">dur</span>=<span class="hljs-string">"3s"</span> <span class="hljs-attr">repeatCount</span>=<span class="hljs-string">"indefinite"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=19" target="_blank">animate元素DEMO</a></p>
+<h5 id="animatetransform">animateTransform</h5>
+<p>实现 transform 变换动画效果的。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_20"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"640"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"640"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">g</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">font-family</span>=<span class="hljs-string">"microsoft yahei"</span> <span class="hljs-attr">font-size</span>=<span class="hljs-string">"80"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"160"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"160"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span>&gt;</span>
+                SVG
+                <span class="hljs-tag">&lt;<span class="hljs-name">animateTransform</span> <span class="hljs-attr">attributeName</span>=<span class="hljs-string">"transform"</span> <span class="hljs-attr">begin</span>=<span class="hljs-string">"0s"</span> <span class="hljs-attr">dur</span>=<span class="hljs-string">"3s"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">from</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"1.5"</span> <span class="hljs-attr">repeatCount</span>=<span class="hljs-string">"indefinite"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg02.html?type=20" target="_blank">animateTransform元素DEMO</a></p>
+<h5 id="animatemotion元素">animateMotion元素</h5>
+<p>可以让 SVG 图形沿着特定的 path 路径运动。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box_21"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"360"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"200"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">font-family</span>=<span class="hljs-string">"microsoft yahei"</span> <span class="hljs-attr">font-size</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span>&gt;</span>SVG
+            <span class="hljs-tag">&lt;<span class="hljs-name">animateMotion</span> <span class="hljs-attr">path</span>=<span class="hljs-string">"M10,80 q100,120 120,20 q140,-50 160,0"</span> <span class="hljs-attr">begin</span>=<span class="hljs-string">"0s"</span> <span class="hljs-attr">dur</span>=<span class="hljs-string">"3s"</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">"auto"</span>
+                           <span class="hljs-attr">repeatCount</span>=<span class="hljs-string">"indefinite"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M10,80 q100,120 120,20 q80,-80 160,0"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"#0aa"</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"none"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/21-svg03.html?type=21" target="_blank">animateMotion元素DEMO</a></p>
+<h4 id="与使用-css-动画的区别">与使用 CSS 动画的区别</h4>
+<p>SVG 元素可以像 HTML 元素一样，使用 CSS keyframes 和 animation 属性或者 CSS transitions 来制作各种动画效果。大多数情况下，一个复杂的动画效果需要组合多种变换效果：旋转、倾斜、缩放以及他们的转换和过渡效果。</p>
+<p>多数情况下，SVG元素和HTML元素在使用 transform 和 transform-origin上是相同的。但它们之间也有不同之处:</p>
+<ul>
+<li>SVG 元素不能使用 box model 来管理，因此，它没有margin、padding、border或content boxes。</li>
+<li>默认情况下，一个 HTML 元素的 transform 原点位于该元素的 (50%, 50%) 的地方，这里是元素的中心点。与之不同，SVG 元素的 transform 原点位于当前用户坐标系统的原点上，这个点是画布的左上角位置</li>
+</ul>
+<h3 id="svg-动画的参数详解">SVG 动画的参数详解</h3>
+<h5 id="attributename属性">attributeName属性</h5>
+<p>动画属性的名称</p>
+<ul>
+<li>可以是元素直接暴露的属性，例如，对于本文反复出现的「马」对应的text元素上的 x,  y或者 font-size;</li>
+<li>可以是CSS属性。例如，透明度 opacity。</li>
+</ul>
+<h5 id="attributetype属性">attributeType属性</h5>
+<p>动画属性的可选值：CSS | XML | auto。</p>
+<p>attributeType 支持三个固定参数，CSS、XML、auto。用来表明 attributeName 属性值的列表。x、y 以及 transform 就属于 XML, opacity就属于 CSS。 auto 为默认值，自动判别的意思。</p>
+<h5 id="from-to-by-values">from, to, by, values</h5>
+<p>类似于CSS3中的关键帧定义。</p>
+<ul>
+<li>from：动画的起始值,缺省默认值</li>
+<li>to：指定动画的结束值</li>
+<li>by：动画的相对变化值</li>
+<li>values：用<strong>分号</strong>分隔的一个或多个值，可以看出是动画的多个关键值点</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"320"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"320"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">g</span>&gt;</span> 
+        <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">font-family</span>=<span class="hljs-string">"microsoft yahei"</span> <span class="hljs-attr">font-size</span>=<span class="hljs-string">"80"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"160"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"160"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#0aa"</span>&gt;</span>
+            SVG
+            <span class="hljs-tag">&lt;<span class="hljs-name">animate</span> <span class="hljs-attr">attributeName</span>=<span class="hljs-string">"x"</span> <span class="hljs-attr">from</span>=<span class="hljs-string">"160"</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"60"</span> <span class="hljs-attr">begin</span>=<span class="hljs-string">"0s"</span> <span class="hljs-attr">dur</span>=<span class="hljs-string">"3s"</span> <span class="hljs-attr">repeatCount</span>=<span class="hljs-string">"indefinite"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+</code></pre>
+<h5 id="begin-end">begin, end</h5>
+<p>可选值包括：</p>
+<ul>
+<li><p>time-value：表示具体的时间值。常见单位有 h | min | s | ms，默认单位为 s 。时间值还支持  <code>hh:mm:ss</code>  这种写法，因此，<code>90s</code> 我们也可以使用 <code>01:30</code> 表示。</p>
+</li>
+<li><p>offset-value：表示偏移值，数值前面有  <code>+</code> 或 <code>-</code>。 应该指相对于  <code>document</code>  的  <code>begin</code> 值而言。</p>
+</li>
+<li><p>syncbase-value：基于同步确定的值。语法为：<code>[元素的id].begin/end +/-</code> 时间值。 就是说借用其他元素的 begin 值再加加减减，这个可以准确实现两个独立元素的动画级联效果。</p>
+</li>
+<li>event-value：这个表示与事件相关联的值。类似于 PowerPoint 动画的“点击执行该动画”。语法是： <code>[元素的id].[事件类型] +/- 时间值</code>。</li>
+<li>repeat-value：指某动画重复多少次结束之后开始执行动画。语法为： <code>[元素的id].repeat(整数) +/-</code> 时间值。</li>
+<li>accessKey-value：定义快捷键。即按下某个按键动画开始。语法为：accessKey(character)。 character 表示快捷键所在的字符。</li>
+<li>wallclock-sync-value：指真实世界的时钟时间定义。时间语法是基于在 ISO8601 中定义的语法。</li>
+<li>indefinite：表示“无限等待”。需要 <code>beginElement()</code> 方法触发或者指向该动画元素的超链接(SVG中的a元素)。</li>
+</ul>
+<h5 id="dur">dur</h5>
+<p>该属性标识了动画的简单持续时间。常规时间值：clock-value | indefinite。</p>
+<p>指定简单持续时间的时长。值必须大于0。可以用小时（h）、分钟（m）、秒（s）、毫秒（ms）表达这个值。可以组合这些时间表达式以提供一个复合的持续时间，比如这样：<code>hh:mm:ss.iii</code> 或者这样：<code>mm:ss.iii</code>。</p>
+<p>如果一个动画元素不带有 dur 属性，简单持续时间就是无限期的。</p>
+<h5 id="calcmode、keytimes、-keysplines">calcMode、keyTimes、 keySplines</h5>
+<p> calcMode 属性支持4个值：<code>discrete | linear | paced | spline</code>。</p>
+<ul>
+<li>discrete: from 值直接跳到 to 值。类似于step(1, end)。</li>
+<li>linear: animateMotion元素以外元素的calcMode默认值。动画从头到尾的速率都是一致的。</li>
+<li>paced: 通过插值让动画的变化步调平稳均匀。仅支持线性数值区域内的属性，这样点之间“距离”的概念才能被计算（如 position, width, height等）。如果<code>paced</code>指定，任何 <code>keyTimes</code> 或 <code>keySplines</code>值将会失效。</li>
+<li>spline: 插值定义贝塞尔曲线。spline点的定义在keyTimes属性中，每个时间间隔控制点由keySplines定义。</li>
+</ul>
+<p><strong>keyTimes：</strong> 是关键时间点的意思。一个以分号分隔的时间值列表，用于控制动画的执行步骤。列表中的每个值与 values 中的值一一对应，定义了 values 中的值在动画中何时执行，keyTimes 列表中的每一个值都是指定在[0-1]之间的浮点数，表示动画的完成时间。</p>
+<p>前面提到过 values 也是多值，这里有一些约定的规则：首先，keyTimes 值的数目要和 values 一致，如果是 from/to/by 动画，keyTimes 就必须有两个值。然后对于 linear 和 spline 动画，第一个数字要是0, 最后一个是1。</p>
+<p>最后，每个连续的时间值必须比它前面的值大或者相等。</p>
+<h5 id="repeatcount-repeatdur">repeatCount, repeatDur</h5>
+<p>repeatCount 表示动画执行次数，可以是合法数值或者 indefinite （动画循环到电脑死机）。</p>
+<p>repeatDur 定义重复动画的总时间。可以是普通时间值或者 indefinite（动画循环到电脑死机）。</p>
+<h5 id="fill">fill</h5>
+<p>表示动画间隙的填充方式。支持参数有：freeze | remove。其中remove是默认值，表示动画结束直接回到开始的地方。freeze 表示动画结束后像是被冻住了，元素保持了动画结束之后的状态。</p>
+<h5 id="accumulate-additive">accumulate, additive</h5>
+<p>accumulate 是累积的意思。支持参数有：none | sum。 默认值是 none 。如果值是 sum 表示动画结束时候的位置作为下次动画的起始位置。</p>
+<p>additive 控制动画是否附加。支持参数有：replace | sum. 默认值是 replace 。如果值是 sum 表示动画的基础知识会附加到其他低优先级的动画上，</p>
+<h5 id="restart">restart</h5>
+<p>restart控制重新开启动画的规则。支持的参数有：always | whenNotActive | never.</p>
+<ul>
+<li>always 是默认值，表示总是，也就是点一次圈圈，马儿跑一下。</li>
+<li>whenNotActive 表示动画正在进行的时候，是不能重启动画的。</li>
+<li>never 表示动画是一波流。</li>
+</ul>
+<h3 id="svg-与-javascript">SVG 与 Javascript</h3>
+<p>当 SVG 嵌入到 HTML 页面的时候，你可以使用 Javascript 来操作 SVG 元素，就像操作其他 HTML 元素一样。</p>
+<ul>
+<li>通过 ID 或 class 获取 SVG 元素</li>
+<li>可以读取/修改 SVG 元素的属性值</li>
+<li>可以读取/修改 SVG 元素的 css 属性值</li>
+<li><p>可以给 SVG 元素及其子元素添加事件监听</p>
+</li>
+<li><p>动画的暂停与播放</p>
+<pre><code class="lang-js"><span class="hljs-comment">// svg指当前svg DOM元素</span>
+svg.<span class="hljs-title function_">pauseAnimations</span>(); <span class="hljs-comment">// 暂停</span>
+svg.<span class="hljs-title function_">unpauseAnimations</span>(); <span class="hljs-comment">// 重启动</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="相关链接"><strong>相关链接</strong></h3>
+<p><a href="http://genie88.github.io/2015/10/23/mobile-html5-page-development-skills-part5/" target="_blank">SVG元素在移动H5页面动画的应用</a></p>
+<p><a href="https://juejin.im/entry/5907dd4cda2f60005d0fd6c3" target="_blank">SVG 动画精髓</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/SVG" target="_blank">MDN SVG</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial" target="_blank">MDN SVG教程</a> </p>
+<p></p><footer class="page-footer"><span class="copyright">© lizhao all right reserved，powered by Gitbook</span><span class="footer-modification">文件修订时间：
+2021-10-15 23:14:36
+</span></footer><p></p>
+<div id="gitalk-container"></div> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"></link> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="05-Canvas进阶篇.html" class="navigation navigation-prev " aria-label="Previous page: Canvas进阶篇">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="06-四种判断数据类型方法的优缺点.html" class="navigation navigation-next " aria-label="Next page: 四种判断数据类型方法的优缺点">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"SVG基础入门篇","level":"6.34","depth":1,"next":{"title":"四种判断数据类型方法的优缺点","level":"6.35","depth":1,"path":"javascript系列/06-四种判断数据类型方法的优缺点.md","ref":"javascript系列/06-四种判断数据类型方法的优缺点.md","articles":[]},"previous":{"title":"Canvas进阶篇","level":"6.33","depth":1,"path":"javascript系列/05-Canvas进阶篇.md","ref":"javascript系列/05-Canvas进阶篇.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","summary","sandpack","theme-default","theme-comscore","tbfed-pagefooter","pageview-count","accordion","sharing-plus","back-to-top-button","chapter-fold","klipse","mygitalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"summary":{"exclude":["docs/**"]},"search-pro":{"maxSearchIndexSize":10000000},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"mygitalk":{"flipMoveOptions":{},"clientID":"35175582adb321d85634","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["lizh"],"createIssueManually":false,"distractionFreeMode":false,"repo":"https://github.com/1927344728/fed-knowledge","owner":"lizh","enableHotKey":true,"clientSecret":"2e60c4d61474ec23e752f127e838aa2039e0433e","pagerDirection":"last","labels":["Gitalk"]},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":true,"qzone":true},"sandpack":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"lizhao","honkit":"^6.0.2","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术驿站•LIZHAO","language":"zh","gitbook":"*","description":"这是开发者的技术文档"},"file":{"path":"javascript系列/06-SVG基础入门篇.md","mtime":"2021-10-15T15:14:36.246Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2026-06-29T12:14:32.945Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-sandpack/honkit-plugin-sandpack.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

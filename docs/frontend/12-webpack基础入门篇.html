@@ -1,0 +1,4471 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Webpack基础入门篇 · 技术驿站•LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 6.0.2">
+        <meta name="author" content="lizhao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="12-webpack构建优化篇.html" />
+    
+    
+    <link rel="prev" href="12-webpack4.x原理篇.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/00-前端调试随笔.html">
+            
+                <a href="../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/05-JS常见问题概览.html">
+            
+                <a href="../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/07-微信小程序开发.html">
+            
+                <a href="../bugs/07-微信小程序开发.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    微信小程序开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bugs/08-NodeJs常见问题概览.html">
+            
+                <a href="../bugs/08-NodeJs常见问题概览.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    NodeJs常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../bugs/09-Mac常见问题概览.html">
+            
+                <a href="../bugs/09-Mac常见问题概览.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Mac常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../bugs/10-微信环境前端开发指南.html">
+            
+                <a href="../bugs/10-微信环境前端开发指南.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    微信环境前端开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../bugs/99-其他问题汇总.html">
+            
+                <a href="../bugs/99-其他问题汇总.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    其他问题汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../css系列/00-CSS基础知识.html">
+            
+                <a href="../css系列/00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../css系列/00-CSS常见问答.html">
+            
+                <a href="../css系列/00-CSS常见问答.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../css系列/00-CSS常见问答02.html">
+            
+                <a href="../css系列/00-CSS常见问答02.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    CSS常见问答02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../css系列/00-CSS应用示例.html">
+            
+                <a href="../css系列/00-CSS应用示例.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    CSS应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../css系列/00-CSS应用示例02.html">
+            
+                <a href="../css系列/00-CSS应用示例02.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS应用示例02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../css系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../css系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../css系列/04-CSS探索系列-margin.html">
+            
+                <a href="../css系列/04-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                <a href="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    CSS探索系列 Auto关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../css系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../css系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../css系列/05-CSS探索系列-line-height.html">
+            
+                <a href="../css系列/05-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../css系列/05-CSS探索系列-元素居中.html">
+            
+                <a href="../css系列/05-CSS探索系列-元素居中.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    CSS探索系列 元素居中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../css系列/05-CSS探索系列-动画.html">
+            
+                <a href="../css系列/05-CSS探索系列-动画.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    CSS探索系列 动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../css系列/08-重新认识伪类与伪元素.html">
+            
+                <a href="../css系列/08-重新认识伪类与伪元素.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    重新认识伪类与伪元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../css系列/09-自定义表单伪元素样式.html">
+            
+                <a href="../css系列/09-自定义表单伪元素样式.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    自定义表单伪元素样式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../css系列/10-如何理解css中的display属性.html">
+            
+                <a href="../css系列/10-如何理解css中的display属性.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    如何理解Css中的Display属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                <a href="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                <a href="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    一文彻底弄懂CSS中的长度单位
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                <a href="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                    
+                        <b>2.21.</b>
+                    
+                    CSS中一些有特性的属性或属性值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../css系列/14-Web中如何实现长宽比.html">
+            
+                <a href="../css系列/14-Web中如何实现长宽比.html">
+            
+                    
+                        <b>2.22.</b>
+                    
+                    Web中如何实现长宽比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../css系列/15-@规则：@font-face.html">
+            
+                <a href="../css系列/15-@规则：@font-face.html">
+            
+                    
+                        <b>2.23.</b>
+                    
+                    @规则：@Font Face
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                <a href="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                    
+                        <b>2.24.</b>
+                    
+                    @规则：@Media（媒体查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../css系列/15-@规则：其他.html">
+            
+                <a href="../css系列/15-@规则：其他.html">
+            
+                    
+                        <b>2.25.</b>
+                    
+                    @规则：其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../css系列/_关于css.html">
+            
+                <a href="../css系列/_关于css.html">
+            
+                    
+                        <b>2.26.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="00-00-关于Web前端.html">
+            
+                <a href="00-00-关于Web前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    00 关于Web前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="00-01-前端知识概览.html">
+            
+                <a href="00-01-前端知识概览.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    01 前端知识概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="00-02-常用前端库概览.html">
+            
+                <a href="00-02-常用前端库概览.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    02 常用前端库概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="01-基础-00-前端常见问题01.html">
+            
+                <a href="01-基础-00-前端常见问题01.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    基础 00 前端常见问题01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="01-基础-01-浏览器缓存.html">
+            
+                <a href="01-基础-01-浏览器缓存.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    基础 01 浏览器缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="01-基础-02-浏览器工作原理.html">
+            
+                <a href="01-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                <a href="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    基础 03 谈谈前端跨域问题及解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="02-进阶-01-Web性能优化.html">
+            
+                <a href="02-进阶-01-Web性能优化.html">
+            
+                    
+                        <b>4.8.</b>
+                    
+                    进阶 01 Web性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                <a href="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                    
+                        <b>4.9.</b>
+                    
+                    进阶 02 搜索引擎优化（SEO）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                <a href="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                    
+                        <b>4.10.</b>
+                    
+                    进阶 03 前端模块化编程：CommonJS、AMD、CMD、UMD、ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                <a href="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                    
+                        <b>4.11.</b>
+                    
+                    进阶 04 规范代码：Linter、Prettier、EditorConfig
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="02-进阶-05-Web离线应用.html">
+            
+                <a href="02-进阶-05-Web离线应用.html">
+            
+                    
+                        <b>4.12.</b>
+                    
+                    进阶 05 Web离线应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="02-进阶-06-WebSocket.html">
+            
+                <a href="02-进阶-06-WebSocket.html">
+            
+                    
+                        <b>4.13.</b>
+                    
+                    进阶 06 WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="02-进阶-07-Web跨页面通信.html">
+            
+                <a href="02-进阶-07-Web跨页面通信.html">
+            
+                    
+                        <b>4.14.</b>
+                    
+                    进阶 07 Web跨页面通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="02-进阶-08-页面可见性和生命周期.html">
+            
+                <a href="02-进阶-08-页面可见性和生命周期.html">
+            
+                    
+                        <b>4.15.</b>
+                    
+                    进阶 08 页面可见性和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                <a href="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                    
+                        <b>4.16.</b>
+                    
+                    进阶 09 事件循环、宏任务、微任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="02-进阶-10-内存泄漏.html">
+            
+                <a href="02-进阶-10-内存泄漏.html">
+            
+                    
+                        <b>4.17.</b>
+                    
+                    进阶 10 内存泄漏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="02-进阶-11-前端自动化测试.html">
+            
+                <a href="02-进阶-11-前端自动化测试.html">
+            
+                    
+                        <b>4.18.</b>
+                    
+                    进阶 11 前端自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                <a href="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                    
+                        <b>4.19.</b>
+                    
+                    进阶 12 前端也玩多线程？WebWorker其实很简单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="03-高级-01-前端安全深度解析.html">
+            
+                <a href="03-高级-01-前端安全深度解析.html">
+            
+                    
+                        <b>4.20.</b>
+                    
+                    高级 01 前端安全深度解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.21" data-path="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                <a href="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                    
+                        <b>4.21.</b>
+                    
+                    高级 02 CI、CD（Docker+Jenkins+Nginx）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.22" data-path="04-Vue2.x原理篇.html">
+            
+                <a href="04-Vue2.x原理篇.html">
+            
+                    
+                        <b>4.22.</b>
+                    
+                    Vue2.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.23" data-path="04-Vue3初步了解及迁移指南.html">
+            
+                <a href="04-Vue3初步了解及迁移指南.html">
+            
+                    
+                        <b>4.23.</b>
+                    
+                    Vue3初步了解及迁移指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.24" data-path="04-重读Vue教程.html">
+            
+                <a href="04-重读Vue教程.html">
+            
+                    
+                        <b>4.24.</b>
+                    
+                    重读Vue教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.25" data-path="05-React17.x原理篇.html">
+            
+                <a href="05-React17.x原理篇.html">
+            
+                    
+                        <b>4.25.</b>
+                    
+                    React17.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.26" data-path="05-你必须知道的React问题.html">
+            
+                <a href="05-你必须知道的React问题.html">
+            
+                    
+                        <b>4.26.</b>
+                    
+                    你必须知道的React问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.27" data-path="05-重读React教程.html">
+            
+                <a href="05-重读React教程.html">
+            
+                    
+                        <b>4.27.</b>
+                    
+                    重读React教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.28" data-path="06-聊一聊Cookie的一些问题.html">
+            
+                <a href="06-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.28.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.29" data-path="07-SSL证书简介及其生成、使用.md">
+            
+                <span>
+            
+                    
+                        <b>4.29.</b>
+                    
+                    SSL证书简介及其生成、使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.30" data-path="07-如何启动本地HTTPS服务.html">
+            
+                <a href="07-如何启动本地HTTPS服务.html">
+            
+                    
+                        <b>4.30.</b>
+                    
+                    如何启动本地HTTPS服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.31" data-path="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                <a href="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                    
+                        <b>4.31.</b>
+                    
+                    0.0.0.0、127.0.0.1和Localhost的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.32" data-path="09-如何理解HTTP响应的状态码.html">
+            
+                <a href="09-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.32.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.33" data-path="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                <a href="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                    
+                        <b>4.33.</b>
+                    
+                    字符编码那点事：ASCII、Unicode、GBK、UTF 8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.34" data-path="11-HTTP协议的演变历史.md">
+            
+                <span>
+            
+                    
+                        <b>4.34.</b>
+                    
+                    HTTP协议的演变历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.35" data-path="12-webpack4.x原理篇.html">
+            
+                <a href="12-webpack4.x原理篇.html">
+            
+                    
+                        <b>4.35.</b>
+                    
+                    Webpack4.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.36" data-path="12-webpack基础入门篇.html">
+            
+                <a href="12-webpack基础入门篇.html">
+            
+                    
+                        <b>4.36.</b>
+                    
+                    Webpack基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.37" data-path="12-webpack构建优化篇.html">
+            
+                <a href="12-webpack构建优化篇.html">
+            
+                    
+                        <b>4.37.</b>
+                    
+                    Webpack构建优化篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.38" data-path="13-TypeScript使用指南.html">
+            
+                <a href="13-TypeScript使用指南.html">
+            
+                    
+                        <b>4.38.</b>
+                    
+                    TypeScript使用指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.39" data-path="14-Web中图片的使用.html">
+            
+                <a href="14-Web中图片的使用.html">
+            
+                    
+                        <b>4.39.</b>
+                    
+                    Web中图片的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.40" data-path="15-2026年，还需要微前端吗？——三大框架对比与选型思考.md">
+            
+                <span>
+            
+                    
+                        <b>4.40.</b>
+                    
+                    2026年，还需要微前端吗？——三大框架对比与选型思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.41" data-path="16-Electron基础篇.html">
+            
+                <a href="16-Electron基础篇.html">
+            
+                    
+                        <b>4.41.</b>
+                    
+                    Electron基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.42" data-path="17-uniapp基础篇.html">
+            
+                <a href="17-uniapp基础篇.html">
+            
+                    
+                        <b>4.42.</b>
+                    
+                    Uniapp基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.43" data-path="17-uniapp离线打包（Android）篇.html">
+            
+                <a href="17-uniapp离线打包（Android）篇.html">
+            
+                    
+                        <b>4.43.</b>
+                    
+                    Uniapp离线打包（Android）篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.44" data-path="18-sentry基础篇（vue）.html">
+            
+                <a href="18-sentry基础篇（vue）.html">
+            
+                    
+                        <b>4.44.</b>
+                    
+                    Sentry基础篇（Vue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.45" data-path="19-视口和软键盘对视口的影响.html">
+            
+                <a href="19-视口和软键盘对视口的影响.html">
+            
+                    
+                        <b>4.45.</b>
+                    
+                    视口和软键盘对视口的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.46" data-path="20-WebGL从入门到实践.html">
+            
+                <a href="20-WebGL从入门到实践.html">
+            
+                    
+                        <b>4.46.</b>
+                    
+                    WebGL从入门到实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.47" data-path="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                <a href="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                    
+                        <b>4.47.</b>
+                    
+                    Three.Js基础实战：从画一个立方体开始，掌握3D世界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.48" data-path="22-ReactNative基础篇.html">
+            
+                <a href="22-ReactNative基础篇.html">
+            
+                    
+                        <b>4.48.</b>
+                    
+                    ReactNative基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49" data-path="代码规范/">
+            
+                <a href="代码规范/">
+            
+                    
+                        <b>4.49.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.49.1" data-path="代码规范/00-前端规范.html">
+            
+                <a href="代码规范/00-前端规范.html">
+            
+                    
+                        <b>4.49.1.</b>
+                    
+                    前端规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.2" data-path="代码规范/01-HTML.html">
+            
+                <a href="代码规范/01-HTML.html">
+            
+                    
+                        <b>4.49.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.3" data-path="代码规范/02-CSS.html">
+            
+                <a href="代码规范/02-CSS.html">
+            
+                    
+                        <b>4.49.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.4" data-path="代码规范/03-JS.html">
+            
+                <a href="代码规范/03-JS.html">
+            
+                    
+                        <b>4.49.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../html系列/00-HTML基础知识.html">
+            
+                <a href="../html系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../html系列/00-HTML基础知识02.html">
+            
+                <a href="../html系列/00-HTML基础知识02.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML基础知识02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../html系列/00-HTML常见问答.html">
+            
+                <a href="../html系列/00-HTML常见问答.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    HTML常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../html系列/00-HTML经典实践用例.html">
+            
+                <a href="../html系列/00-HTML经典实践用例.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    HTML经典实践用例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../html系列/03-html探索系列-meta标签.md">
+            
+                <span>
+            
+                    
+                        <b>5.7.</b>
+                    
+                    Html探索系列 Meta标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                <a href="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                    
+                        <b>5.8.</b>
+                    
+                    DOCTYPE：文档类型与浏览器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="../html系列/05-DHTML（动态网页）简介.html">
+            
+                <a href="../html系列/05-DHTML（动态网页）简介.html">
+            
+                    
+                        <b>5.9.</b>
+                    
+                    DHTML（动态网页）简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="../html系列/06-HTML标签详解.md">
+            
+                <span>
+            
+                    
+                        <b>5.10.</b>
+                    
+                    HTML标签详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="../html系列/07-HTML布局的几种方式.html">
+            
+                <a href="../html系列/07-HTML布局的几种方式.html">
+            
+                    
+                        <b>5.11.</b>
+                    
+                    HTML布局的几种方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="../html系列/08-HTML全局属性.html">
+            
+                <a href="../html系列/08-HTML全局属性.html">
+            
+                    
+                        <b>5.12.</b>
+                    
+                    HTML全局属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                <a href="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                    
+                        <b>5.13.</b>
+                    
+                    标记语言演进：从GML到HTML动态标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.14" data-path="../html系列/_关于html.html">
+            
+                <a href="../html系列/_关于html.html">
+            
+                    
+                        <b>5.14.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Javascript系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../javascript系列/00-基础知识.html">
+            
+                <a href="../javascript系列/00-基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../javascript系列/00-常见问答.html">
+            
+                <a href="../javascript系列/00-常见问答.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../javascript系列/00-应用示例.html">
+            
+                <a href="../javascript系列/00-应用示例.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../javascript系列/00-趣味示例.html">
+            
+                <a href="../javascript系列/00-趣味示例.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    趣味示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../javascript系列/00-进阶知识.html">
+            
+                <a href="../javascript系列/00-进阶知识.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    进阶知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    基础篇 01 数据类型之基本类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    基础篇 01 数据类型之引用类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                <a href="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    基础篇 02 类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../javascript系列/01-基础篇-03-运算符.html">
+            
+                <a href="../javascript系列/01-基础篇-03-运算符.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                    基础篇 03 运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                <a href="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    基础篇 04 正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                <a href="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                    
+                        <b>6.11.</b>
+                    
+                    基础篇 05 AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="../javascript系列/01-基础篇-06--window对象.html">
+            
+                <a href="../javascript系列/01-基础篇-06--window对象.html">
+            
+                    
+                        <b>6.12.</b>
+                    
+                    基础篇 06  Window对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                <a href="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                    
+                        <b>6.13.</b>
+                    
+                    基础篇 07 Error、JSON、Math、Console对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                <a href="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                    
+                        <b>6.14.</b>
+                    
+                    基础篇 08 History、URL、Screen、Navigator、Location对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                    
+                        <b>6.15.</b>
+                    
+                    基础篇 09 文档对象模型（DOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                <a href="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                    
+                        <b>6.16.</b>
+                    
+                    基础篇 10 Document对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.17" data-path="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                <a href="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                    
+                        <b>6.17.</b>
+                    
+                    基础篇 11 Element对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.18" data-path="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                <a href="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                    
+                        <b>6.18.</b>
+                    
+                    基础篇 12 Event对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.19" data-path="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                <a href="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                    
+                        <b>6.19.</b>
+                    
+                    基础篇 13 键盘、鼠标、触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.20" data-path="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                <a href="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                    
+                        <b>6.20.</b>
+                    
+                    基础篇 14 MutationObserver对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.21" data-path="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                    
+                        <b>6.21.</b>
+                    
+                    基础篇 15 CSS对象模型（CSSOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.22" data-path="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                <a href="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                    
+                        <b>6.22.</b>
+                    
+                    进阶篇 01 Prototype对象和继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.23" data-path="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                    
+                        <b>6.23.</b>
+                    
+                    进阶篇 02 Promise对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.24" data-path="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                <a href="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                    
+                        <b>6.24.</b>
+                    
+                    进阶篇 03 有特性的一些事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.25" data-path="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                    
+                        <b>6.25.</b>
+                    
+                    进阶篇 04 Proxy对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.26" data-path="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                    
+                        <b>6.26.</b>
+                    
+                    进阶篇 05 Reflect对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.27" data-path="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                <a href="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                    
+                        <b>6.27.</b>
+                    
+                    进阶篇 06 Class（类）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.28" data-path="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                <a href="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                    
+                        <b>6.28.</b>
+                    
+                    进阶篇 07 迭代器（Iterator）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.29" data-path="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                <a href="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                    
+                        <b>6.29.</b>
+                    
+                    进阶篇 08 Generator和Async函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.30" data-path="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                <a href="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                    
+                        <b>6.30.</b>
+                    
+                    进阶篇 09 JavaScript异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.31" data-path="../javascript系列/04-Date对象和日期时间字符串格式.md">
+            
+                <span>
+            
+                    
+                        <b>6.31.</b>
+                    
+                    Date对象和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.32" data-path="../javascript系列/05-Canvas基础入门篇.html">
+            
+                <a href="../javascript系列/05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.32.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.33" data-path="../javascript系列/05-Canvas进阶篇.html">
+            
+                <a href="../javascript系列/05-Canvas进阶篇.html">
+            
+                    
+                        <b>6.33.</b>
+                    
+                    Canvas进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.34" data-path="../javascript系列/06-SVG基础入门篇.html">
+            
+                <a href="../javascript系列/06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.34.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.35" data-path="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.35.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.36" data-path="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.36.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.37" data-path="../javascript系列/08-谈谈JavaScript的作用域和上下文.md">
+            
+                <span>
+            
+                    
+                        <b>6.37.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.38" data-path="../javascript系列/10-复制内容到剪贴板.html">
+            
+                <a href="../javascript系列/10-复制内容到剪贴板.html">
+            
+                    
+                        <b>6.38.</b>
+                    
+                    复制内容到剪贴板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.39" data-path="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                <a href="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                    
+                        <b>6.39.</b>
+                    
+                    44道JavaScript难题，还不来考考？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.40" data-path="../javascript系列/_关于Javascript.html">
+            
+                <a href="../javascript系列/_关于Javascript.html">
+            
+                    
+                        <b>6.40.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java系列</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../java系列/01-00-Java入门篇.html">
+            
+                <a href="../java系列/01-00-Java入门篇.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    00 Java入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../java系列/01-01-Java进阶篇.html">
+            
+                <a href="../java系列/01-01-Java进阶篇.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    01 Java进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../java系列/01-02-Java高级篇.html">
+            
+                <a href="../java系列/01-02-Java高级篇.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    02 Java高级篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../java系列/02-pom.xml详解.html">
+            
+                <a href="../java系列/02-pom.xml详解.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Pom.Xml详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../java系列/03-01-SpringBoot入门篇.html">
+            
+                <a href="../java系列/03-01-SpringBoot入门篇.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    01 SpringBoot入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../java系列/05-轻量应用服务器部署指南（腾讯云）.md">
+            
+                <span>
+            
+                    
+                        <b>7.6.</b>
+                    
+                    轻量应用服务器部署指南（腾讯云）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../java系列/06-keytool命令行工具.md">
+            
+                <span>
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Keytool命令行工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">NodeJs</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../nodeJs/00-0关于Node.js.html">
+            
+                <a href="../nodeJs/00-0关于Node.js.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    0关于Node.Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../nodeJs/00-常见问题.html">
+            
+                <a href="../nodeJs/00-常见问题.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                <a href="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Node.Js：三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                <a href="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                    
+                        <b>8.4.</b>
+                    
+                    Npm包管理器简介及一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                <a href="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                    
+                        <b>8.5.</b>
+                    
+                    NPM：Package.Json详解（中文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                <a href="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                    
+                        <b>8.6.</b>
+                    
+                    NPM：从零开始，开发一个软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="../nodeJs/05-NPM：常用命令.html">
+            
+                <a href="../nodeJs/05-NPM：常用命令.html">
+            
+                    
+                        <b>8.7.</b>
+                    
+                    NPM：常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                <a href="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                    
+                        <b>8.8.</b>
+                    
+                    Node.Js：Fs（文件系统）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                <a href="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                    
+                        <b>8.9.</b>
+                    
+                    Node.Js：Global（全局变量）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="../nodeJs/08-Node.js：HTTP.html">
+            
+                <a href="../nodeJs/08-Node.js：HTTP.html">
+            
+                    
+                        <b>8.10.</b>
+                    
+                    Node.Js：HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="../nodeJs/09-Node.js：module（模块）.html">
+            
+                <a href="../nodeJs/09-Node.js：module（模块）.html">
+            
+                    
+                        <b>8.11.</b>
+                    
+                    Node.Js：Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="../nodeJs/10-Node.js：path（路径）.html">
+            
+                <a href="../nodeJs/10-Node.js：path（路径）.html">
+            
+                    
+                        <b>8.12.</b>
+                    
+                    Node.Js：Path（路径）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                <a href="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                    
+                        <b>8.13.</b>
+                    
+                    Node.Js：Readline（逐行读取）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.14" data-path="../nodeJs/12-锁定项目的Node版本.html">
+            
+                <a href="../nodeJs/12-锁定项目的Node版本.html">
+            
+                    
+                        <b>8.14.</b>
+                    
+                    锁定项目的Node版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../research/02-如何监控前端异常？.html">
+            
+                <a href="../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../research/03-H5页面跳转和刷新.html">
+            
+                <a href="../research/03-H5页面跳转和刷新.html">
+            
+                    
+                        <b>9.3.</b>
+                    
+                    H5页面跳转和刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>9.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>9.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>9.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../research/07-H5可视化编辑.html">
+            
+                <a href="../research/07-H5可视化编辑.html">
+            
+                    
+                        <b>9.7.</b>
+                    
+                    H5可视化编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="../research/08-Web常用功能.html">
+            
+                <a href="../research/08-Web常用功能.html">
+            
+                    
+                        <b>9.8.</b>
+                    
+                    Web常用功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" data-path="../research/10-H5页面生成图片方案总结.html">
+            
+                <a href="../research/10-H5页面生成图片方案总结.html">
+            
+                    
+                        <b>9.9.</b>
+                    
+                    H5页面生成图片方案总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10" data-path="../research/Javascript加密混淆.html">
+            
+                <a href="../research/Javascript加密混淆.html">
+            
+                    
+                        <b>9.10.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.11" data-path="../research/Vue如何导入TypeScript.html">
+            
+                <a href="../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>9.11.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.12" data-path="../research/移动端PDF预览.html">
+            
+                <a href="../research/移动端PDF预览.html">
+            
+                    
+                        <b>9.12.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.13" data-path="../research/纯CSS绘制箭头.html">
+            
+                <a href="../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>9.13.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.14" data-path="../research/网站性能测量和优化方法.html">
+            
+                <a href="../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>9.14.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../tech/00-编程基础知识.html">
+            
+                <a href="../tech/00-编程基础知识.html">
+            
+                    
+                        <b>10.1.</b>
+                    
+                    编程基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="../tech/00-计算机问题概览.html">
+            
+                <a href="../tech/00-计算机问题概览.html">
+            
+                    
+                        <b>10.2.</b>
+                    
+                    计算机问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>10.3.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                <a href="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                    
+                        <b>10.4.</b>
+                    
+                    GOOGLE浏览器的搜索技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="../tech/03-curl的用法指南.html">
+            
+                <a href="../tech/03-curl的用法指南.html">
+            
+                    
+                        <b>10.5.</b>
+                    
+                    Curl的用法指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="../tech/04-sublime3插件篇.html">
+            
+                <a href="../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>10.6.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="../tech/05-Charles安装及使用.html">
+            
+                <a href="../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>10.7.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                <a href="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                    
+                        <b>10.8.</b>
+                    
+                    通过.Gitlab Ci.Yml配置任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="../tech/07-MySQL的基本使用.html">
+            
+                <a href="../tech/07-MySQL的基本使用.html">
+            
+                    
+                        <b>10.9.</b>
+                    
+                    MySQL的基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="../tech/08-看懂什么是环境变量.html">
+            
+                <a href="../tech/08-看懂什么是环境变量.html">
+            
+                    
+                        <b>10.10.</b>
+                    
+                    看懂什么是环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.11" data-path="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                <a href="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                    
+                        <b>10.11.</b>
+                    
+                    为什么0.1+0.2=0.30000000000000004
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.12" data-path="../tech/10-Nginx使用手册：安装、配置、模块扩展与代理详解.md">
+            
+                <span>
+            
+                    
+                        <b>10.12.</b>
+                    
+                    Nginx使用手册：安装、配置、模块扩展与代理详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.13" data-path="../tech/11-常见智力题总结.html">
+            
+                <a href="../tech/11-常见智力题总结.html">
+            
+                    
+                        <b>10.13.</b>
+                    
+                    常见智力题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.14" data-path="../tech/12-Mac终端命令使用.html">
+            
+                <a href="../tech/12-Mac终端命令使用.html">
+            
+                    
+                        <b>10.14.</b>
+                    
+                    Mac终端命令使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.15" data-path="../tech/13-01-Shell脚本入门篇.html">
+            
+                <a href="../tech/13-01-Shell脚本入门篇.html">
+            
+                    
+                        <b>10.15.</b>
+                    
+                    01 Shell脚本入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.16" data-path="../tech/13-02-Shell脚本进阶篇.html">
+            
+                <a href="../tech/13-02-Shell脚本进阶篇.html">
+            
+                    
+                        <b>10.16.</b>
+                    
+                    02 Shell脚本进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.17" data-path="../tech/14-一篇搞定排序算法：原理+图解+JS实现+V8源码解读.md">
+            
+                <span>
+            
+                    
+                        <b>10.17.</b>
+                    
+                    一篇搞定排序算法：原理+图解+JS实现+V8源码解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.18" data-path="../tech/15-glob模式通配符.html">
+            
+                <a href="../tech/15-glob模式通配符.html">
+            
+                    
+                        <b>10.18.</b>
+                    
+                    Glob模式通配符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.19" data-path="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                <a href="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                    
+                        <b>10.19.</b>
+                    
+                    代码整洁之道（摘录笔记）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.20" data-path="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                <a href="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                    
+                        <b>10.20.</b>
+                    
+                    Java的24种设计模式与7大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.21" data-path="../tech/18-观察者和发布订阅模式.html">
+            
+                <a href="../tech/18-观察者和发布订阅模式.html">
+            
+                    
+                        <b>10.21.</b>
+                    
+                    观察者和发布订阅模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.22" data-path="../tech/19-AI模型基础应用篇.html">
+            
+                <a href="../tech/19-AI模型基础应用篇.html">
+            
+                    
+                        <b>10.22.</b>
+                    
+                    AI模型基础应用篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../tools/01-01-Git基础教程.html">
+            
+                <a href="../tools/01-01-Git基础教程.html">
+            
+                    
+                        <b>11.1.</b>
+                    
+                    01 Git基础教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../tools/01-02-Git常见问题.html">
+            
+                <a href="../tools/01-02-Git常见问题.html">
+            
+                    
+                        <b>11.2.</b>
+                    
+                    02 Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../tools/02-01-gitbook入门篇.html">
+            
+                <a href="../tools/02-01-gitbook入门篇.html">
+            
+                    
+                        <b>11.3.</b>
+                    
+                    01 Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="../tools/02-02-gitbook插件篇.html">
+            
+                <a href="../tools/02-02-gitbook插件篇.html">
+            
+                    
+                        <b>11.4.</b>
+                    
+                    02 Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="../tools/02-03-gitbook进阶篇.html">
+            
+                <a href="../tools/02-03-gitbook进阶篇.html">
+            
+                    
+                        <b>11.5.</b>
+                    
+                    03 Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">整理中</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Webpack基础入门篇</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="webpack基础入门篇">webpack基础入门篇</h2>
+<p>本质上，webpack 是一个用于现代 JavaScript 应用程序的<strong>静态模块打包工具</strong>。当 webpack 处理应用程序时，它会在内部从一个入口点构建一个 依赖图（dependency graph），然后将你项目中所需的每一个模块组合成一个 bundles，它们均为静态资源，用于展示你的内容。</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h0qyyitc49j20tt0csaat.jpg" alt="image-20220329191851584"></img></p>
+<p>模块打包，通俗地说就是：找出模块之间的依赖关系，按照一定的规则把这些模块组织合并为一个 JavaScript 文件，当然，也可以折分成不同类型的文件。webpack 认为一切都是模块，JS 文件、CSS 文件、jpg/png 图片等等都是模块。</p>
+<p>webpack 的一些核心概念：</p>
+<ul>
+<li>入口（entry）：指定要处理的一个或多个模块，如：一个 JS 文件；</li>
+<li>输出（output）：指定模块处理完成后的输出位置；</li>
+<li>loader：载入处理程序，用于转换某些类型的模块，如：一个 vue 文件转换为 JS 文件；</li>
+<li>插件（plugin）：用于处理模块，执行的任务范围比 loader 更广；</li>
+<li>模式（mode）：指定不同环境，如：development|production|none 之中的一个，webpack 会在根据不同环境做一些相应的内置优化；</li>
+<li>浏览器兼容性（browser compatibility）：webpack 支持所有符合 ES5 标准 的浏览器（不支持 IE8 及以下版本）。webpack 的 import() 和 require.ensure() 需要 Promise。如果你想要支持旧版本浏览器，在使用这些表达式之前，还需要提前加载 polyfill。</li>
+</ul>
+<h3 id="简单示例">简单示例</h3>
+<p>在开始之前，请确保安装了 Node.js，<strong>webpack 是基于 Node.js 开发的</strong>。</p>
+<p>安装：<code>npm i webpack webpack-cli -g</code>，注意：webpack v4+ 版本，需要安装 CLI。</p>
+<p>创建一个主入口模块和一个子模块：</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 子模块：src/assets/js/a.js</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">1</span>)
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 主入口模块：src/index.js</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">'./assets/js/a.js'</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">2</span>)
+</code></pre>
+<p>webpack 开箱即用，可以无需使用任何配置文件，默认入口起点为 <code>src/index</code>，然后会在 <code>dist/main.js</code> 输出结果，并且在生产环境开启压缩和优化，但通常，我们创建一个 webpack 配置文件来扩展 webpack 的功能。</p>
+<p>webpack 配置文件默认路径是项目根目录下的 webpack.config.js，webpack 会自动使用它，也可以创建在其他路径下，不过，运行时，需要通过 --config 指向该路径。</p>
+<p><strong>注意：</strong> webpack 配置可以是一个对象、一个函数、一个 Promise 或者是一个包含多个 webpack 配置的数组。</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// build/webpack.demo.config.js</span>
+<span class="hljs-keyword">const</span> <span class="hljs-title class_">Path</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>)
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">mode</span>: <span class="hljs-string">'production'</span>,
+  <span class="hljs-attr">entry</span>: <span class="hljs-string">'./src/index.js'</span>,
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">'index.js'</span>
+  },
+}
+</code></pre>
+<p>终端运行：<code>webpack --config ./build/webpack.demo.config.js</code>。</p>
+<h3 id="入口（entry）">入口（entry）</h3>
+<p>入口起点指示 webpack 应该使用哪个模块，来作为构建其内部依赖图的开始。进入入口起点后，webpack 会找出有哪些模块和库是入口起点（直接和间接）依赖的。</p>
+<p>默认值是 <code>./src/index.js</code>，但你可以通过 entry 属性，来指定一个（或多个）不同的入口起点。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">entry</span>: <span class="hljs-string">'./path/to/my/entry/file.js'</span>
+};
+</code></pre>
+<p>entry 属性有多种定义方式：</p>
+<ul>
+<li><p><strong>传字符串：</strong> 指定一个主入口文件，生成一个 bundle。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">entry</span>: <span class="hljs-string">'./path/to/my/entry/file.js'</span>
+};
+<span class="hljs-comment">// 等价于</span>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-attr">main</span>: <span class="hljs-string">'./path/to/my/entry/file.js'</span>
+  }
+};
+</code></pre>
+</li>
+<li><p><strong>传数组：</strong> 指定多个主入口文件，生成一个 bundle。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">entry</span>: [<span class="hljs-string">'./src/index.js'</span>, <span class="hljs-string">'./src/assets/js/b.js'</span>]
+};
+</code></pre>
+</li>
+<li><p><strong>传对象：</strong> 指定多个主入口文件，生成多个 bundle。注意：output 属性的 fileName 需指定不同名称。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-attr">main</span>: <span class="hljs-string">'./src/index.js'</span>,
+    <span class="hljs-attr">otherB</span>: <span class="hljs-string">'./src/assets/js/b.js'</span>
+  },
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">'[name]-[hash:16]-[id].js'</span>
+  }
+}
+</code></pre>
+<p><strong>注意：</strong> <strong>如果对象的 key 带有斜杠（ <code>/</code>），则会被解析为目录。</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-string">'main/assets/index'</span>: <span class="hljs-string">'./src/index.js'</span>,
+  }
+}
+</code></pre>
+<p>最终生成目录：</p>
+<pre><code class="lang-shell">| - dist
+| | - main
+| | | - assets
+| | | | - index.js
+</code></pre>
+</li>
+<li><p><strong>传函数或者 Promise</strong>。</p>
+</li>
+</ul>
+<h3 id="输出（output）">输出（output）</h3>
+<p>output 属性告诉 webpack 在哪里输出它所创建的 bundle，以及如何命名这些文件。主入口文件输出的默认值是 <code>./dist/main.js</code>，其他生成文件默认放置在 <code>./dist</code> 文件夹中。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">entry</span>: <span class="hljs-string">'./path/to/my/entry/file.js'</span>,
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">path</span>: path.<span class="hljs-title function_">resolve</span>(__dirname, <span class="hljs-string">'dist'</span>),
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">'my-first-webpack.bundle.js'</span>
+  }
+};
+</code></pre>
+<p>filename 和 path 属性告诉 webpack bundle 的名称，以及 bundle 生成到哪里。</p>
+<p><strong>注意：</strong> 即使有多个 entry 起点，也只能指定一个 output 配置。</p>
+<h4 id="filename">filename</h4>
+<p>filename 用于指定每个输出 bundle 的名称。这些 bundle 将写入到 path 选项指定的目录下。</p>
+<p>如果 entry 属性配置了多个入口文件，则应该使用占位符来确保每个文件具有唯一的名称。</p>
+<p>可以使用的占位符：</p>
+<table>
+<thead>
+<tr>
+<th>模板</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[hash]</td>
+<td>模块标识符的 hash。和整个项⽬的构建相关，只要项⽬⽂件有修改，整个项⽬构建的 hash 值就会更改。</td>
+</tr>
+<tr>
+<td>[chunkhash]</td>
+<td>chunk 内容的 hash。</td>
+</tr>
+<tr>
+<td>[name]</td>
+<td>模块名称</td>
+</tr>
+<tr>
+<td>[id]</td>
+<td>模块标识符</td>
+</tr>
+<tr>
+<td>[query]</td>
+<td>模块的 query，例如，文件名 <code>?</code> 后面的字符串</td>
+</tr>
+</tbody>
+</table>
+<p>[hash] 和 [chunkhash] 的长度可以使用 [hash:16]（默认为20）来指定。或者，通过指定 hashDigestLength 属性在全局配置长度。</p>
+<p>filename 还可以是一个函数，返回一个可包含占位符的字符串。</p>
+<h4 id="chunkfilename">chunkFilename</h4>
+<p>chunkFilename 用于指定非入口 chunk 文件的名称。</p>
+<p>默认使用 <code>[id].js</code> 或从 filename 属性中推断出的值（[name] 会被预先替换为 [id] 或 [id].）。</p>
+<p><strong>注意：</strong> 这些文件名需要在运行时 根据 chunk 发送的请求去生成。因此，需要在 webpack 运行时输出 bundle 值时，将 chunk id 的值对应映射到占位符（如 [name] 和 [chunkhash]）。这会增加文件大小，并且在任何 chunk 的占位符值修改后，都会使 bundle 失效。</p>
+<h4 id="path">path</h4>
+<p>path 用于指定文件输出的路径，是表示一个绝对路径的字符串，默认值是当前根目录下的 <code>./dist</code>。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Path</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>)
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">'[name]-[hash:16]-[id].js'</span>,
+    <span class="hljs-attr">path</span>: <span class="hljs-title class_">Path</span>.<span class="hljs-title function_">resolve</span>(__dirname, <span class="hljs-string">'../abcd/assets'</span>)
+  }
+}
+</code></pre>
+<h4 id="publicpath">publicPath</h4>
+<p>publicPath 用于指定在浏览器中所引用的输出文件的路径，也就是说 HTML 文档中 script 标签 src 属性的路径，可以是相对路径（相对于 HTML 页面解析）、相对于服务的路径（相对于服务器域名）、相对于协议的路径（协议取决于当前访问页面的协议）、绝对路径。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">entry</span>: <span class="hljs-string">'./src/index.js'</span>,
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-comment">// publicPath: './assets/js', // 相对路径</span>
+    <span class="hljs-comment">// publicPath: '/assets/js', // 相对于服务的路径</span>
+    <span class="hljs-comment">// publicPath: '//cdn.example.com', // 相对于协议的路径</span>
+    <span class="hljs-attr">publicPath</span>: <span class="hljs-string">'https://cdn.example.com'</span>, <span class="hljs-comment">// 绝对路径</span>
+  },
+  <span class="hljs-attr">plugins</span>: [
+    <span class="hljs-keyword">new</span> <span class="hljs-title class_">HtmlWebpackPlugin</span>({
+      <span class="hljs-attr">template</span>: <span class="hljs-string">'./src/index.html'</span>
+    })
+  ]
+}
+</code></pre>
+<p>最终中 HTML 中注入资源：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.example.com/main.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>如果在编译时，不知道最终输出文件的 publicPath 是什么地址，则可以将其留空，并且在运行时通过入口起点文件中的 <strong>webpack_public_path</strong> 动态设置。</p>
+<pre><code class="lang-javascript">__webpack_public_path__ = myRuntimePublicPath;
+</code></pre>
+<h4 id="library">library</h4>
+<p>library 的作用取决于 libraryTarget 选项的值。libraryTarget 的默认选项是 <code>var</code>，所以如果使用以下配置选项：</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">library</span>: <span class="hljs-string">'MyLibrary'</span>
+  }
+}
+</code></pre>
+<p>如果生成的输出文件，是在 HTML 页面中作为一个 script 标签引入，则变量 MyLibrary 将与入口文件的返回值绑定，在浏览器中可以通过 <code>window.MyLibrary</code> 访问。</p>
+<p><strong>注意：</strong> 如果 entry 是一个数组，那么只会暴露数组中的最后一个模块；如果是一个对象，可以使用 array 语法暴露多个变量。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">library</span>: [<span class="hljs-string">'MyLibrary'</span>, <span class="hljs-string">"[name]"</span>]
+  }
+}
+</code></pre>
+<p>从 webpack 3.1.0 开始，你可以将 library 指定为一个对象，用于给每个 target 起不同的名称：</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">library</span>: {
+      <span class="hljs-attr">root</span>: <span class="hljs-string">'MyLibrary'</span>,
+      <span class="hljs-attr">amd</span>: <span class="hljs-string">'my-library'</span>,
+      <span class="hljs-attr">commonjs</span>: <span class="hljs-string">'my-common-library'</span>
+    },
+    <span class="hljs-attr">libraryTarget</span>: <span class="hljs-string">'umd'</span>
+  }
+}
+</code></pre>
+<h4 id="libraryexport">libraryExport</h4>
+<p>libraryExport 用于指定 libraryTarget 需要导出的模块（即上面 library 暴露的变量包含的对象），默认值是 undefined。如果 libraryTarget 值是空字符串，将导出整个命名空间对象。</p>
+<p>下例演示了 <code>libraryTarget: 'var'</code>  下的作用：</p>
+<ul>
+<li><strong>libraryExport: 'default'：</strong> 暴露默认导出，即 <code>export default</code> 中的内容；</li>
+<li><strong>libraryExport: 'MyModule'：</strong> 暴露指定的模块，即 <code>export const MyModule</code> 中的内容；</li>
+<li><strong>libraryExport: ['MyModule', 'MySubModule']：</strong> 数组被解释为模块的路径，即 <code>export const MyModule.MySubModule</code> 中的内容。</li>
+</ul>
+<h4 id="librarytarget">libraryTarget</h4>
+<p>libraryTarget 用于配置如何暴露 library，默认值 <code>var</code> 。<strong>注意，此选项与 library 的值一同使用。</strong></p>
+<p>以下示例，都假定 <code>library："MyLibrary"</code>：</p>
+<ul>
+<li><p>暴露为一个变量（var）：默认值，当 library 加载完成，入口起点的返回值将分配给变量 MyLibrary。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-title class_">MyLibrary</span> = _entry_return_;
+</code></pre>
+</li>
+<li><p>暴露为一个变量（assign）：当 library 加载完成，入口起点的返回值将分配给一个隐含的全局变量，可能会潜在地重新分配到全局中已存在的值（谨慎使用）。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">MyLibrary</span> = _entry_return_;
+</code></pre>
+</li>
+<li><p>通过在对象上赋值暴露（this|window|global|commonjs）：入口起点的返回值将分配给 <code>this|window|global|exports</code> 的一个属性（属性名称由 library 定义）。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">this</span>[<span class="hljs-string">'MyLibrary'</span>] = _entry_return_;
+<span class="hljs-variable language_">window</span>[<span class="hljs-string">'MyLibrary'</span>] = _entry_return_;
+<span class="hljs-variable language_">global</span>[<span class="hljs-string">'MyLibrary'</span>] = _entry_return_;
+</code></pre>
+</li>
+<li><p>commonjs：入口起点的返回值将分配给 exports 对象。这个名称也意味着，模块用于 CommonJS 环境。</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">exports</span>[<span class="hljs-string">'MyLibrary'</span>] = _entry_return_;
+<span class="hljs-built_in">require</span>(<span class="hljs-string">'MyLibrary'</span>).<span class="hljs-title function_">doSomething</span>();
+</code></pre>
+</li>
+<li><p>模块定义系统（commonjs2）：入口起点的返回值将分配给 <code>module.exports</code> 对象，也意味着模块用于 CommonJS 环境。<strong>注意：</strong> 此模式下，无需再设置 library 的值。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = _entry_return_;
+<span class="hljs-built_in">require</span>(<span class="hljs-string">'MyLibrary'</span>).<span class="hljs-title function_">doSomething</span>();
+</code></pre>
+</li>
+<li><p>模块定义系统（amd）：将 library 暴露为 AMD 模块。</p>
+<pre><code class="lang-javascript"><span class="hljs-title function_">define</span>(<span class="hljs-string">'MyLibrary'</span>, [], <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">return</span> _entry_return_;
+});
+<span class="hljs-built_in">require</span>([<span class="hljs-string">'MyLibrary'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">MyLibrary</span>) {
+});
+</code></pre>
+</li>
+<li><p>模块定义系统（amd-require）：将 library 暴露为一个立即执行的 AMD 模块。<strong>注意：</strong> 此模式下，无需再设置 library 的值。</p>
+</li>
+<li><p>模块定义系统（umd）：将 library 暴露为所有的模块定义下都可运行的方式。它将在 CommonJS、AMD 环境下运行，也可以将模块导出到 global 下的变量。</p>
+</li>
+<li><p>其他 Targets（jsonp）：将入口起点的返回值，包裹到一个 jsonp 包装容器中。</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">MyLibrary</span>(_entry_return_);
+</code></pre>
+</li>
+</ul>
+<h4 id="sourcemapfilename">sourceMapFilename</h4>
+<p>sourceMapFilename 用于向硬盘写入一个输出文件，只在 devtool 启用了 SourceMap 选项时才使用。默认使用 <code>[file].map</code>。</p>
+<p>可以使用 filename 中的 <code>[name]、[id]、[hash]、[chunkhash]</code> 替换符号。除此之外，还可以使用 <code>[file]</code> 占位符（模块文件名称）、<code>[filebase]</code> 占位符（模块路径中的文件名）。</p>
+<h4 id="sourceprefix">sourcePrefix</h4>
+<p>sourcePrefix 用于修改输出 bundle 中每行的前缀。</p>
+<p>注意，默认情况下使用空字符串。使用一些缩进会看起来更美观，但是可能导致多行字符串中的问题。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">sourcePrefix</span>: <span class="hljs-string">'\t'</span>
+  }
+};
+</code></pre>
+<h4 id="其他属性">其他属性</h4>
+<ul>
+<li><strong>auxiliaryComment：</strong> 与 <code>output.library</code> 和 <code>output.libraryTarget</code> 一起使用，允许用户向导出容器中插入注释。</li>
+<li><strong>chunkLoadTimeout：</strong> chunk 请求到期之前的毫秒数，默认为 120 000。从 webpack 2.6.0 开始支持。</li>
+<li><strong>crossOriginLoading：</strong> 只用于 target 是 web，使用了通过 script 标签的 JSONP 来按需加载 chunk。启用 cross-origin 属性 加载 chunk，可接收值： false | anonymous | use-credentials。</li>
+<li><strong>jsonpScriptType：</strong> 允许自定义 script 的类型，webpack 会将 script 标签注入到 DOM 中以下载异步 chunk，可接收值：text/javascript（默认） | module（与 ES6 就绪代码一起使用）。</li>
+<li><strong>devtoolModuleFilenameTemplate：</strong> 此选项仅在 「devtool 使用了需要模块名称的选项」时使用。自定义每个 source map 的 sources 数组中使用的名称。可以通过传递模板字符串（template string）或者函数来完成。</li>
+<li><strong>devtoolFallbackModuleFilenameTemplate：</strong> 当上面的模板字符串或函数产生重复时使用的备用内容。</li>
+<li><strong>devtoolNamespace：</strong> 此选项确定 devtoolModuleFilenameTemplate 使用的模块名称空间。未指定时的默认值为：<code>output.library</code>。在加载多个通过 webpack 构建的 library 时，用于防止 source map 中源文件路径冲突。</li>
+<li><strong>hashDigest：</strong> 在生成 hash 时使用的编码方式，默认为 <code>hex</code>。支持 Node.js <code>hash.digest</code> 的所有编码。对文件名使用 <code>base64</code>，可能会出现问题，因为 base64 字母表中有 / 字符。同样，<code>latin1</code> 规定可以含有任何字符。</li>
+<li><strong>hashDigestLength：</strong> 散列摘要的前缀长度，默认为 20。</li>
+<li><strong>hashFunction：</strong> 散列算法，默认为 <code>md4</code>。支持 Node.JS <code>crypto.createHash</code> 的所有功能。从 4.0.0-alpha2 开始，hashFunction 现在可以是一个返回自定义 hash 的构造函数。</li>
+<li><strong>hashSalt：</strong> 一个可选的加盐值，通过 Node.JS <code>hash.update</code> 来更新哈希。</li>
+<li><strong>hotUpdateChunkFilename：</strong> 自定义热更新 chunk 的文件名。可选的值参考 output.filename 选项，占位符只能是 [id] 和 [hash]，默认值是：<code>[id].[hash].hot-update.js</code>。</li>
+<li><strong>hotUpdateFunction：</strong> 只在 target 是 web 时使用，用于<strong>加载热更新</strong>的 JSONP 函数。JSONP 函数用于异步加载热更新 chunk。</li>
+<li><strong>hotUpdateMainFilename：</strong> 自定义热更新的主文件名。可选的值参考 output.filename 选项，占位符只能是 [hash]，默认值是：<code>[hash].hot-update.json</code>。</li>
+<li><strong>jsonpFunction：</strong> 只在 target 是 web 时使用，用于<strong>按需加载</strong> chunk 的 JSONP 函数。JSONP 函数用于异步加载 chunk，或者拼接多个初始 chunk（SplitChunksPlugin、AggressiveSplittingPlugin）。</li>
+<li><strong>pathinfo：</strong> 告知 webpack 在 bundle 中引入「所包含模块信息」的相关注释。此选项在 development 模式时的默认值是 true，而在 production 模式时的默认值是 false。</li>
+<li><strong>strictModuleExceptionHandling：</strong> 如果一个模块是在 require 时抛出异常，告诉 webpack 从模块实例缓存（require.cache）中删除这个模块。出于性能原因，默认为 false。</li>
+<li><strong>umdNamedDefine：</strong> 当使用了 <code>libraryTarget: "umd"</code>、<code>library: 'MyLibrary'</code>，设置 <code>umdNamedDefine: true</code>，会对 UMD 的构建过程中的 AMD 模块进行命名。否则就使用匿名的 <code>define</code>。</li>
+</ul>
+<h3 id="模块（module）">模块（module）</h3>
+<p>module 决定了<strong>如何处理项目中的不同类型的模块</strong>。</p>
+<h4 id="noparse">noParse</h4>
+<p>noParse 指定 webpack 不需要解析的文件。这些文件中不应该含有 import、require、define 的调用，或任何其他导入机制。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">noParse</span>: <span class="hljs-string">'jquery'</span>,
+    <span class="hljs-attr">noParse</span>: [<span class="hljs-string">'jquery'</span>, <span class="hljs-string">'lodash'</span>],
+    <span class="hljs-attr">noParse</span>: <span class="hljs-regexp">/jquery|lodash/</span>,
+    <span class="hljs-attr">noParse</span>: <span class="hljs-function">(<span class="hljs-params">content</span>) =&gt;</span> <span class="hljs-regexp">/jquery|lodash/</span>.<span class="hljs-title function_">test</span>(content)
+  }
+};
+</code></pre>
+<h4 id="rules">rules</h4>
+<p>rules 用于配置一组规则，指定模块的处理方式，即为不同模块指定相应的加载器（loader）或者解析器（parser）。</p>
+<p>每个规则可以分为三部分：</p>
+<ul>
+<li><p>条件（condition）：指定模块的匹配规则，有两种值：</p>
+<ul>
+<li>resource：请求文件的绝对路径。</li>
+<li>issuer：导入请求文件的模块的绝对路径。</li>
+</ul>
+<p>例如：从 <code>app.js</code> 导入 <code>./style.css</code>，resource 指的是 <code>style.css</code> 文件的路径 ，而 issuer 指的是 <code>app.js</code> 文件的路径。</p>
+<p>在规则中，属性 test、include、exclude、resource 是对 resource 的匹配，而属性 issuer 是对 issuer 的匹配。<strong>当使用多个条件时，所有条件都匹配。</strong></p>
+</li>
+<li><p>结果（result）：为模块指定加载器（loader）或者解析器（parser）；</p>
+</li>
+<li><p>嵌套规则（nested rule）：每个规则可以使用属性 rules 和 oneOf 指定更细粒度的规则。</p>
+</li>
+</ul>
+<h3 id="加载器（loader）">加载器（loader）</h3>
+<p>webpack 只能理解 JavaScript 和 JSON 文件。loader 让 webpack 能够去处理其他类型的文件，并将它们转换为有效模块，以供应用程序使用，以及被添加到依赖图中。</p>
+<blockquote>
+<p>注意，loader 能够 import 任何类型的模块，这是 webpack 特有的功能，其他打包程序或任务执行器的可能并不支持。这种语言扩展是很有必要的，因为这可以使开发人员创建出更准确的依赖关系图。</p>
+</blockquote>
+<h4 id="使用-loader">使用 loader</h4>
+<p>在应用程序中，有两种使用 loader 的方式：配置方式、内联方式。如果指定多个 loader，loader 从右到左（或从下到上）执行。</p>
+<h5 id="配置方式">配置方式</h5>
+<p>配置方式是在 webpack.config.js 文件中指定 loader。如果指定了多个 loader，则是<strong>从下到上</strong>执行。</p>
+<p>loader 配置有两个属性：</p>
+<ul>
+<li>test：用于标识出应该被对应的 loader 进行转换的某个或某些文件；</li>
+<li>use：表示进行转换时，应该使用哪个 loader。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      {
+        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.txt$/</span>,
+        <span class="hljs-attr">use</span>: <span class="hljs-string">'raw-loader'</span>
+      }
+    ]
+  }
+};
+</code></pre>
+<p>以上配置中，对一个单独的 module 对象定义了 rules 属性，里面包含两个必须属性：test 和 use。这告诉 webpack 编译器如下信息：</p>
+<blockquote>
+<p>“嘿，webpack 编译器，当你碰到「在 <code>require()</code>/<code>import</code> 语句中被解析为 '.txt' 的路径」时，在你对它打包之前，先 <strong>使用</strong> <code>raw-loader</code> 转换一下。”</p>
+<p>请记住，使用正则表达式匹配文件时，你不要为它添加引号。也就是说，<code>/\.txt$/</code> 与 <code>'/\.txt$/'</code>/ <code>"/\.txt$/"</code> 不一样。前者指示 webpack 匹配任何以 .txt 结尾的文件，后者指示 webpack 匹配具有绝对路径 '.txt' 的单个文件; 这可能不符合你的意图。</p>
+</blockquote>
+<h4 id="内联方式">内联方式</h4>
+<p>内联方式是在每个 import 语句或任何等同于 import 的方法 中指定 loader，使用 <code>!</code> 将资源中的 loader 分开。如果指定了多个 loader，则是<strong>从右到左</strong>执行。</p>
+<pre><code class="lang-shell">import Styles from 'style-loader!css-loader?modules!./styles.css';
+</code></pre>
+<p>通过为内联 import 语句添加前缀，可以覆盖配置中的所有 loader、preLoader 和 postLoader：</p>
+<ul>
+<li>使用 <code>!</code> 前缀，将禁用所有已配置的 normal loader（普通 loader）。</li>
+<li>使用 <code>!!</code> 前缀，将禁用所有已配置的 loader（preLoader, loader, postLoader）。</li>
+<li>使用 <code>-!</code> 前缀，将禁用所有已配置的 preLoader 和 loader，但是不禁用 postLoaders。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> <span class="hljs-title class_">Styles</span> <span class="hljs-keyword">from</span> <span class="hljs-string">'!style-loader!css-loader?modules!./styles.css'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">Styles</span> <span class="hljs-keyword">from</span> <span class="hljs-string">'!!style-loader!css-loader?modules!./styles.css'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">Styles</span> <span class="hljs-keyword">from</span> <span class="hljs-string">'-!style-loader!css-loader?modules!./styles.css'</span>;
+</code></pre>
+<p>另外，选项可以传递查询参数，例如 <code>?key=value&amp;foo=bar</code>，或者一个 JSON 对象，例如 <code>?{"key":"value","foo":"bar"}</code>。</p>
+<h4 id="rules条件">rules条件</h4>
+<p>rules 条件可以是：</p>
+<ul>
+<li>字符串：匹配字符串，值可以是目录或文件的绝对路径。</li>
+<li>正则表达式：test 输入值。</li>
+<li>函数：指定一个函数，返回一个真值以匹配。</li>
+<li>条件数组：至少一个匹配条件。</li>
+<li>对象：匹配所有属性。每个属性都有一个定义行为。</li>
+</ul>
+<p>条件配置：</p>
+<ul>
+<li>test：匹配特定条件。一般是提供一个正则表达式或正则表达式的数组，但这不是强制的。</li>
+<li>include：匹配特定条件。一般是提供一个字符串或者字符串数组，但这不是强制的。</li>
+<li>exclude：排除特定条件。一般是提供一个字符串或字符串数组，但这不是强制的。</li>
+<li>and：必须匹配数组中的所有条件。</li>
+<li>or：匹配数组中任何一个条件。</li>
+<li>not：必须排除这个条件。</li>
+</ul>
+<p><strong>注意：</strong> test、include、exclude 是 Rule.resource.[test|include|exclude] 的简写，如果在 Rule 提供了该选项，就不能再提供 Rule.resource。</p>
+<p><strong>注意：</strong> 当使用多个条件时，所有条件都要匹配。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      {
+        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>,
+        <span class="hljs-attr">include</span>: [
+          path.<span class="hljs-title function_">resolve</span>(__dirname, <span class="hljs-string">'app/styles'</span>),
+          path.<span class="hljs-title function_">resolve</span>(__dirname, <span class="hljs-string">'vendor/styles'</span>)
+        ]
+      }
+    ]
+  }
+};
+</code></pre>
+<p><strong>resourceQuery</strong> 用于指定资料的查询条件。比如：<code>import Foo from './foo.css?inline'</code>，可以如下 resourceQuery 匹配：</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      {
+        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>,
+        <span class="hljs-attr">resourceQuery</span>: <span class="hljs-regexp">/inline/</span>,
+        <span class="hljs-attr">use</span>: <span class="hljs-string">'url-loader'</span>
+      }
+    ]
+  }
+}
+</code></pre>
+<h4 id="use">use</h4>
+<p>use 用于为一个模块<strong>指定一组加载器</strong>，值可以是表示加载器的字符串或对象（包含加载器选项）数组，也可以是一个返回加载器数组的函数。</p>
+<p>传递字符串（如：<code>use: [ 'style-loader' ]</code>）是 loader 属性的简写方式（如：<code>use: [ { loader: 'style-loader'} ]</code>）。</p>
+<p>多个加载器之间可以链接，这些加载器<strong>将从右到左（由后往前）应用</strong>。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      {
+        <span class="hljs-attr">use</span>: [
+          <span class="hljs-string">'style-loader'</span>,
+          {
+            <span class="hljs-attr">loader</span>: <span class="hljs-string">'css-loader'</span>,
+            <span class="hljs-attr">options</span>: {
+              <span class="hljs-attr">importLoaders</span>: <span class="hljs-number">1</span>
+            }
+          },
+          {
+            <span class="hljs-attr">loader</span>: <span class="hljs-string">'less-loader'</span>,
+            <span class="hljs-attr">options</span>: {
+              <span class="hljs-attr">noIeCompat</span>: <span class="hljs-literal">true</span>
+            }
+          }
+        ]
+      }
+    ]
+  }
+};
+</code></pre>
+<p>以上配置，表示依次调用 less-loader、css-loader、style-loader 加载器。</p>
+<p><strong>注意：</strong> Rule.loader 是 Rule.use: [ { loader } ] 的简写，Rule.options 和 Rule.query 是 Rule.use: [ { options } ] 的简写。</p>
+<h4 id="parser">parser</h4>
+<p>parser 用于禁用、启用或配置解析器。默认的插件解析器选项：</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      {
+        <span class="hljs-attr">parser</span>: {
+          <span class="hljs-attr">amd</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 禁用 AMD</span>
+          <span class="hljs-attr">commonjs</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 禁用 CommonJS</span>
+          <span class="hljs-attr">system</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 禁用 SystemJS</span>
+          <span class="hljs-attr">harmony</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 禁用 ES2015 Harmony import/export</span>
+          <span class="hljs-attr">requireInclude</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 禁用 require.include</span>
+          <span class="hljs-attr">requireEnsure</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 禁用 require.ensure</span>
+          <span class="hljs-attr">requireContext</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 禁用 require.context</span>
+          <span class="hljs-attr">browserify</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 禁用特殊处理的 browserify bundle</span>
+          <span class="hljs-attr">requireJs</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 禁用 requirejs.*</span>
+          <span class="hljs-comment">// 禁用 __dirname、__filename、module、require.extensions、require.main 等。</span>
+          <span class="hljs-attr">node</span>: <span class="hljs-literal">false</span>,
+          <span class="hljs-attr">node</span>: {...} <span class="hljs-comment">// 在模块级别(module level)上重新配置 node 层(layer)</span>
+        }
+      }
+    ]
+  }
+}
+</code></pre>
+<h4 id="oneof">oneOf</h4>
+<p>oneOf 用于配置规则数组，当规则匹配时，只使用第一个匹配规则。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      {
+        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>,
+        <span class="hljs-attr">oneOf</span>: [
+          {
+            <span class="hljs-attr">resourceQuery</span>: <span class="hljs-regexp">/inline/</span>, <span class="hljs-comment">// foo.css?inline</span>
+            <span class="hljs-attr">use</span>: <span class="hljs-string">'url-loader'</span>
+          },
+          {
+            <span class="hljs-attr">resourceQuery</span>: <span class="hljs-regexp">/external/</span>, <span class="hljs-comment">// foo.css?external</span>
+            <span class="hljs-attr">use</span>: <span class="hljs-string">'file-loader'</span>
+          }
+        ]
+      }
+    ]
+  }
+};
+</code></pre>
+<h4 id="其他-rule-属性">其他 rule 属性</h4>
+<ul>
+<li><p><strong>enforce：</strong> 用于指定 loader 种类，默认是普通 loader，可选值为 pre | post，还有一个额外的种类<strong>行内 loader</strong>，即应用在 import/require 行内。</p>
+<ul>
+<li><p>所有普通 loader 可以通过在请求中加上 <code>!</code> 前缀来忽略（覆盖）。</p>
+</li>
+<li><p>所有普通和前置 loader 可以通过在请求中加上 <code>-!</code> 前缀来忽略（覆盖）。</p>
+</li>
+<li><p>所有普通，后置和前置 loader 可以通过在请求中加上 <code>!!</code> 前缀来忽略（覆盖）。</p>
+</li>
+<li>不应该在行内 loader 使用 <code>!</code> 前缀，因为它们是非标准的。</li>
+</ul>
+</li>
+<li><p><strong>issuer：</strong> 用于指定一个匹配导入请求文件的模块的绝对路径的条件。</p>
+</li>
+<li><p><strong>type：</strong> 用于设置匹配模块的类型，可选择值有 javascript/auto | javascript/dynamic | javascript/esm | json | webassembly/experimental。这将阻止 defaulrules 及其默认的导入行为的发生。</p>
+<p>例如：通过自定义加载器加载一个 <code>.json</code> 文件，你需要将类型设置为 javascript/auto，以绕过 webpack 内置的 json 导入。</p>
+</li>
+</ul>
+<h3 id="插件（plugin）">插件（plugin）</h3>
+<p>loader 用于转换某些类型的模块，而插件则可以用于执行范围更广的任务。包括：打包优化、资源管理、注入环境变量等各种任务。</p>
+<p><strong>插件目的在于解决 loader 无法实现的其他事。</strong></p>
+<p>想要使用一个插件，你只需要 <code>require()</code> 它，然后把它添加到 plugins 选项中。多数插件可以通过选项自定义。你也可以在一个配置文件中因为不同目的而多次使用同一个插件，这时需要通过使用 new 操作符来创建它的一个实例。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> <span class="hljs-title class_">HtmlWebpackPlugin</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">'html-webpack-plugin'</span>) <span class="hljs-comment">// 通过 npm 安装</span>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      { <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.txt$/</span>, <span class="hljs-attr">use</span>: <span class="hljs-string">'raw-loader'</span> }
+    ]
+  },
+  <span class="hljs-attr">plugins</span>: [
+    <span class="hljs-keyword">new</span> <span class="hljs-title class_">HtmlWebpackPlugin</span>({<span class="hljs-attr">template</span>: <span class="hljs-string">'./src/index.html'</span>})
+  ]
+};
+</code></pre>
+<p>在上面的示例中，<code>html-webpack-plugin</code> 为应用程序生成 HTML 一个文件，并自动注入所有生成的 bundle。</p>
+<h3 id="解析（resolve）">解析（resolve）</h3>
+<p>resolve 用于设置<strong>模块如何被解析</strong>。</p>
+<h4 id="alias">alias</h4>
+<p>创建 import 或 require 的别名，来确保模块引入变得更简单。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">resolve</span>: {
+    <span class="hljs-attr">alias</span>: {
+      <span class="hljs-string">'@'</span>: path.<span class="hljs-title function_">resolve</span>(__dirname, <span class="hljs-string">'src'</span>),
+    }
+  }
+}
+</code></pre>
+<p>现在，可以 <code>@</code> 表示 <code>src</code> 目录所在的路径，这在替换「在导入时使用相对路径」非常有用。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> utils <span class="hljs-keyword">from</span> <span class="hljs-string">'../../../utils/index.js'</span>;
+<span class="hljs-keyword">import</span> utils <span class="hljs-keyword">from</span> <span class="hljs-string">'@/utils/index.js'</span>;
+</code></pre>
+<h4 id="extensions">extensions</h4>
+<p>自动解析确定的扩展。默认值为：['.wasm', '.mjs', '.js', '.json']。</p>
+<h4 id="mainfields">mainFields</h4>
+<p>当从 npm 包中导入模块时（例如，<code>import * as D3 from 'd3'</code>），此选项将决定在 <code>package.json</code> 中使用哪个字段导入模块。根据 webpack 配置中指定的 target 不同，默认值也会有所不同。</p>
+<p>target 属性设置为 webworker、web 或者没有指定，默认值为：['browser', 'module', 'main']。</p>
+<p>对于其他任意的 target（包括 node），默认值为：['module', 'main']。</p>
+<h4 id="mainfiles">mainFiles</h4>
+<p>解析目录时要使用的文件名。默认值为：['index']。</p>
+<h4 id="modules">modules</h4>
+<p>告诉 webpack 解析模块时应该搜索的目录。默认值为：['node_modules']。</p>
+<p>绝对路径和相对路径都能使用：使用绝对路径，只能在给定目录中搜索；使用相对路径，则会在项目中用类似于 Node 查找 'node_modules' 的方式进行查找。</p>
+<h4 id="plugins">plugins</h4>
+<p>指定使用的额外的解析插件列表，比如 DirectoryNamedWebpackPlugin。</p>
+<h4 id="resolveloader">resolveLoader</h4>
+<p>resolveLoader 选项与上面的 resolve 对象的属性集合相同，但仅用于解析 webpack 的 loader 包。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">resolveLoader</span>: {
+    <span class="hljs-attr">modules</span>: [<span class="hljs-string">'node_modules'</span>],
+    <span class="hljs-attr">extensions</span>: [<span class="hljs-string">'.js'</span>, <span class="hljs-string">'.json'</span>],
+    <span class="hljs-attr">mainFields</span>: [<span class="hljs-string">'loader'</span>, <span class="hljs-string">'main'</span>]
+  }
+};
+</code></pre>
+<p><strong>注意：</strong> 可以为加载器指定别名，比如：</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">resolveLoader</span>: {
+    <span class="hljs-attr">alias</span>: {
+      <span class="hljs-attr">txt</span>: <span class="hljs-string">'raw-loader'</span>
+    }
+  }
+};
+</code></pre>
+<p>使用 <code>import txt!templates/demo.txt</code>  相当于 <code>import raw-loader!templates/demo.txt</code>。</p>
+<p>此外，可以通过 resolveLoader 为加载器指定扩展名或后缀， 但一般建议使用全名。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">resolveLoader</span>: {
+    <span class="hljs-attr">moduleExtensions</span>: [<span class="hljs-string">'-loader'</span>]
+  }
+}
+</code></pre>
+<h4 id="其他属性">其他属性</h4>
+<ul>
+<li>aliasFields：指定一个字段（例如 browser），该 browser 字段通常位于项目源代码树根目录的<code>package.json</code> 文件。</li>
+<li>descriptionFiles：指定用于描述的 JSON 文件。默认：['package.json']。</li>
+<li>enforceExtension：是否允许文件无扩展名。</li>
+<li>enforceModuleExtension：对模块是否需要使用的扩展（例如 loader）。</li>
+<li>unsafeCache：主动缓存模块，但并不安全，默认值为：true，值可以是布尔值、正则表达式、正则表达式数组。</li>
+<li>symlinks：是否将符号链接解析到它们的符号链接位置。</li>
+<li>cachePredicate：指定一个决定模块是否应该被缓存的函数。函数传入一个带有 path 和 request 属性的对象，必须返回一个布尔值。</li>
+</ul>
+<h3 id="外部扩展（externals）">外部扩展（externals）</h3>
+<p>externals 配置选项提供了「从输出的 bundle 中排除依赖」的方法。相反，所创建的 bundle 依赖于那些存在于用户环境中的依赖。</p>
+<p>简单说，就是防止将某些 import 的包打包到 bundle 中，而是在运行时再去从外部获取这些扩展依赖。</p>
+<p>比如：在 HTML 文件中，从 CDN 引入 jQuery：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://code.jquery.com/jquery-3.1.0.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>在 webpack 配置：</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">externals</span>: {
+    <span class="hljs-attr">jquery</span>: <span class="hljs-string">'jQuery'</span>
+  }
+};
+</code></pre>
+<p>这样，最终打包出来的 bundle，不会包含 jQuery，但在项目中，仍可以引入 jQuery 模块：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> $ <span class="hljs-keyword">from</span> <span class="hljs-string">'jquery'</span>;
+$(<span class="hljs-string">'.my-element'</span>);
+</code></pre>
+<p>具有外部依赖的 bundle 可以在各种模块上下文（CommonJS、AMD、全局变量、ES2015 模块）中使用。</p>
+<ul>
+<li>root：可以通过一个全局变量访问 library（例如，通过 script 标签）。</li>
+<li>commonjs：可以将 library 作为一个 CommonJS 模块访问。</li>
+<li>commonjs2：和上面的类似，但导出的是 module.exports.default。</li>
+<li>amd：类似于 commonjs，但使用 AMD 模块系统。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">externals</span>: {
+    <span class="hljs-attr">jquery</span>: <span class="hljs-string">'jQuery'</span>,
+    <span class="hljs-comment">// bundle 只引用 ./math 模块下的 subtract 的子集。</span>
+    <span class="hljs-attr">subtract</span>: [<span class="hljs-string">'./math'</span>, <span class="hljs-string">'subtract'</span>],
+
+        <span class="hljs-comment">// 对象仅用于 libraryTarget: 'umd'。</span>
+    lodash : {
+      <span class="hljs-attr">commonjs</span>: <span class="hljs-string">'lodash'</span>,
+      <span class="hljs-attr">amd</span>: <span class="hljs-string">'lodash'</span>,
+      <span class="hljs-attr">root</span>: <span class="hljs-string">'_'</span> <span class="hljs-comment">// 指向全局变量</span>
+    },
+    subtract : {
+      <span class="hljs-attr">root</span>: [<span class="hljs-string">'math'</span>, <span class="hljs-string">'subtract'</span>]
+    }
+  }
+};
+</code></pre>
+<p>jQuery 将被视为全局变量。lodash 可以在 AMD 和 CommonJS 模块系统中通过 <code>lodash</code> 访问，但在全局变量形式下用<code>_</code> 访问。subtract 可以通过 <code>window['math']['subtract']</code> 访问。</p>
+<p>另外，还可以配置函数、正则表达式来将依赖从输出 bundle 中排除，并且可以采用组合形式。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">externals</span>: [
+    <span class="hljs-keyword">function</span>(<span class="hljs-params">context, request, callback</span>) {
+      <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/^yourregex$/</span>.<span class="hljs-title function_">test</span>(request)){
+        <span class="hljs-keyword">return</span> <span class="hljs-title function_">callback</span>(<span class="hljs-literal">null</span>, <span class="hljs-string">'commonjs '</span> + request);
+      }
+      <span class="hljs-title function_">callback</span>();
+    },
+    <span class="hljs-regexp">/^(jquery|\$)$/i</span>
+  ]
+};
+</code></pre>
+<h3 id="模式（mode）">模式（mode）</h3>
+<p>通过选择 <code>development | production | none</code> 之中的一个，来设置 <code>mode</code> 参数，你可以启用 webpack 内置在相应环境下的优化。其默认值为 <code>production</code>。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">mode</span>: <span class="hljs-string">'production'</span>
+};
+</code></pre>
+<p>启用不同模块，webpack 会对一些属性使用不同的默认值。</p>
+<ul>
+<li>development：会将 DefinePlugin 中 <code>process.env.NODE_ENV</code> 的值设置为 <code>development</code>。启用 NamedChunksPlugin 和 NamedModulesPlugin。</li>
+<li>production：会将 DefinePlugin 中 <code>process.env.NODE_ENV</code> 的值设置为 <code>production</code>。启用 FlagDependencyUsagePlugin、FlagIncludedChunksPlugin、ModuleConcatenationPlugin 等。</li>
+<li>none：退出任何默认优化选项。</li>
+</ul>
+<h3 id="开发中（devserver）">开发中（devServer）</h3>
+<p>devServer 用于为开发环境提供一些配置，请不要在生产环境中使用！开发环境是 mode 值为 'development'。</p>
+<p>开发环境下，webpack 启动了内置的 webpack-dev-server，提供了一个简单的 web server，并且具有实时重新加载功能。</p>
+<h4 id="contentbase">contentBase</h4>
+<p>contentBase 告诉服务器从哪个目录中提供内容。只有在你想要提供静态文件时才需要。devServer.publicPath 将用于确定应该从哪里提供 bundle，并且此选项优先。</p>
+<p><strong>推荐使用一个绝对路径。</strong></p>
+<p>默认情况下，将使用当前工作目录作为提供内容的目录。将其设置为 false 以禁用 contentBase。</p>
+<h4 id="disablehostcheck">disableHostCheck</h4>
+<p>disableHostCheck 用于设置是否绕过主机检查。</p>
+<h4 id="filename">filename</h4>
+<p>filename 用于惰性模式中，减少编译。 默认在惰性模式，每个请求结果都会产生全新的编译。使用 filename，可以只在某个文件被请求时编译。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">'bundle.js'</span>
+  },
+  <span class="hljs-attr">devServer</span>: {
+    <span class="hljs-attr">lazy</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// 惰性模式</span>
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">'bundle.js'</span> <span class="hljs-comment">// 非惰性模式时没有效果</span>
+  }
+}
+</code></pre>
+<p>现在只有在请求 <code>/bundle.js</code> 时候，才会编译 bundle。</p>
+<h4 id="headers">headers</h4>
+<p>在所有响应中添加首部内容。</p>
+<h4 id="historyapifallback">historyApiFallback</h4>
+<p>当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html。</p>
+<p>historyApiFallback 默认禁用，可以设置布尔值启用\禁用，也可以传入一个对象进行更详细控制：</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">devServer</span>: {
+    <span class="hljs-comment">// historyApiFallback: true</span>
+    <span class="hljs-attr">historyApiFallback</span>: {
+      <span class="hljs-attr">rewrites</span>: [
+        { <span class="hljs-attr">from</span>: <span class="hljs-regexp">/^\/$/</span>, <span class="hljs-attr">to</span>: <span class="hljs-string">'/views/landing.html'</span> },
+        { <span class="hljs-attr">from</span>: <span class="hljs-regexp">/^\/subpage/</span>, <span class="hljs-attr">to</span>: <span class="hljs-string">'/views/subpage.html'</span> },
+        { <span class="hljs-attr">from</span>: <span class="hljs-regexp">/./</span>, <span class="hljs-attr">to</span>: <span class="hljs-string">'/views/404.html'</span> }
+      ]
+    }
+  }
+}
+</code></pre>
+<h4 id="host">host</h4>
+<p>host 指定使用一个域名，默认是 localhost。如果希望<strong>服务器外部访问，可指定 0.0.0.0</strong>。</p>
+<h4 id="https">https</h4>
+<p>默认情况下，dev-server 通过 HTTP 提供服务。也可以选择带有 HTTPS 的 HTTP/2 提供服务：</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">devServer</span>: {
+    <span class="hljs-comment">// https: true // 使用了自签名证书</span>
+    <span class="hljs-attr">https</span>: {
+      <span class="hljs-comment">// 使用自己提供的证书</span>
+      <span class="hljs-attr">key</span>: fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">'/path/to/server.key'</span>),
+      <span class="hljs-attr">cert</span>: fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">'/path/to/server.crt'</span>),
+      <span class="hljs-attr">ca</span>: fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">'/path/to/ca.pem'</span>),
+    }
+  }
+};
+</code></pre>
+<h4 id="inline">inline</h4>
+<p>在 dev-server 的两种不同模式之间切换。默认情况下，应用程序启用内联模式。这意味着一段处理实时重载的脚本被插入到 bundle 中，并且构建消息将会出现在浏览器控制台。</p>
+<p>也可以使用 iframe 模式，它在通知栏下面使用 iframe 标签，包含了关于构建的消息。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">devServer</span>: {
+    <span class="hljs-attr">inline</span>: <span class="hljs-literal">false</span>
+  }
+}
+</code></pre>
+<h4 id="lazy">lazy</h4>
+<p>lazy 用于设置是否启用惰性模式。当启用 lazy 时，dev-server 只有在请求时才编译 bundle。这意味着 webpack 不会监视任何文件改动。我们称之为惰性模式。</p>
+<h4 id="overlay">overlay</h4>
+<p>当出现编译器错误或警告时，在浏览器中显示全屏覆盖层。默认禁用。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">devServer</span>: {
+    <span class="hljs-comment">// overlay: true // 只显示编译器错误</span>
+    <span class="hljs-attr">overlay</span>: {
+      <span class="hljs-comment">// 显示警告和错误</span>
+      <span class="hljs-attr">warnings</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">errors</span>: <span class="hljs-literal">true</span>
+    }
+  }
+};
+</code></pre>
+<h3 id="proxy">proxy</h3>
+<p>proxy 用于配置跨域代理，如果服务端 API 与浏览器访问的页面不在同一域名，代理某些 URL 会很有用。</p>
+<p>dev-server 使用了非常强大的 <a href="https://github.com/chimurai/http-proxy-middleware" target="_blank">http-proxy-middleware</a> 包处理请求代理。</p>
+<p>比如：浏览器访问本地页面 <code>localhost:9600/index.html</code>，而 api 在 <code>localhost:3000</code> 域名下，你可以这样启用代理：</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// localhost:9600/api/users 会被代理到 http://localhost:3000/api/users</span>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">devServer</span>: {
+    <span class="hljs-attr">proxy</span>: {
+      <span class="hljs-string">'/api'</span>: <span class="hljs-string">'http://localhost:3000'</span>
+    }
+  }
+};
+</code></pre>
+<p>以上是简单示例，实际上 <a href="https://github.com/chimurai/http-proxy-middleware" target="_blank">http-proxy-middleware</a> 配置允许修改许多参数：重写请求路径、重写 Cookie 的域名和路径等。</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// localhost:9600/api/users 会被代理到 http://localhost:3000/users</span>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">devServer</span>: {
+    <span class="hljs-attr">proxy</span>: {
+      <span class="hljs-string">'/api'</span>: {
+        <span class="hljs-attr">target</span>: <span class="hljs-string">'http://localhost:3000'</span>,
+        <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// 将主机头的来源更改为目标 URL</span>
+        <span class="hljs-comment">// pathFilter: ['/api', '/ajax', '/someotherpath'], // 过滤路径，采用 Glob 模式匹配</span>
+        <span class="hljs-attr">pathRewrite</span>: { <span class="hljs-comment">// 重写目标的 url 路径。可以是对象，也可以是函数或异步函数。</span>
+          <span class="hljs-string">'^/oldApi'</span>: <span class="hljs-string">'/newApi'</span>, <span class="hljs-comment">// 重写路径</span>
+          <span class="hljs-string">'^/api'</span>: <span class="hljs-string">''</span>,           <span class="hljs-comment">// 移除路径</span>
+          <span class="hljs-string">'^/'</span>: <span class="hljs-string">'/path/'</span>,        <span class="hljs-comment">// 添加路径</span>
+        },
+        <span class="hljs-attr">cookieDomainRewrite</span>: { <span class="hljs-comment">// 重写响应头部 set-cookie 域名，可以是布尔值、字符串、对象</span>
+          <span class="hljs-string">"old.domain"</span>: <span class="hljs-string">"new.domain"</span>,
+        },
+        <span class="hljs-comment">// cookieDomainRewrite: "new.domain", // 要删除域，可使用空字符串（""）</span>
+        <span class="hljs-comment">// cookiePathRewrite: '' // 重写响应头部 set-cookie 路径，可取值与 cookieDomainRewrite 类似</span>
+      }
+    }
+  }
+};
+</code></pre>
+<h4 id="publicpath">publicPath</h4>
+<p>publicPath 用于指定哪些打包文件可在浏览器中访问，默认值是 <code>/</code>。</p>
+<p><strong>注意：</strong> publicPath 值总是以斜杠（<code>/</code>）开头和结尾。</p>
+<p>假设服务器运行在 <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> 并且 filename 选项被设置为 bundle.js，可以通过 <a href="http://localhost:8080/bundle.js" target="_blank">http://localhost:8080/bundle.js</a> 访问。</p>
+<p>修改 publicPath，将 bundle 放在指定目录下：</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">devServer</span>: {
+    <span class="hljs-attr">publicPath</span>: <span class="hljs-string">'/assets/'</span>
+  }
+};
+</code></pre>
+<p>现在可以通过 <a href="http://localhost:8080/assets/bundle.js" target="_blank">http://localhost:8080/assets/bundle.js</a> 访问 bundle。</p>
+<p>也可以使用一个完整的 URL，这是 <strong>模块热替换</strong> 所必需的：</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">devServer</span>: {
+    <span class="hljs-attr">publicPath</span>: <span class="hljs-string">'http://localhost:8080/assets/'</span>
+  }
+};
+</code></pre>
+<h4 id="writetodisk">writeToDisk</h4>
+<p>writeToDisk 用于告诉 devServer 将生成的资源写入磁盘。</p>
+<p>可以是一个布尔值，也可以是一个函数指定将哪些文件写入磁盘。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">devServer</span>: {
+    <span class="hljs-attr">writeToDisk</span>: <span class="hljs-function">(<span class="hljs-params">filePath</span>) =&gt;</span> {
+      <span class="hljs-keyword">return</span> <span class="hljs-regexp">/superman\.css$/</span>.<span class="hljs-title function_">test</span>(filePath);
+    }
+  }
+}
+</code></pre>
+<h4 id="其他属性">其他属性</h4>
+<ul>
+<li><strong>open：</strong> 布尔值，是否在服务启动后打开浏览器，默认 false。也可以传入字符串，指定用什么浏览器打开。注意：同一浏览器在不同平台的名称可能不一样，比如 Chrome 浏览器， 在 macOS 是 “Chrome”，在 Linux是 “google-chrome”，在 Windows 上是 “chrome”。</li>
+<li><strong>openPage：</strong> 字符串，指定打开浏览器时的导航页面。</li>
+<li><strong>port：</strong> 数值，指定要监听请求的端口号。</li>
+<li><strong>index：</strong> 被作为索引文件的文件名，默认值为 index.html。</li>
+<li><strong>after：</strong> 函数，在服务内部的所有其他中间件之<strong>后</strong>， 提供执行自定义中间件的功能。</li>
+<li><strong>allowedHosts：</strong> 数组，添加域名的白名单服务，允许一些开发服务器访问。以 <code>.</code> 开头的值可以用作子域通配符。</li>
+<li><strong>before：</strong> 函数，在服务内部的所有其他中间件之<strong>前</strong>， 提供执行自定义中间件的功能。</li>
+<li><strong>bonjour</strong>：布尔值，是否通过 <a href="http://www.zeroconf.org/" target="_blank">ZeroConf</a> 网络广播服务。</li>
+<li><strong>clientLogLevel：</strong> 可接收值：none | info | error | warning，当使用内联模式时，会在开发工具的控制台显示消息。</li>
+<li><strong>color：</strong> 布尔值，启用/禁用控制台的彩色输出。</li>
+<li><strong>compress：</strong> 布尔值，是否启用启用 gzip 压缩。</li>
+<li><strong>hot：</strong> 布尔值，是否启用 webpack 的模块热替换功能。</li>
+<li><strong>hotOnly：</strong> 布尔值，构建失败时，是否启用 webpack 的模块热替换功能，</li>
+<li><strong>info：</strong> 输出 cli 信息，只用于命令行工具。</li>
+<li><strong>noInfo：</strong> 布尔值，是否隐藏 webpack bundle 信息之类的消息。</li>
+<li><strong>progress：</strong> 布尔值，将运行进度输出到控制台。</li>
+<li><strong>public：</strong> 当使用内联模式并代理 dev-server 时，内联的客户端脚本并不总是知道要连接到什么地方。它会尝试根据 window.location 来猜测服务器的 URL，但是如果失败，你需要使用这个配置。</li>
+<li><strong>quiet：</strong> 布尔值，启用后，除了初始启动信息之外的任何内容都不会被打印到控制台。</li>
+<li><strong>socket：</strong> 用于监听的 Unix socket（而不是 host）。</li>
+<li><strong>staticOptions：</strong> 用于对 contentBase 路径下提供的静态文件，进行高级选项配置。</li>
+<li><strong>stats：</strong> 可接收值 none | errors-only | minimal | normal | verbose，用于精确控制要显示的 bundle 信息。<strong>注意：</strong> 此选项在配置 quiet 或 noInfo 时无效。</li>
+<li><strong>stdin：</strong> 布尔值，是否在 stdin 结束时关闭服务。</li>
+<li><strong>useLocalIp：</strong> 布尔值，是否允许浏览器使用本地 IP 打开。</li>
+<li><strong>watchContentBase</strong>：布尔值，是否监听 devServer.contentBase 选项下的文件。</li>
+<li><strong>watchOptions：</strong> 与监视文件相关的控制选项。</li>
+</ul>
+<h3 id="其他-webpack-配置">其他 webpack 配置</h3>
+<h4 id="context">context</h4>
+<p>context 用于设置基础目录，一个绝对路径，用于从配置中解析入口起点（entry point）和 loader。默认使用当前执行目录，即运行 webpack 时的目录路径。</p>
+<h4 id="target（构建目标）">target（构建目标）</h4>
+<p>target 用于告知 webpack，输出的文件是在什么环境使用的，默认值为：web，其值可以是一个字符串，或者是一个返回字符串和指定插件的函数。</p>
+<ul>
+<li>async-node：编译为类 Node.js 环境可用（使用 fs 和 vm 异步加载分块）。</li>
+<li>electron-main：编译为 Electron 主进程。</li>
+<li>electron-renderer：编译为 Electron 渲染进程，使用 JsonpTemplatePlugin、FunctionModulePlugin 来为浏览器环境提供目标，使用 NodeTargetPlugin 和 ExternalsPlugin 为 CommonJS 和 Electron 内置模块提供目标。</li>
+<li>node：编译为类 Node.js 环境可用（使用 Node.js require 加载 chunk）。</li>
+<li>node-webkit：编译为 Webkit 可用，并且使用 jsonp 去加载分块。支持 Node.js 内置模块和 nw.gui 导入（实验性质）。</li>
+<li>web：编译为类浏览器环境里可用<strong>（默认）</strong>。</li>
+<li>webworker：编译成一个 WebWorker。</li>
+</ul>
+<h3 id="应用示例">应用示例</h3>
+<h4 id="raw-loader"><a href="https://www.npmjs.com/package/raw-loader" target="_blank">raw-loader</a></h4>
+<p>允许将文件作为字符串注入到另一个文件。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">${<span class="hljs-built_in">require</span>(<span class="hljs-string">' raw-loader!babel-loader!. /meta.html'</span>)}</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">${<span class="hljs-built_in">require</span>(<span class="hljs-string">'raw-loader!babel-loader!../node_modules/common.js'</span>)}</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h4 id="html-webpack-externals-plugin"><a href="https://www.npmjs.com/package/html-webpack-externals-plugin" target="_blank">html-webpack-externals-plugin</a></h4>
+<p>这个插件非常简单，只是封装了另外两个 Webpack 插件来完成繁重的工作：</p>
+<ul>
+<li>在运行时修改 webpack 配置，将模块添加到 externals 属性；</li>
+<li>运行 copy-webpack-plugin 将模块资源复制到输出路径（必需是已安装的、在 node_modules 的模块）；</li>
+<li>运行 html-webpack-include-assets-plugin 将模块添加到 HTML 文件中。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> webpackConfig = {
+  <span class="hljs-attr">plugins</span>: [
+    <span class="hljs-keyword">new</span> <span class="hljs-title class_">HtmlWebpackPlugin</span>(),
+    <span class="hljs-keyword">new</span> <span class="hljs-title class_">HtmlWebpackExternalsPlugin</span>({
+      <span class="hljs-attr">externals</span>: [
+        {
+          <span class="hljs-attr">module</span>: <span class="hljs-string">'vue'</span>,
+          <span class="hljs-attr">entry</span>: <span class="hljs-string">'https://unpkg.com/vue@3/dist/vue.global.js'</span>,
+          <span class="hljs-attr">global</span>: <span class="hljs-string">'Vue'</span>,
+        },
+        {
+          <span class="hljs-comment">// /node_modules/atob/node-atob.js</span>
+          <span class="hljs-attr">module</span>: <span class="hljs-string">'atob'</span>,
+          <span class="hljs-attr">entry</span>: <span class="hljs-string">'node-atob.js'</span>,
+          <span class="hljs-attr">global</span>: <span class="hljs-string">'AToB'</span>,
+        },
+      ]
+    }),
+  ]
+}
+</code></pre>
+<p>最终会将 <code>node_modules/atob/node-atob.js</code>  文件复制到 vendor 文件夹下，并在 HTML 注入：</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!--index.html--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"vendor/atob/node-atob.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"index.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h4 id="eslint-自动修复">eslint 自动修复</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">// vue.config.js</span>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">chainWebpack</span>: <span class="hljs-function"><span class="hljs-params">config</span> =&gt;</span> {
+    <span class="hljs-keyword">if</span> (!process.<span class="hljs-property">env</span>.<span class="hljs-property">NODE_ENV</span> === <span class="hljs-string">"production"</span>) {
+      config.<span class="hljs-property">module</span>
+        .<span class="hljs-title function_">rule</span>(<span class="hljs-string">"eslint"</span>)
+        .<span class="hljs-title function_">use</span>(<span class="hljs-string">"eslint-loader"</span>)
+        .<span class="hljs-title function_">options</span>({
+          <span class="hljs-attr">fix</span>: <span class="hljs-literal">true</span>
+        });
+    }
+  }
+};
+</code></pre>
+<h3 id="相关问题">相关问题</h3>
+<h4 id="webpack-和-grunt、gulp-的区别？">Webpack 和 Grunt、Gulp 的区别？</h4>
+<p>Grunt、Gulp 主要是解决重复任务的问题。比如: 压缩、编译 less、sass、地址添加 hash、替换等。</p>
+<blockquote>
+<p>Grunt 官网中的一句话：</p>
+<p>自动化。对于需要反复重复的任务，例如压缩（minification）、编译、单元测试、linting等，自动化工具可以减轻你的劳动，简化你的工作。</p>
+</blockquote>
+<p>Webpack 作者 Tobias 回复与 Grunt、Gulp、NPM 脚本的比较。</p>
+<blockquote>
+<p>Tobias： NPM 脚本对我而言足矣。实际上，说 webpack 是 Grunt/Gulp 的替代器并不完全准确。Grunt 和 Gulp 以及 NPM 脚本都是任务执行程序。</p>
+<p>Webpack是<strong>模块打包程序</strong>。这两类程序的目标不一样。但 webpack 简化了必须 “过度使用” Grunt 和 Gulp 和NPM 脚本才能实现的 Web 开发任务也是事实。NPM 脚本才是 Grunt 和 Gulp 的替代品。</p>
+<p>不过，除了纯粹的构建之外，任务运行程序也有存在的理由，比如部署、代码检查、版本管理，等等。</p>
+</blockquote>
+<p><strong>grunt、gulp 思路：</strong> 遍历源文件 -&gt; 按规则匹配文件 -&gt; 执行任务。做不到按需加载，对打包的资源，是否用到，打包过程不关心。</p>
+<p><strong>webpack 思路：</strong> 入口 -&gt; 模块依赖加载 -&gt; 依赖分析 -&gt;【打包】。在加载、分析、打包的过程中，可以针对性的做一些解决方案。比如：code split（拆分公共代码）。</p>
+<p>webpack 更像一套前端工程化解决方案。利用强大插件机制，解决前端静态资源依赖管理的问题。</p>
+<p><strong>注意 Grunt 与 Gulp 性能比较：</strong> Grunt 的每个任务处理完成后存放在本地磁盘 <code>.tmp</code> 目录中，有本地磁盘的 I/O 操作，会导致打包速度比较慢；而 Gulp 有一个文件流的概念，也就是，每一步构建的结果并不会存在本地磁盘，而是保存在内存中，下一个步骤是可以使用上一个步骤的内存，大大增加了打包的速度。</p>
+<h4 id="webpack-和-rollup-有什么区别？">webpack 和 rollup 有什么区别？</h4>
+<p>rollup 从设计之初就是面向 ES module 的，它诞生时 AMD、CMD、UMD 的格式之争还很火热，作者希望充分利用 ES module 机制，构建出结构扁平，性能出众的类库。</p>
+<p>webpack 致力于复杂 SPA 的模块化构建，其优势在于:</p>
+<ul>
+<li>通过 loader 处理各种各样的资源依赖；</li>
+<li>HMR 模块热替换；</li>
+<li>代码按需加载；</li>
+<li>提取公共模块。</li>
+</ul>
+<p>rollup 致力于打造性能出众的类库，其优势在于：</p>
+<ul>
+<li>编译出来的代码可读性好，打包后生成的 bundle 内容十分干净，没有什么多余的代码，只是将各个模块按照依赖顺序拼接起来，所有模块构建在一个函数内, 执行效率更高；</li>
+<li>编译时依赖处理（rollup）自然比运行时依赖处理（webpack）性能更好。</li>
+</ul>
+<h4 id="什么是-webpack-模块？">什么是 webpack 模块？</h4>
+<ul>
+<li>ES2015 import 语句；</li>
+<li>CommonJS require() 语句；</li>
+<li>AMD define 和 require 语句；</li>
+<li>css/sass/less 文件中的 @import 语句；</li>
+<li>样式（url(...)）、HTML 文件图片的 src 属性。</li>
+</ul>
+<p>通过 loader，webpack 可以支持以各种语言和预处理器语法编写的模块。loader 描述了 webpack 如何处理非 JavaScript 模块，并且在 bundle 中引入这些依赖_。</p>
+<h4 id="webpack-如何解析模块路径？">webpack 如何解析模块路径？</h4>
+<p>resolver 是一个库，用于帮助 webpack 从每个如 require/import 语句中，找到需要引入到 bundle 中的模块代码的<strong>绝对路径</strong>。 当打包模块时，webpack 使用 enhanced-resolve 来解析文件路径。</p>
+<p>使用 enhanced-resolve，webpack 能够解析三种文件路径：</p>
+<ul>
+<li><p><strong>绝对路径：</strong> 已是绝对路径，不需要进一步解析。</p>
+</li>
+<li><p><strong>相对路径：</strong> 以 import/require 的资源文件所在的目录为上下文目录，拼接指定的相对路径，以产生模块的绝对路径。</p>
+</li>
+<li><p><strong>模块路径：</strong> 模块将在 <code>resolve.modules</code> 中指定的所有目录内搜索，可以通过 resolve.alias 配置路径别名。一旦根据上述规则解析路径后，resolver 将检查路径是否指向文件或目录。</p>
+<p>如果路径指向一个文件：</p>
+<ul>
+<li>如果路径具有文件扩展名，则被直接将文件打包。</li>
+<li>否则，将使用 <code>resolve.extensions</code> 选项作为文件扩展名来解析，此选项告诉 resolver 在解析中能够接受哪些扩展名，例如：<code>.js, .jsx</code>。</li>
+</ul>
+<p>如果路径指向一个文件夹：</p>
+<ul>
+<li>如果文件夹中包含 package.json 文件，则按照顺序查找 resolve.mainFields 配置选项中指定的字段。通过 package.json 中的第一个字段确定文件路径。</li>
+<li>如果不存在 package.json 文件或者 package.json 文件中的 main 字段没有返回一个有效路径，则按照顺序查找 resolve.mainFiles 配置选项中指定的文件名，看是否能在 import/require 目录下匹配到一个存在的文件名。</li>
+<li>文件扩展名通过 resolve.extensions 选项，采用类似的方法进行解析。</li>
+</ul>
+<p>webpack 根据构建目标（node|web），为这些选项提供了合理的默认配置。</p>
+</li>
+</ul>
+<h4 id="commonjs-和-commonjs2-有什么区别？">commonjs 和 commonjs2 有什么区别？</h4>
+<p>两个都是 CommonJS  规范，commonjs 也可称作 commonjs1，导出模块只有 exports 这一种方式，而 commonjs2 还支持 module.exports 这种方式导出模块。module.exports 方式被 Nodejs 和许多其他 CommonJs 实现。</p>
+<p>commonjs 属于通过在对象上赋值暴露，commonjs2 属于模块定义系统。</p>
+<p>对 Nodejs 而言，exports 只是 module.exports 的一个别名，实际导出的还是 module.exports，不能修改 exports 的指向，相当于：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-variable language_">module</span> = {
+    <span class="hljs-attr">exports</span>: {}
+}
+<span class="hljs-keyword">var</span> <span class="hljs-built_in">exports</span> = <span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> <span class="hljs-comment">// 指向 module 的 exports 属性</span>
+<span class="hljs-built_in">exports</span>.<span class="hljs-property">a</span> = <span class="hljs-number">1</span> <span class="hljs-comment">// 允许</span>
+<span class="hljs-built_in">exports</span> = {   <span class="hljs-comment">// 不允许，已经不再指向 module 的 exports 属性</span>
+    <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>
+}
+</code></pre>
+<p>对于 webpack 的  output.libraryTarget 而言，其导出结果不同：</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// libraryTarget: 'commonjs'</span>
+<span class="hljs-built_in">exports</span>[<span class="hljs-string">'MyLibrary'</span>] = _entry_return_;
+
+<span class="hljs-comment">// libraryTarget: 'commonjs2'</span>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = _entry_return_;
+</code></pre>
+<h3 id="参考资料">参考资料</h3>
+<p><a href="https://webpack.docschina.org/" target="_blank">Webpack 中文文档</a> </p>
+<p></p><footer class="page-footer"><span class="copyright">© lizhao all right reserved，powered by Gitbook</span><span class="footer-modification">文件修订时间：
+2022-11-15 20:29:44
+</span></footer><p></p>
+<div id="gitalk-container"></div> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"></link> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="12-webpack4.x原理篇.html" class="navigation navigation-prev " aria-label="Previous page: Webpack4.X原理篇">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="12-webpack构建优化篇.html" class="navigation navigation-next " aria-label="Next page: Webpack构建优化篇">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Webpack基础入门篇","level":"4.36","depth":1,"next":{"title":"Webpack构建优化篇","level":"4.37","depth":1,"path":"frontend/12-webpack构建优化篇.md","ref":"frontend/12-webpack构建优化篇.md","articles":[]},"previous":{"title":"Webpack4.X原理篇","level":"4.35","depth":1,"path":"frontend/12-webpack4.x原理篇.md","ref":"frontend/12-webpack4.x原理篇.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","summary","sandpack","theme-default","theme-comscore","tbfed-pagefooter","pageview-count","accordion","sharing-plus","back-to-top-button","chapter-fold","klipse","mygitalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"summary":{"exclude":["docs/**"]},"search-pro":{"maxSearchIndexSize":10000000},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"mygitalk":{"flipMoveOptions":{},"clientID":"35175582adb321d85634","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["lizh"],"createIssueManually":false,"distractionFreeMode":false,"repo":"https://github.com/1927344728/fed-knowledge","owner":"lizh","enableHotKey":true,"clientSecret":"2e60c4d61474ec23e752f127e838aa2039e0433e","pagerDirection":"last","labels":["Gitalk"]},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":true,"qzone":true},"sandpack":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"lizhao","honkit":"^6.0.2","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术驿站•LIZHAO","language":"zh","gitbook":"*","description":"这是开发者的技术文档"},"file":{"path":"frontend/12-webpack基础入门篇.md","mtime":"2022-11-15T12:29:44.563Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2026-06-29T12:14:32.945Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-sandpack/honkit-plugin-sandpack.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

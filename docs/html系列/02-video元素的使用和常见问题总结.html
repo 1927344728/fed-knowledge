@@ -1,0 +1,4371 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Video元素的使用和常见问题总结 · 技术驿站•LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 6.0.2">
+        <meta name="author" content="lizhao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03-html探索系列-meta标签.md" />
+    
+    
+    <link rel="prev" href="01-HTML元素的宽高及位置详解.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/00-前端调试随笔.html">
+            
+                <a href="../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/05-JS常见问题概览.html">
+            
+                <a href="../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/07-微信小程序开发.html">
+            
+                <a href="../bugs/07-微信小程序开发.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    微信小程序开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bugs/08-NodeJs常见问题概览.html">
+            
+                <a href="../bugs/08-NodeJs常见问题概览.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    NodeJs常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../bugs/09-Mac常见问题概览.html">
+            
+                <a href="../bugs/09-Mac常见问题概览.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Mac常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../bugs/10-微信环境前端开发指南.html">
+            
+                <a href="../bugs/10-微信环境前端开发指南.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    微信环境前端开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../bugs/99-其他问题汇总.html">
+            
+                <a href="../bugs/99-其他问题汇总.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    其他问题汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../css系列/00-CSS基础知识.html">
+            
+                <a href="../css系列/00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../css系列/00-CSS常见问答.html">
+            
+                <a href="../css系列/00-CSS常见问答.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../css系列/00-CSS常见问答02.html">
+            
+                <a href="../css系列/00-CSS常见问答02.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    CSS常见问答02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../css系列/00-CSS应用示例.html">
+            
+                <a href="../css系列/00-CSS应用示例.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    CSS应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../css系列/00-CSS应用示例02.html">
+            
+                <a href="../css系列/00-CSS应用示例02.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS应用示例02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../css系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../css系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../css系列/04-CSS探索系列-margin.html">
+            
+                <a href="../css系列/04-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                <a href="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    CSS探索系列 Auto关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../css系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../css系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../css系列/05-CSS探索系列-line-height.html">
+            
+                <a href="../css系列/05-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../css系列/05-CSS探索系列-元素居中.html">
+            
+                <a href="../css系列/05-CSS探索系列-元素居中.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    CSS探索系列 元素居中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../css系列/05-CSS探索系列-动画.html">
+            
+                <a href="../css系列/05-CSS探索系列-动画.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    CSS探索系列 动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../css系列/08-重新认识伪类与伪元素.html">
+            
+                <a href="../css系列/08-重新认识伪类与伪元素.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    重新认识伪类与伪元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../css系列/09-自定义表单伪元素样式.html">
+            
+                <a href="../css系列/09-自定义表单伪元素样式.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    自定义表单伪元素样式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../css系列/10-如何理解css中的display属性.html">
+            
+                <a href="../css系列/10-如何理解css中的display属性.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    如何理解Css中的Display属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                <a href="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                <a href="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    一文彻底弄懂CSS中的长度单位
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                <a href="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                    
+                        <b>2.21.</b>
+                    
+                    CSS中一些有特性的属性或属性值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../css系列/14-Web中如何实现长宽比.html">
+            
+                <a href="../css系列/14-Web中如何实现长宽比.html">
+            
+                    
+                        <b>2.22.</b>
+                    
+                    Web中如何实现长宽比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../css系列/15-@规则：@font-face.html">
+            
+                <a href="../css系列/15-@规则：@font-face.html">
+            
+                    
+                        <b>2.23.</b>
+                    
+                    @规则：@Font Face
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                <a href="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                    
+                        <b>2.24.</b>
+                    
+                    @规则：@Media（媒体查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../css系列/15-@规则：其他.html">
+            
+                <a href="../css系列/15-@规则：其他.html">
+            
+                    
+                        <b>2.25.</b>
+                    
+                    @规则：其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../css系列/_关于css.html">
+            
+                <a href="../css系列/_关于css.html">
+            
+                    
+                        <b>2.26.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../frontend/00-00-关于Web前端.html">
+            
+                <a href="../frontend/00-00-关于Web前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    00 关于Web前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../frontend/00-01-前端知识概览.html">
+            
+                <a href="../frontend/00-01-前端知识概览.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    01 前端知识概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../frontend/00-02-常用前端库概览.html">
+            
+                <a href="../frontend/00-02-常用前端库概览.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    02 常用前端库概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../frontend/01-基础-00-前端常见问题01.html">
+            
+                <a href="../frontend/01-基础-00-前端常见问题01.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    基础 00 前端常见问题01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../frontend/01-基础-01-浏览器缓存.html">
+            
+                <a href="../frontend/01-基础-01-浏览器缓存.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    基础 01 浏览器缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../frontend/01-基础-02-浏览器工作原理.html">
+            
+                <a href="../frontend/01-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../frontend/01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                <a href="../frontend/01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    基础 03 谈谈前端跨域问题及解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../frontend/02-进阶-01-Web性能优化.html">
+            
+                <a href="../frontend/02-进阶-01-Web性能优化.html">
+            
+                    
+                        <b>4.8.</b>
+                    
+                    进阶 01 Web性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../frontend/02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                <a href="../frontend/02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                    
+                        <b>4.9.</b>
+                    
+                    进阶 02 搜索引擎优化（SEO）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="../frontend/02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                <a href="../frontend/02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                    
+                        <b>4.10.</b>
+                    
+                    进阶 03 前端模块化编程：CommonJS、AMD、CMD、UMD、ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="../frontend/02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                <a href="../frontend/02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                    
+                        <b>4.11.</b>
+                    
+                    进阶 04 规范代码：Linter、Prettier、EditorConfig
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="../frontend/02-进阶-05-Web离线应用.html">
+            
+                <a href="../frontend/02-进阶-05-Web离线应用.html">
+            
+                    
+                        <b>4.12.</b>
+                    
+                    进阶 05 Web离线应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="../frontend/02-进阶-06-WebSocket.html">
+            
+                <a href="../frontend/02-进阶-06-WebSocket.html">
+            
+                    
+                        <b>4.13.</b>
+                    
+                    进阶 06 WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="../frontend/02-进阶-07-Web跨页面通信.html">
+            
+                <a href="../frontend/02-进阶-07-Web跨页面通信.html">
+            
+                    
+                        <b>4.14.</b>
+                    
+                    进阶 07 Web跨页面通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="../frontend/02-进阶-08-页面可见性和生命周期.html">
+            
+                <a href="../frontend/02-进阶-08-页面可见性和生命周期.html">
+            
+                    
+                        <b>4.15.</b>
+                    
+                    进阶 08 页面可见性和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="../frontend/02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                <a href="../frontend/02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                    
+                        <b>4.16.</b>
+                    
+                    进阶 09 事件循环、宏任务、微任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="../frontend/02-进阶-10-内存泄漏.html">
+            
+                <a href="../frontend/02-进阶-10-内存泄漏.html">
+            
+                    
+                        <b>4.17.</b>
+                    
+                    进阶 10 内存泄漏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="../frontend/02-进阶-11-前端自动化测试.html">
+            
+                <a href="../frontend/02-进阶-11-前端自动化测试.html">
+            
+                    
+                        <b>4.18.</b>
+                    
+                    进阶 11 前端自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="../frontend/02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                <a href="../frontend/02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                    
+                        <b>4.19.</b>
+                    
+                    进阶 12 前端也玩多线程？WebWorker其实很简单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="../frontend/03-高级-01-前端安全深度解析.html">
+            
+                <a href="../frontend/03-高级-01-前端安全深度解析.html">
+            
+                    
+                        <b>4.20.</b>
+                    
+                    高级 01 前端安全深度解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.21" data-path="../frontend/03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                <a href="../frontend/03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                    
+                        <b>4.21.</b>
+                    
+                    高级 02 CI、CD（Docker+Jenkins+Nginx）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.22" data-path="../frontend/04-Vue2.x原理篇.html">
+            
+                <a href="../frontend/04-Vue2.x原理篇.html">
+            
+                    
+                        <b>4.22.</b>
+                    
+                    Vue2.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.23" data-path="../frontend/04-Vue3初步了解及迁移指南.html">
+            
+                <a href="../frontend/04-Vue3初步了解及迁移指南.html">
+            
+                    
+                        <b>4.23.</b>
+                    
+                    Vue3初步了解及迁移指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.24" data-path="../frontend/04-重读Vue教程.html">
+            
+                <a href="../frontend/04-重读Vue教程.html">
+            
+                    
+                        <b>4.24.</b>
+                    
+                    重读Vue教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.25" data-path="../frontend/05-React17.x原理篇.html">
+            
+                <a href="../frontend/05-React17.x原理篇.html">
+            
+                    
+                        <b>4.25.</b>
+                    
+                    React17.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.26" data-path="../frontend/05-你必须知道的React问题.html">
+            
+                <a href="../frontend/05-你必须知道的React问题.html">
+            
+                    
+                        <b>4.26.</b>
+                    
+                    你必须知道的React问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.27" data-path="../frontend/05-重读React教程.html">
+            
+                <a href="../frontend/05-重读React教程.html">
+            
+                    
+                        <b>4.27.</b>
+                    
+                    重读React教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.28" data-path="../frontend/06-聊一聊Cookie的一些问题.html">
+            
+                <a href="../frontend/06-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.28.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.29" data-path="../frontend/07-SSL证书简介及其生成、使用.md">
+            
+                <span>
+            
+                    
+                        <b>4.29.</b>
+                    
+                    SSL证书简介及其生成、使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.30" data-path="../frontend/07-如何启动本地HTTPS服务.html">
+            
+                <a href="../frontend/07-如何启动本地HTTPS服务.html">
+            
+                    
+                        <b>4.30.</b>
+                    
+                    如何启动本地HTTPS服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.31" data-path="../frontend/08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                <a href="../frontend/08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                    
+                        <b>4.31.</b>
+                    
+                    0.0.0.0、127.0.0.1和Localhost的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.32" data-path="../frontend/09-如何理解HTTP响应的状态码.html">
+            
+                <a href="../frontend/09-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.32.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.33" data-path="../frontend/10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                <a href="../frontend/10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                    
+                        <b>4.33.</b>
+                    
+                    字符编码那点事：ASCII、Unicode、GBK、UTF 8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.34" data-path="../frontend/11-HTTP协议的演变历史.md">
+            
+                <span>
+            
+                    
+                        <b>4.34.</b>
+                    
+                    HTTP协议的演变历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.35" data-path="../frontend/12-webpack4.x原理篇.html">
+            
+                <a href="../frontend/12-webpack4.x原理篇.html">
+            
+                    
+                        <b>4.35.</b>
+                    
+                    Webpack4.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.36" data-path="../frontend/12-webpack基础入门篇.html">
+            
+                <a href="../frontend/12-webpack基础入门篇.html">
+            
+                    
+                        <b>4.36.</b>
+                    
+                    Webpack基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.37" data-path="../frontend/12-webpack构建优化篇.html">
+            
+                <a href="../frontend/12-webpack构建优化篇.html">
+            
+                    
+                        <b>4.37.</b>
+                    
+                    Webpack构建优化篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.38" data-path="../frontend/13-TypeScript使用指南.html">
+            
+                <a href="../frontend/13-TypeScript使用指南.html">
+            
+                    
+                        <b>4.38.</b>
+                    
+                    TypeScript使用指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.39" data-path="../frontend/14-Web中图片的使用.html">
+            
+                <a href="../frontend/14-Web中图片的使用.html">
+            
+                    
+                        <b>4.39.</b>
+                    
+                    Web中图片的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.40" data-path="../frontend/15-2026年，还需要微前端吗？——三大框架对比与选型思考.md">
+            
+                <span>
+            
+                    
+                        <b>4.40.</b>
+                    
+                    2026年，还需要微前端吗？——三大框架对比与选型思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.41" data-path="../frontend/16-Electron基础篇.html">
+            
+                <a href="../frontend/16-Electron基础篇.html">
+            
+                    
+                        <b>4.41.</b>
+                    
+                    Electron基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.42" data-path="../frontend/17-uniapp基础篇.html">
+            
+                <a href="../frontend/17-uniapp基础篇.html">
+            
+                    
+                        <b>4.42.</b>
+                    
+                    Uniapp基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.43" data-path="../frontend/17-uniapp离线打包（Android）篇.html">
+            
+                <a href="../frontend/17-uniapp离线打包（Android）篇.html">
+            
+                    
+                        <b>4.43.</b>
+                    
+                    Uniapp离线打包（Android）篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.44" data-path="../frontend/18-sentry基础篇（vue）.html">
+            
+                <a href="../frontend/18-sentry基础篇（vue）.html">
+            
+                    
+                        <b>4.44.</b>
+                    
+                    Sentry基础篇（Vue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.45" data-path="../frontend/19-视口和软键盘对视口的影响.html">
+            
+                <a href="../frontend/19-视口和软键盘对视口的影响.html">
+            
+                    
+                        <b>4.45.</b>
+                    
+                    视口和软键盘对视口的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.46" data-path="../frontend/20-WebGL从入门到实践.html">
+            
+                <a href="../frontend/20-WebGL从入门到实践.html">
+            
+                    
+                        <b>4.46.</b>
+                    
+                    WebGL从入门到实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.47" data-path="../frontend/21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                <a href="../frontend/21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                    
+                        <b>4.47.</b>
+                    
+                    Three.Js基础实战：从画一个立方体开始，掌握3D世界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.48" data-path="../frontend/22-ReactNative基础篇.html">
+            
+                <a href="../frontend/22-ReactNative基础篇.html">
+            
+                    
+                        <b>4.48.</b>
+                    
+                    ReactNative基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49" data-path="../frontend/代码规范/">
+            
+                <a href="../frontend/代码规范/">
+            
+                    
+                        <b>4.49.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.49.1" data-path="../frontend/代码规范/00-前端规范.html">
+            
+                <a href="../frontend/代码规范/00-前端规范.html">
+            
+                    
+                        <b>4.49.1.</b>
+                    
+                    前端规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.2" data-path="../frontend/代码规范/01-HTML.html">
+            
+                <a href="../frontend/代码规范/01-HTML.html">
+            
+                    
+                        <b>4.49.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.3" data-path="../frontend/代码规范/02-CSS.html">
+            
+                <a href="../frontend/代码规范/02-CSS.html">
+            
+                    
+                        <b>4.49.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.4" data-path="../frontend/代码规范/03-JS.html">
+            
+                <a href="../frontend/代码规范/03-JS.html">
+            
+                    
+                        <b>4.49.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="00-HTML基础知识.html">
+            
+                <a href="00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="00-HTML基础知识02.html">
+            
+                <a href="00-HTML基础知识02.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML基础知识02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="00-HTML常见问答.html">
+            
+                <a href="00-HTML常见问答.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    HTML常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="00-HTML经典实践用例.html">
+            
+                <a href="00-HTML经典实践用例.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    HTML经典实践用例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="01-HTML元素的宽高及位置详解.html">
+            
+                <a href="01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.6" data-path="02-video元素的使用和常见问题总结.html">
+            
+                <a href="02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="03-html探索系列-meta标签.md">
+            
+                <span>
+            
+                    
+                        <b>5.7.</b>
+                    
+                    Html探索系列 Meta标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                <a href="04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                    
+                        <b>5.8.</b>
+                    
+                    DOCTYPE：文档类型与浏览器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="05-DHTML（动态网页）简介.html">
+            
+                <a href="05-DHTML（动态网页）简介.html">
+            
+                    
+                        <b>5.9.</b>
+                    
+                    DHTML（动态网页）简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="06-HTML标签详解.md">
+            
+                <span>
+            
+                    
+                        <b>5.10.</b>
+                    
+                    HTML标签详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="07-HTML布局的几种方式.html">
+            
+                <a href="07-HTML布局的几种方式.html">
+            
+                    
+                        <b>5.11.</b>
+                    
+                    HTML布局的几种方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="08-HTML全局属性.html">
+            
+                <a href="08-HTML全局属性.html">
+            
+                    
+                        <b>5.12.</b>
+                    
+                    HTML全局属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="09-标记语言演进：从GML到HTML动态标准.html">
+            
+                <a href="09-标记语言演进：从GML到HTML动态标准.html">
+            
+                    
+                        <b>5.13.</b>
+                    
+                    标记语言演进：从GML到HTML动态标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.14" data-path="_关于html.html">
+            
+                <a href="_关于html.html">
+            
+                    
+                        <b>5.14.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Javascript系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../javascript系列/00-基础知识.html">
+            
+                <a href="../javascript系列/00-基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../javascript系列/00-常见问答.html">
+            
+                <a href="../javascript系列/00-常见问答.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../javascript系列/00-应用示例.html">
+            
+                <a href="../javascript系列/00-应用示例.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../javascript系列/00-趣味示例.html">
+            
+                <a href="../javascript系列/00-趣味示例.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    趣味示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../javascript系列/00-进阶知识.html">
+            
+                <a href="../javascript系列/00-进阶知识.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    进阶知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    基础篇 01 数据类型之基本类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    基础篇 01 数据类型之引用类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                <a href="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    基础篇 02 类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../javascript系列/01-基础篇-03-运算符.html">
+            
+                <a href="../javascript系列/01-基础篇-03-运算符.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                    基础篇 03 运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                <a href="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    基础篇 04 正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                <a href="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                    
+                        <b>6.11.</b>
+                    
+                    基础篇 05 AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="../javascript系列/01-基础篇-06--window对象.html">
+            
+                <a href="../javascript系列/01-基础篇-06--window对象.html">
+            
+                    
+                        <b>6.12.</b>
+                    
+                    基础篇 06  Window对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                <a href="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                    
+                        <b>6.13.</b>
+                    
+                    基础篇 07 Error、JSON、Math、Console对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                <a href="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                    
+                        <b>6.14.</b>
+                    
+                    基础篇 08 History、URL、Screen、Navigator、Location对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                    
+                        <b>6.15.</b>
+                    
+                    基础篇 09 文档对象模型（DOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                <a href="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                    
+                        <b>6.16.</b>
+                    
+                    基础篇 10 Document对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.17" data-path="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                <a href="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                    
+                        <b>6.17.</b>
+                    
+                    基础篇 11 Element对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.18" data-path="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                <a href="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                    
+                        <b>6.18.</b>
+                    
+                    基础篇 12 Event对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.19" data-path="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                <a href="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                    
+                        <b>6.19.</b>
+                    
+                    基础篇 13 键盘、鼠标、触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.20" data-path="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                <a href="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                    
+                        <b>6.20.</b>
+                    
+                    基础篇 14 MutationObserver对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.21" data-path="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                    
+                        <b>6.21.</b>
+                    
+                    基础篇 15 CSS对象模型（CSSOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.22" data-path="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                <a href="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                    
+                        <b>6.22.</b>
+                    
+                    进阶篇 01 Prototype对象和继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.23" data-path="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                    
+                        <b>6.23.</b>
+                    
+                    进阶篇 02 Promise对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.24" data-path="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                <a href="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                    
+                        <b>6.24.</b>
+                    
+                    进阶篇 03 有特性的一些事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.25" data-path="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                    
+                        <b>6.25.</b>
+                    
+                    进阶篇 04 Proxy对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.26" data-path="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                    
+                        <b>6.26.</b>
+                    
+                    进阶篇 05 Reflect对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.27" data-path="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                <a href="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                    
+                        <b>6.27.</b>
+                    
+                    进阶篇 06 Class（类）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.28" data-path="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                <a href="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                    
+                        <b>6.28.</b>
+                    
+                    进阶篇 07 迭代器（Iterator）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.29" data-path="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                <a href="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                    
+                        <b>6.29.</b>
+                    
+                    进阶篇 08 Generator和Async函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.30" data-path="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                <a href="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                    
+                        <b>6.30.</b>
+                    
+                    进阶篇 09 JavaScript异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.31" data-path="../javascript系列/04-Date对象和日期时间字符串格式.md">
+            
+                <span>
+            
+                    
+                        <b>6.31.</b>
+                    
+                    Date对象和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.32" data-path="../javascript系列/05-Canvas基础入门篇.html">
+            
+                <a href="../javascript系列/05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.32.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.33" data-path="../javascript系列/05-Canvas进阶篇.html">
+            
+                <a href="../javascript系列/05-Canvas进阶篇.html">
+            
+                    
+                        <b>6.33.</b>
+                    
+                    Canvas进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.34" data-path="../javascript系列/06-SVG基础入门篇.html">
+            
+                <a href="../javascript系列/06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.34.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.35" data-path="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.35.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.36" data-path="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.36.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.37" data-path="../javascript系列/08-谈谈JavaScript的作用域和上下文.md">
+            
+                <span>
+            
+                    
+                        <b>6.37.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.38" data-path="../javascript系列/10-复制内容到剪贴板.html">
+            
+                <a href="../javascript系列/10-复制内容到剪贴板.html">
+            
+                    
+                        <b>6.38.</b>
+                    
+                    复制内容到剪贴板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.39" data-path="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                <a href="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                    
+                        <b>6.39.</b>
+                    
+                    44道JavaScript难题，还不来考考？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.40" data-path="../javascript系列/_关于Javascript.html">
+            
+                <a href="../javascript系列/_关于Javascript.html">
+            
+                    
+                        <b>6.40.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java系列</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../java系列/01-00-Java入门篇.html">
+            
+                <a href="../java系列/01-00-Java入门篇.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    00 Java入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../java系列/01-01-Java进阶篇.html">
+            
+                <a href="../java系列/01-01-Java进阶篇.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    01 Java进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../java系列/01-02-Java高级篇.html">
+            
+                <a href="../java系列/01-02-Java高级篇.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    02 Java高级篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../java系列/02-pom.xml详解.html">
+            
+                <a href="../java系列/02-pom.xml详解.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Pom.Xml详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../java系列/03-01-SpringBoot入门篇.html">
+            
+                <a href="../java系列/03-01-SpringBoot入门篇.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    01 SpringBoot入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../java系列/05-轻量应用服务器部署指南（腾讯云）.md">
+            
+                <span>
+            
+                    
+                        <b>7.6.</b>
+                    
+                    轻量应用服务器部署指南（腾讯云）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../java系列/06-keytool命令行工具.md">
+            
+                <span>
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Keytool命令行工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">NodeJs</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../nodeJs/00-0关于Node.js.html">
+            
+                <a href="../nodeJs/00-0关于Node.js.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    0关于Node.Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../nodeJs/00-常见问题.html">
+            
+                <a href="../nodeJs/00-常见问题.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                <a href="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Node.Js：三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                <a href="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                    
+                        <b>8.4.</b>
+                    
+                    Npm包管理器简介及一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                <a href="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                    
+                        <b>8.5.</b>
+                    
+                    NPM：Package.Json详解（中文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                <a href="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                    
+                        <b>8.6.</b>
+                    
+                    NPM：从零开始，开发一个软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="../nodeJs/05-NPM：常用命令.html">
+            
+                <a href="../nodeJs/05-NPM：常用命令.html">
+            
+                    
+                        <b>8.7.</b>
+                    
+                    NPM：常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                <a href="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                    
+                        <b>8.8.</b>
+                    
+                    Node.Js：Fs（文件系统）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                <a href="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                    
+                        <b>8.9.</b>
+                    
+                    Node.Js：Global（全局变量）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="../nodeJs/08-Node.js：HTTP.html">
+            
+                <a href="../nodeJs/08-Node.js：HTTP.html">
+            
+                    
+                        <b>8.10.</b>
+                    
+                    Node.Js：HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="../nodeJs/09-Node.js：module（模块）.html">
+            
+                <a href="../nodeJs/09-Node.js：module（模块）.html">
+            
+                    
+                        <b>8.11.</b>
+                    
+                    Node.Js：Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="../nodeJs/10-Node.js：path（路径）.html">
+            
+                <a href="../nodeJs/10-Node.js：path（路径）.html">
+            
+                    
+                        <b>8.12.</b>
+                    
+                    Node.Js：Path（路径）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                <a href="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                    
+                        <b>8.13.</b>
+                    
+                    Node.Js：Readline（逐行读取）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.14" data-path="../nodeJs/12-锁定项目的Node版本.html">
+            
+                <a href="../nodeJs/12-锁定项目的Node版本.html">
+            
+                    
+                        <b>8.14.</b>
+                    
+                    锁定项目的Node版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../research/02-如何监控前端异常？.html">
+            
+                <a href="../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../research/03-H5页面跳转和刷新.html">
+            
+                <a href="../research/03-H5页面跳转和刷新.html">
+            
+                    
+                        <b>9.3.</b>
+                    
+                    H5页面跳转和刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>9.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>9.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>9.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../research/07-H5可视化编辑.html">
+            
+                <a href="../research/07-H5可视化编辑.html">
+            
+                    
+                        <b>9.7.</b>
+                    
+                    H5可视化编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="../research/08-Web常用功能.html">
+            
+                <a href="../research/08-Web常用功能.html">
+            
+                    
+                        <b>9.8.</b>
+                    
+                    Web常用功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" data-path="../research/10-H5页面生成图片方案总结.html">
+            
+                <a href="../research/10-H5页面生成图片方案总结.html">
+            
+                    
+                        <b>9.9.</b>
+                    
+                    H5页面生成图片方案总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10" data-path="../research/Javascript加密混淆.html">
+            
+                <a href="../research/Javascript加密混淆.html">
+            
+                    
+                        <b>9.10.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.11" data-path="../research/Vue如何导入TypeScript.html">
+            
+                <a href="../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>9.11.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.12" data-path="../research/移动端PDF预览.html">
+            
+                <a href="../research/移动端PDF预览.html">
+            
+                    
+                        <b>9.12.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.13" data-path="../research/纯CSS绘制箭头.html">
+            
+                <a href="../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>9.13.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.14" data-path="../research/网站性能测量和优化方法.html">
+            
+                <a href="../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>9.14.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../tech/00-编程基础知识.html">
+            
+                <a href="../tech/00-编程基础知识.html">
+            
+                    
+                        <b>10.1.</b>
+                    
+                    编程基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="../tech/00-计算机问题概览.html">
+            
+                <a href="../tech/00-计算机问题概览.html">
+            
+                    
+                        <b>10.2.</b>
+                    
+                    计算机问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>10.3.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                <a href="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                    
+                        <b>10.4.</b>
+                    
+                    GOOGLE浏览器的搜索技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="../tech/03-curl的用法指南.html">
+            
+                <a href="../tech/03-curl的用法指南.html">
+            
+                    
+                        <b>10.5.</b>
+                    
+                    Curl的用法指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="../tech/04-sublime3插件篇.html">
+            
+                <a href="../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>10.6.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="../tech/05-Charles安装及使用.html">
+            
+                <a href="../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>10.7.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                <a href="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                    
+                        <b>10.8.</b>
+                    
+                    通过.Gitlab Ci.Yml配置任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="../tech/07-MySQL的基本使用.html">
+            
+                <a href="../tech/07-MySQL的基本使用.html">
+            
+                    
+                        <b>10.9.</b>
+                    
+                    MySQL的基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="../tech/08-看懂什么是环境变量.html">
+            
+                <a href="../tech/08-看懂什么是环境变量.html">
+            
+                    
+                        <b>10.10.</b>
+                    
+                    看懂什么是环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.11" data-path="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                <a href="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                    
+                        <b>10.11.</b>
+                    
+                    为什么0.1+0.2=0.30000000000000004
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.12" data-path="../tech/10-Nginx使用手册：安装、配置、模块扩展与代理详解.md">
+            
+                <span>
+            
+                    
+                        <b>10.12.</b>
+                    
+                    Nginx使用手册：安装、配置、模块扩展与代理详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.13" data-path="../tech/11-常见智力题总结.html">
+            
+                <a href="../tech/11-常见智力题总结.html">
+            
+                    
+                        <b>10.13.</b>
+                    
+                    常见智力题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.14" data-path="../tech/12-Mac终端命令使用.html">
+            
+                <a href="../tech/12-Mac终端命令使用.html">
+            
+                    
+                        <b>10.14.</b>
+                    
+                    Mac终端命令使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.15" data-path="../tech/13-01-Shell脚本入门篇.html">
+            
+                <a href="../tech/13-01-Shell脚本入门篇.html">
+            
+                    
+                        <b>10.15.</b>
+                    
+                    01 Shell脚本入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.16" data-path="../tech/13-02-Shell脚本进阶篇.html">
+            
+                <a href="../tech/13-02-Shell脚本进阶篇.html">
+            
+                    
+                        <b>10.16.</b>
+                    
+                    02 Shell脚本进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.17" data-path="../tech/14-一篇搞定排序算法：原理+图解+JS实现+V8源码解读.md">
+            
+                <span>
+            
+                    
+                        <b>10.17.</b>
+                    
+                    一篇搞定排序算法：原理+图解+JS实现+V8源码解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.18" data-path="../tech/15-glob模式通配符.html">
+            
+                <a href="../tech/15-glob模式通配符.html">
+            
+                    
+                        <b>10.18.</b>
+                    
+                    Glob模式通配符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.19" data-path="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                <a href="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                    
+                        <b>10.19.</b>
+                    
+                    代码整洁之道（摘录笔记）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.20" data-path="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                <a href="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                    
+                        <b>10.20.</b>
+                    
+                    Java的24种设计模式与7大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.21" data-path="../tech/18-观察者和发布订阅模式.html">
+            
+                <a href="../tech/18-观察者和发布订阅模式.html">
+            
+                    
+                        <b>10.21.</b>
+                    
+                    观察者和发布订阅模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.22" data-path="../tech/19-AI模型基础应用篇.html">
+            
+                <a href="../tech/19-AI模型基础应用篇.html">
+            
+                    
+                        <b>10.22.</b>
+                    
+                    AI模型基础应用篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../tools/01-01-Git基础教程.html">
+            
+                <a href="../tools/01-01-Git基础教程.html">
+            
+                    
+                        <b>11.1.</b>
+                    
+                    01 Git基础教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../tools/01-02-Git常见问题.html">
+            
+                <a href="../tools/01-02-Git常见问题.html">
+            
+                    
+                        <b>11.2.</b>
+                    
+                    02 Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../tools/02-01-gitbook入门篇.html">
+            
+                <a href="../tools/02-01-gitbook入门篇.html">
+            
+                    
+                        <b>11.3.</b>
+                    
+                    01 Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="../tools/02-02-gitbook插件篇.html">
+            
+                <a href="../tools/02-02-gitbook插件篇.html">
+            
+                    
+                        <b>11.4.</b>
+                    
+                    02 Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="../tools/02-03-gitbook进阶篇.html">
+            
+                <a href="../tools/02-03-gitbook进阶篇.html">
+            
+                    
+                        <b>11.5.</b>
+                    
+                    03 Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">整理中</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Video元素的使用和常见问题总结</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="video元素的使用和常见问题总结">video元素的使用和常见问题总结</h2>
+<p><strong>HTML<code>&lt;video&gt;</code>元素</strong> 用于在<code>HTML</code>或者<code>XHTML</code>文档中嵌入媒体播放器，用于支持文档内的视频播放。你也可以将 <code>&lt;video&gt;</code> 标签用于音频内容，但是<code>audio</code>元素可能在用户体验上更合适。</p>
+<p>以下是一个局域播放的示例，允许<code>html</code>元素在视频上方：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"player_box"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">video</span>
+        <span class="hljs-attr">controls</span>
+        <span class="hljs-attr">controlslist</span>=<span class="hljs-string">"nodownload nofullscreen noremoteplayback"</span>
+        <span class="hljs-attr">loop</span>=<span class="hljs-string">"true"</span>
+        <span class="hljs-attr">poster</span>=<span class="hljs-string">"https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/media/美人谷-阿兰.jpg"</span>
+
+        <span class="hljs-attr">x5-playsinline</span>=<span class="hljs-string">"true"</span>
+        <span class="hljs-attr">x5-video-player-type</span>=<span class="hljs-string">"h5-page"</span>
+        <span class="hljs-attr">webkit-playsinline</span>=<span class="hljs-string">"true"</span>
+        <span class="hljs-attr">playsinline</span>=<span class="hljs-string">"true"</span>
+
+        <span class="hljs-attr">currentTime</span>=<span class="hljs-string">"100"</span>
+        <span class="hljs-attr">muted</span>
+    &gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/media/美人谷.mp4"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"video/mp4"</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- &lt;source src="https://my-files-1259410276.cos.ap-chengdu.myqcloud.com/media/Vives En Mi-art--Sharlene Taule--art-af1309f88d9fda37e0dc4ad2e2c4c9b8.mp4" type="video/mp4"&gt; --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+            Your browser doesn't support HTML5 video. Here is a <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"myVideo.mp4"</span>&gt;</span>link to the video<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> instead.
+        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">track</span> <span class="hljs-attr">default</span> <span class="hljs-attr">kind</span>=<span class="hljs-string">"subtitles"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./assets/美人谷 - 阿兰.vtt"</span> <span class="hljs-attr">srclang</span>=<span class="hljs-string">"cn"</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"中文字幕"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">track</span> <span class="hljs-attr">kind</span>=<span class="hljs-string">"subtitles"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"sampleSubtitles_de.vtt"</span> <span class="hljs-attr">srclang</span>=<span class="hljs-string">"de"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">track</span> <span class="hljs-attr">kind</span>=<span class="hljs-string">"descriptions"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"sampleDescriptions.vtt"</span> <span class="hljs-attr">srclang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">track</span> <span class="hljs-attr">kind</span>=<span class="hljs-string">"chapters"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"sampleChapters.vtt"</span> <span class="hljs-attr">srclang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">track</span> <span class="hljs-attr">kind</span>=<span class="hljs-string">"metadata"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"keyStage3.vtt"</span> <span class="hljs-attr">srclang</span>=<span class="hljs-string">"en"</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"Key Stage 3"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"player_pop"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p><a href="https://1927344728.github.io/demo-lizh/html/06-video.html" target="_blank">查看DEMO</a></p>
+<p><code>&lt;video&gt;</code> 标签的内容是针对浏览器不支持此元素时候的降级处理。浏览器并不是都支持相同的视频格式，所以你可以在 <code>&lt;source&gt;</code>元素里提供多个视频源，然后浏览器将会使用它所支持的第一个源。</p>
+<p><code>&lt;track&gt;</code>标签它允许指定时序文本字幕（或者基于时间的数据），例如自动处理字幕。</p>
+<p>其他使用注意事项：</p>
+<ul>
+<li>如果你没有指定<code>controls</code>属性，那么视频不会展示浏览器自带的控件，你也可以用 <code>JavaScript</code>和 <code>HTMLMediaElement API</code>来创建你自己的控件。</li>
+<li><code>HTMLMediaElement</code>会激活许多不同的事件，以便于让你可以控制视频（和音频）内容。</li>
+<li>你可以用<code>CSS</code>属性 <code>object-position</code> 来调整视频在元素内部的位置，它可以控制视频尺寸适应于元素外框的方式。</li>
+<li>如果想在视频里展示字幕或者标题，你可以在<code>&lt;track&gt;</code> 元素和<code>WebVTT</code>格式的基础上使用 JavaScript 来实现。</li>
+</ul>
+<h3 id="video的属性">video的属性</h3>
+<p><strong>autoplay</strong>：布尔属性；指定后，视频会马上自动开始播放，不需要手动调用<code>play()</code>方法。</p>
+<blockquote>
+<p>自动播放受浏览器政策限制，不同浏览器的表现不一样。移动端的app，可以设置参数来控制是否允许自动播放。</p>
+</blockquote>
+<p><strong>autobuffer</strong>：布尔属性；指定后，视频会自动开始缓存，即使没有设置自动播放。该属性适用于视频被认为可能会播放（比如，用户导航到专门播放视频的页面，而不是那种嵌入视频还有其它内容的页面）。视频会一直缓存到媒体缓存满。</p>
+<p><strong>controls</strong>：加上这个属性，Gecko 会提供用户控制，允许用户控制视频的播放，包括音量，跨帧，暂停/恢复播放。</p>
+<p><strong>controlslist</strong>：</p>
+<p>当浏览器显示自己的控件集(例如，当指定了<code>Controls</code>属性时)，<code>Controlslist</code>属性将帮助浏览器选择在媒体元素上显示的控件。允许接受的值有<code>nodownload</code>,<code>nofullscreen</code>和<code>noremoteplayback</code></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">controls</span> <span class="hljs-attr">controlslist</span>=<span class="hljs-string">"nodownload nofullscreen noremoteplayback"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">""</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span>
+</code></pre>
+<p><strong>crossorigin</strong>：该枚举属性指明抓取相关图片是否必须用到<code>CORS</code>（跨域资源共享）。 支持<code>CORS</code>的资源 可在<code>&lt;canvas&gt;</code>元素中被重用，而不会被污染。允许的值如下：</p>
+<ul>
+<li>anonymous
+跨域请求（即，使用 Origin: 的HTTP头）会被执行。但是不发送凭证（即，不发送cookie， X.509 证书或者 HTTP Basic 授权）。如果服务器不提供证书给源站点 (不设置<code>Access-Control-Allow-Origin: HTTP头</code>)，图片会被 污染 并且它的使用会受限。</li>
+<li>use-credentials
+跨域请求A <code>cross-origin request (i.e. with Origin: HTTP header)</code>会被执行，且凭证会被发送 (即， 发送一个 cookie, 一个证书和HTTP Basic授权会被执行)。如果服务器不提供证书给源站点 (通过<code>Access-Control-Allow-Credentials: HTTP头</code>)，图像会被污染且它的使用会受限。</li>
+<li>不加这个属性时，抓取资源不会走CORS请求(即，不会发送 Origin: HTTP 头)，保证其在<code>&lt;video&gt;</code>元素中使用时不会被污染。如果指定非法值，会被当作指定了枚举关键字 <code>anonymous</code>一样使用。 </li>
+</ul>
+<p><strong>currentTime</strong>：</p>
+<p>读取<code>CurentTime</code>返回一个双精度浮点值，指示以秒为单位的媒体的当前播放位置。如果<code>video</code>尚未开始播放，则会在开始播放后返回偏移量。通过<code>CurentTime</code>将当前播放位置设置为给定时间，会在加载媒体时将媒体查找到该位置（从指定的位置开始播放）。</p>
+<p>媒体正在播放的情况下，如果媒体缓冲区的数据已经过期（视频已经播放完），则<code>user agent</code>有可能无法正常拿到数据。有些媒体可能有一个不以0秒开始的媒体时间线（不是从头开始播放的），因此应该将<code>currentTime</code>的时间设置在其数据失效之前。<code>getStartDate()</code>这个方法可以用来确定媒体时间线起始的坐标。</p>
+<pre><code class="lang-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'video'</span>).<span class="hljs-property">currentTime</span> = <span class="hljs-number">100</span>
+</code></pre>
+<blockquote>
+<p>实测，By lizhao，2020.06.07：</p>
+<p>1.直接在<code>&lt;video&gt;</code>元素写<code>currentTime</code>属性，有兼容问题，有些浏览器可以无效，如：<code>chrome\安卓微信</code>。</p>
+<p>2.只有视频开始播放后设置的<code>currentTime</code>才有效。</p>
+<p>3.不能<code>canplay</code>事件中使用：会陷入死循环。</p>
+</blockquote>
+<p><strong>disablePictureInPicture</strong>：防止浏览器建议图片中的上下文菜单或在某些情况下自动请求图片中的图片。</p>
+<p><strong>disableRemotePlayback</strong>：一个布尔属性，用于禁用使用有线连接的设备(<code>HDMI</code>、<code>DVI</code>等)的远程播放功能。无线技术(<code>Miracast</code>、<code>Chromecast</code>、<code>DLNA</code>、<code>AirPlay</code>等)。</p>
+<p><strong>duration（只读）</strong>：一个双精度浮点值，它指示媒体的持续时间(总长度)，以秒为单位，在媒体的时间线上。如果元素上没有媒体，或者媒体无效，则返回的值为<code>NaN</code>。如果媒体没有已知终点(例如时间未知的实时流、网络广播、来自<code>WebRTC</code>的媒体等等)，那么这个值就是<code>Infinity</code>。</p>
+<pre><code class="lang-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'video'</span>).<span class="hljs-property">duration</span>
+</code></pre>
+<p><strong>height</strong>：视频展示区域的高度，单位是<code>CSS</code>像素。</p>
+<p><strong>intrinsicsize</strong>：</p>
+<p>此属性将覆盖媒体元素的实际固有大小。具体来说，图像将在这些尺寸处进行光栅化，图像上的<a href="https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-naturalwidth" target="_blank">naturalWidth / naturalHeight</a> 将返回在此属性中指定的值。在视频元素上，视频将以此大小进行光栅化，而视频 上的<a href="https://html.spec.whatwg.org/multipage/media.html#dom-video-videowidth" target="_blank">videoWidth / videoHeight</a>将返回固有大小值。</p>
+<blockquote>
+<p>请确保启用<code>Experimental Web Platform features</code>标志。chrome中输入<code>chrome://flags/</code>，搜索该标志并设置为<code>enabled</code>。</p>
+<p>注：chrome中实测无效。By lizhao，2020/05/29。</p>
+</blockquote>
+<p><strong>loop</strong>：布尔属性，设置循环播放。指定后，会在视频结尾的地方，自动返回视频开始的地方，重新播放。</p>
+<p><strong>muted</strong>：布尔属性，指明了视频里的音频的默认设置。设置后，音频会初始化为静音。默认值是false，意味着视频播放的时候音频也会播放 。</p>
+<pre><code class="lang-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'video'</span>).<span class="hljs-property">muted</span> = <span class="hljs-literal">true</span>
+</code></pre>
+<blockquote>
+<p> 直接在video写muted属性，有兼容问题</p>
+</blockquote>
+<p><strong>playsinline</strong>：</p>
+<p>一个布尔属性，标志视频播放时局域播放，不脱离文档流 。请注意，没有此属性并不意味着视频始终是全屏播放的。</p>
+<p><code>playsinline</code>是标准写法</p>
+<p> <code>webkit-playsinline</code>在<code>iOS 10</code> 之前的写法，它的浏览器厂商前缀在<code>iOS 10</code> 中被移除。但是目前 <code>iOS</code>微信还不支持去掉前缀的写法。</p>
+<p><code>x5-playsinline</code>是<code>X5</code>内核的写法（微信、QQ浏览器等腾讯产品的内核）</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">video</span>
+       <span class="hljs-attr">x5-playsinline</span>=<span class="hljs-string">"true"</span>
+       <span class="hljs-attr">webkit-playsinline</span>=<span class="hljs-string">"true"</span>
+       <span class="hljs-attr">playsinline</span>=<span class="hljs-string">"true"</span>
+
+       <span class="hljs-attr">x-webkit-airplay</span>=<span class="hljs-string">"true"</span>
+       <span class="hljs-attr">x5-video-player-type</span>=<span class="hljs-string">"h5"</span>
+       <span class="hljs-attr">x5-video-player-fullscreen</span>=<span class="hljs-string">""</span>
+       <span class="hljs-attr">x5-video-orientation</span>=<span class="hljs-string">"portraint"</span>
+       <span class="hljs-attr">:poster</span>=<span class="hljs-string">""</span>
+       <span class="hljs-attr">:src</span>=<span class="hljs-string">""</span>
+       <span class="hljs-attr">type</span>=<span class="hljs-string">""</span>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span>
+<span class="hljs-comment">&lt;!--在X5内核中让video标签播放不自动全屏，设置x5-playsinline--&gt;</span>
+<span class="hljs-comment">&lt;!--注：x5内核-安卓下不能添加airplay="allow" x5-video-player-fullscreen="true" x-webkit-airplay="allow"（添加了之后playsinline属性就失效了）--&gt;</span>
+</code></pre>
+<p><code>playsinline</code>属性比较特别， 需要嵌入网页的APP，比如<code>wechat</code>中<code>UIwebview</code>的<code>allowsInlineMediaPlayback = YES</code>、<code>webview.allowsInlineMediaPlayback = YES</code>，才能生效。</p>
+<p>换句话说，如果APP不设置，你页面中加了这标签也无效，这也就是为什么安卓手机<code>WeChat</code>播放视频总是全屏，因为<code>APP</code>不支持<code>playsinline</code>，而ISO的<code>WeChat</code>却支持。</p>
+<p>在<code>iOS 10 Safari</code>中，通过<code>&lt;video playsinline&gt;</code>可以让视频内联播放。设置了 <code>playsinline</code>属性的视频在播放时不会自动全屏，但用户可以点击全屏按钮来手动全屏；没有设置 <code>playsinline</code>的视频会在播放时自动全屏。无论是否设置 <code>playsinline</code>属性，退出全屏后视频都会继续播放。</p>
+<p>注意：如果是想做全屏直播或者全屏H5体验的用户，IOS需要设置删除 <code>webkit-playsinline</code> 标签，因为你设置 false 是不支持的 ，安卓则不需要，因为默认全屏。但这时候全屏是有播放控件的，无论你有没有设置control。</p>
+<p><strong>played</strong>：返回 <code>TimeRanges</code>对象。<code>TimeRanges</code>对象表示用户已经播放或看到的视频范围。</p>
+<p>已播范围指的是被播放视频的时间范围。如果用户在视频中跳跃，则会获得多个播放范围。</p>
+<pre><code class="lang-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'video'</span>).<span class="hljs-property">played</span>.<span class="hljs-property">length</span> <span class="hljs-comment">//已播放的范围个数</span>
+
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'video'</span>).<span class="hljs-property">played</span>.<span class="hljs-title function_">start</span>(<span class="hljs-number">0</span>) <span class="hljs-comment">//第一段的开始时间</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'video'</span>).<span class="hljs-property">played</span>.<span class="hljs-title function_">end</span>(<span class="hljs-number">0</span>) <span class="hljs-comment">//第一段的结束时间</span>
+</code></pre>
+<p><strong>preload</strong>：</p>
+<p>该枚举属性旨在告诉浏览器作者认为达到最佳的用户体验的方式是什么。可能是下列值之一：</p>
+<ul>
+<li>none: 提示作者认为用户不需要查看该视频，服务器也想要最小化访问流量；换句话说就是提示浏览器该视频不需要缓存。</li>
+<li>metadata: 提示尽管作者认为用户不需要查看该视频，不过抓取元数据（比如：长度）还是很合理的。</li>
+<li>auto: 用户需要这个视频优先加载；换句话说就是提示：如果需要的话，可以下载整个视频，即使用户并不一定会用它。</li>
+<li>空字符串：也就代指 auto 值。</li>
+<li>假如不设置，默认值就是浏览器定义的了 （即，不同浏览器会选择自己的默认值），即使规范建议设置为 metadata。</li>
+</ul>
+<blockquote>
+<p><strong>使用备注：</strong>
+autoplay 属性优先于 preload。假如用户想自动播放视频，那么很明显浏览器需要下载视频。同时设置autoplay 和 preload属性在规范里是允许的。
+规范没有强制浏览器去遵循该属性的值；这仅仅只是个提示。</p>
+</blockquote>
+<p><strong>poster</strong>：一个海报帧的URL，用于在用户播放或者跳帧之前展示。如果属性未指定，那么在第一帧可用之前什么都不会展示；之后第一帧就像海报帧一样展示。</p>
+<blockquote>
+<p>poster，在不同环境下有兼容问题</p>
+</blockquote>
+<p><strong>readyState</strong>：返回音频/视频的当前就绪状态。就绪状态指示音频/视频是否已准备好播放。表示音频/视频元素的就绪状态：</p>
+<table>
+<thead>
+<tr>
+<th>HAVE_NOTHING</th>
+<th>0</th>
+<th>没有关于音频/视频是否就绪的信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HAVE_METADATA</td>
+<td>1</td>
+<td>音频/视频已初始化</td>
+</tr>
+<tr>
+<td>HAVE_CURRENT_DATA</td>
+<td>2</td>
+<td>数据已经可以播放(当前位置已经加载) 但没有数据能播放下一帧的内容</td>
+</tr>
+<tr>
+<td>HAVE_FUTURE_DATA</td>
+<td>3</td>
+<td>当前及至少下一帧的数据是可用的(换句话来说至少有两帧的数据)</td>
+</tr>
+<tr>
+<td>HAVE_ENOUGH_DATA</td>
+<td>4</td>
+<td>可用数据足以开始播放-如果网速得到保障 那么视频可以一直播放到底</td>
+</tr>
+</tbody>
+</table>
+<p><strong>seeking</strong>：返回用户目前是否在音频/视频中寻址。寻址中（Seeking）指的是用户在音频/视频中移动/跳跃到新的位置。</p>
+<p><strong>src</strong>：要嵌到页面的视频的URL。可选；你也可以使用<code>video</code>块内的<code>&lt;source&gt;</code>元素来指定需要嵌到页面的视频。</p>
+<p><strong>volume</strong>： 设置或返回音频/视频的音量</p>
+<p><strong>width</strong>：视频显示区域的宽度，单位是<code>CSS</code>像素。</p>
+<p>以下为非标准属性：</p>
+<p><strong>x-webkit-airplay</strong>：<code>IOS webkit</code>属性，支持<code>Airplay</code>的设备（如：音箱、Apple TV)播放。这个属性应该是使此视频支持<code>ios</code>的<code>AirPlay</code>功能。通过<code>AirPlay</code>可以把当前的视频投放到支持此技术的其他设备上。</p>
+<p><strong>x5-video-player-type</strong>：</p>
+<p>功能：启用同层H5播放器。</p>
+<p>可选值：<code>h5-page</code></p>
+<p>特点：在<strong>视频全屏</strong>的时候（即不加<code>x5-playsinline="true"</code>属性），页面中元素可以呈现在视频层上，也是<code>WeChat</code>安卓版特有的属性</p>
+<p><strong>x5-video-orientation</strong>：</p>
+<p>功能：声明播放器支持的方向</p>
+<p>可选值： <code>landscape</code>横屏, <code>portraint</code>竖屏</p>
+<p>默认值：<code>portraint</code></p>
+<pre><code class="lang-js">&lt;video ... x5-video-player-type=”h5” x5-video-orientation=<span class="hljs-string">"landscape"</span>/&gt; <span class="hljs-comment">//横屏</span>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">...</span> <span class="hljs-attr">x5-video-player-type</span>=<span class="hljs-string">"h5"</span> <span class="hljs-attr">x5-video-orientation</span>=<span class="hljs-string">"portrait"</span>/&gt;</span></span> <span class="hljs-comment">//竖屏</span>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">x5-video-player-type</span>=<span class="hljs-string">"h5"</span> <span class="hljs-attr">x5-video-orientation</span>=<span class="hljs-string">"landscape|portrait"</span>/&gt;</span></span> <span class="hljs-comment">//跟随手机自动旋转</span>
+</code></pre>
+<blockquote>
+<p>注： 此属性只在声明了<code>x5-video-player-type=”h5”</code>情况下生效</p>
+</blockquote>
+<p><strong>x5-video-player-fullscreen</strong>：</p>
+<p>功能：视频播放时将会进入到全屏模式。</p>
+<p>可选值：<code>true</code>支持全屏播放，<code>false</code>不支持全屏播放</p>
+<p>默认值：<code>false</code></p>
+<p>如果不申明此属性，页面得到视口区域为原始视口大小(视频未播放前)，比如在微信里，会有一个常驻的标题栏，如果不声明此属性，这个标题栏高度不会给页面，播放时会平均分为两块（上下黑块）</p>
+<blockquote>
+<p>注： 声明此属性，需要页面自己重新适配新的视口大小变化。可以通过监听resize 事件来实现</p>
+</blockquote>
+<h3 id="video的方法">video的方法</h3>
+<p><strong>addTextTrack</strong>：向音频/视频添加新的文本轨道。</p>
+<p><strong>注：所有主流浏览器都不支持 <code>addTextTrack()</code>方法。</strong></p>
+<pre><code class="lang-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'video'</span>).<span class="hljs-title function_">addTextTrack</span>(kind,label,language)
+</code></pre>
+<p><strong>canPlayType</strong>：检测浏览器是否能播放指定的音频/视频类型，返回<code>String</code>。如下：</p>
+<ul>
+<li>probably：浏览器最可能支持该音频/视频类型</li>
+<li>maybe：浏览器也许支持该音频/视频类型</li>
+<li>"" ： （空字符串）浏览器不支持该音频/视频类型</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'video'</span>).<span class="hljs-title function_">canPlayType</span>(<span class="hljs-string">'video/mp4'</span>)
+</code></pre>
+<p><strong>load</strong>：重新加载音频/视频元素</p>
+<pre><code class="lang-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'video'</span>).<span class="hljs-title function_">load</span>()
+</code></pre>
+<p><strong>play</strong>：开始播放音频/视频</p>
+<pre><code class="lang-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'video'</span>).<span class="hljs-title function_">play</span>()
+</code></pre>
+<p><strong>pause</strong>：暂停当前播放的音频/视频</p>
+<pre><code class="lang-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'video'</span>).<span class="hljs-title function_">pause</span>()
+</code></pre>
+<h3 id="video的事件">video的事件</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">事件名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>abort</code></td>
+<td style="text-align:left">在播放被终止时触发。例如：当播放中的视频重新开始播放。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>canplay</code></td>
+<td style="text-align:left">在媒体数据已经有足够的数据（至少播放数帧）可供播放时触发。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>canplaythrough</code></td>
+<td style="text-align:left">表明媒体可以在保持当前的下载速度的情况下不被中断地播放完毕。<br></br><strong>注意：手动设置<code>currentTime</code>会使得<code>firefox</code>触发一次<code>canplaythrough</code>事件，其他浏览器或许不会如此。</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>durationchange</code></td>
+<td style="text-align:left">表明媒体的长度发生了改变。例如：在媒体已被加载足够的长度从而得知总长度时会触发这个事件。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>emptied</code></td>
+<td style="text-align:left">媒体被清空（初始化）时触发。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ended</code></td>
+<td style="text-align:left">播放结束时触发。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>error</code></td>
+<td style="text-align:left">在发生错误时触发。元素的error属性会包含更多信息。参阅 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/error" target="_blank">HTMLMediaElement.error</a> 获得详细信息。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>loadeddata</code></td>
+<td style="text-align:left">媒体的第一帧已经加载完毕。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>loadedmetadata</code></td>
+<td style="text-align:left">媒体的元数据已经加载完毕，现在所有的属性包含了它们应有的有效信息。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>loadstart</code></td>
+<td style="text-align:left">在媒体开始加载时触发。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>mozaudioavailable</code></td>
+<td style="text-align:left">当音频数据缓存并交给音频层处理时</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>pause</code></td>
+<td style="text-align:left">播放暂停时触发。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>play</code></td>
+<td style="text-align:left">在媒体回放被暂停后再次开始时触发。即：在一次暂停事件后恢复媒体回放。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>playing</code></td>
+<td style="text-align:left">在媒体开始播放时触发（不论是初次播放、在暂停后恢复、或是在结束后重新开始）。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>progress</code></td>
+<td style="text-align:left">告知媒体相关部分的下载进度时周期性地触发。有关媒体当前已下载总计的信息可以在元素的buffered属性中获取到。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ratechange</code></td>
+<td style="text-align:left">在回放速率变化时触发。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>seeked</code></td>
+<td style="text-align:left">在跳跃操作完成时触发。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>seeking</code></td>
+<td style="text-align:left">在跳跃操作开始时触发。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>stalled</code></td>
+<td style="text-align:left">在尝试获取媒体数据，但数据不可用时触发。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>suspend</code></td>
+<td style="text-align:left">在媒体资源加载终止时触发，这可能是因为下载已完成或因为其他原因暂停。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>timeupdate</code></td>
+<td style="text-align:left">元素的<code>currentTime</code>属性表示的时间已经改变。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>volumechange</code></td>
+<td style="text-align:left">在音频音量改变时触发（既可以是<code>volume</code>属性改变，也可以是<code>muted</code>属性改变）。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>waiting</code></td>
+<td style="text-align:left">在一个待执行的操作（如回放）因等待另一个操作（如跳跃或下载）被延迟时触发。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="source">source</h3>
+<p>HTML<code>&lt;source&gt;</code>元素为<code>&lt;picture&gt;、&lt;audio&gt;、&lt;video&gt;</code>元素指定多个媒体资源。</p>
+<p>这是一个空元素。它通常用于以不同浏览器支持的多种格式提供相同的媒体内容。</p>
+<h3 id="track">track</h3>
+<p>HTML<code>&lt;track&gt;</code>元素 被当作媒体元素—<code>&lt;audio&gt;</code>和<code>&lt;video&gt;</code>的子元素来使用。它允许指定时序文本字幕（或者基于时间的数据），例如自动处理字幕。字幕格式有 <code>WebVTT</code>格式（<code>.vtt</code>格式文件）— Web 视频文本字幕格式，以及指时序文本标记语言（TTML）格式。</p>
+<p><strong>default属性</strong>：该属性定义了该track应该启用，除非用户首选项指定了更合适一个track。每个媒体元素里面只有一个 <code>track</code> 元素可以有这个属性。</p>
+<p><strong>kind属性</strong>：</p>
+<p>定义了 text track 应该如何使用。如果省略了该属性，默认的 kind 值就是 <code>subtitles</code>。</p>
+<ul>
+<li><strong>subtitles</strong>。字幕给观影者看不懂的内容提供了翻译。比如英文电影里非英文的对话框或者文字。字幕可能包含额外的内容，通常有附加的背景信息。比如在电影星球大战开头的文字，或者某个场景的日期，时间，还有地点。</li>
+<li><strong>captions。</strong>隐藏式字幕提供了音频的转录甚至是翻译。可能包含重要的非言语的信息，比如音乐提示或者音效。可以指定提示音的源文件 (e.g. music, text, character)。适用于耳聋的用户或者当调成静音的时候。</li>
+<li><strong>descriptions。</strong>视频内容的文本描述。适用于失明用户或者当视频不可见的场景。</li>
+<li><strong>chapters。</strong>章节标题。用于用户浏览媒体资源的时候。</li>
+<li><strong>metadata。</strong>脚本使用的track。 对用户不可见。</li>
+</ul>
+<p><strong>label属性</strong>：当列出可用的text tracks时，给浏览器使用的text track的标题，这种标题是用户可读的。</p>
+<p><strong>src属性</strong>：track的地址。必须是合法的URL。该属性必须定义。</p>
+<p><strong>srclang属性</strong>：</p>
+<p>track文本数据的语言。它必须是合法的 <a href="http://people.w3.org/rishida/utils/subtags/" target="_blank">BCP 47</a> 语言标签。如果 <code>kind</code> 属性被设为 <code>subtitles,</code> 那么<code>srclang</code> 必须定义。如</p>
+<ul>
+<li><code>zh</code>中文</li>
+<li><p><code>zh-cmn</code> 中文普通话</p>
+</li>
+<li><p><code>zh-Hans</code> （简体字）</p>
+</li>
+<li><code>zh-yue</code>（广东话）</li>
+<li><code>zh-Hant-HK</code> （香港使用繁体中文）</li>
+<li><code>zh-cmn-Hans</code> 中文普通话简体</li>
+<li><code>en</code> （英语）</li>
+<li><code>en-GB</code> （英式英语）</li>
+</ul>
+<p><strong>一个media 元素的任意两个 track 子元素不能有相同的 kind, srclang, 和 label属性。</strong></p>
+<p>注意：<code>&lt;track&gt;</code>元素是 HTML5 中的新元素。<a href="http://www.miaoxingyun.com/html/track.html" target="_blank">需注意其兼容性</a></p>
+<h3 id="webvtt">WebVTT</h3>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebVTT_API" target="_blank">Web 视频文本轨格式（WebVTT）</a></p>
+<p>Web视频文本跟踪格式 (WebVTT) 是一种使用<code>&lt;track&gt;</code>元素显示定时文本轨道（如字幕或标题）的格式。 WebVTT文件的主要用途是将文本叠加添加到<code>&lt;video&gt;</code>。 WebVTT是一种基于文本的格式，必须使用UTF-8进行编码。 在可以使用空格的地方，您也可以使用制表符。 还有一个小的API可用于表示和管理这些轨道以及在正确的时间执行文本回放所需的数据。</p>
+<p>WebVTT 文件的 MIME 类型为 <code>text/vtt</code>。</p>
+<p>一个 WebVTT 文件（<code>.vtt</code>） 包含任意条带时间的提示性内容（cue）（可理解为一条或多条字幕），可以是单行或多行，如下所示：</p>
+<pre><code class="lang-text">WEBVTT 美人谷
+
+00:02.000 --&gt; 00:05.000
+美人谷 - 阿兰
+
+00:07.950 --&gt; 00:15.760
+词：毛慧
+曲：阿兰/毛慧
+编曲：叶月/王晨
+制作人：毛慧
+录音：张生磊（记忆时刻录音棚）
+
+00:38.130 --&gt; 00:44.180
+越过山河的神秘
+幕自然的洗礼
+看见山川出云泽被着大地
+
+...
+</code></pre>
+<p>可以修改字幕样式：</p>
+<pre><code class="lang-css"><span class="hljs-comment">/*写在css文件中*/</span>
+<span class="hljs-selector-tag">video</span><span class="hljs-selector-pseudo">::cue</span> {
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">linear-gradient</span>(to bottom, dimgray, lightgray);
+  <span class="hljs-attribute">color</span>: papayawhip;
+}
+
+<span class="hljs-selector-tag">video</span><span class="hljs-selector-pseudo">::cue</span>(<span class="hljs-selector-tag">b</span>) { <span class="hljs-comment">/*表示.vtt中，&lt;b&gt;标签内文本的样式*/</span>
+  <span class="hljs-attribute">color</span>: peachpuff;
+}
+</code></pre>
+<pre><code class="lang-text">/*写在.vtt文件中*/
+...
+
+STYLE
+::cue {
+  background-image: linear-gradient(to bottom, dimgray, lightgray);
+  color: papayawhip;
+}
+00:38.130 --&gt; 00:44.180
+越过山河的神秘
+幕自然的洗礼
+看见山川出云泽被着大地
+
+...
+</code></pre>
+<h3 id="自动播放">自动播放</h3>
+<p>早期的安卓和IOS都需要用户手势才能自动播放，后期逐渐放宽的自动播放的策略，逐渐开始支持自动播放，当然在不同的机型和对应的浏览器上，展示略有差异，这个没有完全清楚所有机型展示情况。</p>
+<p>检测当前的浏览器是否能支持自动播放：</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> promise = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'video'</span>).<span class="hljs-title function_">play</span>();
+<span class="hljs-keyword">if</span> (promise !== <span class="hljs-literal">undefined</span>) {
+  promise.<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-comment">// video can play</span>
+  }).<span class="hljs-title function_">catch</span>(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+    <span class="hljs-comment">// video cannot play</span>
+  })
+}
+</code></pre>
+<p>移动端应用中内嵌的浏览器（如：<code>wkWebView</code>），有参数控制是否允许自动播放。因此，不同的应用下，展示情况略有差异。比如：钉钉可以支持，但是微信就禁止。</p>
+<p>微信提供了内置的事件来支持自动播放：</p>
+<pre><code class="lang-js"><span class="hljs-comment">//实测：iPhone 11 Pro的微信可以自动播放；小米10的微信无法自动播放。By lizhao，2020/06/07</span>
+<span class="hljs-comment">//必须加载JSAPI的JS文件。如：http://res.wx.qq.com/open/js/jweixin-1.2.0.js</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"WeixinJSBridgeReady"</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>){ 
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'video'</span>).<span class="hljs-title function_">play</span>();
+}, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="chrome自动播放">Chrome自动播放</h4>
+<blockquote>
+<p>实测：<code>By lizhao，2020/05/30</code></p>
+<p>使用<code>muted</code>属性后，可以自动播放。</p>
+</blockquote>
+<h4 id="android自动播放">Android自动播放</h4>
+<blockquote>
+<p>小米10实测：By lizhao，2020/05/30</p>
+<p>UC浏览器、微信不支持自动播放（无论是否设置muted属性），<code>video</code>设置 <code>autoplay</code>属性和<code>JS</code>调用<code>play()</code>方法都一样无效。QQ浏览器支持自动播放（无论是否设置muted属性）</p>
+</blockquote>
+<h4 id="ios自动播放政策">IOS自动播放政策</h4>
+<p><strong>IOS  8自动播放政策</strong></p>
+<p>允许使用 <code>preload="metadata"</code>来预加载视频 <code>Meta</code>信息，但<strong><code>&lt;video&gt;</code>无法自动播放，也无法内联播放，只能在【用户主动操作】后才能播放，且播放时必须全屏</strong>。</p>
+<p>至于「用户主动操作」具体指的是哪些行为，苹果官方有详细的说明：</p>
+<ul>
+<li><p>点击视频播放按钮；</p>
+</li>
+<li><p>触发 <code>touchend、click、doubleclick 、 keydown</code> 事件，且在事件处理函数中直接调用 <code>video.play()</code>方法。</p>
+<p>显然，<code>button.addEventListener('click', () =&gt; { video.play(); })</code>满足要求；而 <code>video.addEventListener('canplaythrough', () =&gt; { video.play(); })</code>不满足要求；</p>
+</li>
+<li><p><strong>值得注意的是：</strong>上面讨论的是 <code>IOS</code>自带 <code>Safari</code>的视频播放政策。对于<code>IOS APP</code> 而言，开发者在给 <code>webview</code>设置 <code>mediaPlaybackRequiresUserAction</code>和 <code>allowsInlineMediaPlayback</code>属性之后，页面中的 <code>&lt;video&gt;</code>标签就可以通过 <code>autoplay</code>和<code>webkit-playsinline</code> 属性来启用自动播放和内联播放功能。</p>
+</li>
+</ul>
+<p><strong>IOS 10自动播放政策</strong></p>
+<p>随着视频的进一步普及，在<code>IOS</code> 10 中，苹果终于进一步放松了 <code>Safari</code>视频播放政策。<code>IOS 10 Safari</code>允许自动播放以下两种视频：</p>
+<ul>
+<li>无音轨视频；</li>
+<li>无声音视频（设置了 <code>muted</code> 属性）；</li>
+</ul>
+<p>对于这两种类型的视频，可以通过<code>&lt;video autoplay&gt;</code>或<code>video.play()</code>两种方式来自动播放，无需用户主动操作。但是，如果它们在播放时变得有声音（获取了音轨，或者 muted 属性被取消），Safari 会暂停播放。</p>
+<p>通过<code>&lt;video autoplay&gt;</code> 自动播放的视频元素还需要满足一个条件：在可视区域内。同样，如果它们在播放时因为页面滚动等原因导致不可见，<code>Safari</code>也会暂停播放。</p>
+<h3 id="全屏局域播放">全屏/局域播放</h3>
+<p>全屏和局域播放的区别主要在于：</p>
+<ul>
+<li>全屏播放：一般是调用系统的<code>native</code>播放器来打开全屏观看，覆盖在<code>webview</code>之上，即，播放界面位于所有页面元素的上方，并且控制条无法隐藏。<strong><code>Android</code>和<code>IOS</code>，在微信环境下打开，默认都是全屏播放。</strong></li>
+<li>局域播放：视频是在文档内播放的，即，<strong>可以在视频上方显示html元素</strong>。<code>video</code>不加<code>controls</code>属性，可以隐藏控制条（实测：微信内置浏览器、QQ浏览器、UC浏览器。By lizhao，2020/05/30）。</li>
+</ul>
+<p><strong>IOS全屏处理</strong>：</p>
+<ul>
+<li><p>全屏播放：<code>IOS</code>默认打开的是全屏模式。</p>
+</li>
+<li><p>局域播放：<code>video</code>设置 <code>webkit-playsinline='true'</code>属性。</p>
+</li>
+</ul>
+<p><strong>Android全屏处理</strong>：</p>
+<ul>
+<li><p>全屏播放：微信默认全屏播放，QQ、UC浏览器默认局域播放。</p>
+<blockquote>
+<p>小米10实测：By lizhao，2020/05/30</p>
+<p>微信、QQ浏览器，横屏的全屏状态下，点击【旋转】，回到竖屏状态，页面样式有问题；UC浏览器旋转正常。</p>
+</blockquote>
+</li>
+<li><p>局域播放：<code>video</code>设置<code>x5-playsinline="true"</code>。</p>
+</li>
+<li><p>同层播放：<code>video</code>设置<code>x5-video-player-type：h5-page</code>。</p>
+</li>
+<li><p>同层全屏播放：<code>video</code>不设置<code>x5-playsinline</code>属性，设置<code>x5-video-player-type：h5-page</code>。 <strong>同层全屏形态下的控件前端可以自定义，native形态不支持自定义。native形态播放器是处于顶层的独立view会遮盖视频区域的其它元素。</strong></p>
+</li>
+</ul>
+<p><strong>伪全屏</strong>：采用局域播放状态，即<code>video</code>标签设置<code>playsinline</code>（注意兼容问题，具体可查看上文<code>playsinline</code>属性），通过设置样式和布局将视频内容撑满屏幕。<strong>应用场景：</strong>视频播放区域占满手机屏幕，视频上方需要显示弹幕、评论区等。</p>
+<p><strong>CSS实现控制条隐藏</strong>：在<code>video</code>外层套一个<code>div</code>，<code>height</code>设置固定值，并且设置<code>overflow:hidden</code>，<code>video</code>的高度设置为大于外层的高度，就能把控制条顶到视窗外。<strong>注意：</strong>这个时候对于<code>video</code>可能会造成放大，视频要留有一定的安全区，防止遮挡主体内容。</p>
+<h3 id="video播放的控制">video播放的控制</h3>
+<p><code>video</code>元素有提供多个行为事件供开发者控制视频播放，兼容性比较好的有 <code>onended 、 ontimeupdate、onplay、onplaying</code>等，有些事件在不同浏览器不同设备上的的表现情况并不一致，不同的系统，设备，浏览器显示的特性还是很不一样的，还是看业务场景需要兼容到什么样，尽量不要大量处理这些事件，不然用户去浏览的时候，兼容问题较多。</p>
+<p><strong>进入全屏的事件</strong>：</p>
+<pre><code class="lang-js"><span class="hljs-comment">//腾讯浏览器：进入/退出全屏事件（支持版本: TBS中从&gt;=036900开始支持，QB中是&gt;=7.2开始支持）：</span>
+video.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"x5videoenterfullscreen"</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"进入全屏通知"</span>);
+})
+video.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"x5videoexitfullscreen"</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"退出全屏通知"</span>);
+})
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">//IOS 微信：进入/退出全屏的事件：</span>
+video.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"webkitbeginfullscreen"</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"进入全屏通知"</span>);
+})
+
+video.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"webkitendfullscreen"</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"退出全屏通知"</span>);
+})
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">// 监听暂停事件</span>
+video.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'pause'</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'暂停了'</span>)
+})
+
+<span class="hljs-comment">// 监听停止事件</span>
+video.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'ended'</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'停止了'</span>)
+})
+</code></pre>
+<p><strong>事件在不同环境的表现</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">vent</th>
+<th>pc侧</th>
+<th style="text-align:left">IOS</th>
+<th style="text-align:left">Android</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">loadstart</td>
+<td>文件加载，video初始化，未加载任何数据</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">一致</td>
+</tr>
+<tr>
+<td style="text-align:left">stalled</td>
+<td>视频没有播放，没有取回任何媒介数据：一般是由于网络状况不佳，导致视频下载中断</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">可能在play()事件触发前</td>
+</tr>
+<tr>
+<td style="text-align:left">play</td>
+<td>触发后，状态是开始播放，但视频并未真正开始播放</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">一致</td>
+</tr>
+<tr>
+<td style="text-align:left">waiting</td>
+<td>play()事件触发后，等待数据</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">一致</td>
+</tr>
+<tr>
+<td style="text-align:left">durationchange</td>
+<td>获取到视频长度，duration属性能获得真实视频长度</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">可能在play()事件触发前，可能没有获取到真实的视频长度：可能触发多次， 只有最后一次才能获取到真实的duration，之前的值有可能为0或者1</td>
+</tr>
+<tr>
+<td style="text-align:left">loadedmetadata</td>
+<td>play()事件触发后，获取到元数据</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">play()事件触发前，没有获取到真实的元数据</td>
+</tr>
+<tr>
+<td style="text-align:left">loadeddata</td>
+<td>play()事件触发后，获取到媒介数据</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">play()事件触发前，没有获取到真实的媒介数据</td>
+</tr>
+<tr>
+<td style="text-align:left">canplay</td>
+<td>可以播放，但视频可能还未真正开始播放，并且中途可能因为加载而暂停</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">一致</td>
+</tr>
+<tr>
+<td style="text-align:left">playing</td>
+<td>视频开始播放</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">可能还未真正开始播放，并且可能还未获取到视频长度</td>
+</tr>
+<tr>
+<td style="text-align:left">canplaythrough</td>
+<td>视频开始播放后，可以流畅播放</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">数据可能还没有开始加载，视频可能还未开始播放， 视频仍然会卡住</td>
+</tr>
+<tr>
+<td style="text-align:left">timeupdate</td>
+<td>视频播放后，更新播放进度， 会有明确的进度变化，可以获取到currentTime</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">第一次可能会有误差，如果 timeupdate事件的currentTime发生变化，代表视频一定开始播放</td>
+</tr>
+<tr>
+<td style="text-align:left">progress</td>
+<td>视频播放后，持续下载， 可以获取到当前的缓存buffer，并且全部下载完毕后不再触发</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">第一次可能会有误差， 全部下载完毕后依然继续触发</td>
+</tr>
+<tr>
+<td style="text-align:left">suspend</td>
+<td>缓冲中，视频可能卡顿也可能在流畅播放中，全部缓存完毕后不再触发。视频还未真实播放前，pause()事件会触发suspend</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">一致</td>
+</tr>
+<tr>
+<td style="text-align:left">pause</td>
+<td>可能是响应pause()事件暂停，或者是切出页面自动暂停</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">一致</td>
+</tr>
+<tr>
+<td style="text-align:left">seeking</td>
+<td>拖动进度条时，寻找播放位置。或者播放完毕，寻找下一个视频</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">一致</td>
+</tr>
+<tr>
+<td style="text-align:left">seeked</td>
+<td>拖动进度条时，定位到播放位置。或者开始播放下一个视频，或者是从头开始循环播放</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">一致</td>
+</tr>
+<tr>
+<td style="text-align:left">error</td>
+<td>错误，无法定位错误原因，无法通过paly()事件继续播放</td>
+<td style="text-align:left">一致</td>
+<td style="text-align:left">一致</td>
+</tr>
+</tbody>
+</table>
+<h3 id="关于x5内核的一些问题">关于X5内核的一些问题</h3>
+<p><strong>微信内置浏览器的内核</strong>：</p>
+<p><strong>Android：</strong>微信6.1版本以上都是使用的QQ浏览器的X5内核。5.4-6.1之间的版本，若用户安装了QQ浏览器就是使用的X5内核，若用户未安装浏览器，使用的是系统内核。</p>
+<p><strong>IOS：</strong>采用<code>WKWebview</code>或<code>UIWebview</code>内核，从<code>IOS8</code>开始支持<code>WKWebview</code>。</p>
+<p><strong>最简单的检测X5内核方法：</strong>打开一个网页，然后下拉。页面顶部有【QQ浏览器X5内核提供技术支持】，表明用的是X5内核；没有表示非X5内核。</p>
+<p><strong>关闭/禁用/安装X5内核</strong>：</p>
+<ol>
+<li>微信端打开 <a href="http://debugtbs.qq.com，进入X5内核的调试页面。" target="_blank">http://debugtbs.qq.com，进入X5内核的调试页面。</a></li>
+<li>若未安装X5内核，此链接打不开。已安装，可点击左上方【查看版本号】，如果内核版本信息显示为0的话，就表示X5内核已经被关闭了。</li>
+<li>点击【安装线上内核】，在下载或者安装过程中强行关闭微信，就可以禁用X5内核了。</li>
+<li>安装X5内核：可以打开<a href="https://debugmm.qq.com/?forcex5=true安装" target="_blank">https://debugmm.qq.com/?forcex5=true安装</a></li>
+<li>关闭X5内核不会导致微信出问题，甚至会让微信整体更加流畅，因为微信某些原生框架也是需要借助<code>Webview</code>来实现的。</li>
+</ol>
+<p><strong>X5内核的视频播放形态</strong>：</p>
+<ul>
+<li><p><strong>全屏播放</strong></p>
+<p>X5内核视频默认播放形态，用户点击视频区域后开始进入全屏播放，视频区域内的所有事件行为会由X5内核视频组件全权托管。视频层级最高，会遮挡所在区域所有html元素。（仅使用于安卓微信、手机QQ等非安卓QQ浏览器的X5内核场景）</p>
+</li>
+<li><p><strong>页面内播放</strong></p>
+<p>X5内核视频在用户点击后默认会进入全屏播放，前端可以设置<code>video</code>的<code>x5-playsinline</code>属性来将视频限定于网页内部播放</p>
+</li>
+<li><p><strong>同层页面内播放</strong></p>
+<p>同层页面内播放是标准的视频播放形态，在<code>video</code>标签中添加<code>x5-video-player-type：h5-page</code>属性来控制网页内部同层播放，可以在视频上方显示<code>html</code>元素。</p>
+</li>
+</ul>
+<p><strong>X5内核的一些特性</strong>：</p>
+<ul>
+<li><p>X5内核竖屏播放视频时，横置手机会自动切到横屏全屏播放，但再竖屏时，视频无法切回来。这个是产品策略，需要用户点击全屏上的返回按钮后返回到竖屏。</p>
+</li>
+<li><p><strong>X5内核不支持多个视频同时播放、不技持视频与音频同时播放</strong></p>
+</li>
+<li><p>同层全屏形态时不会盖住网页上的<code>html</code>元素；<code>native</code>形态播放器是处于顶层的独立<code>view</code>会遮盖视频区域的其它元素。</p>
+</li>
+<li><p>x5内核video的<code>currentTime</code>，只有视频开始播放后设置才有效</p>
+</li>
+<li>X5内核的视频播放不支持字幕功能</li>
+</ul>
+<h3 id="音视频同步播放">音视频同步播放</h3>
+<p><strong>需求背景：</strong>同一视频面向不同客户时，根据具体的客户信息，将音轨中的一段内容替换（比如：音轨中的【先生，您好】，替换成具体姓氏【李先生，你好】）。</p>
+<p><strong>实现思路：</strong></p>
+<ul>
+<li><p><strong>思路一：</strong>服务端根据不同的客户信息，直接处理视频中的音轨。<strong>（不可行）</strong></p>
+<p>原因：<strong>处理速度太慢。</strong>以40M的视频为例，视轨、音轨分离 -&gt; 修改音轨 -&gt; 合成视轨、音轨 -&gt; 上传合成后的视频文件，整个流程跑完，大概3分钟。</p>
+</li>
+<li><p><strong>思路二</strong>：将视频拆分成一个没有声音的视频文件和一个音频文件，服务端只对音频文件处理；前端同时播放一个视频和一个音频，并保持两者同步。<strong>（可行，需要解决的问题如下）</strong></p>
+</li>
+</ul>
+<h4 id="问题一：安卓微信中不支持同时播放一个视频和一个音频">问题一：安卓微信中不支持同时播放一个视频和一个音频</h4>
+<p>这是X5内核的限制。目前大多安卓机的微信浏览器采用的是X5内核（可以禁用微信X5内核，但，很显然，我们不可能要求客户这么做。。。）。</p>
+<p><strong>解决方法调研：</strong></p>
+<ol>
+<li><p>视频折分成多个小视频，前端串行播放<strong>（体验不好）</strong></p>
+<p><strong>实现思路：</strong>视频折分成多个小视频，服务端只需要处理其中一个小视频，处理速度可以控制在合理范围。</p>
+<p><strong>问题：</strong>多段视频串行播放，在播放下一个视频时，会有停顿（停在前一视频的海报画面，等待下一视频加载）；播放进度控制问题。</p>
+</li>
+<li><p><code>canvas</code>播放视频<strong>（不可行）</strong></p>
+<p><strong>实现思路：</strong>用<code>canvas</code>播放视频代替<code>video</code>元素。</p>
+<p><strong>问题</strong>：<code>canvas</code>播放视频是通过页面重绘事件或者定时器，不停的抓取<code>video</code>每帧的画面，即，它是依赖<code>video</code>元素的。</p>
+<p><strong>适用场景：</strong>用于对<code>video</code>的画面进行一此处理，如同步模糊背景、视频截图、灰色视频。</p>
+</li>
+<li><p><code>Web audio API</code>播放音频<strong>（可行，下一节将详细介绍）</strong></p>
+<p><strong>实现思路：</strong>用<code>Web audio API</code>代替<code>audio</code>元素。</p>
+</li>
+<li><p>其他标签代替<code>video、audio</code> <strong>（不可行）</strong></p>
+<p><strong>实现思路：</strong><code>embed</code>或<code>object</code>代替<code>video</code>、<code>audio</code>元素。<code>embed</code>和<code>object</code>都是用来嵌入多种类型的外部内容的通用嵌入工具，其中包括像<code>Java</code>小程序和<code>Flash</code>，<code>PDF</code>这样的插件技术，甚至像视频，<code>SVG</code>和图像的内容！</p>
+<p><strong>问题：</strong><code>embed</code>、<code>object</code>播放视频或音频，类似在页面中嵌入一个包含<code>video</code>或<code>audio</code>元素的<code>iframe</code>。</p>
+<ul>
+<li><p>无法避开不支持音频、视频同时播放的问题</p>
+</li>
+<li><p>音频控制不方便</p>
+</li>
+<li>播放会出现控制界面。<code>android</code>可以小窗口播放，<code>IOS</code>会占满全屏。</li>
+<li>有些属性不可用。比如：<code>embed</code>的<code>starttime</code></li>
+</ul>
+</li>
+<li><p>小程序 <strong>（暂未调研）</strong></p>
+<p><strong>实现思路：</strong>取决于小程序是否放开不能同时播放视频和音视的限制。</p>
+</li>
+</ol>
+<h4 id="问题二：视频和音视的同步播放">问题二：视频和音视的同步播放</h4>
+<p>主要在于三点：</p>
+<h5 id="一：视频和音视同时开始播放">一：视频和音视同时开始播放</h5>
+<p>视频和音频的加载所需时间不一样，需要等两者都可以播放了，才能真正开始播放。</p>
+<p><strong>实现</strong>：在<code>canplay</code>事件标识视频、音频是否可播，再通过定时器轮询，监听两者都可播放时，再触发播放。</p>
+<p><strong>注意</strong>：部分机型，需要【用户主动操作】才能播放视频，直接在定时器中调用<code>play()</code>方法可能无效。解决方法是：在点击时，先触发一次播放，再在定时器中加暂停或播放的判断。</p>
+<h5 id="二：拖动进度条后，保持视频和音视同步">二：拖动进度条后，保持视频和音视同步</h5>
+<p>拖动进度条后，改变<code>currentTime</code>的值，也会引起视频和音频的加载所需时间不一样的问题，而此时无法通过<code>canplay</code>事件解决，<strong>因为<code>IOS</code>在<code>currentTime</code>改变后不会触发<code>canplay</code>事件。</strong></p>
+<p>这时，我们可以用<code>seeked</code>事件监听视频、音频是否加载完成。</p>
+<p><code>canplay</code>、<code>seeked</code>事件的兼容情况（实测：一台<code>IOS</code>机、一台<code>android</code>机）：</p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>IOS app</th>
+<th>IOS WeChat</th>
+<th>android app</th>
+<th>android wechat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>canplay（开始播放）</td>
+<td>触发</td>
+<td>触发</td>
+<td>触发</td>
+<td>触发</td>
+</tr>
+<tr>
+<td>canplay（改currentTime后）</td>
+<td>不触发</td>
+<td>不触发</td>
+<td>触发</td>
+<td>触发</td>
+</tr>
+<tr>
+<td>seeked</td>
+<td>触发</td>
+<td>触发</td>
+<td>触发</td>
+<td>触发</td>
+</tr>
+</tbody>
+</table>
+<h5 id="三：视频和音视不同步，纠正时差">三：视频和音视不同步，纠正时差</h5>
+<p>正常来说，第一次播放、拖动进度条后的播放都是两者加载完成后同时播放的，视、音频应该不会出现时差。然而，现实是残酷的，部分机型还是出现了时差，有时还可能偏差几十秒<strong>（具体原因未知）</strong>。</p>
+<p>这时，我们需要一个定时器实时监听两者的时差。当两者时差超过某个阈值时（如：0.5s），纠正音频的<code>currentTime</code>值。</p>
+<h4 id="问题三：无音轨视频文件的问题">问题三：无音轨视频文件的问题</h4>
+<p><strong>部分IOS手机播放无音轨视频，需要等待很长时间才会开始播放</strong>（android、pc chrome无此问题）。</p>
+<p>以40M的视频为例：无音轨的视频，必需等视频加载30多M（约20~30秒，跟网速有关）后，才开始播放；而同一视频，保留音轨（不需要声音，可以将音量调为0），加载1M~2M就可以开始播放。<strong>原因未知</strong></p>
+<h3 id="web-audio-api">Web Audio API</h3>
+<p>安卓微信（采用X5内核）不支持同时播放一个视频和一个音频，即，<code>video</code>、<code>audio</code>不能同时播放。调研发现，<code>web audio api</code>可以控制音频，可以替代<code>audio</code>，且它与<code>video</code>可以同时播放。</p>
+<h4 id="简单示例">简单示例</h4>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> <span class="hljs-variable constant_">URL</span> = <span class="hljs-string">'path/music.mp3'</span>
+<span class="hljs-keyword">const</span> audioContext = <span class="hljs-title function_">new</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-property">AudioContext</span> || <span class="hljs-variable language_">window</span>.<span class="hljs-property">webkitAudioContext</span>)()
+
+<span class="hljs-comment">//加载音频文件</span>
+<span class="hljs-keyword">const</span> getBuffer = <span class="hljs-keyword">function</span> (<span class="hljs-params">url</span>) {
+    <span class="hljs-keyword">const</span> request = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+        request.<span class="hljs-title function_">open</span>(<span class="hljs-string">'GET'</span>, url, <span class="hljs-literal">true</span>);
+        request.<span class="hljs-property">responseType</span> = <span class="hljs-string">'arraybuffer'</span>;
+        request.<span class="hljs-property">onload</span> = <span class="hljs-function">() =&gt;</span> {
+            audioContext.<span class="hljs-title function_">decodeAudioData</span>(request.<span class="hljs-property">response</span>, <span class="hljs-function"><span class="hljs-params">buffer</span> =&gt;</span> buffer ? <span class="hljs-title function_">resolve</span>(buffer) : <span class="hljs-title function_">reject</span>(<span class="hljs-string">'decoding error'</span>));
+        };
+        request.<span class="hljs-property">onerror</span> = <span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> <span class="hljs-title function_">reject</span>(error);
+        request.<span class="hljs-title function_">send</span>();
+    });
+};
+<span class="hljs-keyword">const</span> playAudio = <span class="hljs-keyword">function</span> (<span class="hljs-params">buffer</span>) {
+    <span class="hljs-keyword">const</span> source = audioContext.<span class="hljs-title function_">createBufferSource</span>();
+    source.<span class="hljs-property">buffer</span> = buffer;
+    source.<span class="hljs-title function_">connect</span>(audioContext.<span class="hljs-property">destination</span>);
+    source.<span class="hljs-title function_">start</span>();
+};
+<span class="hljs-keyword">const</span> buffer = <span class="hljs-keyword">await</span> <span class="hljs-title function_">getBuffer</span>(<span class="hljs-variable constant_">URL</span>);
+buffer &amp;&amp; <span class="hljs-title function_">playAudio</span>(buffer)
+</code></pre>
+<h4 id="一些问题：">一些问题：</h4>
+<ul>
+<li>currentTime：不是当前音频播放的时间节点，而是<code>当前时间 - 音频上下文创建时间点</code>的时长。</li>
+<li>如何修改音量、设置静音？？（按标准文档中的方法试了，有问题）</li>
+<li><p>有些浏览器限制，页面最多只能同时存在6个音频上下文，即最多可以<code>new AudioContext()</code>6次。可用音频上下文的<code>close()</code>方法，及时关闭无用的音频上下文。  <a href="https://github.com/otalk/hark/issues/38" target="_blank">https://github.com/otalk/hark/issues/38</a></p>
+</li>
+<li><p>部分机型（如：乐视 android 6.0），app端无法正常播放（微信端正常）。原因是：<code>decodeAudioData</code>方法无法解码音频数据。</p>
+</li>
+<li>部分机型（如：vivo X7 android 5.1.1），不支持<code>Howler</code>插件。</li>
+</ul>
+<blockquote>
+<p><code>Howler</code>是一款<code>web audio api</code>的封装插件。</p>
+</blockquote>
+<h3 id="兼容问题">兼容问题</h3>
+<h4 id="视频、音频的播放暂停行为">视频、音频的播放\暂停行为</h4>
+<p>切出应用 -&gt; 再切换回来、锁屏 -&gt; 解屏，<code>video</code>、<code>audio</code>、<code>web audio api</code>的播放/暂停行为不一致，体现在不同系统（<code>IOS</code>、<code>Android</code>）、不同应用（微信、保险师）中，如：</p>
+<ul>
+<li>切出微信时，<code>video</code>会自动停止播放，而<code>audio</code>仍在播放。当然，并不是所有机型都如此，<code>Android</code>中腾讯<code>X5</code>浏览器处理的就比较完善，在切出后台时，<code>video</code>、<code>audio</code>会停止播放并且切回页面后自动续播。</li>
+<li>切换出应用，部分机型中<code>web audio api</code>不会停止播放，<strong>即使在<code>visibilitychange</code>事件，调用<code>stop</code>方法也无法停止。</strong></li>
+<li>切换回应用，部分机型（如：华为 P30 android 9）中，<code>video</code>自动续播，<code>web audio api</code>不会。</li>
+</ul>
+<p><strong>解决方法：</strong></p>
+<p>对于切出微信，<code>audio</code>不停止播放的问题，可以在<code>visibilitychange</code>事件中，调用<code>pause</code>方法来暂停。</p>
+<p>浏览器标签页被隐藏或显示的时候会触发 <code>visibilitychange</code>事件，可以通过<code>Document.visibilityState</code> 只读属性来获取当前标签页在浏览器中的激活状态：</p>
+<pre><code class="lang-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"visibilitychange"</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+    <span class="hljs-comment">//用户离开了当前页面</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">document</span>.<span class="hljs-property">visibilityState</span> === <span class="hljs-string">'hidden'</span>) {
+        video.<span class="hljs-title function_">pause</span>()
+    }
+    <span class="hljs-comment">// 用户打开或回到页面</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">document</span>.<span class="hljs-property">visibilityState</span> === <span class="hljs-string">'visible'</span>) {}
+
+    <span class="hljs-comment">//或者</span>
+    <span class="hljs-keyword">if</span> (e.<span class="hljs-property">target</span>.<span class="hljs-property">hidden</span>) {}
+})
+</code></pre>
+<p>另外，对于切换回应用，<code>video</code>、<code>audio</code>、<code>web audio api</code>的播放/暂停行为不一致，可以考虑在<code>visibilitychange</code>事件中，<code>document.visibilityState === 'visible'</code>时，刷新页面或更新音、视频模块。</p>
+<h4 id="其他属性、事件的兼容问题">其他属性、事件的兼容问题</h4>
+<h5 id="canplay、canplaythrought事件">canplay、canplaythrought事件</h5>
+<ul>
+<li><p><code>IOS</code>在加载时不会触发这两个方法，即使<code>preload="auto"</code>也没用，需要播放后才会触发。<code>readyState</code>也是播放后，才能取到值的。而<code>Android</code>、<code>PC</code>端<code>Chrome</code>是会在加载阶段就触发这两个事件。</p>
+</li>
+<li><p>修改<code>video</code>的<code>currentTime</code>值，<code>android</code>会触发<code>canplay</code>事件，但<code>IOS</code>不会。</p>
+</li>
+</ul>
+<h5 id="loadedmetadata事件">loadedmetadata事件</h5>
+<p>安卓微信（华为 meta 8）：取回的<code>duration\videoWidth\videoHeight</code>值为0。</p>
+<p><strong>解决方法：</strong>在<code>timeupdate</code>g事件中获取<code>duration\videoWidth\videoHeight</code>值</p>
+<h5 id="muted属性">muted属性</h5>
+<p>部分安卓机（如：华为 meta 8）的微信中：<code>video</code>标签中写了<code>muted</code>属性后，通示<code>Js</code>切换<code>muted</code>的值，无效。</p>
+<p><strong>解决方法：</strong><code>video</code>标签不设置<code>muted</code>属性，在页面初始化时，用<code>Js</code>对<code>muted</code>赋值。</p>
+<h5 id="volume属性">volume属性</h5>
+<p><code>IOS</code>中无法通过<code>volume</code>属性修改视频音量，直接写在<code>video</code>标签或者<code>js</code>修改都不行。</p>
+<h5 id="poster属性">poster属性</h5>
+<p>在不同设备上表现不同，浏览器没问题，但是微信浏览器和<code>IOS</code>可能会显示空白。</p>
+<p><strong>解决方案一</strong> ：自定义一个<code>div</code>，将封面放在<code>div</code>中，然后<code>div</code>盖在<code>video</code>的上面。</p>
+<p><strong>解决方案二</strong>：通过<code>canvas</code>截取视频第一帧作为默认显示的图片。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">cut</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">let</span> canvas = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">"canvas"</span>);
+    canvas.<span class="hljs-property">width</span> = video.<span class="hljs-property">videoWidth</span> * scale;
+    canvas.<span class="hljs-property">height</span> = video.<span class="hljs-property">videoHeight</span> * scale;
+    canvas.<span class="hljs-title function_">getContext</span>(<span class="hljs-string">'2d'</span>).<span class="hljs-title function_">drawImage</span>(video, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, canvas.<span class="hljs-property">width</span>, canvas.<span class="hljs-property">height</span>);
+
+    <span class="hljs-keyword">let</span> img = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">"img"</span>);
+    img.<span class="hljs-property">src</span> = canvas.<span class="hljs-title function_">toDataURL</span>(<span class="hljs-string">"image/png"</span>);
+
+    <span class="hljs-title class_">Dom</span>.<span class="hljs-title function_">appendChild</span>(img);
+};
+video.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'loadeddata'</span>,cut)
+</code></pre>
+<h4 id="安卓手机的一些问题：">安卓手机的一些问题：</h4>
+<h5 id="视频播放结束后，可能会有广告弹出">视频播放结束后，可能会有广告弹出</h5>
+<p><strong>解决方法</strong>：在视频播放完成事件中添加，先播放视频再暂停视频即可</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> isiOS = !!navigator.<span class="hljs-property">userAgent</span>.<span class="hljs-title function_">match</span>(<span class="hljs-regexp">/\(i[^;]+;( U;)? CPU.+Mac OS X/</span>)
+<span class="hljs-keyword">let</span> video = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'video'</span>);
+video.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'ended'</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-keyword">if</span> (!isiOS) {
+      video.<span class="hljs-title function_">play</span>();
+      <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
+          video.<span class="hljs-title function_">pause</span>();
+      }, <span class="hljs-number">100</span>)
+  }
+}
+</code></pre>
+<h5 id="android微信端（如：小米-10），局域播放状态下，有【全屏】按钮"><code>Android</code>微信端（如：小米 10），局域播放状态下，有【全屏】按钮</h5>
+<p>这个是<code>X5</code>做了<code>video</code>劫持的结果，<strong>目前解决方法</strong>（网上搜索答案）：</p>
+<ul>
+<li>成为腾讯的合作伙伴</li>
+<li>将视频的 <code>width</code>撑大，如：<code>width: 120%</code>；然后再用 <code>object-position</code> 将画面通过计算居中显示，两边裁剪</li>
+</ul>
+<h3 id="参考链接">参考链接</h3>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video" target="_blank">MDN video</a></p>
+<p><a href="https://segmentfault.com/a/1190000009395289" target="_blank">视频H5 video标签最佳实践</a></p>
+<p><a href="https://imququ.com/post/new-video-policies-for-ios10.html" target="_blank">iOS 10 Safari 视频播放新政策</a></p>
+<p><a href="https://imweb.io/topic/560a6015c2317a8c3e086207" target="_blank">video标签在不同平台上的事件表现差异分析</a></p>
+<p><a href="https://segmentfault.com/a/1190000019685244" target="_blank">video在安卓与ios实际应用中遇到的问题及解决</a></p>
+<p><a href="https://x5.tencent.com/tbs/guide/video.html" target="_blank">腾讯-H5同层播放器接入规范</a></p>
+<p><a href="https://docs.qq.com/doc/DTUxGdWZic0RLR29B" target="_blank">腾讯-X5内核视频之问答汇总</a> </p>
+<p></p><footer class="page-footer"><span class="copyright">© lizhao all right reserved，powered by Gitbook</span><span class="footer-modification">文件修订时间：
+2021-10-15 23:15:10
+</span></footer><p></p>
+<div id="gitalk-container"></div> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"></link> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01-HTML元素的宽高及位置详解.html" class="navigation navigation-prev " aria-label="Previous page: HTML元素的宽高及位置详解">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03-html探索系列-meta标签.md" class="navigation navigation-next " aria-label="Next page: Html探索系列 Meta标签">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Video元素的使用和常见问题总结","level":"5.6","depth":1,"next":{"title":"Html探索系列 Meta标签","level":"5.7","depth":1,"path":"html系列/03-html探索系列-meta标签.md","ref":"html系列/03-html探索系列-meta标签.md","articles":[]},"previous":{"title":"HTML元素的宽高及位置详解","level":"5.5","depth":1,"path":"html系列/01-HTML元素的宽高及位置详解.md","ref":"html系列/01-HTML元素的宽高及位置详解.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","summary","sandpack","theme-default","theme-comscore","tbfed-pagefooter","pageview-count","accordion","sharing-plus","back-to-top-button","chapter-fold","klipse","mygitalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"summary":{"exclude":["docs/**"]},"search-pro":{"maxSearchIndexSize":10000000},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"mygitalk":{"flipMoveOptions":{},"clientID":"35175582adb321d85634","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["lizh"],"createIssueManually":false,"distractionFreeMode":false,"repo":"https://github.com/1927344728/fed-knowledge","owner":"lizh","enableHotKey":true,"clientSecret":"2e60c4d61474ec23e752f127e838aa2039e0433e","pagerDirection":"last","labels":["Gitalk"]},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":true,"qzone":true},"sandpack":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"lizhao","honkit":"^6.0.2","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术驿站•LIZHAO","language":"zh","gitbook":"*","description":"这是开发者的技术文档"},"file":{"path":"html系列/02-video元素的使用和常见问题总结.md","mtime":"2021-10-15T15:15:10.272Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2026-06-29T12:14:32.945Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-sandpack/honkit-plugin-sandpack.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

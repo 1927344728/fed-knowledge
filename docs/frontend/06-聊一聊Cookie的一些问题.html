@@ -1,0 +1,4055 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>聊一聊Cookie的一些问题 · 技术驿站•LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 6.0.2">
+        <meta name="author" content="lizhao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="07-SSL证书简介及其生成、使用.md" />
+    
+    
+    <link rel="prev" href="05-重读React教程.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/00-前端调试随笔.html">
+            
+                <a href="../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/05-JS常见问题概览.html">
+            
+                <a href="../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/07-微信小程序开发.html">
+            
+                <a href="../bugs/07-微信小程序开发.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    微信小程序开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bugs/08-NodeJs常见问题概览.html">
+            
+                <a href="../bugs/08-NodeJs常见问题概览.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    NodeJs常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../bugs/09-Mac常见问题概览.html">
+            
+                <a href="../bugs/09-Mac常见问题概览.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Mac常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../bugs/10-微信环境前端开发指南.html">
+            
+                <a href="../bugs/10-微信环境前端开发指南.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    微信环境前端开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../bugs/99-其他问题汇总.html">
+            
+                <a href="../bugs/99-其他问题汇总.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    其他问题汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../css系列/00-CSS基础知识.html">
+            
+                <a href="../css系列/00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../css系列/00-CSS常见问答.html">
+            
+                <a href="../css系列/00-CSS常见问答.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../css系列/00-CSS常见问答02.html">
+            
+                <a href="../css系列/00-CSS常见问答02.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    CSS常见问答02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../css系列/00-CSS应用示例.html">
+            
+                <a href="../css系列/00-CSS应用示例.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    CSS应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../css系列/00-CSS应用示例02.html">
+            
+                <a href="../css系列/00-CSS应用示例02.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS应用示例02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../css系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../css系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../css系列/04-CSS探索系列-margin.html">
+            
+                <a href="../css系列/04-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                <a href="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    CSS探索系列 Auto关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../css系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../css系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../css系列/05-CSS探索系列-line-height.html">
+            
+                <a href="../css系列/05-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../css系列/05-CSS探索系列-元素居中.html">
+            
+                <a href="../css系列/05-CSS探索系列-元素居中.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    CSS探索系列 元素居中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../css系列/05-CSS探索系列-动画.html">
+            
+                <a href="../css系列/05-CSS探索系列-动画.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    CSS探索系列 动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../css系列/08-重新认识伪类与伪元素.html">
+            
+                <a href="../css系列/08-重新认识伪类与伪元素.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    重新认识伪类与伪元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../css系列/09-自定义表单伪元素样式.html">
+            
+                <a href="../css系列/09-自定义表单伪元素样式.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    自定义表单伪元素样式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../css系列/10-如何理解css中的display属性.html">
+            
+                <a href="../css系列/10-如何理解css中的display属性.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    如何理解Css中的Display属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                <a href="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                <a href="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    一文彻底弄懂CSS中的长度单位
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                <a href="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                    
+                        <b>2.21.</b>
+                    
+                    CSS中一些有特性的属性或属性值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../css系列/14-Web中如何实现长宽比.html">
+            
+                <a href="../css系列/14-Web中如何实现长宽比.html">
+            
+                    
+                        <b>2.22.</b>
+                    
+                    Web中如何实现长宽比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../css系列/15-@规则：@font-face.html">
+            
+                <a href="../css系列/15-@规则：@font-face.html">
+            
+                    
+                        <b>2.23.</b>
+                    
+                    @规则：@Font Face
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                <a href="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                    
+                        <b>2.24.</b>
+                    
+                    @规则：@Media（媒体查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../css系列/15-@规则：其他.html">
+            
+                <a href="../css系列/15-@规则：其他.html">
+            
+                    
+                        <b>2.25.</b>
+                    
+                    @规则：其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../css系列/_关于css.html">
+            
+                <a href="../css系列/_关于css.html">
+            
+                    
+                        <b>2.26.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="00-00-关于Web前端.html">
+            
+                <a href="00-00-关于Web前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    00 关于Web前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="00-01-前端知识概览.html">
+            
+                <a href="00-01-前端知识概览.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    01 前端知识概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="00-02-常用前端库概览.html">
+            
+                <a href="00-02-常用前端库概览.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    02 常用前端库概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="01-基础-00-前端常见问题01.html">
+            
+                <a href="01-基础-00-前端常见问题01.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    基础 00 前端常见问题01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="01-基础-01-浏览器缓存.html">
+            
+                <a href="01-基础-01-浏览器缓存.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    基础 01 浏览器缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="01-基础-02-浏览器工作原理.html">
+            
+                <a href="01-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                <a href="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    基础 03 谈谈前端跨域问题及解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="02-进阶-01-Web性能优化.html">
+            
+                <a href="02-进阶-01-Web性能优化.html">
+            
+                    
+                        <b>4.8.</b>
+                    
+                    进阶 01 Web性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                <a href="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                    
+                        <b>4.9.</b>
+                    
+                    进阶 02 搜索引擎优化（SEO）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                <a href="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                    
+                        <b>4.10.</b>
+                    
+                    进阶 03 前端模块化编程：CommonJS、AMD、CMD、UMD、ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                <a href="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                    
+                        <b>4.11.</b>
+                    
+                    进阶 04 规范代码：Linter、Prettier、EditorConfig
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="02-进阶-05-Web离线应用.html">
+            
+                <a href="02-进阶-05-Web离线应用.html">
+            
+                    
+                        <b>4.12.</b>
+                    
+                    进阶 05 Web离线应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="02-进阶-06-WebSocket.html">
+            
+                <a href="02-进阶-06-WebSocket.html">
+            
+                    
+                        <b>4.13.</b>
+                    
+                    进阶 06 WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="02-进阶-07-Web跨页面通信.html">
+            
+                <a href="02-进阶-07-Web跨页面通信.html">
+            
+                    
+                        <b>4.14.</b>
+                    
+                    进阶 07 Web跨页面通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="02-进阶-08-页面可见性和生命周期.html">
+            
+                <a href="02-进阶-08-页面可见性和生命周期.html">
+            
+                    
+                        <b>4.15.</b>
+                    
+                    进阶 08 页面可见性和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                <a href="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                    
+                        <b>4.16.</b>
+                    
+                    进阶 09 事件循环、宏任务、微任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="02-进阶-10-内存泄漏.html">
+            
+                <a href="02-进阶-10-内存泄漏.html">
+            
+                    
+                        <b>4.17.</b>
+                    
+                    进阶 10 内存泄漏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="02-进阶-11-前端自动化测试.html">
+            
+                <a href="02-进阶-11-前端自动化测试.html">
+            
+                    
+                        <b>4.18.</b>
+                    
+                    进阶 11 前端自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                <a href="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                    
+                        <b>4.19.</b>
+                    
+                    进阶 12 前端也玩多线程？WebWorker其实很简单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="03-高级-01-前端安全深度解析.html">
+            
+                <a href="03-高级-01-前端安全深度解析.html">
+            
+                    
+                        <b>4.20.</b>
+                    
+                    高级 01 前端安全深度解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.21" data-path="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                <a href="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                    
+                        <b>4.21.</b>
+                    
+                    高级 02 CI、CD（Docker+Jenkins+Nginx）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.22" data-path="04-Vue2.x原理篇.html">
+            
+                <a href="04-Vue2.x原理篇.html">
+            
+                    
+                        <b>4.22.</b>
+                    
+                    Vue2.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.23" data-path="04-Vue3初步了解及迁移指南.html">
+            
+                <a href="04-Vue3初步了解及迁移指南.html">
+            
+                    
+                        <b>4.23.</b>
+                    
+                    Vue3初步了解及迁移指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.24" data-path="04-重读Vue教程.html">
+            
+                <a href="04-重读Vue教程.html">
+            
+                    
+                        <b>4.24.</b>
+                    
+                    重读Vue教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.25" data-path="05-React17.x原理篇.html">
+            
+                <a href="05-React17.x原理篇.html">
+            
+                    
+                        <b>4.25.</b>
+                    
+                    React17.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.26" data-path="05-你必须知道的React问题.html">
+            
+                <a href="05-你必须知道的React问题.html">
+            
+                    
+                        <b>4.26.</b>
+                    
+                    你必须知道的React问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.27" data-path="05-重读React教程.html">
+            
+                <a href="05-重读React教程.html">
+            
+                    
+                        <b>4.27.</b>
+                    
+                    重读React教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.28" data-path="06-聊一聊Cookie的一些问题.html">
+            
+                <a href="06-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.28.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.29" data-path="07-SSL证书简介及其生成、使用.md">
+            
+                <span>
+            
+                    
+                        <b>4.29.</b>
+                    
+                    SSL证书简介及其生成、使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.30" data-path="07-如何启动本地HTTPS服务.html">
+            
+                <a href="07-如何启动本地HTTPS服务.html">
+            
+                    
+                        <b>4.30.</b>
+                    
+                    如何启动本地HTTPS服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.31" data-path="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                <a href="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                    
+                        <b>4.31.</b>
+                    
+                    0.0.0.0、127.0.0.1和Localhost的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.32" data-path="09-如何理解HTTP响应的状态码.html">
+            
+                <a href="09-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.32.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.33" data-path="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                <a href="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                    
+                        <b>4.33.</b>
+                    
+                    字符编码那点事：ASCII、Unicode、GBK、UTF 8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.34" data-path="11-HTTP协议的演变历史.md">
+            
+                <span>
+            
+                    
+                        <b>4.34.</b>
+                    
+                    HTTP协议的演变历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.35" data-path="12-webpack4.x原理篇.html">
+            
+                <a href="12-webpack4.x原理篇.html">
+            
+                    
+                        <b>4.35.</b>
+                    
+                    Webpack4.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.36" data-path="12-webpack基础入门篇.html">
+            
+                <a href="12-webpack基础入门篇.html">
+            
+                    
+                        <b>4.36.</b>
+                    
+                    Webpack基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.37" data-path="12-webpack构建优化篇.html">
+            
+                <a href="12-webpack构建优化篇.html">
+            
+                    
+                        <b>4.37.</b>
+                    
+                    Webpack构建优化篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.38" data-path="13-TypeScript使用指南.html">
+            
+                <a href="13-TypeScript使用指南.html">
+            
+                    
+                        <b>4.38.</b>
+                    
+                    TypeScript使用指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.39" data-path="14-Web中图片的使用.html">
+            
+                <a href="14-Web中图片的使用.html">
+            
+                    
+                        <b>4.39.</b>
+                    
+                    Web中图片的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.40" data-path="15-2026年，还需要微前端吗？——三大框架对比与选型思考.md">
+            
+                <span>
+            
+                    
+                        <b>4.40.</b>
+                    
+                    2026年，还需要微前端吗？——三大框架对比与选型思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.41" data-path="16-Electron基础篇.html">
+            
+                <a href="16-Electron基础篇.html">
+            
+                    
+                        <b>4.41.</b>
+                    
+                    Electron基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.42" data-path="17-uniapp基础篇.html">
+            
+                <a href="17-uniapp基础篇.html">
+            
+                    
+                        <b>4.42.</b>
+                    
+                    Uniapp基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.43" data-path="17-uniapp离线打包（Android）篇.html">
+            
+                <a href="17-uniapp离线打包（Android）篇.html">
+            
+                    
+                        <b>4.43.</b>
+                    
+                    Uniapp离线打包（Android）篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.44" data-path="18-sentry基础篇（vue）.html">
+            
+                <a href="18-sentry基础篇（vue）.html">
+            
+                    
+                        <b>4.44.</b>
+                    
+                    Sentry基础篇（Vue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.45" data-path="19-视口和软键盘对视口的影响.html">
+            
+                <a href="19-视口和软键盘对视口的影响.html">
+            
+                    
+                        <b>4.45.</b>
+                    
+                    视口和软键盘对视口的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.46" data-path="20-WebGL从入门到实践.html">
+            
+                <a href="20-WebGL从入门到实践.html">
+            
+                    
+                        <b>4.46.</b>
+                    
+                    WebGL从入门到实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.47" data-path="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                <a href="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                    
+                        <b>4.47.</b>
+                    
+                    Three.Js基础实战：从画一个立方体开始，掌握3D世界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.48" data-path="22-ReactNative基础篇.html">
+            
+                <a href="22-ReactNative基础篇.html">
+            
+                    
+                        <b>4.48.</b>
+                    
+                    ReactNative基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49" data-path="代码规范/">
+            
+                <a href="代码规范/">
+            
+                    
+                        <b>4.49.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.49.1" data-path="代码规范/00-前端规范.html">
+            
+                <a href="代码规范/00-前端规范.html">
+            
+                    
+                        <b>4.49.1.</b>
+                    
+                    前端规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.2" data-path="代码规范/01-HTML.html">
+            
+                <a href="代码规范/01-HTML.html">
+            
+                    
+                        <b>4.49.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.3" data-path="代码规范/02-CSS.html">
+            
+                <a href="代码规范/02-CSS.html">
+            
+                    
+                        <b>4.49.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.4" data-path="代码规范/03-JS.html">
+            
+                <a href="代码规范/03-JS.html">
+            
+                    
+                        <b>4.49.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../html系列/00-HTML基础知识.html">
+            
+                <a href="../html系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../html系列/00-HTML基础知识02.html">
+            
+                <a href="../html系列/00-HTML基础知识02.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML基础知识02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../html系列/00-HTML常见问答.html">
+            
+                <a href="../html系列/00-HTML常见问答.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    HTML常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../html系列/00-HTML经典实践用例.html">
+            
+                <a href="../html系列/00-HTML经典实践用例.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    HTML经典实践用例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../html系列/03-html探索系列-meta标签.md">
+            
+                <span>
+            
+                    
+                        <b>5.7.</b>
+                    
+                    Html探索系列 Meta标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                <a href="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                    
+                        <b>5.8.</b>
+                    
+                    DOCTYPE：文档类型与浏览器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="../html系列/05-DHTML（动态网页）简介.html">
+            
+                <a href="../html系列/05-DHTML（动态网页）简介.html">
+            
+                    
+                        <b>5.9.</b>
+                    
+                    DHTML（动态网页）简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="../html系列/06-HTML标签详解.md">
+            
+                <span>
+            
+                    
+                        <b>5.10.</b>
+                    
+                    HTML标签详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="../html系列/07-HTML布局的几种方式.html">
+            
+                <a href="../html系列/07-HTML布局的几种方式.html">
+            
+                    
+                        <b>5.11.</b>
+                    
+                    HTML布局的几种方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="../html系列/08-HTML全局属性.html">
+            
+                <a href="../html系列/08-HTML全局属性.html">
+            
+                    
+                        <b>5.12.</b>
+                    
+                    HTML全局属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                <a href="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                    
+                        <b>5.13.</b>
+                    
+                    标记语言演进：从GML到HTML动态标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.14" data-path="../html系列/_关于html.html">
+            
+                <a href="../html系列/_关于html.html">
+            
+                    
+                        <b>5.14.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Javascript系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../javascript系列/00-基础知识.html">
+            
+                <a href="../javascript系列/00-基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../javascript系列/00-常见问答.html">
+            
+                <a href="../javascript系列/00-常见问答.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../javascript系列/00-应用示例.html">
+            
+                <a href="../javascript系列/00-应用示例.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../javascript系列/00-趣味示例.html">
+            
+                <a href="../javascript系列/00-趣味示例.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    趣味示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../javascript系列/00-进阶知识.html">
+            
+                <a href="../javascript系列/00-进阶知识.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    进阶知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    基础篇 01 数据类型之基本类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    基础篇 01 数据类型之引用类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                <a href="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    基础篇 02 类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../javascript系列/01-基础篇-03-运算符.html">
+            
+                <a href="../javascript系列/01-基础篇-03-运算符.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                    基础篇 03 运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                <a href="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    基础篇 04 正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                <a href="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                    
+                        <b>6.11.</b>
+                    
+                    基础篇 05 AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="../javascript系列/01-基础篇-06--window对象.html">
+            
+                <a href="../javascript系列/01-基础篇-06--window对象.html">
+            
+                    
+                        <b>6.12.</b>
+                    
+                    基础篇 06  Window对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                <a href="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                    
+                        <b>6.13.</b>
+                    
+                    基础篇 07 Error、JSON、Math、Console对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                <a href="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                    
+                        <b>6.14.</b>
+                    
+                    基础篇 08 History、URL、Screen、Navigator、Location对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                    
+                        <b>6.15.</b>
+                    
+                    基础篇 09 文档对象模型（DOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                <a href="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                    
+                        <b>6.16.</b>
+                    
+                    基础篇 10 Document对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.17" data-path="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                <a href="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                    
+                        <b>6.17.</b>
+                    
+                    基础篇 11 Element对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.18" data-path="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                <a href="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                    
+                        <b>6.18.</b>
+                    
+                    基础篇 12 Event对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.19" data-path="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                <a href="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                    
+                        <b>6.19.</b>
+                    
+                    基础篇 13 键盘、鼠标、触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.20" data-path="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                <a href="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                    
+                        <b>6.20.</b>
+                    
+                    基础篇 14 MutationObserver对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.21" data-path="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                    
+                        <b>6.21.</b>
+                    
+                    基础篇 15 CSS对象模型（CSSOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.22" data-path="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                <a href="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                    
+                        <b>6.22.</b>
+                    
+                    进阶篇 01 Prototype对象和继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.23" data-path="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                    
+                        <b>6.23.</b>
+                    
+                    进阶篇 02 Promise对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.24" data-path="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                <a href="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                    
+                        <b>6.24.</b>
+                    
+                    进阶篇 03 有特性的一些事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.25" data-path="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                    
+                        <b>6.25.</b>
+                    
+                    进阶篇 04 Proxy对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.26" data-path="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                    
+                        <b>6.26.</b>
+                    
+                    进阶篇 05 Reflect对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.27" data-path="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                <a href="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                    
+                        <b>6.27.</b>
+                    
+                    进阶篇 06 Class（类）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.28" data-path="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                <a href="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                    
+                        <b>6.28.</b>
+                    
+                    进阶篇 07 迭代器（Iterator）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.29" data-path="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                <a href="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                    
+                        <b>6.29.</b>
+                    
+                    进阶篇 08 Generator和Async函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.30" data-path="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                <a href="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                    
+                        <b>6.30.</b>
+                    
+                    进阶篇 09 JavaScript异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.31" data-path="../javascript系列/04-Date对象和日期时间字符串格式.md">
+            
+                <span>
+            
+                    
+                        <b>6.31.</b>
+                    
+                    Date对象和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.32" data-path="../javascript系列/05-Canvas基础入门篇.html">
+            
+                <a href="../javascript系列/05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.32.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.33" data-path="../javascript系列/05-Canvas进阶篇.html">
+            
+                <a href="../javascript系列/05-Canvas进阶篇.html">
+            
+                    
+                        <b>6.33.</b>
+                    
+                    Canvas进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.34" data-path="../javascript系列/06-SVG基础入门篇.html">
+            
+                <a href="../javascript系列/06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.34.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.35" data-path="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.35.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.36" data-path="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.36.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.37" data-path="../javascript系列/08-谈谈JavaScript的作用域和上下文.md">
+            
+                <span>
+            
+                    
+                        <b>6.37.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.38" data-path="../javascript系列/10-复制内容到剪贴板.html">
+            
+                <a href="../javascript系列/10-复制内容到剪贴板.html">
+            
+                    
+                        <b>6.38.</b>
+                    
+                    复制内容到剪贴板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.39" data-path="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                <a href="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                    
+                        <b>6.39.</b>
+                    
+                    44道JavaScript难题，还不来考考？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.40" data-path="../javascript系列/_关于Javascript.html">
+            
+                <a href="../javascript系列/_关于Javascript.html">
+            
+                    
+                        <b>6.40.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java系列</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../java系列/01-00-Java入门篇.html">
+            
+                <a href="../java系列/01-00-Java入门篇.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    00 Java入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../java系列/01-01-Java进阶篇.html">
+            
+                <a href="../java系列/01-01-Java进阶篇.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    01 Java进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../java系列/01-02-Java高级篇.html">
+            
+                <a href="../java系列/01-02-Java高级篇.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    02 Java高级篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../java系列/02-pom.xml详解.html">
+            
+                <a href="../java系列/02-pom.xml详解.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Pom.Xml详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../java系列/03-01-SpringBoot入门篇.html">
+            
+                <a href="../java系列/03-01-SpringBoot入门篇.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    01 SpringBoot入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../java系列/05-轻量应用服务器部署指南（腾讯云）.md">
+            
+                <span>
+            
+                    
+                        <b>7.6.</b>
+                    
+                    轻量应用服务器部署指南（腾讯云）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../java系列/06-keytool命令行工具.md">
+            
+                <span>
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Keytool命令行工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">NodeJs</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../nodeJs/00-0关于Node.js.html">
+            
+                <a href="../nodeJs/00-0关于Node.js.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    0关于Node.Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../nodeJs/00-常见问题.html">
+            
+                <a href="../nodeJs/00-常见问题.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                <a href="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Node.Js：三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                <a href="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                    
+                        <b>8.4.</b>
+                    
+                    Npm包管理器简介及一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                <a href="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                    
+                        <b>8.5.</b>
+                    
+                    NPM：Package.Json详解（中文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                <a href="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                    
+                        <b>8.6.</b>
+                    
+                    NPM：从零开始，开发一个软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="../nodeJs/05-NPM：常用命令.html">
+            
+                <a href="../nodeJs/05-NPM：常用命令.html">
+            
+                    
+                        <b>8.7.</b>
+                    
+                    NPM：常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                <a href="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                    
+                        <b>8.8.</b>
+                    
+                    Node.Js：Fs（文件系统）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                <a href="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                    
+                        <b>8.9.</b>
+                    
+                    Node.Js：Global（全局变量）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="../nodeJs/08-Node.js：HTTP.html">
+            
+                <a href="../nodeJs/08-Node.js：HTTP.html">
+            
+                    
+                        <b>8.10.</b>
+                    
+                    Node.Js：HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="../nodeJs/09-Node.js：module（模块）.html">
+            
+                <a href="../nodeJs/09-Node.js：module（模块）.html">
+            
+                    
+                        <b>8.11.</b>
+                    
+                    Node.Js：Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="../nodeJs/10-Node.js：path（路径）.html">
+            
+                <a href="../nodeJs/10-Node.js：path（路径）.html">
+            
+                    
+                        <b>8.12.</b>
+                    
+                    Node.Js：Path（路径）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                <a href="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                    
+                        <b>8.13.</b>
+                    
+                    Node.Js：Readline（逐行读取）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.14" data-path="../nodeJs/12-锁定项目的Node版本.html">
+            
+                <a href="../nodeJs/12-锁定项目的Node版本.html">
+            
+                    
+                        <b>8.14.</b>
+                    
+                    锁定项目的Node版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../research/02-如何监控前端异常？.html">
+            
+                <a href="../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../research/03-H5页面跳转和刷新.html">
+            
+                <a href="../research/03-H5页面跳转和刷新.html">
+            
+                    
+                        <b>9.3.</b>
+                    
+                    H5页面跳转和刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>9.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>9.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>9.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../research/07-H5可视化编辑.html">
+            
+                <a href="../research/07-H5可视化编辑.html">
+            
+                    
+                        <b>9.7.</b>
+                    
+                    H5可视化编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="../research/08-Web常用功能.html">
+            
+                <a href="../research/08-Web常用功能.html">
+            
+                    
+                        <b>9.8.</b>
+                    
+                    Web常用功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" data-path="../research/10-H5页面生成图片方案总结.html">
+            
+                <a href="../research/10-H5页面生成图片方案总结.html">
+            
+                    
+                        <b>9.9.</b>
+                    
+                    H5页面生成图片方案总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10" data-path="../research/Javascript加密混淆.html">
+            
+                <a href="../research/Javascript加密混淆.html">
+            
+                    
+                        <b>9.10.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.11" data-path="../research/Vue如何导入TypeScript.html">
+            
+                <a href="../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>9.11.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.12" data-path="../research/移动端PDF预览.html">
+            
+                <a href="../research/移动端PDF预览.html">
+            
+                    
+                        <b>9.12.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.13" data-path="../research/纯CSS绘制箭头.html">
+            
+                <a href="../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>9.13.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.14" data-path="../research/网站性能测量和优化方法.html">
+            
+                <a href="../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>9.14.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../tech/00-编程基础知识.html">
+            
+                <a href="../tech/00-编程基础知识.html">
+            
+                    
+                        <b>10.1.</b>
+                    
+                    编程基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="../tech/00-计算机问题概览.html">
+            
+                <a href="../tech/00-计算机问题概览.html">
+            
+                    
+                        <b>10.2.</b>
+                    
+                    计算机问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>10.3.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                <a href="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                    
+                        <b>10.4.</b>
+                    
+                    GOOGLE浏览器的搜索技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="../tech/03-curl的用法指南.html">
+            
+                <a href="../tech/03-curl的用法指南.html">
+            
+                    
+                        <b>10.5.</b>
+                    
+                    Curl的用法指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="../tech/04-sublime3插件篇.html">
+            
+                <a href="../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>10.6.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="../tech/05-Charles安装及使用.html">
+            
+                <a href="../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>10.7.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                <a href="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                    
+                        <b>10.8.</b>
+                    
+                    通过.Gitlab Ci.Yml配置任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="../tech/07-MySQL的基本使用.html">
+            
+                <a href="../tech/07-MySQL的基本使用.html">
+            
+                    
+                        <b>10.9.</b>
+                    
+                    MySQL的基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="../tech/08-看懂什么是环境变量.html">
+            
+                <a href="../tech/08-看懂什么是环境变量.html">
+            
+                    
+                        <b>10.10.</b>
+                    
+                    看懂什么是环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.11" data-path="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                <a href="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                    
+                        <b>10.11.</b>
+                    
+                    为什么0.1+0.2=0.30000000000000004
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.12" data-path="../tech/10-Nginx使用手册：安装、配置、模块扩展与代理详解.md">
+            
+                <span>
+            
+                    
+                        <b>10.12.</b>
+                    
+                    Nginx使用手册：安装、配置、模块扩展与代理详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.13" data-path="../tech/11-常见智力题总结.html">
+            
+                <a href="../tech/11-常见智力题总结.html">
+            
+                    
+                        <b>10.13.</b>
+                    
+                    常见智力题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.14" data-path="../tech/12-Mac终端命令使用.html">
+            
+                <a href="../tech/12-Mac终端命令使用.html">
+            
+                    
+                        <b>10.14.</b>
+                    
+                    Mac终端命令使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.15" data-path="../tech/13-01-Shell脚本入门篇.html">
+            
+                <a href="../tech/13-01-Shell脚本入门篇.html">
+            
+                    
+                        <b>10.15.</b>
+                    
+                    01 Shell脚本入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.16" data-path="../tech/13-02-Shell脚本进阶篇.html">
+            
+                <a href="../tech/13-02-Shell脚本进阶篇.html">
+            
+                    
+                        <b>10.16.</b>
+                    
+                    02 Shell脚本进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.17" data-path="../tech/14-一篇搞定排序算法：原理+图解+JS实现+V8源码解读.md">
+            
+                <span>
+            
+                    
+                        <b>10.17.</b>
+                    
+                    一篇搞定排序算法：原理+图解+JS实现+V8源码解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.18" data-path="../tech/15-glob模式通配符.html">
+            
+                <a href="../tech/15-glob模式通配符.html">
+            
+                    
+                        <b>10.18.</b>
+                    
+                    Glob模式通配符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.19" data-path="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                <a href="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                    
+                        <b>10.19.</b>
+                    
+                    代码整洁之道（摘录笔记）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.20" data-path="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                <a href="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                    
+                        <b>10.20.</b>
+                    
+                    Java的24种设计模式与7大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.21" data-path="../tech/18-观察者和发布订阅模式.html">
+            
+                <a href="../tech/18-观察者和发布订阅模式.html">
+            
+                    
+                        <b>10.21.</b>
+                    
+                    观察者和发布订阅模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.22" data-path="../tech/19-AI模型基础应用篇.html">
+            
+                <a href="../tech/19-AI模型基础应用篇.html">
+            
+                    
+                        <b>10.22.</b>
+                    
+                    AI模型基础应用篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../tools/01-01-Git基础教程.html">
+            
+                <a href="../tools/01-01-Git基础教程.html">
+            
+                    
+                        <b>11.1.</b>
+                    
+                    01 Git基础教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../tools/01-02-Git常见问题.html">
+            
+                <a href="../tools/01-02-Git常见问题.html">
+            
+                    
+                        <b>11.2.</b>
+                    
+                    02 Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../tools/02-01-gitbook入门篇.html">
+            
+                <a href="../tools/02-01-gitbook入门篇.html">
+            
+                    
+                        <b>11.3.</b>
+                    
+                    01 Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="../tools/02-02-gitbook插件篇.html">
+            
+                <a href="../tools/02-02-gitbook插件篇.html">
+            
+                    
+                        <b>11.4.</b>
+                    
+                    02 Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="../tools/02-03-gitbook进阶篇.html">
+            
+                <a href="../tools/02-03-gitbook进阶篇.html">
+            
+                    
+                        <b>11.5.</b>
+                    
+                    03 Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">整理中</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >聊一聊Cookie的一些问题</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="聊一聊cookie的一些问题">聊一聊Cookie的一些问题</h2>
+<p><strong>Cookie 是站点为了保存访客的一些信息，用来区分用户或者传递信息</strong>。在 Session 出现之前，基本上所有的网站都采用 Cookie 来区分用户身份。</p>
+<p>Web 应用程序是使用 HTTP 协议传输数据的。HTTP 协议是无状态的协议。一旦数据交换完毕，客户端与服务器端的连接就会关闭（HTTP 1.0 及以前），再次交换数据需要建立新的连接。Cookie 是一种是在客户端保持 HTTP 状态的方案，用来唯一标识一个用户，同时记录该用户的状态。</p>
+<p>Cookie 主要用于以下三个方面：</p>
+<ul>
+<li>会话状态管理（如用户登录状态、购物车、游戏分数或其它需要记录的信息）；</li>
+<li>个性化设置（如用户自定义设置、主题等）；</li>
+<li>浏览器行为跟踪（如跟踪分析用户行为等）。</li>
+</ul>
+<blockquote>
+<p>注意：Cookie 功能需要浏览器的支持。</p>
+<p>如果浏览器不支持 Cookie 或者把 Cookie 禁用了，Cookie 机制就会失效。比如，Chrome 启用或禁用：在右上角“更多”图标 -&gt; 设置 -&gt; 隐私设置和安全性 -&gt; 网站设置 -&gt; Cookie 和网站数据。</p>
+</blockquote>
+<h3 id="cookie是什么？">Cookie是什么？</h3>
+<p>从本质上说，Cookie 就是存储在用户主机浏览器中的一小段文本文件。Cookies 是纯文本形式，它们不包含任何可执行代码，就其本身而言不是有害。一个 Web 页面或服务器告之浏览器来将这些信息存储并且基于一系列规则在之后的每个请求中都将该信息返回至服务器，然后 Web 服务器可以利用这些信息来标识用户。</p>
+<ul>
+<li><p>Chrome 的 Cookie 数据文件位于：<code>%LOCALAPPDATA%\Google\Chrome\User Data\Default\ Cookies</code>。如：<code>C:\Users\[whoami]\AppData\Local\Google\Chrome\User Data\Default\Cookies</code>。</p>
+<p>在用户[whoami]文件夹中，<strong>AppData通常是隐藏的。</strong>window 10下，点开查看 -&gt; 勾中【隐藏的项目】。</p>
+</li>
+<li><p>Chrome 开发者工具中查看：F12 -&gt; Application -&gt; Cookies -&gt; [website]</p>
+</li>
+<li><p>Chrome 设置中查看：在右上角“更多”图标 -&gt; 设置 -&gt; 隐私设置和安全性 -&gt; 网站设置 -&gt; Cookie 和网站数据 -&gt; 所有 Cookie 和网站数据。</p>
+</li>
+</ul>
+<h3 id="cookie工作原理">Cookie工作原理</h3>
+<p><strong>Cookie 使用 HTTP Header 传递数据。</strong> </p>
+<p>Cookie机制定义了两种报头：<code>Set-Cookie</code> 和 <code>Cookie</code> 。<code>Set-Cookie</code> 包含于 Web 服务器的响应头中，Cookie 包含在客户端请求头中。</p>
+<p>Cookie 的运行过程具体分析如下：</p>
+<ul>
+<li><p>客户端在浏览器的地址栏中键入 Web 服务器的 URL，浏览器发送读取网页的请求。 </p>
+</li>
+<li><p>服务器接收到请求后，产生一个 <code>Set-Cookie</code> 信息，放在响应头中一起回传客户端，发起一次会话。 </p>
+</li>
+<li><p>客户端接到响应后，若要继续该次会话，则将 <code>Set-Cookie</code> 中的内容取出，形成一个 Cookies 文件储存在客户端计算机里。</p>
+</li>
+<li><p>当客户端再次向服务器发出请求时，浏览器先在电脑里寻找对应该网站的 Cookies 文件。如果找到，则根据此 Cookies 产生 Cookie 信息，放在 HTTP 请求头中发给服务器。<strong>这些是浏览器自动做的，而且每一次 HTTP 请求都会自动带上 Cookie。</strong></p>
+</li>
+<li><p>服务器接收到包含 Cookie 信息的请求，检索 Cookie 中与用户有关的信息，生成一个客户端所请示的页面响应传递给客户端。 </p>
+</li>
+</ul>
+<h3 id="cookie的属性">Cookie的属性</h3>
+<p>Cookie 由一个名称（name）、一个值（value）和其它几个用于控制 Cookie 有效期、安全性、使用范围的可选属性组成，但对服务端而言，它只需要 <strong>name=value 值</strong>。</p>
+<p>Cookie 属性名称<strong>不区分大小写</strong>，比如：DOMAIN 和 domain、secure 和 SECURE。</p>
+<p>Cookie 的 name 值一般是<strong>区分大小写</strong>的，但有些语言可能进行了封装，也可不区分大小写。比如：</p>
+<ul>
+<li>ASP：<code>response.cookies("aa")</code> 与  <code>response.cookies("AA")</code> 是指的同一个 Cookie。</li>
+<li>JavaScript：<code>document.cookie = "aa=1"</code> 和 <code>document.cookie = "AA=2"</code> 是两个 Cookie。</li>
+</ul>
+<p>服务端可以设置所有的 Cookie 属性，但客户端有部分属性是无法设置的，如，HttpOnly：</p>
+<pre><code class="lang-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">客户端</span>
+[name]=[value];expires=[new Date()];domain=[domain];path=[path];Secure;
+<span class="hljs-meta prompt_">
+# </span><span class="language-bash">服务端</span>
+[name]=[value];expires=[new Date()];domain=[domain];path=[path];Secure;HttpOnly,size=[size];SameSite=[Strict|Lax|none];Priority=[Medium]
+</code></pre>
+<h4 id="name">name</h4>
+<p>字符串，用于唯一确定一个 Cookie 的名称，在 JavaScript 中是区分大小写的。</p>
+<p>name 属性是一个字符串，具体规则与 JavaScript 变量名称有所不同：使用字母数字和下划线、避免使用 <code>$</code>，没有保留字或变量名限制。要真正理解命名规则，<a href="http://javadocs.wikidot.com/hypertext-transfer-protocol-http1-1" target="_blank">请阅读HTTP 1.1标准</a>。</p>
+<h4 id="value">value</h4>
+<p>字符串，用于存储 Cookie 的值。</p>
+<p>value 值中逗号、分号、空格被当做了特殊符号，所以有这三个特殊字符时，需要对进行额外编码，如： <code>encodeURI|encodeURIComponent</code> 。</p>
+<p><strong>注意：</strong> value 值并不是一定要编码。原始的文档中指示仅有三种类型的字符必须进行编码：<strong>分号、逗号、和空格</strong>。</p>
+<h4 id="expires（未来某个时刻过期）">expires（未来某个时刻过期）</h4>
+<p><strong>GMT 格式</strong>的时间，用于设置失效日期，默认有效期为：session（会话 Cookie，即浏览器关闭后过期）。</p>
+<p><strong>GMT 格式</strong>的时间，可通过 <code>new Date().toGMTString()</code> 或者 <code>new Date().toUTCString()</code> 获取。<a href="https://app.gitbook.com/s/-M8fDLTBWl2H-MOzligj/js-tan-suo-xi-lie/02javascriptdate-de-shi-yong-he-ri-qi-shi-jian-zi-fu-chuan-ge-shi" target="_blank">JavaScript Date的使用和日期时间字符串格式</a></p>
+<p>以下表示一天后失效：</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 正确写法</span>
+<span class="hljs-comment">// 注：时区原因，以下四种写法表示的过期时间有差异</span>
+
+<span class="hljs-comment">// Tue May 03 2022 22:48:41 GMT+0800 (中国标准时间)</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> =<span class="hljs-string">`aaa=1234;expires=<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime() + <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">1000</span>)}</span>;`</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> =<span class="hljs-string">`aaa=1234;expires=<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime() + <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">1000</span>).toString()}</span>;`</span>
+
+<span class="hljs-comment">// Tue, 03 May 2022 14:48:41 GMT</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> =<span class="hljs-string">`aaa=1234;expires=<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime() + <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">1000</span>).toGMTString()}</span>;`</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> =<span class="hljs-string">`aaa=1234;expires=<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime() + <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">1000</span>).toUTCString()}</span>;`</span>
+</code></pre>
+<p>如果设置的值无效，相当没有设置 expires：</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 错误写法</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> = <span class="hljs-string">`aaa=1234;expires=<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime() + <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">1000</span>).toISOString()}</span>;`</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> = <span class="hljs-string">`aaa=1234;expires=<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime() + <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">1000</span>).toLocaleString()}</span>;`</span>
+</code></pre>
+<h4 id="max-age（经过一定秒数过期）">max-age（经过一定秒数过期）</h4>
+<p>数值（以秒为单位），表示在多少秒后失效，默认值是 -1（会话 Cookie，即浏览器关闭后过期）。</p>
+<p>max-age 可接收的值：</p>
+<ul>
+<li>负数：会话 Cookie，即浏览器关闭后过期；</li>
+<li>0：表示删除 Cookie；</li>
+<li>正数：有效期为 <strong>客户端收到 Cookie 的时刻 + max-age（秒）</strong>。</li>
+</ul>
+<p>以下表示一天后失效：</p>
+<pre><code class="lang-js"><span class="hljs-comment">// 2022-05-03T15:02:08.782Z</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> = <span class="hljs-string">`aaa=1234;max-age=<span class="hljs-subst">${<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>}</span>;`</span>
+</code></pre>
+<h4 id="domain">domain</h4>
+<p>字符串，表示允许访问 Cookie 的域名，默认为当前文档的域名。</p>
+<p>需要注意以下问题：</p>
+<ul>
+<li><strong>Cookie不可跨站访问</strong>：zhao.com 域名的 Cookie 不能被 example.com 域名访问。这是由 Cookie 的隐私安全机制决定的。</li>
+<li><strong>name 相同但 domain 不同的是两个不同的 Cookie。</strong> 如果想要两个域名完全不同的网站共有 Cookie，可以生成两个Cookie，domain 属性分别为两个域名，输出到客户端。</li>
+<li><strong>domain 不能是顶级域名</strong>，即不能设置为 <code>.com</code> 或 <code>com</code>。</li>
+</ul>
+<p>设置 zhao.com 域名及其子域名允许访问 Cookie：</p>
+<pre><code class="lang-js"><span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> = <span class="hljs-string">'aaa=1234;domain=.zhao.com;'</span>
+</code></pre>
+<h4 id="path">path</h4>
+<p>字符串，表示允许访问 Cookie 的<strong>路径</strong>，默认为 '/'，即对当前域名下的所有路径都有效。</p>
+<p>设置 Path=/aaa，那么只有 /aaa 及其子路径的请求才会携带这个Cookie。</p>
+<pre><code class="lang-js"><span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> = <span class="hljs-string">'aaa=1234;path=/aaa;'</span> <span class="hljs-comment">// 只允许 /aaa 目录下的页面访问 Cookie</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> = <span class="hljs-string">'aaa=1234;path=/;'</span>    <span class="hljs-comment">// 允许所有路径访问 Cookie</span>
+</code></pre>
+<p><strong>注意：</strong> <strong>name 相同但 path 不同，是两个不同的 Cookie。</strong></p>
+<p><strong>注意：</strong> cookie 在 Header 的顺序，RFC 推荐在浏览器能够按 path 的长短排序，越长说明匹配的越精确，顺序越靠前。但并不是所有的浏览器都遵守这个，并且服务器也不应该依赖于 Cookie 出现的顺序。</p>
+<h4 id="httponly">httponly</h4>
+<p>布尔值，表示 Cookie 是否允许客户端的 JavaScript（如，<code>document.cookie</code>）访问，默认为空，即允许客户端通过 Javascript 访问（读、改、删等）Cookie。</p>
+<p>这主要用于缓解跨站脚本（XSS）攻击，防止恶意脚本窃取敏感Cookie（如Session ID）。</p>
+<p><strong>注意：</strong> 客户端不能用 Javascript 设置带 httponly 属性的 Cookie（Chrome 开发者工具中可以设置），只能通过服务端来设置。</p>
+<pre><code class="lang-js"><span class="hljs-string">`httpOnly;`</span> <span class="hljs-comment">//不区分大小写</span>
+</code></pre>
+<h4 id="secure">secure</h4>
+<p>布尔值，表示是否仅允许通过 <strong>HTTPS</strong> 协议的请求携带，而不允许 HTTP 协议的请求携带，默认为空（即不管是 HTTPS 协议还是 HTTP 协议，都允许携带）。</p>
+<p>这是保护 Cookie 不被中间人攻击的重要安全措施。</p>
+<pre><code class="lang-js"><span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> = <span class="hljs-string">'aaa=1234;Secure;'</span> <span class="hljs-comment">// secure 不区分大小写</span>
+</code></pre>
+<p><strong>注意：</strong> secure 属性，只能在 HTTPS 协议下使用，HTTP 协议下不能设置 secure 属性。</p>
+<h4 id="samesite">sameSite</h4>
+<p>字符串（枚举值），表示是否允许 Cookie 在跨站请求中携带，默认值 Lax（在现代浏览器中，不同浏览器可能有差异）。</p>
+<p>这是一个非常重要的安全属性，用于防御 CSRF 攻击。</p>
+<p>SameSite 可接收值有：</p>
+<ul>
+<li>Strict：最严格，浏览器只会在<strong>同一站点</strong>的请求中发送 Cookie（即请求的域名和 Cookie 的域名完全一致）。</li>
+<li>Lax：默认值（在现代浏览器中）。大多数情况也是不发送第三方 Cookie，但在安全（如HTTPS）的顶级导航（例如点击链接）或GET请求中会携带 Cookie。</li>
+<li>None：允许在跨站请求中发送Cookie。<strong>但前提是必须同时设置 <code>Secure</code> 属性</strong>（即 Cookie 必须通过 HTTPS 传输）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求类型</th>
+<th style="text-align:center">示例</th>
+<th>Strict</th>
+<th>Lax</th>
+<th>None</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">链接</td>
+<td style="text-align:center"><code>&lt;a href="..."&gt;&lt;/a&gt;</code></td>
+<td>不发送</td>
+<td>发送 Cookie</td>
+<td>发送 Cookie</td>
+</tr>
+<tr>
+<td style="text-align:left">预加载</td>
+<td style="text-align:center"><code>&lt;link rel="prerender" href="..."/&gt;</code></td>
+<td>不发送</td>
+<td>发送 Cookie</td>
+<td>发送 Cookie</td>
+</tr>
+<tr>
+<td style="text-align:left">GET 表单</td>
+<td style="text-align:center"><code>&lt;form method="GET" action="..."&gt;</code></td>
+<td>不发送</td>
+<td>发送 Cookie</td>
+<td>发送 Cookie</td>
+</tr>
+<tr>
+<td style="text-align:left">POST 表单</td>
+<td style="text-align:center"><code>&lt;form method="POST" action="..."&gt;</code></td>
+<td>不发送</td>
+<td>不发送</td>
+<td>发送 Cookie</td>
+</tr>
+<tr>
+<td style="text-align:left">iframe</td>
+<td style="text-align:center"><code>&lt;iframe src="..."&gt;&lt;/iframe&gt;</code></td>
+<td>不发送</td>
+<td>不发送</td>
+<td>发送 Cookie</td>
+</tr>
+<tr>
+<td style="text-align:left">AJAX</td>
+<td style="text-align:center"><code>$.get("...")</code></td>
+<td>不发送</td>
+<td>不发送</td>
+<td>发送 Cookie</td>
+</tr>
+<tr>
+<td style="text-align:left">Image</td>
+<td style="text-align:center"><code>&lt;img src="..."&gt;</code></td>
+<td>不发送</td>
+<td>不发送</td>
+<td>发送 Cookie</td>
+</tr>
+</tbody>
+</table>
+<p>注意以下问题：</p>
+<ul>
+<li><p><code>SameSite=none</code> 只能在 HTTPS 协议下设置。因为，设置 SameSite 属性，Cookie 必须有 Secure 属性，而 Secure 属性只能在 HTTPS 协议下使用。</p>
+</li>
+<li><p>有部分浏览器不能加 <code>SameSite=none</code>。比如：IOS 12 的 Safari 以及老版本的一些 Chrome 会把 <code>SameSite=none</code> 识别成 <code>SameSite=Strict</code>，所以服务端必须在设置 Set-Cookie 响应头时进行 User-Agent 检测，对这些浏览器不返回 <code>SameSite=none</code>  属性。</p>
+</li>
+</ul>
+<p><strong>注意：</strong> 2020 年 2 月份发布的 Chrome 80 版本中默认屏蔽了第三方的 Cookie，即，之前默认是 None 的，Chrome 80 后默认是 Lax。</p>
+<p><strong>注意：</strong> 为解决 Chrome 浏览器中，Cookie 无法跨站使用，可以让服务端设置 Cookie 的属性 <code>SameSite=none</code>，或者使用 nginx 类的代理器统一设置 。</p>
+<h4 id="size">size</h4>
+<p>数值，表示 Cookie 在磁盘上占用的<strong>总字节数</strong>。</p>
+<p>size 是 <code>Name</code> + <code>Value</code> + 所有其他属性（如 <code>Domain</code>, <code>Path</code>, <code>Expires</code> 等）的<strong>序列化字符串的总长度</strong>，其作用是为帮助开发者了解 Cookie 的存储开销。浏览器对每个域名下的 Cookie 数量和总大小都有限制，这个属性有助于进行调试和优化。</p>
+<p><strong>注意：</strong> 开发者不能设置/修改 size 的值。这是一个<strong>计算结果</strong>，由浏览器根据你设置的 Cookie 内容自动计算得出。</p>
+<h4 id="priority（chrome-历史遗留属性）">priority（Chrome 历史遗留属性）</h4>
+<p>字符串（枚举值），用于在Cookie数量或大小达到浏览器限制时，决定<strong>哪些Cookie应该被优先保留</strong>。</p>
+<p>priority 的可选值：</p>
+<ul>
+<li><code>Low</code></li>
+<li><code>Medium</code> (默认值)</li>
+<li><code>High</code></li>
+</ul>
+<p>当需要清理 Cookie 时，优先级为 <code>Low</code> 的 Cookie 会先于 <code>Medium</code> 和 <code>High</code> 的被删除。</p>
+<p><strong>注意：</strong> 开发者可能设置/修改 priority 属性的值，但<strong>不推荐且不通用</strong>。这是一个非标准属性，最初是 Chrome 特有的，其他浏览器可能不支持，并且现代 Chrome 中的清理算法可能已经发生了变化，依赖它并不可靠。</p>
+<h3 id="读写cookie">读写Cookie</h3>
+<p>服务器发送给客户端（浏览器）时，可以通过 Set-Cookie 创建、更新或删除 Cookie；而客户端也可以通过浏览器内置的一些脚本，比如 Javascript，创建、更新或删除 Cookie。</p>
+<h4 id="客户端">客户端</h4>
+<p>客户端可以设置 Cookie 的一些属性：name、value、expires/max-age、domain、path、secure（HTTPS 协议下），但不能设置 HttpOnly 属性。</p>
+<p><strong>创建 Cookie：</strong></p>
+<pre><code class="lang-js"><span class="hljs-comment">// 正确写法：</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> = <span class="hljs-string">`aaa=1234;domain=;path=/;expires=<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime() + <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">1000</span>)}</span>;Secure;SameSite=none;Priority=Medium`</span>
+</code></pre>
+<p><span style="color: #0aa; font-weight: bold;">一次只能设置一个cookie。</span> </p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 错误写法</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> = <span class="hljs-string">"aaa=1234; bbb=1234; ccc=1234"</span>;
+</code></pre>
+<p>如上同时设置多个 Cookie，实际只会添加第一个 <code>aaa=1234</code>，后面的 Cookie 都没有添加成功。</p>
+<p>最简单的设置多个 Cookie 的方法就在重复执行 <code>document.cookie = "[name]=[value]"</code>。</p>
+<p><strong>查看 Cookie：</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span>
+</code></pre>
+<p><strong>修改 cookie：</strong> 重新赋值就行，旧的值会被新的值覆盖。</p>
+<pre><code class="lang-js"><span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> = <span class="hljs-string">`aaa=5678;domain=;path=/;expires=<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime() + <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">1000</span>)}</span>;Secure;SameSite=none;Priority=Medium`</span>
+</code></pre>
+<p><strong>注意</strong>：<strong>name、domain、path 都相同，Cookie 才会被覆盖</strong>；否则是新增一个 Cookie。</p>
+<p><strong>删除 Cookie：</strong> 一种方法是通过浏览器开发者工具清除 Cookie（有第三方的工具，浏览器自身也有这种功能）；二是通过 Javascript 设置 Cookie 的有效期来清除 Cookie，如将 expires 属性的值设置为一个过去的时间点或者 max-age 属性值设置为 0。</p>
+<p><strong>注意：name、domain、path 都相同，Cookie 才会被删除</strong>。</p>
+<pre><code class="lang-javascript"><span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> = <span class="hljs-string">'aaa=5678;domain=;path=/;max-age=0'</span>
+</code></pre>
+<h4 id="服务端">服务端</h4>
+<p>服务器端通过响应头的 Set-Cookie 管理浏览器的 Cookie。</p>
+<p>服务器向客户端传递 Cookie，浏览器接收后会将 Cookie 储存下来，以后每次发送请求时，浏览器发送请求的请求头部会带上 Cookie，但不是发送 Cookie 的所有属性，而是<strong>只发送 name 和 value 值。</strong></p>
+<p><strong>设置 Cookie：</strong> 一个 set-Cookie 字段只能设置一个 Cookie。当要设置多个 Cookie，需要添加多个 set-Cookie 字段。服务端可以设置 Cookie 的所有属性选项：name、value、expires/max-age、domain、path、secure、HttpOnly。</p>
+<pre><code class="lang-java"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doGet</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="hljs-keyword">throws</span> ServletException, IOException {
+  <span class="hljs-type">Cookie</span> <span class="hljs-variable">cookie</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cookie</span>(<span class="hljs-string">"name"</span>, <span class="hljs-string">"value"</span>);
+  cookie.setComment(<span class="hljs-string">"Web Host Name"</span>);
+  cookie.setMaxAge(<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>);
+  cookie.setPath(<span class="hljs-string">"/"</span>);
+  ...
+  response.addCookie(cookie);
+}
+</code></pre>
+<p><strong>读取 Cookie：</strong></p>
+<pre><code class="lang-java"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doGet</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="hljs-keyword">throws</span> ServletException, IOException {
+  Cookie[] cookies = request.getCookies();
+
+  <span class="hljs-comment">// 处理输出中文乱码问题</span>
+  response.setCharacterEncoding(<span class="hljs-string">"UTF-8"</span>);
+  response.setContentType(<span class="hljs-string">"text/html;charset=UTF-8"</span>);
+
+  <span class="hljs-keyword">for</span> (Cookie cookie:cookies) {
+    out.println(<span class="hljs-string">"名称："</span>+ cookie.getName() +<span class="hljs-string">"/n"</span>);
+    out.println(<span class="hljs-string">"值："</span>+ cookie.getValue() +<span class="hljs-string">"/n"</span>);
+    out.println(<span class="hljs-string">"有效时间："</span>+ cookie.getMaxAge() +<span class="hljs-string">"/n"</span>);
+    out.println(<span class="hljs-string">"域名："</span>+ cookie.getDomain() +<span class="hljs-string">"/n"</span>);
+    out.println(<span class="hljs-string">"路径："</span>+ cookie.getPath() +<span class="hljs-string">"/n"</span>);
+  }
+}
+</code></pre>
+<p><strong>删除 Cookie：</strong></p>
+<pre><code class="lang-java"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doGet</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="hljs-keyword">throws</span> ServletException, IOException {
+  Cookie[] cookies = request.getCookies();
+  <span class="hljs-keyword">for</span> (Cookie cookie: cookies) {
+    cookie.setMaxAge(<span class="hljs-number">0</span>);
+    response.addCookie(cookie);
+  }
+}
+</code></pre>
+<h3 id="cookie的特性">Cookie的特性</h3>
+<h4 id="浏览器管理">浏览器管理</h4>
+<p>浏览器对 Cookie 的管理是一个自动化的、基于规则的系统，主要包括四个环节：<strong>接收、存储、发送和清理</strong>。</p>
+<ul>
+<li><p><strong>接收</strong>：接收服务器的 HTTP 响应时</p>
+<ul>
+<li>解析 <code>Set-Cookie</code> 头部；</li>
+<li>根据规则验证 Cookie 是否有效（比如：是否在允许的域和路径下） ；</li>
+<li>有效，则将其存储。</li>
+</ul>
+</li>
+<li><p><strong>存储</strong>：Cookie 存储在客户端（用户电脑）的特定文件或数据库中，每个 Cookie 都与其<strong>域名、路径</strong>等属性一起存储，每个域名维护一个独立的 Cookie 块。</p>
+</li>
+<li><p><strong>发送</strong>：客户端向服务器发起请求时，浏览器会执行 “Cookie匹配” 算法</p>
+<ul>
+<li>检查<strong>域名</strong>是否匹配（包括子域）；</li>
+<li>检查<strong>路径</strong>是否匹配（前缀匹配） ；</li>
+<li>检查 <code>Secure</code> 标志（如果设置了，则请求必须使用 HTTPS 协议） ；</li>
+<li>检查 <code>SameSite</code> 标志（根据当前请求是跨站还是同站来决定是否发送 Cookie）；</li>
+<li>检查 Cookie 是否已过期。</li>
+<li>所有匹配且未被阻止的 Cookie，组合成一个字符串，放在请求的 <code>Cookie</code> 头部中发送给服务器。</li>
+</ul>
+</li>
+<li><p><strong>清理</strong></p>
+<ul>
+<li><strong>会话Cookie</strong>：当用户关闭浏览器时，这些 Cookie 会被清除。</li>
+<li><strong>持久Cookie</strong>：当 Cookie 到达其 <code>Expires</code> 或 <code>Max-Age</code> 指定的时间时，会被自动清除。</li>
+<li><strong>手动清理</strong>：用户可以通过浏览器设置手动清除所有或特定站点的 Cookie。</li>
+<li><strong>达到限制</strong>：当某个域名的 Cookie 数量或总大小超出浏览器限制时，浏览器会按照一定策略（如 LRU，最近最少使用）清理旧的 Cookie。</li>
+</ul>
+</li>
+</ul>
+<p><strong>备注</strong>：<strong>LRU</strong> 的全称是 <strong>L</strong>east <strong>R</strong>ecently <strong>U</strong>sed，中文翻译为<strong>最近最少使用</strong>。</p>
+<h4 id="cookie安全性">Cookie安全性</h4>
+<p>Cookie的安全性需要服务器和浏览器共同维护，主要通过设置正确的属性来实现。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">安全措施</th>
+<th style="text-align:left">作用</th>
+<th style="text-align:left">如何设置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong><code>Secure</code> 属性</strong></td>
+<td style="text-align:left">只能通过<strong>HTTPS</strong>加密连接传输，防止在明文中被窃听。</td>
+<td style="text-align:left"><code>Set-Cookie: sid=abc123; Secure</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>HttpOnly</code> 属性</strong></td>
+<td style="text-align:left">阻止 JavaScript 通过 <code>document.cookie</code> API 访问该 Cookie，有效缓解 XSS 攻击。</td>
+<td style="text-align:left"><code>Set-Cookie: sid=abc123; HttpOnly</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>SameSite</code> 属性</strong></td>
+<td style="text-align:left">控制跨站请求中是否被发送，是防御<strong>CSRF攻击</strong>的利器。</td>
+<td style="text-align:left">`Set-Cookie: sid=abc123; SameSite=Strict</td>
+<td>Lax</td>
+<td>None` (None需配Secure)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>合理的 <code>Domain</code> &amp; <code>Path</code></strong></td>
+<td style="text-align:left">限制 Cookie的作用范围，避免不必要的暴露</td>
+<td style="text-align:left">精确设置到需要的子域和路径。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>较短的过期时间</strong></td>
+<td style="text-align:left">设置合理的过期时间</td>
+</tr>
+</tbody>
+</table>
+<h4 id="cookie的优缺点">Cookie的优缺点</h4>
+<ul>
+<li><p><strong>优点</strong></p>
+<ul>
+<li><strong>简单通用</strong>：技术非常成熟，所有浏览器都支持，服务器和客户端实现都简单。</li>
+<li><strong>状态保持</strong>：解决了 HTTP 协议无状态的问题，是实现会话管理、用户登录的核心机制。</li>
+<li><strong>无需服务器存储</strong>：数据存储在客户端，减轻了服务器的存储压力（但服务器仍需维护会话状态）。</li>
+<li><strong>自动管理</strong>：浏览器自动完成 Cookie 的发送和接收，对开发者透明。</li>
+</ul>
+</li>
+<li><p>缺点</p>
+<ul>
+<li><strong>容量和数量限制</strong>：每个 Cookie 大小通常只有 4KB，且每个域名下的 Cookie 数量有限。<strong>所有超出该限制的 Cookies 都会被截掉并且不会发送至服务器。</strong></li>
+<li><strong>性能开销</strong>：<strong>每次请求都会自动携带</strong>符合条件的 Cookie，如果 Cookie 过多过大，会增加网络带宽的消耗。</li>
+<li><strong>安全性问题</strong>：容易受到 CSRF 和 XSS 攻击，必须通过正确设置属性来防护。</li>
+<li><strong>隐私问题</strong>：第三方 Cookie 可用于追踪用户在不同网站间的行为，因此正被现代浏览器逐步淘汰。</li>
+<li><strong>客户端不可靠</strong>：用户可能禁用 Cookie，或者随时手动清除它们。</li>
+<li><strong>自动清理机制不确定</strong>：大小或数量超过时，IE 和 Opera 会删除最近最少使用过的 Cookie，但是 Firefox 是随机决定要清除哪个 Cookie。</li>
+</ul>
+</li>
+</ul>
+<h4 id="cookie限制">Cookie限制</h4>
+<p>限制通常分为两个方面：<strong>单个Cookie的大小</strong>和<strong>每个域名的Cookie总数</strong>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">浏览器</th>
+<th style="text-align:left">单个Cookie大小限制</th>
+<th style="text-align:left">每个域名Cookie总数限制</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Chrome / Edge</strong></td>
+<td style="text-align:left"><strong>4096 bytes (~4KB)</strong></td>
+<td style="text-align:left"><strong>180</strong></td>
+<td style="text-align:left">超过限制后，会按LRU策略清理最旧的Cookie。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Firefox</strong></td>
+<td style="text-align:left"><strong>4097 bytes</strong></td>
+<td style="text-align:left">150</td>
+<td style="text-align:left">略大于4KB。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Safari</strong></td>
+<td style="text-align:left"><strong>4096 bytes (~4KB)</strong></td>
+<td style="text-align:left">无明确硬性限制</td>
+<td style="text-align:left">但实际也有约束，行为可能不同。</td>
+</tr>
+<tr>
+<td style="text-align:left">IE6 以及更低版本</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">20</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意</strong>：</p>
+<ul>
+<li><strong>总大小限制</strong>：一些浏览器还对每个域名下所有 Cookie 的<strong>总大小</strong>有限制（例如约1024KB），但这不是一个普遍严格的标准。</li>
+<li><strong>超出限制的后果</strong>：当设置新 Cookie 导致超出限制时，浏览器会<strong>静默地</strong>删除一个或多个旧的Cookie（通常是LRU），而不是报错。</li>
+</ul>
+<p><strong>最佳实践</strong>：永远不要接近这些限制。</p>
+<h3 id="常见问题">常见问题</h3>
+<h4 id="如何唯一标识一个cookie？">如何唯一标识一个Cookie？</h4>
+<p><strong>简短回答：浏览器会根据 Cookie 的 Name、Domain 和 Path 这三个属性的组合来唯一标识一个Cookie。</strong></p>
+<p>也就是说，只要 <strong><code>Name</code></strong>、<strong><code>Domain</code></strong> 和 <strong><code>Path</code></strong> 这三个属性中有任何一个不同，浏览器就会将其视为<strong>不同的、独立的Cookie</strong>，即使它们的 <code>Value</code> 完全相同。</p>
+<h4 id="为什么-max-age-更好？">为什么 Max-Age 更好？</h4>
+<p>expires  是 http/1.0 协议的，其值是一个<strong>GMT 格式</strong>的时间；而 max-age 是 http/1.1 协议的，用于代替 expires，其值是一个以<strong>秒</strong>为单位时间段。</p>
+<p><strong>注意：</strong> 同时设置 expires 和 max-age，<strong>Max-Age 的优先级高于 Expires</strong>。</p>
+<p>Max-Age 之所以被设计为优先级更高，主要是因为它有以下几个优势：</p>
+<ul>
+<li><strong>更简单直观</strong>：使用秒数来设置，无需生成复杂的 GMT 时间字符串。</li>
+<li><strong>更可靠</strong>：Max-Age 是相对时间，基于客户端收到 Cookie 的时刻计算。而 Expires  是绝对时间，如果客户端（浏览器）的系统时钟不准确（过快或过慢），就会导致 Cookie 过早或过晚过期。</li>
+<li><strong>符合现代标准</strong>：作为更新的标准，它被推荐使用。</li>
+</ul>
+<p><strong>最佳实践</strong>：在现代Web开发中，建议优先使用  Max-Age，并避免同时设置两者。如果为了兼容非常古老的客户端而需要同时设置，请确保 Max-Age 的值是你期望生效的值。</p>
+<h4 id="domain-值必须以点（）开始吗？">domain 值必须以点（.）开始吗？</h4>
+<p><strong>简短回答：不是必须的。但带点和不带点有</strong>重要区别。</p>
+<ul>
+<li><p>带点（例如 <code>.zhao.com</code>）：<strong>明确地</strong>指定该 Cookie 应该被发送给 <code>zhao.com</code> 及其<strong>所有子域名</strong>（如 <code>www.zhao.com</code>、 <code>api.zhao.com</code>、 <code>shop.zhao.com</code> 等）。此时，点（.）类似一种“通配”声明，主动将 Cookie 的作用范围扩展到整个域名树。</p>
+</li>
+<li><p>不带点（例如 <code>zhao.com</code>）：在现代浏览器中，<strong>隐式地</strong>具有与带点形式<strong>相同的效果</strong>，即，Cookie 也会被发送给 <code>zhao.com</code> 及其所有子域名；而在非常古老的浏览器规范（早期 <a href="https://tools.ietf.org/html/rfc2109" target="_blank">RFC 2109</a> 标准）中，不带点的设置可能只精确匹配该域名本身，即<strong>对子域无效</strong>。但根据现代的 <a href="https://tools.ietf.org/html/rfc6265" target="_blank">RFC 6265</a> 标准，<strong>不带点的设置会被浏览器自动解释为带点的形式</strong>。</p>
+</li>
+</ul>
+<p><strong>最佳实践</strong>：为了代码清晰和简洁，<strong>推荐使用不带点的形式</strong>（<code>Domain=mydomain.com</code>）。这是最广泛使用和认可的方式。</p>
+<h4 id="path-值结尾需要包含--吗-？">path 值结尾需要包含 “/” 吗 ？</h4>
+<p><strong>简短回答： 结尾加不加 “/” 效果是完全一样的。</strong></p>
+<p><strong><a href="https://tools.ietf.org/html/rfc6265" target="_blank">RFC 6265</a> 标准</strong>：</p>
+<ul>
+<li>path 值为空或者第一个字符为非 "/" 字符，默认为 "/"</li>
+<li>Cookie 路径匹配，从 path 值第一个字符开始到最右边的 "/"，但不包括它。</li>
+</ul>
+<p><strong>最佳实践：</strong> 从代码清晰性和可读性的角度，推荐<strong>使用结尾的 “/”</strong>。</p>
+<h4 id="跨域和跨站是什么概念？">跨域和跨站是什么概念？</h4>
+<h5 id="什么是跨域？">什么是跨域？</h5>
+<p> 同源或者同域是两个URL的<strong>“协议 + 域名 + 端口”</strong> 三部分是否完全相同。只要有任何一部分不同，就是跨域。</p>
+<p>这是一个<strong>同源策略</strong> 下的概念，同源策略是浏览器最核心的安全基石，它限制了不同源的文档或脚本如何相互交互。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">当前页面URL</th>
+<th style="text-align:left">目标URL</th>
+<th style="text-align:left">是否跨域</th>
+<th style="text-align:left">原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>https://www.example.com/app</code></td>
+<td style="text-align:left"><code>https://www.example.com/api</code></td>
+<td style="text-align:left"><strong>否</strong></td>
+<td style="text-align:left">协议、域名、端口均相同</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>https://www.example.com</code></td>
+<td style="text-align:left"><code>http://www.example.com</code></td>
+<td style="text-align:left"><strong>是</strong></td>
+<td style="text-align:left">协议不同 (<code>https</code> vs <code>http</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>https://www.example.com</code></td>
+<td style="text-align:left"><code>https://api.example.com</code></td>
+<td style="text-align:left"><strong>是</strong></td>
+<td style="text-align:left">域名不同 (<code>www</code> vs <code>api</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>https://www.example.com</code></td>
+<td style="text-align:left"><code>https://www.example.com:8080</code></td>
+<td style="text-align:left"><strong>是</strong></td>
+<td style="text-align:left">端口不同 (<code>443</code> vs <code>8080</code>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>AJAX请求（Fetch/XMLHttpRequest）</strong>默认受同源策略限制，跨域请求会被浏览器拦截，除非客户端、服务端明确设置允许跨域。</p>
+<h5 id="什么是跨站？">什么是跨站？</h5>
+<p>同站是指两个 URL 的 <strong>eTLD+1</strong> 相同，<strong>不需要考虑协议和端口</strong>。其中，eTLD 表示有效顶级域名，而 eTLD+1 则表示<strong>顶级域名 + 二级域名</strong>。</p>
+<p>这是一个 Cookie 的 <strong><code>SameSite</code> 属性</strong> 下的概念，主要用于防御CSRF攻击。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">当前站点</th>
+<th style="text-align:left">目标站点</th>
+<th style="text-align:left">是否跨站</th>
+<th style="text-align:left">原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>https://www.example.com</code></td>
+<td style="text-align:left"><code>https://api.example.com</code></td>
+<td style="text-align:left"><strong>否</strong></td>
+<td style="text-align:left">相同的 <code>eTLD+1</code> (<code>example.com</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>https://www.example.com</code></td>
+<td style="text-align:left"><code>https://example.github.io</code></td>
+<td style="text-align:left"><strong>是</strong></td>
+<td style="text-align:left">不同的 <code>eTLD+1</code> (<code>example.com</code> vs <code>example.github.io</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>https://a.github.io</code></td>
+<td style="text-align:left"><code>https://b.github.io</code></td>
+<td style="text-align:left"><strong>是</strong></td>
+<td style="text-align:left"><strong>注意！</strong> 虽然都是 <code>github.io</code>，但 <code>github.io</code> 本身是公共后缀，所以 <code>a.github.io</code> 和 <code>b.github.io</code> 是不同的站点！</td>
+</tr>
+</tbody>
+</table>
+<h5 id="cookie-不受同源策略限制？">Cookie 不受同源策略限制？</h5>
+<p><strong>简单来说：Cookie 的安全边界是“站点”，而不是“源”。它关心的是 Cookie 属于哪个站点，而不是哪个源。</strong></p>
+<p>也就是说，Cookie 只关注 URL 的 <strong>eTLD+1</strong> ，不关心协议和端口。比如：zhao.com 和 example.com 是跨站，它们的 Cookie 不能共享；而 a.zhao.com 和 b.zhao.com 是跨域的，但还是同站，它们的 Cookie 是可以共享的。</p>
+<p><strong>注意</strong>：Cookie 是否允许携带，除了必需是同站，还取决于 <code>SameSite</code> 属性以及浏览器本身的 Cookie 管理策略。</p>
+<h4 id="cookie发送不成功">Cookie发送不成功</h4>
+<ul>
+<li><p>浏览器禁用了 Cookie：Chrome 浏览器，<code>在右上角“更多”图标 -&gt; 设置 -&gt; 隐私设置和安全性 -&gt; 网站设置 -&gt; Cookie 和网站数据</code>；IE 浏览器，<code>工具 -&gt; internet选项 -&gt; 隐私 -&gt; 高级</code> 。</p>
+</li>
+<li><p>同源策略限制了 Cookie 发送（<a href="https://app.gitbook.com/s/-M8fDLTBWl2H-MOzligj/frontend/01-ji-chu-03-tan-tan-qian-duan-kua-yuan-wen-ti-ji-jie-jue-fang-fa" target="_blank">查看解决跨域的方法</a>。）。</p>
+<ul>
+<li><p>前端请求头没有 <code>withCredentials: true</code>，或者服务端响应头没有 <code>access-control-allow-credentials: true</code>、<code>access-control-allow-origin</code> 没有包含当前发请求的页面的域名。</p>
+</li>
+<li><p>Cookie 的 Samesite 属性没有设置正确（比如 <code>sameSite: Lax</code>，在现在 Chrome 浏览器不允许跨站携带，但是 FireFox 浏览器或早期的 Chrome 浏览器是允许的），<code>Samesite: None</code> 是表示允许跨站携带 Cookie。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>其他原因：<ul>
+<li>使用 Mockjs，但没有开启允许跨域：<code>Mock.XHR.prototype.withCredentials = true</code>。 <strong>(血泪经历，记忆深刻)</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="withcredentials-和-samesite-属性">withCredentials 和 sameSite 属性</h4>
+<p>withCredentials 和 sameSite 属性都跟 Cookie 跨站有关：</p>
+<ul>
+<li>withCredentials：针对 XHR；</li>
+<li>samesite：可针对 XHR，也包括 a、img、iframe 等标签请求相关的 Cookie。</li>
+</ul>
+<p><strong>withCredentials</strong> 是请求头/响应头相关的信息，是为解决前端跨域请求问题。</p>
+<p>使用该属性需要以下三点：</p>
+<ul>
+<li><p>服务器响应头信息 <code>Access-Control-Allow-Credentials: true</code>。</p>
+</li>
+<li><p>服务端响应头信息必须携带 <code>Access-Control-Allow-Origin</code>，指定允许跨域的域名。</p>
+<blockquote>
+<p>规范中提到，如果 XMLHttpRequest 请求设置了 withCredentials 属性，<strong>那么服务器不得设置 Access-Control-Allow-Origin的值为*</strong> ，否则浏览器将会抛出 <code>The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*'</code> 错误。</p>
+</blockquote>
+</li>
+<li><p>客户端需要开启请求头部信息 <code>withCredentials: true</code>，如果未开启，请求头部不会发送请求服务器设置在客户端的 Cookie。（如果省略 withCredentials 设置，有的浏览器还是会一起发送 Cookie。这时，可以显式关闭 withCredentials）</p>
+</li>
+</ul>
+<p>sameSite 是 Cookie 属性，可限制客户端请求中 Cookie 跨站情况，其默认值在跨站请求时不会被发送，从而可以阻止跨站请求伪造攻击（即CSRF）。</p>
+<p><strong>注意</strong>：即使开启了 withCredentials，此时客户端 Cookie 还是遵守<strong>同站</strong>政策，跨站发请求，仍无法将请求响应头中 Cookie 写到客户端，也无法将客户端 Cookie 读取到 HTTP 请求头。跨站携带，还是需要依赖 sameSite 属性。</p>
+<h3 id="参考链接">参考链接</h3>
+<p><a href="https://www.jianshu.com/p/64c0f5d073bb" target="_blank">关于Cookie的一些思考和理解</a></p>
+<p><a href="https://www.imooc.com/article/267349" target="_blank">session与cookie详解</a></p>
+<p><a href="https://cloud.tencent.com/developer/article/1065905" target="_blank">cookie详解</a></p>
+<p><a href="https://www.freebuf.com/articles/web/42802.html" target="_blank">深入解析Cookie技术</a></p>
+<p><a href="https://segmentfault.com/a/1190000004556040" target="_blank">聊一聊 cookie</a></p>
+<p><a href="https://github.com/mqyqingfeng/Blog/issues/157" target="_blank">浏览器系列之 Cookie 和 SameSite 属性</a> </p>
+<p></p><footer class="page-footer"><span class="copyright">© lizhao all right reserved，powered by Gitbook</span><span class="footer-modification">文件修订时间：
+2025-11-01 10:09:51
+</span></footer><p></p>
+<div id="gitalk-container"></div> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"></link> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="05-重读React教程.html" class="navigation navigation-prev " aria-label="Previous page: 重读React教程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="07-SSL证书简介及其生成、使用.md" class="navigation navigation-next " aria-label="Next page: SSL证书简介及其生成、使用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"聊一聊Cookie的一些问题","level":"4.28","depth":1,"next":{"title":"SSL证书简介及其生成、使用","level":"4.29","depth":1,"path":"frontend/07-SSL证书简介及其生成、使用.md","ref":"frontend/07-SSL证书简介及其生成、使用.md","articles":[]},"previous":{"title":"重读React教程","level":"4.27","depth":1,"path":"frontend/05-重读React教程.md","ref":"frontend/05-重读React教程.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","summary","sandpack","theme-default","theme-comscore","tbfed-pagefooter","pageview-count","accordion","sharing-plus","back-to-top-button","chapter-fold","klipse","mygitalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"summary":{"exclude":["docs/**"]},"search-pro":{"maxSearchIndexSize":10000000},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"mygitalk":{"flipMoveOptions":{},"clientID":"35175582adb321d85634","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["lizh"],"createIssueManually":false,"distractionFreeMode":false,"repo":"https://github.com/1927344728/fed-knowledge","owner":"lizh","enableHotKey":true,"clientSecret":"2e60c4d61474ec23e752f127e838aa2039e0433e","pagerDirection":"last","labels":["Gitalk"]},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":true,"qzone":true},"sandpack":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"lizhao","honkit":"^6.0.2","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术驿站•LIZHAO","language":"zh","gitbook":"*","description":"这是开发者的技术文档"},"file":{"path":"frontend/06-聊一聊Cookie的一些问题.md","mtime":"2025-11-01T02:09:51.899Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2026-06-29T12:14:32.945Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-sandpack/honkit-plugin-sandpack.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

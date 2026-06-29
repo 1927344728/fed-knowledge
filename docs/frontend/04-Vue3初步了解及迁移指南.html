@@ -1,0 +1,4441 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Vue3初步了解及迁移指南 · 技术驿站•LIZHAO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 6.0.2">
+        <meta name="author" content="lizhao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04-重读Vue教程.html" />
+    
+    
+    <link rel="prev" href="04-Vue2.x原理篇.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Bugs</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bugs/00-前端调试随笔.html">
+            
+                <a href="../bugs/00-前端调试随笔.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    前端调试随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../bugs/01-浏览器常见问题概览.html">
+            
+                <a href="../bugs/01-浏览器常见问题概览.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    浏览器常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bugs/02-浏览器兼容问题概览.html">
+            
+                <a href="../bugs/02-浏览器兼容问题概览.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    浏览器兼容问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bugs/03-HTML常见问题概览.html">
+            
+                <a href="../bugs/03-HTML常见问题概览.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    HTML常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../bugs/04-CSS常见问题概览.html">
+            
+                <a href="../bugs/04-CSS常见问题概览.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    CSS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../bugs/05-JS常见问题概览.html">
+            
+                <a href="../bugs/05-JS常见问题概览.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    JS常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../bugs/06-移动端兼容性问题概览.html">
+            
+                <a href="../bugs/06-移动端兼容性问题概览.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    移动端兼容性问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../bugs/07-微信小程序开发.html">
+            
+                <a href="../bugs/07-微信小程序开发.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    微信小程序开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bugs/08-NodeJs常见问题概览.html">
+            
+                <a href="../bugs/08-NodeJs常见问题概览.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    NodeJs常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../bugs/09-Mac常见问题概览.html">
+            
+                <a href="../bugs/09-Mac常见问题概览.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Mac常见问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../bugs/10-微信环境前端开发指南.html">
+            
+                <a href="../bugs/10-微信环境前端开发指南.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    微信环境前端开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../bugs/99-其他问题汇总.html">
+            
+                <a href="../bugs/99-其他问题汇总.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    其他问题汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Css系列</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../css系列/00-CSS基础知识.html">
+            
+                <a href="../css系列/00-CSS基础知识.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    CSS基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../css系列/00-CSS常见问答.html">
+            
+                <a href="../css系列/00-CSS常见问答.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    CSS常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../css系列/00-CSS常见问答02.html">
+            
+                <a href="../css系列/00-CSS常见问答02.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    CSS常见问答02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../css系列/00-CSS应用示例.html">
+            
+                <a href="../css系列/00-CSS应用示例.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    CSS应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../css系列/00-CSS应用示例02.html">
+            
+                <a href="../css系列/00-CSS应用示例02.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    CSS应用示例02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                <a href="../css系列/02-由z-index引发的层叠上下文思考.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    由Z Index引发的层叠上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                <a href="../css系列/03-由浮动塌陷引发的块级格式上下文思考.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    由浮动塌陷引发的块级格式上下文思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../css系列/04-CSS探索系列-flex布局.html">
+            
+                <a href="../css系列/04-CSS探索系列-flex布局.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    CSS探索系列 Flex布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../css系列/04-CSS探索系列-margin.html">
+            
+                <a href="../css系列/04-CSS探索系列-margin.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    CSS探索系列 Margin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                <a href="../css系列/05-CSS探索系列-auto关键字.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    CSS探索系列 Auto关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../css系列/05-CSS探索系列-gradient.html">
+            
+                <a href="../css系列/05-CSS探索系列-gradient.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    CSS探索系列 Gradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../css系列/05-CSS探索系列-line-height.html">
+            
+                <a href="../css系列/05-CSS探索系列-line-height.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    CSS探索系列 Line Height
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../css系列/05-CSS探索系列-元素居中.html">
+            
+                <a href="../css系列/05-CSS探索系列-元素居中.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    CSS探索系列 元素居中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../css系列/05-CSS探索系列-动画.html">
+            
+                <a href="../css系列/05-CSS探索系列-动画.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    CSS探索系列 动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                <a href="../css系列/06-为什么使用PostCSS处理CSS？.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    为什么使用PostCSS处理CSS？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../css系列/08-重新认识伪类与伪元素.html">
+            
+                <a href="../css系列/08-重新认识伪类与伪元素.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    重新认识伪类与伪元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../css系列/09-自定义表单伪元素样式.html">
+            
+                <a href="../css系列/09-自定义表单伪元素样式.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    自定义表单伪元素样式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../css系列/10-如何理解css中的display属性.html">
+            
+                <a href="../css系列/10-如何理解css中的display属性.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    如何理解Css中的Display属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                <a href="../css系列/11-CSS3中一些高级属性的应用.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    CSS3中一些高级属性的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                <a href="../css系列/12-一文彻底弄懂CSS中的长度单位.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    一文彻底弄懂CSS中的长度单位
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                <a href="../css系列/13-CSS中一些有特性的属性或属性值.html">
+            
+                    
+                        <b>2.21.</b>
+                    
+                    CSS中一些有特性的属性或属性值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../css系列/14-Web中如何实现长宽比.html">
+            
+                <a href="../css系列/14-Web中如何实现长宽比.html">
+            
+                    
+                        <b>2.22.</b>
+                    
+                    Web中如何实现长宽比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../css系列/15-@规则：@font-face.html">
+            
+                <a href="../css系列/15-@规则：@font-face.html">
+            
+                    
+                        <b>2.23.</b>
+                    
+                    @规则：@Font Face
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                <a href="../css系列/15-@规则：@media（媒体查询）.html">
+            
+                    
+                        <b>2.24.</b>
+                    
+                    @规则：@Media（媒体查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../css系列/15-@规则：其他.html">
+            
+                <a href="../css系列/15-@规则：其他.html">
+            
+                    
+                        <b>2.25.</b>
+                    
+                    @规则：其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../css系列/_关于css.html">
+            
+                <a href="../css系列/_关于css.html">
+            
+                    
+                        <b>2.26.</b>
+                    
+                     关于Css
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="00-00-关于Web前端.html">
+            
+                <a href="00-00-关于Web前端.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    00 关于Web前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="00-01-前端知识概览.html">
+            
+                <a href="00-01-前端知识概览.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    01 前端知识概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="00-02-常用前端库概览.html">
+            
+                <a href="00-02-常用前端库概览.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    02 常用前端库概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="01-基础-00-前端常见问题01.html">
+            
+                <a href="01-基础-00-前端常见问题01.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    基础 00 前端常见问题01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="01-基础-01-浏览器缓存.html">
+            
+                <a href="01-基础-01-浏览器缓存.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    基础 01 浏览器缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="01-基础-02-浏览器工作原理.html">
+            
+                <a href="01-基础-02-浏览器工作原理.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    基础 02 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                <a href="01-基础-03-谈谈前端跨域问题及解决方法.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    基础 03 谈谈前端跨域问题及解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="02-进阶-01-Web性能优化.html">
+            
+                <a href="02-进阶-01-Web性能优化.html">
+            
+                    
+                        <b>4.8.</b>
+                    
+                    进阶 01 Web性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                <a href="02-进阶-02-搜索引擎优化（SEO）.html">
+            
+                    
+                        <b>4.9.</b>
+                    
+                    进阶 02 搜索引擎优化（SEO）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                <a href="02-进阶-03-前端模块化编程：CommonJS、AMD、CMD、UMD、ES6.html">
+            
+                    
+                        <b>4.10.</b>
+                    
+                    进阶 03 前端模块化编程：CommonJS、AMD、CMD、UMD、ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                <a href="02-进阶-04-规范代码：Linter、Prettier、EditorConfig.html">
+            
+                    
+                        <b>4.11.</b>
+                    
+                    进阶 04 规范代码：Linter、Prettier、EditorConfig
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="02-进阶-05-Web离线应用.html">
+            
+                <a href="02-进阶-05-Web离线应用.html">
+            
+                    
+                        <b>4.12.</b>
+                    
+                    进阶 05 Web离线应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="02-进阶-06-WebSocket.html">
+            
+                <a href="02-进阶-06-WebSocket.html">
+            
+                    
+                        <b>4.13.</b>
+                    
+                    进阶 06 WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="02-进阶-07-Web跨页面通信.html">
+            
+                <a href="02-进阶-07-Web跨页面通信.html">
+            
+                    
+                        <b>4.14.</b>
+                    
+                    进阶 07 Web跨页面通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="02-进阶-08-页面可见性和生命周期.html">
+            
+                <a href="02-进阶-08-页面可见性和生命周期.html">
+            
+                    
+                        <b>4.15.</b>
+                    
+                    进阶 08 页面可见性和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                <a href="02-进阶-09-事件循环、宏任务、微任务.html">
+            
+                    
+                        <b>4.16.</b>
+                    
+                    进阶 09 事件循环、宏任务、微任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="02-进阶-10-内存泄漏.html">
+            
+                <a href="02-进阶-10-内存泄漏.html">
+            
+                    
+                        <b>4.17.</b>
+                    
+                    进阶 10 内存泄漏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="02-进阶-11-前端自动化测试.html">
+            
+                <a href="02-进阶-11-前端自动化测试.html">
+            
+                    
+                        <b>4.18.</b>
+                    
+                    进阶 11 前端自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                <a href="02-进阶-12-前端也玩多线程？WebWorker其实很简单.html">
+            
+                    
+                        <b>4.19.</b>
+                    
+                    进阶 12 前端也玩多线程？WebWorker其实很简单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="03-高级-01-前端安全深度解析.html">
+            
+                <a href="03-高级-01-前端安全深度解析.html">
+            
+                    
+                        <b>4.20.</b>
+                    
+                    高级 01 前端安全深度解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.21" data-path="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                <a href="03-高级-02-CI、CD（Docker+Jenkins+Nginx）.html">
+            
+                    
+                        <b>4.21.</b>
+                    
+                    高级 02 CI、CD（Docker+Jenkins+Nginx）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.22" data-path="04-Vue2.x原理篇.html">
+            
+                <a href="04-Vue2.x原理篇.html">
+            
+                    
+                        <b>4.22.</b>
+                    
+                    Vue2.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.23" data-path="04-Vue3初步了解及迁移指南.html">
+            
+                <a href="04-Vue3初步了解及迁移指南.html">
+            
+                    
+                        <b>4.23.</b>
+                    
+                    Vue3初步了解及迁移指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.24" data-path="04-重读Vue教程.html">
+            
+                <a href="04-重读Vue教程.html">
+            
+                    
+                        <b>4.24.</b>
+                    
+                    重读Vue教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.25" data-path="05-React17.x原理篇.html">
+            
+                <a href="05-React17.x原理篇.html">
+            
+                    
+                        <b>4.25.</b>
+                    
+                    React17.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.26" data-path="05-你必须知道的React问题.html">
+            
+                <a href="05-你必须知道的React问题.html">
+            
+                    
+                        <b>4.26.</b>
+                    
+                    你必须知道的React问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.27" data-path="05-重读React教程.html">
+            
+                <a href="05-重读React教程.html">
+            
+                    
+                        <b>4.27.</b>
+                    
+                    重读React教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.28" data-path="06-聊一聊Cookie的一些问题.html">
+            
+                <a href="06-聊一聊Cookie的一些问题.html">
+            
+                    
+                        <b>4.28.</b>
+                    
+                    聊一聊Cookie的一些问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.29" data-path="07-SSL证书简介及其生成、使用.md">
+            
+                <span>
+            
+                    
+                        <b>4.29.</b>
+                    
+                    SSL证书简介及其生成、使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.30" data-path="07-如何启动本地HTTPS服务.html">
+            
+                <a href="07-如何启动本地HTTPS服务.html">
+            
+                    
+                        <b>4.30.</b>
+                    
+                    如何启动本地HTTPS服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.31" data-path="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                <a href="08-0.0.0.0、127.0.0.1和localhost的区别.html">
+            
+                    
+                        <b>4.31.</b>
+                    
+                    0.0.0.0、127.0.0.1和Localhost的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.32" data-path="09-如何理解HTTP响应的状态码.html">
+            
+                <a href="09-如何理解HTTP响应的状态码.html">
+            
+                    
+                        <b>4.32.</b>
+                    
+                    如何理解HTTP响应的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.33" data-path="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                <a href="10-字符编码那点事：ASCII、Unicode、GBK、UTF-8.html">
+            
+                    
+                        <b>4.33.</b>
+                    
+                    字符编码那点事：ASCII、Unicode、GBK、UTF 8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.34" data-path="11-HTTP协议的演变历史.md">
+            
+                <span>
+            
+                    
+                        <b>4.34.</b>
+                    
+                    HTTP协议的演变历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.35" data-path="12-webpack4.x原理篇.html">
+            
+                <a href="12-webpack4.x原理篇.html">
+            
+                    
+                        <b>4.35.</b>
+                    
+                    Webpack4.X原理篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.36" data-path="12-webpack基础入门篇.html">
+            
+                <a href="12-webpack基础入门篇.html">
+            
+                    
+                        <b>4.36.</b>
+                    
+                    Webpack基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.37" data-path="12-webpack构建优化篇.html">
+            
+                <a href="12-webpack构建优化篇.html">
+            
+                    
+                        <b>4.37.</b>
+                    
+                    Webpack构建优化篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.38" data-path="13-TypeScript使用指南.html">
+            
+                <a href="13-TypeScript使用指南.html">
+            
+                    
+                        <b>4.38.</b>
+                    
+                    TypeScript使用指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.39" data-path="14-Web中图片的使用.html">
+            
+                <a href="14-Web中图片的使用.html">
+            
+                    
+                        <b>4.39.</b>
+                    
+                    Web中图片的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.40" data-path="15-2026年，还需要微前端吗？——三大框架对比与选型思考.md">
+            
+                <span>
+            
+                    
+                        <b>4.40.</b>
+                    
+                    2026年，还需要微前端吗？——三大框架对比与选型思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.41" data-path="16-Electron基础篇.html">
+            
+                <a href="16-Electron基础篇.html">
+            
+                    
+                        <b>4.41.</b>
+                    
+                    Electron基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.42" data-path="17-uniapp基础篇.html">
+            
+                <a href="17-uniapp基础篇.html">
+            
+                    
+                        <b>4.42.</b>
+                    
+                    Uniapp基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.43" data-path="17-uniapp离线打包（Android）篇.html">
+            
+                <a href="17-uniapp离线打包（Android）篇.html">
+            
+                    
+                        <b>4.43.</b>
+                    
+                    Uniapp离线打包（Android）篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.44" data-path="18-sentry基础篇（vue）.html">
+            
+                <a href="18-sentry基础篇（vue）.html">
+            
+                    
+                        <b>4.44.</b>
+                    
+                    Sentry基础篇（Vue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.45" data-path="19-视口和软键盘对视口的影响.html">
+            
+                <a href="19-视口和软键盘对视口的影响.html">
+            
+                    
+                        <b>4.45.</b>
+                    
+                    视口和软键盘对视口的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.46" data-path="20-WebGL从入门到实践.html">
+            
+                <a href="20-WebGL从入门到实践.html">
+            
+                    
+                        <b>4.46.</b>
+                    
+                    WebGL从入门到实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.47" data-path="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                <a href="21-Three.js基础实战：从画一个立方体开始，掌握3D世界.html">
+            
+                    
+                        <b>4.47.</b>
+                    
+                    Three.Js基础实战：从画一个立方体开始，掌握3D世界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.48" data-path="22-ReactNative基础篇.html">
+            
+                <a href="22-ReactNative基础篇.html">
+            
+                    
+                        <b>4.48.</b>
+                    
+                    ReactNative基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49" data-path="代码规范/">
+            
+                <a href="代码规范/">
+            
+                    
+                        <b>4.49.</b>
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.49.1" data-path="代码规范/00-前端规范.html">
+            
+                <a href="代码规范/00-前端规范.html">
+            
+                    
+                        <b>4.49.1.</b>
+                    
+                    前端规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.2" data-path="代码规范/01-HTML.html">
+            
+                <a href="代码规范/01-HTML.html">
+            
+                    
+                        <b>4.49.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.3" data-path="代码规范/02-CSS.html">
+            
+                <a href="代码规范/02-CSS.html">
+            
+                    
+                        <b>4.49.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.49.4" data-path="代码规范/03-JS.html">
+            
+                <a href="代码规范/03-JS.html">
+            
+                    
+                        <b>4.49.4.</b>
+                    
+                    JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Html系列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../html系列/00-HTML基础知识.html">
+            
+                <a href="../html系列/00-HTML基础知识.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    HTML基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../html系列/00-HTML基础知识02.html">
+            
+                <a href="../html系列/00-HTML基础知识02.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    HTML基础知识02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../html系列/00-HTML常见问答.html">
+            
+                <a href="../html系列/00-HTML常见问答.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    HTML常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../html系列/00-HTML经典实践用例.html">
+            
+                <a href="../html系列/00-HTML经典实践用例.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    HTML经典实践用例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                <a href="../html系列/01-HTML元素的宽高及位置详解.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    HTML元素的宽高及位置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                <a href="../html系列/02-video元素的使用和常见问题总结.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Video元素的使用和常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../html系列/03-html探索系列-meta标签.md">
+            
+                <span>
+            
+                    
+                        <b>5.7.</b>
+                    
+                    Html探索系列 Meta标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                <a href="../html系列/04-DOCTYPE：文档类型与浏览器模式.html">
+            
+                    
+                        <b>5.8.</b>
+                    
+                    DOCTYPE：文档类型与浏览器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="../html系列/05-DHTML（动态网页）简介.html">
+            
+                <a href="../html系列/05-DHTML（动态网页）简介.html">
+            
+                    
+                        <b>5.9.</b>
+                    
+                    DHTML（动态网页）简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="../html系列/06-HTML标签详解.md">
+            
+                <span>
+            
+                    
+                        <b>5.10.</b>
+                    
+                    HTML标签详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="../html系列/07-HTML布局的几种方式.html">
+            
+                <a href="../html系列/07-HTML布局的几种方式.html">
+            
+                    
+                        <b>5.11.</b>
+                    
+                    HTML布局的几种方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="../html系列/08-HTML全局属性.html">
+            
+                <a href="../html系列/08-HTML全局属性.html">
+            
+                    
+                        <b>5.12.</b>
+                    
+                    HTML全局属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                <a href="../html系列/09-标记语言演进：从GML到HTML动态标准.html">
+            
+                    
+                        <b>5.13.</b>
+                    
+                    标记语言演进：从GML到HTML动态标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.14" data-path="../html系列/_关于html.html">
+            
+                <a href="../html系列/_关于html.html">
+            
+                    
+                        <b>5.14.</b>
+                    
+                     关于Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Javascript系列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../javascript系列/00-基础知识.html">
+            
+                <a href="../javascript系列/00-基础知识.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../javascript系列/00-常见问答.html">
+            
+                <a href="../javascript系列/00-常见问答.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    常见问答
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../javascript系列/00-应用示例.html">
+            
+                <a href="../javascript系列/00-应用示例.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../javascript系列/00-趣味示例.html">
+            
+                <a href="../javascript系列/00-趣味示例.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    趣味示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../javascript系列/00-进阶知识.html">
+            
+                <a href="../javascript系列/00-进阶知识.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    进阶知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之基本类型.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    基础篇 01 数据类型之基本类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                <a href="../javascript系列/01-基础篇-01-数据类型之引用类型.html">
+            
+                    
+                        <b>6.7.</b>
+                    
+                    基础篇 01 数据类型之引用类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                <a href="../javascript系列/01-基础篇-02-类型转换.html">
+            
+                    
+                        <b>6.8.</b>
+                    
+                    基础篇 02 类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../javascript系列/01-基础篇-03-运算符.html">
+            
+                <a href="../javascript系列/01-基础篇-03-运算符.html">
+            
+                    
+                        <b>6.9.</b>
+                    
+                    基础篇 03 运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                <a href="../javascript系列/01-基础篇-04-正则表达式.html">
+            
+                    
+                        <b>6.10.</b>
+                    
+                    基础篇 04 正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                <a href="../javascript系列/01-基础篇-05-AJAX.html">
+            
+                    
+                        <b>6.11.</b>
+                    
+                    基础篇 05 AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="../javascript系列/01-基础篇-06--window对象.html">
+            
+                <a href="../javascript系列/01-基础篇-06--window对象.html">
+            
+                    
+                        <b>6.12.</b>
+                    
+                    基础篇 06  Window对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                <a href="../javascript系列/01-基础篇-07-Error、JSON、Math、console对象.html">
+            
+                    
+                        <b>6.13.</b>
+                    
+                    基础篇 07 Error、JSON、Math、Console对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                <a href="../javascript系列/01-基础篇-08-History、URL、Screen、Navigator、Location对象.html">
+            
+                    
+                        <b>6.14.</b>
+                    
+                    基础篇 08 History、URL、Screen、Navigator、Location对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-09-文档对象模型（DOM）.html">
+            
+                    
+                        <b>6.15.</b>
+                    
+                    基础篇 09 文档对象模型（DOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                <a href="../javascript系列/01-基础篇-10-Document对象.html">
+            
+                    
+                        <b>6.16.</b>
+                    
+                    基础篇 10 Document对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.17" data-path="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                <a href="../javascript系列/01-基础篇-11-Element对象.html">
+            
+                    
+                        <b>6.17.</b>
+                    
+                    基础篇 11 Element对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.18" data-path="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                <a href="../javascript系列/01-基础篇-12-Event对象.html">
+            
+                    
+                        <b>6.18.</b>
+                    
+                    基础篇 12 Event对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.19" data-path="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                <a href="../javascript系列/01-基础篇-13-键盘、鼠标、触摸事件.html">
+            
+                    
+                        <b>6.19.</b>
+                    
+                    基础篇 13 键盘、鼠标、触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.20" data-path="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                <a href="../javascript系列/01-基础篇-14-MutationObserver对象.html">
+            
+                    
+                        <b>6.20.</b>
+                    
+                    基础篇 14 MutationObserver对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.21" data-path="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                <a href="../javascript系列/01-基础篇-15-CSS对象模型（CSSOM）.html">
+            
+                    
+                        <b>6.21.</b>
+                    
+                    基础篇 15 CSS对象模型（CSSOM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.22" data-path="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                <a href="../javascript系列/02-进阶篇-01-prototype对象和继承.html">
+            
+                    
+                        <b>6.22.</b>
+                    
+                    进阶篇 01 Prototype对象和继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.23" data-path="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-02-Promise对象.html">
+            
+                    
+                        <b>6.23.</b>
+                    
+                    进阶篇 02 Promise对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.24" data-path="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                <a href="../javascript系列/02-进阶篇-03-有特性的一些事件.html">
+            
+                    
+                        <b>6.24.</b>
+                    
+                    进阶篇 03 有特性的一些事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.25" data-path="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-04-Proxy对象.html">
+            
+                    
+                        <b>6.25.</b>
+                    
+                    进阶篇 04 Proxy对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.26" data-path="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                <a href="../javascript系列/02-进阶篇-05-Reflect对象.html">
+            
+                    
+                        <b>6.26.</b>
+                    
+                    进阶篇 05 Reflect对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.27" data-path="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                <a href="../javascript系列/02-进阶篇-06-Class（类）.html">
+            
+                    
+                        <b>6.27.</b>
+                    
+                    进阶篇 06 Class（类）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.28" data-path="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                <a href="../javascript系列/02-进阶篇-07-迭代器（Iterator）.html">
+            
+                    
+                        <b>6.28.</b>
+                    
+                    进阶篇 07 迭代器（Iterator）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.29" data-path="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                <a href="../javascript系列/02-进阶篇-08-Generator和Async函数.html">
+            
+                    
+                        <b>6.29.</b>
+                    
+                    进阶篇 08 Generator和Async函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.30" data-path="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                <a href="../javascript系列/02-进阶篇-09-JavaScript异步编程.html">
+            
+                    
+                        <b>6.30.</b>
+                    
+                    进阶篇 09 JavaScript异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.31" data-path="../javascript系列/04-Date对象和日期时间字符串格式.md">
+            
+                <span>
+            
+                    
+                        <b>6.31.</b>
+                    
+                    Date对象和日期时间字符串格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.32" data-path="../javascript系列/05-Canvas基础入门篇.html">
+            
+                <a href="../javascript系列/05-Canvas基础入门篇.html">
+            
+                    
+                        <b>6.32.</b>
+                    
+                    Canvas基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.33" data-path="../javascript系列/05-Canvas进阶篇.html">
+            
+                <a href="../javascript系列/05-Canvas进阶篇.html">
+            
+                    
+                        <b>6.33.</b>
+                    
+                    Canvas进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.34" data-path="../javascript系列/06-SVG基础入门篇.html">
+            
+                <a href="../javascript系列/06-SVG基础入门篇.html">
+            
+                    
+                        <b>6.34.</b>
+                    
+                    SVG基础入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.35" data-path="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                <a href="../javascript系列/06-四种判断数据类型方法的优缺点.html">
+            
+                    
+                        <b>6.35.</b>
+                    
+                    四种判断数据类型方法的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.36" data-path="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                <a href="../javascript系列/07-深入理解JavaScript的浅拷贝和深拷贝.html">
+            
+                    
+                        <b>6.36.</b>
+                    
+                    深入理解JavaScript的浅拷贝和深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.37" data-path="../javascript系列/08-谈谈JavaScript的作用域和上下文.md">
+            
+                <span>
+            
+                    
+                        <b>6.37.</b>
+                    
+                    谈谈JavaScript的作用域和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.38" data-path="../javascript系列/10-复制内容到剪贴板.html">
+            
+                <a href="../javascript系列/10-复制内容到剪贴板.html">
+            
+                    
+                        <b>6.38.</b>
+                    
+                    复制内容到剪贴板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.39" data-path="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                <a href="../javascript系列/11-44道JavaScript难题，还不来考考？.html">
+            
+                    
+                        <b>6.39.</b>
+                    
+                    44道JavaScript难题，还不来考考？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.40" data-path="../javascript系列/_关于Javascript.html">
+            
+                <a href="../javascript系列/_关于Javascript.html">
+            
+                    
+                        <b>6.40.</b>
+                    
+                     关于Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java系列</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../java系列/01-00-Java入门篇.html">
+            
+                <a href="../java系列/01-00-Java入门篇.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    00 Java入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../java系列/01-01-Java进阶篇.html">
+            
+                <a href="../java系列/01-01-Java进阶篇.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    01 Java进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../java系列/01-02-Java高级篇.html">
+            
+                <a href="../java系列/01-02-Java高级篇.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    02 Java高级篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../java系列/02-pom.xml详解.html">
+            
+                <a href="../java系列/02-pom.xml详解.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Pom.Xml详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../java系列/03-01-SpringBoot入门篇.html">
+            
+                <a href="../java系列/03-01-SpringBoot入门篇.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    01 SpringBoot入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../java系列/05-轻量应用服务器部署指南（腾讯云）.md">
+            
+                <span>
+            
+                    
+                        <b>7.6.</b>
+                    
+                    轻量应用服务器部署指南（腾讯云）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../java系列/06-keytool命令行工具.md">
+            
+                <span>
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Keytool命令行工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">NodeJs</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../nodeJs/00-0关于Node.js.html">
+            
+                <a href="../nodeJs/00-0关于Node.js.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    0关于Node.Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../nodeJs/00-常见问题.html">
+            
+                <a href="../nodeJs/00-常见问题.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                <a href="../nodeJs/01-Node.js：三种调试方法.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    Node.Js：三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                <a href="../nodeJs/02-npm包管理器简介及一些机制.html">
+            
+                    
+                        <b>8.4.</b>
+                    
+                    Npm包管理器简介及一些机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                <a href="../nodeJs/03-NPM：package.json详解（中文）.html">
+            
+                    
+                        <b>8.5.</b>
+                    
+                    NPM：Package.Json详解（中文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                <a href="../nodeJs/04-NPM：从零开始，开发一个软件包.html">
+            
+                    
+                        <b>8.6.</b>
+                    
+                    NPM：从零开始，开发一个软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="../nodeJs/05-NPM：常用命令.html">
+            
+                <a href="../nodeJs/05-NPM：常用命令.html">
+            
+                    
+                        <b>8.7.</b>
+                    
+                    NPM：常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                <a href="../nodeJs/06-Node.js：fs（文件系统）.html">
+            
+                    
+                        <b>8.8.</b>
+                    
+                    Node.Js：Fs（文件系统）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                <a href="../nodeJs/07-Node.js：global（全局变量）.html">
+            
+                    
+                        <b>8.9.</b>
+                    
+                    Node.Js：Global（全局变量）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="../nodeJs/08-Node.js：HTTP.html">
+            
+                <a href="../nodeJs/08-Node.js：HTTP.html">
+            
+                    
+                        <b>8.10.</b>
+                    
+                    Node.Js：HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="../nodeJs/09-Node.js：module（模块）.html">
+            
+                <a href="../nodeJs/09-Node.js：module（模块）.html">
+            
+                    
+                        <b>8.11.</b>
+                    
+                    Node.Js：Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="../nodeJs/10-Node.js：path（路径）.html">
+            
+                <a href="../nodeJs/10-Node.js：path（路径）.html">
+            
+                    
+                        <b>8.12.</b>
+                    
+                    Node.Js：Path（路径）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                <a href="../nodeJs/11-Node.js：readline（逐行读取）.html">
+            
+                    
+                        <b>8.13.</b>
+                    
+                    Node.Js：Readline（逐行读取）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.14" data-path="../nodeJs/12-锁定项目的Node版本.html">
+            
+                <a href="../nodeJs/12-锁定项目的Node版本.html">
+            
+                    
+                        <b>8.14.</b>
+                    
+                    锁定项目的Node版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../research/01-极细边框（1px边框）实现方式.html">
+            
+                <a href="../research/01-极细边框（1px边框）实现方式.html">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    极细边框（1px边框）实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../research/02-如何监控前端异常？.html">
+            
+                <a href="../research/02-如何监控前端异常？.html">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    如何监控前端异常？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../research/03-H5页面跳转和刷新.html">
+            
+                <a href="../research/03-H5页面跳转和刷新.html">
+            
+                    
+                        <b>9.3.</b>
+                    
+                    H5页面跳转和刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                <a href="../research/04-web主题切换和个性化定制方法总结.html">
+            
+                    
+                        <b>9.4.</b>
+                    
+                    Web主题切换和个性化定制方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                <a href="../research/05-Vue-SSR（服务端渲染）的简单实现.html">
+            
+                    
+                        <b>9.5.</b>
+                    
+                    Vue SSR（服务端渲染）的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                <a href="../research/06-基于create-react-app打造代码规范化的react+ts项目.html">
+            
+                    
+                        <b>9.6.</b>
+                    
+                    基于Create React App打造代码规范化的React+Ts项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../research/07-H5可视化编辑.html">
+            
+                <a href="../research/07-H5可视化编辑.html">
+            
+                    
+                        <b>9.7.</b>
+                    
+                    H5可视化编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="../research/08-Web常用功能.html">
+            
+                <a href="../research/08-Web常用功能.html">
+            
+                    
+                        <b>9.8.</b>
+                    
+                    Web常用功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" data-path="../research/10-H5页面生成图片方案总结.html">
+            
+                <a href="../research/10-H5页面生成图片方案总结.html">
+            
+                    
+                        <b>9.9.</b>
+                    
+                    H5页面生成图片方案总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10" data-path="../research/Javascript加密混淆.html">
+            
+                <a href="../research/Javascript加密混淆.html">
+            
+                    
+                        <b>9.10.</b>
+                    
+                    Javascript加密混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.11" data-path="../research/Vue如何导入TypeScript.html">
+            
+                <a href="../research/Vue如何导入TypeScript.html">
+            
+                    
+                        <b>9.11.</b>
+                    
+                    Vue如何导入TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.12" data-path="../research/移动端PDF预览.html">
+            
+                <a href="../research/移动端PDF预览.html">
+            
+                    
+                        <b>9.12.</b>
+                    
+                    移动端PDF预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.13" data-path="../research/纯CSS绘制箭头.html">
+            
+                <a href="../research/纯CSS绘制箭头.html">
+            
+                    
+                        <b>9.13.</b>
+                    
+                    纯CSS绘制箭头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.14" data-path="../research/网站性能测量和优化方法.html">
+            
+                <a href="../research/网站性能测量和优化方法.html">
+            
+                    
+                        <b>9.14.</b>
+                    
+                    网站性能测量和优化方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tech</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../tech/00-编程基础知识.html">
+            
+                <a href="../tech/00-编程基础知识.html">
+            
+                    
+                        <b>10.1.</b>
+                    
+                    编程基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="../tech/00-计算机问题概览.html">
+            
+                <a href="../tech/00-计算机问题概览.html">
+            
+                    
+                        <b>10.2.</b>
+                    
+                    计算机问题概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                <a href="../tech/01-内网穿透（web服务、远程桌面）.html">
+            
+                    
+                        <b>10.3.</b>
+                    
+                    内网穿透（Web服务、远程桌面）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                <a href="../tech/02-GOOGLE浏览器的搜索技巧.html">
+            
+                    
+                        <b>10.4.</b>
+                    
+                    GOOGLE浏览器的搜索技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="../tech/03-curl的用法指南.html">
+            
+                <a href="../tech/03-curl的用法指南.html">
+            
+                    
+                        <b>10.5.</b>
+                    
+                    Curl的用法指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="../tech/04-sublime3插件篇.html">
+            
+                <a href="../tech/04-sublime3插件篇.html">
+            
+                    
+                        <b>10.6.</b>
+                    
+                    Sublime3插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="../tech/05-Charles安装及使用.html">
+            
+                <a href="../tech/05-Charles安装及使用.html">
+            
+                    
+                        <b>10.7.</b>
+                    
+                    Charles安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                <a href="../tech/06-通过.gitlab-ci.yml配置任务.html">
+            
+                    
+                        <b>10.8.</b>
+                    
+                    通过.Gitlab Ci.Yml配置任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="../tech/07-MySQL的基本使用.html">
+            
+                <a href="../tech/07-MySQL的基本使用.html">
+            
+                    
+                        <b>10.9.</b>
+                    
+                    MySQL的基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="../tech/08-看懂什么是环境变量.html">
+            
+                <a href="../tech/08-看懂什么是环境变量.html">
+            
+                    
+                        <b>10.10.</b>
+                    
+                    看懂什么是环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.11" data-path="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                <a href="../tech/09-为什么0.1+0.2=0.30000000000000004.html">
+            
+                    
+                        <b>10.11.</b>
+                    
+                    为什么0.1+0.2=0.30000000000000004
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.12" data-path="../tech/10-Nginx使用手册：安装、配置、模块扩展与代理详解.md">
+            
+                <span>
+            
+                    
+                        <b>10.12.</b>
+                    
+                    Nginx使用手册：安装、配置、模块扩展与代理详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.13" data-path="../tech/11-常见智力题总结.html">
+            
+                <a href="../tech/11-常见智力题总结.html">
+            
+                    
+                        <b>10.13.</b>
+                    
+                    常见智力题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.14" data-path="../tech/12-Mac终端命令使用.html">
+            
+                <a href="../tech/12-Mac终端命令使用.html">
+            
+                    
+                        <b>10.14.</b>
+                    
+                    Mac终端命令使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.15" data-path="../tech/13-01-Shell脚本入门篇.html">
+            
+                <a href="../tech/13-01-Shell脚本入门篇.html">
+            
+                    
+                        <b>10.15.</b>
+                    
+                    01 Shell脚本入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.16" data-path="../tech/13-02-Shell脚本进阶篇.html">
+            
+                <a href="../tech/13-02-Shell脚本进阶篇.html">
+            
+                    
+                        <b>10.16.</b>
+                    
+                    02 Shell脚本进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.17" data-path="../tech/14-一篇搞定排序算法：原理+图解+JS实现+V8源码解读.md">
+            
+                <span>
+            
+                    
+                        <b>10.17.</b>
+                    
+                    一篇搞定排序算法：原理+图解+JS实现+V8源码解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.18" data-path="../tech/15-glob模式通配符.html">
+            
+                <a href="../tech/15-glob模式通配符.html">
+            
+                    
+                        <b>10.18.</b>
+                    
+                    Glob模式通配符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.19" data-path="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                <a href="../tech/16-代码整洁之道（摘录笔记）.html">
+            
+                    
+                        <b>10.19.</b>
+                    
+                    代码整洁之道（摘录笔记）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.20" data-path="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                <a href="../tech/17-Java的24种设计模式与7大原则.html">
+            
+                    
+                        <b>10.20.</b>
+                    
+                    Java的24种设计模式与7大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.21" data-path="../tech/18-观察者和发布订阅模式.html">
+            
+                <a href="../tech/18-观察者和发布订阅模式.html">
+            
+                    
+                        <b>10.21.</b>
+                    
+                    观察者和发布订阅模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.22" data-path="../tech/19-AI模型基础应用篇.html">
+            
+                <a href="../tech/19-AI模型基础应用篇.html">
+            
+                    
+                        <b>10.22.</b>
+                    
+                    AI模型基础应用篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../tools/01-01-Git基础教程.html">
+            
+                <a href="../tools/01-01-Git基础教程.html">
+            
+                    
+                        <b>11.1.</b>
+                    
+                    01 Git基础教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../tools/01-02-Git常见问题.html">
+            
+                <a href="../tools/01-02-Git常见问题.html">
+            
+                    
+                        <b>11.2.</b>
+                    
+                    02 Git常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../tools/02-01-gitbook入门篇.html">
+            
+                <a href="../tools/02-01-gitbook入门篇.html">
+            
+                    
+                        <b>11.3.</b>
+                    
+                    01 Gitbook入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="../tools/02-02-gitbook插件篇.html">
+            
+                <a href="../tools/02-02-gitbook插件篇.html">
+            
+                    
+                        <b>11.4.</b>
+                    
+                    02 Gitbook插件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="../tools/02-03-gitbook进阶篇.html">
+            
+                <a href="../tools/02-03-gitbook进阶篇.html">
+            
+                    
+                        <b>11.5.</b>
+                    
+                    03 Gitbook进阶篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">整理中</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Vue3初步了解及迁移指南</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="vue3初步了解及迁移指南">Vue3初步了解及迁移指南</h2>
+<p>关于 Vue3 的重构背景，尤大是这样说的：</p>
+<blockquote>
+<p>「Vue 新版本的理念成型于 2018 年末，当时 Vue 2 的代码库已经有两岁半了。比起通用软件的生命周期来这好像也没那么久，但在这段时期，前端世界已经今昔非比了</p>
+<p>在我们更新（和重写）Vue 的主要版本时，主要考虑两点因素：首先是新的 JavaScript 语言特性在主流浏览器中的受支持水平；其次是当前代码库中随时间推移而逐渐暴露出来的一些设计和架构问题」</p>
+</blockquote>
+<p>简要就是：</p>
+<ul>
+<li>利用新的语言特性（es6）</li>
+<li>解决架构问题</li>
+</ul>
+<h3 id="新特性和新功能">新特性和新功能</h3>
+<h4 id="新特性">新特性</h4>
+<p>概览 Vue3 的新特性：</p>
+<ul>
+<li>速度更快：重写了虚拟Dom实现、编译模板的优化、更高效的组件初始化、undate 性能提高 1.3~2 倍、SSR 速度提高了 2~3 倍。</li>
+<li>体积减少：通过 webpack 的 tree-shaking 功能，可以将无用模块 “删除”，仅打包需要的模块。</li>
+<li>更易维护：组合式 Api，更灵活的逻辑组合与复用、更好的 Typescript 支持等。</li>
+<li>更接近原生：可以自定义渲染 API。</li>
+<li>更易使用：响应式 Api 暴露出来。</li>
+</ul>
+<h4 id="新功能">新功能</h4>
+<p>Vue 3 中需要关注的一些新功能包括：</p>
+<ul>
+<li>组合式 API *：将相同功能的变量进行一个集中式的管理，更容易维护代码；</li>
+<li>script 的 setup 属性 * ：SFC（单文件组件）组合 API 语法糖；</li>
+<li>Teleport：将模板移动到 DOM 中 Vue app 之外的其他位置（比如，dialog 移到 body 下）；</li>
+<li>Fragments：SFC（单文件组件）<code>&lt;template&gt;</code> 下支持有多个根节点；</li>
+<li>Emits 组件选项 **；</li>
+<li>创建自定义渲染器的 createRenderer API；</li>
+<li>SFC（单文件组件）可状态驱动的 CSS 变量（即，<code>&lt;style&gt;</code> 可通过 v-bind 绑定变量）* ；</li>
+<li>SFC（单文件组件）中的 <code>&lt;style scoped&gt;</code>，可以包括全局样式或只针对槽位内容的样式；</li>
+<li>Suspense（实验性）。</li>
+</ul>
+<blockquote>
+<p>带一个星号（*），表示现在在 Vue 2.7 中也支持；</p>
+<p>带两个星号（**），表示在 Vue 2.7 中支持，但仅用于类型推断。</p>
+</blockquote>
+<h3 id="新的框架级建议">新的框架级建议</h3>
+<p>Vue 3 的支持库已经过重大更新，以下是新默认建议摘要：</p>
+<ul>
+<li>支持 Vue 3 的新版本路由器、开发工具和测试工具</li>
+<li>构建工具链：Vue CLI -&gt; Vite</li>
+<li>状态管理：Vuex -&gt; Pinia</li>
+<li>IDE 支持：Vetur -&gt; Volar</li>
+<li>新的命令行 TypeScript 支持：vue-tsc</li>
+<li>SSG：VuePress -&gt; VitePress</li>
+<li>JSX：@vue/babel-preset-jsx-&gt;@vue/babel-plugin-jsx</li>
+</ul>
+<h3 id="vue2-和-vue3-区别">Vue2 和 Vue3 区别</h3>
+<h4 id="响应式原理">响应式原理</h4>
+<p>Vue2 响应式原理基础是 Object.defineProperty；Vue3 响应式原理基础是 Proxy。</p>
+<ul>
+<li>Vue2：当一个普通的 JavaScript 对象传入 Vue 实例作为 data 选项，Vue 将遍历此对象所有的 property，并使用 <strong>Object.defineProperty</strong> 把这些 property 全部转为 getter/setter。Object.defineProperty 是 ES5 中一个无法 shim 的特性，这也就是 Vue 不支持 IE8 以及更低版本浏览器的原因。</li>
+<li>Vue3：当把一个普通的 JavaScript 对象作为 data 选项传给应用或组件实例的时候，Vue 会使用带有 getter 和 setter 的处理程序遍历其所有 property 并将其转换为 Proxy (opens new window)。这是 ES6 仅有的特性，但是在 Vue 3 版本也使用了 Object.defineProperty 来支持 IE 浏览器。两者具有相同的 Surface API，但是 Proxy 版本更精简，同时提升了性能。</li>
+</ul>
+<p><strong>defineProperty 的缺点：</strong></p>
+<ul>
+<li>检测不到对象属性的添加和删除；</li>
+<li>数组 API 方法无法监听到；</li>
+<li>需要对每个属性进行遍历监听，如果嵌套对象，需要深层监听，造成性能问题。</li>
+</ul>
+<p><strong>注意：</strong> Object.defineOProperty 是可以监听数组已有元素，Vue2 没有提供的原因是性能问题。</p>
+<p><strong>proxy 优势：</strong></p>
+<ul>
+<li>可以劫持整个对象，并返回一个新对象，操作新的对象达到响应式目的；</li>
+<li>可以直接监听数组的变化（push、shift、splice），包括 length 的变化；</li>
+<li>Map、Set、WeakMap、WeakSet 的支持。</li>
+</ul>
+<p><strong>注意：</strong> Proxy 不兼容 IE，也没有 polyfill、defineProperty 能支持到 IE9。</p>
+<h4 id="组合式api">组合式API</h4>
+<p>Vue2 是 选项式 API（Option API），一个逻辑会散乱在文件不同位置（data、props、computed、watch、生命周期函数等），导致代码的可读性变差，需要上下来回跳转文件位置。Vue3 组合式API（Composition API）则很好地解决了这个问题，可将同一逻辑的内容写到一起。</p>
+<p>除了增强了代码的可读性、内聚性，组合式 API 还提供了较为完美的逻辑复用性方案：</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- main.vue --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>mouse position {{x}} {{y}}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="language-javascript">
+<span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span>  vue 
+<span class="hljs-keyword">import</span> useMousePosition <span class="hljs-keyword">from</span>  <span class="hljs-string">"./useMousePosition"</span>
+<span class="hljs-keyword">const</span> {x, y} = <span class="hljs-title function_">useMousePosition</span>()
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// useMousePosition.js</span>
+<span class="hljs-keyword">import</span> { ref, onMounted, onUnmounted } <span class="hljs-keyword">from</span>  vue 
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">useMousePosition</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">let</span> x = <span class="hljs-title function_">ref</span>(<span class="hljs-number">0</span>)
+  <span class="hljs-keyword">let</span> y = <span class="hljs-title function_">ref</span>(<span class="hljs-number">0</span>)
+  <span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">e</span>) {
+    x.<span class="hljs-property">value</span> = e.<span class="hljs-property">pageX</span>
+    y.<span class="hljs-property">value</span> = e.<span class="hljs-property">pageY</span>
+  }
+
+  <span class="hljs-title function_">onMounted</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>( mousemove , update)
+  })
+  <span class="hljs-title function_">onUnmounted</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">removeEventListener</span>( mousemove , update)
+  })
+
+  <span class="hljs-keyword">return</span> {
+    x,
+    y
+  }
+}
+</code></pre>
+<h4 id="多根节点">多根节点</h4>
+<p>Vue 3 支持了多根节点组件，也就是fragment；Vue 2 中，编写页面的时候，需要去将组件包裹在 <code>&lt;div&gt;</code>中，否则报错警告。</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- Vue 2 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- Vue 3 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+</code></pre>
+<h4 id="异步组件">异步组件</h4>
+<p>Vue3 提供 Suspense组件，允许程序在等待异步组件时渲染兜底的内容，如 loading ，使用户体验更平滑。使用它，需在模板中声明，并包括两个命名插槽：default 和 fallback。Suspense 确保加载完异步内容时显示默认插槽，并将 fallback 插槽用作加载状态。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">tempalte</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">suspense</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">default</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">todo-list</span> /&gt;</span>
+     <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">fallback</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+         Loading...
+       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+     <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">suspense</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+</code></pre>
+<p><strong>注意：</strong> 若想在 setup 中调用异步请求，需在 setup 前加 async 关键字。这时，会受到警告 <code>async setup() is used without a suspense boundary</code>。</p>
+<p><strong>解决方案：</strong> 在父页面调用当前组件外包裹一层 Suspense 组件。</p>
+<h4 id="teleport">Teleport</h4>
+<p>Vue3 提供 Teleport 组件可将部分 DOM 移动到 Vue app之外的位置。比如项目中常见的 Dialog 组件：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"dialogVisible = true"</span>&gt;</span>点击<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">teleport</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"body"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dialog"</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"dialogVisible"</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">teleport</span>&gt;</span>
+</code></pre>
+<h4 id="生命周期的变化">生命周期的变化</h4>
+<p>整体来看，变化不大，只是名字大部分需要 + on，功能上类似。</p>
+<p>使用上 Vue3 组合式 API 需要先引入；Vue2 选项 API 则可直接调用。</p>
+<p>常用生命周期函数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Vue 2.x</th>
+<th style="text-align:left">Vue 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">beforeCreate</td>
+<td style="text-align:left">移除</td>
+</tr>
+<tr>
+<td style="text-align:left">created</td>
+<td style="text-align:left">移除</td>
+</tr>
+<tr>
+<td style="text-align:left">beforeMount</td>
+<td style="text-align:left">onBeforeMount</td>
+</tr>
+<tr>
+<td style="text-align:left">mounted</td>
+<td style="text-align:left">onMounted</td>
+</tr>
+<tr>
+<td style="text-align:left">beforeUpdate</td>
+<td style="text-align:left">onBeforeUpdate</td>
+</tr>
+<tr>
+<td style="text-align:left">updated</td>
+<td style="text-align:left">onUpdated</td>
+</tr>
+<tr>
+<td style="text-align:left">beforeDestroy</td>
+<td style="text-align:left">onBeforeUnmount</td>
+</tr>
+<tr>
+<td style="text-align:left">destroyed</td>
+<td style="text-align:left">onUnmounted</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意：</strong> setup 函数是围绕 <code>beforeCreate</code> 和 <code>created</code> 生命周期钩子运行的，所以不需要显式地去定义。除了这些钩子函数外，Vue3 还增加了 onRenderTracked 和 onRenderTriggered 函数。</p>
+<h4 id="性能优化">性能优化</h4>
+<p>Vue3 相比于 Vue2 虚拟 DOM 上增加 patchFlag 字段，可帮助 diff 时区分静态节点，以及不同类型的动态节点。一定程度地减少节点本身及其属性的比对。</p>
+<p>Vue3 的 cacheHandler 可在第一次渲染后缓存事件。</p>
+<h4 id="打包优化">打包优化</h4>
+<p>Vue3 中针对全局和内部的 API 进行了重构，并考虑到 tree-shaking 的支持。因此，全局 API 现在只能作为 ES 模块构建的命名导出进行访问。</p>
+<p>通过这一更改，只要模块绑定器支持 tree-shaking，则 Vue 应用程序中未使用的 api 将从最终的捆绑包中消除，获得最佳文件大小。</p>
+<p>类似的，也有诸如 transition、v-model 等标签或者指令被命名导出。只有在程序真正使用才会被捆绑打包。</p>
+<h4 id="typescript-支持">TypeScript 支持</h4>
+<p>Vue3 由 TS 重写，相对于 Vue2 有更好地 TypeScript 支持。</p>
+<ul>
+<li>Vue2 Option API 中 option 是个简单对象，而 TS 是一种类型系统，面向对象的语法，不是特别匹配。</li>
+<li>Vue2 需要 vue-class-component 强化 vue 原生组件，也需要 vue-property-decorator 增加更多结合Vue特性的装饰器，写法比较繁琐。</li>
+</ul>
+<h3 id="选项式-vs-组合式-api">选项式 vs 组合式 API</h3>
+<p>Vue 的组件可以按两种不同的风格书写：选项式 API 和组合式 API。</p>
+<h5 id="选项式-api（options-api）">选项式 API（Options API）</h5>
+<p>使用选项式 API，我们可以用包含多个选项的对象来描述组件的逻辑，例如 data、methods 和 mounted。选项所定义的属性都会暴露在函数内部的 this 上，this 会指向当前的组件实例。</p>
+<h5 id="组合式-api（composition-api）">组合式 API（Composition API）</h5>
+<p>通过组合式 API，我们可以使用导入的 API 函数来描述组件逻辑。在单文件组件中，组合式 API 通常会与 <code>&lt;script setup&gt;</code> 搭配使用。这个 setup 属性是一个标识，告诉 Vue 需要在编译时进行一些处理，让我们可以更简洁地使用组合式 API。比如，<code>&lt;script setup&gt;</code> 中的导入和顶层变量/函数都能够在模板中直接使用。</p>
+<h5 id="为什么要有组合式-api？">为什么要有组合式 API？</h5>
+<ul>
+<li><p>更好的逻辑复用：最基本的优势是它能够通过组合函数来实现更加简洁高效的逻辑复用。</p>
+</li>
+<li><p>更灵活的代码组织：将同一个逻辑关注点相关的代码被归为了一组，无需再为了一个逻辑关注点在不同的选项块间来回滚动切换。</p>
+</li>
+<li><p>更好的类型推导：更好的支持 TypeScript。</p>
+</li>
+<li>更小的生产包体积：组合式 API 比等价情况下的选项式 API 更高效，对代码压缩也更友好。这是由于 <code>&lt;script setup&gt;</code> 形式书写的组件模板被编译为了一个内联函数，和 <code>&lt;script setup&gt;</code> 中的代码位于同一作用域，不再需要依赖 this 上下文对象访问属性。这对代码压缩更友好，因为本地变量的名字可以被压缩，但对象的属性名则不能。</li>
+</ul>
+<h5 id="该选哪一个？">该选哪一个？</h5>
+<p>两种 API 风格都能够覆盖大部分的应用场景。它们只是同一个底层系统所提供的两套不同的接口。实际上，选项式 API 是在组合式 API 的基础上实现的！关于 Vue 的<strong>基础概念和知识在它们之间都是通用</strong>的。</p>
+<p>选项式 API 以 “组件实例” 的概念为中心（即 this），对于有面向对象语言背景的用户来说，这通常与基于类的心智模型更为一致。同时，它将响应性相关的细节抽象出来，并强制按照选项来组织代码，从而对初学者而言更为友好。</p>
+<p>组合式 API 的核心思想是直接在函数作用域内定义响应式状态变量，并将从多个函数中得到的状态组合起来处理复杂问题。这种形式更加自由，也需要你对 Vue 的响应式系统有更深的理解才能高效使用。相应的，它的灵活性也使得组织和重用逻辑的模式变得更加强大。</p>
+<p><strong>备注：</strong> 组合式 API 能够覆盖所有状态逻辑方面的需求，但按官方说法，并不会废弃选项式 API，也允许同时使用两种 API（在一个选项式 API 的组件中通过 setup() 选项来使用组合式 API）。</p>
+<h4 id="setup">setup()</h4>
+<p>setup() 是 Vue 3 新增的函数，会在创建组件之前执行，有以下特性：</p>
+<ul>
+<li><p>由于在执行 setup 函数时尚未创建组件实例，因此在 setup 函数中没有 this，也就是说，除了 props 之外，无法访问组件中声明的任何属性——本地状态（data）、计算属性（computed）或方法（methods）。</p>
+</li>
+<li><p>接收两个参数：props、context（包含三个组件的属性：attrs、slots、emit）。</p>
+</li>
+<li><p>props 参数是响应式的，当传入新的 prop 时，它将会被更新，所以不能使用 es6 解构，因为它会消除 prop 得响应性；如需解构 prop，可以通过使用 setup 函数中得 toRefs 来完成此操作。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { toRefs } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+<span class="hljs-title function_">setup</span>(<span class="hljs-params">props</span>) {
+    <span class="hljs-keyword">const</span> { title } = <span class="hljs-title function_">toRefs</span>(props)
+}
+</code></pre>
+</li>
+<li><p>context 是一个普通的 JavaScript 对象，它不是响应式的，这意味着，可以安全地对 context 使用 ES6 解构。它暴露三个组件的 property：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-title function_">setup</span>(<span class="hljs-params">props, { attrs, slots, emit }</span>) {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+</code></pre>
+</li>
+<li><p>单文件组件使用时，可以返回一个对象，且可以在 <code>&lt;template&gt;</code> 中直接访问返回对象的属性。<strong>注意：</strong> setup 函数返回对象中的 refs，在模板中访问时是被自动解开的，因此不应在模板中使用 ref 对象的 <code>.value</code>。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">import</span> { ref, reactive } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) {
+      <span class="hljs-keyword">const</span> readersNumber = <span class="hljs-title function_">ref</span>(<span class="hljs-number">0</span>)
+      <span class="hljs-keyword">const</span> book = <span class="hljs-title function_">reactive</span>({ <span class="hljs-attr">title</span>: <span class="hljs-string">'Vue 3 Guide'</span> })
+      <span class="hljs-keyword">return</span> {
+        readersNumber,
+        book
+      }
+    }
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>setup 还可以返回一个渲染函数，该函数可以直接使用在同一作用域中声明的响应式状态。</p>
+</li>
+<li><p>setup 函数只能是同步的不能是异步的。</p>
+</li>
+</ul>
+<h3 id="重大变化">重大变化</h3>
+<h4 id="全局-api">全局 API</h4>
+<h5 id="全局-vue-api-改为实例-api">全局 Vue API 改为实例 API</h5>
+<p>Vue 2.x 有许多全局 API 和配置可以全局改变 Vue 的行为，这会引起以下问题：</p>
+<ul>
+<li>全局配置使得在测试过程中很容易意外污染其他测试用例。</li>
+<li>全局配置使得在同一页面上的多个应用程序之间，共享同一 Vue 组件（具有不同的全局配置）变得困难。</li>
+</ul>
+<p>为了避免这些问题，Vue 3 中引入了 createApp API 创建 Vue 实例，将全局 API 调用改为实例方法的调用。</p>
+<p>Vue 3 首先会调用 createApp 返回一个应用实例，然后在实例中调用对应方法：</p>
+<pre><code class="lang-javascript">&lt;!--<span class="hljs-title class_">Vue</span> <span class="hljs-number">2</span>--&gt;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">Vue</span> <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+</code></pre>
+<pre><code class="lang-javascript">&lt;!-- <span class="hljs-title class_">Vue</span> <span class="hljs-number">3</span> --&gt;
+<span class="hljs-keyword">import</span> { createApp } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+<span class="hljs-keyword">const</span> app = <span class="hljs-title function_">createApp</span>({})
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>2.x 全局 API</th>
+<th>3.x 实例 API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vue.config</td>
+<td>app.config</td>
+</tr>
+<tr>
+<td>Vue.config.productionTip</td>
+<td>删除</td>
+</tr>
+<tr>
+<td>Vue.config.ignoredElements</td>
+<td>app.config.compilerOptions.isCustomElement</td>
+</tr>
+<tr>
+<td>Vue.component</td>
+<td>app.component</td>
+</tr>
+<tr>
+<td>Vue.directive</td>
+<td>app.directive</td>
+</tr>
+<tr>
+<td>Vue.mixin</td>
+<td>app.mixin</td>
+</tr>
+<tr>
+<td>Vue.use</td>
+<td>app.use</td>
+</tr>
+<tr>
+<td>Vue.prototype</td>
+<td>app.config.globalProperties</td>
+</tr>
+<tr>
+<td>Vue.extend</td>
+<td>删除</td>
+</tr>
+</tbody>
+</table>
+<h5 id="全局-api-tree-shaking">全局 API tree-shaking</h5>
+<p>像 webpack 和 Rollup（基于 Vite）等模块打包器支持 tree-shaking，tree-shaking 是 “删除死代码” 的术语。</p>
+<p>不幸的是，由于在以前的 Vue 版本中代码的编写方式，像 Vue.nexttick() 这样的全局 Api 是不可删除的，<strong>不管实际中是否有使用，都会被包含在最终的包中</strong>。</p>
+<p>在 Vue 3 中，全局和内部 API 已经重新构建，并考虑到了 tree-shaking 支持。因此，全局 API 现在能作为 ES 模块构建的命名导出来访问。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { nextTick } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+</code></pre>
+<p>通过此更改，如果模块打包器支持 tree-shaking，则<strong>未在 Vue 应用程序中使用的全局 API 将从最终捆绑包中删除</strong>，从而获得最佳文件大小。</p>
+<p>Vue 2.x 中的这些全局 API 受此更改影响：</p>
+<ul>
+<li>Vue.nextTick</li>
+<li>Vue.version</li>
+<li>Vue.observable（替换为 Vue.reactive）</li>
+<li>Vue.compile（仅在完整版本中）</li>
+<li>Vue.set（仅在兼容版本中）</li>
+<li>Vue.delete（仅在兼容版本中）</li>
+</ul>
+<p>除了公共 API 之外，许多内部组件/帮助程序现在也以命名导出的形式导出：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-show</span>=<span class="hljs-string">"ok"</span>&gt;</span>hello<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span>
+</code></pre>
+<p>被编译成类似于以下内容：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { h, <span class="hljs-title class_">Transition</span>, withDirectives, vShow } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">render</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">return</span> <span class="hljs-title function_">h</span>(<span class="hljs-title class_">Transition</span>, [<span class="hljs-title function_">withDirectives</span>(<span class="hljs-title function_">h</span>(<span class="hljs-string">'div'</span>, <span class="hljs-string">'hello'</span>), [[vShow, <span class="hljs-variable language_">this</span>.<span class="hljs-property">ok</span>]])])
+}
+</code></pre>
+<h4 id="模板指令">模板指令</h4>
+<h5 id="重写-v-model-指令">重写 v-model 指令</h5>
+<p>在 Vue 2.x 中，v-model 在组件上使用相当于：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">ChildComponent</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"title"</span> /&gt;</span>
+<span class="hljs-comment">&lt;!-- 相当于 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ChildComponent</span> <span class="hljs-attr">:value</span>=<span class="hljs-string">"title"</span> @<span class="hljs-attr">input</span>=<span class="hljs-string">"title = $event"</span> /&gt;</span>
+</code></pre>
+<p>Vue 3 对 v-model 指令做以下修改：</p>
+<ul>
+<li>在自定义组件上使用时，v-model 指令在子组件的 prop 的默认属性名更改：value-&gt; modelValue，事件默认名称更改：input -&gt; update:modelValue；</li>
+<li>v-model 可以替换 v-bind.sync 和组件的 model 选项，且 Vue 3 已删除 v-bind.sync 用法和组件的 model 选项；</li>
+<li>同一个组件可以绑定多个 v-model；</li>
+<li>允许<a href="https://vuejs.org/guide/components/events.html#usage-with-v-model" target="_blank">自定义 v-model 修饰符</a>。</li>
+</ul>
+<p>在 Vue 3 中，v-model 在组件上使用相当于：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">ChildComponent</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"title"</span> /&gt;</span>
+<span class="hljs-comment">&lt;!-- 相当于 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ChildComponent</span> <span class="hljs-attr">:modelValue</span>=<span class="hljs-string">"title"</span> @<span class="hljs-attr">update:modelValue</span>=<span class="hljs-string">"title = $event"</span> /&gt;</span>
+</code></pre>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- 自定义 mode 名称 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ChildComponent</span> <span class="hljs-attr">v-model:title</span>=<span class="hljs-string">"title"</span> /&gt;</span>
+<span class="hljs-comment">&lt;!-- 多个 v-model --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ChildComponent</span> <span class="hljs-attr">v-model:title</span>=<span class="hljs-string">"title"</span> <span class="hljs-attr">v-model:content</span>=<span class="hljs-string">"content"</span> /&gt;</span>
+<span class="hljs-comment">&lt;!-- 自定义 v-model 修饰符 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ChildComponent</span> <span class="hljs-attr">v-model.capitalize</span>=<span class="hljs-string">"value"</span> /&gt;</span>
+</code></pre>
+<h5 id="key-使用变化">key 使用变化</h5>
+<p>变化概述：</p>
+<ul>
+<li>key 在 v-if/v-else/v-else-if 分支不再是必需的，因为 Vue 现在自动生成唯一的键；</li>
+<li>如果手动提供 key，那么在每个分支必须是唯一的；</li>
+<li><code>&lt;template v-for&gt;</code> 的 key 应该放在 <code>&lt;template&gt;</code> 标签上，而不是放在它的子标签上。</li>
+</ul>
+<h5 id="v-if-与-v-for-优先级变化">v-if 与 v-for 优先级变化</h5>
+<p>在 Vue 3.x 中，同一个元素上，v-if 将始终具有比 v-for 更高的优先级。</p>
+<h5 id="v-bind-合并行为">v-bind 合并行为</h5>
+<p>在 3.x 中，v-bind 的绑定顺序会影响渲染结果。</p>
+<p>在 2.x 中，如果一个元素同时绑定 v-bind="object" 和定义了一个相同名称的单个属性，则该单个属性将始终覆盖 Object：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"red"</span> <span class="hljs-attr">v-bind</span>=<span class="hljs-string">"{ id: 'blue' }"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- 渲染结果 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"red"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>在 3x 中，如果一个元素同时绑定 v-bind="object" 和定义了一个相同名称的单个属性，则声明绑定的顺序决定了它们的合并方式，即后面的定义，会覆盖前面的：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"red"</span> <span class="hljs-attr">v-bind</span>=<span class="hljs-string">"{ id: 'blue' }"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- 渲染结果 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"blue"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-bind</span>=<span class="hljs-string">"{ id: 'blue' }"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"red"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- 渲染结果 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"red"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h5 id="移除-native-修饰符">移除 .native 修饰符</h5>
+<p>在 3.x 中，v-on 的 .native 修饰符已被移除。</p>
+<p>在 2.x 中，默认情况下，传递给组件的 v-on 事件监听器，只能通过 this.$emit 来触发。如果要将监听器添加到子组件的根元素，则需要使用 .native 修饰符：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>
+  <span class="hljs-attr">v-on:close</span>=<span class="hljs-string">"handleComponentEvent"</span>
+  <span class="hljs-attr">v-on:click.native</span>=<span class="hljs-string">"handleNativeClickEvent"</span>
+/&gt;</span>
+</code></pre>
+<p>在 3.x 中，v-on 的 .native 修饰符已被移除。同时，新 <strong>emits 选项</strong>允许子组件定义需要触发哪些事件。</p>
+<p>也就是说，Vue 3.x 会将所有未在子组件的 <strong>emits 选项</strong> 定义的监听器，作为子组件根元素的事件侦听器（除非子组件设置了 inheritAttrs: false 选项）。</p>
+<pre><code class="lang-html"> <span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>
+   <span class="hljs-attr">v-on:close</span>=<span class="hljs-string">"handleComponentEvent"</span>
+   <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"handleNativeClickEvent"</span>
+ /&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+   <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+     <span class="hljs-attr">emits</span>: [<span class="hljs-string">'close'</span>]
+   }
+ </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h4 id="组件">组件</h4>
+<h5 id="函数式组件">函数式组件</h5>
+<p>在 Vue 2.x 中，函数式组件有两个主要用例：</p>
+<ul>
+<li>作为性能优化，因为它们的初始化速度比有状态组件快得多；</li>
+<li>返回多个根节点。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Vue 2 函数式组件示例</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">functional</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">props</span>: [<span class="hljs-string">'level'</span>],
+  <span class="hljs-title function_">render</span>(<span class="hljs-params">h, { props, data, children }</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-title function_">h</span>(<span class="hljs-string">`h<span class="hljs-subst">${props.level}</span>`</span>, data, children)
+  }
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Vue 2 函数式组件示例使用 &lt;template&gt;</span>
+&lt;template functional&gt;
+  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">component</span>
+    <span class="hljs-attr">:is</span>=<span class="hljs-string">"`h${props.level}`"</span>
+    <span class="hljs-attr">v-bind</span>=<span class="hljs-string">"attrs"</span>
+    <span class="hljs-attr">v-on</span>=<span class="hljs-string">"listeners"</span>
+  /&gt;</span></span>
+&lt;/template&gt;
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">props</span>: [<span class="hljs-string">'level'</span>]
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+</code></pre>
+<p>然而，在 Vue 3.x 中，有状态组件的性能已经提高到可以忽略不计的程度。此外，有状态组件现在还包括返回多个根节点的能力。</p>
+<p>因此，函数式组件有以下变化：</p>
+<ul>
+<li>在 3.x 中，函数式组件 2.x 的性能提升可以忽略不计，因此建议只使用有状态的组件；</li>
+<li>函数式组件只能使用接收 props 和 context（包含组件的 attrs、slots、和 emit 属性）的普通函数创建，也就是说，不需要定义 <code>{ functional: true }</code> 组件选项；</li>
+<li>非兼容变更：SFC（单文件组件）的 template 标签上的 functional 属性已被移除；</li>
+<li>非兼容变更：通过函数创建组件的 <code>{ functional: true }</code> 选项已被移除。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Vue 3 函数式组件示例</span>
+<span class="hljs-keyword">import</span> { h } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">DynamicHeading</span> = (<span class="hljs-params">props, context</span>) =&gt; {
+  <span class="hljs-keyword">return</span> <span class="hljs-title function_">h</span>(<span class="hljs-string">`h<span class="hljs-subst">${props.level}</span>`</span>, context.<span class="hljs-property">attrs</span>, context.<span class="hljs-property">slots</span>)
+}
+<span class="hljs-title class_">DynamicHeading</span>.<span class="hljs-property">props</span> = [<span class="hljs-string">'level'</span>]
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">DynamicHeading</span>
+</code></pre>
+<p>在 SFC 上，删除 template 标签上的 functional 属性，并将 props 的所有引用重命名为 $props，将 attrs 重命名为 $attrs：</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Vue 3 函数式组件示例使用 &lt;template&gt;</span>
+&lt;template&gt;
+  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">component</span>
+    <span class="hljs-attr">v-bind:is</span>=<span class="hljs-string">"`h${$props.level}`"</span>
+    <span class="hljs-attr">v-bind</span>=<span class="hljs-string">"$attrs"</span>
+  /&gt;</span></span>
+&lt;/template&gt;
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">props</span>: [<span class="hljs-string">'level'</span>]
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+</code></pre>
+<h5 id="异步组件">异步组件</h5>
+<p>异步组件加载变化：</p>
+<ul>
+<li>新增异步组件的辅助方法：defineAsyncComponent；</li>
+<li>方法中的 component 选项重命名为 loader；</li>
+<li>Loader 函数本身并不接收 resolve 和 reject 参数，且必须返回一个 Promise。</li>
+</ul>
+<p>在 Vue 2.x 中，异步组件载入：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">asyncModal</span> = (<span class="hljs-params"></span>) =&gt; <span class="hljs-keyword">import</span>(<span class="hljs-string">'./Modal.vue'</span>)
+<span class="hljs-comment">// 或者</span>
+<span class="hljs-keyword">const</span> asyncModal = {
+  <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./Modal.vue'</span>),
+  <span class="hljs-attr">delay</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-attr">timeout</span>: <span class="hljs-number">3000</span>,
+  <span class="hljs-attr">error</span>: <span class="hljs-title class_">ErrorComponent</span>,
+  <span class="hljs-attr">loading</span>: <span class="hljs-title class_">LoadingComponent</span>
+}
+</code></pre>
+<p>在 Vue 3.x 中，异步组件载入：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { defineAsyncComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">ErrorComponent</span> <span class="hljs-keyword">from</span> <span class="hljs-string">'./components/ErrorComponent.vue'</span>
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">LoadingComponent</span> <span class="hljs-keyword">from</span> <span class="hljs-string">'./components/LoadingComponent.vue'</span>
+
+<span class="hljs-keyword">const</span> asyncModal = <span class="hljs-title function_">defineAsyncComponent</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./Modal.vue'</span>))
+<span class="hljs-comment">// 或者</span>
+<span class="hljs-keyword">const</span> asyncModalWithOptions = <span class="hljs-title function_">defineAsyncComponent</span>({
+  <span class="hljs-attr">loader</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./Modal.vue'</span>),
+  <span class="hljs-attr">delay</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-attr">timeout</span>: <span class="hljs-number">3000</span>,
+  <span class="hljs-attr">errorComponent</span>: <span class="hljs-title class_">ErrorComponent</span>,
+  <span class="hljs-attr">loadingComponent</span>: <span class="hljs-title class_">LoadingComponent</span>
+})
+</code></pre>
+<p>此外，在 Vue 3.x 中，加载器函数不再接收 resolve 和 reject 参数，并且必须始终返回一个 Promise：</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Vue 2.x</span>
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">oldAsyncComponent</span> = (<span class="hljs-params">resolve, reject</span>) =&gt; {}
+
+<span class="hljs-comment">// Vue 3.x</span>
+<span class="hljs-keyword">const</span> asyncComponent = <span class="hljs-title function_">defineAsyncComponent</span>(
+  <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {})
+)
+</code></pre>
+<h5 id="emits-选项">emits 选项</h5>
+<p>Vue 3 现在提供了一个 emits 选项，类似于现有 props 选项。此选项可用于定义组件可以向其父级发出的事件。</p>
+<p>在 Vue 2.x 中，可以定义组件接收的 props，但不能显示声明组件可以向父级发出哪些事件（默认所有事件都可以）：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{{ text }}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"$emit('accepted')"</span>&gt;</span>OK<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    <span class="hljs-attr">props</span>: [<span class="hljs-string">'text'</span>]
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>在 Vue 3.x 中，与 props 类似，组件发出的事件可以使用 emits 选项定义：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{{ text }}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"$emit('accepted')"</span>&gt;</span>OK<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    <span class="hljs-attr">props</span>: [<span class="hljs-string">'text'</span>],
+    <span class="hljs-attr">emits</span>: [<span class="hljs-string">'accepted'</span>]
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p><strong>注意：</strong> 由于移除了 <code>.native</code> 修饰符，这一点尤其重要。任何未声明的事件侦听器 emits 现在都将包含在组件的 $attrs 中，默认情况下将绑定到组件的根节点。</p>
+<h4 id="渲染函数">渲染函数</h4>
+<h5 id="渲染函数-api">渲染函数 API</h5>
+<p>渲染函数 API 变化：</p>
+<ul>
+<li>h 现在是全局导入的，而不是作为参数传递给渲染函数；</li>
+<li>渲染函数参数更改为在有状态组件和功能组件之间更加一致；</li>
+<li>VNodes 现在有一个扁平的 props 结构。</li>
+</ul>
+<p>在 Vue 2.x 中，render 函数会自动接收 h 函数（createElement 函数别名）作为参数：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-title function_">render</span>(<span class="hljs-params">h</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-title function_">h</span>(<span class="hljs-string">'button-counter'</span>)
+  }
+}
+</code></pre>
+<p>在 3.x 中，h 现在是全局导入的，而不是作为参数自动传递：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { h, resolveComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">const</span> <span class="hljs-title class_">ButtonCounter</span> = <span class="hljs-title function_">resolveComponent</span>(<span class="hljs-string">'button-counter'</span>)
+    <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">h</span>(<span class="hljs-title class_">ButtonCounter</span>)
+  }
+}
+</code></pre>
+<p><strong>注意：</strong> 在 Vue 3.x 中，VNode 是上下文无关的，不能再使用字符串 ID 来隐式查找已注册的组件，因此，需要使用 resolveComponent 解析。</p>
+<h5 id="slot-统一">Slot 统一</h5>
+<p>Vue 3.x 统一了普通 slot 和作用域 slot：</p>
+<ul>
+<li>this.$slots 现在将 slots 作为函数公开；</li>
+<li>非兼容：移除 this.$scopedSlots。</li>
+</ul>
+<p>在 Vue 2.x 中，定义 slot 内容节点上的数据属性：</p>
+<pre><code class="lang-javascript"><span class="hljs-title function_">h</span>(<span class="hljs-title class_">LayoutComponent</span>, [
+  <span class="hljs-title function_">h</span>(<span class="hljs-string">'div'</span>, { <span class="hljs-attr">slot</span>: <span class="hljs-string">'header'</span> }, <span class="hljs-variable language_">this</span>.<span class="hljs-property">header</span>),
+  <span class="hljs-title function_">h</span>(<span class="hljs-string">'div'</span>, { <span class="hljs-attr">slot</span>: <span class="hljs-string">'content'</span> }, <span class="hljs-variable language_">this</span>.<span class="hljs-property">content</span>)
+])
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 引用作用域插槽</span>
+<span class="hljs-variable language_">this</span>.<span class="hljs-property">$scopedSlots</span>.<span class="hljs-property">header</span>
+</code></pre>
+<p>在 Vue 3.x 中，插槽被定义为当前节点的子节点作为对象：</p>
+<pre><code class="lang-javascript"><span class="hljs-title function_">h</span>(<span class="hljs-title class_">LayoutComponent</span>, {}, {
+  <span class="hljs-attr">header</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">h</span>(<span class="hljs-string">'div'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">header</span>),
+  <span class="hljs-attr">content</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">h</span>(<span class="hljs-string">'div'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">content</span>)
+})
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 引用作用域插槽</span>
+<span class="hljs-variable language_">this</span>.<span class="hljs-property">$slots</span>.<span class="hljs-title function_">header</span>()
+</code></pre>
+<h5 id="listeners-合并到-attrs">$listeners 合并到 $attrs</h5>
+<p>Vue 3.x 删除了 $listeners 对象，事件监听器包含在 $attrs 对象。</p>
+<p>在 Vue 2.x 中，使用 $attrs 对象接收传递给组件的属性，使用 $listeners 对象接收传递给组件的事件监听器。结合使用 <code>inheritAttrs: false</code>，可以将这些属性和监听器应用到组件内的其他元素，而不是组件的根元素：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-bind</span>=<span class="hljs-string">"$attrs"</span> <span class="hljs-attr">v-on</span>=<span class="hljs-string">"$listeners"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    <span class="hljs-attr">inheritAttrs</span>: <span class="hljs-literal">false</span>
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>在 Vue 3.x 的虚拟 DOM 中，$listeners 对象已被删除。事件监听器只是前缀为 <code>on</code> 的属性，是 $attrs 对象的一部分：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-bind</span>=<span class="hljs-string">"$attrs"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    <span class="hljs-attr">inheritAttrs</span>: <span class="hljs-literal">false</span>
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>如果此组件接收到一个 id 属性和一个 v-on:close 侦听器，则该 $attrs 对象现在将如下所示：</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-attr">id</span>: <span class="hljs-string">''</span>,
+    <span class="hljs-attr">onClose</span>: <span class="hljs-function">() =&gt;</span> {}
+}
+</code></pre>
+<h5 id="attrs-包括-class-和-style">$attrs 包括 class 和 style</h5>
+<p>在 Vue 3.x 中，$attrs 包含传递给组件的所有属性，包括 class 和 style。</p>
+<p>在 Vue 2.x 中，class 和 style 属性有一些特殊处理，使它们不包含在中 $attrs 对象。</p>
+<p>如果使用时出现 <code>inheritAttrs: false</code>，所有 $attrs 对象内的属性不再自动添加到根元素中，而是由开发人员决定将它们添加到何处；而 class 和 style 不是 $attrs 的一部分，仍将应用于组件的根元素。</p>
+<p>在 Vue 3.x 中，$attrs 包含所有属性，这样可以更轻松地将所有属性应用于不同的元素。</p>
+<h4 id="自定义元素交互">自定义元素交互</h4>
+<p>自定义元素交互变化：</p>
+<ul>
+<li>非兼容：自定义元素白名单现在在模板编译期间执行，应该通过编译器选项而不是运行时配置来配置；</li>
+<li>非兼容：特定 is 属性仅限于保留的 component 标签；</li>
+<li>新增 v-is 指令来支持 2.x 用例，其中在原生元素上使用了 v-is 来处理原生 HTML 解析限制。</li>
+</ul>
+<h5 id="自定义元素">自定义元素</h5>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">plastic-button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">plastic-button</span>&gt;</span>
+</code></pre>
+<p>在 Vue 2.x 中，如果想添加在 Vue 外部定义的自定义元素（如，使用 Web 组件 API），需要告之 Vue 将其视为自定义元素：</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Vue</span>.<span class="hljs-property">config</span>.<span class="hljs-property">ignoredElements</span> = [<span class="hljs-string">'plastic-button'</span>]
+</code></pre>
+<p>在 Vue 3.x 中，此检查在模板编译期间执行指示编译器将其视为自定义元素。</p>
+<p>如果使用构建步骤，将 isCustomElement 选项传递给 Vue 模板编译器。 </p>
+<p>如果使用 vue-loader，通过 compilerOptions 选项传递：</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// webpack.config.js</span>
+<span class="hljs-attr">rules</span>: [
+  {
+    <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.vue$/</span>,
+    <span class="hljs-attr">use</span>: <span class="hljs-string">'vue-loader'</span>,
+    <span class="hljs-attr">options</span>: {
+      <span class="hljs-attr">compilerOptions</span>: {
+        <span class="hljs-attr">isCustomElement</span>: <span class="hljs-function"><span class="hljs-params">tag</span> =&gt;</span> tag === <span class="hljs-string">'plastic-button'</span>
+      }
+    }
+  }
+]
+</code></pre>
+<p>如果使用动态模板编译，则：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> app = <span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">createApp</span>({})
+app.<span class="hljs-property">config</span>.<span class="hljs-property">compilerOptions</span>.<span class="hljs-property">isCustomElement</span> = <span class="hljs-function"><span class="hljs-params">tag</span> =&gt;</span> tag === <span class="hljs-string">'plastic-button'</span>
+</code></pre>
+<p><strong>注意：</strong> 运行时配置只影响运行时模板的编译——它不会影响预编译的模板。 </p>
+<h5 id="自定义内置元素">自定义内置元素</h5>
+<p>自定义元素规范提供了一种通过将属性添加到内置元素，来将自定义元素用作自定义内置元素的方法：is。</p>
+<pre><code class="lang-javascript">&lt;button is=<span class="hljs-string">"plastic-button"</span>&gt;<span class="hljs-title class_">Click</span> <span class="hljs-title class_">Me</span>!&lt;/button&gt;
+</code></pre>
+<p>在浏览器普遍使用 is 属性之前， Vue 的特殊属性 is 是模拟原本的属性行为。 然而，在 Vue 2.x 时，is 被渲染为一个名为 <code>plastic-button</code> 的 Vue 组件。 这将阻止上面提到的自定义内置元素的原本使用。</p>
+<p>Vue 3.x 只将 is 属性的这一特殊处理（渲染为 Vue 组件）用于 component 标签，而在其他组件上，is 就是一个普通的、包含在 $attr 对象的属性。</p>
+<h5 id="dom-内模板解析">DOM 内模板解析</h5>
+<p>在 Vue 3.x 中，将 is 渲染为 Vue 组件的解决方案：</p>
+<p>is 属性值加 <code>vue:</code> 前缀：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">is</span>=<span class="hljs-string">"vue:blog-post-row"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</code></pre>
+<p>使用新增的 <code>v-is</code> 指令：</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- 注意：必需加单引号 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">v-is</span>=<span class="hljs-string">"'blog-post-row'"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+</code></pre>
+<h4 id="其他小改动">其他小改动</h4>
+<h5 id="生命周期钩子：destroyed-重命名为-unmounted；beforedestroy-重命名为-beforeunmount">生命周期钩子：destroyed 重命名为 unmounted；beforeDestroy 重命名为 beforeUnmount</h5>
+<h5 id="props-对象-default-函数不能再访问-this">props 对象 default 函数不能再访问 this</h5>
+<p>在 Vue 3.x 中，props 选项默认值函数不再能访问 this。</p>
+<p>替代方案：把组件接收到的原始 prop 作为参数传递给默认函数：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { inject } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-attr">theme</span>: {
+      <span class="hljs-title function_">default</span> (props) {
+        <span class="hljs-comment">// `props` 是传递给组件的原始值。</span>
+        <span class="hljs-comment">// 在任何类型/默认强制转换之前</span>
+        <span class="hljs-comment">// 也可以使用 `inject` 来访问注入的 property</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-title function_">inject</span>(<span class="hljs-string">'theme'</span>, <span class="hljs-string">'default-theme'</span>)
+      }
+    }
+  }
+}
+</code></pre>
+<h5 id="自定义指令变化">自定义指令变化</h5>
+<ul>
+<li>指令的钩子函数已经重新命名，以便更好地与组件的生命周期保持一致。  </li>
+<li>钩子函数的传参中，binding.expression 已删除。如，在 Vue 2.x 中，v-my-directive="1 + 1"，binding.expression 为 "1 + 1"。</li>
+</ul>
+<p>在 Vue 2.x 中，自定义指令使用以下钩子创建：</p>
+<ul>
+<li><strong>bind</strong>：指令绑定到元素后触发（只触发一次）。</li>
+<li><strong>inserted</strong>：元素插入父 DOM 后触发。</li>
+<li><strong>update</strong>：当元素更新，但子元素尚未更新时，将调用此钩子。</li>
+<li><strong>componentUpdated</strong>：一旦组件和子级被更新，就会调用这个钩子。</li>
+<li><strong>unbind</strong>：一旦指令被移除，就会调用这个钩子。也只调用一次。</li>
+</ul>
+<pre><code class="lang-html">Vue.directive('highlight', {
+  bind(el, binding, vnode) {
+    el.style.background = binding.value
+  }
+})
+</code></pre>
+<p>在 Vue 3 中，钩子函数已经重新命名：</p>
+<ul>
+<li>bind（重命名）：<strong>beforeMount</strong>。</li>
+<li>inserted（重命名）：<strong>mounted</strong>。</li>
+<li><strong>beforeUpdate（新增）</strong>：元素本身更新之前调用的。</li>
+<li>componentUpdated（重命名）：<strong>updated</strong>。</li>
+<li>update（移除）：多余的，请改用 <code>updated</code>。</li>
+<li><strong>beforeUnmount（新增）</strong>：在卸载元素之前调用。</li>
+<li>unbind（重命名）：<strong>unmounted</strong>。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> <span class="hljs-title class_">MyDirective</span> = {
+  <span class="hljs-title function_">beforeMount</span>(<span class="hljs-params">el, binding, vnode, prevVnode</span>) {},
+  <span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) {},
+  <span class="hljs-title function_">beforeUpdate</span>(<span class="hljs-params"></span>) {}, <span class="hljs-comment">// 新</span>
+  <span class="hljs-title function_">updated</span>(<span class="hljs-params"></span>) {},
+  <span class="hljs-title function_">beforeUnmount</span>(<span class="hljs-params"></span>) {}, <span class="hljs-comment">// 新</span>
+  <span class="hljs-title function_">unmounted</span>(<span class="hljs-params"></span>) {}
+}
+</code></pre>
+<h5 id="data-选项">data 选项</h5>
+<p>在 Vue 3.x 中：</p>
+<ul>
+<li>非兼容：data 选项不再接收纯 JavaScript 对象，必需是 function 声明。</li>
+<li>非兼容：当合并来自 mixins 或 extends 的多个 data 返回值时，并现在是浅合并而不是深合并（仅合并根级属性）。</li>
+</ul>
+<h5 id="属性强制行为">属性强制行为</h5>
+<p>这是一个低级别的内部 API 更改，不会影响大多数开发人员。</p>
+<p>主要变化：</p>
+<ul>
+<li>删除枚举属性的内部概念，将这些属性视为普通的非布尔属性；</li>
+<li>非兼容：如果值为布尔值，则不再删除属性 false。相反，它设置为 attr="false"，要删除该属性，请使用 null 或 undefined。</li>
+</ul>
+<h5 id="transition-的-class-名更改">transition 的 class 名更改</h5>
+<p>在 Vue 3.x 中，transition 的 class 名变化：v-enter 重命名为 v-enter-from；v-leave 重命名为 v-leave-from。</p>
+<h5 id="transitiongroup-默认不再渲染根元素">TransitionGroup 默认不再渲染根元素</h5>
+<p>transition-group 标签默认情况下不再渲染根元素，但仍然可以使用该 tag 属性创建一个。</p>
+<p>在 Vue 2.x 中，transition-group 标签像其他自定义组件一样，需要一个根元素，默认情况下是 <code>&lt;span&gt;</code>，但可以通过 tag 属性进行自定义。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">transition-group</span> <span class="hljs-attr">tag</span>=<span class="hljs-string">"ul"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">"item"</span>&gt;</span>
+    {{ item }}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition-group</span>&gt;</span>
+</code></pre>
+<p>在 Vue 3 中，因为已经支持片段，transition-group 标签默认情况下不再呈现一个根元素：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">transition-group</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">"item"</span>&gt;</span>
+    {{ item }}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition-group</span>&gt;</span>
+</code></pre>
+<h5 id="watch-数组">watch 数组</h5>
+<p>在 Vue 3 中，watch 数组时，回调只会在数组被替换时触发。如果需要数组子元素值变化时触发，则必须指定 deep 选项。</p>
+<h5 id="template-标签渲染">template 标签渲染</h5>
+<p>在 Vue 3 中，template 标签在没有特殊指令（v-if/else-if/else、v-for、v-slot）时，被视为普通元素，相当于原生 template 元素，而不是渲染其内部内容。 </p>
+<h5 id="挂载-vue-实例，不会替换被挂载的元素">挂载 Vue 实例，不会替换被挂载的元素</h5>
+<p>在 Vue 2.x 中，当挂载一个具有 template 的应用程序时，渲染的内容会替换挂载的元素；</p>
+<p>在 Vue 3.x 中，渲染的应用程序是被附加到挂载元素的子元素，替换该元素的 innerHTML。</p>
+<h5 id="vnode-生命周期事件">VNode 生命周期事件</h5>
+<p>在 Vue 2 中，可以使用事件来监听组件生命周期中的关键阶段。这些事件的名称以前缀 <code>hook:</code> 开头，后跟相应生命周期挂钩的名称。</p>
+<p>在 Vue 3 中，此前缀已更改为 <code>vue:</code>，此外，这些事件现在可用于 HTML 元素和组件。</p>
+<p>在 Vue 2 中，生命周期事件前缀为 <code>hook:</code>：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">child-component</span> @<span class="hljs-attr">hook:updated</span>=<span class="hljs-string">"onUpdated"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+</code></pre>
+<p>在 Vue 3 中，生命周期事件前缀为 <code>vue:</code>：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">child-component</span> @<span class="hljs-attr">vue:updated</span>=<span class="hljs-string">"onUpdated"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+</code></pre>
+<h4 id="移除的-api">移除的 API</h4>
+<h5 id="实例方法：on、off、once">实例方法：$on、$off、$once</h5>
+<p>在 Vue 3.x 中，删除了实例的 $on、$off、$once 方法。替换方案：将监听器将 props 参数传给组件。</p>
+<h5 id="实例方法：destroy">实例方法：$destroy</h5>
+<p>用户不应该再手动管理单个 Vue 组件的生命周期。 </p>
+<h5 id="全局和实例：set、delete">全局和实例：$set、$delete</h5>
+<p>基于 proxy 的检测变更，不再需要它们。 </p>
+<h5 id="实例属性：children">实例属性：$children</h5>
+<p>Vue 3.x 删除了实例的 $children 属性。如果需要访问子组件实例，建议使用 refs。</p>
+<h5 id="v-on-的-keycode-修饰符">v-on 的 keyCode 修饰符</h5>
+<p>在 Vue 3.x 中：</p>
+<ul>
+<li>不兼容：<code>v-on:</code> 不再支持使用数字（即 keyCodes）作为修饰符；</li>
+<li>不兼容：不再支持全局的 config.keyCodes。</li>
+</ul>
+<p>在 Vue 2.x 中，keyCodes 支持数字和配置：</p>
+<pre><code class="lang-javascript"><span class="hljs-title class_">Vue</span>.<span class="hljs-property">config</span>.<span class="hljs-property">keyCodes</span> = {
+  <span class="hljs-attr">f1</span>: <span class="hljs-number">112</span>
+}
+&lt;input v-<span class="hljs-attr">on</span>:keyup<span class="hljs-number">.112</span>=<span class="hljs-string">"showHelpText"</span> /&gt;
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-on:keyup.f1</span>=<span class="hljs-string">"showHelpText"</span> /&gt;</span></span>
+</code></pre>
+<p>在 Vue 3.x 中，由于 KeyboardEvent.keyCode 已弃用，因此不再支持。建议对要用作修饰符的任何键使用 kebab-case 名称：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-on:keyup.page-down</span>=<span class="hljs-string">"nextPage"</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- 匹配 q 和 Q --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-on:keypress.q</span>=<span class="hljs-string">"quit"</span>&gt;</span>
+</code></pre>
+<p><strong>注意：</strong> 语法限制会阻止匹配某些字符，如，<code>" ' / = &gt; .</code>，对于这些字符，应该改为在监听器内部进行检查。</p>
+<h5 id="filters">Filters</h5>
+<p>Vue 3.x 移除了 filters 选项。建议用 computed 的属性或 methods 的方法替换它们。</p>
+<p>如果使用的是全局注册的过滤器，则可以通过 globalProperties 定义方法，可用于所有组件：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> app = <span class="hljs-title function_">createApp</span>({})
+app.<span class="hljs-property">config</span>.<span class="hljs-property">globalProperties</span>.<span class="hljs-property">$filters</span> = {
+  <span class="hljs-title function_">currencyUSD</span>(<span class="hljs-params">value</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'$'</span> + value
+  }
+}
+</code></pre>
+<h5 id="内联模板属性">内联模板属性</h5>
+<p>Vue 3.x 移除了对内联模板功能的支持。</p>
+<p>在 Vue 2.x 中，Vue 提供了 <code>inline-template</code> 子组件的属性，以将其内部内容用作其模板，而不是将其视为分布式内容（可渲染的组件）。</p>
+<p>在 Vue 3.x 中的替代方案：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/html"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"my-comp-template"</span>&gt;</span><span class="language-handlebars"><span class="language-xml">
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><span class="hljs-template-variable">{{ <span class="hljs-name">hello</span> }}</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> <span class="hljs-title class_">MyComp</span> = {
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'#my-comp-template'</span>
+}
+</code></pre>
+<h5 id="propsdata-选项">propsData 选项</h5>
+<p>Vue 3.x 移除了propsData 选项。</p>
+<p>propsData 用于在创建 Vue 实例期间将值传递给  props。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Comp</span> = <span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">extend</span>({
+  <span class="hljs-attr">props</span>: [<span class="hljs-string">'username'</span>],
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div&gt;{{ username }}&lt;/div&gt;'</span>
+})
+<span class="hljs-keyword">new</span> <span class="hljs-title class_">Comp</span>({
+  <span class="hljs-attr">propsData</span>: {
+    <span class="hljs-attr">username</span>: <span class="hljs-string">'Evan'</span>
+  }
+})
+</code></pre>
+<p>在 Vue 3.x 中，使用 createApp 的第二个参数：</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> app = <span class="hljs-title function_">createApp</span>(
+  {
+    <span class="hljs-attr">props</span>: [<span class="hljs-string">'username'</span>],
+    <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div&gt;{{ username }}&lt;/div&gt;'</span>
+  },
+  { <span class="hljs-attr">username</span>: <span class="hljs-string">'Evan'</span> }
+)
+</code></pre>
+<h3 id="vue-3-代码示例">Vue 3 代码示例</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a-modal</span>
+    <span class="hljs-attr">v-model:visible</span>=<span class="hljs-string">"reactData.visible"</span>
+    <span class="hljs-attr">title</span>=<span class="hljs-string">"标题"</span>
+    @<span class="hljs-attr">cancel</span>=<span class="hljs-string">"handleCancel"</span>
+    @<span class="hljs-attr">ok</span>=<span class="hljs-string">"handleOk"</span>
+  &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a-form</span>
+      <span class="hljs-attr">ref</span>=<span class="hljs-string">"refForm"</span>
+      <span class="hljs-attr">:model</span>=<span class="hljs-string">"reactData.formData"</span>
+      <span class="hljs-attr">:rules</span>=<span class="hljs-string">"formRules"</span>
+      <span class="hljs-attr">:label-col</span>=<span class="hljs-string">"{ span: 4 }"</span>
+      <span class="hljs-attr">:wrapper-col</span>=<span class="hljs-string">"{ span: 20 }"</span>
+      <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">"off"</span>
+    &gt;</span>
+      ...
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a-form</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a-modal</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"ts"</span>&gt;</span><span class="language-javascript">
+<span class="hljs-keyword">import</span> { ref, defineEmits, defineProps, reactive, watch, computed } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>;
+<span class="hljs-keyword">import</span> type { <span class="hljs-title class_">FormInstance</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'ant-design-vue'</span>;
+
+<span class="hljs-keyword">const</span> formRules = {}
+<span class="hljs-keyword">const</span> refForm = ref&lt;<span class="hljs-title class_">FormInstance</span>&gt;()
+
+<span class="hljs-comment">// props</span>
+<span class="hljs-keyword">const</span> props = <span class="hljs-title function_">defineProps</span>({
+  <span class="hljs-attr">visible</span>: {
+    <span class="hljs-attr">type</span>: <span class="hljs-title class_">Boolean</span>,
+    <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">default</span>: <span class="hljs-literal">false</span>
+  }
+})
+<span class="hljs-comment">// emits</span>
+<span class="hljs-keyword">const</span> emits = <span class="hljs-title function_">defineEmits</span>([<span class="hljs-string">'update:visible'</span>])
+
+<span class="hljs-comment">// data</span>
+<span class="hljs-keyword">const</span> reactData = <span class="hljs-title function_">reactive</span>({
+  <span class="hljs-attr">loading</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">visible</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">formData</span>: {
+    <span class="hljs-attr">keyword</span>: <span class="hljs-string">''</span>,
+    <span class="hljs-attr">birthMonth</span>: <span class="hljs-string">''</span>
+  }
+})
+
+<span class="hljs-comment">// watch</span>
+<span class="hljs-title function_">watch</span>(
+  <span class="hljs-function">() =&gt;</span> props.<span class="hljs-property">visible</span>,
+  <span class="hljs-function">(<span class="hljs-params">newValue, oldValue</span>) =&gt;</span> {
+    reactData.<span class="hljs-property">visible</span> = newValue
+  }
+)
+<span class="hljs-comment">// computed</span>
+<span class="hljs-keyword">let</span> isPasswordSame = <span class="hljs-title function_">computed</span>(<span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-keyword">return</span> reactData.<span class="hljs-property">formData</span>.<span class="hljs-property">password</span> === reactData.<span class="hljs-property">formData</span>.<span class="hljs-property">newPassword</span>
+})
+
+<span class="hljs-comment">// methods</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">handleCancel</span> (<span class="hljs-params"></span>) {}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">handleOk</span> (<span class="hljs-params"></span>) {}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h3 id="常见问题">常见问题</h3>
+<h4 id="vue3中，怎么定义-vue2-的-created-生命周期函数？">Vue3中，怎么定义 Vue2 的 created 生命周期函数？</h4>
+<p>Vue 3 没有 beforeCreated、created 生命周期钩子，而 setup() 函数处于生命周期 beforeCreated 和 created 两个钩子函数之前，因此，相关逻辑可以直接放在 setup() 函数中。</p>
+<h3 id="参考资料">参考资料</h3>
+<p><a href="https://v3-migration.vuejs.org/" target="_blank">Vue3 Migration Guide</a></p>
+<p><a href="https://www.javascriptc.com/vue3js/guide/migration/array-refs.html" target="_blank">Vue3 迁移指南（中文）</a></p>
+<p><a href="https://v3-migration.vuejs.org/breaking-changes/" target="_blank">vue3 - Breaking Changes</a></p>
+<p><a href="https://v3-migration.vuejs.org/recommendations.html" target="_blank">vue3 - New Framework-level Recommendations</a></p>
+<p><a href="https://www.cnblogs.com/houxianzhou/p/16015947.html" target="_blank">vue3 区别于 vue2 的“与众不同” </a> </p>
+<p></p><footer class="page-footer"><span class="copyright">© lizhao all right reserved，powered by Gitbook</span><span class="footer-modification">文件修订时间：
+2022-11-15 20:23:50
+</span></footer><p></p>
+<div id="gitalk-container"></div> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"></link> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="04-Vue2.x原理篇.html" class="navigation navigation-prev " aria-label="Previous page: Vue2.X原理篇">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04-重读Vue教程.html" class="navigation navigation-next " aria-label="Next page: 重读Vue教程">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Vue3初步了解及迁移指南","level":"4.23","depth":1,"next":{"title":"重读Vue教程","level":"4.24","depth":1,"path":"frontend/04-重读Vue教程.md","ref":"frontend/04-重读Vue教程.md","articles":[]},"previous":{"title":"Vue2.X原理篇","level":"4.22","depth":1,"path":"frontend/04-Vue2.x原理篇.md","ref":"frontend/04-Vue2.x原理篇.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","summary","sandpack","theme-default","theme-comscore","tbfed-pagefooter","pageview-count","accordion","sharing-plus","back-to-top-button","chapter-fold","klipse","mygitalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy lizhao","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"summary":{"exclude":["docs/**"]},"search-pro":{"maxSearchIndexSize":10000000},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"mygitalk":{"flipMoveOptions":{},"clientID":"35175582adb321d85634","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["lizh"],"createIssueManually":false,"distractionFreeMode":false,"repo":"https://github.com/1927344728/fed-knowledge","owner":"lizh","enableHotKey":true,"clientSecret":"2e60c4d61474ec23e752f127e838aa2039e0433e","pagerDirection":"last","labels":["Gitalk"]},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":true,"qzone":true},"sandpack":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"lizhao","honkit":"^6.0.2","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术驿站•LIZHAO","language":"zh","gitbook":"*","description":"这是开发者的技术文档"},"file":{"path":"frontend/04-Vue3初步了解及迁移指南.md","mtime":"2022-11-15T12:23:50.849Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2026-06-29T12:14:32.945Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-sandpack/honkit-plugin-sandpack.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
